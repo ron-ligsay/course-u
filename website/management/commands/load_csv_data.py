@@ -16,10 +16,14 @@ class Command(BaseCommand):
         )
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         csv_table_mapping = {
-            os.path.join(base_dir, 'static\\csv\\records.csv'): {
-                'table_name': 'website_record',
-                'columns': ['id', 'created_at', 'first_name','last_name','email','phone','address','city','state','zip_code']  # Replace with actual column names
-            },
+            # os.path.join(base_dir, 'static\\csv\\records.csv'): {
+            #     'table_name': 'website_record',
+            #     'columns': ['id', 'created_at', 'first_name','last_name','email','phone','address','city','state','zip_code']  # Replace with actual column names
+            # },
+            os.path.join(base_dir, '..\\static\\csv\\specialization.csv'): {
+                'table_name': 'website_specialization',
+                'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id',] 
+            }
         }
         
         cursor = connection.cursor()

@@ -2,7 +2,7 @@
 import os
 import json
 from django.core.management.base import BaseCommand
-from your_app.models import YourModel1, YourModel2  # Import your models
+from website.models import specialization  # Import your models
 
 class Command(BaseCommand):
     help = 'Load all JSON files from a directory into MySQL tables'

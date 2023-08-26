@@ -1,7 +1,7 @@
 # your_app/management/commands/save_tables_to_json.py
 import json
 from django.core.management.base import BaseCommand
-from website.models import YourModel1, YourModel2  # Import your models
+from website.models import specialization  # Import your models
 
 class Command(BaseCommand):
     help = 'Save data from tables to JSON files'
@@ -10,8 +10,8 @@ class Command(BaseCommand):
         data = {}
 
         # Fetch data from each model and add it to the data dictionary
-        data['model1'] = list(YourModel1.objects.values())
-        data['model2'] = list(YourModel2.objects.values())
+        data['model1'] = list(specialization.objects.values())
+        #data['model2'] = list(YourModel2.objects.values())
 
         # Save data as JSON files
         for model_name, model_data in data.items():
