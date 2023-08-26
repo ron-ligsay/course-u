@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'website'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,13 @@ WSGI_APPLICATION = 'course_u.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'CourseU_DB',
+        'USER': 'root',
+        'PASSWORD': 'sql2023',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
