@@ -98,3 +98,11 @@ in your command prompt again, enter this commands:
 <br>
 ### then to run server
 `python manage.py runserver`
+
+<br><br>
+then, you will see this:
+    Django version 4.2.4, using settings 'course_u.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CTRL-BREAK.
+
+copy the HTTP, then open it on your browser.
