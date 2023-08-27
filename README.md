@@ -106,3 +106,4 @@ then, you will see this:
     Quit the server with CTRL-BREAK.
 
 copy the HTTP, then open it on your browser.
+to stop runserver `ctrl + c`
