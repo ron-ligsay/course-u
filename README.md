@@ -12,16 +12,16 @@
 
 ##### **Activating Environment**
 `courseu\Scripts\activate`
-<p>your terminal should have the pipenv name in front ex: `(course) C:\\Users\user\folder>`</p>
+your terminal should have the pipenv name in front ex `(course) C:\\Users\user\folder>`
 
 
-<p>after successfully activating your environment</p>
-<p>create a new folder called course-u</p>
-`cd ..`
+after successfully activating your environment
+create a new folder called course-u <br>
+`cd ..` <br>
 to step out or up in parent directory folder
-then create a folder
-`mkdir course-u` 
-<p>cd to the directory `cd course-u`</p>
+then create a folder <br>
+`mkdir course-u` <br>
+cd to the directory `cd course-u` <br>
 now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
 
 ### Connect to GIT
@@ -91,12 +91,13 @@ dataBase = mysql.connector.connect(
 ### Setting up DJango
 in your command prompt again, enter this commands:
 <br>
+`python manage.py create_database`
+<br>
 `python manage.py makemigrates`
 <br>
 `python manage.py createsuperuser`
-(this will prompt you to enter a username, password, password confirmation)
 <br>
-`python manage.py create_database`
+(this will prompt you to enter a username, password, password confirmation)
 <br>
 `python manage.py migrate`
 <br>
