@@ -17,6 +17,10 @@
 
 <p>after successfully activating your environment</p>
 <p>create a new folder called course-u</p>
+`cd ..`
+to step out or up in parent directory folder
+then create a folder
+`mkdir course-u` 
 <p>cd to the directory `cd course-u`</p>
 now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
 
