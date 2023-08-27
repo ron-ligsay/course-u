@@ -87,7 +87,7 @@ dataBase = mysql.connector.connect(
 ### Setting up DJango
 in your command prompt again, enter this commands:
 <br>
-`python manage.py migrate`
+`python manage.py makemigrates`
 <br>
 `python manage.py createsuperuser`
 (this will prompt you to enter a username, password, password confirmation)
