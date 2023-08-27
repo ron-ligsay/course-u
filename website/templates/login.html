@@ -29,15 +29,18 @@
               You are already logged in!
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+          <a href="{% url 'home' %}" class="btn btn-secondary">Home Page</a>
+
         {% else %}
         <div class="container">
-            <form method='POST' action="" class="form">
+            <form method='POST' action="{% url 'login_user' %}" class="form">
                 {% csrf_token %}
                 <h2>Hello Again!</h2>
                 <h4>welcome back you've been missed</h4>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                     Need an account? <a href="sign in.html">&nbsp;Sign in</a></p>
-                <input type="email" name="email" class="box form-control" placeholder="Enter Email"><br> 
+                <!-- <input type="email" name="email" class="box form-control" placeholder="Enter Email"><br>  -->
+                <input type="text" name="username" class="box form-control" placeholder="Enter Username"><br>
                 <input type="password" name="password" placeholder="Password" class="box form-control" placeholder="Enter Password">
                 <a href="forgot.html">Forgot Password? </a> 
                 <input type="submit" value="LOG IN" id="submit">

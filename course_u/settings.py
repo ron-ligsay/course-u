@@ -78,7 +78,6 @@ WSGI_APPLICATION = 'course_u.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        #'NAME': BASE_DIR / 'db.sqlite3',
         'NAME': 'CourseU_DB',
         'USER': 'root',
         'PASSWORD': 'sql2023',
