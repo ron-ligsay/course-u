@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
+from website.models import Specialization
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    specialization_items = Specialization.objects.all()
+    return render(request, 'home.html', {'specialization_items': specialization_items})
 
 def login_user(request):
     if request.method == 'POST':

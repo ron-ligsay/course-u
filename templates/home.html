@@ -5,7 +5,17 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1>Welcome</h1>
+
+<!-- webapp/templates/webapp/recommendations.html -->
+<div class="card-container">
+    {% for item in specialization_items %}
+      <div class="card">
+        <h3>{{ item.title }}</h3>
+        <!-- Add more fields as needed -->
+      </div>
+    {% endfor %}
+</div>
+  
 
 {% else %}
 

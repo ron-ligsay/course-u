@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class specialization(models.Model):
+class Specialization(models.Model):
     specialization_id = models.AutoField(primary_key=True)
     #field_id = models.IntegerField()
     field_id = models.CharField(max_length=100)
