@@ -18,7 +18,7 @@
 <p>after successfully activating your environment</p>
 <p>create a new folder called course-u</p>
 <p>cd to the directory `cd course-u`</p>
-
+now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
 
 ### Connect to GIT
 Git initialize folder
@@ -46,6 +46,7 @@ if its not in main, change your branch and pull again
 ### Installing Pre-requisites
 (note: your should install this when your python environment is activated)
 `pip install -r requirements.txt`
+this might take a while
 
 ### Setting up MySQL Database
 (make sure you have mysql 8.0 or higher)
