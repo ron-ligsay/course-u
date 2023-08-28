@@ -15,13 +15,9 @@ class Command(BaseCommand):
             password='sql2023',
             database='courseu_db',
         )
-        #base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
         base_dir = os.getcwd()
         csv_table_mapping = {
-            # os.path.join(base_dir, 'static\\csv\\records.csv'): {
-            #     'table_name': 'website_record',
-            #     'columns': ['id', 'created_at', 'first_name','last_name','email','phone','address','city','state','zip_code']  # Replace with actual column names
-            # },
            base_dir + '\static\csv\specialization.csv': {
                 'table_name': 'website_specialization',
                 'model_name': 'Specialization',
@@ -51,11 +47,28 @@ class Command(BaseCommand):
                 reader = csv.reader(file)
                 next(reader)  # Skip header row
                 for row in reader:
+                    unique_key = row[0]  # Use first column as unique key, Replace with the appropriate column name
+
+                    # Check if row with unique key already exists
+                    existing_record = model_class.objects.filter(*{table_info['columns'][0]: unique_key}).first()
+                    
+                    if existing_record:  # Replace with the appropriate column name
+                        # Update existing record
+                        for index, column in enumerate(table_info['columns'][1:]):
+                            setattr(existing_record, column, row[index + 1])
+                        existing_record.save()
+                        self.stdout.write(self.style.SUCCESS(f"Record with key '{unique_key}' updated"))
+
+                    else:
+                        # Insert a new record
+                        new_record = model_class(**dict(zip(table_info['columns'], row)))
+                        new_record.save()
+                        self.stdout.write(self.style.SUCCESS(f"Record with key '{unique_key}' inserted"))
                     # Prepare column names and values
-                    columns = ', '.join(table_info['columns'])
-                    placeholders = ', '.join(['%s'] * len(row))
-                    query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
-                    cursor.execute(query, tuple(row))
+                    # columns = ', '.join(table_info['columns'])
+                    # placeholders = ', '.join(['%s'] * len(row))
+                    # query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
+                    # cursor.execute(query, tuple(row))
                 connection.commit()
 
         cursor.close()

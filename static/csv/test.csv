@@ -1,8 +1,8 @@
-question_id,question,option_1,option_2,option_3,option_4,answer,topic
-1,Question 1,option 1,option 2,option 3,option 4,option 2,Personality
-2,Question 2,option 1,option 2,option 3,option 4,option 4,Personality
-3,Question 3,option 1,option 2,option 3,option 4,option 3,Personality
-4,Question 4,option 1,option 2,option 3,option 4,option 2,Personality
+question_id,question,option1,option2,option3,option4,answer,topic
+1,What is python?,ahas,snake,conda,all of the above,option 2,Personality
+2,What is HTML?,hot talong mayonaise latte,how to make lumpia,hyper text markup language,suko na ko,option 4,Personality
+3,What is Art?,si crush1,art,tanong mo kay sir,art is art,option 3,Personality
+4,Hotdog,option 1,option 2,option 3,option 4,option 2,Personality
 5,Question 5,option 1,option 2,option 3,option 4,option 3,Personality
 6,Question 6,option 1,option 2,option 3,option 4,option 3,Personality
 7,Question 7,option 1,option 2,option 3,option 4,option 1,Personality

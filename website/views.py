@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
-from website.models import Specialization
+from website.models import Specialization, Test
+from django.urls import reverse
 
 
 # Create your views here.
@@ -48,3 +49,24 @@ def forgot_password(request):
 
 def recovery(request):
     return render(request, 'recovery.html')
+
+def test(request, pk):
+    if request.user.is_authenticated:
+        test = Test.objects.get(question_id=pk)
+        return render(request, 'test.html', {'test': test})
+    else:
+        return redirect('home')
+
+def next_test(request, pk):
+    if request.user.is_authenticated:
+        test = Test.objects.get(question_id=pk+1)
+        return render(request, 'test.html', {'test': test})
+    else:
+        return redirect('home')
+
+def prev_test(request, pk):
+    if request.user.is_authenticated:
+        test = Test.objects.get(question_id=pk-1)
+        return render(request, 'test.html', {'test': test})
+    else:
+        return redirect('home')

@@ -16,10 +16,10 @@ class Specialization(models.Model):
 class Test(models.Model):
     question_id = models.AutoField(primary_key=True)
     question = models.CharField(max_length=1000)
-    option_1 = models.CharField(max_length=1000)
-    option_2 = models.CharField(max_length=1000)
-    option_3 = models.CharField(max_length=1000)
-    option_4 = models.CharField(max_length=1000)
+    option1 = models.CharField(max_length=1000)
+    option2 = models.CharField(max_length=1000)
+    option3 = models.CharField(max_length=1000)
+    option4 = models.CharField(max_length=1000)
     answer = models.CharField(max_length=1000)
     topic = models.CharField(max_length=1000)
 
