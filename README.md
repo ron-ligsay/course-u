@@ -14,7 +14,7 @@ If you have already installed it, and it's not updated use
 
 ##### **Activating Environment**
 `courseu\Scripts\activate`
-your terminal should have the pipenv name in front ex ***(course) C:\\Users\user\folder>***
+your terminal should have the pipenv name in front example ***(course) C:\\Users\user\folder>***
 
 
 after successfully activating your environment
