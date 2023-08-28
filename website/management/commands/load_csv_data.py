@@ -1,5 +1,4 @@
 from django.core.management.base import BaseCommand
-#from django.contrib.staticfiles import finders
 import csv
 import os
 import mysql.connector
@@ -37,45 +36,28 @@ class Command(BaseCommand):
         
         cursor = connection.cursor()
         
+       
         for csv_file_path, table_info in csv_table_mapping.items():
-        #for csv_file_path, table_info in zip(csv_file_paths, csv_table_mapping.values()):
-            query = f"SHOW TABLES LIKE '{table_info['table_name']}'"
+            model_name = table_info['model_name']
+            model_class = globals()[model_name]
+
+            # Create table if it doesn't exist
+            columns = ', '.join([f"{col} VARCHAR(255)" for col in table_info['columns']])
+            query = f"CREATE TABLE IF NOT EXISTS {table_info['table_name']} ({columns});"
             cursor.execute(query)
-            table_exists = cursor.fetchone() is not None
-
-            if table_exists == False:
-                print(f"Creating table '{table_info['table_name']}'...")
-                csv_file = csv_file_path
-                model_name = table_info['model_name']
-
-                # Get the model class dynamically using globals()
-                #model_class = globals()[model_name.capitalize()]
-                model_class = globals()[model_name]
-
-                if not model_class._meta.db_table:
-                    self.stdout.write(self.style.ERROR(f"Table for model '{model_name}' doesn't exist. Creating table..."))
-                    model_class._meta.db_table = model_class._meta.model_name
-                    model_class._meta.managed = True
-                    model_class._meta.db_table_created = True
-                    model_class._meta.db_table_name = model_class._meta.db_table
-
-                # with open(csv_file, 'r') as file:
-                #     csv_reader = csv.DictReader(file)
-                #     for row in csv_reader:
-                #         model_class.objects.create(**row)
-                #     self.stdout.write(self.style.SUCCESS(f'Data from {csv_file} loaded into {model_name} table'))
+            connection.commit()
 
             with open(csv_file_path, 'r') as file:
-                    reader = csv.reader(file)
-                    next(reader)  # Skip header row
-                    for row in reader:
-                        # Prepare column names and values
-                        columns = ', '.join(table_info['columns'])
-                        placeholders = ', '.join(['%s'] * len(row))
-                        query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
-                        cursor.execute(query, tuple(row))
+                reader = csv.reader(file)
+                next(reader)  # Skip header row
+                for row in reader:
+                    # Prepare column names and values
+                    columns = ', '.join(table_info['columns'])
+                    placeholders = ', '.join(['%s'] * len(row))
+                    query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
+                    cursor.execute(query, tuple(row))
+                connection.commit()
 
-        connection.commit()
         cursor.close()
         connection.close()
 
