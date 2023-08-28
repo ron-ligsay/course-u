@@ -10,28 +10,28 @@ class Migration(migrations.Migration):
     dependencies = [
     ]
 
-    operations = [
-        migrations.CreateModel(
-            name='Specialization',
-            fields=[
-                ('specialization_id', models.AutoField(primary_key=True, serialize=False)),
-                ('field_id', models.CharField(max_length=100)),
-                ('title', models.CharField(max_length=100)),
-                ('description', models.CharField(max_length=1000)),
-                ('roadmap_id', models.IntegerField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Test',
-            fields=[
-                ('question_id', models.AutoField(primary_key=True, serialize=False)),
-                ('question', models.CharField(max_length=1000)),
-                ('option_1', models.CharField(max_length=1000)),
-                ('option_2', models.CharField(max_length=1000)),
-                ('option_3', models.CharField(max_length=1000)),
-                ('option_4', models.CharField(max_length=1000)),
-                ('answer', models.CharField(max_length=1000)),
-                ('topic', models.CharField(max_length=1000)),
-            ],
-        ),
-    ]
+    # operations = [
+    #     migrations.CreateModel(
+    #         name='Specialization',
+    #         fields=[
+    #             ('specialization_id', models.AutoField(primary_key=True, serialize=False)),
+    #             ('field_id', models.CharField(max_length=100)),
+    #             ('title', models.CharField(max_length=100)),
+    #             ('description', models.CharField(max_length=1000)),
+    #             ('roadmap_id', models.IntegerField()),
+    #         ],
+    #     ),
+    #     migrations.CreateModel(
+    #         name='Test',
+    #         fields=[
+    #             ('question_id', models.AutoField(primary_key=True, serialize=False)),
+    #             ('question', models.CharField(max_length=1000)),
+    #             ('option_1', models.CharField(max_length=1000)),
+    #             ('option_2', models.CharField(max_length=1000)),
+    #             ('option_3', models.CharField(max_length=1000)),
+    #             ('option_4', models.CharField(max_length=1000)),
+    #             ('answer', models.CharField(max_length=1000)),
+    #             ('topic', models.CharField(max_length=1000)),
+    #         ],
+    #     ),
+    # ]
