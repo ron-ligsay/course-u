@@ -22,9 +22,18 @@
                 </div>
             {% endfor %}
         {% endif %}
-        {% block content %}
+        {% if user.is_authenticated %}
+        
+          {% block content %}
               
-        {% endblock content %}
+          {% endblock content %}
+        {% else %}
+          <div class="col-md-6 offset-md-3">
+            <br><br><br>
+            <h3 class="">You need to login first</h3>
+            <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
+          </div>
+        {% endif %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>

@@ -12,3 +12,16 @@ class Specialization(models.Model):
 
     def __str__(self):
         return self.specialization_name
+    
+class Test(models.Model):
+    question_id = models.AutoField(primary_key=True)
+    question = models.CharField(max_length=1000)
+    option_1 = models.CharField(max_length=1000)
+    option_2 = models.CharField(max_length=1000)
+    option_3 = models.CharField(max_length=1000)
+    option_4 = models.CharField(max_length=1000)
+    answer = models.CharField(max_length=1000)
+    topic = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.question

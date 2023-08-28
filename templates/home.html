@@ -10,7 +10,8 @@
 <div class="card-container">
     {% for item in specialization_items %}
       <div class="card">
-        <h3>{{ item.title }}</h3>
+        <h2>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
         <!-- Add more fields as needed -->
       </div>
     {% endfor %}
@@ -18,12 +19,12 @@
   
 
 {% else %}
-
+<!-- 
 <div class="col-md-6 offset-md-3">
     <br><br><br>
     <h3 class="">You need to login first</h3>
     <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
-</div>
+</div> -->
 
 {% endif %}
 
