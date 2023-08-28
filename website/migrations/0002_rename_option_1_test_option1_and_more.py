@@ -9,25 +9,25 @@ class Migration(migrations.Migration):
         ('website', '0001_initial'),
     ]
 
-    operations = [
-        migrations.RenameField(
-            model_name='test',
-            old_name='option_1',
-            new_name='option1',
-        ),
-        migrations.RenameField(
-            model_name='test',
-            old_name='option_2',
-            new_name='option2',
-        ),
-        migrations.RenameField(
-            model_name='test',
-            old_name='option_3',
-            new_name='option3',
-        ),
-        migrations.RenameField(
-            model_name='test',
-            old_name='option_4',
-            new_name='option4',
-        ),
-    ]
+    # operations = [
+    #     migrations.RenameField(
+    #         model_name='test',
+    #         old_name='option_1',
+    #         new_name='option1',
+    #     ),
+    #     migrations.RenameField(
+    #         model_name='test',
+    #         old_name='option_2',
+    #         new_name='option2',
+    #     ),
+    #     migrations.RenameField(
+    #         model_name='test',
+    #         old_name='option_3',
+    #         new_name='option3',
+    #     ),
+    #     migrations.RenameField(
+    #         model_name='test',
+    #         old_name='option_4',
+    #         new_name='option4',
+    #     ),
+    # ]
