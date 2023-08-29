@@ -2,6 +2,8 @@
 ##### Open your CMD or Command Prompt
 
 ##### **Make sure you have installed python and it is updated**
+Use `pip --version` to verify if it's working,
+If you have already installed it, and it's not updated use 
 `pip install --upgrade pip`
 
 ##### Creating Environment
@@ -12,17 +14,22 @@
 
 ##### **Activating Environment**
 `courseu\Scripts\activate`
-<p>your terminal should have the pipenv name in front ex: `(course) C:\\Users\user\folder>`</p>
+your terminal should have the pipenv name in front example ***(course) C:\\Users\user\folder>***
 
 
-<p>after successfully activating your environment</p>
-<p>create a new folder called course-u</p>
-<p>cd to the directory `cd course-u`</p>
+after successfully activating your environment
+create a new folder called course-u <br>
+`cd ..` <br>
+to step out or up in parent directory folder
+then create a folder <br>
+`mkdir course-u` <br>
+cd to the directory `cd course-u` <br>
 now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
 
 ### Connect to GIT
-Git initialize folder
-
+Make sure your `git config user.name` and `git config user.email` is same with your GitHub account
+Git initialize folder, 
+make sure you are on ***course-u*** folder
 `git init`
 
 add remote repo
@@ -42,6 +49,8 @@ if its not in main, change your branch and pull again
 `git checkout main`
 
 `git pull` then push `git push`
+if you are in main, use `git push --set-upstream origin main`
+then use `git pull` to make sure it's working
 
 ### Installing Pre-requisites
 (note: your should install this when your python environment is activated)
@@ -87,12 +96,13 @@ dataBase = mysql.connector.connect(
 ### Setting up DJango
 in your command prompt again, enter this commands:
 <br>
+`python manage.py create_database`
+<br>
 `python manage.py makemigrates`
 <br>
 `python manage.py createsuperuser`
-(this will prompt you to enter a username, password, password confirmation)
 <br>
-`python manage.py create_database`
+(this will prompt you to enter a username, password, password confirmation)
 <br>
 `python manage.py migrate`
 <br>
