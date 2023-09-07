@@ -69,6 +69,7 @@ DB_PASS=<replace_this_to_your_password>
 DB_HOST=localhost
 DB_PORT=3306
       ```
+<br>
 **note: on text with < >, replace it with the corresponding info**
 
 <br>
