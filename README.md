@@ -1,4 +1,4 @@
-### Setup your Python Environment
+<!-- ### Setup your Python Environment -->
 ##### Open your CMD or Command Prompt
 
 ##### **Make sure you have installed python and it is updated**
@@ -6,7 +6,7 @@ Use `pip --version` to verify if it's working,
 If you have already installed it, and it's not updated use 
 `pip install --upgrade pip`
 
-##### Creating Environment
+<!-- ##### Creating Environment
 `python -m venv courseu`
 <p>if Error: [WinError 2] The system cannot find the file specified:</p>
 <p>go to your local Python file directory (`User/user/AppData/Loca/Programs/Python/Python<ver>/` or where you installed python), and try to input the command their again.</p>
@@ -14,10 +14,10 @@ If you have already installed it, and it's not updated use
 
 ##### **Activating Environment**
 `courseu\Scripts\activate`
-your terminal should have the pipenv name in front example ***(course) C:\\Users\user\folder>***
+your terminal should have the pipenv name in front example ***(course) C:\\Users\user\folder>*** -->
 
 
-after successfully activating your environment
+<!-- after successfully activating your environment -->
 create a new folder called course-u <br>
 `cd ..` <br>
 to step out or up in parent directory folder
@@ -59,44 +59,31 @@ this might take a while
 
 ### Setting up MySQL Database
 (make sure you have mysql 8.0 or higher)
-now open course_u/settings.py 
+now open .env
 then on DABATASES, change the user and password corresponding to your database info
 
 Markup : ```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CourseU_DB',
-        'USER': '<change to your user name>',
-        'PASSWORD': '<change to your password>',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+DB_NAME=courseu_db
+DB_USER=<replace_this_to_your_username>
+DB_PASS=<replace_this_to_your_password>
+DB_HOST=localhost
+DB_PORT=3306
       ```
+**note: on text with < >, replace it with the corresponding info**
 
 <br>
 
 (if your not sure of your user name and password open your MySQL workbench)
 <br>
 
-then on website/management/commands/create_database.py
-change also the user and the password
----
-Markup : ```
-dataBase = mysql.connector.connect(
-    host="localhost",
-    user = "<change to your user>",
-    passwd = "<change to your password>",
-    auth_plugin='mysql_native_password'
-)
-    ```
 
 ---
 ### Setting up DJango
 in your command prompt again, enter this commands:
 <br>
 `python manage.py create_database`
+<br>
+`python manage.py load_dump_file`
 <br>
 `python manage.py makemigrates`
 <br>
@@ -120,13 +107,11 @@ to stop runserver `ctrl + c`
 
 ----
 
-once setup is completed, you can follow these steps to run from start again:
-
-
-##### Activate Python Environment
+once you have completed this setup once, you can follow these steps to run from start again:
+<!-- ##### Activate Python Environment -->
 
 <!--on you command prompt, locate your python environment that you have created (courseu), then go to that directory and enter command `courseu/Scripts/activate`-->
-go to your project folder, right-click the folder (course-u) to open your visual studio
+<!-- go to your project folder, right-click the folder (course-u) to open your visual studio
 
 on your terminal, activate your python environment, by using command `courseu/Scripts/activate`
 
@@ -134,6 +119,14 @@ once your python environment is activated
 
 make sure your project files are updated by using `git pull`
 
-then once it is pulled, you are now ready to make your changes!
+then once it is pulled, you are now ready to make your changes! -->
 
+at first make sure you use `git pull` in order to synchronize your files with the remote repo
+
+
+then you can use `python manage.py load_dump_file` to synchronize sql data on your database
+
+after that you can start editing again and use `python manage.py runserver` to run your server
+
+if you made changes the  databse, use `mysql -u <username> -p courseu_db < dump_file.sql` to update the sql file
 
