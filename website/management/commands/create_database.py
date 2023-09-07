@@ -1,8 +1,10 @@
 import mysql.connector
+from decouple import Config, RepositoryEnv
+config = Config(RepositoryEnv('.env'))
 
 # Connect to your MySQL Server
 # change user and password to your username and password respectively
-dataBase = mysql.connector.connect( host="localhost", user = "root", passwd = "022002", auth_plugin='mysql_native_password' )
+dataBase = mysql.connector.connect( host=config('DB_HOST', default='localhost'), user = config('DB_USER'), passwd = config('DB_PASS'), auth_plugin='mysql_native_password' )
 
 # prepare a cursor object
 cursorObject = dataBase.cursor()
