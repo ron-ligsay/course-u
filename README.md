@@ -117,3 +117,23 @@ then, you will see this:
 
 copy the HTTP, then open it on your browser.
 to stop runserver `ctrl + c`
+
+----
+
+once setup is completed, you can follow these steps to run from start again:
+
+
+##### Activate Python Environment
+
+<!--on you command prompt, locate your python environment that you have created (courseu), then go to that directory and enter command `courseu/Scripts/activate`-->
+go to your project folder, right-click the folder (course-u) to open your visual studio
+
+on your terminal, activate your python environment, by using command `courseu/Scripts/activate`
+
+once your python environment is activated
+
+make sure your project files are updated by using `git pull`
+
+then once it is pulled, you are now ready to make your changes!
+
+
