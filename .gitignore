@@ -18,6 +18,7 @@ local_settings.py
 
 # Ignore compiled Python files
 *.pyc
+*.pot
 
 # Ignore secret keys and sensitive data files
 *.secret_key
