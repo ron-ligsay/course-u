@@ -1,0 +1,46 @@
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore media files (user-uploaded content)
+media/
+
+# Ignore virtual environment files
+venv/
+__pycache__/
+*.py[cod]
+
+# Ignore local settings (e.g., settings.py for development)
+local_settings.py
+
+# Ignore log files
+*.log
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore secret keys and sensitive data files
+*.secret_key
+#*.env
+
+# Ignore database backup files (if any)
+*.backup
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Python bytecode cache files
+__pycache__/
+
+# Ignore any other temporary or generated files
+__pycache__/
+*.swp
+*.swo
+*~
+*.~*
+
+# Ignore database migrations files (you might want to keep some)
+# Uncomment this line if you want to ignore all migrations
+# */migrations/
+# Uncomment this line if you want to keep migrations in specific apps
+# app_name/migrations/
