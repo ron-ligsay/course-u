@@ -35,6 +35,13 @@ Date
 time::attr(datetime)
 
 
+creating a spider
+scrapy genspider jobs_spider linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?
+
+running spider
+scrapy crawl jobs_spider
+
+scrapy crawl jobs_spider -o jobs.csv
 
 
 notes:

@@ -40,6 +40,9 @@ __pycache__/
 *~
 *.~*
 
+# Ignore csv files under job_post folder
+job_post_scrapy/jobs/*.csv
+
 # Ignore database migrations files (you might want to keep some)
 # Uncomment this line if you want to ignore all migrations
 # */migrations/
