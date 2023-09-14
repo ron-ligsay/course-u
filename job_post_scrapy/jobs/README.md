@@ -34,6 +34,11 @@ a.hidden-nested-link::attr(href)
 Date
 time::attr(datetime)
 
+
+
+
+notes:
+
 ctrl+d to exit shell
 
 py -m pip install -U prompt-toolkit
