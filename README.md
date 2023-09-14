@@ -1,3 +1,13 @@
+# Course-University - Recommender System
+A Recommender System for the College of Computer in Information and Sciences (CCIS), provide recommended courses and jobs based on their soft and tech skills.
+
+## Requirements:
+* MySQL version 8 or higher
+* Python 3.6 or higher
+* Github/Git
+<br>Optional:
+* VS Code
+
 <!-- ### Setup your Python Environment -->
 ##### Open your CMD or Command Prompt
 
