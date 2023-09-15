@@ -11,7 +11,7 @@ class Specialization(models.Model):
 
 
     def __str__(self):
-        return self.specialization_name
+        return self.title
     
 class Test(models.Model):
     question_id = models.AutoField(primary_key=True)
