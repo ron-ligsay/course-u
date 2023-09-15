@@ -12,7 +12,31 @@ BOT_NAME = "jobs"
 SPIDER_MODULES = ["jobs.spiders"]
 NEWSPIDER_MODULE = "jobs.spiders"
 
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'jobs.middlewares.RandomUserAgentMiddleware': 400,
+}
 
+DEFAULT_REQUEST_HEADERS: {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Referer': 'https://www.google.com/',
+}
+
+
+USER_AGENTS = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/100.0',
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Googlebot/2.1 (+http://www.googlebot.com/bot.html)',
+    'Googlebot/2.1 (+http://www.google.com/bot.html)',
+    'Googlebot/2.1 (+http://www.google.com/bot.html)',
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+]
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "jobs (+http://www.yourdomain.com)"
 
