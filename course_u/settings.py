@@ -137,3 +137,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # typically, os.path.join(os.path.firname(__file__), 'media')))
 # MEDIA_ROOT = 'website/templates/images'
 # MEDIA_URL = '/images/'
+
+
+LOGOUT_REDIRECT_URL = 'logout_success'
