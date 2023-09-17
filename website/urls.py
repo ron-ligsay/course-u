@@ -36,6 +36,8 @@ urlpatterns = [
     path('logout/success/', LogoutView.as_view(template_name='logout_success.html'), name='logout_success'),
     path('test_home/', views.test_home, name='test_home'),
     path('view_test_results/', views.view_test_results, name='view_test_results'),
+    path('job_list/', views.job_list, name='job_list'),
+    path('job_detail/<int:job_id>/', views.job_detail, name='job_detail'),
 ]
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
-from website.models import Specialization, Test
+from website.models import Specialization, Test, job_detail
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LogoutView
@@ -114,3 +114,14 @@ def test_home(request):
 
 def view_test_results(request):
     return render(request, 'test_home.html')
+
+
+
+
+def job_list(request):
+    job_postings = JobPosting.objects.all()
+    return render(request, 'job_list.html', {'job_postings': job_postings})
+
+def job_detail(request, job_id):
+    job_posting = JobPosting.objects.get(pk=job_id)
+    return render(request, 'job_detail.html', {'job_posting': job_posting})

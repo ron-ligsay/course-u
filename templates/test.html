@@ -55,8 +55,10 @@
           <input type="radio" class="form-check-input" name="answer" id="option4" value="{{ option4 }}">
           <label class="form-check-label" for="option4">{{ test.option4 }}</label>
       </div>
-      <button type="submit" class="btn btn-primary" name="action" value="back"><a href="{% url 'prev_test' pk=test.question_id%}">Previous Question</a></button>
-      <button type="submit" class="btn btn-primary" name="action" value="next"><a href="{% url 'next_test' pk=test.question_id%}">Next Question</a></button>
+      <div class="">
+        <button type="submit" class="btn btn-primary" name="action" value="back"><a href="{% url 'prev_test' pk=test.question_id%}">Previous Question</a></button>
+        <button type="submit" class="btn btn-primary" name="action" value="next"><a href="{% url 'next_test' pk=test.question_id%}">Next Question</a></button>
+      </div>
   </form>
 </div>
 
