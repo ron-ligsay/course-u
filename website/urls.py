@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.urls import path, include
 from . import views
+from django.contrib.auth.views import LogoutView
 
 
 urlpatterns = [
@@ -27,4 +28,14 @@ urlpatterns = [
     path('test/<int:pk>/', views.test, name='test'),
     path('next_test/<int:pk>/', views.next_test, name='next_test'),
     path('prev_test/<int:pk>/', views.prev_test, name='prev_test'),
+    path('profile/', views.user_profile, name='user_profile'),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+    path('terms_and_conditions/', views.terms_and_conditions, name='terms_and_conditions'),
+    path('settings/', views.settings, name='settings'),
+    path('logout/', views.CustomLogoutView.as_view(), name='logout'),
+    path('logout/success/', LogoutView.as_view(template_name='logout_success.html'), name='logout_success'),
+    path('test_home/', views.test_home, name='test_home'),
+    path('view_test_results/', views.view_test_results, name='view_test_results'),
 ]
+
+
