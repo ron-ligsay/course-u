@@ -135,3 +135,9 @@ def job_detail(request, job_id):
     job_posting = JobPosting.objects.get(pk=job_id)
     return render(request, 'job_detail.html', {'job_posting': job_posting})
 
+def specialization_page(request, item_id):
+    # Retrieve the selected specialization item or return a 404 error if it doesn't exist
+    specialization_item = get_object_or_404(Specialization, pk=item_id)
+
+    # Render the specialization_page template with the item
+    return render(request, 'specialization_page.html', {'specialization_item': specialization_item})

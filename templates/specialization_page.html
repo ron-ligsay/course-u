@@ -5,20 +5,10 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
-
-<div class="card-container" >
-    {% for item in specialization_items %}
-    <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link">
-      <div class="card">
-        <h2>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <!-- Add more fields as needed -->
-      </div>
-    </a>
-    {% endfor %}
-</div>
-  
+<h1>{{ specialization_item.title }}</h1>
+    <p>{{ specialization_item.description }}</p>
+    <!-- Add more fields as needed -->
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
 
 {% else %}
 <!-- 
