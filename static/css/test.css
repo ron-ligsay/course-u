@@ -136,7 +136,7 @@ p{
   font-size: 22px;
   font-family: "Times New Roman", sans-serif;
 }
-.btn {
+.btn_nav {
     
     padding: 10px 20px;
     background-color: #ff5133;
@@ -144,13 +144,13 @@ p{
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    position: absolute;
+    /*position: absolute;
     bottom: 130px; 
     margin-left: 400px;
-    
+    */
 }
 
-.btn:hover {
+.btn_nav:hover {
     background-color: blue;
 
 }

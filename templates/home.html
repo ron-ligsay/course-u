@@ -2,6 +2,13 @@
 
 {% block title %}Home{% endblock %}
 
+{% block head_extra %}
+    <!-- Additional stylesheets or scripts specific to this page -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock  %}
+
+
 {% block content %}
 
 {% if user.is_authenticated %}

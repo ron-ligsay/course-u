@@ -1,6 +1,19 @@
 {% extends 'base_user.html' %}
 
 
+
+{% block title %}Home{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+
+    <!-- Additional stylesheets or scripts specific to this page -->
+    <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
+
+{% endblock head_extra %}
+
 {% block content %}
 
 {% if user.is_authenticated %}

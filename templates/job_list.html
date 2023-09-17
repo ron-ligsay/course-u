@@ -1,6 +1,17 @@
 {% extends 'base_user.html' %}
 
 {% block title %}Home{% endblock %}
+{% load static %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{% static 'css/job_post.css' %}">
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include your custom JavaScript file -->
+    <script src="{% static 'js/job_list.js' %}"></script>
+{% endblock head_extra %}
+
+
 
 {% block content %}
 
