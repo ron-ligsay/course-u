@@ -1,0 +1,78 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply basic styling to the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Job Card Styles */
+.job-list {
+    flex: 1;
+}
+
+.job-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.job-card:hover {
+    background-color: #f9f9f9;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.company-name {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Job Details Styles */
+.job-details {
+    flex: 2;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.job-description,
+.job-requirements {
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Responsive styles can be added for smaller screens */
