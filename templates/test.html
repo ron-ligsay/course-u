@@ -2,9 +2,11 @@
 
 {% block title %}Test Page{% endblock %}
 
+{% load static %}
+
 {% block head_extra %}
     <!-- Additional stylesheets or scripts specific to this page -->
-    <!--<link rel="stylesheet" href="{% static 'css/test.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
 {% endblock %}
 
 
@@ -62,6 +64,7 @@
           <label class="form-check-label" for="option4">{{ test.option4 }}</label>
       </div>
       <div class="">
+        <br><br>
         <button type="submit" class="btn btn-primary" name="action" value="back"><a href="{% url 'prev_test' pk=test.question_id%}">Previous Question</a></button>
         <button type="submit" class="btn btn-primary" name="action" value="next"><a href="{% url 'next_test' pk=test.question_id%}">Next Question</a></button>
       </div>
