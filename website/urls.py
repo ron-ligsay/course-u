@@ -37,6 +37,7 @@ urlpatterns = [
     path('test_home/', views.test_home, name='test_home'),
     path('view_test_results/', views.view_test_results, name='view_test_results'),
     path('job_list/', views.job_list, name='job_list'),
+    path('job_list/<int:job_id>/', views.job_list, name='job_list_with_detail'),
     path('job_detail/<int:job_id>/', views.job_detail, name='job_detail'),
 ]
 

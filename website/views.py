@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
-from website.models import Specialization, Test, job_detail
+from website.models import Specialization, Test, JobPosting
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LogoutView
@@ -118,10 +118,20 @@ def view_test_results(request):
 
 
 
-def job_list(request):
+# def job_list(request):
+#     job_postings = JobPosting.objects.all()
+#     return render(request, 'job_list.html', {'job_postings': job_postings})
+
+def job_list(request, job_id=None):
     job_postings = JobPosting.objects.all()
-    return render(request, 'job_list.html', {'job_postings': job_postings})
+    selected_job = None
+
+    if job_id:
+        selected_job = get_object_or_404(JobPosting, pk=job_id)
+
+    return render(request, 'job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
 
 def job_detail(request, job_id):
     job_posting = JobPosting.objects.get(pk=job_id)
     return render(request, 'job_detail.html', {'job_posting': job_posting})
+
