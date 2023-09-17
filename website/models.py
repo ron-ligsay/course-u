@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Specialization(models.Model):
@@ -25,3 +26,8 @@ class Test(models.Model):
 
     def __str__(self):
         return self.question
+
+# Optional if you want to add additional fields to the user model
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # Add additional fields as needed (e.g., profile picture, bio, etc.)
