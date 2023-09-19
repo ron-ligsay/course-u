@@ -14,18 +14,33 @@ class Specialization(models.Model):
     def __str__(self):
         return self.title
     
+# class Test(models.Model):
+#     question_id = models.AutoField(primary_key=True)
+#     question = models.CharField(max_length=1000)
+#     option1 = models.CharField(max_length=1000)
+#     option2 = models.CharField(max_length=1000)
+#     option3 = models.CharField(max_length=1000)
+#     option4 = models.CharField(max_length=1000)
+#     answer = models.CharField(max_length=1000)
+#     topic = models.CharField(max_length=1000)
+
+#     def __str__(self):
+#         return self.question
+
 class Test(models.Model):
     question_id = models.AutoField(primary_key=True)
     question = models.CharField(max_length=1000)
-    option1 = models.CharField(max_length=1000)
-    option2 = models.CharField(max_length=1000)
-    option3 = models.CharField(max_length=1000)
-    option4 = models.CharField(max_length=1000)
+    options = models.JSONField()  # Store options as a JSON field
     answer = models.CharField(max_length=1000)
     topic = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.question
+
+# class UserResponse(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Assuming user authentication is used
+#     question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
+#     selected_option = models.ForeignKey(AnswerOption, on_delete=models.CASCADE)
 
 # Optional if you want to add additional fields to the user model
 class UserProfile(models.Model):

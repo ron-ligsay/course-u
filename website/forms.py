@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-
+#from .models import UserResponse
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Email Address'}),max_length=100, required=True)
@@ -29,3 +29,19 @@ class SignUpForm(UserCreationForm):
         self.fields["password2"].widget.attrs['placeholder'] = 'Re-Password'
         self.fields["password2"].label = ""
         self.fields["password2"].help_text = "<span class='form-text text-muted'><small>Enter the same password as before, for verification.</small></span>"
+
+
+
+# class AnswerForm(forms.ModelForm):
+#     class Meta:
+#         model = Choice
+#         fields = ['question_id', 'question']
+#         widgets = {
+#             'question': forms.RadioSelect,  # Use radio buttons for multiple-choice questions
+#         }
+
+
+# class UserResponseForm(forms.ModelForm):
+#     class Meta:
+#         model = UserResponse
+#         fields = ['selected_option']

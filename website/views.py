@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import SignUpForm
+from website.forms import SignUpForm #UserResponseForm
 from website.models import Specialization, Test, JobPosting
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LogoutView
 from django.shortcuts import render
+import json
 
 # Create your views here.
 def home(request):
@@ -59,19 +60,69 @@ def test(request, pk):
     else:
         return redirect('home')
 
-def next_test(request, pk):
+# def next_test(request, pk):
+#     if request.user.is_authenticated:
+#         test = Test.objects.get(question_id=pk+1)
+#         return render(request, 'test.html', {'test': test})
+#     else:
+#         return redirect('home')
+
+# def prev_test(request, pk):
+#     if request.user.is_authenticated:
+#         test = Test.objects.get(question_id=pk-1)
+#         return render(request, 'test.html', {'test': test})
+#     else:
+#         return redirect('home')
+    
+
+def next_test(request, question_id):
     if request.user.is_authenticated:
-        test = Test.objects.get(question_id=pk+1)
-        return render(request, 'test.html', {'test': test})
+        try:
+            question = Test.objects.get(question_id=question_id+ 1)
+            options = question.options
+            return render(request, 'test_page.html', {'question': question, 'options': options})
+        except Test.DoesNotExist:
+            # Handle the case where there is no next question
+            messages.success(request, 'You have completed the test')
+            return redirect('home')
     else:
         return redirect('home')
 
-def prev_test(request, pk):
+def prev_test(request, question_id):
     if request.user.is_authenticated:
-        test = Test.objects.get(question_id=pk-1)
-        return render(request, 'test.html', {'test': test})
+        if question_id > 1:
+            question = Test.objects.get(question_id=question_id - 1)
+            options = question.options
+            return render(request, 'test_page.html',{'question': question, 'options': options})
+        else:
+            # Handle the case where there is no previous question
+            messages.success(request, 'You have reached the first question')
+            return redirect('home')
     else:
         return redirect('home')
+
+# def test_page(request, test_id):
+#     test = Test.objects.get(pk=test_id)
+#     questions = Question.objects.filter(test=test)
+
+#     if request.method == 'POST':
+#         form = UserResponseForm(request.POST)
+#         if form.is_valid():
+#             user_response = form.save(commit=False)
+#             user_response.user = request.user  # Set the user for the response
+#             user_response.save()
+#             return redirect('test_page', test_id=test_id)  # Redirect to the same page to continue the test
+#     else:
+#         form = UserResponseForm()
+
+#     return render(request, 'test/test_page.html', {'test': test, 'questions': questions, 'form': form})
+
+def display_question(request, question_id):
+    question = Test.objects.get(pk=question_id)
+    options = question.options
+    
+    return render(request, 'test_page.html', {'question': question, 'options': options})
+
 
 @login_required  # Ensure that the user is logged in to access the profile
 def user_profile(request):

@@ -1,0 +1,41 @@
+{% extends 'base_user.html' %}
+
+{% block title %}Test Page{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="container">
+  <h2>{{ question.question }}</h2>
+  <form method="post">
+      {% csrf_token %}
+      {% for option in question.options %}
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="selected_option" id="option{{ forloop.counter }}" value="{{ option }}">
+              <label class="form-check-label" for="option{{ forloop.counter }}">
+                  {{ option }}
+              </label>
+          </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+    <!-- Navigation buttons -->
+    <a href="{% url 'prev_test' question_id=question.question_id %}" class="btn btn-secondary">Previous</a>
+    <a href="{% url 'next_test' question_id=question.question_id %}" class="btn btn-secondary">Next</a>
+  </div>
+    
+{% else %}
+<!-- 
+<div class="col-md-6 offset-md-3">
+    <br><br><br>
+    <h3 class="">You need to login first</h3>
+    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
+</div> -->
+
+{% endif %}
+
+
+
+{% endblock content %}
+```

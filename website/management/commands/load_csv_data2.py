@@ -28,11 +28,16 @@ class Command(BaseCommand):
         #         'model_name': 'Test',
         #         'columns': ['question_id', 'question','option1','option2','option3','option4','answer','topic',]
         #     },
-             base_dir + '\\job_post_scrapy\\jobs\\jobs_clean.csv': {
-                'table_name': 'website_jobposting',
-                'model_name': 'JobPosting',
-                #link,keyword,title,company,company_link,date,link_clean,id
-                'columns': ['link','keyword','title','company','company_link','date','link_clean','id']
+            # base_dir + '\\job_post_scrapy\\jobs\\jobs_clean.csv': {
+            #     'table_name': 'website_jobposting',
+            #     'model_name': 'JobPosting',
+            #     #link,keyword,title,company,company_link,date,link_clean,id
+            #     'columns': ['link','keyword','title','company','company_link','date','link_clean','id']
+            # },
+            base_dir + '\\static\\csv\\test_2.csv': {
+                'table_name': 'website_test',
+                'model_name': 'Test',
+                'columns':  ['question_id', 'question','options', 'answer','topic',]
             }
         }
         
