@@ -65,20 +65,6 @@ def test(request, pk):
     else:
         return redirect('home')
 
-# def next_test(request, pk):
-#     if request.user.is_authenticated:
-#         test = Test.objects.get(question_id=pk+1)
-#         return render(request, 'test.html', {'test': test})
-#     else:
-#         return redirect('home')
-
-# def prev_test(request, pk):
-#     if request.user.is_authenticated:
-#         test = Test.objects.get(question_id=pk-1)
-#         return render(request, 'test.html', {'test': test})
-#     else:
-#         return redirect('home')
-    
 
 def next_test(request, question_id):
     if request.user.is_authenticated:
@@ -109,7 +95,12 @@ def prev_test(request, question_id):
 def display_question(request, question_id):
     question = Test.objects.get(pk=question_id)
     options = question.options
-    
+    # Check if the user has already answered this question in the session
+    user_response_key = f'user_response_{question_id}'
+    if user_response_key in request.session:
+        # The user has answered this question before
+        selected_option_index = request.session[user_response_key]
+        return render(request, 'test_page.html', {'question': question, 'options': options, 'selected_option_index': selected_option_index})
     return render(request, 'test_page.html', {'question': question, 'options': options})
 
 def submit_question(request, question_id):
@@ -119,6 +110,12 @@ def submit_question(request, question_id):
         if request.method == 'POST':
             print("Form submitted via POST request")  # Print when the form is submitted
             form = UserResponseForm(request.POST)
+            selected_option = request.POST.get('selected_option')
+            if selected_option is not None:
+                # Store the user's answer in the session
+                user_response_key = f'user_response_{question_id}'
+                request.session[user_response_key] = int(selected_option)  # Convert to integer
+            
             if form.is_valid():
                 print("Form is valid") 
                 selected_option = form.cleaned_data['selected_option']
@@ -156,8 +153,6 @@ def submit_question(request, question_id):
     else:
         print("User not authenticated or error occurred")
         return redirect('home')
-    print("User not authenticated or error occurred_2")
-    return HttpResponse("Error: Unable to submit the question.")
 
 
 # def test_page(request, test_id):

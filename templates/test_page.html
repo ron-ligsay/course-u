@@ -18,22 +18,22 @@
         {% csrf_token %}
         <div class="form-check">
             <label>
-                <input type="radio" name="selected_option" value="0">
+                <input type="radio" name="selected_option" value="0" {% if selected_option_index == 0 %}checked{% endif %}>
                 {{ question.options.0 }}
             </label><br>
 
             <label>
-                <input type="radio" name="selected_option" value="1">
+                <input type="radio" name="selected_option" value="1" {% if selected_option_index == 0 %}checked{% endif %}>
                 {{ question.options.1 }}
             </label><br>
 
             <label>
-                <input type="radio" name="selected_option" value="2">
+                <input type="radio" name="selected_option" value="2" {% if selected_option_index == 0 %}checked{% endif %}>
                 {{ question.options.2 }}
             </label><br>
 
             <label>
-                <input type="radio" name="selected_option" value="3">
+                <input type="radio" name="selected_option" value="3" {% if selected_option_index == 0 %}checked{% endif %}>
                 {{ question.options.3 }}
             </label><br>
 
