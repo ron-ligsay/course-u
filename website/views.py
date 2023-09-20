@@ -69,20 +69,28 @@ def test_home(request):
     return render(request, 'test_home.html')
 
 def test_overview(request):
-    user = request.user  # Get the current user
-    #question_sets = QuestionSet.objects.filter(user=user).all()  # Retrieve question sets for the user
-    # retrieve session 
-    test_started = request.session.get('test_started', False)  # Use parentheses here
+    user = request.user
 
-    if test_started:
-        question_set_id = request.session.get('question_set_id')
-        question_set = request.session.get('question_set')
-        questions_answered = request.session.get('questions_answered')
+    # Retrieve the current session's question set
+    question_set_id = request.session.get('question_set_id')
+    #question_set = QuestionSet.objects.get(set_id=question_set_id)
+    question_set = request.session.get('question_set', [])
 
-        return render(request, 'test_overview.html', {'question_set_id': question_set_id, 'question_set': question_set, 'questions_answered': questions_answered})
-    else:
-        # Handle the case where there is no active question set
-        return render(request, 'home.html')
+    # Retrieve the user's responses for the current question set
+    user_responses = UserResponse.objects.filter(set_id=question_set_id)
+
+    # Create a dictionary to store question info and its answered status
+    question_info = []
+
+    # Iterate through the questions in the current question set
+    for question in question_set:
+        # Check if the user has answered this question
+        has_answered = user_responses.filter(question=question).exists()
+        question = Test.objects.get(pk=question)
+        # Create a dictionary with question and answered status
+        question_info.append({'question': question, 'has_answered': has_answered})
+
+    return render(request, 'test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info})
 
 
 def next_test(request, question_id):
@@ -269,7 +277,9 @@ def submit_test(request):
             del request.session['question_set']
             del request.session['questions_answered']
 
-    return render(request, 'submit_test.html')
+        messages.success(request, 'You have completed the test')
+    # report page
+    return redirect('home')
 
 
 def view_test_results(request):
