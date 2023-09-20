@@ -77,6 +77,10 @@ TEMPLATES = [
     },
 ]
 
+INTERNAL_IPS= [
+    '127.0.0.1',
+]
+
 WSGI_APPLICATION = 'course_u.wsgi.application'
 
 
