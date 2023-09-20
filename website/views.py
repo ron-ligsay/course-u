@@ -75,64 +75,159 @@ def test_home(request):
 #     else:
 #         return redirect('home')
 
-def start_test(request):
+# def start_test(request):
     
-    request.session['test_started'] = True
-    q_set = QuestionSet.objects.all()
-    print(q_set)
-    last_set = q_set.last()
-    #request.session['question_set_id'] = create_question_set(request)
-    print("section _1")
-    request.session['question_set_id'] = last_set.set_id
-    request.session['question_set'] = get_test_questions(x=5)
-    request.session['questions_answered'] = 0
-    print("section_2")
-    question = request.session['question_set']
-    first_question = question.first()
-    print("section _3")
-    #return render(request, 'test_page.html', {'question': first_question})
-    return redirect('display_question', question_id=first_question.question_id)
+#     request.session['test_started'] = True
+#     q_set = QuestionSet.objects.all()
+#     print(q_set)
+#     last_set = q_set.last()
+#     #request.session['question_set_id'] = create_question_set(request)
+#     print("section _1")
+#     request.session['question_set_id'] = last_set.set_id
+#     request.session['question_set'] = get_test_questions(x=5)
+#     request.session['questions_answered'] = 0
+#     print("section_2")
+#     question = request.session['question_set']
+#     first_question = question.first()
+#     print("section _3")
+#     #return render(request, 'test_page.html', {'question': first_question})
+#     return redirect('display_question', question_id=first_question.question_id)
 
+# def test_overview(request):
+#     user = request.user  # Get the current user
+#     #question_sets = QuestionSet.objects.filter(user=user).all()  # Retrieve question sets for the user
+#     # retrieve session 
+#     test_started = request.session.get['test_started']
+#     if test_started:
+#         question_set_id = request.session['question_set_id']
+#         question_set = request.session['question_set']
+#         questions_answered = request.session['questions_answered']
+
+#         return render(request, 'test_overview.html', {'question_set_id': question_set_id, 'question_set': question_set, 'questions_answered': questions_answered})
+#     else:
+#         # Handle the case where there is no active question set
+#         return render(request, 'home.html')
 def test_overview(request):
     user = request.user  # Get the current user
     #question_sets = QuestionSet.objects.filter(user=user).all()  # Retrieve question sets for the user
     # retrieve session 
-    test_started = request.session.get['test_started']
+    test_started = request.session.get('test_started', False)  # Use parentheses here
+
     if test_started:
-        question_set_id = request.session['question_set_id']
-        question_set = request.session['question_set']
-        questions_answered = request.session['questions_answered']
+        question_set_id = request.session.get('question_set_id')
+        question_set = request.session.get('question_set')
+        questions_answered = request.session.get('questions_answered')
 
         return render(request, 'test_overview.html', {'question_set_id': question_set_id, 'question_set': question_set, 'questions_answered': questions_answered})
     else:
         # Handle the case where there is no active question set
         return render(request, 'home.html')
 
+
+# def next_test(request, question_id):
+#     if request.user.is_authenticated:
+#         try:
+#             question = Test.objects.get(question_id=question_id+ 1)
+#             options = question.options
+#             return render(request, 'test_page.html', {'question': question, 'options': options})
+#         except Test.DoesNotExist:
+#             # Handle the case where there is no next question
+#             messages.success(request, 'You have completed the test')
+#             return redirect('home')
+#     else:
+#         return redirect('home')
+
+# def prev_test(request, question_id):
+#     if request.user.is_authenticated:
+#         if question_id > 1:
+#             question = Test.objects.get(question_id=question_id - 1)
+#             options = question.options
+#             return render(request, 'test_page.html',{'question': question, 'options': options})
+#         else:
+#             # Handle the case where there is no previous question
+#             messages.success(request, 'You have reached the first question')
+#             return redirect('home')
+#     else:
+#         return redirect('home')
+
+# def next_test(request, question_id):
+#     if not request.user.is_authenticated:
+#         return redirect('home')
+
+#     try:
+#         #question = Test.objects.get(question_id=question_id + 1)
+#         questions = request.session.get('question_set')
+#         question = questions[question_id + 1]
+#     except Test.DoesNotExist:
+#         messages.success(request, 'You have completed the test')
+#         return redirect('test_overview')
+
+#     #options = question.options
+#     return render(request, 'test_page.html', {'question': question})#, 'options': options
 def next_test(request, question_id):
-    if request.user.is_authenticated:
-        try:
-            question = Test.objects.get(question_id=question_id+ 1)
-            options = question.options
-            return render(request, 'test_page.html', {'question': question, 'options': options})
-        except Test.DoesNotExist:
-            # Handle the case where there is no next question
-            messages.success(request, 'You have completed the test')
-            return redirect('home')
-    else:
+    if not request.user.is_authenticated:
         return redirect('home')
 
-def prev_test(request, question_id):
-    if request.user.is_authenticated:
-        if question_id > 1:
-            question = Test.objects.get(question_id=question_id - 1)
-            options = question.options
-            return render(request, 'test_page.html',{'question': question, 'options': options})
+    try:
+        question_set = request.session.get('question_set')
+        question = get_object_or_404(Test, question_id=question_id + 1)
+        #if question not in question_set:
+        #    raise Test.DoesNotExist
+
+        if question_id + 1 < len(question_set):
+            #options = question.options
+            return render(request, 'test_page.html', {'question': question})
+        if question_id + 1 == len(question_set):
+            # This is the last question
+            messages.success(request, 'You have completed the test')
+            return redirect('test_overview')
         else:
-            # Handle the case where there is no previous question
-            messages.success(request, 'You have reached the first question')
+            # Handle the case where the next question is out of bounds
+            messages.success(request, 'You have completed the test')
             return redirect('home')
-    else:
+
+    except: #Test.DoesNotExist:
+        messages.success(request, 'You have completed the test')
+        return redirect('test_overview')
+
+    #options = question.options
+    return render(request, 'test_page.html', {'question': question})#, 'options': options
+# def prev_test(request, question_id):
+#     if not request.user.is_authenticated:
+#         return redirect('home')
+
+#     if question_id <= 1:
+#         messages.success(request, 'You have reached the first question')
+#         return redirect('home')
+
+#     #question = get_object_or_404(Test, question_id=question_id - 1)
+#     questions = request.session.get('question_set')
+#     question = questions.get(question_id=question_id - 1)
+#     options = question.options
+#     return render(request, 'test_page.html', {'question': question, 'options': options})
+def prev_test(request, question_id):
+    if not request.user.is_authenticated:
         return redirect('home')
+
+    if question_id <= 1:
+        messages.success(request, 'You have reached the first question')
+        return redirect('test_overview')
+
+    questions = request.session.get('question_set')
+    
+    # Ensure that the question_id is within a valid range
+    if 1 <= question_id - 1 < len(questions):
+        question = get_object_or_404(Test, question_id=question_id - 1)
+        #question = questions[question_id - 2]  # Subtract 2 to get the previous question
+        #options = question.options
+        return render(request, 'test_page.html', {'question': question})#, 'options': options
+    else:
+        # Handle the case where the previous question is out of bounds
+        messages.success(request, 'You have reached the first question')
+        return redirect('home')
+
+
+
 
 # def display_question(request, question_id):
 #     question = Test.objects.get(pk=question_id)
@@ -145,19 +240,73 @@ def prev_test(request, question_id):
 #         return render(request, 'test_page.html', {'question': question, 'options': options, 'selected_option_index': selected_option_index})
 #     return render(request, 'test_page.html', {'question': question, 'options': options})
 
+# def display_question(request, question_id):
+#     print("display question")
+#     question_set = request.question_set
+#     question = question_set.get(pk=question_id)
+#     options = question.options
+#     # Check if the user has already answered this question in the session
+#     user_response_key = f'user_response_{question_id}'
+#     if user_response_key in request.session:
+#         print("user response key")
+#         # The user has answered this question before
+#         selected_option_index = request.session[user_response_key]
+#         return render(request, 'test_page.html', {'question': question, 'options': options, 'selected_option_index': selected_option_index})
+#     return render(request, 'test_page.html', {'question': question, 'options': options})
+
+
+def start_test(request):
+    request.session['test_started'] = True
+
+    # Retrieve the last question set
+    last_set = QuestionSet.objects.last()
+
+    if last_set:
+        # Store the question set ID in the session
+        request.session['question_set_id'] = last_set.set_id
+
+        # Retrieve the questions for the question set
+        question_set = get_test_questions(x=5)  # Modify this function to filter questions based on the set
+        question_ids = question_set.values_list('question_id', flat=True)
+
+        # Store the question IDs in the session
+        request.session['question_set'] = list(question_ids)
+        request.session['questions_answered'] = 0
+        request.session['n_questions'] = len(question_ids)
+        # Redirect to the first question
+        return redirect('display_question', question_id=question_ids[0])
+    else:
+        # Handle the case where there's no question set
+        return HttpResponse("No question set available.")
+
 def display_question(request, question_id):
-    print("display question")
-    question_set = request.question_set
-    question = question_set.get(pk=question_id)
-    options = question.options
-    # Check if the user has already answered this question in the session
-    user_response_key = f'user_response_{question_id}'
-    if user_response_key in request.session:
-        print("user response key")
-        # The user has answered this question before
-        selected_option_index = request.session[user_response_key]
-        return render(request, 'test_page.html', {'question': question, 'options': options, 'selected_option_index': selected_option_index})
-    return render(request, 'test_page.html', {'question': question, 'options': options})
+    # Retrieve the question set and answered questions from the session
+    question_set_id = request.session.get('question_set_id')
+    question_ids = request.session.get('question_set', [])
+    #questions_answered = request.session.get('questions_answered', 0)
+
+    if not question_set_id:
+        # Handle the case where the question set ID is not found in the session
+        return HttpResponse("No question set ID found in the session.")
+
+    if not question_ids:
+        # Handle the case where the list of question IDs is not found in the session
+        return HttpResponse("No question IDs found in the session.")
+
+    if not question_id:
+        # Handle the case where the question ID is not provided
+        return HttpResponse("No question ID provided.")
+
+    if int(question_id) not in question_ids:
+        # Handle the case where the provided question ID is not in the list of question IDs
+        return HttpResponse("Invalid question ID provided.")
+
+    # Retrieve the question based on the provided question ID
+    question = get_test_question_by_id(question_id)
+
+    # Render the question page with the question and question set information
+    return render(request, 'test_page.html', {'question': question, 'question_set_id': question_set_id})#, 'questions_answered': questions_answered
+
 
 # def submit_question(request, question_id):
 #     if request.user.is_authenticated:
@@ -209,55 +358,113 @@ def display_question(request, question_id):
 #     else:
 #         print("User not authenticated or error occurred")
 #         return redirect('home')
+# def submit_question(request, question_id):
+#     if request.user.is_authenticated:
+#         question = get_object_or_404(Test, pk=question_id)
+#         print("View called with question_id:", question_id, 'and question:', question)
+#         if request.method == 'POST':
+#             print("Form submitted via POST request")  # Print when the form is submitted
+#             form = UserResponseForm(request.POST)
+#             selected_option = request.POST.get('selected_option')
+#             if selected_option is not None:
+#                 # Store the user's answer in the session
+#                 user_response_key = f'user_response_{question_id}'
+#                 request.session[user_response_key] = int(selected_option)  # Convert to integer
+            
+#             if form.is_valid():
+#                 print("Form is valid") 
+#                 selected_option = form.cleaned_data['selected_option']
+#                 print('Selected option:', selected_option)
+#                 is_correct = (selected_option == question.correct_option)
+#                 user_response = form.save(commit=False)
+#                 user_response.user = request.user
+#                 user_response.question = question
+#                 user_response.is_correct = is_correct
+#                 user_response.save()
+
+#                 # Redirect to the next question or a completion page
+#                 next_question_id = question_id + 1
+#                 try:
+#                     next_question = Test.objects.get(pk=next_question_id)
+#                     options = next_question.options
+#                     print("Next question retrieved:", next_question)
+#                     return render(request, 'test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+#                 except Test.DoesNotExist:
+#                     # Handle the case where there is no next question
+#                     messages.success(request, 'You have completed the test')
+#                     print("No next question found")
+#                     return redirect('home')
+#             else:
+#                 print("Form is invalid")
+#                 print(form.errors)
+#                 form = UserResponseForm()
+#                 options = question.options
+#                 # Display the question and form again with validation errors
+#                 return render(request, 'test_page.html', {'question': question, 'options': options, 'form': form})
+#         else:
+#             # Display the question and form for the first time
+#             options = question.options
+#             return render(request, 'test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
+#     else:
+#         print("User not authenticated or error occurred")
+#         return redirect('home')
+
 def submit_question(request, question_id):
     if request.user.is_authenticated:
-        question = get_object_or_404(Test, pk=question_id)
-        print("View called with question_id:", question_id, 'and question:', question)
+        question = get_object_or_404(Test, question_id=question_id)
+        user_response_key = f'user_response_{question_id}'
         if request.method == 'POST':
-            print("Form submitted via POST request")  # Print when the form is submitted
             form = UserResponseForm(request.POST)
             selected_option = request.POST.get('selected_option')
             if selected_option is not None:
                 # Store the user's answer in the session
-                user_response_key = f'user_response_{question_id}'
-                request.session[user_response_key] = int(selected_option)  # Convert to integer
-            
+                request.session[user_response_key] = int(selected_option)
+
             if form.is_valid():
-                print("Form is valid") 
                 selected_option = form.cleaned_data['selected_option']
-                print('Selected option:', selected_option)
                 is_correct = (selected_option == question.correct_option)
-                user_response = form.save(commit=False)
-                user_response.user = request.user
-                user_response.question = question
-                user_response.is_correct = is_correct
-                user_response.save()
+
+                # Check if a UserResponse with the same question_id and set_id exists
+                set_id = request.session.get('question_set_id')
+                existing_response = UserResponse.objects.filter(
+                    question=question,
+                    set_id=set_id,
+                ).first()
+
+                if existing_response:
+                    # If an existing response is found, update it
+                    existing_response.selected_option = selected_option
+                    existing_response.is_correct = is_correct
+                    existing_response.save()
+                else:
+                    # Otherwise, create a new UserResponse object
+                    UserResponse.objects.create(
+                        #user=request.user,
+                        question=question,
+                        selected_option=selected_option,
+                        is_correct=is_correct,
+                        set_id=set_id
+                    )
 
                 # Redirect to the next question or a completion page
                 next_question_id = question_id + 1
                 try:
                     next_question = Test.objects.get(pk=next_question_id)
                     options = next_question.options
-                    print("Next question retrieved:", next_question)
                     return render(request, 'test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
                 except Test.DoesNotExist:
                     # Handle the case where there is no next question
                     messages.success(request, 'You have completed the test')
-                    print("No next question found")
                     return redirect('home')
             else:
-                print("Form is invalid")
-                print(form.errors)
-                form = UserResponseForm()
-                options = question.options
                 # Display the question and form again with validation errors
+                options = question.options
                 return render(request, 'test_page.html', {'question': question, 'options': options, 'form': form})
         else:
             # Display the question and form for the first time
             options = question.options
             return render(request, 'test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
     else:
-        print("User not authenticated or error occurred")
         return redirect('home')
 
 def submit_test(request):

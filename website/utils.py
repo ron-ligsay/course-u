@@ -32,3 +32,5 @@ def create_question_set(request):
         new_question_set_id = last_question_set_id + 1
     return new_question_set_id
 
+def get_test_question_by_id(question_id):
+    return Test.objects.get(question_id=question_id)
