@@ -45,7 +45,7 @@ class Test(models.Model):
 #     selected_option = models.ForeignKey(AnswerOption, on_delete=models.CASCADE)
 
 class UserResponse(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Test, on_delete=models.CASCADE) 
     selected_option = models.IntegerField() # Index of the selected option in the options list
     is_correct = models.BooleanField()

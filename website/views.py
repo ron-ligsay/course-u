@@ -159,6 +159,7 @@ def submit_question(request, question_id):
     print("User not authenticated or error occurred_2")
     return HttpResponse("Error: Unable to submit the question.")
 
+
 # def test_page(request, test_id):
 #     test = Test.objects.get(pk=test_id)
 #     questions = Question.objects.filter(test=test)

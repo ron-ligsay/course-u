@@ -24,7 +24,7 @@ def create_database_and_load_sql(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('website', '0001_initial')
+        
     ]
 
     operations = [
