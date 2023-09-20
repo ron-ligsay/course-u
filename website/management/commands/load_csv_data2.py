@@ -37,7 +37,7 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\test_2.csv': {
                 'table_name': 'website_test',
                 'model_name': 'Test',
-                'columns':  ['question_id', 'question','options', 'answer','topic',]
+                'columns':  ['question_id', 'topic','question','description','options', 'correct_option',]
             }
         }
         

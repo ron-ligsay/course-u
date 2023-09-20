@@ -29,10 +29,12 @@ class Specialization(models.Model):
 
 class Test(models.Model):
     question_id = models.AutoField(primary_key=True)
-    question = models.CharField(max_length=1000)
-    options = models.JSONField()  # Store options as a JSON field
-    answer = models.CharField(max_length=1000)
     topic = models.CharField(max_length=1000)
+    question = models.CharField(max_length=1000)
+    description = models.CharField(max_length=1000)
+    options = models.JSONField()  # Store options as a JSON field
+    #answer = models.CharField(max_length=1000)
+    correct_option = models.IntegerField() # Index of the correct option in the options list
 
     def __str__(self):
         return self.question
@@ -41,6 +43,17 @@ class Test(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Assuming user authentication is used
 #     question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
 #     selected_option = models.ForeignKey(AnswerOption, on_delete=models.CASCADE)
+
+class UserResponse(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    question = models.ForeignKey(Test, on_delete=models.CASCADE) 
+    selected_option = models.IntegerField() # Index of the selected option in the options list
+    is_correct = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.user.username}'s response to {self.question.question}"
+    class Meta:
+        unique_together = ('user', 'question')  # Ensure each user can respond to a question only once
 
 # Optional if you want to add additional fields to the user model
 class UserProfile(models.Model):

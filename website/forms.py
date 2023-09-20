@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-#from .models import UserResponse
+from website.models import UserResponse
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Email Address'}),max_length=100, required=True)
@@ -45,3 +45,9 @@ class SignUpForm(UserCreationForm):
 #     class Meta:
 #         model = UserResponse
 #         fields = ['selected_option']
+
+class UserResponseForm(forms.ModelForm):
+    selected_option = forms.IntegerField()
+    class Meta:
+        model = UserResponse
+        fields = ['selected_option']  # Include only the selected_option field

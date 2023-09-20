@@ -1,13 +1,18 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from website.forms import SignUpForm #UserResponseForm
+from website.forms import SignUpForm, UserResponseForm
 from website.models import Specialization, Test, JobPosting
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LogoutView
 from django.shortcuts import render
 import json
+from django.http import HttpResponse 
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def home(request):
@@ -101,6 +106,59 @@ def prev_test(request, question_id):
     else:
         return redirect('home')
 
+def display_question(request, question_id):
+    question = Test.objects.get(pk=question_id)
+    options = question.options
+    
+    return render(request, 'test_page.html', {'question': question, 'options': options})
+
+def submit_question(request, question_id):
+    if request.user.is_authenticated:
+        question = get_object_or_404(Test, pk=question_id)
+        print("View called with question_id:", question_id, 'and question:', question)
+        if request.method == 'POST':
+            print("Form submitted via POST request")  # Print when the form is submitted
+            form = UserResponseForm(request.POST)
+            if form.is_valid():
+                print("Form is valid") 
+                selected_option = form.cleaned_data['selected_option']
+                print('Selected option:', selected_option)
+                is_correct = (selected_option == question.correct_option)
+                user_response = form.save(commit=False)
+                user_response.user = request.user
+                user_response.question = question
+                user_response.is_correct = is_correct
+                user_response.save()
+
+                # Redirect to the next question or a completion page
+                next_question_id = question_id + 1
+                try:
+                    next_question = Test.objects.get(pk=next_question_id)
+                    options = next_question.options
+                    print("Next question retrieved:", next_question)
+                    return render(request, 'test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+                except Test.DoesNotExist:
+                    # Handle the case where there is no next question
+                    messages.success(request, 'You have completed the test')
+                    print("No next question found")
+                    return redirect('home')
+            else:
+                print("Form is invalid")
+                print(form.errors)
+                form = UserResponseForm()
+                options = question.options
+                # Display the question and form again with validation errors
+                return render(request, 'test_page.html', {'question': question, 'options': options, 'form': form})
+        else:
+            # Display the question and form for the first time
+            options = question.options
+            return render(request, 'test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
+    else:
+        print("User not authenticated or error occurred")
+        return redirect('home')
+    print("User not authenticated or error occurred_2")
+    return HttpResponse("Error: Unable to submit the question.")
+
 # def test_page(request, test_id):
 #     test = Test.objects.get(pk=test_id)
 #     questions = Question.objects.filter(test=test)
@@ -117,11 +175,6 @@ def prev_test(request, question_id):
 
 #     return render(request, 'test/test_page.html', {'test': test, 'questions': questions, 'form': form})
 
-def display_question(request, question_id):
-    question = Test.objects.get(pk=question_id)
-    options = question.options
-    
-    return render(request, 'test_page.html', {'question': question, 'options': options})
 
 
 @login_required  # Ensure that the user is logged in to access the profile

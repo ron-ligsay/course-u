@@ -1,23 +1,23 @@
-question_id,question,options,answer,topic
-1,What is the capital of France?,"[""Paris"", ""London"", ""Berlin"", ""Madrid""]",Paris,Personality
-2,What is 2 + 2?,"[1, 2, 3, 4]",4,Personality
-3,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",1,Personality
-4,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-5,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",3,Personality
-6,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",4,Personality
-7,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-8,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",1,Personality
-9,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",4,Personality
-10,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-11,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-12,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",3,Personality
-13,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",4,Personality
-14,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",1,Personality
-15,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-16,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",3,Personality
-17,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",1,Personality
-18,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-19,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",3,Personality
-20,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",1,Personality
-21,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",2,Personality
-22,What is 2 + 2?,"[""1"", ""2"", ""3"", ""4""]",3,Personality
+question_id,topic,question,Description,options,correct_option
+1,Personality,What is the capital of France?,Select one option you think is right.,"[""Paris"", ""London"", ""Berlin"", ""Madrid""]",0
+2,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",0
+3,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",1
+4,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+5,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",3
+6,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",0
+7,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+8,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",1
+9,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",0
+10,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+11,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+12,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",3
+13,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",0
+14,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",1
+15,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+16,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",3
+17,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",1
+18,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+19,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",3
+20,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",1
+21,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",2
+22,Personality,What is 2 + 2?,Select one option you think is right.,"[""1"", ""2"", ""3"", ""4""]",3
