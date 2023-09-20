@@ -1,37 +1,34 @@
 
 from website.models import Test
+from django.contrib.sessions.models import Session
 
-"""
-    Retrieve data rows from the 'Test' table within the specified question ID range and topic (optional).
+question_set_id = 0
 
-    Args:
-        
-        if x is only given then return all questions from 0 to x
 
-        if with x and y then return all questions from x to y
-        x (int): The starting question ID.
-        y (int): The ending question ID.
-        
-        topic (str, optional): The topic to filter by.
 
-    Returns:
-        QuerySet: A QuerySet containing the filtered data rows.
-    """
-def get_test_questions():
-    queryset = Test.objects.all()
-    return queryset
+def get_test_questions(x=None, y=None, topic=None):
+    
+    if x is not None:
+        if y is not None:
+            queryset = Test.objects.filter(question_id__gte=x, question_id__lte=y)
+        else:
+            queryset = Test.objects.filter(question_id__gte=0, question_id__lte=x)
+    else:
+        queryset = Test.objects.all()
 
-def get_test_questions(x):
-    queryset = Test.objects.filter(question_id__gete=0, question_id__lte=x)
-    return queryset
-
-def get_test_questions(x, y):
-    queryset = Test.objects.filter(question_id__gete=x, question_id__lte=y)
-    return queryset
-
-def get_test_questions(x, y, topic=None):
-    queryset = Test.objects.filter(question_id__gete=x, question_id__lte=y)
     if topic:
         queryset = queryset.filter(topic=topic)
     return queryset
+
+def create_question_set(request):
+    # get last question_set_id
+    #last_question_set_id = QuestionSet.objects.last().set_id
+    question_set = request.session.get['question_set']
+    last_question_set_id = question_set.objects.last().set_id
+    # create new question_set_id
+    if last_question_set_id is None:
+        new_question_set_id = 1
+    else:
+        new_question_set_id = last_question_set_id + 1
+    return new_question_set_id
 
