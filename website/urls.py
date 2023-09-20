@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
+import debug_toolbar
 from . import views
 from django.contrib.auth.views import LogoutView
 # import datetime and timezone
@@ -23,7 +24,7 @@ from django.utils import timezone
 
 urlpatterns = [
     path('', views.home, name='home'),
-
+    path('__debug__/',include('debug_toolbar.urls')),
     # For quaries testing
     path("test_query/", views.test_query, name="test_query"),
 
