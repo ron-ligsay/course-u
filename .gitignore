@@ -32,6 +32,8 @@ local_settings.py
 
 # Ignore Python bytecode cache files
 __pycache__/
+website/__pycache__/
+website/migrations/__pycache__/
 
 # Ignore any other temporary or generated files
 __pycache__/
