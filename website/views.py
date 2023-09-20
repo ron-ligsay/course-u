@@ -58,6 +58,16 @@ def forgot_password(request):
 def recovery(request):
     return render(request, 'recovery.html')
 
+
+#########################################################################
+# ----------------------------for job--------------------------------- #
+#########################################################################
+
+def test_home(request):
+    return render(request, 'test_home.html')
+
+
+
 def test(request, pk):
     if request.user.is_authenticated:
         test = Test.objects.get(question_id=pk)
@@ -155,6 +165,11 @@ def submit_question(request, question_id):
         return redirect('home')
 
 
+
+def view_test_results(request):
+    return render(request, 'test_home.html')
+
+
 # def test_page(request, test_id):
 #     test = Test.objects.get(pk=test_id)
 #     questions = Question.objects.filter(test=test)
@@ -171,7 +186,9 @@ def submit_question(request, question_id):
 
 #     return render(request, 'test/test_page.html', {'test': test, 'questions': questions, 'form': form})
 
-
+#########################################################################
+# ----------------------------for job--------------------------------- #
+#########################################################################
 
 @login_required  # Ensure that the user is logged in to access the profile
 def user_profile(request):
@@ -208,16 +225,11 @@ class CustomLogoutView(LogoutView):
         # You can add additional logic here if required
         return next_page
 
-def test_home(request):
-    return render(request, 'test_home.html')
 
 
-def view_test_results(request):
-    return render(request, 'test_home.html')
-
-
-
-
+#########################################################################
+# ----------------------------for job--------------------------------- #
+#########################################################################
 # def job_list(request):
 #     job_postings = JobPosting.objects.all()
 #     return render(request, 'job_list.html', {'job_postings': job_postings})
@@ -234,6 +246,11 @@ def job_list(request, job_id=None):
 def job_detail(request, job_id):
     job_posting = JobPosting.objects.get(pk=job_id)
     return render(request, 'job_detail.html', {'job_posting': job_posting})
+
+#########################################################################
+# ----------------------------for job--------------------------------- #
+#########################################################################
+
 
 def specialization_page(request, item_id):
     # Retrieve the selected specialization item or return a 404 error if it doesn't exist
