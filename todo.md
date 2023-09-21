@@ -1,9 +1,10 @@
 # TODO
 
 - []: # Path: todo.
+- [ |-|x]: something
 
 ## Setups
--[]: Create a virtual environment
+-[]: Create a virtual environment [Course-u]
 
 ## Home Section
 - []: @ron-ligsay On Home Create a filter for Specialization on Page # Path: website/views.py
@@ -30,5 +31,5 @@
 
 
 # DONE
-- [x] Test System
-- [-] Declined 
+- [x] Test System #bug
+- [-] Declined  #feat @ron-ligsay 2023-01-01
