@@ -1,6 +1,6 @@
 # TODO
 
-- []: # Path: todo.
+- [ ]: # Path: todo.
 - [ |-|x]: something
 
 ## Setups
