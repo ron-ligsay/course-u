@@ -57,10 +57,7 @@ urlpatterns = [
     path('logout/', views.CustomLogoutView.as_view(), name='logout'),
     path('logout/success/', LogoutView.as_view(template_name='logout_success.html'), name='logout_success'),
     
-    # For job
-    path('job_list/', views.job_list, name='job_list'),
-    path('job_list/<int:job_id>/', views.job_list, name='job_list_with_detail'),
-    path('job_detail/<int:job_id>/', views.job_detail, name='job_detail'),
+
 
     # For Specialization
     path('specialization_page/<int:item_id>/', views.specialization_page, name='specialization_page'),
