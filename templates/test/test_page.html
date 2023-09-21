@@ -11,7 +11,7 @@
 
 {% if user.is_authenticated %}
 <div class="container">
-    <p>Question {{ question.question_id }} of {{ total_questions }}</p>
+    <p>Question {{ question.question_id }} of {{ question.n_question }}</p>
     <h2>{{ question.question }}</h2>
     <p>{{question.description}}</p>
     <form method="post" action="{% url 'submit_question' question_id=question.question_id %}">
