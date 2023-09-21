@@ -2,7 +2,9 @@
 
 - [ ]: # Path: todo.
 - [ |-|x]: something
-
+- [ ]: git rm <files> that are on the [.gitignore]
+- [ ]: creating a new users
+ 
 ## Setups
 -[]: Create a virtual environment [Course-u]
 
