@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'website',
     'recommender',
     'jobs',
+    'assessment',
     'debug_toolbar',
 ]
 
