@@ -2,9 +2,10 @@
 from website.models import Test
 from django.contrib.sessions.models import Session
 
-question_set_id = 0
 
-
+def logger(message):
+    print(message)
+    return
 
 def get_test_questions(x=None, y=None, topic=None):
     
