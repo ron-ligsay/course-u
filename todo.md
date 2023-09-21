@@ -4,7 +4,12 @@
 - [ |-|x]: something
 - [ ]: git rm <files> that are on the [.gitignore]
 - [ ]: creating a new users
- 
+- [ ]: utils folder, for recommendation system model, job_post_scrapy, static_website
+- [ ]: create submodules
+    - [ ]: for recommender system model
+    - [ ]: for job_post_scrapy
+
+
 ## Setups
 -[]: Create a virtual environment [Course-u]
 

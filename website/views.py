@@ -35,7 +35,7 @@ def login_user(request):
             messages.success(request, 'Error logging in')
             return redirect('login')
     else:
-        return render(request, 'login.html')
+        return render(request, 'user/login.html')
     
 def sign_in(request):
     if request.method == 'POST':
@@ -50,15 +50,15 @@ def sign_in(request):
             return redirect('home')
     else:
         form = SignUpForm()
-        return render(request, 'sign_in.html', {'form': form})
-    return render(request, 'sign_in.html', {'form': form})
+        return render(request, 'user/sign_in.html', {'form': form})
+    return render(request, 'user/sign_in.html', {'form': form})
 
 
 def forgot_password(request):
-    return render(request, 'forgot_password.html')
+    return render(request, 'user/forgot_password.html')
 
 def recovery(request):
-    return render(request, 'recovery.html')
+    return render(request, 'user/recovery.html')
 
 
 #########################################################################
@@ -66,7 +66,7 @@ def recovery(request):
 #########################################################################
 
 def test_home(request):
-    return render(request, 'test_home.html')
+    return render(request, 'test/test_home.html')
 
 def test_overview(request):
     user = request.user
@@ -90,7 +90,7 @@ def test_overview(request):
         # Create a dictionary with question and answered status
         question_info.append({'question': question, 'has_answered': has_answered})
 
-    return render(request, 'test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info})
+    return render(request, 'test/test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info})
 
 
 def next_test(request, question_id):
@@ -105,11 +105,11 @@ def next_test(request, question_id):
 
         if question_id + 1 < len(question_set):
             #options = question.options
-            return render(request, 'test_page.html', {'question': question})
+            return render(request, 'test/test_page.html', {'question': question})
         if question_id + 1 == len(question_set):
             # This is the last question
             messages.success(request, 'You have completed the test')
-            return redirect('test_overview')
+            return redirect('test/test_overview')
         else:
             # Handle the case where the next question is out of bounds
             messages.success(request, 'You have completed the test')
@@ -120,7 +120,7 @@ def next_test(request, question_id):
         return redirect('test_overview')
 
     #options = question.options
-    return render(request, 'test_page.html', {'question': question})#, 'options': options
+    return render(request, 'test/test_page.html', {'question': question})#, 'options': options
 
 def prev_test(request, question_id):
     if not request.user.is_authenticated:
@@ -137,7 +137,7 @@ def prev_test(request, question_id):
         question = get_object_or_404(Test, question_id=question_id - 1)
         #question = questions[question_id - 2]  # Subtract 2 to get the previous question
         #options = question.options
-        return render(request, 'test_page.html', {'question': question})#, 'options': options
+        return render(request, 'test/test_page.html', {'question': question})#, 'options': options
     else:
         # Handle the case where the previous question is out of bounds
         messages.success(request, 'You have reached the first question')
@@ -195,7 +195,7 @@ def display_question(request, question_id):
     question = get_test_question_by_id(question_id)
 
     # Render the question page with the question and question set information
-    return render(request, 'test_page.html', {'question': question, 'question_set_id': question_set_id})#, 'questions_answered': questions_answered
+    return render(request, 'test/test_page.html', {'question': question, 'question_set_id': question_set_id})#, 'questions_answered': questions_answered
 
 
 
@@ -241,7 +241,7 @@ def submit_question(request, question_id):
                 try:
                     next_question = Test.objects.get(pk=next_question_id)
                     options = next_question.options
-                    return render(request, 'test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+                    return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
                 except Test.DoesNotExist:
                     # Handle the case where there is no next question
                     messages.success(request, 'You have completed the test')
@@ -249,11 +249,11 @@ def submit_question(request, question_id):
             else:
                 # Display the question and form again with validation errors
                 options = question.options
-                return render(request, 'test_page.html', {'question': question, 'options': options, 'form': form})
+                return render(request, 'tes/test_page.html', {'question': question, 'options': options, 'form': form})
         else:
             # Display the question and form for the first time
             options = question.options
-            return render(request, 'test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
+            return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
     else:
         return redirect('home')
 
@@ -283,7 +283,7 @@ def submit_test(request):
 
 
 def view_test_results(request):
-    return render(request, 'test_home.html')
+    return render(request, 'test/test_home.html')
 
 
 
@@ -296,29 +296,29 @@ def user_profile(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
-    return render(request, 'user_profile.html', context)
+    return render(request, 'user/user_profile.html', context)
 
 
 def edit_profile(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
-    return render(request, 'user_profile.html', context)
+    return render(request, 'user/user_profile.html', context)
 
 def terms_and_conditions(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
-    return render(request, 'user_profile.html', context)
+    return render(request, 'user/user_profile.html', context)
 
 def settings(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
-    return render(request, 'user_profile.html', context)
+    return render(request, 'user/user_profile.html', context)
 
 class CustomLogoutView(LogoutView):
-    template_name = 'custom_logout.html'  # Optionally, specify a custom logout template
+    template_name = 'user/custom_logout.html'  # Optionally, specify a custom logout template
 
     def get_next_page(self):
         # Customize the redirection logic if needed
@@ -342,11 +342,11 @@ def job_list(request, job_id=None):
     if job_id:
         selected_job = get_object_or_404(JobPosting, pk=job_id)
 
-    return render(request, 'job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
+    return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
 
 def job_detail(request, job_id):
     job_posting = JobPosting.objects.get(pk=job_id)
-    return render(request, 'job_detail.html', {'job_posting': job_posting})
+    return render(request, 'job/job_detail.html', {'job_posting': job_posting})
 
 #########################################################################
 # ----------------------------for job--------------------------------- #
