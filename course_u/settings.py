@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
     'recommender',
+    'jobs',
     'debug_toolbar',
 ]
 
