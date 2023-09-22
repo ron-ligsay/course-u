@@ -2,10 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 
+
+TEST_TOPICS = (
+    ('Python', 'Python'),
+)
+
 # Create your models here.
 class Test(models.Model):
     question_id = models.AutoField(primary_key=True)
-    topic = models.CharField(max_length=1000)
+    topic = models.CharField(max_length=1000)# choices=TEST_TOPICS)
     question = models.CharField(max_length=1000)
     description = models.CharField(max_length=1000)
     options = models.JSONField()
