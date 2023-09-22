@@ -19,7 +19,7 @@ def create_database_and_load_sql(apps, schema_editor):
     # Execute the SQL statements
     with schema_editor.connection.cursor() as cursor:
         cursor.execute(sql_statements)
-
+    
 
 class Migration(migrations.Migration):
 
