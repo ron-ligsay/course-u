@@ -18,7 +18,7 @@ class Specialization(models.Model):
 
 
 # Optional if you want to add additional fields to the user model
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # Add additional fields as needed (e.g., profile picture, bio, etc.)
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     # Add additional fields as needed (e.g., profile picture, bio, etc.)
 

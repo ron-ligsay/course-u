@@ -17,3 +17,7 @@ class Command(BaseCommand):
 
         except Exception as e:
             CommandError(repr(e))
+
+# django command to save mysql db to json files
+# Path: website/management/commands/save_tables_to_json.py
+# cmd command to run: python manage.py save_tables_to_json
