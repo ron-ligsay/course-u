@@ -60,3 +60,6 @@ Pipfile
 Pipfile.lock
 
 
+# Migrations
+# Ignore migrations inside apps
+**/migrations/*.py
