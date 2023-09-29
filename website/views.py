@@ -23,6 +23,17 @@ def home(request):
     specialization_items = Specialization.objects.all()
     return render(request, 'home.html', {'specialization_items': specialization_items})
 
+def home(request, specialization_id=None):
+    #job_postings = JobPosting.objects.all()
+    specialization_items = Specialization.objects.all()
+    selected_filter = None
+
+    if specialization_id:
+        selected_filter = get_object_or_404(Specialization, specialization_id=specialization_id)
+
+    return render(request, 'home.html', {'specialization_items': specialization_items, 'selected_filter': selected_filter})
+
+
 def login_user(request):
     if request.method == 'POST':
         #email = request.POST['email']

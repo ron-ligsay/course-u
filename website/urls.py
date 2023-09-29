@@ -9,16 +9,13 @@ from django.utils import timezone
 
 urlpatterns = [
     path('', views.home, name='home'),
-    #path('__debug__/',include('debug_toolbar.urls')),
-   
-
+    path('<int:specializiation_id>/', views.home, name='home_with_filter'),
 
     # For Authentication
     path('login_user/', views.login_user, name='login_user'),
     path('sign_in/', views.sign_in, name='sign_in'),
     path('forgot_password/', views.forgot_password, name='forgot_password'),
     path('recovery/', views.recovery, name='recovery'),
-    
    
     # For User Page
     path('profile/', views.user_profile, name='user_profile'),
@@ -28,10 +25,8 @@ urlpatterns = [
     
     # Logout
     path('logout/', views.CustomLogoutView.as_view(), name='logout'),
-    path('logout/success/', LogoutView.as_view(template_name='logout_success.html'), name='logout_success'),
+    path('logout/success/', LogoutView.as_view(template_name='user/logout_success.html'), name='logout_success'),
     
-
-
     # For Specialization
     path('specialization_page/<int:item_id>/', views.specialization_page, name='specialization_page'),
 ]
