@@ -14,7 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         with dataBase.cursor() as cursor:
             # Create a database, dcrn_db will be the name of your database (you can change this)
-            cursor.execute("CREATE DATABASE Course_U_DB")
+            cursor.execute("CREATE DATABASE CourseU_DB2")
         self.stdout.write(self.style.SUCCESS("Database created successfully"))
 
   
