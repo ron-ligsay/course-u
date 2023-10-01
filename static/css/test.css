@@ -3,7 +3,7 @@
   --font-family: 'Times New Roman', sans-serif;
 }
 body{
-  background-image: url("bgg.png");
+  background-image: url("../images/bgg.png");
   background-size: cover;
 }
 .logo {

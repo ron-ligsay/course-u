@@ -9,6 +9,7 @@ from django.utils import timezone
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('field/', views.home_field, name='home_field'),
     path('field/<int:field_id>/', views.home_field, name='home_field'),
 
     # For Authentication

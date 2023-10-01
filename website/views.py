@@ -26,15 +26,22 @@ def home(request):
     return render(request, 'home.html', {'specialization_items': specialization_items, 'field_items': field_items})
 
 def home_field(request, field_id=None):
-    if field_id is None:
-        specialization_items = Specialization.objects.all()
-    else:
-        specialization_items = Specialization.objects.filter(field_id=field_id)
     field_items = Field.objects.all()
-    selected_filter = field_id
+    selected_field = None
 
-    return render(request, 'home.html', {'specialization_items': specialization_items, 'field_items': field_items, 'selected_filter': selected_filter})
+    if field_id is not None:
+        selected_field = get_object_or_404(Field, field=field_id)
+        specialization_items = Specialization.objects.filter(field=selected_field)
+        #messages.success(request, "specialization items is filtered")
+    else:
+        specialization_items = Specialization.objects.all()
+        messages.success(request, "specialization items is not filtered")
 
+    return render(request, 'specialization_list.html', {
+        'specialization_items': specialization_items,
+        'field_items': field_items,
+        'selected_field': selected_field,
+    })
 
 def login_user(request):
     if request.method == 'POST':

@@ -8,17 +8,17 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 <!-- Include jQuery library -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Include your custom JavaScript file -->
-<script src="{% static 'js/specialization_filter.js' %}"></script>
+
 {% endblock %}
 
 
 {% block content %}
 
 {% if user.is_authenticated %}
+<br>
 <div>
-  <h2>Specialization Tracks</h2><br>
-  <div class="card-container">
+  <h3>Specialization Tracks</h3>
+  <div class="card-container" id="specialization-container">
     {% for item in specialization_items %}
     <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link">
       <div class="card">
@@ -30,20 +30,58 @@
     {% endfor %}
   </div>
 </div>
+<br>
 <div>
-  <h2>Fields</h2>
+  <h3>Fields</h3>
   <div class="card-container">
     {% for item in field_items %}
-    <a href="{% if item.field_id %}{% url 'home_field' field_id=item.field_id %}{% else %}{% url 'home' %}{% endif %}" class="card-link">
-      <div class="card">
+    
+    <a href="javascript:void(0);" class="card-link field-link" data-field-id="{{ item.field }}">
+      <div class="card{% if selected_field and selected_field.field_id == item.field_id %}-selected{% endif %}">
         <h4>{{ item.field_name }}</h4>
         <p class="small">{{ item.description }}</p>
-        <!-- Add more fields as needed -->
       </div>
     </a>
     {% endfor %}
   </div>
 </div>
+<br>
+
+
+<div>
+  <div>
+    <h3>Continue your Track</h3>
+    <a href="Specializaiton" class="btn btn-primary">Specialization</a>
+  </div>
+  <div>
+    <h3>Your Jobs</h3>
+    <a href="Jobs" class="btn btn-primary">Job Page</a>
+  </div>
+</div>
+
+
+<!-- Include your custom JavaScript file -->
+<script src="{% static 'js/specialization_filter.js' %}"></script>
+{% else %}
+<!-- 
+<div class="col-md-6 offset-md-3">
+    <br><br><br>
+    <h3 class="">You need to login first</h3>
+    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
+</div> -->
+
+{% endif %}
+
+
+
+{% endblock content %}
+```
+<!-- <a href="{% if item.field_id %}{% url 'home_field' field_id=item.field_id %}{% else %}{% url 'home' %}{% endif %}" class="card-link">
+      <div class="card">
+        <h4>{{ item.field_name }}</h4>
+        <p class="small">{{ item.description }}</p>
+      </div>
+    </a> -->
 <!-- 
 <div>
   <h2>Specialization</h2>
@@ -81,31 +119,3 @@
     </a>
   </div>
 </div> -->
-
-<div>
-  <div>
-    <h3>Continue your Track</h3>
-    <a href="Specializaiton" class="btn btn-primary">Specialization</a>
-  </div>
-  <div>
-    <h3>Your Jobs</h3>
-    <a href="Jobs" class="btn btn-primary">Job Page</a>
-  </div>
-</div>
-
-
-
-{% else %}
-<!-- 
-<div class="col-md-6 offset-md-3">
-    <br><br><br>
-    <h3 class="">You need to login first</h3>
-    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
-</div> -->
-
-{% endif %}
-
-
-
-{% endblock content %}
-```
