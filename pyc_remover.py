@@ -43,7 +43,7 @@ def delete_py_files_in_migrations(root_directory, excluded_files=None):
     return deleted_files
 
 # Specify the directory you want to search in
-directory_to_search = os.getcwd() + '\\..'  # Replace with your directory path
+directory_to_search = os.getcwd()# + '\\..'  # Replace with your directory path
 
 
 def print_migration_files():
@@ -76,3 +76,16 @@ def remove_migration_files():
 #print_migration_files()
 
 #remove_migration_files()
+
+# Checker
+def check():
+    find_pyc_files(directory_to_search)
+    print_migration_files()
+
+# deleter
+def delete():
+    find_and_delete_pyc_files(directory_to_search)
+    remove_migration_files()
+
+#check()
+delete()

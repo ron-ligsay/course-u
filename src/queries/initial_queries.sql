@@ -1,4 +1,3 @@
 
 
-SHOW DATABASES;
-
+SELECT * FROM auth_user;

@@ -1,4 +1,4 @@
-specialization_id,field,title,description,roadmap_id
+specialization_id,field_id,title,description,roadmap_id
 1,1,front-end,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",1
 2,1,back-end,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",2
 3,1,full stack,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",3
