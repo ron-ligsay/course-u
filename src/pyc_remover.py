@@ -43,13 +43,8 @@ def delete_py_files_in_migrations(root_directory, excluded_files=None):
     return deleted_files
 
 # Specify the directory you want to search in
-directory_to_search = os.getcwd()  # Replace with your directory path
+directory_to_search = os.getcwd() + '\\..'  # Replace with your directory path
 
-# Call the function to find and print .pyc files
-#find_pyc_files(directory_to_search)
-
-# Call the function to find and delete .pyc files
-#find_and_delete_pyc_files(directory_to_search)
 
 def print_migration_files():
     excluded_files = {'__ini__.py','0001_auto_20230907_1949.py'}  # Add filenames to exclude here
@@ -72,6 +67,12 @@ def remove_migration_files():
         print(f"Deleted: {deleted_file}")
 
 
+# Call the function to find and print .pyc files
+#find_pyc_files(directory_to_search)
+
+# Call the function to find and delete .pyc files
+#find_and_delete_pyc_files(directory_to_search)
+
 #print_migration_files()
 
-remove_migration_files()
+#remove_migration_files()
