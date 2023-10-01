@@ -47,7 +47,7 @@ directory_to_search = os.getcwd()# + '\\..'  # Replace with your directory path
 
 
 def print_migration_files():
-    excluded_files = {'__ini__.py','0001_auto_20230907_1949.py'}  # Add filenames to exclude here
+    excluded_files = {'__init__.py','0001_auto_20230907_1949.py'}  # Add filenames to exclude here
 
     # Call the function to find .py files under all migrations folders
     py_files_in_migrations = find_py_files_in_migrations(directory_to_search, excluded_files)

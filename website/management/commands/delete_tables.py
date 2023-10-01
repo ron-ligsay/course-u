@@ -8,15 +8,15 @@ class Command(BaseCommand):
         # Get a list of table names from the database
         #table_names = connection.introspection.table_names()
         #print(table_names)
-        table_names = [
+        table_names1 = [
             'assessment_userresponse','assessment_questionset', 'assessment_test',  
              'auth_group_permissions','auth_user_groups','auth_group', 'auth_user_user_permissions',
              'auth_permission', 'django_admin_log','auth_user', 
             'django_content_type', 'django_migrations', 'django_session', 
             'jobs_jobposting', 'website_specialization', 'website_field' ]
-        # table_names = [
-        #     'assessment_test', 'assessment_questionset', 'assessment_userresponse', 'website_specialization', 'website_field','website_userprofile', 'jobs_jobposting'
-        # ]
+        table_names = [
+            'assessment_userresponse','assessment_questionset', 'assessment_test',  'website_specialization', 'website_field','website_userprofile', 'jobs_jobposting'
+        ]
 
         # Iterate through the table names and delete each table
         with connection.cursor() as cursor:

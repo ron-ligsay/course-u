@@ -11,16 +11,16 @@ class Field(models.Model):
 
 class Specialization(models.Model):
     specialization_id = models.AutoField(primary_key=True)
-    field_id = models.ForeignKey(Field, on_delete=models.CASCADE)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     roadmap_id = models.IntegerField()
 
     def __str__(self):
         return self.title
-    
-    class Meta:
-        unique_together = ('field_id',)  # Note the comma after 'field' to make it a tuple
+    # allow field id to have duplicates
+    # class Meta:
+    #     unique_together = ('field')
 
 
 

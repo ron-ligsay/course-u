@@ -9,7 +9,7 @@ from django.utils import timezone
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('<int:specializiation_id>/', views.home, name='home_with_filter'),
+    path('field/<int:field_id>/', views.home_field, name='home_field'),
 
     # For Authentication
     path('login_user/', views.login_user, name='login_user'),

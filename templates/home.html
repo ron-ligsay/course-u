@@ -22,9 +22,23 @@
     {% for item in specialization_items %}
     <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link">
       <div class="card">
-        <h2>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+        <h4>{{ item.title }}</h4>
+          <p class="small">{{ item.description }}</p>
           <!-- Add more fields as needed -->
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+<div>
+  <h2>Fields</h2>
+  <div class="card-container">
+    {% for item in field_items %}
+    <a href="{% if item.field_id %}{% url 'home_field' field_id=item.field_id %}{% else %}{% url 'home' %}{% endif %}" class="card-link">
+      <div class="card">
+        <h4>{{ item.field_name }}</h4>
+        <p class="small">{{ item.description }}</p>
+        <!-- Add more fields as needed -->
       </div>
     </a>
     {% endfor %}

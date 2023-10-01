@@ -13,7 +13,7 @@ import logging
 
 #from website.utils import *
 from website.forms import SignUpForm
-from website.models import Specialization
+from website.models import Specialization, Field
 
 
 logger = logging.getLogger(__name__)
@@ -21,17 +21,19 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 def home(request):
     specialization_items = Specialization.objects.all()
-    return render(request, 'home.html', {'specialization_items': specialization_items})
+    field_items = Field.objects.all()
 
-def home(request, specialization_id=None):
-    #job_postings = JobPosting.objects.all()
-    specialization_items = Specialization.objects.all()
-    selected_filter = None
+    return render(request, 'home.html', {'specialization_items': specialization_items, 'field_items': field_items})
 
-    if specialization_id:
-        selected_filter = get_object_or_404(Specialization, specialization_id=specialization_id)
+def home_field(request, field_id=None):
+    if field_id is None:
+        specialization_items = Specialization.objects.all()
+    else:
+        specialization_items = Specialization.objects.filter(field_id=field_id)
+    field_items = Field.objects.all()
+    selected_filter = field_id
 
-    return render(request, 'home.html', {'specialization_items': specialization_items, 'selected_filter': selected_filter})
+    return render(request, 'home.html', {'specialization_items': specialization_items, 'field_items': field_items, 'selected_filter': selected_filter})
 
 
 def login_user(request):

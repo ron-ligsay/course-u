@@ -22,17 +22,17 @@ class Command(BaseCommand):
 
         base_dir = os.getcwd()
         csv_table_mapping = {
+            base_dir + '\\static\\csv\\field.csv': {
+                'table_name': 'website_field',
+                'model_name' : 'Field',
+                'columns' : ['field','field_name','description'],
+                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
+            },
             base_dir + '\\static\\csv\\specialization1.csv': {
                 'table_name': 'website_specialization',
                 'model_name': 'Specialization',
                 'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
                 'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
-            },
-            base_dir + '\\static\\csv\\field.csv': {
-                'table_name': 'website_field',
-                'model_name' : 'Field',
-                'columns' : ['field_id','field_name','description'],
-                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
             },
             base_dir + '\\src\\job_post_scrapy\\jobs\\jobs_clean.csv': {
                 'table_name': 'jobs_jobposting',
