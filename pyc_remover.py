@@ -18,12 +18,12 @@ def find_and_delete_pyc_files(directory):
                 os.remove(pyc_file_path)
 
 # Function to find .py files under all migrations folders
-def find_py_files_in_migrations(root_directory):
+def find_py_files_in_migrations(root_directory,excluded_files=None):
     py_files = []
     for root, _, files in os.walk(root_directory):
         if 'migrations' in root:
             for file in files:
-                if file.endswith('.py'):
+                if file.endswith('.py') and file not in excluded_files:
                     py_file_path = os.path.join(root, file)
                     py_files.append(py_file_path)
     return py_files
@@ -52,15 +52,17 @@ directory_to_search = os.getcwd()  # Replace with your directory path
 #find_and_delete_pyc_files(directory_to_search)
 
 def print_migration_files():
+    excluded_files = {'__ini__.py','0001_auto_20230907_1949.py'}  # Add filenames to exclude here
+
     # Call the function to find .py files under all migrations folders
-    py_files_in_migrations = find_py_files_in_migrations(directory_to_search)
+    py_files_in_migrations = find_py_files_in_migrations(directory_to_search, excluded_files)
 
     # Print the list of .py files found
     for py_file in py_files_in_migrations:
         print(py_file)
 
 def remove_migration_files():
-    excluded_files = {'0001_auto_20230907_1949.py'}  # Add filenames to exclude here
+    excluded_files = {'__ini__.py','0001_auto_20230907_1949.py'}  # Add filenames to exclude here
 
     # Call the function to delete .py files in migrations folders (excluding specified files)
     deleted_files = delete_py_files_in_migrations(directory_to_search,excluded_files)
