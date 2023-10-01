@@ -7,7 +7,7 @@ def create_database_and_load_sql(apps, schema_editor):
     # Create the database
     from django.db import connection
     with connection.cursor() as cursor:
-        cursor.execute('CREATE DATABASE IF NOT EXISTS courseu_db2;')
+        cursor.execute('CREATE DATABASE IF NOT EXISTS courseu_db;')
 
     # Define the path to your SQL file
     sql_file = os.getcwd() + '\dump_file.sql'

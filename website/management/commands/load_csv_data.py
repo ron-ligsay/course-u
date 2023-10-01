@@ -13,7 +13,7 @@ class Command(BaseCommand):
             host='localhost',
             user='root',
             password='sql2023',
-            database='courseu_db2',
+            database='courseu_db',
         )
 
         base_dir = os.getcwd()

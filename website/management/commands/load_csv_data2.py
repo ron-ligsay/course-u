@@ -6,6 +6,9 @@ from website.models import Specialization, Field  # Import your models
 from assessment.models import Test, QuestionSet, UserResponse
 from django.apps import apps
 
+from decouple import Config, RepositoryEnv
+config = Config(RepositoryEnv('.env'))
+
 class Command(BaseCommand):
     help = 'Import data from CSV files to MySQL database'
     
@@ -14,7 +17,7 @@ class Command(BaseCommand):
             host='localhost',
             user='root',
             password='sql2023',
-            database='courseu_db2',
+            database= config('DB_NAME', default = 'courseu_db2')#'courseu_db',
         )
 
         base_dir = os.getcwd()
@@ -28,7 +31,7 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\field.csv': {
                 'table_name': 'website_field',
                 'model_name' : 'Field',
-                'columns' : ['field_id','field_name','description'],
+                'columns' : ['field','field_name','description'],
                 'attributes' : ['INT PRIMAMRY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
             },
             base_dir + '\\src\\job_post_scrapy\\jobs\\jobs_clean.csv': {
@@ -76,9 +79,6 @@ class Command(BaseCommand):
                 print(f"Creating table '{table_info['table_name']}'...")
                 print(table_info['attributes'])
                 # ... (create the table)
-                #model_class = apps.get_model(app_label=table_info['app_label'], model_name=table_info['model_name'])
-                #columns = ', '.join([f"{col} VARCHAR(255)" for col in table_info['columns']])
-                #coloumns = ', '.join([f"{field.column} {field.db_type(connection=connection)}" for field in model_class._meta.fields])
                 col_list = table_info['columns']
                 attr_list = table_info['attributes']
                 #columnns = ', '.join([f"`{col}` {attr}" for col, attr in zip(table_info['columns'], table_info['attributes'])])
