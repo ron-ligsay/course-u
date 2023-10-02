@@ -73,11 +73,15 @@ now open .env
 then on DABATASES, change the user and password corresponding to your database info
 
 Markup : ```
-DB_NAME=courseu_db <br>
-DB_USER=<replace_this_to_your_username> <br>
-DB_PASS=<replace_this_to_your_password> <br>
-DB_HOST=localhost   <br>
-DB_PORT=3306    <br>
+DB_NAME=courseu_db
+
+DB_USER=<replace_this_to_your_username> 
+
+DB_PASS=<replace_this_to_your_password> 
+
+DB_HOST=localhost   
+
+DB_PORT=3306    
       ```
 <br>
 **note: on text with < >, replace it with the corresponding info**
