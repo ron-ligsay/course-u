@@ -28,14 +28,14 @@ your terminal should have the pipenv name in front example ***(course) C:\\Users
 
 
 <!-- after successfully activating your environment -->
-create a new folder called course-u <br>
+<!--create a new folder called course-u <br>
 `cd ..` <br>
 to step out or up in parent directory folder
 then create a folder <br>
 `mkdir course-u` <br>
 cd to the directory `cd course-u` <br>
 now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
-
+-->
 ### Connect to GIT
 Make sure your `git config user.name` and `git config user.email` is same with your GitHub account
 Git initialize folder, 
