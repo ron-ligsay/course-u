@@ -2,7 +2,7 @@
 import os
 import csv
 from django.core.management.base import BaseCommand
-from website.models import specialization  # Import your models
+from website.models import specialization, JobPosting  # Import your models
 
 class Command(BaseCommand):
     help = 'Load CSV data into MySQL tables'

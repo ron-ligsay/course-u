@@ -1,139 +1,69 @@
-### Setup your Python Environment
-##### Open your CMD or Command Prompt
+# Course University
+This is a project for the College of Computer and Information Sciences (CCIS) to provide recommended courses and jobs based on their soft and tech skills.
 
-##### **Make sure you have installed python and it is updated**
-Use `pip --version` to verify if it's working,
-If you have already installed it, and it's not updated use 
-`pip install --upgrade pip`
+## Purpose:
+* To provide recommended courses and jobs based on their soft and tech skills.
+* To provide a test system for the students to test their skills and knowledge.
+* To provide a recommender system for the students to recommend courses and jobs based on their skills and knowledge.
 
-##### Creating Environment
-`python -m venv courseu`
-<p>if Error: [WinError 2] The system cannot find the file specified:</p>
-<p>go to your local Python file directory (`User/user/AppData/Loca/Programs/Python/Python<ver>/` or where you installed python), and try to input the command their again.</p>
+## Features:
+* Test System
+* Recommender System
+* Job Section
+* Report Section
 
+## Implementations
+* Django
+* MySQL
+* Python
+* Scrapy
 
-##### **Activating Environment**
-`courseu\Scripts\activate`
-your terminal should have the pipenv name in front example ***(course) C:\\Users\user\folder>***
+## Requirements:
+* MySQL version 8 or higher
+* Python 3.8 or higher
 
+## Instruction for Setups/Installation:
+Go to [Guide.md](Guide.md) for the full guide.
 
-after successfully activating your environment
-create a new folder called course-u <br>
-`cd ..` <br>
-to step out or up in parent directory folder
-then create a folder <br>
-`mkdir course-u` <br>
-cd to the directory `cd course-u` <br>
-now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
+## Project Structure:
+```
+course-u
+├───assessment          - contains the test system
+├───course_u            - contains the main settings of the project
+├───jobs                - contains the job section
+├───recommender         - contains the recommender system
+├───src                 - contains the source code of the project
+├───static              - contains the static files of the project, such as css, js, images, csv, etc.
+├───templates           - contains the html files of the project
+├───websites            - contains the home section
+├───.env                - contains the environment variables of the project
+├───Guide.md            - contains the guide for the installation of the project
+├───manage.py           - contains the main settings of the project
+├───Pipfile             - contains the packages of the project
+├───Pipfile.lock        - contains the packages of the project
+├───README.md           - contains the information of the project
+└───requirements.txt    - contains the packages of the project
+```
 
-### Connect to GIT
-Make sure your `git config user.name` and `git config user.email` is same with your GitHub account
-Git initialize folder, 
-make sure you are on ***course-u*** folder
-`git init`
-
-add remote repo
-
-`git remote add origin https://github.com/ron-ligsay/course-u.git`
-
-pull
-
-`git pull origin main`
-
-check your current branch if its in main
-
-`git branch`
-
-if its not in main, change your branch and pull again
-
-`git checkout main`
-
-`git pull` then push `git push`
-if you are in main, use `git push --set-upstream origin main`
-then use `git pull` to make sure it's working
-
-### Installing Pre-requisites
-(note: your should install this when your python environment is activated)
-`pip install -r requirements.txt`
-this might take a while
-
-### Setting up MySQL Database
-(make sure you have mysql 8.0 or higher)
-now open course_u/settings.py 
-then on DABATASES, change the user and password corresponding to your database info
-
-Markup : ```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CourseU_DB',
-        'USER': '<change to your user name>',
-        'PASSWORD': '<change to your password>',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-      ```
-
-<br>
-
-(if your not sure of your user name and password open your MySQL workbench)
-<br>
-
-then on website/management/commands/create_database.py
-change also the user and the password
----
-Markup : ```
-dataBase = mysql.connector.connect(
-    host="localhost",
-    user = "<change to your user>",
-    passwd = "<change to your password>",
-    auth_plugin='mysql_native_password'
-)
-    ```
-
----
-### Setting up DJango
-in your command prompt again, enter this commands:
-<br>
-`python manage.py create_database`
-<br>
-`python manage.py makemigrates`
-<br>
-`python manage.py createsuperuser`
-<br>
-(this will prompt you to enter a username, password, password confirmation)
-<br>
-`python manage.py migrate`
-<br>
-### then to run server
-`python manage.py runserver`
-
-<br><br>
-then, you will see this:
-    Django version 4.2.4, using settings 'course_u.settings'
-    Starting development server at http://127.0.0.1:8000/
-    Quit the server with CTRL-BREAK.
-
-copy the HTTP, then open it on your browser.
-to stop runserver `ctrl + c`
-
-----
-
-once setup is completed, you can follow these steps to run from start again:
+### Project Structure for src:
+```
+├───src
+|   ├───initial_website         - contains the initial website
+|   ├───job_post_scrapy         - contains the job post scrapper
+|   ├───models                  - contains the models of the project
+|   ├───notebooks               - contains the notebooks of the project
+|   ├───recovery_db             - contains the recovery database
+|   ├───utils                   - contains the utils of the project
+|   ├───note.md                 - contains the notes of the project
+|   └───todo.md                 - contains the todo of the project
+```
 
 
-##### Activate Python Environment
+## This project is supported by the study of:
+* [Recommender System for Online Courses]()
 
-<!--on you command prompt, locate your python environment that you have created (courseu), then go to that directory and enter command `courseu/Scripts/activate`-->
-go to your project folder, right-click the folder (course-u) to open your visual studio
-
-on your terminal, activate your python environment, by using command `courseu/Scripts/activate`
-
-once your python environment is activated
-
-make sure your project files are updated by using `git pull`
-
-then once it is pulled, you are now ready to make your changes!
-
-
+## Contributors:
+* [Ron Ligsay]()
+* [Kristof]()
+* [CL]()
+* [Decelyn]()

@@ -1,10 +1,22 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LogoutView
+from django.contrib.sessions.models import Session
 from django.contrib import messages
-from .forms import SignUpForm
-from website.models import Specialization, Test
 from django.urls import reverse
+from django.http import HttpResponse 
 
+
+import json
+import logging
+
+#from website.utils import *
+from website.forms import SignUpForm
+from website.models import Specialization
+
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def home(request):
@@ -25,7 +37,7 @@ def login_user(request):
             messages.success(request, 'Error logging in')
             return redirect('login')
     else:
-        return render(request, 'login.html')
+        return render(request, 'user/login.html')
     
 def sign_in(request):
     if request.method == 'POST':
@@ -40,33 +52,68 @@ def sign_in(request):
             return redirect('home')
     else:
         form = SignUpForm()
-        return render(request, 'sign_in.html', {'form': form})
-    return render(request, 'sign_in.html', {'form': form})
+        return render(request, 'user/sign_in.html', {'form': form})
+    return render(request, 'user/sign_in.html', {'form': form})
 
 
 def forgot_password(request):
-    return render(request, 'forgot_password.html')
+    return render(request, 'user/forgot_password.html')
 
 def recovery(request):
-    return render(request, 'recovery.html')
+    return render(request, 'user/recovery.html')
 
-def test(request, pk):
-    if request.user.is_authenticated:
-        test = Test.objects.get(question_id=pk)
-        return render(request, 'test.html', {'test': test})
-    else:
-        return redirect('home')
+#########################################################################
+# ----------------------------for job--------------------------------- #
+#########################################################################
 
-def next_test(request, pk):
-    if request.user.is_authenticated:
-        test = Test.objects.get(question_id=pk+1)
-        return render(request, 'test.html', {'test': test})
-    else:
-        return redirect('home')
+@login_required  # Ensure that the user is logged in to access the profile
+def user_profile(request):
+    user = request.user
+    # Query additional user profile data if using a custom user profile model
+    context = {'user': user}
+    return render(request, 'user/user_profile.html', context)
 
-def prev_test(request, pk):
-    if request.user.is_authenticated:
-        test = Test.objects.get(question_id=pk-1)
-        return render(request, 'test.html', {'test': test})
-    else:
-        return redirect('home')
+
+def edit_profile(request):
+    user = request.user
+    # Query additional user profile data if using a custom user profile model
+    context = {'user': user}
+    return render(request, 'user/user_profile.html', context)
+
+def terms_and_conditions(request):
+    user = request.user
+    # Query additional user profile data if using a custom user profile model
+    context = {'user': user}
+    return render(request, 'user/user_profile.html', context)
+
+def settings(request):
+    user = request.user
+    # Query additional user profile data if using a custom user profile model
+    context = {'user': user}
+    return render(request, 'user/user_profile.html', context)
+
+class CustomLogoutView(LogoutView):
+    template_name = 'user/custom_logout.html'  # Optionally, specify a custom logout template
+
+    def get_next_page(self):
+        # Customize the redirection logic if needed
+        next_page = super().get_next_page()
+        # You can add additional logic here if required
+        return next_page
+
+
+
+
+
+#########################################################################
+# ----------------------------for job--------------------------------- #
+#########################################################################
+
+
+def specialization_page(request, item_id):
+    # Retrieve the selected specialization item or return a 404 error if it doesn't exist
+    specialization_item = get_object_or_404(Specialization, pk=item_id)
+
+    # Render the specialization_page template with the item
+    return render(request, 'specialization_page.html', {'specialization_item': specialization_item})
+

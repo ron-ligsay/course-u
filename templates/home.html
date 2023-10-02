@@ -2,18 +2,27 @@
 
 {% block title %}Home{% endblock %}
 
+{% block head_extra %}
+    <!-- Additional stylesheets or scripts specific to this page -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock  %}
+
+
 {% block content %}
 
 {% if user.is_authenticated %}
 
-<!-- webapp/templates/webapp/recommendations.html -->
+
 <div class="card-container" >
     {% for item in specialization_items %}
+    <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link">
       <div class="card">
         <h2>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
         <!-- Add more fields as needed -->
       </div>
+    </a>
     {% endfor %}
 </div>
   
