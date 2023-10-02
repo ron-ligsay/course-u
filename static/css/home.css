@@ -20,3 +20,20 @@
     font-size: 18px;
   }
   
+/* remove a styles */
+a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:visited {
+    color: #000;
+  }
+  
+  a:active {
+    color: #000;
+}

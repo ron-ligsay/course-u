@@ -141,3 +141,4 @@ after that you can start editing again and use `python manage.py runserver` to r
 
 if you made changes the  databse, use `mysql -u <username> -p courseu_db < dump_file.sql` to update the sql file
 
+.
