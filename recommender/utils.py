@@ -1,6 +1,6 @@
 # utils.py
-import joblib
-import pickle
+#import joblib
+#import pickle
 import os
 import warnings
 
@@ -13,12 +13,12 @@ def load_ml_model(model_path, loader):
         #     warnings.simplefilter("ignore", DeprecationWarning)
         #     estimator = joblib.load(path)
         #     print(estimator.__getstate__()['_sklearn_version'])
-        return joblib.load(path)
-    elif loader == "pickle":
-        with open(path, 'rb') as f:
-            return pickle.load(f)
+        #return joblib.load(path)
+    #elif loader == "pickle":
+        #with open(path, 'rb') as f:
+            #return pickle.load(f)
         #return pickle.load(path, 'rb')
-    else:
+    #else:
         return None
 
 

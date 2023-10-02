@@ -1,0 +1,26 @@
+{% extends 'base_user.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>{{ specialization_item.title }}</h1>
+    <p>{{ specialization_item.description }}</p>
+    <!-- Add more fields as needed -->
+    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+
+{% else %}
+<!-- 
+<div class="col-md-6 offset-md-3">
+    <br><br><br>
+    <h3 class="">You need to login first</h3>
+    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
+</div> -->
+
+{% endif %}
+
+
+
+{% endblock content %}
+```

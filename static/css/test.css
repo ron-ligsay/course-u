@@ -3,7 +3,7 @@
   --font-family: 'Times New Roman', sans-serif;
 }
 body{
-  background-image: url("bgg.png");
+  background-image: url("../images/bgg.png");
   background-size: cover;
 }
 .logo {
@@ -144,10 +144,10 @@ p{
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    position: absolute;
+    /*position: absolute;
     bottom: 130px; 
     margin-left: 400px;
-    
+    */
 }
 
 .btn:hover {

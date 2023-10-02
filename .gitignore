@@ -22,6 +22,8 @@ local_settings.py
 
 # Ignore secret keys and sensitive data files
 *.secret_key
+
+# Add this to ignore once everyone on the development has applied this
 #*.env
 
 # Ignore database backup files (if any)
@@ -32,6 +34,10 @@ local_settings.py
 
 # Ignore Python bytecode cache files
 __pycache__/
+website/__pycache__/
+website/__pycache__/views.cpython-38.pyc
+website/migrations/__pycache__/
+
 
 # Ignore any other temporary or generated files
 __pycache__/
@@ -41,10 +47,19 @@ __pycache__/
 *.~*
 
 # Ignore csv files under job_post folder
-job_post_scrapy/jobs/*.csv
+#job_post_scrapy/jobs/*.csv
 
 # Ignore database migrations files (you might want to keep some)
 # Uncomment this line if you want to ignore all migrations
 # */migrations/
 # Uncomment this line if you want to keep migrations in specific apps
 # app_name/migrations/
+
+# Pipenv files
+#Pipfile
+#Pipfile.lock
+
+
+# Migrations
+# Ignore migrations inside apps
+**/migrations/*.py
