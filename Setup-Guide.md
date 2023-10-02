@@ -73,11 +73,11 @@ now open .env
 then on DABATASES, change the user and password corresponding to your database info
 
 Markup : ```
-DB_NAME=courseu_db
-DB_USER=<replace_this_to_your_username>
-DB_PASS=<replace_this_to_your_password>
-DB_HOST=localhost
-DB_PORT=3306
+DB_NAME=courseu_db  \
+DB_USER=<replace_this_to_your_username> \
+DB_PASS=<replace_this_to_your_password> \
+DB_HOST=localhost   \
+DB_PORT=3306    \
       ```
 <br>
 **note: on text with < >, replace it with the corresponding info**
@@ -94,9 +94,9 @@ in your command prompt again, enter this commands:
 <br>
 `python manage.py create_database`
 <br>
-`python manage.py load_dump_file`
+`python manage.py load_csv_data3`
 <br>
-`python manage.py makemigrates`
+`python manage.py makemigrations`
 <br>
 `python manage.py createsuperuser`
 <br>
