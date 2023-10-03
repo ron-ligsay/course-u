@@ -1,5 +1,5 @@
 asgiref==3.7.2
-backports.zoneinfo==0.2.1
+backports.zoneinfo;python_version<"3.9"
 Django==4.2.4
 mysql==0.0.3
 mysql-connector==2.2.9
