@@ -15,7 +15,12 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<br><br><br>
+{% if admin %}
+  <div>
+    <h3>Admin</h3>
+  </div>
+{% endif %}
+<br><br>
 <div>
   <h3>Specialization Tracks</h3>
   <div class="card-container" id="specialization-container">
