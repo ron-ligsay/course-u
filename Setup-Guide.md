@@ -28,14 +28,14 @@ your terminal should have the pipenv name in front example ***(course) C:\\Users
 
 
 <!-- after successfully activating your environment -->
-create a new folder called course-u <br>
+<!--create a new folder called course-u <br>
 `cd ..` <br>
 to step out or up in parent directory folder
 then create a folder <br>
 `mkdir course-u` <br>
 cd to the directory `cd course-u` <br>
 now you should be on your folder directory, like so `User/user/AppData/Loca/Programs/Python/Python38/course-u/`
-
+-->
 ### Connect to GIT
 Make sure your `git config user.name` and `git config user.email` is same with your GitHub account
 Git initialize folder, 
@@ -72,13 +72,13 @@ this might take a while
 now open .env
 then on DABATASES, change the user and password corresponding to your database info
 
-Markup : ```
+```
 DB_NAME=courseu_db
 DB_USER=<replace_this_to_your_username>
 DB_PASS=<replace_this_to_your_password>
 DB_HOST=localhost
 DB_PORT=3306
-      ```
+```
 <br>
 **note: on text with < >, replace it with the corresponding info**
 
@@ -94,9 +94,9 @@ in your command prompt again, enter this commands:
 <br>
 `python manage.py create_database`
 <br>
-`python manage.py load_dump_file`
+`python manage.py load_csv_data3`
 <br>
-`python manage.py makemigrates`
+`python manage.py makemigrations`
 <br>
 `python manage.py createsuperuser`
 <br>
