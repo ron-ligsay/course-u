@@ -8,7 +8,6 @@ from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponse 
 
-
 import json
 import logging
 
@@ -18,11 +17,7 @@ from website.models import Specialization, Field
 
 from website.decorators import unauthenticated_user, allowed_users, admin_only
 
-
-
-
 logger = logging.getLogger(__name__)
-
 
 
 @login_required(login_url='login_user')
@@ -59,7 +54,7 @@ def home_field(request, field_id=None):
 def admin_home(request):
     messages.success(request, 'You are in admin home')
     admin = True
-    return render(request, 'home.html', {'admin': admin})
+    return render(request, 'admin_home.html', {'admin': admin})
 
 
 @unauthenticated_user # instead of adding if user.is_authenticated, use this decorator
@@ -107,7 +102,7 @@ def recovery(request):
     return render(request, 'user/recovery.html')
 
 #########################################################################
-# ----------------------------for job--------------------------------- #
+# ------------------------for user module------------------------------ #
 #########################################################################
 
 @login_required  # Ensure that the user is logged in to access the profile
@@ -148,11 +143,8 @@ class CustomLogoutView(LogoutView):
         return next_page
 
 
-
-
-
 #########################################################################
-# ----------------------------for job--------------------------------- #
+# -----------------------for specialization---------------------------- #
 #########################################################################
 
 
