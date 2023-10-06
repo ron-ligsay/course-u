@@ -20,9 +20,9 @@ def allowed_users(allowed_roles=[]):
             if request.user.groups.exists():
                 group = request.user.groups.all()[0].name
 
-            if group == 'admin':
-                print('redirect to admin page')
-                return redirect('admin_home')
+            # if group == 'admin':
+            #     print('redirect to admin page')
+            #     return redirect('admin_home')
             
             if group in allowed_roles:
                 print('Working allowed User Decorator: ', allowed_roles)
