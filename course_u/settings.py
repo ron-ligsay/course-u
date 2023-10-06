@@ -93,10 +93,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'courseu_db',#config('DB_NAME', default='courseu_db'),#
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASS'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306'),
+        'USER': 'root',#config('DB_USER'),
+        'PASSWORD': 'sql2023',#config('DB_PASS'),
+        'HOST': 'localhost',#config('DB_HOST', default='localhost'),
+        'PORT': '3306',#'config('DB_PORT', default='3306'),
     }
 }
 
