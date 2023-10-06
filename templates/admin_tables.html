@@ -1,33 +1,66 @@
 
-<div class="row">
-    <div class="col-md-5">
+<div class="row"></div>
+    <div class="col-md-12">
         <h5>Students</h5>
         <hr>
         <div class="card card-body">
             <a class="btn bth-primary btn-sm btn-block" href="">Create</a>
             <table class="table table-sm">
-                <tr>
-                    <th>Column</th>
-                    <th>Column</th>
-                    <th>Column</th>
-                </tr>
+                <thead>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Staff</th>
+                    <th>Active</th>
+                    <th>Date Joined</th>
+                </thead>
+                <tbody>
+                    {% for user in auth_user %}
+                    <tr>
+                        <td>{{ user.id}}</td>
+                        <td>{{ user.username}}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.is_staff }}</td>
+                        <td>{{ user.is_active}}</td>
+                        <td>{{ user.date_joined }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-12">
         <h5>Test</h5>
         <hr>
         <div class="card card-body">
             <a class="btn bth-primary btn-sm btn-block" href="">Create</a>
             <table class="table table-sm">
-                <tr>
-                    <th>Column</th>
-                    <th>Column</th>
-                    <th>Column</th>
-                    <th>Column</th>
-                    <th>Column</th>
-                </tr>
+                <thead>
+                    <th> ID </th>
+                    <th> Topic </th>
+                    <th> Question </th>
+                    <th> Description </th>
+                    <th> Options </th>
+                    <th> Correct Option </th>
+                    <th> Update </th>
+                </thead>
+                <tbody>
+                    {% for test in TestQuestions %}
+                    <tr>
+                        <td> {{ test.question_id }} </td>
+                        <td> {{ test.topic }} </td>
+                        <td> {{ test.question }} </td>
+                        <td> {{ test.description }} </td>
+                        <td> {{ test.options }} </td>
+                        <td> {{ test.correct_option }} </td>
+                        <td> <a class="btn btn-primary" href="">Update</a> </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
     </div>
-</div>
