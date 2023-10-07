@@ -12,7 +12,9 @@
     - [ ]: on codes, add a line calling the debugger passing on if DEBUG=True, debug this code and the message will be printed on the terminal
 - [ ]: add dropdown group on nav bar
 - [ ]: make nave bar foldable
-- [ ]: 
+- [ ]: update home page
+
+
 ## Setups
 -[]: Create a virtual environment [Course-u]
 
