@@ -86,5 +86,8 @@ def delete():
     find_and_delete_pyc_files(directory_to_search)
     remove_migration_files(excluded_files)
 
+# Use this to verfiy that the files that will be deleted
 #check()
+
+# Once verified, you can delete the files
 delete()
