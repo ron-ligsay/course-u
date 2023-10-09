@@ -10,6 +10,9 @@
 - [ ]: Debugger
     - [ ]: on .env file, set DEBUG=True
     - [ ]: on codes, add a line calling the debugger passing on if DEBUG=True, debug this code and the message will be printed on the terminal
+- [ ]: add dropdown group on nav bar
+- [ ]: make nave bar foldable
+- [ ]: update home page
 
 
 ## Setups
@@ -27,6 +30,11 @@
     - Enhance the user profile functionality to allow students to input information about their academic interests, career aspirations, and preferences. This data will be valuable for making personalized recommendations.
 - [ ]: Enhance the user profile functionality to allow students to input information about their academic interests, career aspirations, and preferences. This data will be valuable for making personalized recommendations.
 - [ ]: creating a new users
+- [ ]: Instructor Home Page
+    - Has a list of all the students
+    - Has a list of all the tests
+    - Has a list of all the jobs
+
 
 ## Test Section
 - [ ]: Test Division, test should get only 1/4 set from the test, then when it wants to get again, it will get the next 1/4 set of the test. test should be randomized, test should not be repeated
