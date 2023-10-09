@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 from django.contrib.auth.views import LogoutView
 from django.contrib.sessions.models import Session
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponse 
-
 
 import json
 import logging
@@ -15,16 +15,26 @@ import logging
 from website.forms import SignUpForm
 from website.models import Specialization, Field
 
+from django.contrib.auth.models import User
+from assessment.models import Test, QuestionSet
+from jobs.models import JobPosting
+
+from website.decorators import unauthenticated_user, allowed_users, admin_only
 
 logger = logging.getLogger(__name__)
 
-# Create your views here.
+
+@login_required(login_url='login_user')
+@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
 def home(request):
+    print('home page')
     specialization_items = Specialization.objects.all()
     field_items = Field.objects.all()
 
     return render(request, 'home.html', {'specialization_items': specialization_items, 'field_items': field_items})
 
+
+@allowed_users(allowed_roles=['admin','staff','student','instructor'])
 def home_field(request, field_id=None):
     field_items = Field.objects.all()
     selected_field = None
@@ -43,6 +53,29 @@ def home_field(request, field_id=None):
         'selected_field': selected_field,
     })
 
+@login_required(login_url='login_user')
+@admin_only # only admin can access this page
+def admin_home(request):
+    #messages.success(request, 'You are in admin home')
+    admin = True
+
+    TestQuestions = Test.objects.all()
+    auth_user = User.objects.all()
+    JobPosting_count = JobPosting.objects.all().count() 
+    Specialization_count = Specialization.objects.all().count()
+    QuestionSet_count = QuestionSet.objects.all().count()
+
+    return render(request, 'admin_home.html', {
+        'admin': admin, 
+        'TestQuestions' : TestQuestions, 
+        'auth_user' : auth_user,
+        'JobPosting_count' : JobPosting_count,
+        'Specialization_count' : Specialization_count,
+        'QuestionSet_count' : QuestionSet_count,
+        })
+
+
+@unauthenticated_user # instead of adding if user.is_authenticated, use this decorator
 def login_user(request):
     if request.method == 'POST':
         #email = request.POST['email']
@@ -55,20 +88,23 @@ def login_user(request):
             return redirect('home')
         else:
             messages.success(request, 'Error logging in')
-            return redirect('login')
+            return redirect('login_user')
     else:
         return render(request, 'user/login.html')
-    
+
+@unauthenticated_user
 def sign_in(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
+            password = form.cleaned_data.get('password1')            
             user = authenticate(username=username, password=password)
+            group = Group.objects.get(name='student')
+            user.groups.add(group)
             login(request,user)
-            messages.success(request, 'You have successfully created an account')
+            messages.success(request, 'Student ' + username + ' have successfully created an account')
             return redirect('home')
     else:
         form = SignUpForm()
@@ -79,11 +115,12 @@ def sign_in(request):
 def forgot_password(request):
     return render(request, 'user/forgot_password.html')
 
+
 def recovery(request):
     return render(request, 'user/recovery.html')
 
 #########################################################################
-# ----------------------------for job--------------------------------- #
+# ------------------------for user module------------------------------ #
 #########################################################################
 
 @login_required  # Ensure that the user is logged in to access the profile
@@ -93,19 +130,21 @@ def user_profile(request):
     context = {'user': user}
     return render(request, 'user/user_profile.html', context)
 
-
+@login_required(login_url='login_user')
 def edit_profile(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
     return render(request, 'user/user_profile.html', context)
 
+@login_required(login_url='login_user')
 def terms_and_conditions(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
     return render(request, 'user/user_profile.html', context)
 
+@login_required(login_url='login_user')
 def settings(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
@@ -122,11 +161,8 @@ class CustomLogoutView(LogoutView):
         return next_page
 
 
-
-
-
 #########################################################################
-# ----------------------------for job--------------------------------- #
+# -----------------------for specialization---------------------------- #
 #########################################################################
 
 
