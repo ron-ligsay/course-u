@@ -15,7 +15,7 @@
 {% if user.is_authenticated %}
     {% if admin %}
     <div>
-        <h3>Admin</h3>
+        <p>Welcome Admin, {{ user.username}}</p>
     </div>
     {% endif %}
     {% include 'status.html' %}
