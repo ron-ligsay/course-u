@@ -16,7 +16,8 @@ from website.forms import SignUpForm
 from website.models import Specialization, Field
 
 from django.contrib.auth.models import User
-from assessment.models import Test
+from assessment.models import Test, QuestionSet
+from jobs.models import JobPosting
 
 from website.decorators import unauthenticated_user, allowed_users, admin_only
 
@@ -55,18 +56,22 @@ def home_field(request, field_id=None):
 @login_required(login_url='login_user')
 @admin_only # only admin can access this page
 def admin_home(request):
-    messages.success(request, 'You are in admin home')
+    #messages.success(request, 'You are in admin home')
     admin = True
 
     TestQuestions = Test.objects.all()
     auth_user = User.objects.all()
-    
-
+    JobPosting_count = JobPosting.objects.all().count() 
+    Specialization_count = Specialization.objects.all().count()
+    QuestionSet_count = QuestionSet.objects.all().count()
 
     return render(request, 'admin_home.html', {
         'admin': admin, 
         'TestQuestions' : TestQuestions, 
-        'auth_user' : auth_user
+        'auth_user' : auth_user,
+        'JobPosting_count' : JobPosting_count,
+        'Specialization_count' : Specialization_count,
+        'QuestionSet_count' : QuestionSet_count,
         })
 
 
