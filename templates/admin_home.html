@@ -1,6 +1,6 @@
 {% extends 'base_user.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home 2{% endblock %}
 
 {% block head_extra %}
 <!-- Additional stylesheets or scripts specific to this page -->
@@ -19,8 +19,8 @@
     </div>
     {% endif %}
     {% include 'status.html' %}
-    <br>
-    <div class="row">
+
+    <!-- <div class="row">
         <div class="col">
             <div class="card card-body">
                 <form action="get">
@@ -29,8 +29,7 @@
                 </form>
             </div>
         </div>
-    </div>
-    <br>
+    </div> -->
     {% include 'admin_tables.html' %}
 {% else %}
 
