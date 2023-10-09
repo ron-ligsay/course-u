@@ -59,19 +59,35 @@ def admin_home(request):
     #messages.success(request, 'You are in admin home')
     admin = True
 
-    TestQuestions = Test.objects.all()
+    #TestQuestions = Test.objects.all()
+    # get list of unique topic on TestQuestions
+    topic_list = Test.objects.values('topic').distinct()
+    topic_list = [item['topic'] for item in topic_list]
+
+    # number of test, for each topic
+    test_count = []
+    for topic in topic_list:
+        test_count.append(Test.objects.filter(topic=topic).count())
+    
+    # makie topic_list and test_count into a dictionary
+    topic_list = dict(zip(topic_list, test_count))
+
     auth_user = User.objects.all()
     JobPosting_count = JobPosting.objects.all().count() 
     Specialization_count = Specialization.objects.all().count()
     QuestionSet_count = QuestionSet.objects.all().count()
 
+    Field_items = Field.objects.all()
+
+
     return render(request, 'admin_home.html', {
         'admin': admin, 
-        'TestQuestions' : TestQuestions, 
+        'topic_list' : topic_list, 
         'auth_user' : auth_user,
         'JobPosting_count' : JobPosting_count,
         'Specialization_count' : Specialization_count,
         'QuestionSet_count' : QuestionSet_count,
+        'Field_items' : Field_items,
         })
 
 

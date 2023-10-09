@@ -1,27 +1,4 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/test.css' %}">
-<div class="input">
-  <div class="logo">
-    <img src="{% static 'images/logo.png' %}" alt="Logo" href="{% url 'home' %}">
-  </div>
-  {% if user.is_authenticated %}
-    {% if request.user.is_staff %}
-      <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_home' %}">Dashboard</a></button>  
-      <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_home' %}">Student</a></button>
-      <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_home' %}">Reports</a></button>
-    {% endif %}
-  <button class="value"> <i class="fas fa-home"></i><a href="{% url 'home' %}">Home</a></button>
-  <button class="value"><i class="fas fa-file-alt"></i><a href="{% url 'test_home' %}">Test</a></button>
-  <button class="value" ><i class="fas fa-user" ></i><a href="{% url 'user_profile' %}">Profile</a></button>
-  <!-- <button class="value"><i class="fas fa-map"></i> Roadmap</button> -->
-  <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'job_list' %}">Jobs</a></button>
-  <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'logout' %}">Logout</a></button>
-  {% else %}
-  <button class="value"><i class="fas fa-briefcase"></i> Login</button>
-  <button class="value"><i class="fas fa-briefcase"></i> Signup</button>
-  {% endif %}
-  
-</div>
 
 
 <div class="navigation">
@@ -29,60 +6,58 @@
         {% if user.is_authenticated %}
         {% if request.user.is_staff %}
         <li>
-            <a href="">
+            <a href="#">
                 <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
                 <span class="title"> Course-U </span>
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="#">
                 <span class="icon"><ion-icon name="easel-outline"></ion-icon></span>
                 <span class="title"> Dashboard </span>
             </a>
         </li>
         {% endif %}
         <li>
-            <a href="">
+            <a href="{% url 'home' %}">
                 <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                 <span class="title"> Home </span>
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{% url 'test_home' %}">
                 <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
                 <span class="title"> Test </span>
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="{% url 'user_profile' %}">
                 <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                 <span class="title"> Profile </span>
             </a>
         </li>
         <li>
-            <a href="">
-                <span class="material-symbols-outlined">
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-                    </span>
+            <a href="{% url 'job_list' %}">
+                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                 <span class="title"> Jobs </span>
             </a>
         </li>
         <li>
-            <a href="">
-                <span class="icon"></span>
+            <a href="{% url 'logout' %}">
+                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                 <span class="title"> Logout </span>
             </a>
         </li>
         {% else %}
         <li>
-            <a href="">
-                <span class="icon"></span>
+            <a href="#">
+                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                 <span class="title"> Login </span>
             </a>
         </li>
         <li>
-            <a href="">
-                <span class="icon"></span>
+            <a href="#">
+                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                 <span class="title"> Signup </span>
             </a>
         </li>
