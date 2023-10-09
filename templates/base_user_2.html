@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{% block title %}Course-U{% endblock %}</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/base_user_2.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar_2.css' %}">
 
 
     {% block head_extra %}
 
 
     {% endblock head_extra %}
+    <!-- design reference  -->
+    <!-- https://www.youtube.com/watch?v=nUUsUAPEjFc -->
 
 </head>
 
 <body>
     <div class="container">
 
-        {% include 'navbar.html' %}
+        {% include 'navbar_2.html' %}
 
         <!-- main -->
 
@@ -47,47 +47,14 @@
                 <div class="user">
                     <img src="" alt="">
                 </div>
+                
+            </div>
+            <div class="content">
+                {% block content %}
+                {% endblock content %}
             </div>
         </div>
-
-    </div>
-
-
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
-                <!-- Vertical navbar content here -->
-
-                
-            </nav>
-            <main role="main" class="col-md-12 ml-sm-auto col-lg-10 px-md-4">
-                <!-- Main content here -->
-                {% if messages %}
-                {% for message in messages %}
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-
-                {% endif %}
-
-                {% if user.is_authenticated %}
-
-                {% block content %}
-
-
-                {% endblock content %}
-
-                {% else %}
-                <div class="col-md-6 offset-md-3">
-                    <br><br><br>
-                    <h3 class="">You need to login first</h3>
-                    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
-                </div>
-                {% endif %}
-            </main>
-        </div>
+       
     </div>
 
 
@@ -112,7 +79,7 @@
         let list = document.querySelectorAll('.navigation li');
         function activeLink(){
             list.forEach((item) => 
-            item.classList.remove(''));
+            item.classList.remove('hovered'));
             this.classList.add('hovered');
         }
         list.forEach((item) =>
