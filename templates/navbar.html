@@ -8,7 +8,7 @@
     {% if request.user.is_staff %}
       <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_home' %}">Dashboard</a></button>  
       <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_home' %}">Student</a></button>
-      <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_home' %}">Reports</a></button>
+      <button class="value"><i class="fas fa-briefcase"></i><a href="{% url 'admin_report' %}">Reports</a></button>
     {% endif %}
   <button class="value"> <i class="fas fa-home"></i><a href="{% url 'home' %}">Home</a></button>
   <button class="value"><i class="fas fa-file-alt"></i><a href="{% url 'test_home' %}">Test</a></button>
