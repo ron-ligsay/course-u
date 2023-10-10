@@ -9,7 +9,7 @@ TEST_TOPICS = (
 
 # Create your models here.
 class Test(models.Model):
-    question_id = models.AutoField(primary_key=True)
+    question_id = models.AutoField(primary_key=True, serialize=False, auto_created=True)
     topic = models.CharField(max_length=1000)# choices=TEST_TOPICS)
     question = models.CharField(max_length=1000)
     description = models.CharField(max_length=1000)
