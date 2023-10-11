@@ -24,9 +24,8 @@
             <div class="job-list" >
                 {% for job_posting in job_postings %}
                 <div class="job-card"  data-job-id="{{ job_posting.id }}">
-                    <h2 class="job-title">{{ job_posting.title }}</h2>
-                    <p class="company-name">{{ job_posting.company }}</p>
-                    <!-- <a href="{% url 'job_detail' job_posting.id %}" class="btn btn-primary">View Details</a> -->
+                    <h2 class="job-title">{{ job_posting.job_title }}</h2>
+                    <p class="company-name">{{ job_posting.company_name }}</p>
                 </div>
                 {% endfor %}
             </div>
@@ -36,28 +35,27 @@
             <div class="job-details">
                 <!-- <p>Selected Job ID: {{ job_posting.id }}</p> -->
                 {% if selected_job %}
-                <h2 class="">{{ selected_job.title }}</h2>
-                <h3 class="">{{ selected_job.company }}</h3>
-                <div class="job-description">
-                    <h3>Description</h3>
-                    <!-- <p>{{ selected_job.description }}</p> -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, mollitia.</p>
-                    <p>Atque nesciunt deleniti reiciendis sint dicta culpa nulla, earum repudiandae?</p>
-                    <p>Perferendis quia accusamus ut laboriosam facilis, neque facere velit cupiditate.</p>
-                    <p>Maxime autem aperiam ipsum aut. Cupiditate animi quibusdam temporibus eum.</p>
-                    <p>Tempora id excepturi perspiciatis ratione sequi quasi ipsam alias pariatur!</p>
+                <h2 class="">{{ selected_job.job_title }}</h2>
+                <h3 class=""><a href="{{ selected_job.company_link}}">{{ selected_job.company_name }}</a></h3>
+                <p class="">{{ selected_job.location }}</p>
+                <p class="">Date Posted: {{ selected_job.date_posted }}</p>
+                <div>
+                {{ selected_job.job_description|safe }}
                 </div>
-                <div class="job-requirements">
-                    <h3>Requirements</h3>
-                    <ul>
-                        <!-- <li>{{ selected_job.requirements }}</li> -->
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Quaerat facilis sapiente illum?</li>
-                        <li>Repudiandae dolorum quo ducimus?</li>
-                        <li>Sapiente eligendi consectetur quod.</li>
-                    </ul>
-                </div>
-                <a href="{{ selected_job.link_clean }}" class="btn btn-primary">Apply</a>
+                <h4>Employment Type</h4>
+                <p>{{ selected_job.employment_type }}</p>
+
+                <h4>Job Function</h4>
+                <p>{{ selected_job.job_function }}</p>
+
+                <h4>Industries</h4>
+                <p>{{ selected_job.industries }}</p>
+
+                <h4>Seniority Level</h4>
+                <p>{{ selected_job.seniority_level }}</p>
+
+
+                <a href="{{ selected_job.link }}" class="btn btn-primary">Apply</a>
                 {% else %}
                 <p>Select a job to view details.</p>
                 {% endif %}

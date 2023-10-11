@@ -1,0 +1,78 @@
+
+<hr><div class="row">
+<div class="col-md-6 ">
+    <h5>Students</h5>
+    <div class="card card-body">
+        <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+        <table class="table table-sm">
+            <thead>
+                <!-- <th>ID</th> -->
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Staff</th>
+                <th>Active</th>
+                <!-- <th>Date Joined</th> -->
+            </thead>
+            <tbody>
+                {% for user in auth_user %}
+                <tr>
+                    <!-- <td>{{ user.id}}</td> -->
+                    <td><a href="#">{{ user.username}}</a></td>
+                    <td>{{ user.first_name }} {{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td> {% if user.is_staff %} check {% else %} X {% endif %}</td>
+                    <td>{{ user.is_active}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div><br><br>
+    <h5>Test</h5>
+    <div class="card card-body">
+        <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+        <table class="table table-sm">
+            <thead>
+                <th> Topic </th>
+                <th> No. of Questions </th>
+                <th> Add Questions </th>
+            </thead>
+            <tbody>
+                {% for topic, count in topic_list.items %}
+                <tr>
+
+                    <td><a href="">{{ topic }} </a></td>
+                    <td> {{ count }} </td>
+                    <td><a href="" class="btn btn-primary">Create</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<br><br>
+<div class="col-md-6">
+    <h5>Field</h5>
+    <div class="card card-body">
+        <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+        <table class="table table-sm">
+            <thead>
+                <th> Name </th>
+                <th> View </th>
+            </thead>
+            <tbody>
+                {% for item in Field_items %}
+                <tr>
+                    <td> {{ item.field_name }}</td>
+                    <td> <a class="btn btn-primary" href="">View</a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-md-6">
+    
+</div>
+</div>
