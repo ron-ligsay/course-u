@@ -24,8 +24,8 @@ from website.decorators import unauthenticated_user, allowed_users, admin_only
 logger = logging.getLogger(__name__)
 
 
-@login_required(login_url='login_user')
-@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
+#@login_required(login_url='login_user')
+#@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
 def home(request):
     print('home page')
     specialization_items = Specialization.objects.all()
@@ -53,8 +53,8 @@ def home_field(request, field_id=None):
         'selected_field': selected_field,
     })
 
-@login_required(login_url='login_user')
-@admin_only # only admin can access this page
+#@login_required(login_url='login_user')
+#@admin_only # only admin can access this page
 def admin_home(request):
     #messages.success(request, 'You are in admin home')
     admin = True
