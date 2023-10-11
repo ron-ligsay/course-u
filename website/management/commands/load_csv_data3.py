@@ -57,26 +57,26 @@ class Command(BaseCommand):
                                 'TEXT'
                                 ]
             },
-            base_dir + '\\static\\csv\\test_2.csv': {
-                'table_name': 'assessment_test',
-                'model_name': 'Test',
-                'columns':  ['question_id', 'topic','question','description','options', 'correct_option',],
-                'attributes': ['INT PRIMARY KEY', 'VARCHAR(1000)', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
-            },
-            base_dir + '\\static\\csv\\questionset.csv': {
-                'table_name': 'assessment_questionset',
-                'model_name': 'QuestionSet',
-                'columns':  ['set_id','user_id','n_questions','is_completed','score',],
-                'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
-            },  
-            #selected_option,is_correct,set_id,question
-            base_dir + '\\static\\csv\\userresponse.csv': {
-                'table_name': 'assessment_userresponse',
-                'model_name': 'UserResponse',
-                'columns':  ["response","selected_option","is_correct","set_id","question_id","is_answered",],
-                # add default values for response and is_answered
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
-            },
+            # base_dir + '\\static\\csv\\test_2.csv': {
+            #     'table_name': 'assessment_test',
+            #     'model_name': 'Test',
+            #     'columns':  ['question_id', 'topic','question','description','options', 'correct_option',],
+            #     'attributes': ['INT PRIMARY KEY', 'VARCHAR(1000)', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
+            # },
+            # base_dir + '\\static\\csv\\questionset.csv': {
+            #     'table_name': 'assessment_questionset',
+            #     'model_name': 'QuestionSet',
+            #     'columns':  ['set_id','user_id','n_questions','is_completed','score',],
+            #     'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
+            # },  
+            # #selected_option,is_correct,set_id,question
+            # base_dir + '\\static\\csv\\userresponse.csv': {
+            #     'table_name': 'assessment_userresponse',
+            #     'model_name': 'UserResponse',
+            #     'columns':  ["response","selected_option","is_correct","set_id","question_id","is_answered",],
+            #     # add default values for response and is_answered
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
+            # },
         }
         
         cursor = connection.cursor()
