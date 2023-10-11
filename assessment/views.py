@@ -3,11 +3,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.sessions.models import Session
 from django.contrib import messages
 from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
-from assessment.forms import UserResponseForm
+from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
 from assessment.models import Test, QuestionSet, UserResponse
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
+
+import plotly.express as px
 # Create your views here.
 
 
@@ -310,6 +312,54 @@ def submit_test(request):
 def view_test_results(request):
     return render(request, 'test/test_home.html')
 
+def create_test(request):
+    
+    form = TestCreateForm()
+    if request.method == 'POST':
+        # print('Printing POST:', request.POST)
+        form = TestCreateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print('form is valid!')
+            messages.success(request, 'Your test has been created!')
+            #return redirect('/')
+            return HttpResponse('Your test has been created!')
+        else:
+            messages.success(request, 'Your test has not been created!')
+            print("form is not valid!")
+            #return redirect('/')
+            return HttpResponse('Your test has not been created!')
+    
+    context = {'form' : form}
+    return render(request, 'test/create_test.html', context)
+
+def update_test(request, question_id):
+    
+    return render(request, 'test/update_test.html')
+
+
+def admin_test_report(request):
+
+    # from questionset get all
+    #set = QuestionSet.objects.all()
+    scores =  QuestionSet.objects.values('score')
+    user_ids = QuestionSet.objects.values('user_id')
+    user_ids = [user_id['user_id'] for user_id in user_ids]
+    # get username using user_id from set
+    username = []
+    for id in user_ids:
+        username.append(User.objects.get(id=id))
+    
+    scores_list = []
+    for score in scores:
+        scores_list.append(QuestionSet.objects.filter(score=).count())
+
+
+
+    student_scores = dict(zip(username, scores))
+
+
+    return render(request, 'test/admin_test_report.html', {'student_scores' : student_scores})
 
 #########################################################################
 # --------------------- for query testing ----------------------------- #
@@ -319,3 +369,4 @@ def view_test_results(request):
 def test_query(request):
     questions,start,end = get_test_questions(x=1, y=5)
     return render(request, 'test_queries/test_query.html', {'questions': questions})
+
