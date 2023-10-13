@@ -53,6 +53,9 @@ def home_field(request, field_id=None):
         'selected_field': selected_field,
     })
 
+#
+#
+# 
 @login_required(login_url='login_user')
 @admin_only # only admin can access this page
 def admin_home(request):
