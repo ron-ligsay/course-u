@@ -352,7 +352,7 @@ def admin_test_report(request):
     
     scores_list = []
     for score in scores:
-        scores_list.append(QuestionSet.objects.filter(score=).count())
+        scores_list.append(QuestionSet.objects.filter(score=score).count())
 
 
 
