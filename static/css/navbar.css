@@ -1,0 +1,50 @@
+/* Styling the navigation container */
+.navigation {
+    background-color: #333; /* Background color */
+    width: 250px; /* Set the width as needed */
+    height: 100%; /* Adjust the height as needed */
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #fff; /* Text color */
+}
+
+/* Styling for the list items */
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li {
+    margin-bottom: 10px;
+}
+
+/* Styling for links */
+.navigation a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+}
+
+/* Hover effect for links */
+.navigation a:hover {
+    background-color: #555; /* Change color on hover */
+}
+
+/* Styling for icons */
+.navigation .icon {
+    margin-right: 10px;
+    font-size: 24px; /* Adjust the icon size */
+}
+
+/* Styling for titles */
+.navigation .title {
+    font-size: 16px; /* Adjust the title size */
+}
+
+/* Styling for active link */
+.navigation .active {
+    background-color: #555;
+}
