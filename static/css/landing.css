@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}.background-image {
+    background-image: url('http://127.0.0.1:8000/static/images/landing2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Use viewport height */
+    width: 100vw; /* Use viewport width */
+    position: relative;
+    overflow: hidden;
+}
+
+
+.content {
+    text-align: left;
+    position: absolute;
+    top: 43%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* Style the "Get Started" button */
+.get-started-button {
+    display: inline-block;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    padding: 20px 50px;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Adjust font size to make it larger */
+    font-family: Sans-serif; 
+    margin-top: 400px;
+}
+
+/* Change button color on hover */
+.get-started-button:hover {
+    background-color: #0056b3; /* New background color on hover */
+}
