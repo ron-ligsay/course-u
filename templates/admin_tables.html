@@ -43,7 +43,7 @@
 
                     <td><a href="">{{ topic }} </a></td>
                     <td> {{ count }} </td>
-                    <td><a href="" class="btn btn-primary">Create</a></td>
+                    <td><a href="{% url 'create_test' %}" class="btn btn-primary">Create</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
