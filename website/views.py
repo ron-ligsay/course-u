@@ -139,6 +139,8 @@ def recovery(request):
 def landing_page(request):
     return render(request, 'landing.html')
 
+
+
 #########################################################################
 # ------------------------for user module------------------------------ #
 #########################################################################
@@ -192,4 +194,6 @@ def specialization_page(request, item_id):
 
     # Render the specialization_page template with the item
     return render(request, 'specialization_page.html', {'specialization_item': specialization_item})
+
+
 
