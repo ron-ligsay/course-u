@@ -7,6 +7,7 @@ from django.contrib.sessions.models import Session
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponse 
+from django.shortcuts import render
 
 import json
 import logging
@@ -134,6 +135,9 @@ def forgot_password(request):
 
 def recovery(request):
     return render(request, 'user/recovery.html')
+
+def landing_page(request):
+    return render(request, 'landing.html')
 
 #########################################################################
 # ------------------------for user module------------------------------ #

@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
 
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/signin.css' %}">
+{% endblock head_extra %}
+
+
+{% block content %}
         <div class="container"> 
             <div class="right">
                 <form method="POST" action="" class="form">
@@ -37,7 +42,17 @@
         <section class="copy legal">
             <p> <span class="small"> By continuing, you agree to accept our <br> <a href="#"> Privacy Policy </a> &amp; <a href="#"> Terms of Service</a>.</span></p>
         </section>
-        <!-- <div class="input-container name">
+        
+        </form>
+        </div>
+        <div class="side">
+            <img src="{% static 'images/signup.jpg' %}">
+        </div>
+    </div>
+{% endblock content %}
+
+
+<!-- <div class="input-container name">
             <label for="fname"> Full Name</label>
             <input id="fname" name="fname" type="text" placeholder="Enter Name">
         </div>
@@ -58,10 +73,3 @@
             <input id="password" name="password2" type="password" placeholder="Must be atleast 6 characters" >
             <i class="far fa-eye-slash>"></i> 
         </div> -->         
-        </form>
-        </div>
-        <div class="side">
-            <img src="{% static 'images/signup.jpg' %}">
-        </div>
-    </div>
-{% endblock content %}

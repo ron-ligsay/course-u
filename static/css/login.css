@@ -4,13 +4,14 @@
     box-sizing: boder-box;
     font-family: 'Poppins';
  }
-.container{
-    display: flex;
-    height: 550px;
-    width: 900px;
-    margin: auto;
-    margin-top: 30px;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
+ /* CONTAINER */
+.container1{ 
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
 }
 .form{

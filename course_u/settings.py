@@ -150,3 +150,53 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGOUT_REDIRECT_URL = 'logout_success'
+
+# HANDLERS = {
+#     "console": {
+#         "class" : "logging.StreamHandler",
+#         "formatter": "verbose",
+#         "level" :  "DEBUG"
+#     },
+#     "info_handler": {
+#         "class": "logging.handlers.RotatingFileHandler",
+#         "filename":f"{BASE_DIR}/logs/info.log",
+#         "mode":"a",
+#         "encoding":"utf-8",
+#         "formatter":"verbose",
+#         "level":"INFO",
+#         "backupCount":5,
+#         "maxBytle":1024 * 1024 * 5 ,
+#     },
+#     "error_handler": {
+#         "class":"logging.handlers.RotatingFileHandler",
+#         "filename":f"{BASE_DIR}/logs/error.log",
+#         "mode":"a",
+#         "formatter":"verbose",
+#         "level" : "WARNING",
+#         "backupCount":5,
+#         "maxBytes" : 1024 * 1024 * 5,
+#     },
+# }
+
+# LOGGERS = {
+#     {
+#     "django" : {
+#        "handlers" : ["console_handler","info_handler"],
+#         "level" : 'INFO',
+#     },
+#     "django.request" : {
+#         "handlers" : ["error_handler"],
+#         "level" : "ERROR",
+#         "propagate" : True,
+#     },
+#     "dango.template" : {
+#         "handlers" : ["error_handler"],
+#         "level" : "DEBUG",
+#         "propagete" : True,
+#     },
+#     "django.server" : {
+#         "handlers" : ["error_handler"],
+#         "level" : "DEBUG",
+#     },
+#     }
+# }
