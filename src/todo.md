@@ -1,4 +1,20 @@
+
+
 # TODO
+
+## High Priority
+- [ ]: Maintenance
+    - [ ]: Loggers
+    - [ ]: Handlers
+- [ ]: Transactions
+- [ ]: Reports
+    - [ ]: Students
+    - [ ]: Grades
+    - [ ]: Jobs
+    - [ ]: Jobs_Applied
+    - [ ]: Student_Career
+    - [ ]: Feedbacks
+    - [ ]: Instructors/Faculty
 
 - [ ]: # Path: todo.
 - [ |-|x]: something
