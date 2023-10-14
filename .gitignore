@@ -64,3 +64,7 @@ __pycache__/
 # Ignore migrations inside apps
 **/migrations/*.py
 static/js/Chart.js-4.4.0.zip
+
+
+# setitngs.py
+# courseu/settings.py
