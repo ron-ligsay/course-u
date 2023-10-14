@@ -92,19 +92,11 @@ WSGI_APPLICATION = 'course_u.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-<<<<<<< HEAD
         'NAME': 'courseu_db',
         'USER': 'root',
         'PASSWORD': 'sawadeeKA456',
         'HOST': 'localhost',
         'PORT': '3306',
-=======
-        'NAME': 'courseu_db',#config('DB_NAME', default='courseu_db'),#
-        'USER': 'root',#config('DB_USER'),
-        'PASSWORD': 'sql2023',#config('DB_PASS'),
-        'HOST': 'localhost',#config('DB_HOST', default='localhost'),
-        'PORT': '3306',#'config('DB_PORT', default='3306'),
->>>>>>> 28c134a5bc6d57bf131da9863017e5778b0524f5
     }
 }
 
