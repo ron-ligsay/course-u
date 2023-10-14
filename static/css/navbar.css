@@ -1,6 +1,6 @@
 /* Styling the navigation container */
 .navigation {
-    background-color: #333; /* Background color */
+    background-color: black; /* Background color */
     width: 250px; /* Set the width as needed */
     height: 100%; /* Adjust the height as needed */
     position: fixed; /* Fixed positioning */
