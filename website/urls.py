@@ -34,6 +34,10 @@ urlpatterns = [
 
     #for landing page
     path('', views.landing_page, name='landing_page'),
+
+    #for grade levl
+    path ('', views.grade_level, name='grade_level'),
+
 ]
 
 
