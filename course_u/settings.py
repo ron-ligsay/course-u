@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'course_u.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'courseu_db',#config('DB_NAME', default='courseu_db'),#
-        'USER': 'root',#config('DB_USER'),
-        'PASSWORD': 'sql2023',#config('DB_PASS'),
-        'HOST': 'localhost',#config('DB_HOST', default='localhost'),
-        'PORT': '3306',#'config('DB_PORT', default='3306'),
+        'NAME': 'courseu_db',
+        'USER': 'root',
+        'PASSWORD': 'sawadeeKA456',#'sawadeeKA456',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -141,6 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 from logging.handlers import RotatingFileHandler
 
 LOGOUT_REDIRECT_URL = 'logout_success'
+
 
 FORMATTERS = (
     {

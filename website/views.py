@@ -27,8 +27,8 @@ from website.decorators import unauthenticated_user, allowed_users, admin_only
 logger = logging.getLogger("django") # name of logger : django
 
 
-@login_required(login_url='login_user')
-@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
+#@login_required(login_url='login_user')
+#@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
 def home(request):
     logger.debug("User: " + str(request.user) + " is accessing home page")
     specialization_items = Specialization.objects.all()
@@ -56,8 +56,8 @@ def home_field(request, field_id=None):
         'selected_field': selected_field,
     })
 
-@login_required(login_url='login_user')
-@admin_only # only admin can access this page
+#@login_required(login_url='login_user')
+#@admin_only # only admin can access this page
 def admin_home(request):
     #messages.success(request, 'You are in admin home')
     admin = True
@@ -141,6 +141,8 @@ def recovery(request):
 def landing_page(request):
     return render(request, 'landing.html')
 
+
+
 #########################################################################
 # ------------------------for user module------------------------------ #
 #########################################################################
@@ -194,4 +196,6 @@ def specialization_page(request, item_id):
 
     # Render the specialization_page template with the item
     return render(request, 'specialization_page.html', {'specialization_item': specialization_item})
+
+
 
