@@ -22,7 +22,8 @@ urlpatterns = [
     path('create_test/', views.create_test, name='create_test'),
     path('update_test/<int:question_id>/', views.update_test, name='update_test'),
     path('admin_report/', views.admin_test_report, name=('admin_report')),
-    path('grade_input/',views.grade_input, name='grade_input')
+    path('gradelevel_input/',views.gradelevel_input, name='gradelevel_input'),
+    path('subjectgrade_input/',views.subjectgrade_input, name='subjectgrade_input')
 ]
 
 
