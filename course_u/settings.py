@@ -172,7 +172,7 @@ HANDLERS = {
     },
     "info_handler": {
         "class": "logging.handlers.RotatingFileHandler",
-        "filename":f"{BASE_DIR}/logs/blogthedata_info.log",
+        "filename":f"{BASE_DIR}/logs/info.log",
         "mode":"a",
         "encoding":"utf-8",
         "formatter":"verbose",
@@ -182,7 +182,7 @@ HANDLERS = {
     },
     "error_handler": {
         "class":"logging.handlers.RotatingFileHandler",
-        "filename":f"{BASE_DIR}/logs/blogthedata_error.log",
+        "filename":f"{BASE_DIR}/logs/error.log",
         "mode":"a",
         "formatter":"verbose",
         "level" : "WARNING", # filter to only log messages with a level of WARNING or higher
@@ -193,7 +193,7 @@ HANDLERS = {
 
 LOGGERS = (
     {
-        "django" : {
+        "django" : { # name of the logger
         "handlers" : ["console_handler","info_handler"],
             "level" : 'INFO',
         },
