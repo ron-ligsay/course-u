@@ -371,3 +371,5 @@ def test_query(request):
     questions,start,end = get_test_questions(x=1, y=5)
     return render(request, 'test_queries/test_query.html', {'questions': questions})
 
+def grade_input(request):
+    return render(request, 'user/grade level.html')
