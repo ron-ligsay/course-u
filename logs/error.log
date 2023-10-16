@@ -41,3 +41,10 @@ WARNING 2023-10-16 19:16:44,997 django.request Thread-2 19044 log log.py 241 dja
 WARNING 2023-10-16 19:16:44,997 django.server Thread-2 19044 basehttp basehttp.py 212 django.server log_message 12928 "GET /favicon.ico HTTP/1.1" 404 17458
 WARNING 2023-10-16 19:17:11,601 django.server Thread-3 21932 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
 WARNING 2023-10-16 19:18:36,492 django.server Thread-9 15324 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:30:39,511 django.server Thread-1 20200 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:30:41,680 django.server Thread-3 22332 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:30:52,522 django.request Thread-4 17528 log log.py 241 django.request log_response 18848 Not Found: /favicon.ico
+WARNING 2023-10-16 21:30:52,524 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 21:30:53,503 django.request Thread-4 17528 log log.py 241 django.request log_response 18848 Not Found: /favicon.ico
+WARNING 2023-10-16 21:30:53,504 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 21:31:00,182 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800

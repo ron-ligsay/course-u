@@ -14,7 +14,7 @@ __pycache__/
 local_settings.py
 
 # Ignore log files
-#*.log
+*.log
 
 # Ignore compiled Python files
 *.pyc

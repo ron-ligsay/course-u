@@ -113,3 +113,25 @@ WARNING 2023-10-16 19:18:36,492 django.server Thread-9 15324 basehttp basehttp.p
 INFO 2023-10-16 20:04:24,309 django.utils.autoreload MainThread 7720 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8308 Watching for file changes with StatReloader
 INFO 2023-10-16 20:04:47,771 django.utils.autoreload MainThread 7720 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8308 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course_u\settings.py changed, reloading.
 INFO 2023-10-16 20:04:50,444 django.utils.autoreload MainThread 11032 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18848 Watching for file changes with StatReloader
+INFO 2023-10-16 21:30:39,388 django.server Thread-1 20200 basehttp basehttp.py 212 django.server log_message 18848 "GET /home HTTP/1.1" 200 31953
+INFO 2023-10-16 21:30:39,510 django.server Thread-2 19684 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/home.css HTTP/1.1" 200 853
+WARNING 2023-10-16 21:30:39,511 django.server Thread-1 20200 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-16 21:30:39,554 django.server Thread-3 22332 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test.css HTTP/1.1" 200 2829
+INFO 2023-10-16 21:30:40,403 django.server Thread-3 22332 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-10-16 21:30:41,563 django.server Thread-3 22332 basehttp basehttp.py 212 django.server log_message 18848 "GET /home HTTP/1.1" 200 31951
+WARNING 2023-10-16 21:30:41,680 django.server Thread-3 22332 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-16 21:30:43,379 django.server Thread-2 19684 basehttp basehttp.py 212 django.server log_message 18848 "GET /admin_home/ HTTP/1.1" 200 19234
+INFO 2023-10-16 21:30:45,299 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /admin_home/ HTTP/1.1" 200 19234
+INFO 2023-10-16 21:30:46,379 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /admin_home/ HTTP/1.1" 200 19234
+INFO 2023-10-16 21:30:47,627 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /profile/ HTTP/1.1" 200 11893
+INFO 2023-10-16 21:30:52,030 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-16 21:30:52,083 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /logout/success/ HTTP/1.1" 200 9471
+WARNING 2023-10-16 21:30:52,522 django.request Thread-4 17528 log log.py 241 django.request log_response 18848 Not Found: /favicon.ico
+WARNING 2023-10-16 21:30:52,524 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 21:30:53,503 django.request Thread-4 17528 log log.py 241 django.request log_response 18848 Not Found: /favicon.ico
+WARNING 2023-10-16 21:30:53,504 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-16 21:30:54,031 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /login_user/ HTTP/1.1" 200 10634
+INFO 2023-10-16 21:30:54,124 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/login_user.css HTTP/1.1" 200 967
+INFO 2023-10-16 21:31:00,012 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-16 21:31:00,106 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "GET /home HTTP/1.1" 200 32247
+WARNING 2023-10-16 21:31:00,182 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
