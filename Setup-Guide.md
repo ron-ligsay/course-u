@@ -143,6 +143,15 @@ if you made changes the  databse, use `mysql -u <username> -p courseu_db < dump_
 
 ## Other Tools you can use to help your Development
 
+### Removing content types 
+django has automatic generated content types, you can remove them by using this command
+`python manage.py remove_contenttypes`
+or on `python manage.py shell`
+then import `from django.contrib.contenttypes.models import ContentType`
+then `ContentType.objects.all().delete()`
+with this you can remove all content types
+and you can use `python manage.py loaddata data_dump.json` to load the data again
+
 ### Loading data's to Database
 If you want to load the current database datas
 `python manage.py loaddata data_dump.json`<br>
