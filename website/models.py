@@ -1,27 +1,44 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+class Field(models.Model):
+    field = models.AutoField(primary_key=True)
+    field_name = models.CharField(max_length=150)
+    description = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.field_name
+
 class Specialization(models.Model):
     specialization_id = models.AutoField(primary_key=True)
-    #field_id = models.IntegerField()
-    field_id = models.CharField(max_length=100)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     roadmap_id = models.IntegerField()
 
-
     def __str__(self):
         return self.title
-    
-class Test(models.Model):
-    question_id = models.AutoField(primary_key=True)
-    question = models.CharField(max_length=1000)
-    option1 = models.CharField(max_length=1000)
-    option2 = models.CharField(max_length=1000)
-    option3 = models.CharField(max_length=1000)
-    option4 = models.CharField(max_length=1000)
-    answer = models.CharField(max_length=1000)
-    topic = models.CharField(max_length=1000)
+    # allow field id to have duplicates
+    # class Meta:
+    #     unique_together = ('field')
 
-    def __str__(self):
-        return self.question
+
+
+# Optional if you want to add additional fields to the user model
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     # Add additional fields as needed (e.g., profile picture, bio, etc.)
+
+# Create your models here.
+# class Specialization(models.Model):
+#     specialization_id = models.AutoField(primary_key=True)
+#     field = models.ForeignKey(Field, on_delete=models.CASCADE)
+#     title = models.CharField(max_length=100)
+#     description = models.CharField(max_length=1000)
+#     roadmap_id = models.IntegerField()
+
+#     def __str__(self):
+#         return self.title
+    
+#     class Meta:
+#         unique_together = ('field')

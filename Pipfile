@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.7.2"
+"backports.zoneinfo" = "==0.2.1"
+django = "*"
+django-debug-toolbar = "*"
+mysql = "==0.0.3"
+mysql-connector = "==2.2.9"
+mysql-connector-python = "==8.1.0"
+python-decouple = "==3.8"
+protobuf = "==4.21.12"
+sqlparse = "==0.4.4"
+typing-extensions = "==4.7.1"
+tzdata = "==2023.3"
+mysqlclient = "*"
+plotly = "*"
+pandas = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
