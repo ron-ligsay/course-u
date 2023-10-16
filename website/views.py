@@ -22,13 +22,15 @@ from jobs.models import JobPosting
 
 from website.decorators import unauthenticated_user, allowed_users, admin_only
 
-logger = logging.getLogger(__name__)
+
+#logger = logging.getLogger(__name__)
+logger = logging.getLogger("django") # name of logger : django
 
 
 @login_required(login_url='login_user')
 @allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
 def home(request):
-    print('home page')
+    logger.debug("User: " + str(request.user) + " is accessing home page")
     specialization_items = Specialization.objects.all()
     field_items = Field.objects.all()
 
