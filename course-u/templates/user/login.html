@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_extra %}
+
+<link rel="stylesheet" href="{% static 'css/login_user.css' %}">
+{% endblock head_extra %}
+
+{% block content %}
+
+
+<div class="container">
+  <br>
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+
+  {% if user.is_authenticated %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    You are already logged in!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <a href="{% url 'home' %}" class="btn btn-secondary">Home Page</a>
+
+
+
+  {% else %}
+  <div class="container1">
+    <form method='POST' action="{% url 'login_user' %}" class="form">
+      {% csrf_token %}
+      <h2>Welcome Back to Course U!</h2>
+
+      Need an account? <a href="{% url 'sign_in' %}">&nbsp;Sign in</a></p>
+      <!-- <input type="email" name="email" class="box form-control" placeholder="Enter Email"><br>  -->
+      <input type="text" name="username" class="box form-control" placeholder="Enter Username"><br>
+      <input type="password" name="password" placeholder="Password" class="box form-control"
+        placeholder="Enter Password">
+      <a href="{% url 'forgot_password' %}">Forgot Password? </a>
+      <input type="submit" value="LOG IN" id="submit">
+
+
+
+    </form>
+  </div>
+  {% endif %}
+
+  {% endblock content %}

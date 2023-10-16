@@ -1,0 +1,42 @@
+specialization_id,field_id,title,description,roadmap_id
+1,Software Development,front-end,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",1
+2,Software Development,back-end,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",2
+3,Software Development,full stack,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",3
+4,Software Development,software engineer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",4
+5,Software Development,software developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",5
+6,Software Development,mobile app developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",6
+7,Software Development,devops engineer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",7
+8,Software Development,game developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",8
+9,Software Development,embedded systems developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",9
+10,Data and Analytics,data scientist,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",10
+11,Data and Analytics,data analyst,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",11
+12,Data and Analytics,business intelligence (BI) developer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",12
+13,Data and Analytics,machine learning engineer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",13
+14,Data and Analytics,ai engineer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",14
+15,Data and Analytics,data engineer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",15
+16,Design and UX/UI,UI Designer,Roles involved in designing user interfaces and creating optimal user experiences.,16
+17,Design and UX/UI,UX Designer,Roles involved in designing user interfaces and creating optimal user experiences.,17
+18,Design and UX/UI,Interaction Designer,Roles involved in designing user interfaces and creating optimal user experiences.,18
+19,Design and UX/UI,Visual Designer,Roles involved in designing user interfaces and creating optimal user experiences.,19
+20,Product Management,product manager,"Roles overseeing product development, strategy, and roadmap.",20
+21,Product Management,technical product manager,"Roles overseeing product development, strategy, and roadmap.",21
+22,Testing and Quality Assurance,qa engineer,Roles responsible for ensuring software quality through testing.,22
+23,Testing and Quality Assurance,test automation engineer,Roles responsible for ensuring software quality through testing.,23
+24,Security,cybersecurity analyst,Roles centered around cybersecurity and protecting systems and data.,24
+25,Security,security engineer,Roles centered around cybersecurity and protecting systems and data.,25
+26,Security,ethical hacker (penetration tester),Roles centered around cybersecurity and protecting systems and data.,26
+27,Security,security consultant,Roles centered around cybersecurity and protecting systems and data.,27
+28,Networking and Infrastructure,network engineer,"Roles managing networks, systems, and cloud infrastructure.",28
+29,Networking and Infrastructure,system administrator,"Roles managing networks, systems, and cloud infrastructure.",29
+30,Networking and Infrastructure,cloud engineer,"Roles managing networks, systems, and cloud infrastructure.",30
+31,Networking and Infrastructure,site reliability engineer (se),"Roles managing networks, systems, and cloud infrastructure.",31
+32,Project Management,it project mananger,Roles providing technical assistance to end-users.,32
+33,Project Management,scrum master,Roles providing technical assistance to end-users.,33
+34,Business and Strategy,it business analyst,Roles leading and managing IT projects.,34
+35,Business and Strategy,it consultant,Roles leading and managing IT projects.,35
+36,Business and Strategy,technology strategist,Roles leading and managing IT projects.,36
+37,Emerging and Specialized,blockchain developer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",37
+38,Emerging and Specialized,quantum computing scientist,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",38
+39,Emerging and Specialized,virtual reality (vr) developer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",39
+40,Emerging and Specialized,augmented reality (ar) developer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",40
+41,Emerging and Specialized,edge computing engineer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",41
