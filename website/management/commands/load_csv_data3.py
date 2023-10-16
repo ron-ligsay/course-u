@@ -16,7 +16,11 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='sql2023',
+<<<<<<< HEAD
+            password='sawadeeKA456',
+=======
+            password='022002',
+>>>>>>> 69d3e31f4b841572ac4bc14d62db8fb88457e8e2
             database= 'courseu_db',#config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
@@ -28,18 +32,40 @@ class Command(BaseCommand):
                 'columns' : ['field','field_name','description'],
                 'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
             },
+            base_dir + '\\static\\csv\\userdb.csv': {
+                'table_name': 'userdb',
+                'model_name' : 'User',
+                'columns' : ['userid','username','password','email'],
+                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(25)', 'VARCHAR(25)', 'VARCHAR(100)' ]
+            },
             base_dir + '\\static\\csv\\specialization1.csv': {
                 'table_name': 'website_specialization',
                 'model_name': 'Specialization',
                 'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
                 'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
             },
-            base_dir + '\\src\\job_post_scrapy\\jobs\\jobs_clean.csv': {
+            # base_dir + '\\src\\linkedin_scrapy\\jobs\\jobs_clean.csv': {
+            #     'table_name': 'jobs_jobposting',
+            #     'model_name': 'JobPosting',
+            #     #link,keyword,title,company,company_link,date,link_clean,id
+            #     'columns': ['keyword','title','company','company_link','date_posted','link_clean','id'],
+            #     'attributes': ['VARCHAR(100)', 'VARCHAR(100)', 'VARCHAR(100)', 'VARCHAR(10000)', 'DATE', 'VARCHAR(4000)', 'INT AUTO_INCREMENT PRIMARY KEY']
+            # },
+            base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
                 'table_name': 'jobs_jobposting',
                 'model_name': 'JobPosting',
-                #link,keyword,title,company,company_link,date,link_clean,id
-                'columns': ['keyword','title','company','company_link','date','link_clean','id'],
-                'attributes': ['VARCHAR(100)', 'VARCHAR(100)', 'VARCHAR(100)', 'VARCHAR(6000)', 'VARCHAR(100)', 'VARCHAR(4000)', 'INT PRIMARY KEY']
+                #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
+                'columns': ['id','link','job_title',
+                            'company_name','company_link','date_posted',
+                            'keyword','keyword_id','location',
+                            'employment_type','job_function','industries','seniority_level',
+                            'job_description'],
+                'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
+                                'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
+                                'VARCHAR(100)','INT','VARCHAR(300)',
+                                'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
+                                'TEXT'
+                                ]
             },
             base_dir + '\\static\\csv\\test_2.csv': {
                 'table_name': 'assessment_test',

@@ -8,7 +8,8 @@ from datetime import datetime
 from django.utils import timezone
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('home', views.home, name='home'),
+    path('admin_home/', views.admin_home, name='admin_home'),
     path('field/', views.home_field, name='home_field'),
     path('field/<int:field_id>/', views.home_field, name='home_field'),
 
@@ -30,6 +31,13 @@ urlpatterns = [
     
     # For Specialization
     path('specialization_page/<int:item_id>/', views.specialization_page, name='specialization_page'),
+
+    #for landing page
+    path('', views.landing_page, name='landing_page'),
+
+    #for grade levl
+   # path ('', views.grade_level, name='grade_level'),
+
 ]
 
 

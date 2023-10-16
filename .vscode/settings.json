@@ -11,7 +11,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "MySQL Project",
-            "database": "courseu_db2",
+            "database": "courseu_db",
             "username": "root"
         },
         {
@@ -27,5 +27,14 @@
             "database": "courseu_db",
             "username": "root"
         }
-    ]
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./website",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }
