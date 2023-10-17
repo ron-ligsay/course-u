@@ -1,8 +1,8 @@
 from pathlib import Path
 import os
 
-from decouple import Config, RepositoryEnv
-config = Config(RepositoryEnv('.env'))
+#from decouple import Config, RepositoryEnv
+#config = Config(RepositoryEnv('.env'))
 # config.read('.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
