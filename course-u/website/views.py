@@ -8,20 +8,22 @@ from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponse 
 from django.shortcuts import render
+from django.contrib.auth.models import User
 
-import json
-import logging
 
 #from website.utils import *
 from website.forms import SignUpForm
 from website.models import Specialization, Field
+from website.decorators import unauthenticated_user, allowed_users, admin_only
 
-from django.contrib.auth.models import User
 from assessment.models import Test, QuestionSet
 from jobs.models import JobPosting
 
-from website.decorators import unauthenticated_user, allowed_users, admin_only
 
+# Other Imports
+import json
+import logging
+import plotly.express as px
 
 #logger = logging.getLogger(__name__)
 logger = logging.getLogger("django") # name of logger : django
@@ -199,3 +201,17 @@ def specialization_page(request, item_id):
 
 
 
+def admin_report(request):
+    sets = QuestionSet.objects.all()
+
+    fig = px.bar(
+        x=[set.set_id for set in sets],
+        y=[set.score for set in sets],
+        text=[set.user.username for set in sets],
+        labels=dict(x="Set ID", y="Score", color="Set ID"),    
+    )
+
+    chart = fig.to_html()#full_html=False, include_plotlyjs=False
+
+    context = {'chart': chart}
+    return render(request, 'report.html', context)
