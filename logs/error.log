@@ -136,3 +136,149 @@ WARNING 2023-10-17 17:20:59,601 django.server Thread-5 (process_request_thread) 
 WARNING 2023-10-17 17:21:07,263 django.request Thread-6 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
 WARNING 2023-10-17 17:21:07,265 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
 WARNING 2023-10-17 17:21:37,355 django.server Thread-9 (process_request_thread) 19304 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 404 1801
+WARNING 2023-10-17 17:26:33,580 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 17:27:58,065 django.server Thread-1 (process_request_thread) 18932 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 17:45:46,567 django.server Thread-2 (process_request_thread) 18336 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+ERROR 2023-10-17 17:54:16,830 django.request Thread-13 (process_request_thread) 29768 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:16,874 django.server Thread-13 (process_request_thread) 29768 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:54:26,417 django.request Thread-14 (process_request_thread) 29004 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:26,469 django.server Thread-14 (process_request_thread) 29004 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:54:49,916 django.request Thread-15 (process_request_thread) 28484 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:49,957 django.server Thread-15 (process_request_thread) 28484 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:55:47,244 django.request Thread-16 (process_request_thread) 29172 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'display_question' with no arguments not found. 1 pattern(s) tried: ['question/(?P<question_id>[0-9]+)/\\Z']
+ERROR 2023-10-17 17:55:47,284 django.server Thread-16 (process_request_thread) 29172 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133198

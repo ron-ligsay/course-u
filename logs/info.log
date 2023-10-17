@@ -286,3 +286,255 @@ INFO 2023-10-17 17:21:37,305 django.server Thread-9 (process_request_thread) 193
 WARNING 2023-10-17 17:21:37,355 django.server Thread-9 (process_request_thread) 19304 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 404 1801
 INFO 2023-10-17 17:24:05,926 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /course_input/ HTTP/1.1" 200 9481
 INFO 2023-10-17 17:24:05,956 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 200 524
+INFO 2023-10-17 17:26:31,564 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:26:33,465 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:26:33,529 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /home HTTP/1.1" 200 31951
+WARNING 2023-10-17 17:26:33,580 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 17:26:35,828 django.server Thread-11 (process_request_thread) 12276 basehttp basehttp.py 212 django.server log_message 22216 "GET /test_home/ HTTP/1.1" 200 12548
+INFO 2023-10-17 17:26:40,681 django.server Thread-11 (process_request_thread) 12276 basehttp basehttp.py 212 django.server log_message 22216 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:26:40,721 django.server Thread-11 (process_request_thread) 12276 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/grade_level.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:27:38,801 django.server Thread-11 (process_request_thread) 12276 basehttp basehttp.py 212 django.server log_message 22216 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:27:51,433 django.utils.autoreload MainThread 23916 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 23912 Watching for file changes with StatReloader
+INFO 2023-10-17 17:27:56,337 django.server Thread-1 (process_request_thread) 18932 basehttp basehttp.py 212 django.server log_message 23912 "GET / HTTP/1.1" 200 9437
+INFO 2023-10-17 17:27:57,947 django.server Thread-1 (process_request_thread) 18932 basehttp basehttp.py 212 django.server log_message 23912 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:27:58,010 django.server Thread-1 (process_request_thread) 18932 basehttp basehttp.py 212 django.server log_message 23912 "GET /home HTTP/1.1" 200 31951
+WARNING 2023-10-17 17:27:58,065 django.server Thread-1 (process_request_thread) 18932 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 17:28:01,592 django.server Thread-2 (process_request_thread) 23952 basehttp basehttp.py 212 django.server log_message 23912 "GET /test_home/ HTTP/1.1" 200 12544
+INFO 2023-10-17 17:28:03,139 django.server Thread-2 (process_request_thread) 23952 basehttp basehttp.py 212 django.server log_message 23912 "GET /course_input/ HTTP/1.1" 200 9481
+INFO 2023-10-17 17:28:03,169 django.server Thread-2 (process_request_thread) 23952 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/course.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:29:01,593 django.server Thread-3 (process_request_thread) 23948 basehttp basehttp.py 212 django.server log_message 23912 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:29:11,232 django.server Thread-3 (process_request_thread) 23948 basehttp basehttp.py 212 django.server log_message 23912 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:29:14,824 django.server Thread-4 (process_request_thread) 23212 basehttp basehttp.py 212 django.server log_message 23912 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:29:16,306 django.server Thread-4 (process_request_thread) 23212 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10732
+INFO 2023-10-17 17:29:16,344 django.server Thread-4 (process_request_thread) 23212 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/subject.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:29:20,883 django.server Thread-4 (process_request_thread) 23212 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10732
+INFO 2023-10-17 17:29:27,251 django.server Thread-5 (process_request_thread) 5516 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10732
+INFO 2023-10-17 17:29:31,775 django.server Thread-5 (process_request_thread) 5516 basehttp basehttp.py 212 django.server log_message 23912 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:29:31,845 django.server Thread-5 (process_request_thread) 5516 basehttp basehttp.py 212 django.server log_message 23912 "GET /question/1/ HTTP/1.1" 200 13121
+INFO 2023-10-17 17:29:31,987 django.server Thread-5 (process_request_thread) 5516 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:29:39,125 django.server Thread-6 (process_request_thread) 8416 basehttp basehttp.py 212 django.server log_message 23912 "GET /test_home/ HTTP/1.1" 200 12544
+INFO 2023-10-17 17:29:42,807 django.server Thread-6 (process_request_thread) 8416 basehttp basehttp.py 212 django.server log_message 23912 "GET /course_input/ HTTP/1.1" 200 9481
+INFO 2023-10-17 17:29:42,839 django.server Thread-6 (process_request_thread) 8416 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/course.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:29:44,777 django.server Thread-7 (process_request_thread) 24656 basehttp basehttp.py 212 django.server log_message 23912 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:29:54,060 django.server Thread-8 (process_request_thread) 24804 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10732
+INFO 2023-10-17 17:31:14,120 django.server Thread-9 (process_request_thread) 24668 basehttp basehttp.py 212 django.server log_message 23912 "GET /admin_home/ HTTP/1.1" 200 17678
+INFO 2023-10-17 17:34:27,619 django.server Thread-10 (process_request_thread) 9252 basehttp basehttp.py 212 django.server log_message 23912 "GET /test_home/ HTTP/1.1" 200 12544
+INFO 2023-10-17 17:34:27,766 django.server Thread-10 (process_request_thread) 9252 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:34:29,160 django.server Thread-11 (process_request_thread) 18612 basehttp basehttp.py 212 django.server log_message 23912 "GET /course_input/ HTTP/1.1" 200 9481
+INFO 2023-10-17 17:34:29,202 django.server Thread-11 (process_request_thread) 18612 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/course.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:34:30,590 django.server Thread-11 (process_request_thread) 18612 basehttp basehttp.py 212 django.server log_message 23912 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:34:32,899 django.server Thread-11 (process_request_thread) 18612 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:19,289 django.server Thread-12 (process_request_thread) 25860 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:20,251 django.server Thread-12 (process_request_thread) 25860 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:23,084 django.server Thread-12 (process_request_thread) 25860 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:31,119 django.server Thread-13 (process_request_thread) 25580 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:31,934 django.server Thread-13 (process_request_thread) 25580 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:32,100 django.server Thread-13 (process_request_thread) 25580 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:36:32,314 django.server Thread-13 (process_request_thread) 25580 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10760
+INFO 2023-10-17 17:37:01,674 django.server Thread-14 (process_request_thread) 27464 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10768
+INFO 2023-10-17 17:38:32,559 django.server Thread-15 (process_request_thread) 23448 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10798
+INFO 2023-10-17 17:39:31,812 django.server Thread-16 (process_request_thread) 21748 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:39:32,689 django.server Thread-16 (process_request_thread) 21748 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:39:32,930 django.server Thread-16 (process_request_thread) 21748 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:39:33,141 django.server Thread-16 (process_request_thread) 21748 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:40:30,520 django.server Thread-17 (process_request_thread) 27852 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:40:31,149 django.server Thread-17 (process_request_thread) 27852 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:40:31,363 django.server Thread-17 (process_request_thread) 27852 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10770
+INFO 2023-10-17 17:43:43,592 django.server Thread-18 (process_request_thread) 25592 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10784
+INFO 2023-10-17 17:43:44,468 django.server Thread-18 (process_request_thread) 25592 basehttp basehttp.py 212 django.server log_message 23912 "GET /subjectgrade_input/ HTTP/1.1" 200 10784
+INFO 2023-10-17 17:45:40,065 django.utils.autoreload MainThread 23724 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 23720 Watching for file changes with StatReloader
+INFO 2023-10-17 17:45:44,691 django.server Thread-1 (process_request_thread) 29548 basehttp basehttp.py 212 django.server log_message 23720 "GET / HTTP/1.1" 200 9437
+INFO 2023-10-17 17:45:46,432 django.server Thread-2 (process_request_thread) 18336 basehttp basehttp.py 212 django.server log_message 23720 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:45:46,501 django.server Thread-2 (process_request_thread) 18336 basehttp basehttp.py 212 django.server log_message 23720 "GET /home HTTP/1.1" 200 31951
+WARNING 2023-10-17 17:45:46,567 django.server Thread-2 (process_request_thread) 18336 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 17:45:46,761 django.server Thread-3 (process_request_thread) 14456 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:45:51,147 django.server Thread-3 (process_request_thread) 14456 basehttp basehttp.py 212 django.server log_message 23720 "GET /test_home/ HTTP/1.1" 200 12544
+INFO 2023-10-17 17:45:52,798 django.server Thread-3 (process_request_thread) 14456 basehttp basehttp.py 212 django.server log_message 23720 "GET /course_input/ HTTP/1.1" 200 9481
+INFO 2023-10-17 17:45:52,835 django.server Thread-3 (process_request_thread) 14456 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/course.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:45:54,532 django.server Thread-3 (process_request_thread) 14456 basehttp basehttp.py 212 django.server log_message 23720 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-17 17:45:56,347 django.server Thread-4 (process_request_thread) 29352 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10784
+INFO 2023-10-17 17:47:10,394 django.server Thread-5 (process_request_thread) 27408 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10786
+INFO 2023-10-17 17:47:22,999 django.server Thread-6 (process_request_thread) 29216 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10785
+INFO 2023-10-17 17:48:03,813 django.server Thread-7 (process_request_thread) 21500 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:54,917 django.server Thread-8 (process_request_thread) 30484 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:55,769 django.server Thread-9 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:55,964 django.server Thread-9 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:56,157 django.server Thread-9 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:56,335 django.server Thread-9 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:56,531 django.server Thread-9 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:48:56,713 django.server Thread-9 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:49:10,462 django.server Thread-10 (process_request_thread) 12276 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10788
+INFO 2023-10-17 17:49:26,131 django.server Thread-11 (process_request_thread) 26760 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10789
+INFO 2023-10-17 17:51:44,857 django.server Thread-12 (process_request_thread) 26308 basehttp basehttp.py 212 django.server log_message 23720 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:51:44,913 django.server Thread-12 (process_request_thread) 26308 basehttp basehttp.py 212 django.server log_message 23720 "GET /question/1/ HTTP/1.1" 200 13121
+INFO 2023-10-17 17:51:45,096 django.server Thread-12 (process_request_thread) 26308 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/images/favicon.png HTTP/1.1" 304 0
+ERROR 2023-10-17 17:54:16,830 django.request Thread-13 (process_request_thread) 29768 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:16,874 django.server Thread-13 (process_request_thread) 29768 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:54:26,417 django.request Thread-14 (process_request_thread) 29004 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:26,469 django.server Thread-14 (process_request_thread) 29004 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:54:49,916 django.request Thread-15 (process_request_thread) 28484 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:49,957 django.server Thread-15 (process_request_thread) 28484 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:55:47,244 django.request Thread-16 (process_request_thread) 29172 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'display_question' with no arguments not found. 1 pattern(s) tried: ['question/(?P<question_id>[0-9]+)/\\Z']
+ERROR 2023-10-17 17:55:47,284 django.server Thread-16 (process_request_thread) 29172 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133198
+INFO 2023-10-17 17:57:14,213 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10809
+INFO 2023-10-17 17:57:17,540 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:57:17,597 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /question/1/ HTTP/1.1" 200 13121
+INFO 2023-10-17 17:57:17,734 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:57:31,180 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:57:31,234 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /question/1/ HTTP/1.1" 200 13121
+INFO 2023-10-17 17:57:34,948 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10809
+INFO 2023-10-17 17:57:38,267 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:57:38,321 django.server Thread-17 (process_request_thread) 31712 basehttp basehttp.py 212 django.server log_message 23720 "GET /question/1/ HTTP/1.1" 200 13121
+INFO 2023-10-17 18:19:40,732 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10897
+INFO 2023-10-17 18:19:42,192 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10896
+INFO 2023-10-17 18:21:00,174 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:21:03,182 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 18:21:03,245 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /question/1/ HTTP/1.1" 200 13121
+INFO 2023-10-17 18:21:03,423 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 18:22:48,009 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:22:49,107 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10829
+INFO 2023-10-17 18:22:49,776 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10830
+INFO 2023-10-17 18:22:50,090 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:22:50,293 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:22:50,561 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:23:06,250 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10830
+INFO 2023-10-17 18:24:15,822 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:24:16,894 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:24:17,694 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-17 18:24:19,846 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 18:24:19,935 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /question/1/ HTTP/1.1" 200 13121
