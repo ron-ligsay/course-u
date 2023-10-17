@@ -1,21 +1,22 @@
+# System imports
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.sessions.models import Session
 from django.contrib import messages
-from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
-from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
-from assessment.models import Test, QuestionSet, UserResponse
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
+# App imports
+from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
+from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
+from assessment.models import Test, QuestionSet, UserResponse
 
+# Other Imports
 import plotly.express as px
-# Create your views here.
+
+# Create your views here:
 
 
-#########################################################################
-# ------------------------for assessment------------------------------- #
-#########################################################################
 
 def test_home(request):
     return render(request, 'test/test_home.html')
@@ -161,14 +162,15 @@ def next_test(request, question_id):
 
     try:
         question_set = request.session.get('question_set')
+        n_question = request.session.get('n_questions', 0)
         question = get_object_or_404(Test, question_id=question_id + 1)
         #if question not in question_set:
         #    raise Test.DoesNotExist
 
-        if question_id + 1 < len(question_set):
+        if question_id + 1 < n_question:
             #options = question.options
             return render(request, 'test/test_page.html', {'question': question})
-        if question_id + 1 == len(question_set):
+        if question_id + 1 == n_question:
             # This is the last question
             messages.success(request, 'You have completed the test')
             return redirect('test_overview')
@@ -246,9 +248,15 @@ def submit_question(request, question_id):
                 # Redirect to the next question or a completion page
                 next_question_id = question_id + 1
                 try:
-                    next_question = Test.objects.get(pk=next_question_id)
-                    options = next_question.options
-                    return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+                    n_question = request.session.get('n_questions', 0)
+                    if next_question_id == n_question:
+                        # This is the last question
+                        messages.success(request, 'You have completed the test')
+                        return redirect('test_overview')
+                    else:
+                        next_question = Test.objects.get(pk=next_question_id)
+                        options = next_question.options
+                        return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
                 except Test.DoesNotExist:
                     # Handle the case where there is no next question
                     messages.success(request, 'You have completed the test')
@@ -361,10 +369,6 @@ def admin_test_report(request):
 
 
     return render(request, 'test/admin_test_report.html', {'student_scores' : student_scores})
-
-#########################################################################
-# --------------------- for query testing ----------------------------- #
-#########################################################################
 
 
 def test_query(request):
