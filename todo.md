@@ -2,10 +2,17 @@
 
 ## High Priority
 - [ ]: Maintenance
-    - [ ]: Loggers
-    - [ ]: Handlers
+    - [X]: Loggers
+    - [X]: Handlers
+- [ ]: Unit Tests
+    - [ ]: Sample Unit Test
+    - [ ]: Integration Tests
 - [ ]: Transactions
+    - [ ]: Create a transaction for every database operation
 - [ ]: Reports
+    - [ ]: Report Page for Admin/Instructors
+    - [ ]: Report Email for Admin/Instructors
+    - [ ]: Create a report for every database operation
     - [ ]: Students
     - [ ]: Grades
     - [ ]: Jobs
@@ -14,6 +21,7 @@
     - [ ]: Feedbacks
     - [ ]: Instructors/Faculty
 
+## Medium Priority
 - [ ]: # Path: todo.
 - [ |-|x]: something
 - [ ]: git rm <files> that are on the [.gitignore]
@@ -72,14 +80,6 @@
     - Implement a recommendation system for job postings based on a student's academic background, preferences, and career goals. You can use techniques like content-based filtering or collaborative filtering for this purpose.
 
 
-# BACKLOG
-
-# DONE
-- [x] Test System #bug
-- [x] Create a Guide
-- [-] Declined  #feat @ron-ligsay 2023-01-01
-
-
 ## Others
 - [ ]: Testing and Refinement:
     - Test your recommendation algorithms thoroughly to ensure they provide meaningful and accurate recommendations. Continuously refine the algorithms based on user feedback and data analysis.
@@ -93,3 +93,13 @@
     - Provide clear documentation to guide students on how to use the recommendation system and offer user support as needed.
 - [ ]: Feedback Loop:
     - Establish a feedback loop with students to collect their input on the recommendations and continuously improve the system.
+
+# BACKLOG
+
+
+# DONE
+- [x] Test System #bug
+- [x] Create a Guide
+- [-] Declined  #feat @ron-ligsay 2023-01-01
+
+
