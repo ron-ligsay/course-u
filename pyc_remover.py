@@ -87,7 +87,7 @@ def delete():
     remove_migration_files(excluded_files)
 
 # Use this to verfiy that the files that will be deleted
-#check()
+check()
 
 # Once verified, you can delete the files
 #delete()

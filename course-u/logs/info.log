@@ -110,3 +110,4 @@ INFO 2023-10-16 19:18:33,856 django.server Thread-8 15872 basehttp basehttp.py 2
 INFO 2023-10-16 19:18:36,380 django.server Thread-8 15872 basehttp basehttp.py 212 django.server log_message 12928 "GET /home HTTP/1.1" 200 31951
 INFO 2023-10-16 19:18:36,453 django.server Thread-8 15872 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/home.css HTTP/1.1" 304 0
 WARNING 2023-10-16 19:18:36,492 django.server Thread-9 15324 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 12:25:53,196 django.utils.autoreload MainThread 1364 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 17628 Watching for file changes with StatReloader

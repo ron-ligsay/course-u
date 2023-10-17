@@ -1,5 +1,3 @@
-
-
 # TODO
 
 ## High Priority
