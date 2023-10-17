@@ -8,6 +8,7 @@
 {% endblock head_extra %}
 
 {% block content %}
+<body>
 
 
 <div class="container">
@@ -33,17 +34,22 @@
 
   {% else %}
   <div class="container1">
-    <form method='POST' action="{% url 'login_user' %}" class="form">
+    <form method='POST' action="{% url 'login_user' %}" 
+    
+    class="form">
       {% csrf_token %}
       <h2>Welcome Back to Course U!</h2>
 
-      Need an account? <a href="{% url 'sign_in' %}">&nbsp;Sign in</a></p>
+      
       <!-- <input type="email" name="email" class="box form-control" placeholder="Enter Email"><br>  -->
       <input type="text" name="username" class="box form-control" placeholder="Enter Username"><br>
-      <input type="password" name="password" placeholder="Password" class="box form-control"
-        placeholder="Enter Password">
-      <a href="{% url 'forgot_password' %}">Forgot Password? </a>
-      <input type="submit" value="LOG IN" id="submit">
+      <input type="password" name="password" placeholder="Password" class="box form-control"placeholder="Enter Password">
+      
+
+      <input type="submit" value="Log in" id="submit">
+      <a href="{% url 'sign_in' %}">Create a new account</a>
+      <a href="{% url 'forgot_password' %}">Forget Password? </a>
+      
 
 
 
@@ -51,3 +57,5 @@
     {% endif %}
     {% endblock content %}
   </div>
+  
+</body>
