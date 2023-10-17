@@ -41,3 +41,194 @@ WARNING 2023-10-16 19:16:44,997 django.request Thread-2 19044 log log.py 241 dja
 WARNING 2023-10-16 19:16:44,997 django.server Thread-2 19044 basehttp basehttp.py 212 django.server log_message 12928 "GET /favicon.ico HTTP/1.1" 404 17458
 WARNING 2023-10-16 19:17:11,601 django.server Thread-3 21932 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
 WARNING 2023-10-16 19:18:36,492 django.server Thread-9 15324 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 13:08:27,012 django.server Thread-2 13992 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 13:08:40,119 django.request Thread-5 8416 log log.py 241 django.request log_response 14736 Not Found: /favicon.ico
+WARNING 2023-10-17 13:08:40,119 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:08:41,087 django.request Thread-5 8416 log log.py 241 django.request log_response 14736 Not Found: /favicon.ico
+WARNING 2023-10-17 13:08:41,089 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:13:18,110 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 13:13:39,199 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:39,201 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:40,182 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:40,183 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:13:42,300 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:42,300 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:43,282 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:43,293 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:48,735 django.request Thread-10 10568 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:48,744 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:49,684 django.request Thread-10 10568 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:49,688 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:13:52,004 django.request Thread-13 10144 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:52,009 django.server Thread-13 10144 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:52,899 django.request Thread-13 10144 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:52,899 django.server Thread-13 10144 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:14:02,869 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:02,869 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:14:04,594 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:04,614 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:05,504 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:05,504 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:14:08,762 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:08,764 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:09,705 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:09,713 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:14:11,885 django.request Thread-15 20884 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:12,268 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:12,278 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:13,193 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:13,198 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:14:15,009 django.request Thread-17 6008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:15,578 django.request Thread-16 12356 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:15,580 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:16,461 django.request Thread-16 12356 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:16,464 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:14:18,792 django.request Thread-16 12356 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:18,793 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+ERROR 2023-10-17 13:19:11,376 django.request Thread-1 16780 log log.py 241 django.request log_response 8052 Internal Server Error: /admin/assessment/questionset/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\options.py", line 681, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: QuestionSet has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\utils.py", line 285, in lookup_field
+    value = attr()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py", line 30, in __str__
+    return f"id:{self.set_id} n_questions:{self.n_questions} is_complited:{self.is_complited} score:{self.score}"#str(self.set_id)
+AttributeError: 'QuestionSet' object has no attribute 'is_complited'
+ERROR 2023-10-17 13:19:11,529 django.server Thread-1 16780 basehttp basehttp.py 212 django.server log_message 8052 "GET /admin/assessment/questionset/ HTTP/1.1" 500 442566
+WARNING 2023-10-17 13:19:13,450 django.request Thread-1 16780 log log.py 241 django.request log_response 8052 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:13,454 django.server Thread-1 16780 basehttp basehttp.py 212 django.server log_message 8052 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:19:14,533 django.request Thread-1 16780 log log.py 241 django.request log_response 8052 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:14,535 django.server Thread-1 16780 basehttp basehttp.py 212 django.server log_message 8052 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:19:33,151 django.request Thread-1 15768 log log.py 241 django.request log_response 4892 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:33,153 django.server Thread-1 15768 basehttp basehttp.py 212 django.server log_message 4892 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:19:34,041 django.request Thread-1 15768 log log.py 241 django.request log_response 4892 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:34,043 django.server Thread-1 15768 basehttp basehttp.py 212 django.server log_message 4892 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:20:13,973 django.request Thread-1 2220 log log.py 241 django.request log_response 5100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:13,979 django.server Thread-1 2220 basehttp basehttp.py 212 django.server log_message 5100 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:20:14,938 django.request Thread-1 2220 log log.py 241 django.request log_response 5100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:14,940 django.server Thread-1 2220 basehttp basehttp.py 212 django.server log_message 5100 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:20:49,538 django.request Thread-1 9560 log log.py 241 django.request log_response 10160 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:49,543 django.server Thread-1 9560 basehttp basehttp.py 212 django.server log_message 10160 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:20:50,503 django.request Thread-3 12460 log log.py 241 django.request log_response 10160 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:50,504 django.server Thread-3 12460 basehttp basehttp.py 212 django.server log_message 10160 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:21:23,863 django.request Thread-2 15260 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:23,868 django.server Thread-2 15260 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:21:24,883 django.request Thread-2 15260 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:24,885 django.server Thread-2 15260 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:21:48,055 django.request Thread-3 13076 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:48,060 django.server Thread-3 13076 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:21:48,944 django.request Thread-3 13076 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:48,945 django.server Thread-3 13076 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:21:53,260 django.request Thread-4 3044 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:53,261 django.server Thread-4 3044 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:21:54,195 django.request Thread-4 3044 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:54,202 django.server Thread-4 3044 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:22:05,360 django.request Thread-5 20484 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:05,377 django.server Thread-5 20484 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:22:06,226 django.request Thread-5 20484 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:06,228 django.server Thread-5 20484 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:22:50,773 django.request Thread-2 13884 log log.py 241 django.request log_response 2644 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:51,263 django.request Thread-1 9972 log log.py 241 django.request log_response 2644 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:51,263 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:22:52,205 django.request Thread-1 9972 log log.py 241 django.request log_response 2644 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:52,207 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:23:14,957 django.request Thread-1 3240 log log.py 241 django.request log_response 20380 Not Found: /favicon.ico
+WARNING 2023-10-17 13:23:14,962 django.server Thread-1 3240 basehttp basehttp.py 212 django.server log_message 20380 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:23:15,866 django.request Thread-1 3240 log log.py 241 django.request log_response 20380 Not Found: /favicon.ico
+WARNING 2023-10-17 13:23:15,869 django.server Thread-1 3240 basehttp basehttp.py 212 django.server log_message 20380 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:24:01,429 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:01,438 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:24:02,358 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:02,358 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:24:03,233 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:03,233 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:24:04,137 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:04,140 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:24:56,764 django.request Thread-1 11404 log log.py 241 django.request log_response 21100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:56,766 django.server Thread-1 11404 basehttp basehttp.py 212 django.server log_message 21100 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:24:57,679 django.request Thread-1 11404 log log.py 241 django.request log_response 21100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:57,680 django.server Thread-1 11404 basehttp basehttp.py 212 django.server log_message 21100 "GET /favicon.ico HTTP/1.1" 404 17459

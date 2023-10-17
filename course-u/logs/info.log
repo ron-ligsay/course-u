@@ -111,3 +111,336 @@ INFO 2023-10-16 19:18:36,380 django.server Thread-8 15872 basehttp basehttp.py 2
 INFO 2023-10-16 19:18:36,453 django.server Thread-8 15872 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/home.css HTTP/1.1" 304 0
 WARNING 2023-10-16 19:18:36,492 django.server Thread-9 15324 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
 INFO 2023-10-17 12:25:53,196 django.utils.autoreload MainThread 1364 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 17628 Watching for file changes with StatReloader
+INFO 2023-10-17 12:48:23,409 django.utils.autoreload MainThread 1364 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 17628 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\views.py changed, reloading.
+INFO 2023-10-17 13:08:17,037 django.utils.autoreload MainThread 19048 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 14736 Watching for file changes with StatReloader
+INFO 2023-10-17 13:08:26,524 django.server Thread-1 10688 basehttp basehttp.py 212 django.server log_message 14736 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:08:26,776 django.server Thread-1 10688 basehttp basehttp.py 212 django.server log_message 14736 "GET /home HTTP/1.1" 200 32249
+INFO 2023-10-17 13:08:26,897 django.server Thread-1 10688 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/css/test.css HTTP/1.1" 200 2829
+INFO 2023-10-17 13:08:26,929 django.server Thread-1 10688 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/css/home.css HTTP/1.1" 200 853
+WARNING 2023-10-17 13:08:27,012 django.server Thread-2 13992 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 13:08:27,329 django.server Thread-3 21100 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/js/specialization_filter.js HTTP/1.1" 200 1412
+INFO 2023-10-17 13:08:28,604 django.server Thread-4 16796 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-10-17 13:08:34,157 django.server Thread-4 16796 basehttp basehttp.py 212 django.server log_message 14736 "GET /test_home/ HTTP/1.1" 200 12549
+INFO 2023-10-17 13:08:39,379 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /gradelevel_input/ HTTP/1.1" 200 9716
+INFO 2023-10-17 13:08:39,579 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /static/css/grade_level.css HTTP/1.1" 200 509
+WARNING 2023-10-17 13:08:40,119 django.request Thread-5 8416 log log.py 241 django.request log_response 14736 Not Found: /favicon.ico
+WARNING 2023-10-17 13:08:40,119 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:08:41,087 django.request Thread-5 8416 log log.py 241 django.request log_response 14736 Not Found: /favicon.ico
+WARNING 2023-10-17 13:08:41,089 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:08:46,004 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:08:46,147 django.server Thread-5 8416 basehttp basehttp.py 212 django.server log_message 14736 "GET /question/1/ HTTP/1.1" 200 13117
+INFO 2023-10-17 13:09:17,095 django.server Thread-6 15688 basehttp basehttp.py 212 django.server log_message 14736 "GET /next_test/1/ HTTP/1.1" 200 12789
+INFO 2023-10-17 13:10:19,114 django.utils.autoreload MainThread 19048 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14736 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\views.py changed, reloading.
+INFO 2023-10-17 13:10:21,432 django.utils.autoreload MainThread 14112 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 16944 Watching for file changes with StatReloader
+INFO 2023-10-17 13:10:25,181 django.utils.autoreload MainThread 14112 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 16944 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\views.py changed, reloading.
+INFO 2023-10-17 13:10:27,834 django.utils.autoreload MainThread 18452 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 2744 Watching for file changes with StatReloader
+INFO 2023-10-17 13:10:36,870 django.server Thread-1 19776 basehttp basehttp.py 212 django.server log_message 2744 "GET /next_test/2/ HTTP/1.1" 200 12789
+INFO 2023-10-17 13:10:38,744 django.server Thread-1 19776 basehttp basehttp.py 212 django.server log_message 2744 "GET /next_test/3/ HTTP/1.1" 200 12788
+INFO 2023-10-17 13:10:43,328 django.server Thread-1 19776 basehttp basehttp.py 212 django.server log_message 2744 "GET /next_test/4/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:10:43,545 django.server Thread-1 19776 basehttp basehttp.py 212 django.server log_message 2744 "GET /test_overview/ HTTP/1.1" 200 14634
+INFO 2023-10-17 13:10:49,145 django.server Thread-2 7872 basehttp basehttp.py 212 django.server log_message 2744 "GET /question/1/ HTTP/1.1" 200 12829
+INFO 2023-10-17 13:10:51,795 django.server Thread-2 7872 basehttp basehttp.py 212 django.server log_message 2744 "POST /submit_question/1/ HTTP/1.1" 200 13096
+INFO 2023-10-17 13:10:54,387 django.server Thread-2 7872 basehttp basehttp.py 212 django.server log_message 2744 "POST /submit_question/2/ HTTP/1.1" 200 13096
+INFO 2023-10-17 13:10:56,114 django.server Thread-2 7872 basehttp basehttp.py 212 django.server log_message 2744 "POST /submit_question/3/ HTTP/1.1" 200 13096
+INFO 2023-10-17 13:10:57,714 django.server Thread-2 7872 basehttp basehttp.py 212 django.server log_message 2744 "POST /submit_question/4/ HTTP/1.1" 200 13096
+INFO 2023-10-17 13:10:59,962 django.server Thread-3 10360 basehttp basehttp.py 212 django.server log_message 2744 "POST /submit_question/5/ HTTP/1.1" 200 13095
+INFO 2023-10-17 13:12:57,802 django.utils.autoreload MainThread 18452 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 2744 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\views.py changed, reloading.
+INFO 2023-10-17 13:13:00,429 django.utils.autoreload MainThread 19404 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 7728 Watching for file changes with StatReloader
+INFO 2023-10-17 13:13:05,429 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "POST /submit_question/5/ HTTP/1.1" 200 13095
+INFO 2023-10-17 13:13:07,719 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "POST /submit_question/6/ HTTP/1.1" 200 13094
+INFO 2023-10-17 13:13:13,907 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "POST /submit_question/4/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:13:14,125 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "GET /test_overview/ HTTP/1.1" 200 14861
+INFO 2023-10-17 13:13:17,887 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "GET /submit_test/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:13:18,009 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "GET /home HTTP/1.1" 200 32244
+WARNING 2023-10-17 13:13:18,110 django.server Thread-1 10476 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 13:13:26,434 django.server Thread-2 18224 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin_home/ HTTP/1.1" 200 19234
+INFO 2023-10-17 13:13:34,179 django.server Thread-3 11852 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin_home/ HTTP/1.1" 200 19234
+INFO 2023-10-17 13:13:37,844 django.server Thread-3 11852 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin HTTP/1.1" 301 0
+INFO 2023-10-17 13:13:38,239 django.server Thread-4 10172 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/ HTTP/1.1" 200 20795
+INFO 2023-10-17 13:13:38,329 django.server Thread-4 10172 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2023-10-17 13:13:38,481 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2023-10-17 13:13:38,482 django.server Thread-5 20704 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2023-10-17 13:13:38,647 django.server Thread-7 9444 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2023-10-17 13:13:38,672 django.server Thread-8 264 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2023-10-17 13:13:38,795 django.server Thread-8 264 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2023-10-17 13:13:38,797 django.server Thread-7 9444 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2023-10-17 13:13:38,813 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-10-17 13:13:38,966 django.server Thread-5 20704 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+WARNING 2023-10-17 13:13:39,199 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:39,201 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:40,182 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:40,183 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:13:41,201 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 24583
+INFO 2023-10-17 13:13:41,400 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2023-10-17 13:13:41,473 django.server Thread-8 264 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2023-10-17 13:13:41,581 django.server Thread-4 10172 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2023-10-17 13:13:41,664 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2023-10-17 13:13:41,692 django.server Thread-5 20704 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-17 13:13:41,693 django.server Thread-9 14844 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2023-10-17 13:13:41,697 django.server Thread-7 9444 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2023-10-17 13:13:41,819 django.server Thread-8 264 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2023-10-17 13:13:41,831 django.server Thread-4 10172 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2023-10-17 13:13:41,921 django.server Thread-4 10172 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2023-10-17 13:13:41,948 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2023-10-17 13:13:42,045 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+WARNING 2023-10-17 13:13:42,300 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:42,300 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:43,282 django.request Thread-6 8008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:43,293 django.server Thread-6 8008 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+INFO 2023-10-17 13:13:48,096 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20342
+INFO 2023-10-17 13:13:48,263 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:13:48,735 django.request Thread-10 10568 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:48,744 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:49,684 django.request Thread-10 10568 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:49,688 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:13:51,229 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/4/change/ HTTP/1.1" 200 22428
+INFO 2023-10-17 13:13:51,326 django.server Thread-10 10568 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+INFO 2023-10-17 13:13:51,386 django.server Thread-11 14904 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2023-10-17 13:13:51,489 django.server Thread-13 10144 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-10-17 13:13:51,529 django.server Thread-12 10796 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-17 13:13:51,667 django.server Thread-12 10796 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+INFO 2023-10-17 13:13:51,692 django.server Thread-13 10144 basehttp basehttp.py 212 django.server log_message 7728 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+WARNING 2023-10-17 13:13:52,004 django.request Thread-13 10144 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:52,009 django.server Thread-13 10144 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:13:52,899 django.request Thread-13 10144 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:13:52,899 django.server Thread-13 10144 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:14:01,368 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20343
+WARNING 2023-10-17 13:14:02,869 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:02,869 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:14:03,898 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/1/change/ HTTP/1.1" 200 22428
+INFO 2023-10-17 13:14:04,131 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:14:04,594 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:04,614 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:05,504 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:05,504 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:14:06,703 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20343
+INFO 2023-10-17 13:14:08,086 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/2/change/ HTTP/1.1" 200 22428
+INFO 2023-10-17 13:14:08,403 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:14:08,762 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:08,764 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:09,705 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:09,713 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:14:10,070 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20343
+INFO 2023-10-17 13:14:11,558 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/3/change/ HTTP/1.1" 200 22428
+INFO 2023-10-17 13:14:11,825 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:14:11,885 django.request Thread-15 20884 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+INFO 2023-10-17 13:14:11,893 django.server Thread-15 20884 basehttp basehttp.py 81 django.server handle_error 7728 - Broken pipe from ('127.0.0.1', 5303)
+WARNING 2023-10-17 13:14:12,268 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:12,278 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:13,193 django.request Thread-14 15808 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:13,198 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:14:13,379 django.server Thread-14 15808 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20344
+INFO 2023-10-17 13:14:14,858 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/4/change/ HTTP/1.1" 200 22428
+WARNING 2023-10-17 13:14:15,009 django.request Thread-17 6008 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+INFO 2023-10-17 13:14:15,027 django.server Thread-17 6008 basehttp basehttp.py 81 django.server handle_error 7728 - Broken pipe from ('127.0.0.1', 5312)
+INFO 2023-10-17 13:14:15,140 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:14:15,578 django.request Thread-16 12356 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:15,580 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:14:16,461 django.request Thread-16 12356 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:16,464 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:14:17,349 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20343
+WARNING 2023-10-17 13:14:18,792 django.request Thread-16 12356 log log.py 241 django.request log_response 7728 Not Found: /favicon.ico
+WARNING 2023-10-17 13:14:18,793 django.server Thread-16 12356 basehttp basehttp.py 212 django.server log_message 7728 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:19:05,895 django.utils.autoreload MainThread 19404 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 7728 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:19:08,396 django.utils.autoreload MainThread 16572 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8052 Watching for file changes with StatReloader
+ERROR 2023-10-17 13:19:11,376 django.request Thread-1 16780 log log.py 241 django.request log_response 8052 Internal Server Error: /admin/assessment/questionset/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\options.py", line 681, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\utils.py", line 272, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\utils.py", line 303, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: QuestionSet has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 213, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\contrib\admin\utils.py", line 285, in lookup_field
+    value = attr()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py", line 30, in __str__
+    return f"id:{self.set_id} n_questions:{self.n_questions} is_complited:{self.is_complited} score:{self.score}"#str(self.set_id)
+AttributeError: 'QuestionSet' object has no attribute 'is_complited'
+ERROR 2023-10-17 13:19:11,529 django.server Thread-1 16780 basehttp basehttp.py 212 django.server log_message 8052 "GET /admin/assessment/questionset/ HTTP/1.1" 500 442566
+WARNING 2023-10-17 13:19:13,450 django.request Thread-1 16780 log log.py 241 django.request log_response 8052 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:13,454 django.server Thread-1 16780 basehttp basehttp.py 212 django.server log_message 8052 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 13:19:14,533 django.request Thread-1 16780 log log.py 241 django.request log_response 8052 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:14,535 django.server Thread-1 16780 basehttp basehttp.py 212 django.server log_message 8052 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:19:21,851 django.utils.autoreload MainThread 16572 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8052 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:19:26,480 django.utils.autoreload MainThread 16772 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 4892 Watching for file changes with StatReloader
+INFO 2023-10-17 13:19:32,273 django.server Thread-1 15768 basehttp basehttp.py 212 django.server log_message 4892 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20516
+INFO 2023-10-17 13:19:32,452 django.server Thread-1 15768 basehttp basehttp.py 212 django.server log_message 4892 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:19:33,151 django.request Thread-1 15768 log log.py 241 django.request log_response 4892 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:33,153 django.server Thread-1 15768 basehttp basehttp.py 212 django.server log_message 4892 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:19:34,041 django.request Thread-1 15768 log log.py 241 django.request log_response 4892 Not Found: /favicon.ico
+WARNING 2023-10-17 13:19:34,043 django.server Thread-1 15768 basehttp basehttp.py 212 django.server log_message 4892 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:20:06,103 django.utils.autoreload MainThread 16772 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4892 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:20:08,158 django.utils.autoreload MainThread 7600 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 5100 Watching for file changes with StatReloader
+INFO 2023-10-17 13:20:13,388 django.server Thread-1 2220 basehttp basehttp.py 212 django.server log_message 5100 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20451
+INFO 2023-10-17 13:20:13,588 django.server Thread-1 2220 basehttp basehttp.py 212 django.server log_message 5100 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:20:13,973 django.request Thread-1 2220 log log.py 241 django.request log_response 5100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:13,979 django.server Thread-1 2220 basehttp basehttp.py 212 django.server log_message 5100 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:20:14,938 django.request Thread-1 2220 log log.py 241 django.request log_response 5100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:14,940 django.server Thread-1 2220 basehttp basehttp.py 212 django.server log_message 5100 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:20:38,572 django.utils.autoreload MainThread 7600 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 5100 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:20:40,753 django.utils.autoreload MainThread 12936 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 12344 Watching for file changes with StatReloader
+INFO 2023-10-17 13:20:44,242 django.utils.autoreload MainThread 12936 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12344 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:20:46,978 django.utils.autoreload MainThread 16476 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10160 Watching for file changes with StatReloader
+INFO 2023-10-17 13:20:48,979 django.server Thread-1 9560 basehttp basehttp.py 212 django.server log_message 10160 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20451
+INFO 2023-10-17 13:20:49,123 django.server Thread-1 9560 basehttp basehttp.py 212 django.server log_message 10160 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:20:49,538 django.request Thread-1 9560 log log.py 241 django.request log_response 10160 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:49,543 django.server Thread-1 9560 basehttp basehttp.py 212 django.server log_message 10160 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:20:50,503 django.request Thread-3 12460 log log.py 241 django.request log_response 10160 Not Found: /favicon.ico
+WARNING 2023-10-17 13:20:50,504 django.server Thread-3 12460 basehttp basehttp.py 212 django.server log_message 10160 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:20:53,523 django.utils.autoreload MainThread 16476 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10160 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:20:55,679 django.utils.autoreload MainThread 18308 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 2604 Watching for file changes with StatReloader
+INFO 2023-10-17 13:21:14,678 django.utils.autoreload MainThread 18308 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 2604 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:21:18,458 django.utils.autoreload MainThread 10172 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 20096 Watching for file changes with StatReloader
+INFO 2023-10-17 13:21:22,033 django.server Thread-1 9172 basehttp basehttp.py 81 django.server handle_error 20096 - Broken pipe from ('127.0.0.1', 5528)
+INFO 2023-10-17 13:21:22,295 django.server Thread-2 15260 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20473
+INFO 2023-10-17 13:21:22,649 django.server Thread-2 15260 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:21:23,863 django.request Thread-2 15260 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:23,868 django.server Thread-2 15260 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:21:24,883 django.request Thread-2 15260 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:24,885 django.server Thread-2 15260 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:21:47,407 django.server Thread-3 13076 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 25296
+INFO 2023-10-17 13:21:47,588 django.server Thread-3 13076 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:21:48,055 django.request Thread-3 13076 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:48,060 django.server Thread-3 13076 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:21:48,944 django.request Thread-3 13076 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:48,945 django.server Thread-3 13076 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:21:52,643 django.server Thread-4 3044 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 25296
+INFO 2023-10-17 13:21:52,802 django.server Thread-4 3044 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:21:53,260 django.request Thread-4 3044 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:53,261 django.server Thread-4 3044 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:21:54,195 django.request Thread-4 3044 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:21:54,202 django.server Thread-4 3044 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+INFO 2023-10-17 13:22:04,558 django.server Thread-5 20484 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 25296
+INFO 2023-10-17 13:22:04,754 django.server Thread-5 20484 basehttp basehttp.py 212 django.server log_message 20096 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:22:05,360 django.request Thread-5 20484 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:05,377 django.server Thread-5 20484 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:22:06,226 django.request Thread-5 20484 log log.py 241 django.request log_response 20096 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:06,228 django.server Thread-5 20484 basehttp basehttp.py 212 django.server log_message 20096 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:22:44,667 django.utils.autoreload MainThread 10172 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20096 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:22:46,863 django.utils.autoreload MainThread 15576 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 2644 Watching for file changes with StatReloader
+INFO 2023-10-17 13:22:49,452 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 24583
+INFO 2023-10-17 13:22:49,644 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-17 13:22:50,648 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 24583
+WARNING 2023-10-17 13:22:50,773 django.request Thread-2 13884 log log.py 241 django.request log_response 2644 Not Found: /favicon.ico
+INFO 2023-10-17 13:22:50,781 django.server Thread-2 13884 basehttp basehttp.py 81 django.server handle_error 2644 - Broken pipe from ('127.0.0.1', 5569)
+INFO 2023-10-17 13:22:50,911 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:22:51,263 django.request Thread-1 9972 log log.py 241 django.request log_response 2644 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:51,263 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:22:52,205 django.request Thread-1 9972 log log.py 241 django.request log_response 2644 Not Found: /favicon.ico
+WARNING 2023-10-17 13:22:52,207 django.server Thread-1 9972 basehttp basehttp.py 212 django.server log_message 2644 "GET /favicon.ico HTTP/1.1" 404 17459
+INFO 2023-10-17 13:23:06,047 django.utils.autoreload MainThread 15576 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 2644 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:23:09,547 django.utils.autoreload MainThread 16716 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 20380 Watching for file changes with StatReloader
+INFO 2023-10-17 13:23:13,250 django.server Thread-1 3240 basehttp basehttp.py 212 django.server log_message 20380 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 24814
+INFO 2023-10-17 13:23:13,520 django.server Thread-1 3240 basehttp basehttp.py 212 django.server log_message 20380 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:23:14,957 django.request Thread-1 3240 log log.py 241 django.request log_response 20380 Not Found: /favicon.ico
+WARNING 2023-10-17 13:23:14,962 django.server Thread-1 3240 basehttp basehttp.py 212 django.server log_message 20380 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:23:15,866 django.request Thread-1 3240 log log.py 241 django.request log_response 20380 Not Found: /favicon.ico
+WARNING 2023-10-17 13:23:15,869 django.server Thread-1 3240 basehttp basehttp.py 212 django.server log_message 20380 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:23:26,298 django.utils.autoreload MainThread 16716 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 20380 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:23:29,353 django.utils.autoreload MainThread 7640 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10820 Watching for file changes with StatReloader
+INFO 2023-10-17 13:23:55,787 django.utils.autoreload MainThread 7640 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10820 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:23:57,848 django.utils.autoreload MainThread 7484 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 14568 Watching for file changes with StatReloader
+INFO 2023-10-17 13:24:00,761 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /admin/assessment/userresponse/ HTTP/1.1" 200 24813
+INFO 2023-10-17 13:24:01,010 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:24:01,429 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:01,438 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:24:02,358 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:02,358 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:24:02,583 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20528
+INFO 2023-10-17 13:24:02,753 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:24:03,233 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:03,233 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:24:04,137 django.request Thread-1 1976 log log.py 241 django.request log_response 14568 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:04,140 django.server Thread-1 1976 basehttp basehttp.py 212 django.server log_message 14568 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 13:24:10,324 django.utils.autoreload MainThread 7484 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14568 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:24:13,943 django.utils.autoreload MainThread 18384 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 19936 Watching for file changes with StatReloader
+INFO 2023-10-17 13:24:47,034 django.utils.autoreload MainThread 18384 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19936 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:24:49,615 django.utils.autoreload MainThread 8000 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 21100 Watching for file changes with StatReloader
+INFO 2023-10-17 13:24:56,098 django.server Thread-1 11404 basehttp basehttp.py 212 django.server log_message 21100 "GET /admin/assessment/questionset/ HTTP/1.1" 200 20525
+INFO 2023-10-17 13:24:56,267 django.server Thread-1 11404 basehttp basehttp.py 212 django.server log_message 21100 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-10-17 13:24:56,764 django.request Thread-1 11404 log log.py 241 django.request log_response 21100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:56,766 django.server Thread-1 11404 basehttp basehttp.py 212 django.server log_message 21100 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 13:24:57,679 django.request Thread-1 11404 log log.py 241 django.request log_response 21100 Not Found: /favicon.ico
+WARNING 2023-10-17 13:24:57,680 django.server Thread-1 11404 basehttp basehttp.py 212 django.server log_message 21100 "GET /favicon.ico HTTP/1.1" 404 17459
+INFO 2023-10-17 13:55:27,058 django.utils.autoreload MainThread 8000 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 21100 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\models.py changed, reloading.
+INFO 2023-10-17 13:55:29,460 django.utils.autoreload MainThread 8032 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 11248 Watching for file changes with StatReloader
