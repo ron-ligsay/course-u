@@ -376,3 +376,6 @@ def gradelevel_input(request):
 
 def subjectgrade_input(request):
     return render(request, 'user/subject.html')
+
+def course_input(request):
+    return render(request,'user/course.html')

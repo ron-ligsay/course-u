@@ -128,3 +128,11 @@ WARNING 2023-10-17 11:31:18,727 django.server Thread-9 (process_request_thread) 
 WARNING 2023-10-17 11:31:24,520 django.server Thread-10 (process_request_thread) 13876 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
 WARNING 2023-10-17 11:31:30,018 django.server Thread-12 (process_request_thread) 6280 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
 WARNING 2023-10-17 11:31:50,347 django.server Thread-14 (process_request_thread) 5460 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 17:20:16,567 django.request Thread-3 (process_request_thread) 18644 log log.py 241 django.request log_response 22216 Not Found: /favicon.ico
+WARNING 2023-10-17 17:20:16,568 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-17 17:20:21,799 django.request Thread-4 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
+WARNING 2023-10-17 17:20:21,800 django.server Thread-4 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
+WARNING 2023-10-17 17:20:59,601 django.server Thread-5 (process_request_thread) 21656 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 17:21:07,263 django.request Thread-6 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
+WARNING 2023-10-17 17:21:07,265 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
+WARNING 2023-10-17 17:21:37,355 django.server Thread-9 (process_request_thread) 19304 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 404 1801

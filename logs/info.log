@@ -256,3 +256,33 @@ WARNING 2023-10-17 11:31:50,347 django.server Thread-14 (process_request_thread)
 INFO 2023-10-17 11:32:00,619 django.server Thread-16 (process_request_thread) 12420 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10814
 INFO 2023-10-17 11:32:00,696 django.server Thread-16 (process_request_thread) 12420 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/login_user.css HTTP/1.1" 200 1255
 INFO 2023-10-17 11:32:00,848 django.server Thread-16 (process_request_thread) 12420 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/images/log.jpg HTTP/1.1" 200 43888
+INFO 2023-10-17 17:06:50,147 django.utils.autoreload MainThread 18948 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18940 Watching for file changes with StatReloader
+INFO 2023-10-17 17:20:08,619 django.utils.autoreload MainThread 18948 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18940 C:\Users\Cedrick Estolas\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-17 17:20:09,584 django.utils.autoreload MainThread 22508 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 22216 Watching for file changes with StatReloader
+INFO 2023-10-17 17:20:16,007 django.server Thread-1 (process_request_thread) 17708 basehttp basehttp.py 212 django.server log_message 22216 "GET / HTTP/1.1" 200 9438
+INFO 2023-10-17 17:20:16,065 django.server Thread-1 (process_request_thread) 17708 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:16,068 django.server Thread-2 (process_request_thread) 18664 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/landing.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:16,073 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:16,226 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:16,233 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/images/landing2.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:16,267 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2023-10-17 17:20:16,567 django.request Thread-3 (process_request_thread) 18644 log log.py 241 django.request log_response 22216 Not Found: /favicon.ico
+WARNING 2023-10-17 17:20:16,568 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-17 17:20:21,799 django.request Thread-4 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
+WARNING 2023-10-17 17:20:21,800 django.server Thread-4 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
+INFO 2023-10-17 17:20:59,400 django.server Thread-5 (process_request_thread) 21656 basehttp basehttp.py 212 django.server log_message 22216 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-17 17:20:59,532 django.server Thread-5 (process_request_thread) 21656 basehttp basehttp.py 212 django.server log_message 22216 "GET /home HTTP/1.1" 200 31952
+WARNING 2023-10-17 17:20:59,601 django.server Thread-5 (process_request_thread) 21656 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 17:20:59,631 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:59,631 django.server Thread-7 (process_request_thread) 14268 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test.css HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:59,639 django.server Thread-7 (process_request_thread) 14268 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:59,640 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:59,686 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-17 17:20:59,825 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/images/favicon.png HTTP/1.1" 200 1030
+WARNING 2023-10-17 17:21:07,263 django.request Thread-6 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
+WARNING 2023-10-17 17:21:07,265 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
+INFO 2023-10-17 17:21:37,240 django.server Thread-8 (process_request_thread) 21472 basehttp basehttp.py 212 django.server log_message 22216 "GET /course_input HTTP/1.1" 301 0
+INFO 2023-10-17 17:21:37,305 django.server Thread-9 (process_request_thread) 19304 basehttp basehttp.py 212 django.server log_message 22216 "GET /course_input/ HTTP/1.1" 200 9481
+WARNING 2023-10-17 17:21:37,355 django.server Thread-9 (process_request_thread) 19304 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 404 1801
+INFO 2023-10-17 17:24:05,926 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /course_input/ HTTP/1.1" 200 9481
+INFO 2023-10-17 17:24:05,956 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 200 524
