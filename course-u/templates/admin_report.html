@@ -13,8 +13,13 @@
 
 {% if user.is_authenticated %}
 
+
 <div>
     <h2>User Assessment Scores</h2>
+    <form method="GET" action="{% url 'admin_report' %}">
+        {{ form.as_p }}
+        <button>Filter</button>
+    </form>
     <div>
         {{ chart|safe }}
     </div>

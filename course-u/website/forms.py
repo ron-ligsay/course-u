@@ -32,3 +32,26 @@ class SignUpForm(UserCreationForm):
 
 
 
+class StudentScoreForm(forms.Form):
+    username = forms.CharField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Username'}),max_length=100, required=True)
+    max_score = forms.IntegerField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Max Score'}),required=True)
+    min_score = forms.IntegerField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Min Score'}),required=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'max_score', 'min_score')
+    
+    def __init__(self, *args, **kwargs):
+        super(StudentScoreForm, self).__init__(*args, **kwargs)
+
+        self.fields["username"].widget.attrs['class'] = 'form-control'
+        self.fields["username"].widget.attrs['placeholder'] = 'Username'
+        self.fields["username"].label = ""
+
+        self.fields["max_score"].widget.attrs['class'] = 'form-control'
+        self.fields["max_score"].widget.attrs['placeholder'] = 'Max Score'
+        self.fields["max_score"].label = ""
+
+        self.fields["min_score"].widget.attrs['class'] = 'form-control'
+        self.fields["min_score"].widget.attrs['placeholder'] = 'Min Score'
+        self.fields["min_score"].label = ""

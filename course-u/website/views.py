@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 
 
 #from website.utils import *
-from website.forms import SignUpForm
+from website.forms import SignUpForm, StudentScoreForm
 from website.models import Specialization, Field
 from website.decorators import unauthenticated_user, allowed_users, admin_only
 
@@ -208,15 +208,32 @@ def specialization_page(request, item_id):
 
 def admin_report(request):
     sets = QuestionSet.objects.all()
+    username = request.GET.get('username')
+    max_score = request.GET.get('max_score')
+    min_score = request.GET.get('min_score')
+
+    if username:
+        sets = sets.filter(user__username__icontains=username)
+    if max_score:
+        sets = sets.filter(score__lte=max_score)
+    if min_score:
+        sets = sets.filter(score__gte=min_score)
 
     fig = px.bar(
         x=[set.set_id for set in sets],
         y=[set.score for set in sets],
         text=[set.user.username for set in sets],
-        labels=dict(x="Set ID", y="Score", color="Set ID"),    
+        labels=dict(x="Set ID", y="Score", color="Set ID"),  
+        title="Student Score",
     )
 
+    fig.update_layout(title={
+            'font_size': 22,
+            'xanchor': 'center',
+            'x': 0.5,
+        })
+    
     chart = fig.to_html()#full_html=False, include_plotlyjs=False
 
-    context = {'chart': chart}
-    return render(request, 'report.html', context)
+    context = {'chart': chart, 'form': StudentScoreForm()}
+    return render(request, 'admin_report.html', context)
