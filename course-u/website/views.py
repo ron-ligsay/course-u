@@ -96,6 +96,11 @@ def admin_home(request):
         })
 
 
+def admin_students(request):
+    auth_user = User.objects.all()
+    return render(request, 'admin_students.html', {'auth_user': auth_user})
+
+
 @unauthenticated_user # instead of adding if user.is_authenticated, use this decorator
 def login_user(request):
     if request.method == 'POST':

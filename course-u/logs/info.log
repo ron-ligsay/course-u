@@ -750,3 +750,189 @@ INFO 2023-10-17 14:46:12,780 django.utils.autoreload MainThread 12368 autoreload
 INFO 2023-10-17 14:47:00,557 django.server Thread-1 11116 basehttp basehttp.py 212 django.server log_message 492 "GET /report/ HTTP/1.1" 200 3616860
 INFO 2023-10-17 14:49:37,879 django.utils.autoreload MainThread 12368 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 492 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\views.py changed, reloading.
 INFO 2023-10-17 14:49:41,176 django.utils.autoreload MainThread 10936 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 15932 Watching for file changes with StatReloader
+ERROR 2023-10-17 14:50:22,479 django.request Thread-1 16608 log log.py 241 django.request log_response 15932 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py", line 217, in admin_report
+    return render(request, 'report.html', context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report' not found. 'report' is not a valid view function or pattern name.
+ERROR 2023-10-17 14:50:23,047 django.server Thread-1 16608 basehttp basehttp.py 212 django.server log_message 15932 "GET /report/ HTTP/1.1" 500 383611
+WARNING 2023-10-17 14:50:24,308 django.request Thread-2 14356 log log.py 241 django.request log_response 15932 Not Found: /favicon.ico
+WARNING 2023-10-17 14:50:24,328 django.server Thread-2 14356 basehttp basehttp.py 212 django.server log_message 15932 "GET /favicon.ico HTTP/1.1" 404 17634
+WARNING 2023-10-17 14:50:25,263 django.request Thread-2 14356 log log.py 241 django.request log_response 15932 Not Found: /favicon.ico
+WARNING 2023-10-17 14:50:25,264 django.server Thread-2 14356 basehttp basehttp.py 212 django.server log_message 15932 "GET /favicon.ico HTTP/1.1" 404 17633
+ERROR 2023-10-17 14:50:31,953 django.request Thread-2 14356 log log.py 241 django.request log_response 15932 Internal Server Error: /report/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py", line 217, in admin_report
+    return render(request, 'report.html', context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report' not found. 'report' is not a valid view function or pattern name.
+ERROR 2023-10-17 14:50:32,127 django.server Thread-2 14356 basehttp basehttp.py 212 django.server log_message 15932 "GET /report/ HTTP/1.1" 500 383611
+WARNING 2023-10-17 14:50:33,155 django.request Thread-2 14356 log log.py 241 django.request log_response 15932 Not Found: /favicon.ico
+WARNING 2023-10-17 14:50:33,157 django.server Thread-2 14356 basehttp basehttp.py 212 django.server log_message 15932 "GET /favicon.ico HTTP/1.1" 404 17634
+WARNING 2023-10-17 14:50:34,086 django.request Thread-2 14356 log log.py 241 django.request log_response 15932 Not Found: /favicon.ico
+WARNING 2023-10-17 14:50:34,086 django.server Thread-2 14356 basehttp basehttp.py 212 django.server log_message 15932 "GET /favicon.ico HTTP/1.1" 404 17634
+INFO 2023-10-17 14:50:57,005 django.utils.autoreload MainThread 10936 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15932 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\assessment\urls.py changed, reloading.
+INFO 2023-10-17 14:50:59,134 django.utils.autoreload MainThread 17084 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 19652 Watching for file changes with StatReloader
+INFO 2023-10-17 14:51:02,770 django.server Thread-1 14356 basehttp basehttp.py 212 django.server log_message 19652 "GET /report/ HTTP/1.1" 200 3616856
+INFO 2023-10-17 14:51:02,841 django.server Thread-2 11724 basehttp basehttp.py 212 django.server log_message 19652 "GET /static/css/test.css HTTP/1.1" 304 0
+INFO 2023-10-17 14:51:04,011 django.server Thread-1 14356 basehttp basehttp.py 212 django.server log_message 19652 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 14:51:06,476 django.server Thread-3 16480 basehttp basehttp.py 212 django.server log_message 19652 "GET /report/ HTTP/1.1" 200 3616855
+INFO 2023-10-17 14:51:09,440 django.server Thread-3 16480 basehttp basehttp.py 212 django.server log_message 19652 "GET /admin_home/ HTTP/1.1" 200 19230
+INFO 2023-10-17 14:51:12,204 django.server Thread-3 16480 basehttp basehttp.py 212 django.server log_message 19652 "GET /report/ HTTP/1.1" 200 3616856
+INFO 2023-10-17 14:51:15,239 django.server Thread-4 17532 basehttp basehttp.py 212 django.server log_message 19652 "GET /admin_home/ HTTP/1.1" 200 19230
+INFO 2023-10-17 14:52:23,039 django.utils.autoreload MainThread 17084 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19652 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py changed, reloading.
+INFO 2023-10-17 14:52:25,087 django.utils.autoreload MainThread 15400 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 14984 Watching for file changes with StatReloader
+INFO 2023-10-17 14:53:25,815 django.utils.autoreload MainThread 15400 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14984 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py changed, reloading.
+INFO 2023-10-17 14:53:30,994 django.utils.autoreload MainThread 21048 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 5100 Watching for file changes with StatReloader
+INFO 2023-10-17 14:53:53,356 django.utils.autoreload MainThread 21048 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 5100 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\urls.py changed, reloading.
+INFO 2023-10-17 14:53:56,204 django.utils.autoreload MainThread 14356 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 3488 Watching for file changes with StatReloader
+INFO 2023-10-17 14:54:05,305 django.server Thread-1 7880 basehttp basehttp.py 212 django.server log_message 3488 "GET /admin_home/ HTTP/1.1" 200 19235
+INFO 2023-10-17 14:54:07,910 django.server Thread-1 7880 basehttp basehttp.py 212 django.server log_message 3488 "GET /admin_students HTTP/1.1" 200 13750
+INFO 2023-10-17 14:54:17,693 django.server Thread-2 18156 basehttp basehttp.py 212 django.server log_message 3488 "GET /report/ HTTP/1.1" 200 3616859
+INFO 2023-10-17 14:54:19,815 django.server Thread-3 22320 basehttp basehttp.py 212 django.server log_message 3488 "GET /admin_home/ HTTP/1.1" 200 19233
+INFO 2023-10-17 14:54:30,144 django.server Thread-4 6648 basehttp basehttp.py 212 django.server log_message 3488 "GET /admin_students HTTP/1.1" 200 13750
+INFO 2023-10-17 14:54:31,932 django.server Thread-4 6648 basehttp basehttp.py 212 django.server log_message 3488 "GET /report/ HTTP/1.1" 200 3616858
+INFO 2023-10-17 14:54:35,518 django.server Thread-4 6648 basehttp basehttp.py 212 django.server log_message 3488 "GET /home HTTP/1.1" 200 31952
+INFO 2023-10-17 14:54:35,625 django.server Thread-5 14216 basehttp basehttp.py 212 django.server log_message 3488 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2023-10-17 14:54:35,636 django.server Thread-6 22492 basehttp basehttp.py 212 django.server log_message 3488 "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+WARNING 2023-10-17 14:54:35,640 django.server Thread-4 6648 basehttp basehttp.py 212 django.server log_message 3488 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 14:54:37,433 django.server Thread-6 22492 basehttp basehttp.py 212 django.server log_message 3488 "GET /test_home/ HTTP/1.1" 200 12547
+INFO 2023-10-17 14:54:40,768 django.server Thread-7 9116 basehttp basehttp.py 212 django.server log_message 3488 "GET /job_list/ HTTP/1.1" 200 18874
+INFO 2023-10-17 14:54:40,868 django.server Thread-7 9116 basehttp basehttp.py 212 django.server log_message 3488 "GET /static/css/job_post.css HTTP/1.1" 200 1342
+INFO 2023-10-17 14:54:41,022 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /static/js/job_list.js HTTP/1.1" 200 1060
+INFO 2023-10-17 14:54:44,006 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-17 14:54:44,092 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /logout/success/ HTTP/1.1" 200 9471
+WARNING 2023-10-17 14:54:44,557 django.request Thread-8 17672 log log.py 241 django.request log_response 3488 Not Found: /favicon.ico
+WARNING 2023-10-17 14:54:44,559 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /favicon.ico HTTP/1.1" 404 17637
+WARNING 2023-10-17 14:54:45,545 django.request Thread-8 17672 log log.py 241 django.request log_response 3488 Not Found: /favicon.ico
+WARNING 2023-10-17 14:54:45,545 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /favicon.ico HTTP/1.1" 404 17636
+INFO 2023-10-17 14:54:46,718 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /login_user/ HTTP/1.1" 200 10634
+INFO 2023-10-17 14:54:46,813 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /static/css/login_user.css HTTP/1.1" 200 967
+INFO 2023-10-17 14:54:49,339 django.server Thread-8 17672 basehttp basehttp.py 212 django.server log_message 3488 "GET /login_user/ HTTP/1.1" 200 10634
