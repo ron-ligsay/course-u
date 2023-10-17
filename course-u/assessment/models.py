@@ -27,7 +27,7 @@ class QuestionSet(models.Model):
     score = models.IntegerField(default=0)
 
     def __str__(self):
-        return str(self.set_id)
+        return f"{self.set_id}: Status : {self.is_completed} by User: {self.user} (Score: {self.score} / {self.n_questions}) "#str(self.set_id)
     class Meta:
         unique_together = ('user',)
 
@@ -40,6 +40,6 @@ class UserResponse(models.Model):
     is_answered = models.BooleanField(default=False)
     set = models.ForeignKey(QuestionSet, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
-        return f"set: {self.set}, {self.question_id}"
+        return f"Set: {self.set.set_id}, Question: {self.question_id}"
     class Meta:
         unique_together = ('question','set') 
