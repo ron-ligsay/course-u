@@ -135,3 +135,99 @@ INFO 2023-10-16 21:30:54,124 django.server Thread-4 17528 basehttp basehttp.py 2
 INFO 2023-10-16 21:31:00,012 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "POST /login_user/ HTTP/1.1" 302 0
 INFO 2023-10-16 21:31:00,106 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "GET /home HTTP/1.1" 200 32247
 WARNING 2023-10-16 21:31:00,182 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 11:00:31,936 django.utils.autoreload MainThread 20184 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 13780 Watching for file changes with StatReloader
+INFO 2023-10-17 11:00:53,192 django.server Thread-1 840 basehttp basehttp.py 212 django.server log_message 13780 "GET /home HTTP/1.1" 200 31954
+INFO 2023-10-17 11:00:53,423 django.server Thread-1 840 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/test.css HTTP/1.1" 200 2829
+INFO 2023-10-17 11:00:53,466 django.server Thread-2 16888 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/js/specialization_filter.js HTTP/1.1" 200 1412
+INFO 2023-10-17 11:00:53,481 django.server Thread-3 14604 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/home.css HTTP/1.1" 200 853
+WARNING 2023-10-17 11:00:53,615 django.server Thread-4 8836 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 11:00:54,703 django.server Thread-3 14604 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-10-17 11:01:01,658 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET / HTTP/1.1" 200 9437
+INFO 2023-10-17 11:01:01,782 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/landing.css HTTP/1.1" 200 1072
+INFO 2023-10-17 11:01:02,175 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/landing2.png HTTP/1.1" 200 1935293
+WARNING 2023-10-17 11:01:02,727 django.request Thread-6 11368 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:02,741 django.server Thread-6 11368 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:02,881 django.request Thread-5 17448 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:02,883 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:03,448 django.request Thread-5 17448 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:03,450 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+INFO 2023-10-17 11:01:04,073 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-17 11:01:04,209 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /home HTTP/1.1" 200 31952
+WARNING 2023-10-17 11:01:04,322 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-17 11:01:07,523 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-17 11:01:07,651 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /logout/success/ HTTP/1.1" 200 9471
+WARNING 2023-10-17 11:01:08,142 django.request Thread-7 11900 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:08,142 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 11:01:09,202 django.request Thread-7 11900 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:09,206 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
+ERROR 2023-10-17 11:01:10,058 django.request Thread-7 11900 log log.py 241 django.request log_response 13780 Internal Server Error: /login_user/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\website\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\website\views.py", line 112, in login_user
+    return render(request, 'user/login.html')
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 65: 'endif'. Did you forget to register or load this tag?
+ERROR 2023-10-17 11:01:10,132 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 500 181051
+WARNING 2023-10-17 11:01:11,092 django.request Thread-8 9844 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:11,097 django.server Thread-8 9844 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:12,068 django.request Thread-8 9844 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:12,068 django.server Thread-8 9844 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
+INFO 2023-10-17 11:02:08,309 django.server Thread-9 16344 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:02:08,419 django.server Thread-9 16344 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 200 967
+INFO 2023-10-17 11:02:08,706 django.server Thread-9 16344 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 11:03:16,166 django.server Thread-10 19212 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:03:16,251 django.server Thread-10 19212 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 304 0
+INFO 2023-10-17 11:03:17,342 django.server Thread-10 19212 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 11:05:41,101 django.server Thread-11 14524 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:05:41,151 django.server Thread-11 14524 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 304 0
+INFO 2023-10-17 11:05:42,647 django.server Thread-12 19420 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 11:07:14,413 django.server Thread-13 16524 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:07:14,692 django.server Thread-13 16524 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 200 989
+INFO 2023-10-17 11:07:16,043 django.server Thread-13 16524 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 11:07:23,255 django.server Thread-14 1788 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:07:23,385 django.server Thread-14 1788 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 200 967
+INFO 2023-10-17 11:08:35,452 django.server Thread-15 19968 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:08:35,663 django.server Thread-15 19968 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 200 1263
+WARNING 2023-10-17 11:08:36,985 django.server Thread-16 16836 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:08:37,064 django.server Thread-17 14880 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 304 0

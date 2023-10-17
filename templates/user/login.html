@@ -8,61 +8,56 @@
 {% endblock head_extra %}
 
 {% block content %}
+
 <body>
 
 
-<div class="container">
-  <br>
-  {% if messages %}
-  {% for message in messages %}
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    {{ message }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  {% endfor %}
-  {% endif %}
-
-
-  {% if user.is_authenticated %}
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    You are already logged in!
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  <a href="{% url 'home' %}" class="btn btn-secondary">Home Page</a>
-
-
-
-  {% else %}
-  <div class="container1">
-    <form method='POST' action="{% url 'login_user' %}" 
-    
-    class="form">
-      {% csrf_token %}
-      <h2>Welcome Back to Course U!</h2>
-
-      
-      <!-- <input type="email" name="email" class="box form-control" placeholder="Enter Email"><br>  -->
-      <input type="text" name="username" class="box form-control" placeholder="Enter Username"><br>
-      <input type="password" name="password" placeholder="Password" class="box form-control"placeholder="Enter Password">
-      
-
-      <input type="submit" value="Log in" id="submit">
-      <a href="{% url 'sign_in' %}">Create a new account</a>
-      <a href="{% url 'forgot_password' %}">Forget Password? </a>
-      
-
-
-
-    </form>
-<<<<<<< HEAD
+  <div class="container">
+    <br>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
     {% endif %}
-    {% endblock content %}
-  </div>
-  
-</body>
-=======
-  </div>
-  {% endif %}
 
-  {% endblock content %}
->>>>>>> 6331a029af465c0b117752908b9f3b7cfe294ea7
+
+    {% if user.is_authenticated %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      You are already logged in!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Home Page</a>
+
+
+
+    {% else %}
+    <div class="container1">
+      <form method='POST' action="{% url 'login_user' %}" class="form">
+        {% csrf_token %}
+        <h2>Welcome Back to Course U!</h2>
+
+
+        <!-- <input type="email" name="email" class="box form-control" placeholder="Enter Email"><br>  -->
+        <input type="text" name="username" class="box form-control" placeholder="Enter Username"><br>
+        <input type="password" name="password" placeholder="Password" class="box form-control"
+          placeholder="Enter Password">
+
+
+        <input type="submit" value="Log in" id="submit">
+        <a href="{% url 'sign_in' %}">Create a new account</a>
+        <a href="{% url 'forgot_password' %}">Forget Password? </a>
+
+
+
+
+      </form>
+
+      {% endif %}
+
+    </div>
+
+</body>
+{% endblock content %}
