@@ -14,7 +14,7 @@ __pycache__/
 local_settings.py
 
 # Ignore log files
-*.log
+# *.log
 
 # Ignore compiled Python files
 *.pyc
@@ -67,4 +67,4 @@ static/js/Chart.js-4.4.0.zip
 
 
 # setitngs.py
-courseu/settings.py
+# courseu/settings.py
