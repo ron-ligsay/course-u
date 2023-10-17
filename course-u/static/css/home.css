@@ -1,39 +1,44 @@
 /* Static CSS file or inline style */
 .card-container {
-    display: flex; /* Use flexbox to create a horizontal layout */
-    gap: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
-    padding-bottom: 20px; /* Add some padding at the bottom for better visibility */
-  }
-  
-  .card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    width: 250px; /* Adjust the width as needed */
-    flex-shrink: 0; /* Prevent cards from shrinking to fit */
-  }
-  
-  .card h3 {
-    margin: 0;
-    font-size: 18px;
-  }
-  
+  display: flex;
+  /* Use flexbox to create a horizontal layout */
+  gap: 20px;
+  overflow-x: auto;
+  /* Allow horizontal scrolling if content overflows */
+  padding-bottom: 20px;
+  /* Add some padding at the bottom for better visibility */
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  /* Adjust the width as needed */
+  flex-shrink: 0;
+  /* Prevent cards from shrinking to fit */
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
 /* remove a styles */
-a {
-    text-decoration: none;
-    color: #000;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  a:visited {
-    color: #000;
-  }
-  
-  a:active {
-    color: #000;
+main a {
+  text-decoration: none;
+  color: #000;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+main a:visited {
+  color: #000;
+}
+
+main a:active {
+  color: #000;
 }

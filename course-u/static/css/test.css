@@ -20,11 +20,12 @@ body{
   margin-right: 10px;
   margin-bottom: 30px;
 }
-.input {          /*navigation bar*/
+/*navigation bar*/
+.input {          
   display: flex;
   flex-direction: column;
   width: 200px;
-  background-color: white;
+  background-color: #0D1117;
   height: 100vh;
   width: 170px;
   position: fixed;
@@ -48,6 +49,11 @@ body{
   font-size: 1.1rem;
   align-items: center;
   
+}
+
+.nav_item {
+  text-decoration: none;
+  color: white;
 }
 
 .value:not(:active):hover,
