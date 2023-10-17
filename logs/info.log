@@ -231,3 +231,28 @@ INFO 2023-10-17 11:08:35,452 django.server Thread-15 19968 basehttp basehttp.py 
 INFO 2023-10-17 11:08:35,663 django.server Thread-15 19968 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/login_user.css HTTP/1.1" 200 1263
 WARNING 2023-10-17 11:08:36,985 django.server Thread-16 16836 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
 INFO 2023-10-17 11:08:37,064 django.server Thread-17 14880 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-17 11:29:38,863 django.utils.autoreload MainThread 3384 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 6568 Watching for file changes with StatReloader
+INFO 2023-10-17 11:29:43,953 django.server Thread-2 (process_request_thread) 5492 basehttp basehttp.py 212 django.server log_message 6568 "GET / HTTP/1.1" 200 9439
+INFO 2023-10-17 11:29:45,831 django.server Thread-2 (process_request_thread) 5492 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10678
+INFO 2023-10-17 11:29:45,870 django.server Thread-2 (process_request_thread) 5492 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/login_user.css HTTP/1.1" 200 1263
+WARNING 2023-10-17 11:29:45,971 django.server Thread-2 (process_request_thread) 5492 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:29:46,394 django.server Thread-1 (process_request_thread) 13460 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-10-17 11:30:16,497 django.server Thread-3 (process_request_thread) 4644 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10688
+WARNING 2023-10-17 11:30:16,618 django.server Thread-3 (process_request_thread) 4644 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:30:27,216 django.server Thread-5 (process_request_thread) 15868 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10688
+INFO 2023-10-17 11:30:27,280 django.server Thread-5 (process_request_thread) 15868 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/login_user.css HTTP/1.1" 304 0
+WARNING 2023-10-17 11:30:27,424 django.server Thread-5 (process_request_thread) 15868 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:31:12,795 django.server Thread-7 (process_request_thread) 18600 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10850
+INFO 2023-10-17 11:31:12,836 django.server Thread-7 (process_request_thread) 18600 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/login_user.css HTTP/1.1" 304 0
+WARNING 2023-10-17 11:31:12,904 django.server Thread-7 (process_request_thread) 18600 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:31:18,629 django.server Thread-9 (process_request_thread) 7932 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10838
+WARNING 2023-10-17 11:31:18,727 django.server Thread-9 (process_request_thread) 7932 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:31:24,411 django.server Thread-10 (process_request_thread) 13876 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10826
+WARNING 2023-10-17 11:31:24,520 django.server Thread-10 (process_request_thread) 13876 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:31:29,911 django.server Thread-12 (process_request_thread) 6280 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10814
+WARNING 2023-10-17 11:31:30,018 django.server Thread-12 (process_request_thread) 6280 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:31:50,236 django.server Thread-14 (process_request_thread) 5460 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10814
+WARNING 2023-10-17 11:31:50,347 django.server Thread-14 (process_request_thread) 5460 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+INFO 2023-10-17 11:32:00,619 django.server Thread-16 (process_request_thread) 12420 basehttp basehttp.py 212 django.server log_message 6568 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-17 11:32:00,696 django.server Thread-16 (process_request_thread) 12420 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/login_user.css HTTP/1.1" 200 1255
+INFO 2023-10-17 11:32:00,848 django.server Thread-16 (process_request_thread) 12420 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/images/log.jpg HTTP/1.1" 200 43888

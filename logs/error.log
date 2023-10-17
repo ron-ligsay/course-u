@@ -114,3 +114,11 @@ WARNING 2023-10-17 11:01:11,097 django.server Thread-8 9844 basehttp basehttp.py
 WARNING 2023-10-17 11:01:12,068 django.request Thread-8 9844 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
 WARNING 2023-10-17 11:01:12,068 django.server Thread-8 9844 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
 WARNING 2023-10-17 11:08:36,985 django.server Thread-16 16836 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:29:45,971 django.server Thread-2 (process_request_thread) 5492 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:30:16,618 django.server Thread-3 (process_request_thread) 4644 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:30:27,424 django.server Thread-5 (process_request_thread) 15868 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:12,904 django.server Thread-7 (process_request_thread) 18600 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:18,727 django.server Thread-9 (process_request_thread) 7932 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:24,520 django.server Thread-10 (process_request_thread) 13876 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:30,018 django.server Thread-12 (process_request_thread) 6280 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:50,347 django.server Thread-14 (process_request_thread) 5460 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907

@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-image: url("{% static ' images/log.jpg' %}");
+  background-image: url("/static/images/log.jpg");
 }
 
 .container1 {
