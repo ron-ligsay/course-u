@@ -40,13 +40,14 @@ th{
 
 .submit-button {
     display: inline-block;
-    background-color:rgb(228, 95, 65);; /* Button background color */
-    color: black; /* Text color */
+    background-color:rgb(228, 95, 65); /* Button background color */
+    color: white; /* Text color */
     text-decoration: none;
-    padding: 20px 50px;
+    padding: 20px 30px;
     border-radius: 10px; /* Rounded corners */
     font-size: 18px; /* Adjust font size to make it larger */
     font-family: Sans-serif; 
     margin-top: 400px;
+    text-align: center;
 }
   

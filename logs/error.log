@@ -282,3 +282,12 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'display_question' with no arguments not found. 1 pattern(s) tried: ['question/(?P<question_id>[0-9]+)/\\Z']
 ERROR 2023-10-17 17:55:47,284 django.server Thread-16 (process_request_thread) 29172 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133198
+WARNING 2023-10-17 18:26:13,423 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 18:26:20,252 django.server Thread-19 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:44:41,164 django.request Thread-3 (process_request_thread) 12104 log log.py 241 django.request log_response 17424 Not Found: /favicon.ico
+WARNING 2023-10-19 20:44:41,166 django.server Thread-3 (process_request_thread) 12104 basehttp basehttp.py 212 django.server log_message 17424 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-19 20:44:45,476 django.server Thread-5 (process_request_thread) 29356 basehttp basehttp.py 212 django.server log_message 17424 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:50:09,295 django.server Thread-1 (process_request_thread) 7460 basehttp basehttp.py 212 django.server log_message 30244 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:52:19,388 django.request Thread-2 (process_request_thread) 5396 log log.py 241 django.request log_response 30244 Not Found: /subject_input/
+WARNING 2023-10-19 20:52:19,391 django.server Thread-2 (process_request_thread) 5396 basehttp basehttp.py 212 django.server log_message 30244 "GET /subject_input/ HTTP/1.1" 404 17652
+WARNING 2023-10-19 20:53:28,361 django.server Thread-1 (process_request_thread) 12576 basehttp basehttp.py 212 django.server log_message 13048 "GET /static/css/test%20.css HTTP/1.1" 404 1800
