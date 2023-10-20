@@ -803,3 +803,58 @@ INFO 2023-10-20 14:21:00,577 django.server Thread-3 (process_request_thread) 314
 INFO 2023-10-20 14:21:03,487 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /login_user/ HTTP/1.1" 200 10813
 INFO 2023-10-20 14:21:13,045 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "POST /login_user/ HTTP/1.1" 302 0
 INFO 2023-10-20 14:21:13,123 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /login_user/ HTTP/1.1" 200 11252
+INFO 2023-10-20 14:23:01,495 django.server Thread-15 (process_request_thread) 17544 basehttp basehttp.py 212 django.server log_message 18000 "GET /subjectgrade_input/ HTTP/1.1" 200 10829
+INFO 2023-10-20 14:23:18,942 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-20 14:23:18,989 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /static/css/subject.css HTTP/1.1" 304 0
+INFO 2023-10-20 14:23:42,771 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /static/css/subject.css HTTP/1.1" 304 0
+INFO 2023-10-20 14:26:21,756 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /subjectgrade_input/ HTTP/1.1" 200 10829
+INFO 2023-10-20 14:26:21,884 django.server Thread-3 (process_request_thread) 31412 basehttp basehttp.py 212 django.server log_message 18000 "GET /static/css/subject.css HTTP/1.1" 200 1104
+INFO 2023-10-20 17:11:17,666 django.utils.autoreload MainThread 30492 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 34128 Watching for file changes with StatReloader
+INFO 2023-10-20 17:11:25,496 django.server Thread-2 (process_request_thread) 12980 basehttp basehttp.py 212 django.server log_message 34128 "GET /static/css/subject.css HTTP/1.1" 200 1081
+INFO 2023-10-20 17:11:25,511 django.server Thread-3 (process_request_thread) 15296 basehttp basehttp.py 212 django.server log_message 34128 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2023-10-20 17:11:25,635 django.server Thread-3 (process_request_thread) 15296 basehttp basehttp.py 212 django.server log_message 34128 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2023-10-20 17:11:25,682 django.server Thread-1 (process_request_thread) 16568 basehttp basehttp.py 212 django.server log_message 34128 "GET / HTTP/1.1" 200 9438
+INFO 2023-10-20 17:11:25,906 django.server Thread-1 (process_request_thread) 16568 basehttp basehttp.py 212 django.server log_message 34128 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2023-10-20 17:11:25,957 django.server Thread-1 (process_request_thread) 16568 basehttp basehttp.py 212 django.server log_message 34128 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2023-10-20 17:11:26,135 django.request Thread-1 (process_request_thread) 16568 log log.py 241 django.request log_response 34128 Not Found: /favicon.ico
+WARNING 2023-10-20 17:11:26,170 django.server Thread-1 (process_request_thread) 16568 basehttp basehttp.py 212 django.server log_message 34128 "GET /favicon.ico HTTP/1.1" 404 17639
+INFO 2023-10-20 17:13:33,952 django.utils.autoreload MainThread 29324 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 19700 Watching for file changes with StatReloader
+INFO 2023-10-20 17:13:44,474 django.server Thread-1 (process_request_thread) 18608 basehttp basehttp.py 212 django.server log_message 19700 "GET / HTTP/1.1" 200 9437
+WARNING 2023-10-20 17:13:45,340 django.request Thread-1 (process_request_thread) 18608 log log.py 241 django.request log_response 19700 Not Found: /favicon.ico
+WARNING 2023-10-20 17:13:45,344 django.server Thread-1 (process_request_thread) 18608 basehttp basehttp.py 212 django.server log_message 19700 "GET /favicon.ico HTTP/1.1" 404 17640
+INFO 2023-10-20 17:13:47,496 django.server Thread-1 (process_request_thread) 18608 basehttp basehttp.py 212 django.server log_message 19700 "GET /login_user/ HTTP/1.1" 200 10812
+INFO 2023-10-20 17:13:49,766 django.server Thread-3 (process_request_thread) 26180 basehttp basehttp.py 212 django.server log_message 19700 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-20 17:13:49,972 django.server Thread-3 (process_request_thread) 26180 basehttp basehttp.py 212 django.server log_message 19700 "GET /home HTTP/1.1" 200 31952
+INFO 2023-10-20 17:13:50,454 django.server Thread-3 (process_request_thread) 26180 basehttp basehttp.py 212 django.server log_message 19700 "GET /static/css/home.css HTTP/1.1" 304 0
+WARNING 2023-10-20 17:13:50,485 django.server Thread-3 (process_request_thread) 26180 basehttp basehttp.py 212 django.server log_message 19700 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+INFO 2023-10-20 17:13:50,625 django.server Thread-4 (process_request_thread) 14368 basehttp basehttp.py 212 django.server log_message 19700 "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-20 17:14:15,642 django.server Thread-5 (process_request_thread) 14596 basehttp basehttp.py 212 django.server log_message 19700 "GET /sign_in/ HTTP/1.1" 200 12737
+INFO 2023-10-20 17:14:15,672 django.server Thread-6 (process_request_thread) 28848 basehttp basehttp.py 212 django.server log_message 19700 "GET /static/images/signup.jpg HTTP/1.1" 200 383469
+INFO 2023-10-20 17:14:15,681 django.server Thread-5 (process_request_thread) 14596 basehttp basehttp.py 212 django.server log_message 19700 "GET /static/css/signin.css HTTP/1.1" 200 2622
+INFO 2023-10-20 17:14:45,859 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /sign_in/ HTTP/1.1" 200 13529
+INFO 2023-10-20 17:15:10,015 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /sign_in/ HTTP/1.1" 200 13738
+INFO 2023-10-20 17:15:37,102 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /sign_in/ HTTP/1.1" 200 13534
+INFO 2023-10-20 17:15:56,938 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /sign_in/ HTTP/1.1" 200 13568
+ERROR 2023-10-20 17:16:24,586 django.request Thread-8 (process_request_thread) 24844 log log.py 241 django.request log_response 19700 Internal Server Error: /sign_in/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\website\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\website\views.py", line 123, in sign_in
+    group = Group.objects.get(name='student')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Group.DoesNotExist: Group matching query does not exist.
+ERROR 2023-10-20 17:16:24,693 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /sign_in/ HTTP/1.1" 500 94878
+INFO 2023-10-20 17:16:47,557 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "GET /login_user/ HTTP/1.1" 200 10812
+INFO 2023-10-20 17:17:01,557 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-20 17:17:01,620 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "GET /login_user/ HTTP/1.1" 200 11252
+INFO 2023-10-20 17:17:12,709 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "GET /login_user/ HTTP/1.1" 200 10813
+INFO 2023-10-20 17:35:45,983 django.server Thread-11 (process_request_thread) 28152 basehttp basehttp.py 212 django.server log_message 19700 "GET /admin_home/ HTTP/1.1" 200 17992
+INFO 2023-10-20 17:38:02,626 django.server Thread-12 (process_request_thread) 5272 basehttp basehttp.py 212 django.server log_message 19700 "GET /admin_home/ HTTP/1.1" 200 17983
+INFO 2023-10-20 17:39:16,445 django.server Thread-12 (process_request_thread) 5272 basehttp basehttp.py 212 django.server log_message 19700 "GET /admin_home/ HTTP/1.1" 200 17984
