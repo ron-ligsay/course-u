@@ -14,7 +14,7 @@ p{
     border-collapse: collapse;
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
 
 }
@@ -28,6 +28,8 @@ p{
 }
 .subject {
     margin-bottom: 10px;
+    margin-top: 10px;
+    
 }
 
 .grade {
@@ -36,18 +38,26 @@ p{
 
 th{
     text-align:center;
+    font-size: 20px;
+}
+
+td{
+    font-size: 18px;
 }
 
 .submit-button {
-    display: inline-block;
     background-color:rgb(228, 95, 65); /* Button background color */
     color: white; /* Text color */
     text-decoration: none;
-    padding: 20px 30px;
+    padding: 10px 15px;
     border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Adjust font size to make it larger */
+    font-size: 13px; /* Adjust font size to make it larger */
     font-family: Sans-serif; 
-    margin-top: 400px;
-    text-align: center;
+    margin-top: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
   
