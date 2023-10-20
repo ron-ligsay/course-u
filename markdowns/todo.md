@@ -55,7 +55,7 @@
     - This automatically creates an Instructor account
 
 ## Setups
--[]: Create a virtual environment [Course-u]
+-[-]: Create a virtual environment [Course-u]
 
 ## Home Section
 - []: @ron-ligsay On Home Create a filter for Specialization on Page # Path: website/views.py
@@ -65,6 +65,8 @@
     - []: Create A Filter View # Path: website/views.py
 
 ## User Section
+- [ ]: On user Sign up or Registration, verify if username and email is unique.
+    - [ ]: send email verification
 - [ ]: User Profiles:
     - Enhance the user profile functionality to allow students to input information about their academic interests, career aspirations, and preferences. This data will be valuable for making personalized recommendations.
 - [ ]: Enhance the user profile functionality to allow students to input information about their academic interests, career aspirations, and preferences. This data will be valuable for making personalized recommendations.
