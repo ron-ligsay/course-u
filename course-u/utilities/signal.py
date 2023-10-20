@@ -1,6 +1,13 @@
 # Define a signal
 from django.db.models.signals import Signal
 
+# Other Imports
+from django.core.mail import send_mail
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
 # Signal Instance/s
 my_signal = Signal()
 
@@ -14,10 +21,6 @@ my_signal.connect(my_signal_handler)
 my_signal.send(sender="my_sender")
 
 
-from django.core.mail import send_mail
-from django.contrib.auth.models import User
-from django.conf import settings
-from django.template.loader import render_to_string
 
 def send_welcome_email(sender, **kwargs):
     user = sender  # The sender will be a User object
@@ -33,6 +36,45 @@ def send_welcome_email(sender, **kwargs):
     send_mail(
         subject, 
         message, 
-        from_email, # From email address
-        recipient_list # Recipient(s)
+        from_email,     # From email address
+        recipient_list  # Recipient(s)
     )
+
+
+# Define a function to send the report email
+def send_student_report(student):
+    # Generate the HTML content of the report using a Django template
+    report_context = {
+        'student': student,
+        'progress': {
+            'grades': 90,  # Replace with actual progress data
+            'attendance': 'Excellent',  # Replace with actual progress data
+        },
+        'interests': [
+            'Science',
+            'Math',
+            'Art',
+        ],
+    }
+
+    report_html = render_to_string('email/student_report.html', report_context)
+
+    # Create the plain text version of the email
+    report_text = strip_tags(report_html)
+
+    # Send the email
+    subject = f"Student Report for {student.name}"
+    from_email = 'your@email.com'
+    to_email = student.email
+
+    send_mail(
+        subject,
+        report_text,
+        from_email,
+        [to_email],
+        html_message=report_html,
+    )
+
+# Usage: Pass a student instance to the function to send their report
+# Replace 'student_instance' with the actual student you want to send a report for
+# send_student_report(student_instance)
