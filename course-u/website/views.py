@@ -135,6 +135,12 @@ def sign_in(request):
     else:
         form = SignUpForm()
         return render(request, 'user/sign_in.html', {'form': form})
+    
+    # After successfully registering the user, trigger the signal
+    # user = get_user_model().objects.get(username=new_user_username)
+    # user_registered.send(sender=user)
+
+
     return render(request, 'user/sign_in.html', {'form': form})
 
 
