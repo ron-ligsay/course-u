@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 #from website.utils import *
 from website.forms import SignUpForm, StudentScoreForm
 from website.models import Specialization, Field
-from website.decorators import unauthenticated_user, allowed_users, admin_only
+from utilities.decorators import unauthenticated_user, allowed_users, admin_only
 
 from assessment.models import Test, QuestionSet
 from jobs.models import JobPosting
