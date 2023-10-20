@@ -36,6 +36,23 @@
 - [ ]: make nave bar foldable
 - [ ]: update home page
 
+- [ ]: Create a email verification
+    - [ ]: Create a email verification for students
+    - [ ]: Create a email verification for instructors
+    - [ ]: Create a email verification for admin
+    - [ ]: Create a email for password reset
+    - [ ]: Email Templates
+    - [ ]: Report Email for Admin/Instructors
+- [ ]: Create a notification system
+    - [ ]: Create a notification system for students
+    - [ ]: Create a notification system for instructors
+    - [ ]: Create a notification system for admin
+    - [ ]: Create a notification system for password reset
+    - [ ]: Notification Templates
+    - [ ]: Report Notification for Admin/Instructors
+- [ ]: Create a logging report w/email
+- [ ]: Use Instructor domain, (using regex to identify it) and send confirmation email for verification.
+    - This automatically creates an Instructor account
 
 ## Setups
 -[]: Create a virtual environment [Course-u]
