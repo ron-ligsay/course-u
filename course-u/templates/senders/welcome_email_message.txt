@@ -1,0 +1,7 @@
+Hello {{ user.username }},
+
+Thank you for registering on our website.
+
+Best regards,
+Your Website Team
+
