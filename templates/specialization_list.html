@@ -1,9 +1,0 @@
-{% for item in specialization_items %}
-<a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link">
-  <div class="card">
-    <h4>{{ item.title }}</h4>
-      <p class="small">{{ item.description }}</p>
-      <!-- Add more fields as needed -->
-  </div>
-</a>
-{% endfor %}

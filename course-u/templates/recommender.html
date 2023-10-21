@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Recommender</title>
+    </head>
+    <body>
+        <h1>Iris Django Recommender</h1>
+        <hr>
+        {% if result %}
+            <h2>flower you're trying to classify is {{result}}</h2>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            Sepal Length: <input type="text" name="sepal_length" required><br>
+            Sepal Width: <input type="text" name="sepal_width" required><br>
+            Petal Length: <input type="text" name="petal_length" required><br>
+            Petal Width: <input type="text" name="petal_width" required><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+
+</html>
