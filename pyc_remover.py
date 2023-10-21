@@ -90,4 +90,4 @@ def delete():
 check()
 
 # Once verified, you can delete the files
-#delete()
+delete()

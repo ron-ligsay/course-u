@@ -1,3 +1,1 @@
-userid,username,password,email
-1,kristof,12345,krstfpmbd20@gmail.com
-2,userkristof,12345,userkrstf20@gmail.com
+"userid";"username";"password";"email";"first_name";"last_name";"course_id";"yearlevel_id"

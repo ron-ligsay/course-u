@@ -1,0 +1,325 @@
+WARNING 2023-10-16 14:18:42,018 django.request Thread-4 22828 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:18:42,029 django.server Thread-4 22828 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:18:42,177 django.request Thread-3 19908 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:18:42,179 django.server Thread-3 19908 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:18:42,969 django.request Thread-5 11032 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:18:42,971 django.server Thread-5 11032 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:18:49,291 django.server Thread-6 8800 basehttp basehttp.py 212 django.server log_message 18632 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 14:18:49,807 django.request Thread-5 11032 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:18:49,809 django.server Thread-5 11032 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:18:50,802 django.request Thread-5 11032 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:18:50,804 django.server Thread-5 11032 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:04,032 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:04,046 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:19:04,997 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:04,998 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:06,921 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:06,923 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:19:07,875 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:07,876 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:10,030 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:10,032 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:10,999 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:11,001 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:12,302 django.request Thread-8 15320 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:12,303 django.server Thread-8 15320 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:19:13,312 django.request Thread-9 23164 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:13,314 django.server Thread-9 23164 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:14,284 django.server Thread-9 23164 basehttp basehttp.py 212 django.server log_message 18632 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 14:19:14,759 django.request Thread-10 15628 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:14,764 django.server Thread-10 15628 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:19:15,682 django.request Thread-10 15628 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:15,684 django.server Thread-10 15628 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 14:19:16,313 django.request Thread-10 15628 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:16,314 django.server Thread-10 15628 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17077
+WARNING 2023-10-16 14:19:17,308 django.request Thread-10 15628 log log.py 241 django.request log_response 18632 Not Found: /favicon.ico
+WARNING 2023-10-16 14:19:17,310 django.server Thread-10 15628 basehttp basehttp.py 212 django.server log_message 18632 "GET /favicon.ico HTTP/1.1" 404 17076
+WARNING 2023-10-16 17:58:34,895 django.server Thread-1 10228 basehttp basehttp.py 212 django.server log_message 1620 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 19:16:43,875 django.request Thread-2 19044 log log.py 241 django.request log_response 12928 Not Found: /favicon.ico
+WARNING 2023-10-16 19:16:43,880 django.server Thread-2 19044 basehttp basehttp.py 212 django.server log_message 12928 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-16 19:16:44,997 django.request Thread-2 19044 log log.py 241 django.request log_response 12928 Not Found: /favicon.ico
+WARNING 2023-10-16 19:16:44,997 django.server Thread-2 19044 basehttp basehttp.py 212 django.server log_message 12928 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 19:17:11,601 django.server Thread-3 21932 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 19:18:36,492 django.server Thread-9 15324 basehttp basehttp.py 212 django.server log_message 12928 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 20:13:01,295 django.request Thread-4 (process_request_thread) 37520 log log.py 241 django.request log_response 27624 Not Found: /favicon.ico
+WARNING 2023-10-16 20:13:01,296 django.server Thread-4 (process_request_thread) 37520 basehttp basehttp.py 212 django.server log_message 27624 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 20:13:02,306 django.server Thread-4 (process_request_thread) 37520 basehttp basehttp.py 212 django.server log_message 27624 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 20:16:09,508 django.server Thread-1 (process_request_thread) 37060 basehttp basehttp.py 212 django.server log_message 27624 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:18:44,672 django.server Thread-2 (process_request_thread) 31852 basehttp basehttp.py 212 django.server log_message 38072 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:20:12,748 django.server Thread-1 (process_request_thread) 24400 basehttp basehttp.py 212 django.server log_message 38072 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:30:39,511 django.server Thread-1 20200 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:30:41,680 django.server Thread-3 22332 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-16 21:30:52,522 django.request Thread-4 17528 log log.py 241 django.request log_response 18848 Not Found: /favicon.ico
+WARNING 2023-10-16 21:30:52,524 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 21:30:53,503 django.request Thread-4 17528 log log.py 241 django.request log_response 18848 Not Found: /favicon.ico
+WARNING 2023-10-16 21:30:53,504 django.server Thread-4 17528 basehttp basehttp.py 212 django.server log_message 18848 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-16 21:31:00,182 django.server Thread-5 17420 basehttp basehttp.py 212 django.server log_message 18848 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 11:00:53,615 django.server Thread-4 8836 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 11:01:02,727 django.request Thread-6 11368 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:02,741 django.server Thread-6 11368 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:02,881 django.request Thread-5 17448 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:02,883 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:03,448 django.request Thread-5 17448 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:03,450 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:04,322 django.server Thread-5 17448 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 11:01:08,142 django.request Thread-7 11900 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:08,142 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 11:01:09,202 django.request Thread-7 11900 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:09,206 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
+ERROR 2023-10-17 11:01:10,058 django.request Thread-7 11900 log log.py 241 django.request log_response 13780 Internal Server Error: /login_user/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\website\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\website\views.py", line 112, in login_user
+    return render(request, 'user/login.html')
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 65: 'endif'. Did you forget to register or load this tag?
+ERROR 2023-10-17 11:01:10,132 django.server Thread-7 11900 basehttp basehttp.py 212 django.server log_message 13780 "GET /login_user/ HTTP/1.1" 500 181051
+WARNING 2023-10-17 11:01:11,092 django.request Thread-8 9844 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:11,097 django.server Thread-8 9844 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17459
+WARNING 2023-10-17 11:01:12,068 django.request Thread-8 9844 log log.py 241 django.request log_response 13780 Not Found: /favicon.ico
+WARNING 2023-10-17 11:01:12,068 django.server Thread-8 9844 basehttp basehttp.py 212 django.server log_message 13780 "GET /favicon.ico HTTP/1.1" 404 17458
+WARNING 2023-10-17 11:08:36,985 django.server Thread-16 16836 basehttp basehttp.py 212 django.server log_message 13780 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:29:45,971 django.server Thread-2 (process_request_thread) 5492 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:30:16,618 django.server Thread-3 (process_request_thread) 4644 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:30:27,424 django.server Thread-5 (process_request_thread) 15868 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:12,904 django.server Thread-7 (process_request_thread) 18600 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:18,727 django.server Thread-9 (process_request_thread) 7932 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:24,520 django.server Thread-10 (process_request_thread) 13876 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:30,018 django.server Thread-12 (process_request_thread) 6280 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 11:31:50,347 django.server Thread-14 (process_request_thread) 5460 basehttp basehttp.py 212 django.server log_message 6568 "GET /static/css/%7B%%20static%20'%20images/log.jpg'%20%%7D HTTP/1.1" 404 1907
+WARNING 2023-10-17 17:20:16,567 django.request Thread-3 (process_request_thread) 18644 log log.py 241 django.request log_response 22216 Not Found: /favicon.ico
+WARNING 2023-10-17 17:20:16,568 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 22216 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-17 17:20:21,799 django.request Thread-4 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
+WARNING 2023-10-17 17:20:21,800 django.server Thread-4 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
+WARNING 2023-10-17 17:20:59,601 django.server Thread-5 (process_request_thread) 21656 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 17:21:07,263 django.request Thread-6 (process_request_thread) 22484 log log.py 241 django.request log_response 22216 Not Found: /course
+WARNING 2023-10-17 17:21:07,265 django.server Thread-6 (process_request_thread) 22484 basehttp basehttp.py 212 django.server log_message 22216 "GET /course HTTP/1.1" 404 17619
+WARNING 2023-10-17 17:21:37,355 django.server Thread-9 (process_request_thread) 19304 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/course.css HTTP/1.1" 404 1801
+WARNING 2023-10-17 17:26:33,580 django.server Thread-10 (process_request_thread) 23280 basehttp basehttp.py 212 django.server log_message 22216 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 17:27:58,065 django.server Thread-1 (process_request_thread) 18932 basehttp basehttp.py 212 django.server log_message 23912 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 17:45:46,567 django.server Thread-2 (process_request_thread) 18336 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+ERROR 2023-10-17 17:54:16,830 django.request Thread-13 (process_request_thread) 29768 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:16,874 django.server Thread-13 (process_request_thread) 29768 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:54:26,417 django.request Thread-14 (process_request_thread) 29004 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:26,469 django.server Thread-14 (process_request_thread) 29004 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:54:49,916 django.request Thread-15 (process_request_thread) 28484 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'squestion/<int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'squestion/<int' is not a registered namespace
+ERROR 2023-10-17 17:54:49,957 django.server Thread-15 (process_request_thread) 28484 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133517
+ERROR 2023-10-17 17:55:47,244 django.request Thread-16 (process_request_thread) 29172 log log.py 241 django.request log_response 23720 Internal Server Error: /subjectgrade_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\assessment\views.py", line 378, in subjectgrade_input
+    return render(request, 'user/subject.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'display_question' with no arguments not found. 1 pattern(s) tried: ['question/(?P<question_id>[0-9]+)/\\Z']
+ERROR 2023-10-17 17:55:47,284 django.server Thread-16 (process_request_thread) 29172 basehttp basehttp.py 212 django.server log_message 23720 "GET /subjectgrade_input/ HTTP/1.1" 500 133198
+WARNING 2023-10-17 18:26:13,423 django.server Thread-18 (process_request_thread) 12084 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-17 18:26:20,252 django.server Thread-19 (process_request_thread) 25836 basehttp basehttp.py 212 django.server log_message 23720 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:44:41,164 django.request Thread-3 (process_request_thread) 12104 log log.py 241 django.request log_response 17424 Not Found: /favicon.ico
+WARNING 2023-10-19 20:44:41,166 django.server Thread-3 (process_request_thread) 12104 basehttp basehttp.py 212 django.server log_message 17424 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-19 20:44:45,476 django.server Thread-5 (process_request_thread) 29356 basehttp basehttp.py 212 django.server log_message 17424 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:50:09,295 django.server Thread-1 (process_request_thread) 7460 basehttp basehttp.py 212 django.server log_message 30244 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:52:19,388 django.request Thread-2 (process_request_thread) 5396 log log.py 241 django.request log_response 30244 Not Found: /subject_input/
+WARNING 2023-10-19 20:52:19,391 django.server Thread-2 (process_request_thread) 5396 basehttp basehttp.py 212 django.server log_message 30244 "GET /subject_input/ HTTP/1.1" 404 17652
+WARNING 2023-10-19 20:53:28,361 django.server Thread-1 (process_request_thread) 12576 basehttp basehttp.py 212 django.server log_message 13048 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 20:55:45,388 django.server Thread-1 (process_request_thread) 33180 basehttp basehttp.py 212 django.server log_message 34440 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-19 21:05:46,784 django.server Thread-3 (process_request_thread) 19552 basehttp basehttp.py 212 django.server log_message 34440 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-20 13:48:42,149 django.request Thread-1 (process_request_thread) 31660 log log.py 241 django.request log_response 5576 Not Found: /favicon.ico
+WARNING 2023-10-20 13:48:42,153 django.server Thread-1 (process_request_thread) 31660 basehttp basehttp.py 212 django.server log_message 5576 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-20 13:48:42,743 django.request Thread-1 (process_request_thread) 31660 log log.py 241 django.request log_response 5576 Not Found: /favicon.ico
+WARNING 2023-10-20 13:48:42,937 django.server Thread-1 (process_request_thread) 31660 basehttp basehttp.py 212 django.server log_message 5576 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-20 13:48:44,677 django.server Thread-4 (process_request_thread) 18580 basehttp basehttp.py 212 django.server log_message 5576 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+WARNING 2023-10-20 13:57:33,861 django.request Thread-2 (process_request_thread) 7832 log log.py 241 django.request log_response 18000 Not Found: /favicon.ico
+WARNING 2023-10-20 13:57:33,864 django.server Thread-2 (process_request_thread) 7832 basehttp basehttp.py 212 django.server log_message 18000 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-20 13:57:58,710 django.request Thread-2 (process_request_thread) 7832 log log.py 241 django.request log_response 18000 Not Found: /subject_input
+WARNING 2023-10-20 13:57:58,712 django.server Thread-2 (process_request_thread) 7832 basehttp basehttp.py 212 django.server log_message 18000 "GET /subject_input HTTP/1.1" 404 17647
+WARNING 2023-10-20 17:11:26,135 django.request Thread-1 (process_request_thread) 16568 log log.py 241 django.request log_response 34128 Not Found: /favicon.ico
+WARNING 2023-10-20 17:11:26,170 django.server Thread-1 (process_request_thread) 16568 basehttp basehttp.py 212 django.server log_message 34128 "GET /favicon.ico HTTP/1.1" 404 17639
+WARNING 2023-10-20 17:13:45,340 django.request Thread-1 (process_request_thread) 18608 log log.py 241 django.request log_response 19700 Not Found: /favicon.ico
+WARNING 2023-10-20 17:13:45,344 django.server Thread-1 (process_request_thread) 18608 basehttp basehttp.py 212 django.server log_message 19700 "GET /favicon.ico HTTP/1.1" 404 17640
+WARNING 2023-10-20 17:13:50,485 django.server Thread-3 (process_request_thread) 26180 basehttp basehttp.py 212 django.server log_message 19700 "GET /static/css/test%20.css HTTP/1.1" 404 1800
+ERROR 2023-10-20 17:16:24,586 django.request Thread-8 (process_request_thread) 24844 log log.py 241 django.request log_response 19700 Internal Server Error: /sign_in/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\website\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\website\views.py", line 123, in sign_in
+    group = Group.objects.get(name='student')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Group.DoesNotExist: Group matching query does not exist.
+ERROR 2023-10-20 17:16:24,693 django.server Thread-8 (process_request_thread) 24844 basehttp basehttp.py 212 django.server log_message 19700 "POST /sign_in/ HTTP/1.1" 500 94878

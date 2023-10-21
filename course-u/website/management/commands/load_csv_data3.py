@@ -16,11 +16,7 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-<<<<<<< HEAD
-            password='sawadeeKA456',
-=======
             password='022002',
->>>>>>> 69d3e31f4b841572ac4bc14d62db8fb88457e8e2
             database= 'courseu_db',#config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 

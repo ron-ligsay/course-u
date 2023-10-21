@@ -23,7 +23,8 @@ urlpatterns = [
     path('update_test/<int:question_id>/', views.update_test, name='update_test'),
     #path('admin_report/', views.admin_test_report, name=('admin_report')),
     path('gradelevel_input/',views.gradelevel_input, name='gradelevel_input'),
-    path('subjectgrade_input/',views.subjectgrade_input, name='subjectgrade_input')
+    path('subjectgrade_input/',views.subjectgrade_input, name='subjectgrade_input'),
+    path('course_input/',views.course_input,name='course_input')
 ]
 
 
