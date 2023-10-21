@@ -82,11 +82,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'courseu_db',
         'USER': 'root',
-        'PASSWORD': 'sql2023',#'sawadeeKA456',
+        'PASSWORD': 'sawadeeKA456',#'sawadeeKA456',
         'HOST': 'localhost',
         'PORT': '3306',
     }
-}
+} 
 
 
 # Password validation
