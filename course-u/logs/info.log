@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO 2023-10-16 14:17:59,964 django.utils.autoreload MainThread 21296 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 4736 Watching for file changes with StatReloader
 INFO 2023-10-16 14:18:20,551 django.utils.autoreload MainThread 21296 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4736 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course_u\settings.py changed, reloading.
 INFO 2023-10-16 14:18:23,433 django.utils.autoreload MainThread 3700 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18632 Watching for file changes with StatReloader
@@ -1535,3 +1536,5 @@ INFO 2023-10-20 18:37:17,446 django.server Thread-6 (process_request_thread) 277
 INFO 2023-10-20 18:37:17,496 django.server Thread-6 (process_request_thread) 27728 basehttp basehttp.py 212 django.server log_message 26140 "GET /static/css/test_home.css HTTP/1.1" 304 0
 INFO 2023-10-20 18:37:17,497 django.server Thread-3 (process_request_thread) 10656 basehttp basehttp.py 212 django.server log_message 26140 "GET /static/css/job_post.css HTTP/1.1" 304 0
 INFO 2023-10-20 18:37:17,497 django.server Thread-7 (process_request_thread) 21348 basehttp basehttp.py 212 django.server log_message 26140 "GET /static/js/job_list.js HTTP/1.1" 304 0
+=======
+>>>>>>> dc92e716c2cf3aae6ad5fc85c941e771eff918f1
