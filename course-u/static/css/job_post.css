@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 /* Apply basic styling to the page */
@@ -27,10 +28,11 @@ body {
 }
 
 .job-card {
-    background-color: #ffffff;
+    background-image:url('/static/images/2.jpg');
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     padding: 10px;
+    background-size: cover;
     margin-bottom: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -43,11 +45,13 @@ body {
 .job-title {
     font-size: 18px;
     font-weight: bold;
+    color:white;    
 }
 
 .company-name {
     font-size: 14px;
-    color: #555555;
+    /*color: #555555;*/
+    color:lightgray;
 }
 
 /* Job Details Styles */

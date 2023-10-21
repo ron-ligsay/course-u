@@ -1,0 +1,40 @@
+WARNING 2023-10-21 14:29:15,944 django.request Thread-6 (process_request_thread) 16468 log log.py 241 django.request log_response 33212 Not Found: /favicon.ico
+WARNING 2023-10-21 14:29:15,947 django.server Thread-6 (process_request_thread) 16468 basehttp basehttp.py 212 django.server log_message 33212 "GET /favicon.ico HTTP/1.1" 404 17824
+WARNING 2023-10-22 05:41:25,703 django.request Thread-1 (process_request_thread) 20468 log log.py 241 django.request log_response 21912 Not Found: /favicon.ico
+WARNING 2023-10-22 05:41:25,706 django.server Thread-1 (process_request_thread) 20468 basehttp basehttp.py 212 django.server log_message 21912 "GET /favicon.ico HTTP/1.1" 404 17824
+ERROR 2023-10-22 05:44:51,369 django.request Thread-1 (process_request_thread) 20468 log log.py 241 django.request log_response 21912 Internal Server Error: /sign_in/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\utilities\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\website\views.py", line 130, in sign_in
+    group = Group.objects.get(name='student')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Group.DoesNotExist: Group matching query does not exist.
+ERROR 2023-10-22 05:44:51,467 django.server Thread-1 (process_request_thread) 20468 basehttp basehttp.py 212 django.server log_message 21912 "POST /sign_in/ HTTP/1.1" 500 94693
+WARNING 2023-10-22 05:46:12,204 django.request Thread-1 (process_request_thread) 20468 log log.py 241 django.request log_response 21912 Not Found: /Specialization
+WARNING 2023-10-22 05:46:12,206 django.server Thread-1 (process_request_thread) 20468 basehttp basehttp.py 212 django.server log_message 21912 "GET /Specialization HTTP/1.1" 404 17836
+WARNING 2023-10-22 05:46:16,060 django.request Thread-1 (process_request_thread) 20468 log log.py 241 django.request log_response 21912 Not Found: /Jobs
+WARNING 2023-10-22 05:46:16,061 django.server Thread-1 (process_request_thread) 20468 basehttp basehttp.py 212 django.server log_message 21912 "GET /Jobs HTTP/1.1" 404 17795
+WARNING 2023-10-22 05:57:39,828 django.server Thread-1 (process_request_thread) 20468 basehttp basehttp.py 212 django.server log_message 21912 "GET /static/css/job_pos.css HTTP/1.1" 404 1804
+WARNING 2023-10-22 06:04:44,207 django.request Thread-7 (process_request_thread) 1732 log log.py 241 django.request log_response 10916 Not Found: /favicon.ico
+WARNING 2023-10-22 06:04:44,214 django.server Thread-7 (process_request_thread) 1732 basehttp basehttp.py 212 django.server log_message 10916 "GET /favicon.ico HTTP/1.1" 404 17823
+WARNING 2023-10-22 06:32:35,727 django.server Thread-9 (process_request_thread) 14280 basehttp basehttp.py 212 django.server log_message 10916 "GET /static/css/1.png HTTP/1.1" 404 1786
+WARNING 2023-10-22 06:33:03,301 django.server Thread-10 (process_request_thread) 21012 basehttp basehttp.py 212 django.server log_message 10916 "GET /static/css/1.png HTTP/1.1" 404 1786
+WARNING 2023-10-22 06:34:40,118 django.server Thread-11 (process_request_thread) 12828 basehttp basehttp.py 212 django.server log_message 10916 "GET /static/css/1.png HTTP/1.1" 404 1786
+WARNING 2023-10-22 06:34:41,228 django.server Thread-12 (process_request_thread) 29692 basehttp basehttp.py 212 django.server log_message 10916 "GET /static/css/1.png HTTP/1.1" 404 1786
+WARNING 2023-10-22 06:35:14,662 django.server Thread-13 (process_request_thread) 9612 basehttp basehttp.py 212 django.server log_message 10916 "GET /static/css/1.png HTTP/1.1" 404 1786
+WARNING 2023-10-22 06:35:15,663 django.server Thread-14 (process_request_thread) 30960 basehttp basehttp.py 212 django.server log_message 10916 "GET /static/css/1.png HTTP/1.1" 404 1786
+WARNING 2023-10-22 06:36:39,838 django.server Thread-1 (process_request_thread) 10112 basehttp basehttp.py 212 django.server log_message 28848 "GET /static/css/images/1.png HTTP/1.1" 404 1807
+WARNING 2023-10-22 06:37:33,772 django.request Thread-2 (process_request_thread) 9812 log log.py 241 django.request log_response 28848 Not Found: /images/1.png
+WARNING 2023-10-22 06:37:33,773 django.server Thread-2 (process_request_thread) 9812 basehttp basehttp.py 212 django.server log_message 28848 "GET /images/1.png HTTP/1.1" 404 17827
+WARNING 2023-10-22 06:38:32,943 django.request Thread-2 (process_request_thread) 9812 log log.py 241 django.request log_response 28848 Not Found: /course-u/static/images/1.png
+WARNING 2023-10-22 06:38:32,944 django.server Thread-2 (process_request_thread) 9812 basehttp basehttp.py 212 django.server log_message 28848 "GET /course-u/static/images/1.png HTTP/1.1" 404 17891
+WARNING 2023-10-22 06:38:34,202 django.request Thread-2 (process_request_thread) 9812 log log.py 241 django.request log_response 28848 Not Found: /course-u/static/images/1.png
+WARNING 2023-10-22 06:38:34,205 django.server Thread-2 (process_request_thread) 9812 basehttp basehttp.py 212 django.server log_message 28848 "GET /course-u/static/images/1.png HTTP/1.1" 404 17891
