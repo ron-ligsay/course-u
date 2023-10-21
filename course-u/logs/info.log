@@ -1500,3 +1500,8 @@ INFO 2023-10-21 13:42:02,503 django.server Thread-12 (process_request_thread) 15
 INFO 2023-10-21 13:42:03,588 django.server Thread-12 (process_request_thread) 15276 basehttp basehttp.py 212 django.server log_message 2248 "GET /static/images/favicon.png HTTP/1.1" 304 0
 INFO 2023-10-21 15:04:26,251 django.server Thread-14 (process_request_thread) 8212 basehttp basehttp.py 212 django.server log_message 2248 "GET /forgot_password/ HTTP/1.1" 200 10349
 INFO 2023-10-21 15:04:27,264 django.server Thread-14 (process_request_thread) 8212 basehttp basehttp.py 212 django.server log_message 2248 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-21 15:11:18,890 django.utils.autoreload MainThread 5880 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 6584 Watching for file changes with StatReloader
+INFO 2023-10-21 15:11:24,964 django.server Thread-1 (process_request_thread) 14648 basehttp basehttp.py 212 django.server log_message 6584 "GET / HTTP/1.1" 200 9439
+INFO 2023-10-21 15:11:26,565 django.server Thread-1 (process_request_thread) 14648 basehttp basehttp.py 212 django.server log_message 6584 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-21 15:11:28,742 django.server Thread-1 (process_request_thread) 14648 basehttp basehttp.py 212 django.server log_message 6584 "GET /forgot_password/ HTTP/1.1" 200 10349
+INFO 2023-10-21 15:11:36,290 django.server Thread-1 (process_request_thread) 14648 basehttp basehttp.py 212 django.server log_message 6584 "GET /forgot_password/ HTTP/1.1" 200 10349
