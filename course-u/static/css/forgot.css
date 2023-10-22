@@ -1,89 +1,72 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #f0f2f5;
+    height: 100vh;
+    margin: 0;
+    background-image: url("/static/images/log.jpg"); 
 }
-
-
 .container {
-    width: 450px;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .card {
-    background-color: #ff7d66;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    max-width: 400px;
+    width: 100%;
 }
 
 h2 {
-    margin-top: 0;
-    color: #000000;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: lightsalmon;
 }
 
 p {
-    color:  #000000;
+    color: #555;
+    margin-bottom: 15px; /* Adjusted margin-bottom for <p> element */
 }
 
-label {
-    display: block;
-    margin-bottom: 12px;
-    color: black;
-    text-align: left;
-    font-weight: bold;
-}
-
+label,
 input {
-    width: 100%;
+    display: block;
+    width: 95%;
+    margin-bottom: 15px; /* Adjusted margin-bottom for <label> and <input> elements */
+    font-size: 15px;
     padding: 10px;
-    margin-bottom: 18px;
-    border: 1px solid #d6d6d6;
-    border-radius: 4px;
 }
 
 button {
-    background-color: #1877f2;
-    color: white;
+    background-color: lightsalmon;
+    color: black;
     border: none;
-    border-radius: 4px;
-    padding: 12px 18px;
-    font-weight: bold;
+    border-radius: 5px;
+    padding: 12px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #115293;
+    background-color: darksalmon;
 }
 
-button:active {
-    background-color: #0a406e;
-}
-
-button:focus {
-    outline: none;
-}
-a {
-    color: #1877f2;
+.link {
     text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-.side{
-    display: flex; 
-    justify-content: flex-end;
-    align-items: center;
-    width: 50%;
-}
-.side img{
-    max-width: 100%;
-    height: 450px;
+.link:hover {
+    color: #0056b3;
 }

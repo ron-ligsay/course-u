@@ -1075,3 +1075,5 @@ WARNING 2023-10-17 15:35:58,794 django.request Thread-1 11132 log log.py 241 dja
 WARNING 2023-10-17 15:35:58,796 django.server Thread-1 11132 basehttp basehttp.py 212 django.server log_message 20868 "GET /favicon.ico HTTP/1.1" 404 17643
 WARNING 2023-10-17 15:35:59,809 django.request Thread-1 11132 log log.py 241 django.request log_response 20868 Not Found: /favicon.ico
 WARNING 2023-10-17 15:35:59,810 django.server Thread-1 11132 basehttp basehttp.py 212 django.server log_message 20868 "GET /favicon.ico HTTP/1.1" 404 17642
+WARNING 2023-10-21 12:31:25,795 django.request Thread-27 (process_request_thread) 5780 log log.py 241 django.request log_response 1888 Not Found: /recovery/forgot.css
+WARNING 2023-10-21 12:31:25,797 django.server Thread-27 (process_request_thread) 5780 basehttp basehttp.py 212 django.server log_message 1888 "GET /recovery/forgot.css HTTP/1.1" 404 17855
