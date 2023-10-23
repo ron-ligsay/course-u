@@ -16,7 +16,7 @@ urlpatterns = [
     path('question/<int:question_id>/', views.display_question, name='display_question'),
     path('submit_question/<int:question_id>/', views.submit_question, name='submit_question'),
     path('test_home/', views.test_home, name='test_home'),
-    path('view_test_results/', views.view_test_results, name='view_test_results'),
+    path('test_reults/',views.student_test_report,name='test_results'),
     path('test_overview/', views.test_overview, name='test_overview'),
     path('submit_test/', views.submit_test, name='submit_test'),
     path('create_test/', views.create_test, name='create_test'),
@@ -25,7 +25,7 @@ urlpatterns = [
     path('gradelevel_input/',views.gradelevel_input, name='gradelevel_input'),
     path('subjectgrade_input/',views.subjectgrade_input, name='subjectgrade_input'),
     path('course_input/',views.course_input,name='course_input'),
-    path('test_reults/',views.student_test_report,name='test_results'),
+    
 ]
 
 
