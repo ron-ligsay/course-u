@@ -24,7 +24,8 @@ urlpatterns = [
     #path('admin_report/', views.admin_test_report, name=('admin_report')),
     path('gradelevel_input/',views.gradelevel_input, name='gradelevel_input'),
     path('subjectgrade_input/',views.subjectgrade_input, name='subjectgrade_input'),
-    path('course_input/',views.course_input,name='course_input')
+    path('course_input/',views.course_input,name='course_input'),
+    path('test_reults/',views.student_test_report,name='test_results'),
 ]
 
 

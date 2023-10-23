@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
+from django.db.models import Q
+
 # App imports
 from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
 from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
@@ -362,14 +364,64 @@ def admin_test_report(request):
     for score in scores:
         scores_list.append(QuestionSet.objects.filter(score=score).count())
 
-
-
-
     student_scores = dict(zip(username, scores))
 
 
     return render(request, 'test/admin_test_report.html', {'student_scores' : student_scores})
 
+
+def student_test_report(request):
+
+    # get user results from QuestionSet
+    user_id = request.user.id
+    user_results = QuestionSet.objects.filter(user_id=user_id)
+
+    # get user name
+    username = User.objects.get(id=user_id)
+
+    # for each user_result get set_id
+    my_id = []
+    for result in user_results:
+        my_id.append(result.set_id)
+    
+    # for each my_id get all responses
+    # user_responses = []
+    # for id in my_id:
+    #     user_responses.append(UserResponse.objects.filter(set_id=id))
+    
+    # get all user responses for the user
+    user_responses = UserResponse.objects.filter(Q(set_id__in=my_id))
+
+    # in Test, count number of correct answer per Test.topic and store in a dictionary
+    topics = Test.objects.values('topic')
+    topics = [topic['topic'] for topic in topics]
+    correct_answers = []
+    for topic in topics:
+        correct_answers.append(UserResponse.objects.filter(is_correct=True).count())
+    
+    # create a dictionary of topics and correct answers
+    topic_correct_answers = dict(zip(topics, correct_answers))
+
+    # create a ploty pie chart
+    fig = px.pie(values=correct_answers, names=topics, title='Correct Answers per Topic')
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+    fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
+    
+    # convert fig to html
+    graph = fig.to_html(full_html=False, default_height=500, default_width=700)
+
+    # get top 3 topics
+    top_topics = sorted(topic_correct_answers.items(), key=lambda x: x[1], reverse=True)[:3]
+
+    # how to access the topic name 
+    
+
+    return render(request, 'test/test_result.html', {
+        'username' : username,
+        #'user_results' : user_results, 'user_responses' : user_responses, 'topic_correct_answers' : topic_correct_answers, 
+        'top_topics' : top_topics, 
+        'graph' : graph
+        })
 
 def test_query(request):
     questions,start,end = get_test_questions(x=1, y=5)
