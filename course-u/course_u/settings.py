@@ -190,7 +190,7 @@ FORMATTERS = ({
 HANDLERS = {
     "console_handler": {
         "class" : "logging.StreamHandler",
-        "formatter": "verbose", # simple or verbose
+        "formatter": "customize_2", # simple or verbose
         "level" :  "DEBUG"
     },
     "critical_handler": {

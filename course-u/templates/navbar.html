@@ -5,9 +5,9 @@
   </div>
   {% if user.is_authenticated %}
     {% if request.user.is_staff %}
-      <button class="value"><i class="fas fa-briefcase"></i><a class="nav_item" href="{% url 'admin_home' %}">Dashboard</a></button>  
-      <button class="value nav_item"><i class="fas fa-briefcase"></i><a class="nav_item" href="{% url 'admin_students' %}">Student</a></button>
-      <button class="value"><i class="fas fa-briefcase"></i><a class="nav_item" href="{% url 'admin_report' %}">Reports</a></button>
+      <button class="value"><i class="fas fa-briefcase"></i><a class="nav_item" href="{% url 'admin_home' %}">Dashboard</a>  </button>  
+      <!-- <button class="value nav_item"><i class="fas fa-briefcase"></i><a class="nav_item" href="{% url 'admin_students' %}">Student</a></button>
+      <button class="value"><i class="fas fa-briefcase"></i><a class="nav_item" href="{% url 'admin_report' %}">Reports</a></button> -->
     {% endif %}
   <button class="value"> <i class="fas fa-home"></i><a class="nav_item" href="{% url 'home' %}" style="color: white;" >Home</a></button>
   <button class="value"><i class="fas fa-file-alt"></i><a class="nav_item" href="{% url 'test_home' %}" >Test</a></button>

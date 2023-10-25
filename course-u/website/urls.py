@@ -1,6 +1,6 @@
 
 from django.urls import path, include
-import debug_toolbar
+# import debug_toolbar
 from . import views
 from django.contrib.auth.views import LogoutView
 # import datetime and timezone

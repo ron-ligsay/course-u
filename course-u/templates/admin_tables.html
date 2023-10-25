@@ -1,16 +1,16 @@
 
 <hr><div class="row">
 <div class="col-md-6 ">
-    <h5>Students</h5>
+    <h5>Students</h5><a class="btn btn-primary" href="{% url 'admin_students' %}">View All Student</a><br><br>
     <div class="card card-body">
         <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
         <table class="table table-sm">
             <thead>
                 <!-- <th>ID</th> -->
                 <th>Username</th>
-                <th>Name</th>
+                <!-- <th>Name</th> -->
                 <th>Email</th>
-                <th>Staff</th>
+                <!-- <th>Staff</th> -->
                 <th>Active</th>
                 <!-- <th>Date Joined</th> -->
             </thead>
@@ -19,16 +19,17 @@
                 <tr>
                     <!-- <td>{{ user.id}}</td> -->
                     <td><a href="#">{{ user.username}}</a></td>
-                    <td>{{ user.first_name }} {{ user.last_name }}</td>
+                    <!-- <td>{{ user.first_name }} {{ user.last_name }}</td> -->
                     <td>{{ user.email }}</td>
-                    <td> {% if user.is_staff %} check {% else %} X {% endif %}</td>
+                    <!-- <td> {% if user.is_staff %} check {% else %} X {% endif %}</td> -->
                     <td>{{ user.is_active}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div><br><br>
-    <h5>Test</h5>
+    </div> 
+    <br><br>
+    <h5>Test</h5><a class="btn btn-primary" href="{% url 'admin_report' %}"> Assessment Report </a><br><br>
     <div class="card card-body">
         <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
         <table class="table table-sm">
@@ -52,7 +53,7 @@
 </div>
 <br><br>
 <div class="col-md-6">
-    <h5>Field</h5>
+    <h5>Field / Specialization </h5>
     <div class="card card-body">
         <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
         <table class="table table-sm">
