@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'courseu_db',
         'USER': 'root',
-        'PASSWORD': '022002',#'sawadeeKA456', #'022002'
+        'PASSWORD': 'sql2023',#'sawadeeKA456', #'022002'
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -142,19 +142,42 @@ from logging.handlers import RotatingFileHandler
 
 LOGOUT_REDIRECT_URL = 'logout_success'
 
+from colorlog import ColoredFormatter
 
-FORMATTERS = (
-    {
+# Custom log Colors
+log_colors = {
+            "DEBUG": "cyan",
+            "INFO": "green",
+            "WARNING": "yellow",
+            "ERROR": "red",
+            "CRITICAL": "red,bg_white",
+            }
+
+FORMATTERS = ({
+        "default" : {
+            #"[{asctime}] {levelname} [{name}:{lineno}] {message}"
+            "format" : "{levelname} {asctime:s} {name} {module} {filename} {lineno:d} {funcName} {message}",
+            "style" : "{",
+        },
         "verbose" : {
-            "format" : "{levelname} {asctime:s} {name} {threadName} {thread:d} {module} {filename} {lineno:d} {name} {funcName} {process:d} {message}", #"[{asctime}] {levelname} [{name}:{lineno}] {message}"
+            "format" : "{levelname} {asctime:s} {name} {threadName} {thread:d} {module} {filename} {lineno:d} {name} {funcName} {process:d} {message}", 
             "style" : "{",
         },
         "simple" : {
             "format" : "{levelname} {asctime:s} {name} {module} {filename} {lineno:d} {funcName} {message}",
             "style" : "{",
         },
-    },
-)
+        "customize_1" : {
+            "format" : "\033[1;32m{levelname} {message} ",
+            "style" : "{",
+        },
+        "customize_2" : {
+            "()": ColoredFormatter,
+            "format": "%(log_color)s%(levelname)-8s%(reset)s %(message)s",
+            "log_colors": log_colors,
+        },
+    })  
+
 
 # Level of Debugs
 # DEBUG - Detailed information, typically of interest only when diagnosing problems.
@@ -164,65 +187,84 @@ FORMATTERS = (
 # CRITICAL - A serious error, indicating that the program itself may be unable to continue running.
 
 
+HANDLERS = {
+    "console_handler": {
+        "class" : "logging.StreamHandler",
+        "formatter": "verbose", # simple or verbose
+        "level" :  "DEBUG"
+    },
+    "critical_handler": {
+        "class":"logging.handlers.RotatingFileHandler",
+        "filename":f"{BASE_DIR}/logs/critical.log",
+        "mode":"a",
+        "formatter":"verbose", #verbose
+        "level" : "CRITICAL", # filter to only log messages with a level of WARNING or higher
+        "backupCount":5,
+        "maxBytes" : 1024 * 1024 * 5, # 5 MB
+    },
+    "warning_handler": {
+        "class":"logging.handlers.RotatingFileHandler",
+        "filename":f"{BASE_DIR}/logs/warning.log",
+        "mode":"a",
+        "formatter":"verbose", #verbose
+        "level" : "WARNING", # filter to only log messages with a level of WARNING or higher
+        "backupCount":5,
+        "maxBytes" : 1024 * 1024 * 5, # 5 MB
+    },
+    "info_handler": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "filename":f"{BASE_DIR}/logs/info.log",
+        "mode":"a",
+        "encoding":"utf-8",
+        "formatter":"simple",
+        "level":"INFO", # Filter out all messages with a level less than INFO
+        "backupCount":5,
+        "maxBytes":1024 * 1024 * 5 , # 5 MB
+    },
+    "error_handler": {
+        "class":"logging.handlers.RotatingFileHandler",
+        "filename":f"{BASE_DIR}/logs/error.log",
+        "mode":"a",
+        "formatter":"verbose", #verbose
+        "level" : "WARNING", # filter to only log messages with a level of WARNING or higher
+        "backupCount":5,
+        "maxBytes" : 1024 * 1024 * 5, # 5 MB
+    },
+}
 
-# HANDLERS = {
-#     "console_handler": {
-#         "class" : "logging.StreamHandler",
-#         "formatter": "simple", # simple or verbose
-#         "level" :  "DEBUG"
-#     },
-#     "info_handler": {
-#         "class": "logging.handlers.RotatingFileHandler",
-#         "filename":f"{BASE_DIR}/logs/info.log",
-#         "mode":"a",
-#         "encoding":"utf-8",
-#         "formatter":"verbose",
-#         "level":"INFO", # Filter out all messages with a level less than INFO
-#         "backupCount":5,
-#         "maxBytes":1024 * 1024 * 5 , # 5 MB
-#     },
-#     "error_handler": {
-#         "class":"logging.handlers.RotatingFileHandler",
-#         "filename":f"{BASE_DIR}/logs/error.log",
-#         "mode":"a",
-#         "formatter":"verbose",
-#         "level" : "WARNING", # filter to only log messages with a level of WARNING or higher
-#         "backupCount":5,
-#         "maxBytes" : 1024 * 1024 * 5, # 5 MB
-#     },
-# }
+LOGGERS = (
+    {
+        "django" : { # name of the logger
+        "handlers" : ["console_handler","info_handler"],
+            "level" : 'INFO',
+        },
+        "django.request" : {
+            "handlers" : ["error_handler"],
+            "level" : "INFO",
+            "propagate" : True,
+        },
+        "dango.template" : {
+            "handlers" : ["error_handler"],
+            "level" : "INFO",
+            "propagate" : True,
+        },
+        "django.server" : {
+            "handlers" : ["error_handler"],
+            "level" : "INFO",
+            "propagate" : True,
+        },
+    },
+)
 
-# LOGGERS = (
-#     {
-#         "django" : { # name of the logger
-#         "handlers" : ["console_handler","info_handler"],
-#             "level" : 'INFO',
-#         },
-#         "django.request" : {
-#             "handlers" : ["error_handler"],
-#             "level" : "INFO",
-#             "propagate" : True,
-#         },
-#         "dango.template" : {
-#             "handlers" : ["error_handler"],
-#             "level" : "INFO",
-#             "propagate" : True,
-#         },
-#         "django.server" : {
-#             "handlers" : ["error_handler"],
-#             "level" : "INFO",
-#             "propagate" : True,
-#         },
-#     },
-# )
-
-# LOGGING = {
-#     "version" : 1,
-#     "disable_existing_loggers" : False,
-#     "formatters" : FORMATTERS[0],
-#     "handlers" : HANDLERS,
-#     "loggers" : LOGGERS[0],
-# }
+LOGGING = {
+    "version" : 1,
+    "disable_existing_loggers" : False,
+    "formatters" : FORMATTERS,#
+    "handlers" : HANDLERS, 
+    "loggers" : LOGGERS[0], #[0] name of the logger
+    # "incremental" : True,
+    # "filters" : {},
+}
 
 # LOGGING_CONFIG = None
 

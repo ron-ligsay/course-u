@@ -1,0 +1,265 @@
+INFO 2023-10-25 12:37:53,288 django.utils.autoreload MainThread 9748 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8032 Watching for file changes with StatReloader
+INFO 2023-10-25 12:38:04,660 django.server Thread-1 18968 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-10-25 12:38:05,276 django.server Thread-1 18968 basehttp basehttp.py 212 django.server log_message 8032 "GET /home HTTP/1.1" 200 31538
+INFO 2023-10-25 12:39:43,860 django.server Thread-3 20364 basehttp basehttp.py 212 django.server log_message 8032 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-25 12:39:43,930 django.server Thread-3 20364 basehttp basehttp.py 212 django.server log_message 8032 "GET /logout/success/ HTTP/1.1" 200 9471
+INFO 2023-10-25 12:40:23,901 django.server Thread-5 9008 basehttp basehttp.py 212 django.server log_message 8032 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-25 12:40:23,932 django.server Thread-5 9008 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/login_user.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:40:24,020 django.server Thread-5 9008 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/log.jpg HTTP/1.1" 304 0
+INFO 2023-10-25 12:40:33,109 django.server Thread-7 4112 basehttp basehttp.py 212 django.server log_message 8032 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 12:40:33,248 django.server Thread-7 4112 basehttp basehttp.py 212 django.server log_message 8032 "GET /home HTTP/1.1" 200 32219
+INFO 2023-10-25 12:40:33,296 django.server Thread-8 14008 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/home_.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:40:33,296 django.server Thread-7 4112 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:40:33,322 django.server Thread-9 22264 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:40:33,358 django.server Thread-10 7912 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-25 12:40:33,408 django.server Thread-10 7912 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:42:31,302 django.server Thread-11 13248 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19257
+INFO 2023-10-25 12:42:31,320 django.server Thread-11 13248 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:42:31,339 django.server Thread-11 13248 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:42:31,366 django.server Thread-11 13248 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:42:35,585 django.server Thread-11 13248 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_report/ HTTP/1.1" 200 3617533
+INFO 2023-10-25 12:42:36,404 django.server Thread-11 13248 basehttp basehttp.py 81 django.server handle_error 8032 - Broken pipe from ('127.0.0.1', 1593)
+INFO 2023-10-25 12:42:36,518 django.server Thread-13 1472 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_students HTTP/1.1" 200 13772
+INFO 2023-10-25 12:42:39,030 django.server Thread-13 1472 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_report/ HTTP/1.1" 200 3617533
+INFO 2023-10-25 12:42:49,687 django.server Thread-15 19480 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_students HTTP/1.1" 200 13770
+INFO 2023-10-25 12:42:51,304 django.server Thread-15 19480 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19256
+INFO 2023-10-25 12:42:56,353 django.server Thread-17 13460 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_students HTTP/1.1" 200 13770
+INFO 2023-10-25 12:42:58,507 django.server Thread-17 13460 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19257
+INFO 2023-10-25 12:44:26,043 django.server Thread-19 2300 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19284
+INFO 2023-10-25 12:44:26,062 django.server Thread-19 2300 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:44:26,066 django.server Thread-19 2300 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:44:26,089 django.server Thread-19 2300 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:44:26,218 django.server Thread-19 2300 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:44:44,556 django.server Thread-21 11792 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19291
+INFO 2023-10-25 12:44:56,628 django.server Thread-23 8244 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19268
+INFO 2023-10-25 12:45:47,443 django.server Thread-25 20220 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19268
+INFO 2023-10-25 12:45:54,631 django.server Thread-25 20220 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19399
+INFO 2023-10-25 12:46:30,278 django.server Thread-27 21108 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19372
+INFO 2023-10-25 12:46:30,314 django.server Thread-27 21108 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:46:30,318 django.server Thread-28 10748 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:46:30,427 django.server Thread-28 10748 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:46:30,496 django.server Thread-28 10748 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:46:41,832 django.server Thread-29 10940 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19373
+INFO 2023-10-25 12:46:46,769 django.server Thread-31 14256 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19372
+INFO 2023-10-25 12:47:04,705 django.server Thread-33 13868 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19372
+INFO 2023-10-25 12:47:29,318 django.server Thread-35 5756 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19357
+INFO 2023-10-25 12:47:34,417 django.server Thread-35 5756 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19363
+INFO 2023-10-25 12:47:37,938 django.server Thread-37 15560 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19363
+INFO 2023-10-25 12:47:52,594 django.server Thread-39 22064 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19366
+INFO 2023-10-25 12:48:14,625 django.server Thread-41 13740 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19326
+INFO 2023-10-25 12:48:42,892 django.server Thread-43 11764 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19350
+INFO 2023-10-25 12:48:42,923 django.server Thread-43 11764 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:48:42,924 django.server Thread-44 6924 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:48:43,022 django.server Thread-44 6924 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:48:43,118 django.server Thread-44 6924 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:48:49,627 django.server Thread-45 22636 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19354
+INFO 2023-10-25 12:48:54,263 django.server Thread-45 22636 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19350
+INFO 2023-10-25 12:49:04,279 django.server Thread-47 22788 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19359
+INFO 2023-10-25 12:49:13,816 django.server Thread-49 8560 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19354
+INFO 2023-10-25 12:49:22,328 django.server Thread-51 18708 basehttp basehttp.py 81 django.server handle_error 8032 - Broken pipe from ('127.0.0.1', 1921)
+INFO 2023-10-25 12:49:22,437 django.server Thread-52 18404 basehttp basehttp.py 81 django.server handle_error 8032 - Broken pipe from ('127.0.0.1', 1922)
+INFO 2023-10-25 12:49:22,516 django.server Thread-53 22596 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19356
+INFO 2023-10-25 12:49:53,118 django.server Thread-55 12752 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19409
+INFO 2023-10-25 12:50:09,514 django.server Thread-57 10560 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19462
+INFO 2023-10-25 12:50:34,395 django.server Thread-59 8724 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19463
+INFO 2023-10-25 12:50:39,624 django.server Thread-61 18244 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19481
+INFO 2023-10-25 12:50:42,083 django.server Thread-61 18244 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19481
+INFO 2023-10-25 12:51:18,201 django.server Thread-63 1332 basehttp basehttp.py 212 django.server log_message 8032 "GET /admin_home/ HTTP/1.1" 200 19480
+INFO 2023-10-25 12:51:18,226 django.server Thread-63 1332 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:51:18,230 django.server Thread-64 14908 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:51:18,325 django.server Thread-64 14908 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:51:18,393 django.server Thread-64 14908 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:51:35,789 django.utils.autoreload MainThread 9748 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8032 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:51:37,785 django.utils.autoreload MainThread 21252 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8668 Watching for file changes with StatReloader
+INFO 2023-10-25 12:52:13,922 django.utils.autoreload MainThread 21252 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8668 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:52:15,979 django.utils.autoreload MainThread 12796 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 19280 Watching for file changes with StatReloader
+INFO 2023-10-25 12:52:46,447 django.utils.autoreload MainThread 12796 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 19280 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:52:48,646 django.utils.autoreload MainThread 21052 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 14392 Watching for file changes with StatReloader
+INFO 2023-10-25 12:53:15,490 django.utils.autoreload MainThread 21052 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14392 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:53:17,891 django.utils.autoreload MainThread 21496 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 21756 Watching for file changes with StatReloader
+INFO 2023-10-25 12:53:34,657 django.utils.autoreload MainThread 21496 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 21756 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:53:36,515 django.utils.autoreload MainThread 11024 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18996 Watching for file changes with StatReloader
+INFO 2023-10-25 12:53:41,717 django.utils.autoreload MainThread 11024 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18996 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:53:43,777 django.utils.autoreload MainThread 17060 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 23060 Watching for file changes with StatReloader
+INFO 2023-10-25 12:54:04,757 django.utils.autoreload MainThread 17060 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 23060 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:54:07,115 django.utils.autoreload MainThread 11308 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10748 Watching for file changes with StatReloader
+INFO 2023-10-25 12:54:26,318 django.utils.autoreload MainThread 11308 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10748 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:54:29,681 django.utils.autoreload MainThread 22620 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 23544 Watching for file changes with StatReloader
+INFO 2023-10-25 12:54:54,388 django.utils.autoreload MainThread 22620 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 23544 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:55:49,936 django.utils.autoreload MainThread 16352 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 16024 Watching for file changes with StatReloader
+INFO 2023-10-25 12:56:01,924 django.server Thread-1 16032 basehttp basehttp.py 212 django.server log_message 16024 "GET /admin_home/ HTTP/1.1" 200 19482
+INFO 2023-10-25 12:56:02,065 django.server Thread-1 16032 basehttp basehttp.py 212 django.server log_message 16024 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:56:02,162 django.server Thread-3 14116 basehttp basehttp.py 212 django.server log_message 16024 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:56:02,261 django.server Thread-3 14116 basehttp basehttp.py 212 django.server log_message 16024 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:56:04,720 django.server Thread-3 14116 basehttp basehttp.py 212 django.server log_message 16024 "GET /home HTTP/1.1" 200 31933
+INFO 2023-10-25 12:56:04,768 django.server Thread-1 16032 basehttp basehttp.py 212 django.server log_message 16024 "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-25 12:56:04,771 django.server Thread-3 14116 basehttp basehttp.py 212 django.server log_message 16024 "GET /static/css/home_.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:56:24,524 django.utils.autoreload MainThread 16352 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 16024 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+verbose:INFO 2023-10-25 12:56:26,339 django.utils.autoreload MainThread 15484 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8032 Watching for file changes with StatReloader
+verbose:INFO 2023-10-25 12:56:30,502 django.server Thread-1 19748 basehttp basehttp.py 212 django.server log_message 8032 "GET /job_list/ HTTP/1.1" 200 18902
+verbose:INFO 2023-10-25 12:56:30,572 django.server Thread-1 19748 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/css/job_post.css HTTP/1.1" 200 1342
+verbose:INFO 2023-10-25 12:56:30,667 django.server Thread-2 16836 basehttp basehttp.py 212 django.server log_message 8032 "GET /static/js/job_list.js HTTP/1.1" 200 1060
+verbose:INFO 2023-10-25 12:56:36,295 django.utils.autoreload MainThread 15484 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8032 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+verbose:INFO 2023-10-25 12:56:38,869 django.utils.autoreload MainThread 1332 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 12400 Watching for file changes with StatReloader
+verbose:INFO 2023-10-25 12:56:41,460 django.server Thread-2 10740 basehttp basehttp.py 212 django.server log_message 12400 "GET /test_home/ HTTP/1.1" 200 12567
+verbose:INFO 2023-10-25 12:56:41,741 django.server Thread-2 10740 basehttp basehttp.py 212 django.server log_message 12400 "GET /static/images/favicon.png HTTP/1.1" 304 0
+verbose:INFO 2023-10-25 12:56:46,123 django.utils.autoreload MainThread 1332 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12400 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:56:48,362 django.utils.autoreload MainThread 21124 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 5380 Watching for file changes with StatReloader
+INFO 2023-10-25 12:56:51,338 django.server Thread-1 7360 basehttp basehttp.py 212 django.server log_message 5380 "GET /test_home/ HTTP/1.1" 200 12567
+INFO 2023-10-25 12:56:55,238 django.server Thread-1 7360 basehttp basehttp.py 212 django.server log_message 5380 "GET /home HTTP/1.1" 200 31933
+INFO 2023-10-25 12:57:00,275 django.server Thread-1 7360 basehttp basehttp.py 212 django.server log_message 5380 "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 12:57:04,195 django.utils.autoreload MainThread 21124 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 5380 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:57:07,852 django.utils.autoreload MainThread 19036 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10020 Watching for file changes with StatReloader
+INFO 2023-10-25 12:57:11,240 django.server Thread-1 14416 basehttp basehttp.py 81 django.server handle_error 10020 - Broken pipe from ('127.0.0.1', 2225)
+INFO 2023-10-25 12:57:11,427 django.server Thread-5 20852 basehttp basehttp.py 212 django.server log_message 10020 "GET /job_list/ HTTP/1.1" 200 18902
+INFO 2023-10-25 12:57:13,307 django.server Thread-5 20852 basehttp basehttp.py 212 django.server log_message 10020 "GET /test_home/ HTTP/1.1" 200 12566
+INFO 2023-10-25 12:57:16,560 django.server Thread-5 20852 basehttp basehttp.py 212 django.server log_message 10020 "GET /profile/ HTTP/1.1" 200 11921
+INFO 2023-10-25 12:57:21,566 django.utils.autoreload MainThread 19036 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10020 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:57:24,884 django.utils.autoreload MainThread 4672 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 12392 Watching for file changes with StatReloader
+INFO 2023-10-25 12:57:35,975 django.utils.autoreload MainThread 4672 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12392 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:57:39,890 django.utils.autoreload MainThread 10216 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18232 Watching for file changes with StatReloader
+INFO 2023-10-25 12:57:47,436 django.utils.autoreload MainThread 10216 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18232 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:57:50,897 django.utils.autoreload MainThread 12652 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10572 Watching for file changes with StatReloader
+INFO 2023-10-25 12:59:12,960 django.utils.autoreload MainThread 12652 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10572 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 12:59:24,714 django.utils.autoreload MainThread 2112 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 12232 Watching for file changes with StatReloader
+INFO 2023-10-25 12:59:31,120 django.server Thread-1 22052 basehttp basehttp.py 212 django.server log_message 12232 "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 12:59:31,139 django.server Thread-1 22052 basehttp basehttp.py 212 django.server log_message 12232 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:59:31,143 django.server Thread-1 22052 basehttp basehttp.py 212 django.server log_message 12232 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:59:31,207 django.server Thread-1 22052 basehttp basehttp.py 212 django.server log_message 12232 "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 12:59:35,324 django.utils.autoreload MainThread 2112 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 12232 C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+[1;32mINFO [0m [1;40mWatching for file changes with StatReloader 
+[1;32mINFO [0m [1;40m"GET /admin_home/ HTTP/1.1" 200 19481 
+[1;32mINFO [0m [1;40m"GET /home HTTP/1.1" 200 31933 
+[1;32mINFO [0m [1;40m"GET /static/css/home_.css HTTP/1.1" 304 0 
+[1;32mINFO [0m [1;40m"GET /static/js/specialization_filter.js HTTP/1.1" 304 0 
+[1;32mINFO [0m [1;40m"GET /home HTTP/1.1" 200 31935 
+[1;32mINFO [0m [1;40mC:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading. 
+[1;32mINFO [0m [1;40mWatching for file changes with StatReloader 
+[1;32mINFO [0m [1;40mC:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading. 
+INFO Watching for file changes with StatReloader 
+INFO "GET /profile/ HTTP/1.1" 200 11923 
+INFO "GET /static/images/logo.png HTTP/1.1" 304 0 
+INFO "GET /static/css/test_home.css HTTP/1.1" 304 0 
+INFO "GET /static/images/bgg.png HTTP/1.1" 304 0 
+INFO C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading. 
+INFO 2023-10-25 13:11:54,512 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:12:10,680 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 13:12:12,729 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:12:43,376 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 13:12:43,429 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-25 13:12:43,429 django.server basehttp basehttp.py 212 log_message "GET /static/css/home_.css HTTP/1.1" 304 0
+INFO 2023-10-25 13:12:55,334 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 13:12:58,363 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:13:00,809 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 2747
+INFO 2023-10-25 13:13:01,033 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=74129e89d13d4d39a2638ea502e8855e HTTP/1.1" 200 9091
+INFO 2023-10-25 13:13:07,852 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 12566
+INFO 2023-10-25 13:13:09,672 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 13:13:11,472 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 19480
+INFO 2023-10-25 13:13:14,982 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31933
+INFO 2023-10-25 13:14:01,853 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py changed, reloading.
+INFO 2023-10-25 13:14:04,718 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:14:07,166 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 13:14:35,281 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py changed, reloading.
+INFO 2023-10-25 13:14:37,554 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:14:40,912 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 12567
+INFO 2023-10-25 13:14:42,887 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 13:14:42,887 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 13:14:42,887 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 13:14:42,887 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 13:14:42,973 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 13:19:12,562 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 13:36:45,231 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:37:14,718 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 13:37:14,741 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 13:37:14,753 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 13:37:14,796 django.server basehttp basehttp.py 212 log_message "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 13:49:19,416 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 13:49:22,291 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:57:59,343 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 19480
+INFO 2023-10-25 13:57:59,385 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-25 13:57:59,386 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 13:57:59,430 django.server basehttp basehttp.py 212 log_message "GET /static/images/bgg.png HTTP/1.1" 304 0
+INFO 2023-10-25 13:58:09,454 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 13:58:09,471 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 13:58:09,479 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 13:58:09,480 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 13:58:09,602 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 13:58:09,654 django.server basehttp basehttp.py 212 log_message "GET /static/css/home_.css HTTP/1.1" 304 0
+INFO 2023-10-25 13:58:09,654 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-25 13:58:27,374 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 13:58:30,294 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 13:58:37,873 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 11923
+INFO 2023-10-25 13:58:41,100 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 13:58:41,101 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 13:58:41,102 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 13:58:41,103 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 13:58:41,335 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 14:01:31,051 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 14:03:54,808 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:04:05,382 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 14:04:05,399 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 14:04:05,408 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 14:04:05,410 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 14:04:05,702 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31935
+INFO 2023-10-25 14:05:01,487 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 14:05:43,072 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:05:54,492 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 14:05:57,125 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:05:59,263 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 19480
+INFO 2023-10-25 14:06:02,023 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 14:06:02,023 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 14:06:02,023 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 14:06:02,023 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 14:06:02,107 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 14:06:03,987 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 12566
+INFO 2023-10-25 14:06:05,176 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 14:06:06,690 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 18902
+INFO 2023-10-25 14:06:06,722 django.server basehttp basehttp.py 212 log_message "GET /static/css/job_post.css HTTP/1.1" 304 0
+INFO 2023-10-25 14:06:06,743 django.server basehttp basehttp.py 212 log_message "GET /static/js/job_list.js HTTP/1.1" 304 0
+INFO 2023-10-25 14:06:07,662 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 19480
+[32mINFO    [0m Watching for file changes with StatReloader[0m
+[32mINFO    [0m User: aky is accessing home page[0m
+[33mWARNING [0m User: aky is accessing home page[0m
+[31mERROR   [0m User: aky is accessing home page[0m
+[31m[47mCRITICAL[0m User: aky is accessing home page[0m
+[32mINFO    [0m "GET /home HTTP/1.1" 200 31935[0m
+[32mINFO    [0m "GET /static/css/test_home.css HTTP/1.1" 304 0[0m
+[32mINFO    [0m "GET /static/images/logo.png HTTP/1.1" 304 0[0m
+[32mINFO    [0m "GET /static/images/bgg.png HTTP/1.1" 304 0[0m
+INFO 2023-10-25 14:08:03,947 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:08:28,369 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 14:08:35,842 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 14:08:35,842 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 14:08:35,843 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 14:08:35,844 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 14:08:35,958 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31934
+INFO 2023-10-25 14:08:35,999 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-25 14:08:36,001 django.server basehttp basehttp.py 212 log_message "GET /static/css/home_.css HTTP/1.1" 304 0
+INFO 2023-10-25 14:08:37,790 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 14:08:37,791 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 14:08:37,792 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 14:08:37,793 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 14:08:37,863 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31933
+INFO 2023-10-25 14:09:42,002 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:10:44,812 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 14:11:29,734 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:12:03,851 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 14:12:03,853 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 14:12:03,855 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 14:12:03,856 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 14:12:04,100 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31935
+INFO 2023-10-25 14:12:22,739 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py changed, reloading.
+INFO 2023-10-25 14:12:27,417 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:13:13,786 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 14:13:15,794 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 12566
+INFO 2023-10-25 14:13:18,882 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 12566
+INFO 2023-10-25 14:13:24,792 django.server basehttp basehttp.py 212 log_message "GET /test_reults/ HTTP/1.1" 200 3617270
+INFO 2023-10-25 14:13:32,155 django views views.py 36 home User: aky is accessing home page
+WARNING 2023-10-25 14:13:32,156 django views views.py 37 home User: aky is accessing home page
+ERROR 2023-10-25 14:13:32,156 django views views.py 38 home User: aky is accessing home page
+CRITICAL 2023-10-25 14:13:32,157 django views views.py 39 home User: aky is accessing home page
+INFO 2023-10-25 14:13:32,261 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 31935
+INFO 2023-10-25 14:13:52,460 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\website\views.py changed, reloading.
+INFO 2023-10-25 14:13:56,489 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-10-25 14:14:53,145 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-10-25 14:14:55,175 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
