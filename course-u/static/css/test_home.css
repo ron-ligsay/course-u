@@ -139,8 +139,9 @@ p{
   font-size: 22px;
   font-family: "Times New Roman", sans-serif;
 }
-.btn {
-    
+.btn{
+    display: block;
+    margin: 0 auto;
     padding: 10px 20px;
     background-color: #ff5133;
     color: white;
@@ -157,3 +158,4 @@ p{
     background-color: blue;
 
 }
+

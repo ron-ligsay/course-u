@@ -38,3 +38,7 @@ WARNING 2023-10-22 06:38:32,943 django.request Thread-2 (process_request_thread)
 WARNING 2023-10-22 06:38:32,944 django.server Thread-2 (process_request_thread) 9812 basehttp basehttp.py 212 django.server log_message 28848 "GET /course-u/static/images/1.png HTTP/1.1" 404 17891
 WARNING 2023-10-22 06:38:34,202 django.request Thread-2 (process_request_thread) 9812 log log.py 241 django.request log_response 28848 Not Found: /course-u/static/images/1.png
 WARNING 2023-10-22 06:38:34,205 django.server Thread-2 (process_request_thread) 9812 basehttp basehttp.py 212 django.server log_message 28848 "GET /course-u/static/images/1.png HTTP/1.1" 404 17891
+WARNING 2023-10-25 10:53:54,042 django.request Thread-3 (process_request_thread) 25196 log log.py 241 django.request log_response 11828 Not Found: /favicon.ico
+WARNING 2023-10-25 10:53:54,044 django.server Thread-3 (process_request_thread) 25196 basehttp basehttp.py 212 django.server log_message 11828 "GET /favicon.ico HTTP/1.1" 404 17824
+WARNING 2023-10-25 11:30:46,224 django.request Thread-4 (process_request_thread) 28788 log log.py 241 django.request log_response 32224 Not Found: /favicon.ico
+WARNING 2023-10-25 11:30:46,226 django.server Thread-4 (process_request_thread) 28788 basehttp basehttp.py 212 django.server log_message 32224 "GET /favicon.ico HTTP/1.1" 404 17823
