@@ -1,0 +1,72 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("/static/images/log.jpg"); 
+}
+.container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card {
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    margin-top: 2px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: lightsalmon;
+}
+
+p {
+    color: #555;
+    margin-bottom: 15px; /* Adjusted margin-bottom for <p> element */
+}
+
+label,
+input {
+    display: block;
+    width: 95%;
+    margin-bottom: 15px; /* Adjusted margin-bottom for <label> and <input> elements */
+    font-size: 15px;
+    padding: 10px;
+}
+
+button {
+    background-color: lightsalmon;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: darksalmon;
+}
+
+.link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #0056b3;
+}

@@ -1,0 +1,27 @@
+.course {
+    display: block;
+    margin: 0 auto;
+    margin-bottom:5px;
+    width: 400px;
+    height: 100px;
+    line-height: 80px;
+    font-size: 30px;
+    text-align:center;
+    color: black;
+    background-color: #ececec;
+    border-radius: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*text-decoration: none;*/
+  }
+  .course:hover {
+    background-color: rgb(228, 95, 65);
+
+  }
+  p{
+    text-align:  center;
+    color:rgb(228, 95, 65);
+    font-family:georgia;
+    font-size: 50px;
+    
+  
+  }

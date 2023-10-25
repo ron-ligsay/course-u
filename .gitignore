@@ -66,5 +66,5 @@ __pycache__/
 static/js/Chart.js-4.4.0.zip
 
 
-# setitngs.py
-courseu/settings.py
+# activate_env.txt
+#courseu/settings.py

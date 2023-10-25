@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery</title>
+    <style>
+         body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+
+        }
+        .box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .inner-box {
+            margin: 20px 0;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 22px;
+            color: black;
+        }
+
+        p {
+            margin: 10px 0;
+            color: black;
+            font-size: 15px;
+        }
+
+        .link {
+            display: inline-block;
+            background-color: salmon;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .link:hover {
+            color: white; 
+            background-color: darksalmon;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner-box">
+            <h3>Email Verification Link Has Been Sent</h3>
+            <p>We sent a verification link to your provided email address. Please confirm your email address.</p>
+            <p><a class="link" href="{% url 'login_user'%}">Log In Now</a></p>
+        </div>
+    </div>
+</body>
+</html>
