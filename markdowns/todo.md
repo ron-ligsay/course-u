@@ -20,7 +20,8 @@
     - [ ]: Student_Career
     - [ ]: Feedbacks
     - [ ]: Instructors/Faculty
-
+- [ ]: Track Page
+    - [ ]: Courses
 ## Medium Priority
 - [ ]: # Path: todo.
 - [ |-|x]: something
