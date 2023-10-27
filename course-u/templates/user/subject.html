@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/subject.css' %}">
+</head>
+<body>
+    <p>Please input the grade of each<br>  major subject</p><br>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="subject">
+                <tr>                
+                    <td><label for="database">Database Administration:</label></td>
+                    <td><input type="number" id="database" name="database" min="0" max="100" required></td>
+                  
+                </tr>  </div>
+                <div class="subject">
+                <tr>
+                    <td><label for="oop">Objected Oriented Programming</label></td>
+                    <td> <input type="number" id="oop" name="oop" min="0" max="100" required></td>
+                </tr></div>
+                <div class="subject">
+                <tr>
+                    <td><label for="capstone">Capstone 1</label></td>
+                    <td><input type="number" id="capstone" name="capstone" min="0" max="100" required></td>
+                </tr></div>
+                <div class="subject">
+                <tr>
+                    <td><label for="network">Network Administration:</label></td>
+                    <td>  <input type="number" id="network" name="network" min="0" max="100" required></td>
+                </tr></div>
+            </tbody>
+        </table>
+        
+    </div>
+    <a href="{% url 'start_test' %}" class="submit-button" id="submit-button"><b>Submit</b></a>
+
+</body>
+</html>

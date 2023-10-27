@@ -1,0 +1,36 @@
+{% extends 'base_user.html' %}
+
+{% block title %}Admin - Report{% endblock %}
+
+{% block head_extra %}
+<!-- Additional stylesheets or scripts specific to this page -->
+{% load static }
+
+{% endblock head_extra %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<div>
+    <h2>User Assessment Scores</h2>
+    <form method="GET" action="{% url 'admin_report' %}">
+        {{ form.as_p }}
+        <button>Filter</button>
+    </form>
+    <div>
+        {{ chart|safe }}
+    </div>
+</div>
+
+
+
+{% else %}
+
+{% endif %}
+
+
+
+{% endblock content %}

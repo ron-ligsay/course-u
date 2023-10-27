@@ -1,0 +1,39 @@
+{% extends 'base_user.html' %}
+
+{% block title %}Home 2{% endblock %}
+
+{% block head_extra %}
+<!-- Additional stylesheets or scripts specific to this page -->
+{% load static }
+
+{% endblock head_extra %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if admin %}
+    <div>
+        <p>Welcome Admin, {{ user.username}}</p>
+    </div>
+    {% endif %}
+    {% include 'status.html' %}
+
+    <!-- <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <form action="get">
+                    <input type="text">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+    {% include 'admin_tables.html' %}
+{% else %}
+
+{% endif %}
+
+
+
+{% endblock content %}

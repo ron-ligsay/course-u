@@ -1,0 +1,3 @@
+cd ..
+courseu\Scripts\activate
+cd course-u\course-u
