@@ -1,0 +1,13 @@
+{% extends "base_user.html" %}
+
+{% block content %}
+
+    <h1>Your MBTI Results</h1>
+    <p>Mind: {{ mbti_set.mind }}</p>
+    <p>Energy: {{ mbti_set.energy }}</p>
+    <p>Nature: {{ mbti_set.nature }}</p>
+    <p>Tactics: {{ mbti_set.tactics }}</p>
+    <p>Identity: {{ mbti_set.identity }}</p>
+    <p>Explanation of your personality type could go here.</p>
+    <a class="btn btn-primary" href="{% url 'home' %}">Back to Home</a>
+{% endblock %}

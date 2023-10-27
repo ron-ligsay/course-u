@@ -25,6 +25,12 @@ urlpatterns = [
     path('gradelevel_input/',views.gradelevel_input, name='gradelevel_input'),
     path('subjectgrade_input/',views.subjectgrade_input, name='subjectgrade_input'),
     path('course_input/',views.course_input,name='course_input'),
+
+    path('mbti/initialize/', views.initialize_mbti_test, name='initialize_mbti_test'),
+    path('mbti/', views.mbti_test, name='mbti_test'),
+    path('mbti/<int:mbti_set_id>/', views.mbti_test, name='mbti_test'),
+    path('mbti/results/', views.mbti_results, name='mbti_results'),
+    path('mbti/results/<int:mbti_set_id>/', views.mbti_results, name='mbti_results'),
     
 ]
 

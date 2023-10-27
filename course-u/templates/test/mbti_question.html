@@ -1,0 +1,32 @@
+{% extends "base_user.html" %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  {% for response in responses %}
+    <h3>{{ response.mbti.mbti_question }}</h3>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="1">
+      1
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="2">
+      2
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="3">
+      3
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="4">
+      4
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="5">
+      5
+    </label>
+  {% endfor %}
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

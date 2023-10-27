@@ -3,15 +3,15 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.sessions.models import Session
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 
-from django.db.models import Q
+from django.db.models import Q, Avg
 
 # App imports
 from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
-from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
-from assessment.models import Test, QuestionSet, UserResponse
+from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm, MBTIResponseForm
+from assessment.models import Test, QuestionSet, UserResponse, MBTI, MBTISet, MBTIResponse
 
 # Other Imports
 import plotly.express as px
@@ -163,16 +163,16 @@ def next_test(request, question_id):
         return redirect('home')
 
     try:
-        question_set = request.session.get('question_set')
-        n_question = request.session.get('n_questions', 0)
+        mbti_question_set = request.session.get('mbti_question_set')
+        mbti_n_question = request.session.get('mbti_n_questions', 0)
         question = get_object_or_404(Test, question_id=question_id + 1)
         #if question not in question_set:
         #    raise Test.DoesNotExist
 
-        if question_id + 1 < n_question:
+        if question_id + 1 < mbti_n_question:
             #options = question.options
             return render(request, 'test/test_page.html', {'question': question})
-        if question_id + 1 == n_question:
+        if question_id + 1 == mbti_n_question:
             # This is the last question
             messages.success(request, 'You have completed the test')
             return redirect('test_overview')
@@ -435,3 +435,330 @@ def subjectgrade_input(request):
 
 def course_input(request):
     return render(request,'user/course.html')
+
+
+
+
+################################
+#       MBTI TEST VIEWS        #
+################################
+
+# def start_mbti_test(request):
+
+#     # delete session variables
+#     if 'mbti_test_started' in request.session:
+#         del request.session['mbti_test_started']
+#     if 'mbti_question_set_id' in request.session:
+#         del request.session['mbti_question_set_id']
+#     if 'mbti_question_set' in request.session:
+#         del request.session['mbti_question_set']
+#     if 'mbti_questions_answered' in request.session:
+#         del request.session['mbti_questions_answered']
+#     if 'mbti_n_questions' in request.session:
+#         del request.session['mbti_n_questions']
+
+#     # Retrieve the last question set
+#     last_mbti_set = MBTISet.objects.last()
+#     print("last_set: ", )
+#     if last_mbti_set == 0 or last_mbti_set is None:
+#         mbti_set_id = 1
+#     else:
+#         # check if mbit_set is completed
+#         if last_mbti_set.is_completed:
+#             messages.success(request, 'You started a new Test!')
+#             print("Completed Test!")
+#             mbti_set_id = last_mbti_set.mbti_set_id + 1
+
+#             print("SET ID: ", mbti_set_id)
+   
+#             mbti_question_ids = []
+#             mbti_question_ids = request.session.get('mbti_question_set', [])
+#             print("123 question_ids: ", mbti_question_ids)
+#             mbti_question_ids = []
+        
+#             request.session['mbti_test_started'] = True
+#             # Store the question set ID in the session
+#             request.session['mbti_question_set_id'] = mbti_set_id
+
+#             # Retrieve the questions for the question set
+#             mbti_question_set, start, end = get_test_questions(x=5)
+#             mbti_question_ids = mbti_question_set.values_list('mbti', flat=True)
+
+#             # Store the question IDs in the session
+#             request.session['mbti_question_set'] = list(mbti_question_ids)
+#             #request.session['question_set'] = question_set
+#             request.session['mbti_questions_answered'] = 0
+#             #request.session['n_questions'] = len(question_ids)
+#             mbti_n_questions = len(mbti_question_ids)
+#             print("n_questions: ", mbti_n_questions, ", compare to start - end: ", end - start + 1)
+#             print("question_ids: ", mbti_question_ids)
+#             request.session['mbti_n_questions'] = end - start + 1
+
+#             # Create MBTISet on database
+#             MBTISet.objects.create(mbti_set_id=mbti_set_id, user=request.user, is_completed=False)
+#         else :
+#             messages.success(request, 'You have an incomplete Test!')
+#             print("Incomplete Test!")
+#             mbti_set_id = last_mbti_set.mbti_set_id
+
+#             # get number of unfinished response on UserResponse
+#             unfinished_mbti_response = MBTIResponse.objects.filter(mbti_set_id=mbti_set_id, is_answered=False).count()
+#             print("unfinished_response: ", unfinished_mbti_response)
+
+#             request.session['mbti_test_started'] = True
+#             # Store the question set ID in the session
+#             request.session['mbti_question_set_id'] = mbti_set_id
+
+#              # Retrieve the questions for the question set
+#             mbti_question_set, start, end = get_test_questions(x=5)
+#             mbti_question_ids = mbti_question_set.values_list('mbti', flat=True)
+
+#             # Store the question IDs in the session
+#             request.session['mbti_question_set'] = list(mbti_question_ids)
+#             #request.session['question_set'] = question_set
+#             request.session['mbti_questions_answered'] = 0
+#             #request.session['n_questions'] = len(question_ids)
+#             mbti_n_questions = len(mbti_question_ids)
+#             print("n_questions: ", mbti_n_questions, ", compare to start - end: ", end - start + 1)
+#             print("question_ids: ", mbti_question_ids)
+#             request.session['mbti_n_questions'] = end - start + 1
+
+#     return redirect('display_mbti_question', mbti_question_id=start)
+
+# def submit_mbti_question(request, mbti_id):
+#     if request.user.is_authenticated:
+#         mbti_question = get_object_or_404(MBTI, mbti=mbti_id)
+#         mbti_response_key = f'mbti_response_{mbti_id}'
+#         if request.method == 'POST':
+#             form = UserResponseForm(request.POST)
+#             selected_option = request.POST.get('selected_option')
+#             if selected_option is not None:
+#                 # Store the user's answer in the session
+#                 request.session[mbti_response_key] = int(selected_option)
+
+#             if form.is_valid():
+#                 selected_option = form.cleaned_data['selected_option']
+#                 is_correct = (selected_option == mbti_question.ans_a)
+
+#                 # Check if a UserResponse with the same question_id and set_id exists
+#                 mbti_set_id = request.session.get('mbti_question_set_id')
+#                 existing_mbti_response = MBTIResponse.objects.filter(mbti=mbti_question.mbti,mbti_set_id=mbti_set_id).first()
+
+#                 if existing_mbti_response:
+#                     # If an existing response is found, update it
+#                     existing_mbti_response.selected_option = selected_option
+#                     existing_mbti_response.is_correct = is_correct
+#                     existing_mbti_response.save()
+#                     messages.success(request, 'Your answer has been updated')
+#                 else:
+#                     # Otherwise, create a new UserResponse object
+#                     MBTIResponse.objects.create(
+#                         #user=request.user,
+#                         #response=None,
+#                         mbti=mbti_question,
+#                         selected_option=selected_option,
+#                         is_correct=is_correct,
+#                         mbti_set_id=mbti_set_id,
+#                         is_answered=True,
+#                     )
+
+#                     messages.success(request, 'Your answer has been submitted')
+#                 # Redirect to the next question or a completion page
+#                 next_mbti_question_id = mbti_id + 1
+#                 try:
+#                     mbti_n_question = request.session.get('mbti_n_questions', 0)
+#                     if next_mbti_question_id == mbti_n_question:
+#                         # This is the last question
+#                         messages.success(request, 'You have completed the test')
+#                         return redirect('mbti_test_overview')
+#                     else:
+#                         next_mbti_question = MBTI.objects.get(pk=next_mbti_question_id)
+#                         #options = next_mbti_question.options
+#                         return render(request, 'test/mbti_test_page.html', {'mbti_question': next_mbti_question, 'form': UserResponseForm()})
+#                 except MBTI.DoesNotExist:
+#                     # Handle the case where there is no next question
+#                     messages.success(request, 'You have completed the test')
+#                     return redirect('home')
+#             else:
+#                 # Display the question and form again with validation errors
+#                 #options = mbti_question.options
+#                 return render(request, 'test/mbti_test_page.html', {'mbti_question': mbti_question, 'form': form})
+#         else:
+#             # Display the question and form for the first time
+#             #options = mbti_question.options
+#             return render(request, 'test/mbti_test_page.html', {'mbti_question': mbti_question, 'form': UserResponseForm()})
+#     else:
+#         return redirect('home')
+    
+# def submit_mbti_set(request):
+#     # process the submitted mbti test
+#     mbti_set_id = request.session.get('mbti_question_set_id')
+#     unfinished_mbti_response = MBTIResponse.objects.filter(mbti_set_id=mbti_set_id, is_answered=False).count()
+#     print("unfinished_mbti_response: ", unfinished_mbti_response)
+
+#     if unfinished_mbti_response == 0:
+#         mbti_test_started = request.session.get('mbti_test_started', False)
+#         mbti_questions_answered = request.session.get('mbti_questions_answered', 0)
+#         mbti_question_set_id = request.session.get('mbti_question_set_id')
+#         if mbti_test_started:
+#             # update MBTISet object where set_id = mbti_question_set_id
+#             mbti_question_set = MBTISet.objects.get(mbti_set_id=mbti_question_set_id)
+#             mbti_question_set.is_completed = True
+
+#             # count the mind, energy, nature, tactics scores
+#             # get mbti where id is from 1 to 5
+#             mbti_question_set = MBTIResponse.objects.filter(mbti_set_id=mbti_question_set_id)
+
+#             # save the scores to the MBTISet object
+#             mbti_question_set.save()
+
+#             # delete session vairables
+#             del request.session['mbti_test_started']
+#             del request.session['mbti_question_set_id']
+#             del request.session['mbti_question_set']
+#             del request.session['mbti_questions_answered']
+
+#             messages.success(request, 'You have completed the test')
+#             print('You have completed the test')
+#             return redirect('home')
+#         else:
+#             messages.success(request, 'You have not started the test')
+#             print('You have not started the test')
+#             return redirect('home')
+#     else:
+#         messages.success(request, 'You have not answered all questions')
+#         print("unfinished_mbti_response: ", unfinished_mbti_response, "YOU ARE NOT YET FINISHED!")
+#         # back to test_overview
+#         return redirect('mbti_test_overview')
+
+# def initialize_mbti_test(request):
+#     # Check if the user has an active test
+#     active_test = MBTISet.objects.filter(user=request.user, is_completed=False).first()
+    
+#     if active_test:
+#         # If the user already has an active test, redirect them to the test
+#         return HttpResponseRedirect('/mbti/')
+    
+#     # Create a new MBTISet for the user
+#     mbti_set = MBTISet.objects.create(user=request.user)
+    
+#     # Create unanswered responses for all MBTI questions
+#     mbti_questions = MBTI.objects.all()
+#     for question in mbti_questions:
+#         MBTIResponse.objects.create(mbti_set=mbti_set, mbti=question)
+    
+#     return HttpResponseRedirect('/mbti/')
+
+from django.db.models import Max
+
+def initialize_mbti_test(request):
+    user = request.user
+
+    # Check if there is an unfinished MBTISet for the user
+    unfinished_set = MBTISet.objects.filter(user=user, is_completed=False).first()
+
+    if unfinished_set:
+        # If there is an unfinished set, continue that test
+        mbti_set = unfinished_set
+    else:
+        # If no unfinished set exists, create a new one with a set_id one greater than the maximum set_id
+        last_set = MBTISet.objects.aggregate(Max('mbti_set_id'))
+        new_set_id = last_set['mbti_set_id__max'] + 1 if last_set['mbti_set_id__max'] else 1
+        mbti_set = MBTISet.objects.create(user=user, mbti_set_id=new_set_id)
+
+    # Create responses for all MBTI questions
+    mbti_questions = MBTI.objects.all()
+    for question in mbti_questions:
+        MBTIResponse.objects.get_or_create(mbti_set=mbti_set, mbti=question)
+
+    return redirect('mbti_test', mbti_set_id=mbti_set.pk)
+
+def mbti_test(request, mbti_set_id):
+    mbti_set = MBTISet.objects.get(pk=mbti_set_id)
+    responses = MBTIResponse.objects.filter(mbti_set=mbti_set, is_answered=False)
+    
+    if request.method == 'POST':
+        # Process user responses
+        for response in responses:
+            option = request.POST.get(f'question_{response.mbti_id}')
+            if option:
+                response.selected_option = int(option)
+                response.is_answered = True
+                response.save()
+        
+        # set id
+        print("def mbti_test() mbti_set.id: ", mbti_set.mbti_set_id)
+        # All questions answered, calculate personality
+        calculate_personality(request.user, mbti_set.mbti_set_id)
+        return redirect('mbti_results', mbti_set_id=mbti_set_id)
+
+    return render(request, 'test/mbti_test.html', {'mbti_set': mbti_set, 'responses': responses})
+
+
+def calculate_personality(user, mbti_set_id):
+    #  # Try to get the user's existing MBTISet instance
+    # mbti_set = MBTISet.objects.filter(user=user).first()
+     # Get the MBTI set using the provided mbti_set_id
+    mbti_set = MBTISet.objects.get(pk=mbti_set_id)
+    if not mbti_set:
+        # If it doesn't exist, create a new one
+        mbti_set = MBTISet.objects.create(user=user, mind=0, energy=0, nature=0, tactics=0)
+
+    print("def calculate_personality() mbti_set: ", mbti_set)
+    print("def calculate_personality() mbti_set_id: ", mbti_set.pk)
+    # number of objects
+    print("MBTI.objects.count(): ", MBTI.objects.count())
+    # Calculate mind, energy, nature, and tactics here
+    # filter by id, from 1 to 5
+    mbti_mind = MBTI.objects.filter(mbti__range=(1, 5))
+    mbti_energy = MBTI.objects.filter(mbti__range=(6, 10))
+    mbti_nature = MBTI.objects.filter(mbti__range=(11, 15))
+    mbti_tactics = MBTI.objects.filter(mbti__range=(16, 20))
+    print("mbti_mind: ", mbti_mind, "mbti_energy: ", mbti_energy, "mbti_nature: ", mbti_nature, "mbti_tactics: ", mbti_tactics)
+
+    mind = MBTIResponse.objects.filter(mbti__in=mbti_mind, mbti_set=mbti_set)
+    energy = MBTIResponse.objects.filter(mbti__in=mbti_energy, mbti_set=mbti_set)
+    nature = MBTIResponse.objects.filter(mbti__in=mbti_nature, mbti_set=mbti_set)
+    tactics = MBTIResponse.objects.filter(mbti__in=mbti_tactics, mbti_set=mbti_set)
+    print("mind: ", mind, "energy: ", energy, "nature: ", nature, "tactics: ", tactics)
+
+    # get average of selected_option
+    mind = mind.aggregate(average_rating=Avg('selected_option'))['average_rating']
+    energy = energy.aggregate(average_rating=Avg('selected_option'))['average_rating']
+    nature = nature.aggregate(average_rating=Avg('selected_option'))['average_rating']
+    tactics = tactics.aggregate(average_rating=Avg('selected_option'))['average_rating']
+    print("mind: ", mind, "energy: ", energy, "nature: ", nature, "tactics: ", tactics)
+    
+    # Update the user's MBTI set instance with the calculated values
+    mbti_set.mind = mind
+    mbti_set.energy = energy
+    mbti_set.nature = nature
+    mbti_set.tactics = tactics
+    mbti_set.save()
+
+    # Determine the personality type and update the user's MBTI instance
+    personality_type = ''
+    if mind >= 2:
+        personality_type += 'I'
+    else:
+        personality_type += 'E'
+    if energy >= 2:
+        personality_type += 'N'
+    else:
+        personality_type += 'S'
+    if nature >= 2:
+        personality_type += 'F'
+    else:
+        personality_type += 'T'
+    if tactics >= 2:
+        personality_type += 'P'
+    else:
+        personality_type += 'J'
+    print("Personality Type: ", personality_type)
+    mbti_set.identity = personality_type
+    mbti_set.save()
+
+
+def mbti_results(request, mbti_set_id):
+    mbti_set = MBTISet.objects.get(pk=mbti_set_id)
+    return render(request, 'test/mbti_results.html', {'mbti_set': mbti_set})
