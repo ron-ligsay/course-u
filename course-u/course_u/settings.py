@@ -1,6 +1,10 @@
 from pathlib import Path
 import os
 
+from logging.handlers import RotatingFileHandler
+
+from colorlog import ColoredFormatter
+
 #from decouple import Config, RepositoryEnv
 #config = Config(RepositoryEnv('.env'))
 # config.read('.env')
@@ -138,11 +142,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #DISABLE_EXISITING_LOGGERS = False
 
-from logging.handlers import RotatingFileHandler
-
 LOGOUT_REDIRECT_URL = 'logout_success'
 
-from colorlog import ColoredFormatter
 
 # Custom log Colors
 log_colors = {
