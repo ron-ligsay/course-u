@@ -2059,3 +2059,696 @@ INFO 2023-10-25 11:37:10,286 django.server Thread-8 (process_request_thread) 682
 INFO 2023-10-25 11:37:10,321 django.server Thread-8 (process_request_thread) 6828 basehttp basehttp.py 212 django.server log_message 32224 "GET /static/css/test_home.css HTTP/1.1" 304 0
 INFO 2023-10-25 11:38:28,757 django.server Thread-8 (process_request_thread) 6828 basehttp basehttp.py 212 django.server log_message 32224 "GET /test_home/ HTTP/1.1" 200 12563
 INFO 2023-10-25 11:38:28,787 django.server Thread-8 (process_request_thread) 6828 basehttp basehttp.py 212 django.server log_message 32224 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:39:55,091 django.utils.autoreload MainThread 30340 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 27744 Watching for file changes with StatReloader
+INFO 2023-10-25 11:39:59,209 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET / HTTP/1.1" 200 9437
+INFO 2023-10-25 11:40:02,176 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 11:40:02,228 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /home HTTP/1.1" 200 31914
+INFO 2023-10-25 11:40:02,290 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 200 2687
+INFO 2023-10-25 11:40:04,095 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12561
+INFO 2023-10-25 11:40:09,359 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9569
+INFO 2023-10-25 11:40:11,013 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 11:40:11,046 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/grade_level.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:40:16,825 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-25 11:40:18,228 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-25 11:40:18,292 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /question/1/ HTTP/1.1" 200 13138
+INFO 2023-10-25 11:40:18,328 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:42:05,188 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12579
+INFO 2023-10-25 11:42:05,214 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:42:05,630 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12579
+INFO 2023-10-25 11:42:05,803 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12579
+INFO 2023-10-25 11:42:05,986 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12579
+INFO 2023-10-25 11:42:06,167 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12579
+INFO 2023-10-25 11:42:25,021 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12603
+INFO 2023-10-25 11:42:25,053 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:42:25,449 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12603
+INFO 2023-10-25 11:42:25,611 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12603
+INFO 2023-10-25 11:42:25,796 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12603
+INFO 2023-10-25 11:42:43,188 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12603
+INFO 2023-10-25 11:42:43,217 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:43:43,395 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12561
+INFO 2023-10-25 11:43:43,429 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:43:45,036 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /home HTTP/1.1" 200 31914
+INFO 2023-10-25 11:43:49,630 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /admin_students HTTP/1.1" 200 13791
+INFO 2023-10-25 11:43:52,676 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 212 django.server log_message 27744 "GET /admin_home/ HTTP/1.1" 200 18320
+INFO 2023-10-25 11:44:19,745 django.server Thread-1 (process_request_thread) 20496 basehttp basehttp.py 81 django.server handle_error 27744 - Broken pipe from ('127.0.0.1', 53809)
+INFO 2023-10-25 11:44:20,198 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /admin_report/ HTTP/1.1" 200 3617505
+INFO 2023-10-25 11:44:20,239 django.server Thread-3 (process_request_thread) 23752 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:44:21,212 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /admin_report/ HTTP/1.1" 200 3617504
+INFO 2023-10-25 11:44:23,324 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /admin_students HTTP/1.1" 200 13791
+INFO 2023-10-25 11:44:24,807 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /home HTTP/1.1" 200 31914
+INFO 2023-10-25 11:44:26,287 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 11922
+INFO 2023-10-25 11:44:27,057 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12561
+INFO 2023-10-25 11:44:28,399 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9569
+INFO 2023-10-25 11:44:31,039 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 11:44:31,075 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/grade_level.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:47:18,889 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+INFO 2023-10-25 11:47:18,916 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:47:19,590 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+INFO 2023-10-25 11:47:20,049 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+INFO 2023-10-25 11:47:20,263 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+INFO 2023-10-25 11:47:20,448 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+INFO 2023-10-25 11:47:20,615 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+ERROR 2023-10-25 11:50:35,558 django.request Thread-2 (process_request_thread) 8356 log log.py 241 django.request log_response 27744 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\website\views.py", line 168, in user_profile
+    return render(request, 'user/user_profile.html', context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-10-25 11:50:35,596 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 500 196969
+ERROR 2023-10-25 11:50:37,088 django.request Thread-2 (process_request_thread) 8356 log log.py 241 django.request log_response 27744 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\website\views.py", line 168, in user_profile
+    return render(request, 'user/user_profile.html', context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-10-25 11:50:37,125 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 500 196969
+ERROR 2023-10-25 11:51:32,690 django.request Thread-2 (process_request_thread) 8356 log log.py 241 django.request log_response 27744 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\website\views.py", line 168, in user_profile
+    return render(request, 'user/user_profile.html', context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-10-25 11:51:32,726 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 500 197118
+ERROR 2023-10-25 11:51:33,182 django.request Thread-2 (process_request_thread) 8356 log log.py 241 django.request log_response 27744 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\website\views.py", line 168, in user_profile
+    return render(request, 'user/user_profile.html', context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 4: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-10-25 11:51:33,214 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 500 197117
+INFO 2023-10-25 11:52:13,877 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /profile/ HTTP/1.1" 200 12001
+INFO 2023-10-25 11:52:13,918 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:53:07,124 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /test_home/ HTTP/1.1" 200 12561
+INFO 2023-10-25 11:53:07,963 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9569
+INFO 2023-10-25 11:55:33,267 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11771
+INFO 2023-10-25 11:55:33,299 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 11:55:42,214 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11631
+INFO 2023-10-25 11:55:51,096 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11587
+INFO 2023-10-25 11:55:51,731 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11587
+INFO 2023-10-25 11:55:51,927 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11587
+INFO 2023-10-25 11:55:52,073 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11587
+INFO 2023-10-25 11:56:13,690 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11620
+INFO 2023-10-25 11:56:14,246 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11620
+INFO 2023-10-25 11:56:14,625 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11620
+INFO 2023-10-25 11:56:14,821 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11620
+INFO 2023-10-25 11:56:15,008 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 11620
+INFO 2023-10-25 11:58:12,890 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9807
+INFO 2023-10-25 11:58:13,759 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9807
+INFO 2023-10-25 11:58:13,954 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9807
+INFO 2023-10-25 11:58:14,123 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9807
+INFO 2023-10-25 11:58:14,305 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9807
+INFO 2023-10-25 11:58:52,339 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9741
+INFO 2023-10-25 11:58:52,780 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9741
+INFO 2023-10-25 11:58:53,015 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9742
+INFO 2023-10-25 11:58:53,147 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9741
+ERROR 2023-10-25 12:00:21,339 django.request Thread-2 (process_request_thread) 8356 log log.py 241 django.request log_response 27744 Internal Server Error: /course_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\assessment\views.py", line 385, in course_input
+    return render(request,'user/course.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'static'. Did you forget to register or load this tag?
+ERROR 2023-10-25 12:00:21,373 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 500 147998
+ERROR 2023-10-25 12:00:22,349 django.request Thread-2 (process_request_thread) 8356 log log.py 241 django.request log_response 27744 Internal Server Error: /course_input/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course-u\assessment\views.py", line 385, in course_input
+    return render(request,'user/course.html')
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'static'. Did you forget to register or load this tag?
+ERROR 2023-10-25 12:00:22,384 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 500 147997
+INFO 2023-10-25 12:01:13,994 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9565
+INFO 2023-10-25 12:01:20,754 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:01:20,793 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/grade_level.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:01:22,311 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /subjectgrade_input/ HTTP/1.1" 200 10828
+INFO 2023-10-25 12:01:33,517 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-25 12:01:33,559 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /question/1/ HTTP/1.1" 200 13138
+INFO 2023-10-25 12:01:33,591 django.server Thread-2 (process_request_thread) 8356 basehttp basehttp.py 212 django.server log_message 27744 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 12:03:06,893 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:07,509 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:07,727 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:07,879 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:18,533 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /course_input/ HTTP/1.1" 200 9565
+INFO 2023-10-25 12:03:19,791 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:22,136 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:22,443 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:22,628 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 12:03:22,824 django.server Thread-4 (process_request_thread) 6316 basehttp basehttp.py 212 django.server log_message 27744 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-25 20:08:36,309 django.utils.autoreload MainThread 476 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 32992 Watching for file changes with StatReloader
+INFO 2023-10-25 20:09:11,980 django.server Thread-1 (process_request_thread) 33352 basehttp basehttp.py 212 django.server log_message 32992 "GET / HTTP/1.1" 200 9439
+INFO 2023-10-25 20:09:12,139 django.server Thread-1 (process_request_thread) 33352 basehttp basehttp.py 212 django.server log_message 32992 "GET / HTTP/1.1" 200 9437
+INFO 2023-10-25 20:09:12,365 django.server Thread-1 (process_request_thread) 33352 basehttp basehttp.py 212 django.server log_message 32992 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-25 20:09:12,912 django.server Thread-1 (process_request_thread) 33352 basehttp basehttp.py 212 django.server log_message 32992 "GET /static/css/course.css HTTP/1.1" 304 0
+WARNING 2023-10-25 20:09:13,537 django.request Thread-1 (process_request_thread) 33352 log log.py 241 django.request log_response 32992 Not Found: /favicon.ico
+WARNING 2023-10-25 20:09:13,539 django.server Thread-1 (process_request_thread) 33352 basehttp basehttp.py 212 django.server log_message 32992 "GET /favicon.ico HTTP/1.1" 404 17823
+WARNING 2023-10-25 20:09:13,939 django.request Thread-2 (process_request_thread) 7080 log log.py 241 django.request log_response 32992 Not Found: /favicon.ico
+WARNING 2023-10-25 20:09:13,941 django.server Thread-2 (process_request_thread) 7080 basehttp basehttp.py 212 django.server log_message 32992 "GET /favicon.ico HTTP/1.1" 404 17824
+INFO 2023-10-25 20:09:27,304 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:09:27,450 django.server Thread-3 (process_request_thread) 18644 basehttp basehttp.py 212 django.server log_message 32992 "GET /home HTTP/1.1" 200 31915
+INFO 2023-10-25 20:09:40,430 django.server Thread-4 (process_request_thread) 18868 basehttp basehttp.py 212 django.server log_message 32992 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:09:40,476 django.server Thread-4 (process_request_thread) 18868 basehttp basehttp.py 212 django.server log_message 32992 "GET /logout/success/ HTTP/1.1" 200 9471
+INFO 2023-10-25 20:09:42,539 django.server Thread-4 (process_request_thread) 18868 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-25 20:09:42,675 django.server Thread-4 (process_request_thread) 18868 basehttp basehttp.py 212 django.server log_message 32992 "GET /static/css/login_user.css HTTP/1.1" 200 1255
+INFO 2023-10-25 20:09:42,728 django.server Thread-4 (process_request_thread) 18868 basehttp basehttp.py 212 django.server log_message 32992 "GET /static/images/log.jpg HTTP/1.1" 200 43888
+INFO 2023-10-25 20:10:06,856 django.server Thread-5 (process_request_thread) 26580 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:10:06,909 django.server Thread-5 (process_request_thread) 26580 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 11254
+INFO 2023-10-25 20:10:22,796 django.server Thread-6 (process_request_thread) 25596 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:10:22,887 django.server Thread-6 (process_request_thread) 25596 basehttp basehttp.py 212 django.server log_message 32992 "GET /home HTTP/1.1" 200 32210
+INFO 2023-10-25 20:10:25,223 django.server Thread-6 (process_request_thread) 25596 basehttp basehttp.py 212 django.server log_message 32992 "GET /admin_students HTTP/1.1" 200 13791
+INFO 2023-10-25 20:10:36,446 django.server Thread-7 (process_request_thread) 21356 basehttp basehttp.py 212 django.server log_message 32992 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:10:36,507 django.server Thread-7 (process_request_thread) 21356 basehttp basehttp.py 212 django.server log_message 32992 "GET /logout/success/ HTTP/1.1" 200 9471
+INFO 2023-10-25 20:10:37,988 django.server Thread-7 (process_request_thread) 21356 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-25 20:10:47,781 django.server Thread-8 (process_request_thread) 25296 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:10:47,835 django.server Thread-8 (process_request_thread) 25296 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 11254
+INFO 2023-10-25 20:10:54,891 django.server Thread-8 (process_request_thread) 25296 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:10:54,939 django.server Thread-8 (process_request_thread) 25296 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 11254
+INFO 2023-10-25 20:11:05,633 django.server Thread-9 (process_request_thread) 32096 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:11:05,661 django.server Thread-9 (process_request_thread) 32096 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 11254
+INFO 2023-10-25 20:11:15,641 django.server Thread-9 (process_request_thread) 32096 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:11:15,739 django.server Thread-9 (process_request_thread) 32096 basehttp basehttp.py 212 django.server log_message 32992 "GET /home HTTP/1.1" 200 32210
+INFO 2023-10-25 20:11:17,910 django.server Thread-9 (process_request_thread) 32096 basehttp basehttp.py 212 django.server log_message 32992 "GET /admin_students HTTP/1.1" 200 13791
+INFO 2023-10-25 20:11:26,384 django.server Thread-10 (process_request_thread) 1884 basehttp basehttp.py 212 django.server log_message 32992 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:11:26,451 django.server Thread-10 (process_request_thread) 1884 basehttp basehttp.py 212 django.server log_message 32992 "GET /logout/success/ HTTP/1.1" 200 9471
+INFO 2023-10-25 20:11:28,825 django.server Thread-10 (process_request_thread) 1884 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-25 20:11:36,634 django.server Thread-11 (process_request_thread) 12976 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:11:36,683 django.server Thread-11 (process_request_thread) 12976 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 11254
+INFO 2023-10-25 20:11:49,031 django.server Thread-12 (process_request_thread) 20796 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:11:49,082 django.server Thread-12 (process_request_thread) 20796 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 11254
+INFO 2023-10-25 20:16:21,438 django.server Thread-13 (process_request_thread) 7244 basehttp basehttp.py 212 django.server log_message 32992 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-25 20:16:26,044 django.server Thread-13 (process_request_thread) 7244 basehttp basehttp.py 212 django.server log_message 32992 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-25 20:16:26,133 django.server Thread-13 (process_request_thread) 7244 basehttp basehttp.py 212 django.server log_message 32992 "GET /home HTTP/1.1" 200 32210
+INFO 2023-10-25 20:16:29,458 django.server Thread-13 (process_request_thread) 7244 basehttp basehttp.py 212 django.server log_message 32992 "GET /home HTTP/1.1" 200 31916
+INFO 2023-10-25 20:16:31,423 django.server Thread-13 (process_request_thread) 7244 basehttp basehttp.py 212 django.server log_message 32992 "GET /home HTTP/1.1" 200 31914
+INFO 2023-10-27 13:13:16,754 django.utils.autoreload MainThread 6704 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 19304 Watching for file changes with StatReloader
+INFO 2023-10-27 13:13:26,904 django.server Thread-1 (process_request_thread) 32084 basehttp basehttp.py 212 django.server log_message 19304 "GET / HTTP/1.1" 200 9439
+INFO 2023-10-27 13:13:27,865 django.server Thread-1 (process_request_thread) 32084 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:27,896 django.server Thread-2 (process_request_thread) 11568 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/css/landing.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:27,987 django.server Thread-3 (process_request_thread) 10432 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:28,093 django.server Thread-3 (process_request_thread) 10432 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:28,096 django.server Thread-2 (process_request_thread) 11568 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/images/landing2.png HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:28,121 django.server Thread-2 (process_request_thread) 11568 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2023-10-27 13:13:28,598 django.request Thread-2 (process_request_thread) 11568 log log.py 241 django.request log_response 19304 Not Found: /favicon.ico
+WARNING 2023-10-27 13:13:28,601 django.server Thread-2 (process_request_thread) 11568 basehttp basehttp.py 212 django.server log_message 19304 "GET /favicon.ico HTTP/1.1" 404 17823
+INFO 2023-10-27 13:13:31,000 django.server Thread-4 (process_request_thread) 22268 basehttp basehttp.py 212 django.server log_message 19304 "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-27 13:13:31,233 django.server Thread-4 (process_request_thread) 22268 basehttp basehttp.py 212 django.server log_message 19304 "GET /home HTTP/1.1" 200 31915
+INFO 2023-10-27 13:13:31,415 django.server Thread-4 (process_request_thread) 22268 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/css/home_.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:31,447 django.server Thread-4 (process_request_thread) 22268 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:31,510 django.server Thread-5 (process_request_thread) 13896 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:31,554 django.server Thread-6 (process_request_thread) 10864 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:32,606 django.server Thread-6 (process_request_thread) 10864 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:33,667 django.server Thread-6 (process_request_thread) 10864 basehttp basehttp.py 212 django.server log_message 19304 "GET / HTTP/1.1" 200 9437
+INFO 2023-10-27 13:13:40,675 django.server Thread-7 (process_request_thread) 1068 basehttp basehttp.py 212 django.server log_message 19304 "GET /job_list/ HTTP/1.1" 200 18891
+INFO 2023-10-27 13:13:40,947 django.server Thread-8 (process_request_thread) 30616 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/css/job_post.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:40,948 django.server Thread-9 (process_request_thread) 33048 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/js/job_list.js HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:40,981 django.server Thread-9 (process_request_thread) 33048 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/images/2.jpg HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:44,971 django.server Thread-9 (process_request_thread) 33048 basehttp basehttp.py 212 django.server log_message 19304 "GET /test_home/ HTTP/1.1" 200 12561
+INFO 2023-10-27 13:13:47,428 django.server Thread-9 (process_request_thread) 33048 basehttp basehttp.py 212 django.server log_message 19304 "GET /home HTTP/1.1" 200 31914
+INFO 2023-10-27 13:13:49,034 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /test_home/ HTTP/1.1" 200 12561
+INFO 2023-10-27 13:13:50,649 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /course_input/ HTTP/1.1" 200 9565
+INFO 2023-10-27 13:13:50,688 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/css/course.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:52,213 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /gradelevel_input/ HTTP/1.1" 200 9715
+INFO 2023-10-27 13:13:52,254 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/css/grade_level.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:13:53,715 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-10-27 13:13:53,784 django.server Thread-10 (process_request_thread) 31316 basehttp basehttp.py 212 django.server log_message 19304 "GET /question/1/ HTTP/1.1" 200 13138
+INFO 2023-10-27 13:14:08,278 django.server Thread-11 (process_request_thread) 26704 basehttp basehttp.py 212 django.server log_message 19304 "GET /admin_students HTTP/1.1" 200 13791
+INFO 2023-10-27 13:14:11,107 django.server Thread-12 (process_request_thread) 16580 basehttp basehttp.py 212 django.server log_message 19304 "GET /profile/ HTTP/1.1" 200 11923
+INFO 2023-10-27 13:14:14,229 django.server Thread-12 (process_request_thread) 16580 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-27 13:14:14,326 django.server Thread-12 (process_request_thread) 16580 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9471
+INFO 2023-10-27 13:22:41,680 django.server Thread-13 (process_request_thread) 28892 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:22:42,783 django.server Thread-13 (process_request_thread) 28892 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:22:43,011 django.server Thread-13 (process_request_thread) 28892 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:23:21,605 django.server Thread-14 (process_request_thread) 21868 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9506
+INFO 2023-10-27 13:23:21,637 django.server Thread-15 (process_request_thread) 27796 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:23:21,639 django.server Thread-14 (process_request_thread) 21868 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2023-10-27 13:23:21,649 django.server Thread-16 (process_request_thread) 29840 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:23:21,659 django.server Thread-16 (process_request_thread) 29840 basehttp basehttp.py 212 django.server log_message 19304 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2023-10-27 13:23:21,765 django.request Thread-16 (process_request_thread) 29840 log log.py 241 django.request log_response 19304 Not Found: /favicon.ico
+WARNING 2023-10-27 13:23:21,768 django.server Thread-16 (process_request_thread) 29840 basehttp basehttp.py 212 django.server log_message 19304 "GET /favicon.ico HTTP/1.1" 404 17823
+INFO 2023-10-27 13:26:34,554 django.server Thread-17 (process_request_thread) 5060 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:26:35,498 django.server Thread-17 (process_request_thread) 5060 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9509
+INFO 2023-10-27 13:26:35,628 django.server Thread-17 (process_request_thread) 5060 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:26:35,852 django.server Thread-17 (process_request_thread) 5060 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:27:43,318 django.server Thread-17 (process_request_thread) 5060 basehttp basehttp.py 212 django.server log_message 19304 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:27:53,105 django.utils.autoreload MainThread 10688 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 13144 Watching for file changes with StatReloader
+INFO 2023-10-27 13:28:00,797 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET / HTTP/1.1" 200 9439
+INFO 2023-10-27 13:28:03,123 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /login_user/ HTTP/1.1" 200 10815
+INFO 2023-10-27 13:28:03,181 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/login_user.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:28:03,240 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/images/log.jpg HTTP/1.1" 304 0
+INFO 2023-10-27 13:28:09,134 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-10-27 13:28:09,375 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /home HTTP/1.1" 200 32211
+INFO 2023-10-27 13:28:11,318 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-10-27 13:28:11,362 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:28:40,911 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:28:41,770 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9508
+INFO 2023-10-27 13:29:09,479 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9506
+INFO 2023-10-27 13:32:29,739 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:32:29,783 django.server Thread-1 (process_request_thread) 508 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:32:30,743 django.server Thread-2 (process_request_thread) 22048 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:32:30,786 django.server Thread-2 (process_request_thread) 22048 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:32:48,801 django.server Thread-3 (process_request_thread) 19064 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:32:48,893 django.server Thread-3 (process_request_thread) 19064 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:33:24,225 django.server Thread-4 (process_request_thread) 12748 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:33:24,265 django.server Thread-4 (process_request_thread) 12748 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:33:32,710 django.server Thread-5 (process_request_thread) 26160 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:33:32,734 django.server Thread-5 (process_request_thread) 26160 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:34:14,304 django.server Thread-6 (process_request_thread) 24184 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:34:14,325 django.server Thread-6 (process_request_thread) 24184 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:34:15,294 django.server Thread-7 (process_request_thread) 24564 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+WARNING 2023-10-27 13:34:15,325 django.server Thread-7 (process_request_thread) 24564 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+INFO 2023-10-27 13:34:39,701 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9575
+INFO 2023-10-27 13:34:39,737 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_sucess.css HTTP/1.1" 200 469
+INFO 2023-10-27 13:35:05,860 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9576
+INFO 2023-10-27 13:35:05,906 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 469
+INFO 2023-10-27 13:36:45,881 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9579
+INFO 2023-10-27 13:36:45,936 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 469
+INFO 2023-10-27 13:37:09,999 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9578
+INFO 2023-10-27 13:37:10,067 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 490
+INFO 2023-10-27 13:38:34,222 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9578
+INFO 2023-10-27 13:38:34,300 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 490
+INFO 2023-10-27 13:41:07,278 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9591
+INFO 2023-10-27 13:41:07,355 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 804
+INFO 2023-10-27 13:41:41,956 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:41:41,998 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 803
+INFO 2023-10-27 13:41:48,987 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:41:49,010 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 803
+INFO 2023-10-27 13:41:59,329 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:41:59,355 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 803
+INFO 2023-10-27 13:42:16,804 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:42:16,865 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 785
+INFO 2023-10-27 13:42:18,029 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:42:18,044 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:42:54,672 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:42:54,702 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 785
+INFO 2023-10-27 13:43:07,284 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:07,332 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 784
+INFO 2023-10-27 13:43:09,939 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:09,954 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:43:15,931 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:15,992 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 785
+INFO 2023-10-27 13:43:36,249 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:36,304 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 802
+INFO 2023-10-27 13:43:42,902 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:42,944 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 803
+INFO 2023-10-27 13:43:43,812 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:43,850 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:43:56,412 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:43:56,430 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 803
+INFO 2023-10-27 13:44:05,918 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:44:05,986 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 779
+INFO 2023-10-27 13:44:06,804 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:44:06,840 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:44:07,192 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9590
+INFO 2023-10-27 13:44:07,238 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:45:31,272 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9625
+INFO 2023-10-27 13:45:31,288 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:45:40,878 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9630
+INFO 2023-10-27 13:45:40,924 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:45:48,137 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9634
+INFO 2023-10-27 13:46:01,385 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:46:01,399 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:46:24,816 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:46:24,883 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 804
+INFO 2023-10-27 13:46:25,649 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:46:25,698 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:46:26,034 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:46:26,096 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:46:34,731 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:46:34,800 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 804
+INFO 2023-10-27 13:46:48,969 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:46:49,027 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 804
+INFO 2023-10-27 13:47:10,279 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:47:10,306 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 804
+INFO 2023-10-27 13:48:11,860 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:48:11,920 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 804
+INFO 2023-10-27 13:48:32,082 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:48:32,151 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 810
+INFO 2023-10-27 13:49:19,280 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:49:19,360 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 803
+INFO 2023-10-27 13:49:31,566 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:49:31,635 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 758
+INFO 2023-10-27 13:50:10,989 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:50:11,041 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 814
+INFO 2023-10-27 13:50:31,747 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:50:31,818 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 839
+INFO 2023-10-27 13:50:42,991 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:50:43,015 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 734
+INFO 2023-10-27 13:51:02,723 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:51:02,795 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 758
+INFO 2023-10-27 13:51:11,149 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:51:11,205 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 758
+INFO 2023-10-27 13:51:26,508 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:51:26,551 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 758
+INFO 2023-10-27 13:51:51,778 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:51:51,801 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 799
+INFO 2023-10-27 13:52:22,980 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:52:23,035 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 767
+INFO 2023-10-27 13:53:16,525 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:53:16,579 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 819
+INFO 2023-10-27 13:53:58,914 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:53:58,941 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 850
+INFO 2023-10-27 13:54:26,919 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:54:26,987 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 895
+INFO 2023-10-27 13:55:21,209 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:55:21,249 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 938
+INFO 2023-10-27 13:55:22,272 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:55:22,285 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:55:54,762 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:55:54,784 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 939
+INFO 2023-10-27 13:55:56,072 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:55:56,092 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:55:56,264 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:55:56,574 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:56:11,100 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:56:11,167 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 940
+INFO 2023-10-27 13:56:12,273 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:56:12,287 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:56:12,490 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:56:12,510 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:56:12,771 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:56:12,815 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:57:06,988 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:57:07,055 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 942
+INFO 2023-10-27 13:57:08,337 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:57:08,350 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:57:19,839 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:57:19,891 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 944
+INFO 2023-10-27 13:57:20,851 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:57:20,875 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:57:34,427 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:57:34,487 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 946
+INFO 2023-10-27 13:57:54,013 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:57:54,042 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 13:58:04,597 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:58:04,620 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 948
+INFO 2023-10-27 13:58:12,426 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:58:12,449 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 949
+INFO 2023-10-27 13:58:35,337 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:58:35,367 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 948
+INFO 2023-10-27 13:58:51,951 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:58:51,977 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 13:59:01,968 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:59:02,046 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 946
+INFO 2023-10-27 13:59:30,396 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-27 13:59:30,462 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/login_user.css HTTP/1.1" 304 0
+INFO 2023-10-27 13:59:30,488 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/images/log.jpg HTTP/1.1" 200 43888
+INFO 2023-10-27 13:59:36,904 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:59:40,196 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-10-27 13:59:48,397 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 13:59:55,920 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:11,829 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:11,891 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 950
+INFO 2023-10-27 14:00:27,915 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:29,232 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:29,255 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 946
+INFO 2023-10-27 14:00:34,760 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:48,072 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:48,096 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:00:56,626 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:00:56,694 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:01:08,387 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:01:08,437 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:01:18,800 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:01:18,815 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:01:26,311 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:01:26,340 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:01:45,499 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:01:45,573 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:01:58,193 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:01:58,250 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 947
+INFO 2023-10-27 14:02:11,342 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:02:11,367 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 946
+INFO 2023-10-27 14:02:25,801 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:02:25,853 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 943
+INFO 2023-10-27 14:02:42,067 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:02:57,219 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:02:57,288 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 943
+INFO 2023-10-27 14:03:17,597 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:03:17,633 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 943
+INFO 2023-10-27 14:03:39,151 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:03:39,206 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 951
+INFO 2023-10-27 14:03:51,063 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:03:51,149 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 948
+INFO 2023-10-27 14:03:52,183 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:03:52,196 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 304 0
+INFO 2023-10-27 14:04:05,524 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:04:05,548 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 939
+INFO 2023-10-27 14:04:24,650 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /logout/success/ HTTP/1.1" 200 9637
+INFO 2023-10-27 14:04:24,721 django.server Thread-8 (process_request_thread) 24328 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 200 940

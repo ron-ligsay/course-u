@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logout Success</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/logout_success.css' %}">
 </head>
 <body>
+    <div class = "container">
     <h1>Logout Successful</h1>
     <p>You have been successfully logged out.</p>
-    <p><a href="{% url 'login_user' %}">Login</a></p> <!-- Optionally provide a link to the login page -->
+    <p>Do you want to go back?</p><br><br><br>
+    <p><a href="{% url 'login_user' %}" class="btn">Login</a></p> <!-- Optionally provide a link to the login page -->
+</div>
 </body>
 </html>
