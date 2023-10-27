@@ -27,13 +27,7 @@ class Command(BaseCommand):
                 'model_name' : 'Field',
                 'columns' : ['field','field_name','description'],
                 'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
-            },
-            base_dir + '\\static\\csv\\userdb.csv': {
-                'table_name': 'userdb',
-                'model_name' : 'User',
-                'columns' : ['userid','username','password','email'],
-                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(25)', 'VARCHAR(25)', 'VARCHAR(100)' ]
-            },
+            }, 
             base_dir + '\\static\\csv\\specialization1.csv': {
                 'table_name': 'website_specialization',
                 'model_name': 'Specialization',
