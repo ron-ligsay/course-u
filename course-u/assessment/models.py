@@ -71,6 +71,8 @@ class MBTISet(models.Model):
     def __str__(self):
         return f"{self.mbti_set_id}: Status : {self.is_completed} by User: {self.user} (Identity: {self.identity}) "
     
+    class Meta:
+        unique_together = ('user',)
 
 class MBTIResponse(models.Model):
     mbti_response_id = models.AutoField(primary_key=True,serialize=False, auto_created=True)
@@ -81,3 +83,6 @@ class MBTIResponse(models.Model):
 
     def __str__(self):
         return f"Set: {self.mbti_set.mbti_set_id}, Question: {self.mbti_response_id}"
+    
+    class Meta:
+        unique_together = ('mbti_set','mbti')

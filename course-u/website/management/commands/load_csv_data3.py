@@ -2,12 +2,12 @@ from django.core.management.base import BaseCommand
 import csv
 import os
 import mysql.connector
-#from website.models import Specialization, Field  # Import your models
+from website.models import Specialization, Field  # Import your models
 from assessment.models import Test, QuestionSet, UserResponse, MBTI, MBTISet, MBTIResponse
 from django.apps import apps
 
-from decouple import Config, RepositoryEnv
-config = Config(RepositoryEnv('.env'))
+# from decouple import Config, RepositoryEnv
+# config = Config(RepositoryEnv('.env'))
 
 class Command(BaseCommand):
     help = 'Import data from CSV files to MySQL database'
@@ -16,7 +16,7 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='022002', # 'sql2023' , 'sawadekap'
+            password='sql2023', # 'sql2023' , 'sawadekap', '022002
             database= 'courseu_db', #config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
@@ -85,14 +85,14 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\mbti_set.csv': {
                 'table_name': 'assessment_mbtiset',
                 'model_name': 'MBTISet',
-                'columns':  ["mbti_response_id","mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
+                'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
             },
             base_dir + '\\static\\csv\\user_mbti_response.csv': {
                 'table_name': 'assessment_mbtiresponse',
                 'model_name': 'MBTIResponse',
-                'columns':  ["mbti_response","mbti_set_id","question_id","selected_option","is_correct","is_answered"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "INT", "INT", "BOOLEAN","BOOLEAN"]
+                'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
             },
         }
         
@@ -121,15 +121,16 @@ class Command(BaseCommand):
                 print("Query: ",query)
                 cursor.execute(query)
                 connection.commit()
-
-            # Load data from CSV
-            with open(csv_file_path, 'r') as file:
-                csv_reader = csv.DictReader(file)
-                for row in csv_reader:
-                    columns = ', '.join(row.keys())
-                    placeholders = ', '.join(['%s'] * len(row))
-                    query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
-                    cursor.execute(query, tuple(row.values()))
+                print("Now loading data to the table...")
+                # Load data from CSV
+                with open(csv_file_path, 'r') as file:
+                    csv_reader = csv.DictReader(file)
+                    for row in csv_reader:
+                        columns = ', '.join(row.keys())
+                        placeholders = ', '.join(['%s'] * len(row))
+                        query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
+                        print("query: ", query)
+                        cursor.execute(query, tuple(row.values()))
                     
         connection.commit()
         cursor.close()
