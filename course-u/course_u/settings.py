@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'jobs',
     'assessment',
     'debug_toolbar',
-    'students',
+    #'students',
+    'grades',
 ]
 
 MIDDLEWARE = [
