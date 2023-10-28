@@ -29,6 +29,9 @@ urlpatterns = [
     path('logout/', views.CustomLogoutView.as_view(), name='logout'),
     path('logout/success/', LogoutView.as_view(template_name='user/logout_success.html'), name='logout_success'),
     
+    # For Field
+    path('field_page/<int:field_id>/', views.field_page, name='field_page'),
+
     # For Specialization
     path('specialization_page/<int:item_id>/', views.specialization_page, name='specialization_page'),
 

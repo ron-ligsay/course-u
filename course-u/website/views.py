@@ -46,6 +46,7 @@ def home(request):
 
 @allowed_users(allowed_roles=['admin','staff','student','instructor'])
 def home_field(request, field_id=None):
+    print("On home_field, field_id: ", field_id)
     field_items = Field.objects.all()
     selected_field = None
 
@@ -247,3 +248,14 @@ def admin_report(request):
 
     context = {'chart': chart, 'form': StudentScoreForm()}
     return render(request, 'admin_report.html', context)
+
+
+def field_page(request, field_id=None):
+
+    # Field object
+    field_object = Field.objects.get(field=field_id)
+
+    # get specialization items with field_id
+    specialization_items = Specialization.objects.filter(field=field_id)
+    print("Field page,  SPecialization items: ", specialization_items)
+    return render(request, 'field.html', {'field_object' : field_object, 'specialization_items': specialization_items})

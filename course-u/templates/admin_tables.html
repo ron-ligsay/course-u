@@ -65,7 +65,7 @@
                 {% for item in Field_items %}
                 <tr>
                     <td> {{ item.field_name }}</td>
-                    <td> <a class="btn btn-primary" href="">View</a> </td>
+                    <td> <a class="btn btn-primary" href="{% url 'field_page' item.field %}">View</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>
