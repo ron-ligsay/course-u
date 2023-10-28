@@ -1,13 +1,72 @@
 {% extends "base_user.html" %}
 
 {% block content %}
-
+    <br>
     <h1>Your MBTI Results</h1>
-    <p>Mind: {{ mbti_set.mind }}</p>
-    <p>Energy: {{ mbti_set.energy }}</p>
-    <p>Nature: {{ mbti_set.nature }}</p>
-    <p>Tactics: {{ mbti_set.tactics }}</p>
-    <p>Identity: {{ mbti_set.identity }}</p>
+
+    <p> Your Personality type is </p>
+    <h2> Mediator </h2>
+    <h4>{{ mbti_set.identity }}</h4>
+
     <p>Explanation of your personality type could go here.</p>
+    <br>
+    <h3>Mind</h3>
+    {% if mbti_set.mind >= 50 %}
+        <p>Intuitive vs Observant {{mbti_set.mind}}%</p>
+        <p>Intuitive individuals are very imaginative, open-minded and curious.
+        They prefer novelty over stability and focus on hidden meanings and future possibilities.
+        They are very imaginative, open-minded and curious. </p>
+    {% else %}
+        <p>Intuitive {{mbti_set.mind}}% vs Observant </p>
+        <p>Observant individuals are highly practical, pragmatic, and down-to-earth.
+        They tend to have strong habits and focus on what is happening or has already happened.
+        They are highly practical, pragmatic, and down-to-earth. </p>
+    {% endif %}
+
+    <br>
+
+    <br>
+    <h3>Energy</h3>
+    {% if mbti_set.energy >= 50 %}
+        <p>Extrovert vs Introvert {{mbti_set.energy}}%</p>
+        <p>Extrovert individuals are outgoing, social, and enthusiastic. They are assertive and very talkative.
+        They are energized by social gatherings, parties, and group activities. </p>
+    {% else %}
+        <p>Extrovert{{mbti_set.energy}}% vs Introvert </p>
+        <p>Introvert individuals are reserved, quiet, and thoughtful.
+        They are more comfortable working by themselves and focusing on one task at a time. They are reserved, quiet, and
+        thoughtful.</p>
+    {% endif %}
+
+    <br>
+
+    <h3>Nature</h3>
+    {% if mbti_set.nature >= 50 %}
+        <p>Thinking vs Feeling {{mbti_set.nature}}%</p>
+        <p>Thinking individuals focus on objectivity and rationality, prioritizing logic over emotions.
+        They tend to hide their feelings and see efficiency as more important than cooperation. They are more competitive
+        and focus on achieving goals.</p>
+    {% else %}
+        <p>Thinking {{mbti_set.nature}}% vs Feeling</p>
+        <p>Feeling individuals are sensitive and emotionally expressive.
+        They are more empathic and less competitive than Thinking types, and focus on social harmony and cooperation. </p>
+    {% endif %}
+
+    <br>
+
+    <h3>Tactics</h3>
+    {% if mbti_set.tactics >= 50 %}
+        <p>Judging vs Prospecting {{mbti_set.tactics}}%</p>
+        <p>Judging individuals are decisive, thorough and highly organized.
+        They value clarity, predictability and closure, preferring structure and planning to spontaneity.</p>
+    {% else %}
+        <p>Judging {{mbti_set.tactics}}% vs Prospecting</p>
+        <p>Prospecting individuals are very good at improvising and spotting opportunities.
+        They tend to be flexible, relaxed nonconformists who prefer keeping their options open. </p>
+    {% endif %}
+
+    <br>
+
     <a class="btn btn-primary" href="{% url 'home' %}">Back to Home</a>
+    <br><br><br>
 {% endblock %}
