@@ -6,6 +6,9 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+
 from django.db.models import Q, Avg
 
 # App imports
@@ -569,3 +572,26 @@ def mbti_results(request, mbti_set_id):
     
 
     return render(request, 'test/mbti_results.html', {'mbti_set': mbti_set})
+
+
+
+
+class QuestionListView(ListView):
+    model = Test
+    template_name = 'question_list.html'
+    context_object_name = 'questions'
+
+class QuestionCreateView(CreateView):
+    model = Test
+    template_name = 'question_form.html'
+    fields = '__all__'
+
+class QuestionUpdateView(UpdateView):
+    model = Test
+    template_name = 'question_form.html'
+    fields = '__all__'
+
+class QuestionDeleteView(DeleteView):
+    model = Test
+    template_name = 'question_confirm_delete.html'
+    success_url = reverse_lazy('question_list')
