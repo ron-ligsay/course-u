@@ -257,5 +257,7 @@ def field_page(request, field_id=None):
 
     # get specialization items with field_id
     specialization_items = Specialization.objects.filter(field=field_id)
+
     print("Field page,  SPecialization items: ", specialization_items)
+    
     return render(request, 'field.html', {'field_object' : field_object, 'specialization_items': specialization_items})

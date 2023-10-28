@@ -9,6 +9,11 @@
     <table class="table table-bordered mt-4">
         <thead class="thead-light">
             <tr>
+                {% if is_admin %}
+                <th>ID</th>
+                <th>field</th>
+                {% else %}
+                {% endif %}
                 <th>Question</th>
                 <th>Status</th>
                 <th> </th>
@@ -17,6 +22,11 @@
         <tbody>
             {% for item in question_info %}
                 <tr>
+                    {% if is_admin %}
+                    <td>{{ item.question.question_id }}</td>
+                    <td>{{ item.question.field_id }}</td>
+                    {% else %}
+                    {% endif %}
                     <td>{{item.question.question}}</td>
                     <td>
                         {% if item.has_answered %}
