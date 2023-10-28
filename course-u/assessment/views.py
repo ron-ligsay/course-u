@@ -307,7 +307,7 @@ def submit_test(request):
 
             messages.success(request, 'You have completed the test')
             print('You have completed the test')
-            return redirect('home')
+            return redirect('test_results')
         else:
             messages.success(request, 'You have not started the test')
             print('You have not started the test')
@@ -533,27 +533,39 @@ def calculate_personality(user, mbti_set_id):
 
     # Determine the personality type and update the user's MBTI instance
     personality_type = ''
-    if mind >= 2:
+    if mind >= 2.5:
         personality_type += 'I'
     else:
         personality_type += 'E'
-    if energy >= 2:
+    if energy >= 2.5:
         personality_type += 'N'
     else:
         personality_type += 'S'
-    if nature >= 2:
+    if nature >= 2.5:
         personality_type += 'F'
     else:
         personality_type += 'T'
-    if tactics >= 2:
+    if tactics >= 2.5:
         personality_type += 'P'
     else:
         personality_type += 'J'
     print("Personality Type: ", personality_type)
     mbti_set.identity = personality_type
+
+    # marks as completed
+    mbti_set.is_completed = True
     mbti_set.save()
 
 
 def mbti_results(request, mbti_set_id):
     mbti_set = MBTISet.objects.get(pk=mbti_set_id)
+
+    # Convert float into percentage
+    mbti_set.mind = int(mbti_set.mind * 20)
+    mbti_set.energy = int(mbti_set.energy * 20)
+    mbti_set.nature = int(mbti_set.nature * 20)
+    mbti_set.tactics = int(mbti_set.tactics * 20)
+
+    
+
     return render(request, 'test/mbti_results.html', {'mbti_set': mbti_set})
