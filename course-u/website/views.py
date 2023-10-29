@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.http import HttpResponse 
 from django.shortcuts import render
 from django.contrib.auth.models import User
-
+from django.db.models import Count
 
 #from website.utils import *
 from website.forms import SignUpForm, StudentScoreForm
@@ -66,39 +66,37 @@ def home_field(request, field_id=None):
 
 @admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
 def admin_home(request):
-    #messages.success(request, 'You are in admin home')
     admin = True
 
-    #TestQuestions = Test.objects.all()
-    # get list of unique topic on TestQuestions
-    topic_list = Test.objects.values('topic').distinct()
-    topic_list = [item['topic'] for item in topic_list]
+    # Get a list of fields
+    fields = Field.objects.all()
 
-    # number of test, for each topic
-    test_count = []
-    for topic in topic_list:
-        test_count.append(Test.objects.filter(topic=topic).count())
-    
-    # makie topic_list and test_count into a dictionary
-    topic_list = dict(zip(topic_list, test_count))
+    # Query to count tests for each field
+    field_test_counts = Test.objects.values('field').annotate(test_count=Count('field'))
 
+    # Create a dictionary to store the field names and their corresponding test counts
+    field_test_count_dict = {}
+    for field_data in field_test_counts:
+        field_id = field_data['field']
+        test_count = field_data['test_count']
+        field_name = Field.objects.get(field=field_id).field_name  # Get the field name
+        field_test_count_dict[field_name] = test_count
+
+    # Get other counts
     auth_user = User.objects.all()
-    JobPosting_count = JobPosting.objects.all().count() 
+    JobPosting_count = JobPosting.objects.all().count()
     Specialization_count = Specialization.objects.all().count()
     QuestionSet_count = QuestionSet.objects.all().count()
 
-    Field_items = Field.objects.all()
-
-
     return render(request, 'admin_home.html', {
-        'admin': admin, 
-        'topic_list' : topic_list, 
-        'auth_user' : auth_user,
-        'JobPosting_count' : JobPosting_count,
-        'Specialization_count' : Specialization_count,
-        'QuestionSet_count' : QuestionSet_count,
-        'Field_items' : Field_items,
-        })
+        'admin': admin,
+        'field_test_count_dict': field_test_count_dict,
+        'auth_user': auth_user,
+        'JobPosting_count': JobPosting_count,
+        'Specialization_count': Specialization_count,
+        'QuestionSet_count': QuestionSet_count,
+        'fields': fields,  # Pass the list of fields
+    })
 
 @admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
 def admin_students(request):

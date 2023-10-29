@@ -10,13 +10,14 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from django.db.models import Q, Avg
+from django.db.models import Sum, Case, When, IntegerField, F
 
 # App imports
 from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
 from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm, MBTIResponseForm
 from assessment.models import Test, QuestionSet, UserResponse, MBTI, MBTISet, MBTIResponse
 
-from website.models import Field, Specialization
+from website.models import Field, Specialization, UserRecommendations
 
 # Other Imports
 import plotly.express as px
@@ -139,10 +140,6 @@ def start_test(request):
 
             # Start test
             request.session['test_started'] = True
-    
-
-
-
     else:
         # If no, create a new question set
         print("No incomplete test! Creating a new test...")
@@ -200,125 +197,6 @@ def start_test(request):
 
     return redirect('display_question', question_id=start)
 
-
-# def start_test(request):
-#      # delete session vairables
-#     if 'test_started' in request.session:
-#         del request.session['test_started']
-#     if 'question_set_id' in request.session:
-#         del request.session['question_set_id']
-#     if 'question_set' in request.session:
-#         del request.session['question_set']
-#     if 'questions_answered' in request.session:
-#         del request.session['questions_answered']
-#     if 'n_questions' in request.session:
-#         del request.session['n_questions']
-
-#     # Retrieve the last question set
-#     last_set = QuestionSet.objects.last()
-#     print("last_set: ", last_set)
-#     if last_set == 0 or last_set is None:
-#         # No question set exists, start a new test
-#         messages.success(request, 'You started a new Test!')
-#         set_id = 1
-#         print("No question set exists, start a new test!")
-
-#         messages.success(request, 'You started a new Test!')
-#         print("Completed Test!")
-#         #set_id = last_set.set_id + 1
-
-#         print("SET ID: ", set_id)
-
-#         question_ids = []
-#         question_ids = request.session.get('question_set', [])
-#         print("123 question_ids: ", question_ids)
-#         question_ids = []
-    
-#         request.session['test_started'] = True
-#         # Store the question set ID in the session
-#         request.session['question_set_id'] = set_id
-
-#         # Retrieve the questions for the question set
-#         question_set, start, end = get_test_questions(x=3)  # Modify this function to filter questions based on the set
-#         question_ids = question_set.values_list('question_id', flat=True)
-
-#         # Store the question IDs in the session
-#         request.session['question_set'] = list(question_ids)
-#         #request.session['question_set'] = question_set
-#         request.session['questions_answered'] = 0
-#         #request.session['n_questions'] = len(question_ids)
-#         n_questions = len(question_ids)
-#         print("n_questions: ", n_questions, ", compare to start - end: ", end - start + 1)
-#         print("question_ids: ", question_ids)
-#         request.session['n_questions'] = n_questions#end - start + 1
-
-#         # Create QuestionSet on database
-#         QuestionSet.objects.create(set_id=set_id, user=request.user, n_questions=n_questions, is_completed=False, score=0)
-
-#     else:
-#         # check if questionset is completed
-#         if last_set.is_completed:
-#             messages.success(request, 'You started a new Test!')
-#             print("Completed Test!")
-#             set_id = last_set.set_id + 1
-
-#             print("SET ID: ", set_id)
-   
-#             question_ids = []
-#             question_ids = request.session.get('question_set', [])
-#             print("123 question_ids: ", question_ids)
-#             question_ids = []
-        
-#             request.session['test_started'] = True
-#             # Store the question set ID in the session
-#             request.session['question_set_id'] = set_id
-
-#             # Retrieve the questions for the question set
-#             question_set, start, end = get_test_questions(x=5)  # Modify this function to filter questions based on the set
-#             question_ids = question_set.values_list('question_id', flat=True)
-
-#             # Store the question IDs in the session
-#             request.session['question_set'] = list(question_ids)
-#             #request.session['question_set'] = question_set
-#             request.session['questions_answered'] = 0
-#             #request.session['n_questions'] = len(question_ids)
-#             n_questions = len(question_ids)
-#             print("n_questions: ", n_questions, ", compare to start - end: ", end - start + 1)
-#             print("question_ids: ", question_ids)
-#             request.session['n_questions'] = n_questions#end - start + 1
-
-#             # Create QuestionSet on database
-#             QuestionSet.objects.create(set_id=set_id, user=request.user, n_questions=n_questions, is_completed=False, score=0)
-#         else :
-#             messages.success(request, 'You have an incomplete Test!')
-#             print("Incomplete Test!")
-#             set_id = last_set.set_id
-            
-#             # get number of unfinished response on UserResponse
-#             unfinished_response = UserResponse.objects.filter(set_id=set_id, is_answered=False).count()
-#             print("unfinished_response: ", unfinished_response) 
-
-#             request.session['test_started'] = True
-#             # Store the question set ID in the session
-#             request.session['question_set_id'] = set_id
-
-#              # Retrieve the questions for the question set
-#             question_set, start, end = get_test_questions(x=3)  # Modify this function to filter questions based on the set
-#             question_ids = question_set.values_list('question_id', flat=True)
-
-#             print("question_set: ", question_set, "start: ", start, "end: ", end)
-
-#             # Store the question IDs in the session
-#             request.session['question_set'] = list(question_ids)
-#             #request.session['question_set'] = question_set
-#             request.session['questions_answered'] = 0
-#             #request.session['n_questions'] = len(question_ids)
-#             n_questions = len(question_ids)
-#             print("n_questions: ", n_questions, ", compare to start - end: ", end - start + 1)
-#             print("question_ids: ", question_ids)
-#             request.session['n_questions'] = end - start + 1
-
-#     return redirect('display_question', question_id=start)
 
 
 def display_question(request, question_id):
@@ -618,7 +496,7 @@ def admin_test_report(request):
 
     return render(request, 'test/admin_test_report.html', {'student_scores' : student_scores})
 
-from django.db.models import Sum, Case, When, IntegerField, F
+
 def student_test_report(request, question_set_id):
 
      # get user results from QuestionSet
@@ -664,6 +542,25 @@ def student_test_report(request, question_set_id):
     # You can access the field_name and total_correct values
     for field in top_fields:
         print(field.field_name, field.total_correct)
+
+    
+     # Save recommendation to UserRecommendation
+    user_recommendation = UserRecommendations.objects.create(
+        user=request.user,
+        field_1=top_fields[0],
+        field_2=top_fields[1],
+        field_3=top_fields[2],
+        score_1=top_fields[0].total_correct,
+        score_2=top_fields[1].total_correct,
+        score_3=top_fields[2].total_correct,
+        # Additional Info Goes here, for example explanation of the recommendation
+    )  
+
+    # Save the recommendation 
+    user_recommendation.save()
+
+    # check  if user_recommendation is saved
+    print("user_recommendation: ", user_recommendation)
 
     return render(request, 'test/test_result.html', {
         'username': username,
@@ -866,6 +763,10 @@ def mbti_results(request, mbti_set_id):
 
     return render(request, 'test/mbti_results.html', {'mbti_set': mbti_set})
 
+
+################################
+#           Test CRUD          #
+################################
 
 
 
