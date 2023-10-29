@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 
+from website.models import Field
 
 TEST_TOPICS = (
     ('Python', 'Python'),
@@ -10,7 +11,7 @@ TEST_TOPICS = (
 # Create your models here.
 class Test(models.Model):
     question_id = models.AutoField(primary_key=True, serialize=False, auto_created=True)
-    topic = models.CharField(max_length=1000)# choices=TEST_TOPICS)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE, null=True, blank=True)
     question = models.CharField(max_length=1000)
     description = models.CharField(max_length=1000)
     options = models.JSONField()
@@ -18,6 +19,9 @@ class Test(models.Model):
 
     def __str__(self):
         return self.question
+
+    class Meta:
+        unique_together = ('field',)
 
 class QuestionSet(models.Model):
     set_id = models.AutoField(primary_key=True)

@@ -56,11 +56,11 @@ class Command(BaseCommand):
             #                     'TEXT'
             #                     ]
             # },
-            # base_dir + '\\static\\csv\\test_2.csv': {
+            # base_dir + '\\static\\csv\\test.csv': {
             #     'table_name': 'assessment_test',
             #     'model_name': 'Test',
-            #     'columns':  ['question_id', 'topic','question','description','options', 'correct_option',],
-            #     'attributes': ['INT PRIMARY KEY', 'VARCHAR(1000)', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
+            #     'columns':  ['question_id', 'field_id','question','description','options', 'correct_option',],
+            #     'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
             # },
             # base_dir + '\\static\\csv\\questionset.csv': {
             #     'table_name': 'assessment_questionset',
@@ -68,7 +68,7 @@ class Command(BaseCommand):
             #     'columns':  ['set_id','user_id','n_questions','is_completed','score',],
             #     'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
             # },  
-            # #selected_option,is_correct,set_id,question
+            #selected_option,is_correct,set_id,question
             # base_dir + '\\static\\csv\\userresponse.csv': {
             #     'table_name': 'assessment_userresponse',
             #     'model_name': 'UserResponse',
@@ -76,23 +76,29 @@ class Command(BaseCommand):
             #     # add default values for response and is_answered
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
             # },
-            base_dir + '\\static\\csv\\mbti.csv': {
-                'table_name': 'assessment_mbti',
-                'model_name': 'MBTI',
-                'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
-            },
-            base_dir + '\\static\\csv\\mbti_set.csv': {
-                'table_name': 'assessment_mbtiset',
-                'model_name': 'MBTISet',
-                'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
-            },
-            base_dir + '\\static\\csv\\user_mbti_response.csv': {
-                'table_name': 'assessment_mbtiresponse',
-                'model_name': 'MBTIResponse',
-                'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
+            # base_dir + '\\static\\csv\\mbti.csv': {
+            #     'table_name': 'assessment_mbti',
+            #     'model_name': 'MBTI',
+            #     'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
+            # },
+            # base_dir + '\\static\\csv\\mbti_set.csv': {
+            #     'table_name': 'assessment_mbtiset',
+            #     'model_name': 'MBTISet',
+            #     'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
+            # },
+            # base_dir + '\\static\\csv\\user_mbti_response.csv': {
+            #     'table_name': 'assessment_mbtiresponse',
+            #     'model_name': 'MBTIResponse',
+            #     'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
+            # },
+            base_dir + '\\static\\csv\\user_recommendations.csv': {
+                'table_name': 'website_userrecommendations',
+                'model_name': 'UserRecommendations',
+                'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
             },
         }
         

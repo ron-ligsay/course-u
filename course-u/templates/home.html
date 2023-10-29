@@ -5,7 +5,7 @@
 {% block head_extra %}
 <!-- Additional stylesheets or scripts specific to this page -->
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/home_.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 <!-- Include jQuery library -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,26 +16,6 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-{% if admin %}
-  <div>
-    <h3>Admin</h3>
-  </div>
-{% endif %}
-<br><br>
-<div>
-  <h3>Specialization Tracks</h3>
-  <div class="card-container" id="specialization-container">
-    {% for item in specialization_items %}
-    <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link link-offset-2 link-underline link-underline-opacity-0">
-      <div class="card text-truncate">
-        <h4>{{ item.title }}</h4>
-          <p class="small">{{ item.description }}</p>
-          <!-- Add more fields as needed -->
-      </div>
-    </a>
-    {% endfor %}
-  </div>  
-</div>
 <br><br>
 <div>
   <h3>Fields</h3>
@@ -44,13 +24,40 @@
     
     <a href="javascript:void(0);" class="card-link field-link link-offset-2 link-underline link-underline-opacity-0" data-field-id="{{ item.field }}">
       <div class="card{% if selected_field and selected_field.field_id == item.field_id %}-selected{% endif %} text-truncate">
-        <h4>{{ item.field_name }}</h4>
-        <p class="small">{{ item.description }}</p>
+        <h4 class="field_title" >{{ item.field_name }}</h4>
+        <!-- <p class="small">{{ item.description }}</p> -->
+        <!-- Check if the field is recommended -->
+        {% if user_recommendations %}
+          {% if item == user_recommendations.field_1 %}
+            <span class="recommended-label recommended_first">Top Recommendation 1</span>
+          {% elif item == user_recommendations.field_2 %}
+            <span class="recommended-label recommended_second">Top Recommendation 2</span>
+          {% elif item == user_recommendations.field_3 %}
+            <span class="recommended-label recommended_third">Top Recommendation 3</span>
+          {% endif %}
+        {% endif %}
       </div>
     </a>
     {% endfor %}
   </div>
 </div>
+<br><br>
+<div>
+  <h3>Specialization Tracks</h3>
+  <div class="card-container" id="specialization-container">
+    {% for item in specialization_items %}
+    <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link link-offset-2 link-underline link-underline-opacity-0">
+      <div class="card text-truncate">
+        <h4>{{ item.title }}</h4>
+          <p class="small specialization_description">{{ item.description }}</p>
+          <!-- Add more fields as needed -->
+      </div>
+    </a>
+    {% endfor %}
+  </div>  
+</div>
+
+
 <br><br>
 
 <div class="container">

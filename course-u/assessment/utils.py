@@ -1,6 +1,7 @@
 
 from assessment.models import Test
 from django.contrib.sessions.models import Session
+from django.db.models import Count
 
 
 def logger(message):
@@ -16,7 +17,18 @@ def get_test_questions(x=None, y=None, topic=None):
         else:
             start = 1
             end = x
-            queryset = Test.objects.filter(question_id__gte=start, question_id__lte=end)
+            
+            ## group questions by topic and count the number of questions for each topic
+            field_counts = Test.objects.values('field_id').annotate(count=Count('question_id'))
+            print("field_counts: ", field_counts)
+            # select 5 questions for each topic
+            queryset = Test.objects.none()
+            for field_count in field_counts:
+                field_queryset = Test.objects.filter(field_id=field_count['field_id'])[:x]
+                queryset = queryset.union(field_queryset)
+                print("Getting questions for field: ", field_count['field_id'])
+            
+
     else:
         queryset = Test.objects.all()
 

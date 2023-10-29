@@ -39,10 +39,10 @@
                 <th> Add Questions </th>
             </thead>
             <tbody>
-                {% for topic, count in topic_list.items %}
+                {% for field, count in field_test_count_dict.items %}
                 <tr>
 
-                    <td><a href="">{{ topic }} </a></td>
+                    <td><a href="">{{ field }} </a></td>
                     <td> {{ count }} </td>
                     <td><a href="{% url 'create_test' %}" class="btn btn-primary">Create</a></td>
                 </tr>
@@ -62,10 +62,10 @@
                 <th> View </th>
             </thead>
             <tbody>
-                {% for item in Field_items %}
+                {% for item in fields %}
                 <tr>
                     <td> {{ item.field_name }}</td>
-                    <td> <a class="btn btn-primary" href="">View</a> </td>
+                    <td> <a class="btn btn-primary" href="{% url 'field_page' item.field %}">View</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>

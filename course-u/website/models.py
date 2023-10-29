@@ -23,6 +23,23 @@ class Specialization(models.Model):
     # class Meta:
     #     unique_together = ('field')
 
+class UserRecommendations(models.Model):
+    recommendation_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    field_1 = models.ForeignKey(Field, on_delete=models.CASCADE, related_name='field_1', null=True, blank=True)
+    field_2 = models.ForeignKey(Field, on_delete=models.CASCADE, related_name='field_2', null=True, blank=True)
+    field_3 = models.ForeignKey(Field, on_delete=models.CASCADE, related_name='field_3', null=True, blank=True)
+    score_1 = models.FloatField(null=True, blank=True)
+    score_2 = models.FloatField(null=True, blank=True)
+    score_3 = models.FloatField(null=True, blank=True)
+    # You can add other fields here for additional information, such as scores, timestamps, etc.
+
+    def __str__(self):
+        return f"Recommendations for User: {self.user.username}"
+
+    class Meta:
+        ordering = ['user']  # Specify the default ordering for UserRecommendations
+
 
 
 # Optional if you want to add additional fields to the user model

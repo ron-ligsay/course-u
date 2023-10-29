@@ -63,7 +63,8 @@ def remove_migration_files(excluded_files=None):
 
     # Print the list of deleted files
     for deleted_file in deleted_files:
-        print(f"Deleted: {deleted_file}")
+        #print(f"Deleted: {deleted_file}")
+        None
 
 
 # Call the function to find and print .pyc files
@@ -87,7 +88,7 @@ def delete():
     remove_migration_files(excluded_files)
 
 # Use this to verfiy that the files that will be deleted
-check()
+#check()
 
 # Once verified, you can delete the files
 delete()

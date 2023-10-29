@@ -49,3 +49,12 @@ class MBTIResponseForm(forms.ModelForm):
     class Meta:
         model = MBTIResponse
         fields = ['selected_option']  # Include only the selected_option field
+
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Test
+        fields = '__all__'
+        widgets = {
+            'options': forms.JSONField()
+        }

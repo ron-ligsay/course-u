@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Deletion</title>
+</head>
+<body>
+    <h1>Confirm Deletion</h1>
+    <p>Are you sure you want to delete this question?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete">
+    </form>
+    <a href="{% url 'question_list' %}">Cancel</a>
+</body>
+</html>
