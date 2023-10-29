@@ -60,6 +60,9 @@
   background-color: lightblue;
 }
 
+.specialization_title{
+  font-size: 16px;
+}
 
 .specialization_description{
   /* dont extend out the card */

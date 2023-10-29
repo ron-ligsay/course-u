@@ -29,15 +29,36 @@
 </head>
 
 <body>
+  <nav class="navbar top_nav fixed-top navbar-expand-lg navbar-dark">
+    <div class="container"> <!-- Use container for responsive layout -->
+      <a href="#" class="navbar-brand">Course-u</a>
+      <ul class="navbar-nav ml-auto"> <!-- Use ul for list of items -->
+        <li class="nav-item">
+          <p class="navbar-text my-0" style="font-size: 14px;">Welcome, <a href="#" class="nav-link">username</a></p>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <img src="path-to-your-profile-image" alt="Profile Image" class="img-fluid rounded-circle" width="15">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" style="font-size: 14px;">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  
 
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-3 col-lg-2 d-md-block ">
+      <nav class="">
         <!-- Vertical navbar content here -->
         
         {% include 'navbar.html' %}
       </nav>
-      <main role="main" class="col-md-12 ml-sm-auto col-lg-10 px-md-4">
+      <main role="main" class="px-md-4">
+        
         <!-- Main content here -->
         {% if messages %}
           {% for message in messages %}
@@ -62,6 +83,42 @@
             <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
           </div>
         {% endif %}
+        <!-- footer -->
+        <footer class="footer mt-auto py-3 bg-light">
+          <div class="container">
+            <span class="text-muted">Course-U</span>
+            <!-- contacts -->
+            <div class="row">
+              <div class="col-md-4">
+                <h5>Contacts</h5>
+                <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Email</a></li>
+                  <li><a class="link-secondary" href="#">Facebook</a></li>
+                  <li><a class="link-secondary" href="#">Instagram</a></li>
+                  <li><a class="link-secondary" href="#">Twitter</a></li>
+                </ul>
+              </div>
+              <!-- about -->
+              <div class="col-md-4">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Team</a></li>
+                  <li><a class="link-secondary" href="#">Locations</a></li>
+                  <li><a class="link-secondary" href="#">Privacy</a></li>
+                  <li><a class="link-secondary" href="#">Terms</a></li>
+                </ul>
+              </div>
+              <!-- others -->
+              <div class="col-md-4">
+                <h5>Others</h5>
+                <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Help</a></li>
+                  <li><a class="link-secondary" href="#">FAQ</a></li>
+                  <li><a class="link-secondary" href="#">Blog</a></li>
+                </ul>
+              </div>
+          </div>
+        </footer>
       </main>
     </div>
   </div>
