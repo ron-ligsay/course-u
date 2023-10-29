@@ -20,6 +20,12 @@
   /* Prevent cards from shrinking to fit */
 }
 
+.field_title
+{
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .recommended-label
 {
   /* Small font */
@@ -52,6 +58,13 @@
 .card-selected{
   border: 1px solid blue;
   background-color: lightblue;
+}
+
+
+.specialization_description{
+  /* dont extend out the card */
+  overflow: hidden;
+  
 }
 
 /* remove a styles */

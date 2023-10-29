@@ -24,7 +24,7 @@
     
     <a href="javascript:void(0);" class="card-link field-link link-offset-2 link-underline link-underline-opacity-0" data-field-id="{{ item.field }}">
       <div class="card{% if selected_field and selected_field.field_id == item.field_id %}-selected{% endif %} text-truncate">
-        <h4>{{ item.field_name }}</h4>
+        <h4 class="field_title" >{{ item.field_name }}</h4>
         <!-- <p class="small">{{ item.description }}</p> -->
         <!-- Check if the field is recommended -->
         {% if user_recommendations %}
@@ -49,7 +49,7 @@
     <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link link-offset-2 link-underline link-underline-opacity-0">
       <div class="card text-truncate">
         <h4>{{ item.title }}</h4>
-          <p class="small">{{ item.description }}</p>
+          <p class="small specialization_description">{{ item.description }}</p>
           <!-- Add more fields as needed -->
       </div>
     </a>
