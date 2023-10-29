@@ -16,10 +16,14 @@ urlpatterns = [
     path('question/<int:question_id>/', views.display_question, name='display_question'),
     path('submit_question/<int:question_id>/', views.submit_question, name='submit_question'),
     path('test_home/', views.test_home, name='test_home'),
-    path('test_reults/<int:question_set_id>',views.student_test_report,name='test_results'),
-    path('test_reults_overall/',views.student_test_report_overall,name='test_results_overall'),
+    
     path('test_overview/', views.test_overview, name='test_overview'),
     path('submit_test/', views.submit_test, name='submit_test'),
+    
+
+    path('test_reults/<int:question_set_id>',views.student_test_report,name='test_results'),
+    path('test_reults_overall/',views.student_test_report_overall,name='test_results_overall'),
+    
     path('create_test/', views.create_test, name='create_test'),
     path('update_test/<int:question_id>/', views.update_test, name='update_test'),
     #path('admin_report/', views.admin_test_report, name=('admin_report')),

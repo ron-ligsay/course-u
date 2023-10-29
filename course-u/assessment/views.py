@@ -628,18 +628,6 @@ def student_test_report(request, question_set_id):
     # get user name
     username = User.objects.get(id=user_id)
 
-    # Query to get total correct answers per field for the specified QuestionSet
-    # field_correct_answers = Field.objects.filter(
-    #     test__userresponse__question_set_id=question_set_id,
-    # ).annotate(
-    #     total_correct=Sum(
-    #         Case(
-    #             When(test__userresponse__is_correct=True, then=1),
-    #             default=0,
-    #             output_field=IntegerField()
-    #         )
-    #     )
-    # )
     field_correct_answers = Field.objects.filter(
         test__userresponse__set_id=question_set_id,
     ).annotate(
@@ -685,66 +673,51 @@ def student_test_report(request, question_set_id):
 
 def student_test_report_overall(request):
 
-    # get user results from QuestionSet
+    # Get user results from all QuestionSets
     user_id = request.user.id
     user_results = QuestionSet.objects.filter(user_id=user_id)
 
-    # get user name
+    # Get user name
     username = User.objects.get(id=user_id)
 
-    # for each user_result get set_id
-    my_id = []
-    for result in user_results:
-        my_id.append(result.set_id)
-    
-    # for each my_id get all responses
-    # user_responses = []
-    # for id in my_id:
-    #     user_responses.append(UserResponse.objects.filter(set_id=id))
-    
-    # get all user responses for the user
-    user_responses = UserResponse.objects.filter(Q(set_id__in=my_id))
+    # Query to get total correct answers per field for all QuestionSets
+    field_correct_answers = Field.objects.filter(
+        test__userresponse__set__user_id=user_id,
+    ).annotate(
+        total_correct=Sum(
+            Case(
+                When(test__userresponse__is_correct=True, then=1),
+                default=0,
+                output_field=IntegerField()
+            )
+        )
+    )
 
-     # in Test, count number of correct answer per Test.field and store in a dictionary
-    fields = Field.objects.all()
-    field_correct_answers = {}
-    for field in fields:
-        print("field: ", field)
-        correct_answers = UserResponse.objects.filter(
-            is_correct=True,
-            question__test__field__field_name=field
-        ).count()
-        field_correct_answers[field.field_name] = correct_answers
+    # You can access the field_name and total_correct values
+    for field in field_correct_answers:
+        print(field.field_name, field.total_correct)
 
-    # topics = Test.objects.values('topic')
-    # topics = [topic['topic'] for topic in topics]
-    # correct_answers = []
-    # for topic in topics:
-    #     correct_answers.append(UserResponse.objects.filter(is_correct=True).count())
-    
-    # create a dictionary of topics and correct answers
-    #topic_correct_answers = dict(zip(topics, correct_answers))
-
-    # create a plotly pie chart
-    fig = px.pie(values=list(field_correct_answers.values()), names=list(field_correct_answers.keys()), title='Correct Answers per Field')
+    # Create a plotly pie chart
+    fig = px.pie(
+        values=list(field_correct_answers.values_list("total_correct", flat=True)),
+        names=list(field_correct_answers.values_list("field_name", flat=True)),
+        title='Correct Answers per Field'
+    )
     fig.update_traces(textposition='inside', textinfo='percent+label')
     fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
-    
-    # convert fig to html
-    graph = fig.to_html(full_html=False, default_height=500, default_width=700)
 
-    # get top 3 topics
-    top_fields = sorted(field_correct_answers.items(), key=lambda x: x[1], reverse=True)[:3]
+    # Get top 3 fields with the most correct answers
+    top_fields = field_correct_answers.order_by('-total_correct')[:3]
 
-    # how to access the topic name 
-    
+    # You can access the field_name and total_correct values
+    for field in top_fields:
+        print(field.field_name, field.total_correct)
 
     return render(request, 'test/test_result.html', {
-        'username' : username,
-        #'user_results' : user_results, 'user_responses' : user_responses, 'topic_correct_answers' : topic_correct_answers, 
-        'top_topics' : top_fields, 
-        'graph' : graph
-        })
+        'username': username,
+        'top_fields': top_fields,
+        'graph': fig.to_html(full_html=False, default_height=500, default_width=700)
+    })
 
 def test_query(request):
     questions,start,end = get_test_questions(x=1, y=5)
