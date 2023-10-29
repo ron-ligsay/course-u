@@ -18,6 +18,7 @@
 <div class="row">
     <div class=" ">
         <h5>Specializations</h5>
+        <p class="small">Specializations only for {{ field_object.field_name }}, to view all specialization go <a href="#">here</a>.</p>
         <div class="card card-body">
             <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
             <table class="table table-sm">
@@ -49,8 +50,42 @@
     </div>
 </div>
 <br>
+<div class="row">
+    <div class=" ">
+        <h5>Test</h5>
+        <p class="small">Questions only for {{ field_object.field_name }}, to view all questions go <a href="#">here</a>.</p>
+        <div class="card card-body">
+            <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+            <table class="table table-sm">
+                <thead>
+                    <th>ID</th>
+                    <th>Question</th>
+                    <th>Description</th>
+                    <th>Options</th>
+                    <th>Correct Option</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    {% for item in test_items %}
+                    <tr>
+                        <td>{{ item.question_id}}</td>
+                        <td>{{ item.question}}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.options}}</td>
+                        <td>{{ item.correct_option}}</td>
+                        <td><a class="btn btn-info" href="">Update</a></td>
+                        <td><a class="btn btn-danger" href="">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br><br>
 <a class="btn btn-primary" href="{% url 'admin_home' %}" >Go Back</a>
 
 
-<br><br>
+<br><br><br>
 {% endblock content %}
