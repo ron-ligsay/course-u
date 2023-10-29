@@ -20,25 +20,51 @@
   /* Prevent cards from shrinking to fit */
 }
 
+.recommended-label
+{
+  /* Small font */
+  font-size: 12px;
+}
+
+.recommended_first
+{
+  /* color gold */
+  color: #FFD700;
+}
+
+.recommended_second
+{
+  /* color silver */
+  color: #C0C0C0;
+}
+
+.recommended_third
+{
+  /* color bronze */
+  color: #CD7F32;
+}
+
 .card h3 {
   margin: 0;
   font-size: 18px;
 }
 
+.card-selected{
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+
 /* remove a styles */
-main a {
+a {
   text-decoration: none;
   color: #000;
 }
 
-main a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-main a:visited {
-  color: #000;
-}
 
-main a:active {
+a:active {
   color: #000;
 }
