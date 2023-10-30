@@ -57,3 +57,160 @@
 {
     color: var(--white);
 }
+
+/* tables */
+
+.details
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 30px;
+    /* margin-top: 10px; */
+}
+
+.details .accounts
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.cardHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2
+{
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.btn
+{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+.details table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+
+.details table thead th
+{
+    font-weight: 600;
+}
+.details table thead th:first-child
+{
+    text-align: start;
+}
+
+.details .accounts table tr
+{
+    color: var(--black1);
+    border-bottom: 1px solid var(--black1);
+}
+
+.details .accounts table tr:last-child
+{
+    border-bottom: none;
+}
+.details .accounts table tr:hover
+{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.details .accounts table tr td
+{
+    padding: 10px;
+}
+
+.details .accounts table tr td:last-child
+{
+    text-align: end;
+}
+
+.details .accounts table tr td:nth-child(2)
+{
+    text-align: center;
+}
+
+.status.user_active
+{
+    padding: 2px 4px;
+    background-color: yellowgreen;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.user_inactive
+{
+    padding: 2px 4px;
+    background-color: orangered;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.users
+{
+    position: relative;
+    display: grid;
+    min-width: 500px;
+    padding: 20px;
+    background-color: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.users .imgBx
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.users .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.users table tr:hover
+{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.users table tr td
+{
+    padding: 10px;
+}

@@ -226,8 +226,7 @@ body{
 /* footer */
 footer
 {
-    /* always at bottom */
-    position: absolute;
+    /* always at bottom position: absolute;*/
     bottom: 0;
     width: 100%;
     padding: 20px;
