@@ -113,6 +113,11 @@
     - Provide clear documentation to guide students on how to use the recommendation system and offer user support as needed.
 - [ ]: Feedback Loop:
     - Establish a feedback loop with students to collect their input on the recommendations and continuously improve the system.
+- [ ]: Configuration - database
+    - Records variables such as number of questions per field
+- [ ]: User Interaction - database
+
+
 
 ## Field/Specialization Section
 - [ ]: Add Field/Specialization Table List on Admin_home

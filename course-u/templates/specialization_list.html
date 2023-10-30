@@ -1,8 +1,8 @@
 {% for item in specialization_items %}
-<a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link">
-  <div class="card">
-    <h4>{{ item.title }}</h4>
-      <p class="small">{{ item.description }}</p>
+<a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link link-offset-2 link-underline link-underline-opacity-0">
+  <div class="card text-truncate">
+    <h4 class="specialization_title">{{ item.title }}</h4>
+      <!-- <p class="small specialization_description">{{ item.description }}</p> -->
       <!-- Add more fields as needed -->
   </div>
 </a>

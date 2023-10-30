@@ -1,34 +1,71 @@
 
-<hr><div class="row">
-<div class="col-md-6 ">
-    <h5>Students</h5>
-    <div class="card card-body">
-        <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
-        <table class="table table-sm">
+<div class="details">
+    <!-- accoutns table -->
+    <div class="accounts">
+        <div class="cardHeader">
+            <h2>Recent Orders</h2>
+            <a href="#" class="btn">View All</a>
+        </div>
+        <table class="">
             <thead>
-                <!-- <th>ID</th> -->
-                <th>Username</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Staff</th>
                 <th>Active</th>
-                <!-- <th>Date Joined</th> -->
             </thead>
             <tbody>
                 {% for user in auth_user %}
                 <tr>
-                    <!-- <td>{{ user.id}}</td> -->
-                    <td><a href="#">{{ user.username}}</a></td>
-                    <td>{{ user.first_name }} {{ user.last_name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td> {% if user.is_staff %} check {% else %} X {% endif %}</td>
+                    <td><a href="#">{% if user.first_name%} {{ user.first_name}} {{ user.last_name}} {% else %} {{ user.username }}{% endif %}</a></td>                  
+                    <td>{{ user.email }}</td>                
+                    <td class="status {% if user.is_active%} user_active {% else %} user_inactive {% endif %}" >{{ user.is_active}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Field Table -->
+    <div class="users">
+        <div class="cardHeader">
+            <h2>Track / Fields</h2>
+            <a href="" class="btn">View All</a>
+        </div>
+        <table class="table table-sm">
+            {% for user in auth_user %}
+            <tr>
+                <td width="60px"><div class="imgBx"><img src="" alt=""></div></td>
+                <td><h4>{{ user.first_name }}<br><span>{{ user.last_name }}</span></h4></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+<hr>
+<div class="row">
+<div class="col-md-6 ">
+    <h5>Students</h5><a class="btn btn-primary" href="{% url 'admin_students' %}">View All Student</a><br><br>
+    <div class="card card-body">
+        <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+        <table class="table table-sm">
+            <thead>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Active</th>
+            </thead>
+            <tbody>
+                {% for user in auth_user %}
+                <tr>
+                    <td><a href="#">{{ user.username}}</a></td>                  
+                    <td>{{ user.email }}</td>                
                     <td>{{ user.is_active}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-    </div><br><br>
-    <h5>Test</h5>
+    </div> 
+    <br><br>
+    <h5>Test</h5><a class="btn btn-primary" href="{% url 'admin_report' %}"> Assessment Report </a><br><br>
     <div class="card card-body">
         <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
         <table class="table table-sm">
@@ -38,10 +75,10 @@
                 <th> Add Questions </th>
             </thead>
             <tbody>
-                {% for topic, count in topic_list.items %}
+                {% for field, count in field_test_count_dict.items %}
                 <tr>
 
-                    <td><a href="">{{ topic }} </a></td>
+                    <td><a href="">{{ field }} </a></td>
                     <td> {{ count }} </td>
                     <td><a href="{% url 'create_test' %}" class="btn btn-primary">Create</a></td>
                 </tr>
@@ -52,7 +89,7 @@
 </div>
 <br><br>
 <div class="col-md-6">
-    <h5>Field</h5>
+    <h5>Field / Specialization </h5>
     <div class="card card-body">
         <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
         <table class="table table-sm">
@@ -61,10 +98,10 @@
                 <th> View </th>
             </thead>
             <tbody>
-                {% for item in Field_items %}
+                {% for item in fields %}
                 <tr>
                     <td> {{ item.field_name }}</td>
-                    <td> <a class="btn btn-primary" href="">View</a> </td>
+                    <td> <a class="btn btn-primary" href="{% url 'field_page' item.field %}">View</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,0 +1,91 @@
+{% extends 'base_user.html' %}
+
+{% block title %}Specialization{% endblock %}
+
+{% block head_extra %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block content %}
+
+<br>
+<h2>{{ field_object.field_name }}</h2>
+<p>{{ field_object.description }}</p>
+
+<br>
+<div class="row">
+    <div class=" ">
+        <h5>Specializations</h5>
+        <p class="small">Specializations only for {{ field_object.field_name }}, to view all specialization go <a href="#">here</a>.</p>
+        <div class="card card-body">
+            <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+            <table class="table table-sm">
+                <thead>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <!-- <th>Name</th> -->
+                    <th>Description</th>
+                    <!-- <th>Staff</th> -->
+                    <th>Roadmap_ID</th>
+                    <!-- <th>Date Joined</th> -->
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    {% for item in specialization_items %}
+                    <tr>
+                        <td>{{ item.specialization_id}}</td>
+                        <td><a href="#">{{ item.title}}</a></td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.roadmap_id}}</td>
+                        <td><a class="btn btn-info" href="">Update</a></td>
+                        <td><a class="btn btn-danger" href="">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class=" ">
+        <h5>Test</h5>
+        <p class="small">Questions only for {{ field_object.field_name }}, to view all questions go <a href="#">here</a>.</p>
+        <div class="card card-body">
+            <!-- <a class="btn bth-primary btn-sm btn-block" href="">Create</a> -->
+            <table class="table table-sm">
+                <thead>
+                    <th>ID</th>
+                    <th>Question</th>
+                    <th>Description</th>
+                    <th>Options</th>
+                    <th>Correct Option</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    {% for item in test_items %}
+                    <tr>
+                        <td>{{ item.question_id}}</td>
+                        <td>{{ item.question}}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.options}}</td>
+                        <td>{{ item.correct_option}}</td>
+                        <td><a class="btn btn-info" href="">Update</a></td>
+                        <td><a class="btn btn-danger" href="">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br><br>
+<a class="btn btn-primary" href="{% url 'admin_home' %}" >Go Back</a>
+
+
+<br><br><br>
+{% endblock content %}

@@ -1,22 +1,23 @@
 {% extends 'base_user.html' %}
 
-{% block title %}Home 2{% endblock %}
+{% block title %}Dashboard{% endblock %}
 
 {% block head_extra %}
+{% load static %}
 <!-- Additional stylesheets or scripts specific to this page -->
-{% load static }
-
+<link rel="stylesheet" href="{% static 'css/admin_home.css' %}">
 {% endblock head_extra %}
 
 
 {% block content %}
 
 {% if user.is_authenticated %}
-    {% if admin %}
+    <!-- {% if admin %}
     <div>
-        <p>Welcome Admin, {{ user.username}}</p>
+        <p>You are on Dashboard Page, only accessible by Admins.</p>
     </div>
-    {% endif %}
+    {% endif %} -->
+
     {% include 'status.html' %}
 
     <!-- <div class="row">
@@ -29,7 +30,9 @@
             </div>
         </div>
     </div> -->
+
     {% include 'admin_tables.html' %}
+    
 {% else %}
 
 {% endif %}

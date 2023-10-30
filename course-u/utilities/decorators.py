@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User, Group
+from django.contrib import messages
 # Decorator for views that checks that the user is logged in, redirecting
 
 def unauthenticated_user(view_func):
@@ -36,7 +38,7 @@ def allowed_users(allowed_roles=[]):
 
 # 
 # 
-# 
+# @login_required(login_url='login_user')
 def admin_only(view_func):
     def wrapper_function(request, *args, **kwargs):
         group = None
@@ -52,6 +54,7 @@ def admin_only(view_func):
             return view_func(request, *args, **kwargs)
 
         else:
+            message.error(request, 'You are not authorized to view this page. This is for Admin only')
             return HttpResponse('You are not authorized to view this page. This is for Admin only')
 
     return wrapper_function

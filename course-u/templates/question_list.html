@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Questions List</title>
+</head>
+<body>
+    <h1>Test Questions List</h1>
+    <ul>
+        {% for question in questions %}
+            <li>
+                {{ question.question }}
+                <a href="{% url 'question_update' question.pk %}">Edit</a>
+                <a href="{% url 'question_delete' question.pk %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No questions found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'question_create' %}">Create New Question</a>
+</body>
+</html>

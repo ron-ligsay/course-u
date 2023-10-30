@@ -15,7 +15,10 @@ class Command(BaseCommand):
             'django_content_type', 'django_migrations', 'django_session', 
             'jobs_jobposting', 'website_specialization', 'website_field' ]
         table_names = [
-            'assessment_userresponse','assessment_questionset', 'assessment_test',  'website_specialization', 'website_field','website_userprofile', 'jobs_jobposting'
+            'assessment_userresponse','assessment_questionset', 'assessment_test',  
+            'assessment_mbtiresponse', 'assessment_mbti', 'assessment_mbtiset',
+            #'website_specialization', 'website_field','website_userprofile', 
+            #'jobs_jobposting'
         ]
 
         # Iterate through the table names and delete each table

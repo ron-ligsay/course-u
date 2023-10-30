@@ -7,11 +7,14 @@
     <div>
         {{ graph|safe }}
     </div>
+    <div>
+        {{ bar_plot|safe }}
+    </div>
 
     <h4>Top 3 topics</h4>
-    {% for topic, correct_answers in top_topics %}
+    {% for field in top_fields %}
         <li>
-            <a href="">{{ topic }}</a>
+            <a href="">{{ field }}</a>
         </li>
 
     {% endfor %}

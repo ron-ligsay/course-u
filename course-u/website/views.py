@@ -9,11 +9,11 @@ from django.urls import reverse
 from django.http import HttpResponse 
 from django.shortcuts import render
 from django.contrib.auth.models import User
-
+from django.db.models import Count
 
 #from website.utils import *
 from website.forms import SignUpForm, StudentScoreForm
-from website.models import Specialization, Field
+from website.models import Specialization, Field, UserRecommendations
 from utilities.decorators import unauthenticated_user, allowed_users, admin_only
 
 from assessment.models import Test, QuestionSet
@@ -29,20 +29,74 @@ import plotly.express as px
 logger = logging.getLogger("django") # name of logger : django
 
 
-#@login_required(login_url='login_user')
-#@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
+@login_required(login_url='login_user')
+@allowed_users(allowed_roles=['admin','staff','student','instructor']) # only users on the list can access this page, ie. admin and staff
 def home(request):
-    logger.debug("User: " + str(request.user) + " is accessing home page")
+    # logger.debug("User: " + str(request.user) + " is accessing home page")
+    # logger.info("User: " + str(request.user) + " is accessing home page")
+    # logger.warning("User: " + str(request.user) + " is accessing home page")
+    # logger.error("User: " + str(request.user) + " is accessing home page")
+    # logger.critical("User: " + str(request.user) + " is accessing home page")
+
     specialization_items = Specialization.objects.all()
     field_items = Field.objects.all()
+    # Fetch user recommendations
+    user_recommendations = None
+    if request.user.is_authenticated:
+        user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
 
-    return render(request, 'home.html', {'specialization_items': specialization_items, 'field_items': field_items})
+    # Create a list to store the recommended fields
+    recommended_fields = []
+
+    # Order recommended fields first
+    if user_recommendations:
+        recommended_fields.extend([user_recommendations.field_1, user_recommendations.field_2, user_recommendations.field_3])
+
+    print("recommended_fields: ", recommended_fields)
+
+    # Use a list comprehension to get the IDs of the recommended fields
+    recommended_field_ids = [field.pk for field in recommended_fields]
+
+    print("recommended_field_ids: ", recommended_field_ids)
+
+    # Filter out the recommended fields from the field_items queryset
+    field_items = field_items.exclude(pk__in=recommended_field_ids)
+
+
+    return render(request, 'home.html', {
+        'specialization_items': specialization_items, 
+        'field_items': recommended_fields + list(field_items),
+        'user_recommendations': user_recommendations
+        })
 
 
 @allowed_users(allowed_roles=['admin','staff','student','instructor'])
 def home_field(request, field_id=None):
+    print("On home_field, field_id: ", field_id)
     field_items = Field.objects.all()
     selected_field = None
+
+    # Fetch user recommendations
+    user_recommendations = None
+    if request.user.is_authenticated:
+        user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+
+    # Create a list to store the recommended fields
+    recommended_fields = []
+
+    # Order recommended fields first
+    if user_recommendations:
+        recommended_fields.extend([user_recommendations.field_1, user_recommendations.field_2, user_recommendations.field_3])
+
+    print("recommended_fields: ", recommended_fields)
+
+    # Use a list comprehension to get the IDs of the recommended fields
+    recommended_field_ids = [field.pk for field in recommended_fields]
+
+    print("recommended_field_ids: ", recommended_field_ids)
+
+    # Filter out the recommended fields from the field_items queryset
+    field_items = field_items.exclude(pk__in=recommended_field_ids)
 
     if field_id is not None:
         selected_field = get_object_or_404(Field, field=field_id)
@@ -52,50 +106,49 @@ def home_field(request, field_id=None):
         specialization_items = Specialization.objects.all()
         messages.success(request, "specialization items is not filtered")
 
+    
     return render(request, 'specialization_list.html', {
         'specialization_items': specialization_items,
-        'field_items': field_items,
+        'field_items': recommended_fields + list(field_items),
         'selected_field': selected_field,
+        'user_recommendations': user_recommendations  # Pass the user recommendations to the template
     })
 
-#@login_required(login_url='login_user')
-#@admin_only # only admin can access this page
+@admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
 def admin_home(request):
-    #messages.success(request, 'You are in admin home')
     admin = True
 
-    #TestQuestions = Test.objects.all()
-    # get list of unique topic on TestQuestions
-    topic_list = Test.objects.values('topic').distinct()
-    topic_list = [item['topic'] for item in topic_list]
+    # Get a list of fields
+    fields = Field.objects.all()
 
-    # number of test, for each topic
-    test_count = []
-    for topic in topic_list:
-        test_count.append(Test.objects.filter(topic=topic).count())
-    
-    # makie topic_list and test_count into a dictionary
-    topic_list = dict(zip(topic_list, test_count))
+    # Query to count tests for each field
+    field_test_counts = Test.objects.values('field').annotate(test_count=Count('field'))
 
+    # Create a dictionary to store the field names and their corresponding test counts
+    field_test_count_dict = {}
+    for field_data in field_test_counts:
+        field_id = field_data['field']
+        test_count = field_data['test_count']
+        field_name = Field.objects.get(field=field_id).field_name  # Get the field name
+        field_test_count_dict[field_name] = test_count
+
+    # Get other counts
     auth_user = User.objects.all()
-    JobPosting_count = JobPosting.objects.all().count() 
+    JobPosting_count = JobPosting.objects.all().count()
     Specialization_count = Specialization.objects.all().count()
     QuestionSet_count = QuestionSet.objects.all().count()
 
-    Field_items = Field.objects.all()
-
-
     return render(request, 'admin_home.html', {
-        'admin': admin, 
-        'topic_list' : topic_list, 
-        'auth_user' : auth_user,
-        'JobPosting_count' : JobPosting_count,
-        'Specialization_count' : Specialization_count,
-        'QuestionSet_count' : QuestionSet_count,
-        'Field_items' : Field_items,
-        })
+        'admin': admin,
+        'field_test_count_dict': field_test_count_dict,
+        'auth_user': auth_user,
+        'JobPosting_count': JobPosting_count,
+        'Specialization_count': Specialization_count,
+        'QuestionSet_count': QuestionSet_count,
+        'fields': fields,  # Pass the list of fields
+    })
 
-
+@admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
 def admin_students(request):
     auth_user = User.objects.all()
     return render(request, 'admin_students.html', {'auth_user': auth_user})
@@ -211,7 +264,7 @@ def specialization_page(request, item_id):
     return render(request, 'specialization_page.html', {'specialization_item': specialization_item})
 
 
-
+@admin_only
 def admin_report(request):
     sets = QuestionSet.objects.all()
     username = request.GET.get('username')
@@ -243,3 +296,19 @@ def admin_report(request):
 
     context = {'chart': chart, 'form': StudentScoreForm()}
     return render(request, 'admin_report.html', context)
+
+
+def field_page(request, field_id=None):
+
+    # Field object
+    field_object = Field.objects.get(field=field_id)
+
+    # get specialization items with field_id
+    specialization_items = Specialization.objects.filter(field=field_id)
+
+    print("Field page,  SPecialization items: ", specialization_items)
+
+    # Get Test objects with field_id
+    test_items = Test.objects.filter(field=field_id)
+    
+    return render(request, 'field.html', {'field_object' : field_object, 'specialization_items': specialization_items, 'test_items': test_items})
