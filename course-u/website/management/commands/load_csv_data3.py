@@ -94,11 +94,23 @@ class Command(BaseCommand):
             #     'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
             # },
-            base_dir + '\\static\\csv\\user_recommendations.csv': {
-                'table_name': 'website_userrecommendations',
-                'model_name': 'UserRecommendations',
-                'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
+            # base_dir + '\\static\\csv\\user_recommendations.csv': {
+            #     'table_name': 'website_userrecommendations',
+            #     'model_name': 'UserRecommendations',
+            #     'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
+            # },
+            base_dir + '\\static\\csv\\skill.csv': {
+                'table_name': 'website_skill',
+                'model_name': 'Skill',
+                'columns':  ["id","skill"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)"]
+            },
+            base_dir + '\\static\\csv\\test_skill.csv': {
+                'table_name': 'assessment_test_skills',
+                'model_name': 'TestSkill',
+                'columns':  ["id","test_id","skill_id"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
             },
         }
         
@@ -128,15 +140,15 @@ class Command(BaseCommand):
                 cursor.execute(query)
                 connection.commit()
                 print("Now loading data to the table...")
-                # Load data from CSV
-                with open(csv_file_path, 'r') as file:
-                    csv_reader = csv.DictReader(file)
-                    for row in csv_reader:
-                        columns = ', '.join(row.keys())
-                        placeholders = ', '.join(['%s'] * len(row))
-                        query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
-                        print("query: ", query)
-                        cursor.execute(query, tuple(row.values()))
+            # Load data from CSV
+            with open(csv_file_path, 'r') as file:
+                csv_reader = csv.DictReader(file)
+                for row in csv_reader:
+                    columns = ', '.join(row.keys())
+                    placeholders = ', '.join(['%s'] * len(row))
+                    query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
+                    print("query: ", query)
+                    cursor.execute(query, tuple(row.values()))
                     
         connection.commit()
         cursor.close()
