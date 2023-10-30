@@ -7,11 +7,27 @@ body{
   background-image: url("../images/bgg.png");
   background-size: cover;
 }
-
+/* .container
+{
+    position: relative;
+    width: 100%;
+} */
 .top_nav{
-  background-color: #0D1117;
+  background-color: #f9f9f9;
+  /* drop down shadow */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  
   
 }
+
+ion-icon:hover{
+  color: rgb(228, 95, 65);
+  cursor: pointer;
+}
+
+
+
+/*  */
 
 .logo {
   display: flex;

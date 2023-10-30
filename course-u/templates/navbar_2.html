@@ -1,18 +1,16 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-
 <div class="navigation">
     <ul>
-        {% if user.is_authenticated %}
-        {% if request.user.is_staff %}
         <li>
             <a href="#">
                 <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
                 <span class="title"> Course-U </span>
             </a>
         </li>
+        {% if user.is_authenticated %}
+        {% if request.user.is_staff %}
+        
         <li>
-            <a href="#">
+            <a href="{% url 'admin_home' %}">
                 <span class="icon"><ion-icon name="easel-outline"></ion-icon></span>
                 <span class="title"> Dashboard </span>
             </a>

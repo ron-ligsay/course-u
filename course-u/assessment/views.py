@@ -21,6 +21,7 @@ from website.models import Field, Specialization, UserRecommendations
 
 # Other Imports
 import plotly.express as px
+from plotly.offline import plot
 
 # Create your views here:
 
@@ -518,7 +519,6 @@ def student_test_report(request, question_set_id):
         )
     )
 
-
     # You can access the field_name and total_correct values
     for field in field_correct_answers:
         print(field.field_name, field.total_correct)
@@ -562,10 +562,30 @@ def student_test_report(request, question_set_id):
     # check  if user_recommendation is saved
     print("user_recommendation: ", user_recommendation)
 
+    # Get a count of correct user responses for each skill
+    skill_correct_counts = Skill.objects.filter(
+        test__userresponse__set_id=question_set_id,
+        test__userresponse__is_correct=True
+    ).annotate(correct_count=Count('test__userresponse'))
+
+    # Create a bar graph for correct skill counts
+    skill_names = list(skill_correct_counts.values_list("skill", flat=True))
+    correct_counts = list(skill_correct_counts.values_list("correct_count", flat=True))
+
+    bar_fig = px.bar(
+        x=skill_names,
+        y=correct_counts,
+        labels={'x': 'Skill', 'y': 'Correct Count'},
+        title='Correct Responses per Skill'
+    )
+
+    bar_plot = plot(bar_fig, output_type='div')
+
     return render(request, 'test/test_result.html', {
         'username': username,
         'top_fields': top_fields,
-        'graph': fig.to_html(full_html=False, default_height=500, default_width=700)
+        'graph': fig.to_html(full_html=False, default_height=500, default_width=700),
+        'bar_plot': bar_plot 
     })
 
 def student_test_report_overall(request):
@@ -610,10 +630,43 @@ def student_test_report_overall(request):
     for field in top_fields:
         print(field.field_name, field.total_correct)
 
+     # Initialize dictionaries to store skill counts
+    skill_correct_counts = {}
+    skill_total_counts = {}
+
+    # Loop through each question set and collect skill counts
+    for question_set in user_results:
+        # Fetch user responses for the question set
+        user_responses = UserResponse.objects.filter(set=question_set)
+        for user_response in user_responses:
+            if user_response.is_correct:
+                # Increment the correct count for each skill associated with the correct response
+                for skill in user_response.question.skills.all():
+                    skill_name = skill.skill
+                    skill_correct_counts[skill_name] = skill_correct_counts.get(skill_name, 0) + 1
+            # Increment the total count for each skill associated with the response
+            for skill in user_response.question.skills.all():
+                skill_name = skill.skill
+                skill_total_counts[skill_name] = skill_total_counts.get(skill_name, 0) + 1
+
+    # Create a bar graph for correct skill counts
+    skill_names = list(skill_correct_counts.keys())
+    correct_counts = list(skill_correct_counts.values())
+
+    bar_fig = px.bar(
+        x=skill_names,
+        y=correct_counts,
+        labels={'x': 'Skill', 'y': 'Correct Count'},
+        title='Correct Responses per Skill'
+    )
+
+    bar_plot = plot(bar_fig, output_type='div')
+
     return render(request, 'test/test_result.html', {
         'username': username,
         'top_fields': top_fields,
-        'graph': fig.to_html(full_html=False, default_height=500, default_width=700)
+        'graph': fig.to_html(full_html=False, default_height=500, default_width=700),
+        'bar_plot': bar_plot
     })
 
 def test_query(request):

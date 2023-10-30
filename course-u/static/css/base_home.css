@@ -14,7 +14,10 @@
     --grey: #f5f5f5;
     --black1: #222;
     --black2: #999;
+    --darkbg: #0D1117;
 }
+
+
 
 body{
     min-height: 100vh;
@@ -33,7 +36,8 @@ body{
     position: fixed;
     width: 200px;
     height: 100%;
-    background: var(--blue);
+    left: 0;
+    background: var(--darkbg);
     border-left: 8px solid var(--blue);
     transition: 0.5s;
     overflow: hidden;
@@ -193,42 +197,10 @@ body{
      
 }
 
-.search
-{
-    position: relative;
-    width: 400px;
-    margin: 0 10px;
-}
-
-.search label{
-    position: relative;
-    width: 100%;
-}
-
-.search label input
-{
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    padding: 5px 20px;;
-    padding-left: 35px;
-    font-size: 18px; 
-    outline: none;
-    border: 1px solid var(--black2);
-}
-
-.search label ion-icon
-{
-    position: absolute;
-    top: 0;
-    left: 10px;
-    font-size: 1.2em;
-}
 
 .user
 {
     position: relative;
-
 }
 
 .user_profile
@@ -250,3 +222,57 @@ body{
     object-fit: cover;
 }
 
+
+/* footer */
+footer
+{
+    /* always at bottom */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: var(--black1);
+    background-color: var(--grey);
+}
+
+footer span
+{
+    color: var(--blue);
+}
+
+
+footer h5
+{
+    color: var(--black1);
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+footer a
+{
+    color: var(--black1);
+    text-decoration: none;
+}
+.row
+{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-1 * var(--bs-gutter-x));
+    margin-left: calc(-1 * var(--bs-gutter-x));
+}
+
+.col-md-4
+{
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+    padding: 10px;
+}
+
+.list-unstyled
+{
+    padding-left: 0;
+    list-style: none;
+}
