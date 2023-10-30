@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 
-from website.models import Field
+from website.models import Field, Skill
 
 TEST_TOPICS = (
     ('Python', 'Python'),
@@ -17,6 +17,9 @@ class Test(models.Model):
     options = models.JSONField()
     correct_option = models.IntegerField() # Index of the correct option in the options list
 
+     # Add the many-to-many relationship with Skill
+    skills = models.ManyToManyField(Skill)
+
     def __str__(self):
         return self.question
 
@@ -29,7 +32,7 @@ class QuestionSet(models.Model):
     n_questions = models.IntegerField()
     is_completed = models.BooleanField(default=False)
     score = models.IntegerField(default=0)
-
+    
     def __str__(self):
         return f"{self.set_id}: Status : {self.is_completed} by User: {self.user} (Score: {self.score} / {self.n_questions}) "#str(self.set_id)
     class Meta:
