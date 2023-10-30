@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'jobs',
     'assessment',
     'debug_toolbar',
+    #'students',
+    'grades',
 ]
 
 MIDDLEWARE = [
@@ -272,3 +274,4 @@ LOGGING = {
 # import logging.config
 
 # logging.config.dictConfig(LOGGING)
+
