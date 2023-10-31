@@ -5,7 +5,7 @@
     - [X]: Loggers
     - [X]: Handlers
 - [ ]: Unit Tests
-    - [ ]: Sample Unit Test
+    - [X]: Sample Unit Test
     - [ ]: Integration Tests
 - [ ]: Transactions
     - [ ]: Create a transaction for every database operation
@@ -13,24 +13,25 @@
     - [ ]: Report Page for Admin/Instructors
     - [ ]: Report Email for Admin/Instructors
     - [ ]: Create a report for every database operation
-    - [ ]: Students
-    - [ ]: Grades
+    - [X]: Students
+    - [X]: Grades
     - [ ]: Jobs
     - [ ]: Jobs_Applied
     - [ ]: Student_Career
     - [ ]: Feedbacks
     - [ ]: Instructors/Faculty
-
+- [ ]: Track Page
+    - [ ]: Courses
 ## Medium Priority
 - [ ]: # Path: todo.
 - [ |-|x]: something
-- [ ]: git rm <files> that are on the [.gitignore]
+- [X]: git rm <files> that are on the [.gitignore]
 - [ ]: utils folder, for recommendation system model, job_post_scrapy, static_website
 - [ ]: create submodules
     - [ ]: for recommender system model
     - [ ]: for job_post_scrapy
 - [ ]: Debugger
-    - [ ]: on .env file, set DEBUG=True
+    - [-]: on .env file, set DEBUG=True
     - [ ]: on codes, add a line calling the debugger passing on if DEBUG=True, debug this code and the message will be printed on the terminal
 - [ ]: add dropdown group on nav bar
 - [ ]: make nave bar foldable
@@ -117,6 +118,13 @@
 - [ ]: User Interaction - database
 
 
+
+## Field/Specialization Section
+- [ ]: Add Field/Specialization Table List on Admin_home
+    - [ ]: View Field Page
+      - [X]: View for Specialization
+      - [ ]: CRUD for Specialization
+    - [ ]: View for Test per Field
 
 # BACKLOG
 
