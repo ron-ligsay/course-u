@@ -78,3 +78,21 @@ def send_student_report(student):
 # Usage: Pass a student instance to the function to send their report
 # Replace 'student_instance' with the actual student you want to send a report for
 # send_student_report(student_instance)
+
+
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+from acad.models import UserProfile
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    print("Signal received!, create_user_profile()")
+    if created:
+        UserProfile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    print("Signal received!, save_user_profile()")
+    instance.userprofile.save()
