@@ -1,60 +1,44 @@
-subject_id,course,year,subject
-1,Computer Science,1,Introduction to Computing
-2,Computer Science,1,Computer Programming 1
-3,Computer Science,1,Computer Programming 2
-4,Computer Science,1,Discrete Structures 1
-5,Computer Science,2,Modeling and Simulation
-6,Computer Science,2,BSCS Free Elective 1
-7,Computer Science,2,Data Structures and Algorithms
-8,Computer Science,2,Discrete Structures 2
-9,Computer Science,2,Object Oriented Programming
-10,Computer Science,2,Logic Design and Digital Computer Circuits
-11,Computer Science,2,Design and Analysis of Algorithms
-12,Computer Science,2,Information Management
-13,Computer Science,2,Operating Systems
-14,Computer Science,2,Technical Documentation and Presentation Skills in ICT
-15,Computer Science,3,Fundamentals of Research
-16,Computer Science,3,Application Development and Emerging Technologies
-17,Computer Science,3,Computer Organization and Assembly Language
-18,Computer Science,3,Automata and Language Theory
-19,Computer Science,3,Principles of Programming Languages
-20,Computer Science,3,Human Computer Interaction
-21,Computer Science,3,Information Assurance and Security
-22,Computer Science,3,Software Engineering 1
-23,Computer Science,3,Web Development
-24,Computer Science,3,CS Thesis Writing 1
-25,Computer Science,3,Introduction to Artificial Intelligence
-26,Computer Science,3,Data Communications and Networking
-27,Computer Science,4,CS Thesis Writing 2
-28,Computer Science,4,Software Engineering 2
-29,Computer Science,4,Professional Ethics for Computer Scientist
-30,Computer Science,4,IT Social and Professional Issues
-31,Information Technology,1,Introduction to Computing
-32,Information Technology,1,Computer Programming
-33,Information Technology,1,Discrete Structures 1
-34,Information Technology,1,Computer Programming 2
-35,Information Technology,2,Operating Systems
-36,Information Technology,2,Programming 3 (Structured Programming)
-37,Information Technology,2,Data Communications and Networking
-38,Information Technology,2,Data Structures and Algorithms
-39,Information Technology,2,Network Administration
-40,Information Technology,2,Human Computer Interaction
-41,Information Technology,2,Quantitative Methods with Modeling and Simulation
-42,Information Technology,2,Integrative Programming and Technology
-43,Information Technology,2,Object Oriented Programming
-44,Information Technology,2,Information Management
-45,Information Technology,3,Web Development
-46,Information Technology,3,Systemm Integration and Architecture 1
-47,Information Technology,3,Multimedia
-48,Information Technology,3,Database Administration
-49,Information Technology,3,Fundamentals of Research
-50,Information Technology,3,Principles of Management and Organization
-51,Information Technology,3,Information Assurance and Security 1
-52,Information Technology,3,Technopreneurship
-53,Information Technology,3,Systems Analysis and Design
-54,Information Technology,3,Applications Development and Emerging Technologies
-55,Information Technology,3,Capstone Project 1
-56,Information Technology,4,Information Assurance and Security 2
-57,Information Technology,4,Capstone Project 2
-58,Information Technology,4,Systems Administration and Maintenance
-59,Information Technology,4,Social and Professional Issues in IT
+id,subject_name,description
+1,Introduction to Computing,Subject Description
+2,Computer Programming 1,Subject Description
+3,Computer Programming 2,Subject Description
+4,Discrete Structures 1,Subject Description
+5,Modeling and Simulation,Subject Description
+6,Data Structures and Algorithms,Subject Description
+7,Discrete Structures 2,Subject Description
+8,Object Oriented Programming,Subject Description
+9,Logic Design and Digital Computer Circuits,Subject Description
+10,Design and Analysis of Algorithms,Subject Description
+11,Information Management,Subject Description
+12,Operating Systems,Subject Description
+13,Technical Documentation and Presentation Skills in ICT,Subject Description
+14,Fundamentals of Research,Subject Description
+15,Application Development and Emerging Technologies,Subject Description
+16,Computer Organization and Assembly Language,Subject Description
+17,Automata and Language Theory,Subject Description
+18,Principles of Programming Languages,Subject Description
+19,Human Computer Interaction,Subject Description
+20,Information Assurance and Security,Subject Description
+21,Software Engineering 1,Subject Description
+22,Web Development,Subject Description
+23,CS Thesis Writing 1,Subject Description
+24,Introduction to Artificial Intelligence,Subject Description
+25,Data Communications and Networking,Subject Description
+26,CS Thesis Writing 2,Subject Description
+27,Software Engineering 2,Subject Description
+28,Professional Ethics for Computer Scientist,Subject Description
+29,IT Social and Professional Issues,Subject Description
+30,Programming 3 (Structured Programming),Subject Description
+31,Network Administration,Subject Description
+32,Quantitative Methods with Modeling and Simulation,Subject Description
+33,Integrative Programming and Technology,Subject Description
+34,Systemm Integration and Architecture 1,Subject Description
+35,Multimedia,Subject Description
+36,Database Administration,Subject Description
+37,Principles of Management and Organization,Subject Description
+38,Technopreneurship,Subject Description
+39,Systems Analysis and Design,Subject Description
+40,Applications Development and Emerging Technologies,Subject Description
+41,Information Assurance and Security 2,Subject Description
+42,Systems Administration and Maintenance,Subject Description
+43,Social and Professional Issues in IT,Subject Description
