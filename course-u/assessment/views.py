@@ -14,7 +14,7 @@ from django.db.models import Sum, Case, When, IntegerField, F, Count
 
 # App imports
 from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
-from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm, MBTIResponseForm
+from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
 from assessment.models import Test, QuestionSet, UserResponse
 
 from website.models import Field, Specialization, UserRecommendations, Skill
