@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('jobs.urls')),
     path('', include('assessment.urls')),
     path('', include('recommender.urls')),
-    path('__debug__/',include('debug_toolbar.urls')),
+    path('', include('personality.urls')),
     path('', include('grades.urls')),
+
+    path('__debug__/',include('debug_toolbar.urls')),
 ]
