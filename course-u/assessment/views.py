@@ -586,74 +586,87 @@ def student_test_report_overall(request):
     user_id = request.user.id
     user_results = QuestionSet.objects.filter(user_id=user_id)
 
-    # Get user name
-    username = User.objects.get(id=user_id)
+    if user_results.count() != 0:
+        print("user_results: ", user_results)
+        # Get user name
+        username = User.objects.get(id=user_id)
 
-    # Query to get total correct answers per field for all QuestionSets
-    field_correct_answers = Field.objects.filter(
-        test__userresponse__set__user_id=user_id,
-    ).annotate(
-        total_correct=Sum(
-            Case(
-                When(test__userresponse__is_correct=True, then=1),
-                default=0,
-                output_field=IntegerField()
+        # Query to get total correct answers per field for all QuestionSets
+        field_correct_answers = Field.objects.filter(
+            test__userresponse__set__user_id=user_id,
+        ).annotate(
+            total_correct=Sum(
+                Case(
+                    When(test__userresponse__is_correct=True, then=1),
+                    default=0,
+                    output_field=IntegerField()
+                )
             )
         )
-    )
 
-    # You can access the field_name and total_correct values
-    for field in field_correct_answers:
-        print(field.field_name, field.total_correct)
+        # You can access the field_name and total_correct values
+        for field in field_correct_answers:
+            print(field.field_name, field.total_correct)
 
-    # Create a plotly pie chart
-    fig = generate_pie_chart(field_correct_answers, 'Correct Answers per Field')
+        # Create a plotly pie chart
+        fig = generate_pie_chart(field_correct_answers, 'Correct Answers per Field')
 
-    # Get top 3 fields with the most correct answers
-    top_fields = field_correct_answers.order_by('-total_correct')[:3]
+        # Get top 3 fields with the most correct answers
+        top_fields = field_correct_answers.order_by('-total_correct')[:3]
 
-    # You can access the field_name and total_correct values
-    for field in top_fields:
-        print(field.field_name, field.total_correct)
+        # You can access the field_name and total_correct values
+        for field in top_fields:
+            print(field.field_name, field.total_correct)
 
-     # Initialize dictionaries to store skill counts
-    skill_correct_counts = {}
-    skill_total_counts = {}
+        # Initialize dictionaries to store skill counts
+        skill_correct_counts = {}
+        skill_total_counts = {}
 
-    # Loop through each question set and collect skill counts
-    for question_set in user_results:
-        # Fetch user responses for the question set
-        user_responses = UserResponse.objects.filter(set=question_set)
-        for user_response in user_responses:
-            if user_response.is_correct:
-                # Increment the correct count for each skill associated with the correct response
+        # Loop through each question set and collect skill counts
+        for question_set in user_results:
+            # Fetch user responses for the question set
+            user_responses = UserResponse.objects.filter(set=question_set)
+            for user_response in user_responses:
+                if user_response.is_correct:
+                    # Increment the correct count for each skill associated with the correct response
+                    for skill in user_response.question.skills.all():
+                        skill_name = skill.skill
+                        skill_correct_counts[skill_name] = skill_correct_counts.get(skill_name, 0) + 1
+                # Increment the total count for each skill associated with the response
                 for skill in user_response.question.skills.all():
                     skill_name = skill.skill
-                    skill_correct_counts[skill_name] = skill_correct_counts.get(skill_name, 0) + 1
-            # Increment the total count for each skill associated with the response
-            for skill in user_response.question.skills.all():
-                skill_name = skill.skill
-                skill_total_counts[skill_name] = skill_total_counts.get(skill_name, 0) + 1
+                    skill_total_counts[skill_name] = skill_total_counts.get(skill_name, 0) + 1
 
-    # Create a bar graph for correct skill counts
-    skill_names = list(skill_correct_counts.keys())
-    correct_counts = list(skill_correct_counts.values())
+        # Create a bar graph for correct skill counts
+        skill_names = list(skill_correct_counts.keys())
+        correct_counts = list(skill_correct_counts.values())
 
-    bar_fig = px.bar(
-        x=skill_names,
-        y=correct_counts,
-        labels={'x': 'Skill', 'y': 'Correct Count'},
-        title='Correct Responses per Skill'
-    )
+        # print("skill_names: ", skill_names)
+        # print("correct_counts: ", correct_counts)
+        try:
+            bar_fig = px.bar(
+                x=skill_names,
+                y=correct_counts,
+                labels={'x': 'Skill', 'y': 'Correct Count'},
+                title='Correct Responses per Skill'
+            )
 
-    bar_plot = plot(bar_fig, output_type='div')
+            bar_plot = plot(bar_fig, output_type='div')
+        except:
+            bar_plot = None
+            #logger.error("Error in creating bar graph for correct skill counts")
+            print("Error in creating bar graph for correct skill counts")
 
-    return render(request, 'test/test_result.html', {
-        'username': username,
-        'top_fields': top_fields,
-        'graph': fig.to_html(full_html=False, default_height=500, default_width=700),
-        'bar_plot': bar_plot
-    })
+        return render(request, 'test/test_result.html', {
+            'username': username,
+            'top_fields': top_fields,
+            'graph': fig.to_html(full_html=False, default_height=500, default_width=700),
+            'bar_plot': bar_plot
+        })
+    else:
+        # Handle the case where the user has not taken any tests
+        print("You have not taken any tests yet.")
+        return HttpResponse("You have not taken any tests yet.")
 
 def test_query(request):
     questions,start,end = get_test_questions(x=1, y=5)
