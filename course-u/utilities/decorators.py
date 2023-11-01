@@ -54,7 +54,7 @@ def admin_only(view_func):
             return view_func(request, *args, **kwargs)
 
         else:
-            message.error(request, 'You are not authorized to view this page. This is for Admin only')
+            messages.error(request, 'You are not authorized to view this page. This is for Admin only')
             return HttpResponse('You are not authorized to view this page. This is for Admin only')
 
     return wrapper_function
