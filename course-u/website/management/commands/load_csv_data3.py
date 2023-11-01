@@ -2,8 +2,9 @@ from django.core.management.base import BaseCommand
 import csv
 import os
 import mysql.connector
-from website.models import Specialization, Field  # Import your models
-from assessment.models import Test, QuestionSet, UserResponse, MBTI, MBTISet, MBTIResponse
+#from website.models import Specialization, Field  # Import your models
+#from assessment.models import Test, QuestionSet, UserResponse
+#from personality.models import  MBTI, MBTISet, MBTIResponse
 from django.apps import apps
 
 # from decouple import Config, RepositoryEnv
@@ -22,84 +23,84 @@ class Command(BaseCommand):
 
         base_dir = os.getcwd()
         csv_table_mapping = {
-            # base_dir + '\\static\\csv\\field.csv': {
-            #     'table_name': 'website_field',
-            #     'model_name' : 'Field',
-            #     'columns' : ['field','field_name','description'],
-            #     'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
-            # },
+            base_dir + '\\static\\csv\\field.csv': {
+                'table_name': 'website_field',
+                'model_name' : 'Field',
+                'columns' : ['field','field_name','description'],
+                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
+            },
             # base_dir + '\\static\\csv\\userdb.csv': {
             #     'table_name': 'userdb',
             #     'model_name' : 'User',
             #     'columns' : ['userid','username','password','email'],
             #     'attributes' : ['INT PRIMARY KEY', 'VARCHAR(25)', 'VARCHAR(25)', 'VARCHAR(100)' ]
             # },
-            # base_dir + '\\static\\csv\\specialization1.csv': {
-            #     'table_name': 'website_specialization',
-            #     'model_name': 'Specialization',
-            #     'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
-            #     'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
-            # },
-            # base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
-            #     'table_name': 'jobs_jobposting',
-            #     'model_name': 'JobPosting',
-            #     #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
-            #     'columns': ['id','link','job_title',
-            #                 'company_name','company_link','date_posted',
-            #                 'keyword','keyword_id','location',
-            #                 'employment_type','job_function','industries','seniority_level',
-            #                 'job_description'],
-            #     'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
-            #                     'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
-            #                     'VARCHAR(100)','INT','VARCHAR(300)',
-            #                     'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
-            #                     'TEXT'
-            #                     ]
-            # },
-            # base_dir + '\\static\\csv\\test.csv': {
-            #     'table_name': 'assessment_test',
-            #     'model_name': 'Test',
-            #     'columns':  ['question_id', 'field_id','question','description','options', 'correct_option',],
-            #     'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
-            # },
-            # base_dir + '\\static\\csv\\questionset.csv': {
-            #     'table_name': 'assessment_questionset',
-            #     'model_name': 'QuestionSet',
-            #     'columns':  ['set_id','user_id','n_questions','is_completed','score',],
-            #     'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
-            # },  
+            base_dir + '\\static\\csv\\specialization1.csv': {
+                'table_name': 'website_specialization',
+                'model_name': 'Specialization',
+                'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
+                'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
+            },
+            base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
+                'table_name': 'jobs_jobposting',
+                'model_name': 'JobPosting',
+                #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
+                'columns': ['id','link','job_title',
+                            'company_name','company_link','date_posted',
+                            'keyword','keyword_id','location',
+                            'employment_type','job_function','industries','seniority_level',
+                            'job_description'],
+                'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
+                                'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
+                                'VARCHAR(100)','INT','VARCHAR(300)',
+                                'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
+                                'TEXT'
+                                ]
+            },
+            base_dir + '\\static\\csv\\test.csv': {
+                'table_name': 'assessment_test',
+                'model_name': 'Test',
+                'columns':  ['question_id', 'field_id','question','description','options', 'correct_option',],
+                'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
+            },
+            base_dir + '\\static\\csv\\questionset.csv': {
+                'table_name': 'assessment_questionset',
+                'model_name': 'QuestionSet',
+                'columns':  ['set_id','user_id','n_questions','is_completed','score',],
+                'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
+            },  
             #selected_option,is_correct,set_id,question
-            # base_dir + '\\static\\csv\\userresponse.csv': {
-            #     'table_name': 'assessment_userresponse',
-            #     'model_name': 'UserResponse',
-            #     'columns':  ["response","selected_option","is_correct","set_id","question_id","is_answered",],
-            #     # add default values for response and is_answered
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
-            # },
-            # base_dir + '\\static\\csv\\mbti.csv': {
-            #     'table_name': 'assessment_mbti',
-            #     'model_name': 'MBTI',
-            #     'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
-            # },
-            # base_dir + '\\static\\csv\\mbti_set.csv': {
-            #     'table_name': 'assessment_mbtiset',
-            #     'model_name': 'MBTISet',
-            #     'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
-            # },
-            # base_dir + '\\static\\csv\\user_mbti_response.csv': {
-            #     'table_name': 'assessment_mbtiresponse',
-            #     'model_name': 'MBTIResponse',
-            #     'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
-            # },
-            # base_dir + '\\static\\csv\\user_recommendations.csv': {
-            #     'table_name': 'website_userrecommendations',
-            #     'model_name': 'UserRecommendations',
-            #     'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
-            # },
+            base_dir + '\\static\\csv\\userresponse.csv': {
+                'table_name': 'assessment_userresponse',
+                'model_name': 'UserResponse',
+                'columns':  ["response","selected_option","is_correct","set_id","question_id","is_answered",],
+                # add default values for response and is_answered
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
+            },
+            base_dir + '\\static\\csv\\mbti.csv': {
+                'table_name': 'personality_mbti',
+                'model_name': 'MBTI',
+                'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
+            },
+            base_dir + '\\static\\csv\\mbti_set.csv': {
+                'table_name': 'personality_mbtiset',
+                'model_name': 'MBTISet',
+                'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
+            },
+            base_dir + '\\static\\csv\\user_mbti_response.csv': {
+                'table_name': 'personality_mbtiresponse',
+                'model_name': 'MBTIResponse',
+                'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
+            },
+            base_dir + '\\static\\csv\\user_recommendations.csv': {
+                'table_name': 'website_userrecommendations',
+                'model_name': 'UserRecommendations',
+                'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
+            },
             base_dir + '\\static\\csv\\skill.csv': {
                 'table_name': 'website_skill',
                 'model_name': 'Skill',
