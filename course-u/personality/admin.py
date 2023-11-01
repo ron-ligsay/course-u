@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mbti.models import MBTI, MBTISet, MBTIResponse
+from personality.models import MBTI, MBTISet, MBTIResponse
 
 # Register your models here.
 admin.site.register(MBTI)

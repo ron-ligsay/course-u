@@ -1,5 +1,5 @@
 from django import forms
-from mbti.models import  MBTIResponse
+from personality.models import  MBTIResponse
 
 class MBTIResponseForm(forms.ModelForm):
     selected_option = forms.CharField(max_length=1)

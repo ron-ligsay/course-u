@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q, Avg
 
 # App imports
-from mbti.models import  MBTI, MBTISet, MBTIResponse
+from personality.models import  MBTI, MBTISet, MBTIResponse
 
 # Create your views here.
 ################################
