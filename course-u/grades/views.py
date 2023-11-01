@@ -6,7 +6,7 @@ def grade_input(request):
         form = GradeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_page')  # Redirect to a success page or another view
+            return redirect('grade_input')  # Redirect to a success page or another view
     else:
         form = GradeForm()
     return render(request, 'grades/grade_input.html', {'form': form})
