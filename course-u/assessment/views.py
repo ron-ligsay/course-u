@@ -23,29 +23,23 @@ from website.models import Field, Specialization, UserRecommendations, Skill
 import plotly.express as px
 from plotly.offline import plot
 
+# Utilities
+from utilities.decorators import unauthenticated_user, allowed_users, admin_only
+from utilities.plots import generate_pie_chart
+from utilities.sessions import clear_session_variables#, get_last_question_set, create_or_retrieve_question_set, display_question_set, submit_test
+
 # Create your views here:
-
-
 
 def test_home(request):
     return render(request, 'test/test_home.html')
 
+@unauthenticated_user
 def start_test(request):
 
     question_per_field = 2
 
-    # delete session vairables
-    if 'test_started' in request.session:
-        del request.session['test_started']
-    if 'question_set_id' in request.session:
-        del request.session['question_set_id']
-    if 'question_set' in request.session:
-        del request.session['question_set']
-    if 'questions_answered' in request.session:
-        del request.session['questions_answered']
-    if 'n_questions' in request.session:
-        del request.session['n_questions']
-
+    # Clear session variables
+    clear_session_variables(request)
 
     # Check user's QuestionSet if it has incomplete test
     try:
@@ -76,6 +70,7 @@ def start_test(request):
         request.session['question_set'] = question_ids
 
         n_questions = len(question_set)
+        print("n_questions: ", n_questions, "question_ids: ", question_ids)
         request.session['n_questions'] = n_questions
 
         # Check if UserResponse with set_id are equal to n_questions
@@ -92,7 +87,7 @@ def start_test(request):
             print("fields: ", unique_fields)
 
 
-            for field in fields:
+            for field in unique_fields:
                 # get UserResponse with set_id 
                 n_field_responses = UserResponse.objects.filter(set_id=incomplete_set_id, question__field=field).count()
                 print("n_field_responses: ", n_field_responses, "field: ", field)
@@ -199,8 +194,9 @@ def start_test(request):
     return redirect('display_question', question_id=start)
 
 
-
+@unauthenticated_user
 def display_question(request, question_id):
+    print("display_question() question_id: ", question_id)
     # Retrieve the question set and answered questions from the session
     question_set_id = request.session.get('question_set_id')
     question_ids = request.session.get('question_set', [])
@@ -227,6 +223,7 @@ def display_question(request, question_id):
 
     # Render the question page with the question and question set information
     return render(request, 'test/test_page.html', {'question': question, 'question_set_id': question_set_id})#, 'questions_answered': questions_answered
+
 
 def test_overview(request):
     user = request.user
@@ -260,22 +257,20 @@ def test_overview(request):
 
     return render(request, 'test/test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info, 'is_admin': is_admin})
 
+@unauthenticated_user
 def next_test(request, question_id):
     print("next_test() question_id: ", question_id)
-    if not request.user.is_authenticated:
-        return redirect('home')
-
     try:
-        mbti_question_set = request.session.get('mbti_question_set')
-        mbti_n_question = request.session.get('mbti_n_questions', 0)
+        question_set = request.session.get('question_set')
+        n_question = request.session.get('n_questions', 0)
         question = get_object_or_404(Test, question_id=question_id + 1)
         #if question not in question_set:
         #    raise Test.DoesNotExist
 
-        if question_id + 1 < mbti_n_question:
+        if question_id + 1 < n_question:
             #options = question.options
             return render(request, 'test/test_page.html', {'question': question})
-        if question_id + 1 == mbti_n_question:
+        if question_id + 1 == n_question:
             # This is the last question
             messages.success(request, 'You have completed the test')
             return redirect('test_overview')
@@ -291,11 +286,9 @@ def next_test(request, question_id):
     #options = question.options
     return render(request, 'test/test_page.html', {'question': question})#, 'options': options
 
+@unauthenticated_user
 def prev_test(request, question_id):
     print("prev_test() question_id: ", question_id)
-    if not request.user.is_authenticated:
-        return redirect('home')
-
     if question_id <= 1:
         messages.success(request, 'You have reached the first question')
         return redirect('test_overview')
@@ -313,93 +306,98 @@ def prev_test(request, question_id):
         messages.success(request, 'You have reached the first question')
         return redirect('home')
 
+@unauthenticated_user
 def submit_question(request, question_id):
     print("submit_question() question_id: ", question_id)
-    if request.user.is_authenticated:
-        question = get_object_or_404(Test, question_id=question_id)
-        user_response_key = f'user_response_{question_id}'
-        if request.method == 'POST':
-            form = UserResponseForm(request.POST)
-            selected_option = request.POST.get('selected_option')
-            if selected_option is not None:
-                # Store the user's answer in the session
-                request.session[user_response_key] = int(selected_option)
 
-            if form.is_valid():
-                selected_option = form.cleaned_data['selected_option']
-                is_correct = (selected_option == question.correct_option)
+    # Retrieve the current question
+    question = get_object_or_404(Test, question_id=question_id)
 
-                # Check if a UserResponse with the same question_id and set_id exists
-                set_id = request.session.get('question_set_id')
-                existing_response = UserResponse.objects.filter(question=question.question_id,set_id=set_id).first()
+    user_response_key = f'user_response_{question_id}'
+    print("user_response_key: ", user_response_key)
 
-                if existing_response:
-                    # If an existing response is found, update it
-                    existing_response.selected_option = selected_option
-                    existing_response.is_correct = is_correct
-                    existing_response.is_answered = True
-                    existing_response.save()
-                    messages.success(request, 'Your answer has been updated')
-                else:
-                    # Otherwise, create a new UserResponse object
-                    UserResponse.objects.create(
-                        #user=request.user,
-                        #response=None,
-                        question=question,
-                        selected_option=selected_option,
-                        is_correct=is_correct,
-                        set_id=set_id,
-                        is_answered=True,
-                    )
+    # Get the user's response form data
+    if request.method == 'POST':
+        form = UserResponseForm(request.POST)
+        selected_option = request.POST.get('selected_option')
 
-                    messages.success(request, 'Your answer has been submitted')
-                
-                current_question_id = question_id
+        if selected_option is not None:
+            # Store the user's answer in the session
+            request.session[user_response_key] = int(selected_option)
 
-                # get questions_ids
-                question_ids = request.session.get('question_set', [])
+        if form.is_valid():
+            selected_option = form.cleaned_data['selected_option']
+            is_correct = (selected_option == question.correct_option)
 
-                # Find the index of the current question ID in the list
-                try:
-                    current_index = question_ids.index(current_question_id)
-                except ValueError:
-                    # Handle the case where the current_question_id is not found in the list
-                    current_index = -1
-                if current_index >= 0 and current_index < len(question_ids) - 1:
-                    # If the current question ID is found and it's not the last question in the list
-                    next_question_id = question_ids[current_index + 1]
-                    # You can use the next_question_id here for further processing
-                else:
-                    # Handle the case where there is no next question
-                    n_question = request.session.get('n_questions', 0)
-                    next_question_id = n_question
-                    pass  # You may display a message or perform some other action
+            # Get the current question set ID
+            set_id = request.session.get('question_set_id')
+            
+            # Check if a UserResponse with the same question_id and set_id exists
+            existing_response = UserResponse.objects.filter(
+                question=question.question_id,set_id=set_id
+                ).first()
 
-                try:
-                    n_question = request.session.get('n_questions', 0)
-                    if next_question_id == n_question:
-                        # This is the last question
-                        messages.success(request, 'You have completed the test')
-                        return redirect('test_overview')
-                    else:
-                        next_question = Test.objects.get(pk=next_question_id)
-                        options = next_question.options
-                        return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
-                except Test.DoesNotExist:
-                    # Handle the case where there is no next question
-                    messages.success(request, 'You have completed the test')
-                    return redirect('home')
+            if existing_response:
+                # If an existing response is found, update it
+                existing_response.selected_option = selected_option
+                existing_response.is_correct = is_correct
+                existing_response.is_answered = True
+                existing_response.save()
+                messages.success(request, 'Your answer has been updated')
+            
             else:
-                # Display the question and form again with validation errors
-                options = question.options
-                return render(request, 'tes/test_page.html', {'question': question, 'options': options, 'form': form})
-        else:
-            # Display the question and form for the first time
-            options = question.options
-            return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
-    else:
-        return redirect('home')
+                # Otherwise, create a new UserResponse object
+                UserResponse.objects.create( #user=request.user, #response=None,
+                    question=question,
+                    selected_option=selected_option,
+                    is_correct=is_correct,
+                    set_id=set_id,
+                    is_answered=True,
+                )
 
+                messages.success(request, 'Your answer has been submitted')
+            
+            current_question_id = question_id
+
+            # get questions_ids
+            question_ids = request.session.get('question_set', [])
+
+            # Find the index of the current question ID in the list
+            try:
+                # Calculate the index of the next question
+                current_index = question_ids.index(current_question_id)
+                next_question_id = question_ids[current_index + 1]
+
+                # Check if this is the last question by comparing with the maximun ID
+                max_question_id = max(question_ids)
+                if next_question_id == max_question_id:
+                    messages.success(request, 'You have completed the test')
+                    return redirect('test_overview')
+
+                # Retrieve the next question and its options
+                next_question = get_object_or_404(Test, question_id=next_question_id)
+                options = next_question.options
+                return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+            
+            except ValueError:
+                # Handle the case where the current_question_id is not found in the list
+                messages.warning(request, 'Invalid question ID')
+            except IndexError:
+                # Handle the case where there is no next question
+                messages.success(request, 'You have completed the test')
+                return redirect('home')
+        else:
+            # Display the question and form again with validation errors
+            options = question.options
+            return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': form})
+    else:
+        # Display the question and form for the first time
+        options = question.options
+        return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
+
+    return redirect('home')
+
+@unauthenticated_user
 def submit_test(request):
     # process the submitted test
     set_id = request.session.get('question_set_id')
@@ -425,11 +423,8 @@ def submit_test(request):
             question_set.score = total_correct
             question_set.save()
 
-            # delete session vairables
-            del request.session['test_started']
-            del request.session['question_set_id']
-            del request.session['question_set']
-            del request.session['questions_answered']
+            # Clear session variables
+            clear_session_variables(request)
 
             messages.success(request, 'You have completed the test')
             print('You have completed the test')
@@ -446,10 +441,11 @@ def submit_test(request):
         # back to test_overview
         return redirect('test_overview', question_set_id=question_set_id)
 
-
+@unauthenticated_user
 def view_test_results(request):
     return render(request, 'test/test_home.html')
 
+@unauthenticated_user
 def create_test(request):
     
     form = TestCreateForm()
@@ -471,11 +467,12 @@ def create_test(request):
     context = {'form' : form}
     return render(request, 'test/create_test.html', context)
 
+@unauthenticated_user
 def update_test(request, question_id):
     
     return render(request, 'test/update_test.html')
 
-
+@unauthenticated_user
 def admin_test_report(request):
 
     # from questionset get all
@@ -528,13 +525,7 @@ def student_test_report(request, question_set_id):
     print("names: " , field_correct_answers.values("field_name"))        
 
     # Create a plotly pie chart
-    fig = px.pie(
-        values=list(field_correct_answers.values_list("total_correct", flat=True)),
-        names=list(field_correct_answers.values_list("field_name", flat=True)),
-        title='Correct Answers per Field'
-    )
-    fig.update_traces(textposition='inside', textinfo='percent+label')
-    fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
+    fig = generate_pie_chart(field_correct_answers, 'Correct Answers per Field')
 
     # Get top 3 fields with the most correct answers
     top_fields = field_correct_answers.order_by('-total_correct')[:3]
@@ -615,13 +606,7 @@ def student_test_report_overall(request):
         print(field.field_name, field.total_correct)
 
     # Create a plotly pie chart
-    fig = px.pie(
-        values=list(field_correct_answers.values_list("total_correct", flat=True)),
-        names=list(field_correct_answers.values_list("field_name", flat=True)),
-        title='Correct Answers per Field'
-    )
-    fig.update_traces(textposition='inside', textinfo='percent+label')
-    fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
+    fig = generate_pie_chart(field_correct_answers, 'Correct Answers per Field')
 
     # Get top 3 fields with the most correct answers
     top_fields = field_correct_answers.order_by('-total_correct')[:3]
