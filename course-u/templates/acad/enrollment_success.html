@@ -1,0 +1,16 @@
+{% extends 'base_user.html' %}
+{% block title %}Admin Test Report {% endblock %}
+
+{% load static %}
+{% block head_extra %}
+
+{% endblock head_extra %}
+
+
+{% block content %}
+
+<h2>You have Successfuly Enrolled</h2>
+
+<a href="{% url 'subjects' %}"> Go to Subject Grade Input </a>
+
+{% endblock content %}
