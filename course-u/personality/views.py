@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
 from django.db.models import Q, Avg
-
+from django.db.models import Max
+from django.db import IntegrityError
 # App imports
 from personality.models import  MBTI, MBTISet, MBTIResponse
 
@@ -15,23 +17,43 @@ from django.db.models import Max
 
 def initialize_mbti_test(request):
     user = request.user
+    mbti_set = None  # Initialize the variable
 
-    # Check if there is an unfinished MBTISet for the user
-    unfinished_set = MBTISet.objects.filter(user=user, is_completed=False).first()
+    # get the last mbti_set_id
+    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']    
 
-    if unfinished_set:
-        # If there is an unfinished set, continue that test
-        mbti_set = unfinished_set
+    if mbti_set_id is None:
+        mbti_set_id = 1
     else:
-        # If no unfinished set exists, create a new one with a set_id one greater than the maximum set_id
-        last_set = MBTISet.objects.aggregate(Max('mbti_set_id'))
-        new_set_id = last_set['mbti_set_id__max'] + 1 if last_set['mbti_set_id__max'] else 1
-        mbti_set = MBTISet.objects.create(user=user, mbti_set_id=new_set_id)
+        mbti_set_id += 1
+    
+    print("mbti_set_id: ", mbti_set_id)
+   
 
-    # Create responses for all MBTI questions
-    mbti_questions = MBTI.objects.all()
-    for question in mbti_questions:
-        MBTIResponse.objects.get_or_create(mbti_set=mbti_set, mbti=question)
+    try:
+         # Attempt to create a new MBTISet without explicitly setting the mbti_set_id
+        mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id)
+        
+    except IntegrityError:
+        print("IntegrityError")
+        # Handle the case where IntegrityError is raised (duplicate entry)
+        # This means there is an existing set with the same mbti_set_id
+        # You can handle this situation based on your application's logic
+        # For example, you could generate a unique ID in a loop or display an error message
+        pass
+
+    if mbti_set is not None:
+        # Create responses for all MBTI questions
+        mbti_questions = MBTI.objects.all()
+        for question in mbti_questions:
+            MBTIResponse.objects.get_or_create(mbti_set=mbti_set, mbti=question)
+
+        return redirect('mbti_test', mbti_set_id=mbti_set.pk)
+    else:
+        # Handle the case where mbti_set is None, e.g., if the IntegrityError was raised
+        # You can take appropriate actions or return an error response
+        # For example, you could redirect to an error page
+        return HttpResponse("Failed to initialize MBTI test.")
 
     return redirect('mbti_test', mbti_set_id=mbti_set.pk)
 

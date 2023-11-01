@@ -40,7 +40,7 @@ class MBTIResponse(models.Model):
     mbti_set = models.ForeignKey(MBTISet, on_delete=models.CASCADE, null=True, blank=True)
     mbti = models.ForeignKey(MBTI, on_delete=models.CASCADE)
     is_answered = models.BooleanField(default=False)
-    selected_option = models.IntegerField()
+    selected_option = models.IntegerField(null=True, blank=True) 
 
     def __str__(self):
         return f"Set: {self.mbti_set.mbti_set_id}, Question: {self.mbti_response_id}"

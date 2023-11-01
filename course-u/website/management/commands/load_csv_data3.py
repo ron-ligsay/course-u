@@ -93,7 +93,7 @@ class Command(BaseCommand):
                 'table_name': 'personality_mbtiresponse',
                 'model_name': 'MBTIResponse',
                 'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT NULL"]
             },
             base_dir + '\\static\\csv\\user_recommendations.csv': {
                 'table_name': 'website_userrecommendations',
