@@ -152,6 +152,11 @@ body{
     pointer-events: none;
 }
 
+.navigation.active ul li:hover a::after,
+.navigation.active ul li.hovered a::after
+{
+    right: 50px;
+}
 
 /* main */
 
