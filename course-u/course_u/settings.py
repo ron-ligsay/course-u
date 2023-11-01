@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #'students',
     'grades',
     'personality',
+    'acad',
 ]
 
 MIDDLEWARE = [
