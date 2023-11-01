@@ -10,14 +10,14 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from django.db.models import Q, Avg
-from django.db.models import Sum, Case, When, IntegerField, F
+from django.db.models import Sum, Case, When, IntegerField, F, Count
 
 # App imports
 from assessment.utils import get_test_questions, get_test_question_by_id, create_question_set
 from assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm, MBTIResponseForm
 from assessment.models import Test, QuestionSet, UserResponse, MBTI, MBTISet, MBTIResponse
 
-from website.models import Field, Specialization, UserRecommendations
+from website.models import Field, Specialization, UserRecommendations, Skill
 
 # Other Imports
 import plotly.express as px
