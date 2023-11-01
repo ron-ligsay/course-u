@@ -4,4 +4,4 @@ from .models import Grade
 class GradeForm(forms.ModelForm):
     class Meta:
         model = Grade
-        fields = ['year', 'course', 'grade', 'subjectname']
+        fields = ['year', 'course', 'subjectname', 'grade']

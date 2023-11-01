@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.db import models
 
 # Define the course and year choices
@@ -34,8 +34,7 @@ GRADE_CHOICES = [
 ]
 
 class Grade(models.Model):
-    student_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    #user = models.ForeignKey(User, on_delete=models.CASCADE)
     subjectname = models.CharField(max_length=150, choices=SUBJECT_CHOICES)
     grade = models.CharField(max_length=4, choices=GRADE_CHOICES)
     course = models.CharField(max_length=150, choices=COURSE_CHOICES)
