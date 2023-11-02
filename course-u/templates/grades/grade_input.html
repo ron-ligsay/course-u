@@ -1,0 +1,54 @@
+<form method="post" id="grade-form">
+    {% csrf_token %}
+    {{ form.course }}
+    {{ form.year }}
+    {{ form.subjectname }}
+    {{ form.grade }}
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('grade-form');
+    var courseField = form.elements.namedItem('course');
+    var yearField = form.elements.namedItem('year');
+    var subjectField = form.elements.namedItem('subjectname');
+
+    // Define subject options based on course and year
+    var subjectOptions = {
+        'CS-1': ['A', 'B'],
+        'CS-2': ['B'],
+        'CS-3': ['C'],
+        'CS-4': ['D'],
+        'IT-1': ['A'],
+        'IT-2': ['B'],
+        'IT-3': ['C'],
+        'IT-4': ['D'],
+    };
+
+    // Function to update subject options based on course and year
+    function updateSubjectOptions() {
+        var course = courseField.value;
+        var year = yearField.value;
+        var key = course + '-' + year;
+
+        subjectField.innerHTML = ''; // Clear the current options
+
+        if (subjectOptions.hasOwnProperty(key)) {
+            subjectOptions[key].forEach(function (subject) {
+                var option = document.createElement('option');
+                option.value = subject;
+                option.text = subject;
+                subjectField.appendChild(option);
+            });
+        }
+    }
+
+    // Initial update when the page loads
+    updateSubjectOptions();
+
+    // Add event listeners to course and year fields to update subject options
+    courseField.addEventListener('change', updateSubjectOptions);
+    yearField.addEventListener('change', updateSubjectOptions);
+});
+</script>

@@ -2,8 +2,9 @@ from django.core.management.base import BaseCommand
 import csv
 import os
 import mysql.connector
-from website.models import Specialization, Field  # Import your models
-from assessment.models import Test, QuestionSet, UserResponse, MBTI, MBTISet, MBTIResponse
+#from website.models import Specialization, Field  # Import your models
+#from assessment.models import Test, QuestionSet, UserResponse
+#from personality.models import  MBTI, MBTISet, MBTIResponse
 from django.apps import apps
 
 # from decouple import Config, RepositoryEnv
@@ -77,29 +78,65 @@ class Command(BaseCommand):
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
             # },
             # base_dir + '\\static\\csv\\mbti.csv': {
-            #     'table_name': 'assessment_mbti',
+            #     'table_name': 'personality_mbti',
             #     'model_name': 'MBTI',
             #     'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
             # },
             # base_dir + '\\static\\csv\\mbti_set.csv': {
-            #     'table_name': 'assessment_mbtiset',
+            #     'table_name': 'personality_mbtiset',
             #     'model_name': 'MBTISet',
             #     'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
             # },
             # base_dir + '\\static\\csv\\user_mbti_response.csv': {
-            #     'table_name': 'assessment_mbtiresponse',
+            #     'table_name': 'personality_mbtiresponse',
             #     'model_name': 'MBTIResponse',
             #     'columns':  ["mbti_response_id","mbti_set_id","mbti_id","is_answered","selected_option"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT"]
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT NULL"]
             # },
-            base_dir + '\\static\\csv\\user_recommendations.csv': {
-                'table_name': 'website_userrecommendations',
-                'model_name': 'UserRecommendations',
-                'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
+            # base_dir + '\\static\\csv\\user_recommendations.csv': {
+            #     'table_name': 'website_userrecommendations',
+            #     'model_name': 'UserRecommendations',
+            #     'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
+            # },
+            # base_dir + '\\static\\csv\\skill.csv': {
+            #     'table_name': 'website_skill',
+            #     'model_name': 'Skill',
+            #     'columns':  ["id","skill"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)"]
+            # },
+            # base_dir + '\\static\\csv\\test_skill.csv': {
+            #     'table_name': 'assessment_test_skills',
+            #     'model_name': 'TestSkill',
+            #     'columns':  ["id","test_id","skill_id"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
+            # },
+            base_dir + '\\static\\csv\\courses.csv': {
+                'table_name': 'acad_course',
+                'model_name': 'Course',
+                'columns':  ["id","course_name","number_of_years","description"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(100)","INT","VARCHAR(1000)"]
             },
+            base_dir + '\\static\\csv\\subjects.csv': {
+                'table_name': 'acad_subject',
+                'model_name': 'Subject',
+                'columns':  ["id","subject_name","description"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(100)","VARCHAR(1000)"]
+            },
+            base_dir + '\\static\\csv\\curriculum.csv': {
+                'table_name': 'acad_curriculum',
+                'model_name': 'Curriculum',
+                'columns':  ["id","year","course_id","subject_id"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT","INT"]
+            },
+            # base_dir + '\\static\\csv\\studentprofile.csv': {
+            #     'table_name': 'acad_studentprofile',
+            #     'model_name': 'StudentProfile',
+            #     'columns':  ["studentprofile_id","user_id","is_student","enrolled_courses","current_year"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","BOOLEAN","VARCHAR(100)","INT"]
+            # },
         }
         
         cursor = connection.cursor()
@@ -128,15 +165,15 @@ class Command(BaseCommand):
                 cursor.execute(query)
                 connection.commit()
                 print("Now loading data to the table...")
-                # Load data from CSV
-                with open(csv_file_path, 'r') as file:
-                    csv_reader = csv.DictReader(file)
-                    for row in csv_reader:
-                        columns = ', '.join(row.keys())
-                        placeholders = ', '.join(['%s'] * len(row))
-                        query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
-                        print("query: ", query)
-                        cursor.execute(query, tuple(row.values()))
+            # Load data from CSV
+            with open(csv_file_path, 'r') as file:
+                csv_reader = csv.DictReader(file)
+                for row in csv_reader:
+                    columns = ', '.join(row.keys())
+                    placeholders = ', '.join(['%s'] * len(row))
+                    query = f"INSERT INTO {table_info['table_name']} ({columns}) VALUES ({placeholders})"
+                    print("query: ", query)
+                    cursor.execute(query, tuple(row.values()))
                     
         connection.commit()
         cursor.close()
