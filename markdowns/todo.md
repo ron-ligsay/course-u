@@ -98,7 +98,8 @@
     - Develop algorithms that take into account a student's assessment history, academic preferences, and career goals to recommend academic tracks, specializations, and job postings.
 - [ ]: Job Recommendations
     - Implement a recommendation system for job postings based on a student's academic background, preferences, and career goals. You can use techniques like content-based filtering or collaborative filtering for this purpose.
-
+- [ ]: User Skills with count database
+    - user_id, skill_id, count
 
 ## Others
 - [ ]: Testing and Refinement:

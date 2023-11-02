@@ -5,6 +5,14 @@ from django.contrib.auth.models import User, Group
 from django.contrib import messages
 # Decorator for views that checks that the user is logged in, redirecting
 
+def login_required(view_func):
+    def wrapper_func(request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return view_func(request,*args,**kwargs)
+        else:
+            return redirect('login_user')
+    return wrapper_func
+
 def unauthenticated_user(view_func):
     def wrapper_func(request, *args, **kwargs):
         if request.user.is_authenticated:

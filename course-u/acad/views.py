@@ -52,26 +52,31 @@ def subjects_grade_input(request):
     # Get the subjects for the curriculum
     subjects = Subject.objects.filter(pk__in=subject_id)
 
+
+    print("Subjects: ", subjects)
+
     if request.method == 'POST':
         forms = [StudentGradeForm(request.POST, prefix=str(subject.id)) for subject in subjects]
         if all(form.is_valid() for form in forms):
             for form, subject in zip(forms, subjects):
-                grade_value = form.cleaned_data.get(str(subject.id) + '-grade')
+                grade_value = form.cleaned_data.get('grade')
                 if grade_value is not None:
                     grade, created = StudentGrades.objects.get_or_create(student=student, subject=subject)
                     grade.grade = grade_value
                     grade.save()
+                else:
+                    print(f"Grade value for subject {subject.id} is None or 0")
             return redirect('success_page')
         else:
+            # Handle errors or form validation errors
             for form in forms:
                 print(form.errors)
     else:
         forms = [StudentGradeForm(prefix=str(subject.id)) for subject in subjects]
 
     return render(request, 'acad/subject_grade_input.html', {'form_subject_pairs': zip(forms, subjects), 'course': course_name, 'year_level': year_level})
-
+    
 def success_page(request):
-
     # Get the Student Profile
     student = StudentProfile.objects.get(user=request.user)
 

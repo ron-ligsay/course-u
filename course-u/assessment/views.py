@@ -25,7 +25,7 @@ from plotly.offline import plot
 
 
 # Utilities
-from utilities.decorators import unauthenticated_user, allowed_users, admin_only
+from utilities.decorators import unauthenticated_user, allowed_users, admin_only, login_required
 from utilities.plots import generate_pie_chart
 from utilities.sessions import clear_session_variables#, get_last_question_set, create_or_retrieve_question_set, display_question_set, submit_test
 
@@ -34,7 +34,7 @@ from utilities.sessions import clear_session_variables#, get_last_question_set, 
 def test_home(request):
     return render(request, 'test/test_home.html')
 
-@unauthenticated_user
+@login_required
 def start_test(request):
 
     question_per_field = 2
@@ -45,7 +45,7 @@ def start_test(request):
     # Check user's QuestionSet if it has incomplete test
     try:
         incomplete = QuestionSet.objects.filter(user=request.user, is_completed=False).first()
-        print("incomplete: ", incomplete)
+        print("incomplete Question Set: ", incomplete)
         last_set = 0
     except QuestionSet.DoesNotExist:
         incomplete = None
@@ -55,6 +55,7 @@ def start_test(request):
 
     # If yes, retrieve the last question set
     if incomplete:
+        print("You have incomplete test! Retrieving the last question set...")
         incomplete_set_id = incomplete.set_id
 
         # Store the question set ID in the session
@@ -78,6 +79,13 @@ def start_test(request):
         if n_questions == incomplete.n_questions:
             # If yes, redirect to test_overview
             print("You have complete Responses n_questions: ", n_questions, "incomplete.n_questions: ", incomplete.n_questions, "equal!")
+            print("Redirecting to test_overview")
+
+            # need to store session variables!!! -----------------------------------------------------------------------------------------------------!!!
+
+            request.session['test_started'] = True
+            print("Test started!")
+
             return redirect('test_overview')
         else:
             print("You have incomplete Responses n_questions: ", n_questions, "incomplete.n_questions: ", incomplete.n_questions, "not equal!")
@@ -137,6 +145,7 @@ def start_test(request):
 
             # Start test
             request.session['test_started'] = True
+            print("Test started!")
     else:
         # If no, create a new question set
         print("No incomplete test! Creating a new test...")
@@ -184,18 +193,20 @@ def start_test(request):
                 is_answered=False,
             )
         
+        print("Created new UserResponse objects")
+
         # store questions_answered in session
         request.session['questions_answered'] = 0
 
         # Start test
         request.session['test_started'] = True
-
+        
+        print("Test started!")
 
 
     return redirect('display_question', question_id=start)
 
 
-@unauthenticated_user
 def display_question(request, question_id):
     print("display_question() question_id: ", question_id)
     # Retrieve the question set and answered questions from the session
@@ -227,6 +238,7 @@ def display_question(request, question_id):
 
 
 def test_overview(request):
+    print("Test Overview()")
     user = request.user
     is_admin = user.is_superuser
 
@@ -258,7 +270,6 @@ def test_overview(request):
 
     return render(request, 'test/test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info, 'is_admin': is_admin})
 
-@unauthenticated_user
 def next_test(request, question_id):
     print("next_test() question_id: ", question_id)
     try:
@@ -287,7 +298,6 @@ def next_test(request, question_id):
     #options = question.options
     return render(request, 'test/test_page.html', {'question': question})#, 'options': options
 
-@unauthenticated_user
 def prev_test(request, question_id):
     print("prev_test() question_id: ", question_id)
     if question_id <= 1:
@@ -307,7 +317,7 @@ def prev_test(request, question_id):
         messages.success(request, 'You have reached the first question')
         return redirect('home')
 
-@unauthenticated_user
+
 def submit_question(request, question_id):
     print("submit_question() question_id: ", question_id)
 
@@ -398,8 +408,8 @@ def submit_question(request, question_id):
 
     return redirect('home')
 
-@unauthenticated_user
 def submit_test(request):
+    print("submit_test()")
     # process the submitted test
     set_id = request.session.get('question_set_id')
     unfinished_response = UserResponse.objects.filter(set_id=set_id, is_answered=False).count()
@@ -411,6 +421,7 @@ def submit_test(request):
         #question_set = QuestionSet.objects.get(pk=question_set_id)
         #questions_answered = request.session['questions_answered']
         test_started = request.session.get('test_started', False)
+        print("test_started: ", test_started)
         questions_answered = request.session.get('questions_answered', 0)
         question_set_id = request.session.get('question_set_id')
         if test_started:
@@ -423,13 +434,15 @@ def submit_test(request):
             total_correct = UserResponse.objects.filter(set_id=question_set_id, is_correct=True).count()
             question_set.score = total_correct
             question_set.save()
-
+            print("Saving QuestionSet object: ", question_set)
+            print("Total correct: ", total_correct, "is completed: ", question_set.is_completed, "score: ", question_set.score)
+            print("QuestionSet object saved!")
             # Clear session variables
             clear_session_variables(request)
 
             messages.success(request, 'You have completed the test')
             print('You have completed the test')
-            return redirect('test_results', question_set_id=question_set_id)
+            return redirect('student_test_report', question_set_id=question_set_id)
         else:
             messages.success(request, 'You have not started the test')
             print('You have not started the test')
@@ -442,11 +455,10 @@ def submit_test(request):
         # back to test_overview
         return redirect('test_overview', question_set_id=question_set_id)
 
-@unauthenticated_user
+
 def view_test_results(request):
     return render(request, 'test/test_home.html')
 
-@unauthenticated_user
 def create_test(request):
     
     form = TestCreateForm()
@@ -468,12 +480,14 @@ def create_test(request):
     context = {'form' : form}
     return render(request, 'test/create_test.html', context)
 
-@unauthenticated_user
+
+
 def update_test(request, question_id):
     
     return render(request, 'test/update_test.html')
 
-@unauthenticated_user
+
+@login_required
 def admin_test_report(request):
 
     # from questionset get all
@@ -497,6 +511,7 @@ def admin_test_report(request):
 
 
 def student_test_report(request, question_set_id):
+    print("student_test_report() question_set_id: ", question_set_id)
 
      # get user results from QuestionSet
     user_id = request.user.id
@@ -580,6 +595,8 @@ def student_test_report(request, question_set_id):
         'bar_plot': bar_plot 
     })
 
+
+@login_required
 def student_test_report_overall(request):
 
     # Get user results from all QuestionSets
@@ -671,15 +688,6 @@ def student_test_report_overall(request):
 def test_query(request):
     questions,start,end = get_test_questions(x=1, y=5)
     return render(request, 'test_queries/test_query.html', {'questions': questions})
-
-def gradelevel_input(request):
-    return render(request, 'user/grade level.html')
-
-def subjectgrade_input(request):
-    return render(request, 'user/subject.html')
-
-def course_input(request):
-    return render(request,'user/course.html')
 
 
 
