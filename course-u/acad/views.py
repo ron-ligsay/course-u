@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
-from acad.models import Course, Subject, Curriculum, StudentProfile
+
+from acad.models import Course, Subject, Curriculum, StudentProfile, StudentGrades
+from acad.forms import StudentEnrollmentForm, StudentGradeForm
+from django.shortcuts import redirect
 
 def select_course(request):
     courses = Course.objects.all()
@@ -24,51 +27,64 @@ def enroll_student(request, course_id, year_level):
     student.current_year = year_level
     student.save()
 
-    print("Student enrolled in course: ", student.enrolled_course)
+    print("Student enrolled in course: ", student.enrolled_courses_id)
 
-    return render(request, 'acad/enrollment_success.html')
+    return redirect('subjects_grade_input')
 
-def subjects(request):
-    
-    user = request.user
-    student = StudentProfile.objects.get(user=user)
 
-    # Get the enrolled course of the student and year
+def subjects_grade_input(request):
+    # Get the Student Profile
+    student = StudentProfile.objects.get(user=request.user)
+
+    # Get the enrolled course of the student and year level
     course = student.enrolled_courses_id
+    course_name = Course.objects.get(pk=course)
     year_level = student.current_year
 
-    # Get the subjects for the course and year through curriculum
+    # Get the curriculum for the course and year level
     curriculum = Curriculum.objects.filter(course_id=course, year=year_level)
-    
-    print("Curriculum: ", curriculum)
 
-    # get subject_id from curriculum
+    # Get subject_id from curriculum
     subject_id = []
     for subject in curriculum:
         subject_id.append(subject.subject_id)
 
-    print("Subject ID: ", subject_id)
-
     # Get the subjects for the curriculum
     subjects = Subject.objects.filter(pk__in=subject_id)
-    print("Subjects: ", subjects)
 
-    return render(request, 'acad/subject.html', {'subjects': subjects})
-
-def submit_grades(request):
     if request.method == 'POST':
-        subject_id = request.POST['subject_id']
-        student_id = request.POST['student_id']
-        grade = request.POST['grade']
-
-        student = StudentProfile.objects.get(pk=student_id)
-        subject = Subject.objects.get(pk=subject_id)
-
-        # Add the grade to the student's grades
-        student.grades[subject.subject_name] = grade
-        student.save()
-
-        return redirect('subjects')
+        forms = [StudentGradeForm(request.POST, prefix=str(subject.id)) for subject in subjects]
+        if all(form.is_valid() for form in forms):
+            for form, subject in zip(forms, subjects):
+                grade_value = form.cleaned_data.get(str(subject.id) + '-grade')
+                if grade_value is not None:
+                    grade, created = StudentGrades.objects.get_or_create(student=student, subject=subject)
+                    grade.grade = grade_value
+                    grade.save()
+            return redirect('success_page')
+        else:
+            for form in forms:
+                print(form.errors)
     else:
-        return render(request, 'submit_grades.html')
+        forms = [StudentGradeForm(prefix=str(subject.id)) for subject in subjects]
 
+    return render(request, 'acad/subject_grade_input.html', {'form_subject_pairs': zip(forms, subjects), 'course': course_name, 'year_level': year_level})
+
+def success_page(request):
+
+    # Get the Student Profile
+    student = StudentProfile.objects.get(user=request.user)
+
+    # Get the enrolled course of the student and year
+    course = student.enrolled_courses_id
+
+    # Get the grades
+    grades = StudentGrades.objects.filter(student=student)
+    
+
+
+    return render(request, 'acad/success_page.html', {
+        'student': student,
+        'course': course,
+        'grades': grades,
+    })
