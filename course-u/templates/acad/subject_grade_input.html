@@ -1,0 +1,33 @@
+{% extends 'base_user.html' %}
+{% block title %}Subject Grade Input{% endblock %}
+
+{% load static %}
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/subject.css' %}">
+
+{% endblock head_extra %}
+
+{% block content %}
+
+<p>Please input the grade of each<br> major subject</p><br>
+<p>Course:{{ course }}, Year Level:{{year_level}}</p><br>
+
+
+<div class="subject">
+    <form method="post">
+        {% csrf_token %}
+        {% for form, subject in form_subject_pairs %}
+        <h3>{{ subject.subject_name }}</h3>
+        {{ form.grade.errors }}
+        {{ form.grade.label_tag }}
+        {{ form.grade }}
+        {{ form.subject_hidden }}
+        {% endfor %}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+
+{% endblock content %}

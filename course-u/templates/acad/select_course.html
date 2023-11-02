@@ -1,0 +1,19 @@
+{% extends 'base_user.html' %}
+{% block title %}Courses Selection{% endblock %}
+
+{% load static %}
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/course.css' %}">
+{% endblock head_extra %}
+
+{% block content %}
+<p>Select Course</p><br>
+
+<div class="">
+    {% for course in courses %}
+    <div class="course">
+        <a href="{% url 'select_year' course_id=course.id %}" class="btn btn-primary">{{ course.course_name }}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'base_user.html' %}
+{% block title %}Success Page{% endblock %}
+
+{% load static %}
+{% block head_extra %}
+
+{% endblock head_extra %}
+
+
+{% block content %}
+
+<h2>You have Saved your Grades</h2>
+<p>Course:{{ course }}, Year Level:{{year_level}}</p><br>
+<p>{{grades}}</p>
+<div>
+    <p>Go back to Test Home</p>
+    <a href="{% url 'test_home' %}" class="submit-button" id="submit-button"><b>Test Home</b></a>
+</div>
+<div>
+    <p>Take the test!</p>
+    <a href="{% url 'start_test' %}" class="submit-button" id="submit-button"><b>Take Test</b></a>
+</div>
+
+{% endblock content %}

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     #'students',
     'grades',
+    'personality',
+    'acad',
 ]
 
 MIDDLEWARE = [
