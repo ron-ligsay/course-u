@@ -21,14 +21,13 @@ import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('website.urls')),
-    path('', include('jobs.urls')),
-    path('', include('assessment.urls')),
-    path('', include('recommender.urls')),
-    path('', include('personality.urls')),
-    path('', include('acad.urls')),
-
-    path('', include('grades.urls')),
-
     path('__debug__/',include('debug_toolbar.urls')),
+
+    # Other apps
+    path('', include('apps.website.urls')),
+    path('', include('apps.jobs.urls')),
+    path('', include('apps.assessment.urls')),
+    path('', include('apps.recommender.urls')),
+    path('', include('apps.personality.urls')),
+    path('', include('apps.acad.urls')),
 ]
