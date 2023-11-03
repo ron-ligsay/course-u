@@ -1,11 +1,25 @@
 from django.test import TestCase
 from django import setup
+import sys
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "course_u.settings")
-setup()
+
+#os.environ.setdefault("DJANGO_SETTINGS_MODULE", "course_u.settings")
+# setup()
+
+# Set the path to your Django project directory (course-u in this case)
+#sys.path.append(os.path.abspath('C:/Users/aky/AppData/Local/Programs/Python/Python38/course-u/'))
+
+# "C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course_u\\course_u\\test\\",
+sys.path.append(os.path.abspath('C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course_u\\'))
+
+# Set the Django settings module for your tests
+os.environ['DJANGO_SETTINGS_MODULE'] = 'course_u.settings'
+
+
+
 
 # Create your tests here.
-from apps.website.models import Field, Specialization
+from website.models import Field, Specialization
 
 class SpecializationTestCase(TestCase):
     # def setUp(self):
