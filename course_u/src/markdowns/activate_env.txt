@@ -1,6 +1,6 @@
 cd ..
 courseu\Scripts\activate
-cd course-u\course-u
+cd course_u\course_u
 
 
 

@@ -1,3 +1,27 @@
+# from course_u.settings import *
+
+# # Use a different database for testing (e.g., in-memory SQLite)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': ':memory:',
+#     }
+# }
+
+# # Set test-related configurations
+# DEBUG = False  # Disable debugging for tests
+# TESTING = True  # A custom flag for identifying test environment
+# SECRET_KEY = 'your-secret-key'  # Replace with a random value
+
+# # Disable migrations during testing to speed up test setup
+# MIGRATION_MODULES = {app: 'your_app_name.test_migrations' for app in INSTALLED_APPS}
+
+# # Add any other test-specific settings or configurations here
+
+# # Use the console email backend for testing (to prevent sending real emails)
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+####################################################################################################
 from pathlib import Path
 import os
 
@@ -200,7 +224,7 @@ HANDLERS = {
     },
     "critical_handler": {
         "class":"logging.handlers.RotatingFileHandler",
-        "filename":f"{BASE_DIR}/src/logs/critical.log",
+        "filename":f"{BASE_DIR}/logs/critical.log",
         "mode":"a",
         "formatter":"verbose", #verbose
         "level" : "CRITICAL", # filter to only log messages with a level of WARNING or higher
@@ -209,7 +233,7 @@ HANDLERS = {
     },
     "warning_handler": {
         "class":"logging.handlers.RotatingFileHandler",
-        "filename":f"{BASE_DIR}/src/logs/warning.log",
+        "filename":f"{BASE_DIR}/logs/warning.log",
         "mode":"a",
         "formatter":"verbose", #verbose
         "level" : "WARNING", # filter to only log messages with a level of WARNING or higher
@@ -218,7 +242,7 @@ HANDLERS = {
     },
     "info_handler": {
         "class": "logging.handlers.RotatingFileHandler",
-        "filename":f"{BASE_DIR}/src/logs/info.log",
+        "filename":f"{BASE_DIR}/logs/info.log",
         "mode":"a",
         "encoding":"utf-8",
         "formatter":"simple",
@@ -228,7 +252,7 @@ HANDLERS = {
     },
     "error_handler": {
         "class":"logging.handlers.RotatingFileHandler",
-        "filename":f"{BASE_DIR}/src/logs/error.log",
+        "filename":f"{BASE_DIR}/logs/error.log",
         "mode":"a",
         "formatter":"verbose", #verbose
         "level" : "WARNING", # filter to only log messages with a level of WARNING or higher

@@ -1,3 +1,10 @@
+from django.test import SimpleTestCase
+
+class TestViews(SimpleTestCase):
+    
+    def test_views_is_resolved(self):
+        assert 1 == 1
+
 # from django.test import TestCase
 # from utilities.model_utils import get_all_models, extract_field_types
 

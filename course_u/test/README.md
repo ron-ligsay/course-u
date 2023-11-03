@@ -21,3 +21,9 @@
 ### Reference:
 - [Django Testing Tutorial](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM)
 
+
+- [Pytest | Django | ...](https://www.youtube.com/watch?v=LYX6nlECcro)
+
+
+`pytest` - to conduct test
+`pytest -x` - will stop the test when it fails

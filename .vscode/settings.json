@@ -31,7 +31,7 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./test",
+        "./course_u/test",
         "-p",
         "*_test.py"
     ],
@@ -39,9 +39,17 @@
     "python.testing.unittestEnabled": true,
     // "python.testing.cwd": "C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course_u\\course_u\\test\\",
     "python.analysis.extraPaths": [
-        "./course_u"
+        "./course_u",
+        "./course_u/apps"
     ],
     "python.testing.pytestArgs": [
         "test"
     ],
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.addParenthesis": true,
+    "python.autoComplete.addQuotes": true,
+    "python.autoComplete.extraPaths": [
+        "C:Users/aky/AppData/Local/Programs/Python/Python38/course_u",
+    ],
+
 }
