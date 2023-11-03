@@ -18,7 +18,8 @@ class Command(BaseCommand):
             'assessment_userresponse','assessment_questionset', 'assessment_test',  
             'assessment_mbtiresponse', 'assessment_mbti', 'assessment_mbtiset',
             'website_specialization', 'website_field','website_userprofile', 
-            'jobs_jobposting'
+            'jobs_jobposting',
+            'acad_curriculum','acad_student','acad_course','acad_subject'
         ]
 
         # Iterate through the table names and delete each table
