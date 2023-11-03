@@ -913,3 +913,20 @@ INFO 2023-11-03 14:18:22,044 django.server basehttp basehttp.py 212 log_message 
 INFO 2023-11-03 14:18:22,656 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
 INFO 2023-11-03 14:18:23,542 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 38397
 INFO 2023-11-03 14:18:24,640 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 24533
+INFO 2023-11-03 14:25:39,243 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\grades\models.py changed, reloading.
+INFO 2023-11-03 14:25:39,912 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 14:26:47,550 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\grades\models.py changed, reloading.
+INFO 2023-11-03 14:26:48,178 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 14:27:29,065 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 14:27:30,850 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 14:27:33,968 django.server basehttp basehttp.py 212 log_message "GET /grade_input/ HTTP/1.1" 200 3190
+INFO 2023-11-03 14:27:58,200 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\grades\models.py changed, reloading.
+INFO 2023-11-03 14:27:58,880 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 14:28:02,739 django.server basehttp basehttp.py 212 log_message "GET /grade_input/ HTTP/1.1" 200 3200
+INFO 2023-11-03 14:31:04,841 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\grades\models.py changed, reloading.
+INFO 2023-11-03 14:31:05,487 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 14:31:10,126 django.server basehttp basehttp.py 212 log_message "GET /grade_input/ HTTP/1.1" 200 3586
+INFO 2023-11-03 14:34:04,320 django.server basehttp basehttp.py 212 log_message "GET /grade_input/ HTTP/1.1" 200 4124
+INFO 2023-11-03 14:43:53,713 django.server basehttp basehttp.py 212 log_message "GET /grade_input/ HTTP/1.1" 200 4993
+INFO 2023-11-03 14:52:22,606 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\grades\models.py changed, reloading.
+INFO 2023-11-03 14:52:23,293 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
