@@ -359,3 +359,7 @@ WARNING 2023-10-27 13:33:24,265 django.server Thread-4 (process_request_thread) 
 WARNING 2023-10-27 13:33:32,734 django.server Thread-5 (process_request_thread) 26160 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
 WARNING 2023-10-27 13:34:14,325 django.server Thread-6 (process_request_thread) 24184 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
 WARNING 2023-10-27 13:34:15,325 django.server Thread-7 (process_request_thread) 24564 basehttp basehttp.py 212 django.server log_message 13144 "GET /static/css/logout_success.css HTTP/1.1" 404 1825
+WARNING 2023-11-03 12:56:45,502 django.request Thread-3 (process_request_thread) 12976 log log.py 241 django.request log_response 15040 Not Found: /favicon.ico
+WARNING 2023-11-03 12:56:45,503 django.server Thread-3 (process_request_thread) 12976 basehttp basehttp.py 212 django.server log_message 15040 "GET /favicon.ico HTTP/1.1" 404 17824
+WARNING 2023-11-03 13:35:01,846 django.request Thread-2 (process_request_thread) 5876 log log.py 241 django.request log_response 13240 Not Found: /favicon.ico
+WARNING 2023-11-03 13:35:01,849 django.server Thread-2 (process_request_thread) 5876 basehttp basehttp.py 212 django.server log_message 13240 "GET /favicon.ico HTTP/1.1" 404 17824
