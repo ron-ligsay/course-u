@@ -1,5 +1,17 @@
 # TODO
 
+check if tables exists
+else, load_csv_data
+
+on load_csv_data
+import db_connection from different file
+create a connection
+import zip csv table files
+if table not exits, create table
+if table is empty, load csv data
+else, do nothing
+
+
 ## High Priority
 - [ ]: Maintenance
     - [X]: Loggers
