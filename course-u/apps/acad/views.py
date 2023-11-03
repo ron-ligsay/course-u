@@ -9,6 +9,7 @@ from apps.acad.forms import StudentGradeForm
 def select_course(request):
     courses = Course.objects.all()
     print("Courses: ", courses)
+    # return warning if ther are no courses
     return render(request, 'acad/select_course.html', {'courses': courses})
 
 def select_year(request, course_id):
@@ -75,6 +76,8 @@ def subjects_grade_input(request):
                 print(form.errors)
     else:
         forms = [StudentGradeForm(prefix=str(subject.id)) for subject in subjects]
+    
+    # return warning if there are no subjects available
 
     return render(request, 'acad/subject_grade_input.html', {'form_subject_pairs': zip(forms, subjects), 'course': course_name, 'year_level': year_level})
     
@@ -88,7 +91,7 @@ def success_page(request):
     # Get the grades
     grades = StudentGrades.objects.filter(student=student)
     
-
+    # return warning if failed to save grades
 
     return render(request, 'acad/success_page.html', {
         'student': student,
