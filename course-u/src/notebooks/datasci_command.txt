@@ -1,0 +1,2 @@
+cd ..
+.\datasci\Scripts\activate

@@ -54,11 +54,11 @@ def admin_only(view_func):
             group = request.user.groups.all()[0].name
 
         if group != 'admin':
-            #print('Not an Admin, redirect to home')
+            print('Not an Admin, redirect to home')
             return redirect('home')
         
         if group == 'admin':
-            #print('Admin, redirect to admin page')
+            print('Admin, redirect to admin page')
             return view_func(request, *args, **kwargs)
 
         else:
