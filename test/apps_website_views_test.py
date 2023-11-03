@@ -5,7 +5,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "course_u.settings")
 setup()
 
 # Create your tests here.
-from .models import Field, Specialization
+from apps.website.models import Field, Specialization
 
 class SpecializationTestCase(TestCase):
     # def setUp(self):
