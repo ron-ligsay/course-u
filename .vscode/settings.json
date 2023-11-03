@@ -39,7 +39,7 @@
     "python.testing.unittestEnabled": true,
     // "python.testing.cwd": "C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course_u\\course_u\\test\\",
     "python.analysis.extraPaths": [
-        "./course-u"
+        "./course_u"
     ],
     "python.testing.pytestArgs": [
         "test"
