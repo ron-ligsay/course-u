@@ -1,0 +1,915 @@
+INFO 2023-11-03 13:10:33,322 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:10:58,372 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\course_u\settings.py changed, reloading.
+INFO 2023-11-03 13:10:59,019 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:11:02,058 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 13:11:02,281 django.server basehttp basehttp.py 212 log_message "GET /static/css/landing.css HTTP/1.1" 304 0
+INFO 2023-11-03 13:11:02,287 django.server basehttp basehttp.py 212 log_message "GET /static/images/landing2.png HTTP/1.1" 304 0
+WARNING 2023-11-03 13:11:02,423 django.request log log.py 241 log_response Not Found: /favicon.ico
+WARNING 2023-11-03 13:11:02,425 django.server basehttp basehttp.py 212 log_message "GET /favicon.ico HTTP/1.1" 404 20553
+INFO 2023-11-03 13:11:05,127 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+ERROR 2023-11-03 13:11:05,303 django.request log log.py 241 log_response Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.website_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\website\views.py", line 46, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.website_userrecommendations' doesn't exist")
+ERROR 2023-11-03 13:11:05,329 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 500 202577
+INFO 2023-11-03 13:17:26,262 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:21:53,755 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:21:56,029 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 13:21:58,023 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:21:58,110 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16427
+INFO 2023-11-03 13:21:58,138 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 4547
+INFO 2023-11-03 13:21:58,140 django.server basehttp basehttp.py 212 log_message "GET /static/css/home.css HTTP/1.1" 200 1330
+INFO 2023-11-03 13:21:58,361 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 304 0
+INFO 2023-11-03 13:21:58,365 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-11-03 13:21:58,688 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-11-03 13:22:06,444 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 14911
+INFO 2023-11-03 13:22:11,606 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22582
+INFO 2023-11-03 13:22:11,639 django.server basehttp basehttp.py 212 log_message "GET /static/css/job_post.css HTTP/1.1" 200 1869
+INFO 2023-11-03 13:22:11,662 django.server basehttp basehttp.py 212 log_message "GET /static/js/job_list.js HTTP/1.1" 200 1060
+INFO 2023-11-03 13:22:20,300 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16212
+INFO 2023-11-03 13:22:21,152 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16427
+INFO 2023-11-03 13:22:26,890 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16212
+INFO 2023-11-03 13:22:28,477 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 14911
+INFO 2023-11-03 13:22:33,380 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 14911
+INFO 2023-11-03 13:22:41,148 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 14911
+INFO 2023-11-03 13:22:41,925 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22582
+INFO 2023-11-03 13:22:45,508 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 14911
+INFO 2023-11-03 13:22:46,321 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16212
+INFO 2023-11-03 13:22:47,078 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16427
+WARNING 2023-11-03 13:22:51,595 django.request log log.py 241 log_response Not Found: /Specialization
+WARNING 2023-11-03 13:22:51,596 django.server basehttp basehttp.py 212 log_message "GET /Specialization HTTP/1.1" 404 20565
+WARNING 2023-11-03 13:23:03,937 django.request log log.py 241 log_response Not Found: /Jobs
+WARNING 2023-11-03 13:23:03,938 django.server basehttp basehttp.py 212 log_message "GET /Jobs HTTP/1.1" 404 20525
+INFO 2023-11-03 13:23:22,442 django.server basehttp basehttp.py 212 log_message "GET /logout/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:23:22,463 django.server basehttp basehttp.py 212 log_message "GET /logout/success/ HTTP/1.1" 200 9471
+INFO 2023-11-03 13:23:23,956 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-11-03 13:23:23,985 django.server basehttp basehttp.py 212 log_message "GET /static/css/login_user.css HTTP/1.1" 304 0
+INFO 2023-11-03 13:23:24,040 django.server basehttp basehttp.py 212 log_message "GET /static/images/log.jpg HTTP/1.1" 304 0
+INFO 2023-11-03 13:23:30,257 django.server basehttp basehttp.py 212 log_message "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:23:30,291 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16961
+ERROR 2023-11-03 13:23:32,357 django.request log log.py 241 log_response Internal Server Error: /admin_home/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\utilities\decorators.py", line 62, in wrapper_function
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\website\views.py", line 129, in admin_home
+    for field_data in field_test_counts:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 208, in __iter__
+    for row in compiler.results_iter(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'field list'")
+ERROR 2023-11-03 13:23:32,383 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 500 193358
+INFO 2023-11-03 13:23:54,761 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:23:59,187 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:24:00,683 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16450
+INFO 2023-11-03 13:24:11,331 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16450
+INFO 2023-11-03 13:24:12,146 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:24:13,008 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16450
+INFO 2023-11-03 13:24:14,093 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:24:14,816 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16450
+INFO 2023-11-03 13:24:15,993 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 13:24:19,678 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22820
+INFO 2023-11-03 13:24:21,456 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16450
+INFO 2023-11-03 13:24:23,219 django.server basehttp basehttp.py 212 log_message "GET /select_course/ HTTP/1.1" 200 14907
+INFO 2023-11-03 13:24:23,247 django.server basehttp basehttp.py 212 log_message "GET /static/css/course.css HTTP/1.1" 200 565
+INFO 2023-11-03 13:24:31,299 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:24:32,056 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16450
+ERROR 2023-11-03 13:24:36,417 django.request log log.py 241 log_response Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\personality\views.py", line 18, in initialize_mbti_test
+    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 592, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+ERROR 2023-11-03 13:24:36,438 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 500 181399
+ERROR 2023-11-03 13:24:52,858 django.request log log.py 241 log_response Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\personality\views.py", line 18, in initialize_mbti_test
+    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 592, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+ERROR 2023-11-03 13:24:52,876 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 500 181401
+ERROR 2023-11-03 13:26:05,659 django.request log log.py 241 log_response Internal Server Error: /test_reults_overall/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'on clause'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\utilities\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\assessment\views.py", line 625, in student_test_report_overall
+    for field in field_correct_answers:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'on clause'")
+ERROR 2023-11-03 13:26:05,683 django.server basehttp basehttp.py 212 log_message "GET /test_reults_overall/ HTTP/1.1" 500 200135
+INFO 2023-11-03 13:27:13,374 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\krstf\course-u\course-u\apps\assessment\urls.py changed, reloading.
+INFO 2023-11-03 13:27:14,072 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+WARNING 2023-11-03 13:27:18,632 django.request log log.py 241 log_response Not Found: /test_reults_overall/
+WARNING 2023-11-03 13:27:18,634 django.server basehttp basehttp.py 212 log_message "GET /test_reults_overall/ HTTP/1.1" 404 20590
+ERROR 2023-11-03 13:27:23,567 django.request log log.py 241 log_response Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\personality\views.py", line 18, in initialize_mbti_test
+    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 592, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+ERROR 2023-11-03 13:27:23,598 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 500 181402
+INFO 2023-11-03 13:27:29,213 django.server basehttp basehttp.py 212 log_message "GET /select_course/ HTTP/1.1" 200 14907
+INFO 2023-11-03 13:27:54,792 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:27:57,750 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:27:59,854 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 13:28:01,797 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22820
+INFO 2023-11-03 13:28:01,833 django.server basehttp basehttp.py 212 log_message "GET /static/css/job_post.css HTTP/1.1" 304 0
+INFO 2023-11-03 13:28:04,219 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 13:28:10,026 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:28:12,669 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:28:13,808 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:28:15,287 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+ERROR 2023-11-03 13:28:16,005 django.request log log.py 241 log_response Internal Server Error: /admin_home/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\utilities\decorators.py", line 62, in wrapper_function
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\website\views.py", line 129, in admin_home
+    for field_data in field_test_counts:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 208, in __iter__
+    for row in compiler.results_iter(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1513, in results_iter
+    results = self.execute_sql(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'field list'")
+ERROR 2023-11-03 13:28:16,028 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 500 193358
+INFO 2023-11-03 13:29:36,476 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+ERROR 2023-11-03 13:29:37,765 django.request log log.py 241 log_response Internal Server Error: /test_results_overall/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'on clause'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\utilities\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\assessment\views.py", line 625, in student_test_report_overall
+    for field in field_correct_answers:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'assessment_test.field_id' in 'on clause'")
+ERROR 2023-11-03 13:29:37,790 django.server basehttp basehttp.py 212 log_message "GET /test_results_overall/ HTTP/1.1" 500 200147
+INFO 2023-11-03 13:31:41,642 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:31:43,784 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 13:31:46,833 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:31:46,868 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:31:48,198 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:31:49,102 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:31:50,233 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:31:51,380 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:31:54,813 django.server basehttp basehttp.py 212 log_message "GET /select_course/ HTTP/1.1" 200 14907
+INFO 2023-11-03 13:35:06,944 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:35:08,831 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 13:35:10,127 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:35:10,167 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:35:11,134 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:35:12,829 django.server basehttp basehttp.py 212 log_message "GET /select_course/ HTTP/1.1" 200 14907
+INFO 2023-11-03 13:35:31,846 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:35:33,156 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:35:50,514 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:48:26,214 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 13:48:28,372 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 13:48:30,416 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:48:30,453 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16665
+INFO 2023-11-03 13:48:32,508 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:48:33,608 django.server basehttp basehttp.py 212 log_message "GET /select_course/ HTTP/1.1" 200 15153
+INFO 2023-11-03 13:48:47,254 django.server basehttp basehttp.py 212 log_message "GET /select_year/2/ HTTP/1.1" 200 15341
+INFO 2023-11-03 13:48:47,287 django.server basehttp basehttp.py 212 log_message "GET /static/css/grade_level.css HTTP/1.1" 200 532
+INFO 2023-11-03 13:48:48,949 django.server basehttp basehttp.py 212 log_message "GET /enroll_student/2/4/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:48:49,027 django.server basehttp basehttp.py 212 log_message "GET /subjects_grade_input/ HTTP/1.1" 200 15942
+INFO 2023-11-03 13:48:49,055 django.server basehttp basehttp.py 212 log_message "GET /static/css/subject.css HTTP/1.1" 200 1081
+INFO 2023-11-03 13:49:16,966 django.server basehttp basehttp.py 212 log_message "POST /subjects_grade_input/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:49:17,043 django.server basehttp basehttp.py 212 log_message "GET /success_page/ HTTP/1.1" 200 15381
+INFO 2023-11-03 13:49:58,767 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22820
+INFO 2023-11-03 13:49:58,800 django.server basehttp basehttp.py 212 log_message "GET /static/css/job_post.css HTTP/1.1" 304 0
+INFO 2023-11-03 13:49:59,689 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 13:50:00,750 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 13:50:02,393 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-11-03 13:50:02,415 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 37
+ERROR 2023-11-03 13:50:07,828 django.request log log.py 241 log_response Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\personality\views.py", line 18, in initialize_mbti_test
+    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 592, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+ERROR 2023-11-03 13:50:07,852 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 500 181401
+INFO 2023-11-03 13:50:12,286 django.server basehttp basehttp.py 212 log_message "GET /test_results_overall/ HTTP/1.1" 200 3619881
+ERROR 2023-11-03 13:51:32,025 django.request log log.py 241 log_response Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\personality\views.py", line 18, in initialize_mbti_test
+    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\query.py", line 592, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\krstf\courseu\Lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.personality_mbtiset' doesn't exist")
+ERROR 2023-11-03 13:51:32,045 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 500 181401
+INFO 2023-11-03 14:15:21,493 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-03 14:15:53,474 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-03 14:15:54,859 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-03 14:15:54,904 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 38397
+INFO 2023-11-03 14:16:01,089 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 3944
+INFO 2023-11-03 14:16:01,302 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=66b9ff24638340cab28acba6de0039e8 HTTP/1.1" 200 9090
+INFO 2023-11-03 14:17:25,800 django.server basehttp basehttp.py 212 log_message "GET /specialization_page/1/ HTTP/1.1" 200 15064
+INFO 2023-11-03 14:17:27,601 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 24533
+INFO 2023-11-03 14:17:27,635 django.server basehttp basehttp.py 212 log_message "GET /static/css/admin_home.css HTTP/1.1" 200 3482
+INFO 2023-11-03 14:17:28,346 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 38397
+INFO 2023-11-03 14:17:40,747 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 3944
+INFO 2023-11-03 14:17:40,960 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=fbfbba2bfc00441a80c94fc662cec5ab HTTP/1.1" 200 9090
+INFO 2023-11-03 14:17:41,691 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 3944
+INFO 2023-11-03 14:17:41,907 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=e94da98e3dae4fd187c0727fcf1b2c2a HTTP/1.1" 200 9090
+INFO 2023-11-03 14:17:42,928 django.server basehttp basehttp.py 212 log_message "GET /specialization_page/1/ HTTP/1.1" 200 15064
+INFO 2023-11-03 14:17:44,006 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 38397
+INFO 2023-11-03 14:17:44,943 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 14:17:46,383 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 14:17:47,124 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 14:17:49,670 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 302 0
+INFO 2023-11-03 14:17:49,712 django.server basehttp basehttp.py 212 log_message "GET /mbti/1/ HTTP/1.1" 200 15116
+ERROR 2023-11-03 14:17:53,591 django.request log log.py 241 log_response Internal Server Error: /start_test/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\utilities\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\assessment\views.py", line 94, in start_test
+    unique_fields = question_set.objects.values('field').distinct()
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'objects'
+ERROR 2023-11-03 14:17:53,612 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 500 92540
+INFO 2023-11-03 14:17:56,871 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 14:17:57,611 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 14:17:59,208 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+ERROR 2023-11-03 14:18:00,377 django.request log log.py 241 log_response Internal Server Error: /start_test/
+Traceback (most recent call last):
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\courseu\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\utilities\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krstf\course-u\course-u\apps\assessment\views.py", line 94, in start_test
+    unique_fields = question_set.objects.values('field').distinct()
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'objects'
+ERROR 2023-11-03 14:18:00,394 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 500 92540
+INFO 2023-11-03 14:18:19,740 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 14:18:20,784 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22820
+INFO 2023-11-03 14:18:20,810 django.server basehttp basehttp.py 212 log_message "GET /static/css/job_post.css HTTP/1.1" 304 0
+INFO 2023-11-03 14:18:22,044 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15138
+INFO 2023-11-03 14:18:22,656 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16451
+INFO 2023-11-03 14:18:23,542 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 38397
+INFO 2023-11-03 14:18:24,640 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 24533
