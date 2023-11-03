@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.assessment',
     'apps.personality',
     'apps.acad',
+    'grades',
 ]
 
 MIDDLEWARE = [

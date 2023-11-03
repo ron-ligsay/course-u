@@ -30,4 +30,5 @@ urlpatterns = [
     path('', include('apps.recommender.urls')),
     path('', include('apps.personality.urls')),
     path('', include('apps.acad.urls')),
+    path('', include('grades.urls')),
 ]
