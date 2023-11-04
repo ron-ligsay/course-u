@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'courseu_db',
         'USER': 'root',
-        'PASSWORD': '022002',#'sawadeeKA456', #'022002'
+        'PASSWORD': 'sql2023',#'sawadeeKA456', #'022002'
         'HOST': 'localhost',
         'PORT': '3306',
     }
