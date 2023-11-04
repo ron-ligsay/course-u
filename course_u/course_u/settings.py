@@ -36,12 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'management_commands',
-    'apps.website',
+    'apps.acad',
+    'apps.assessment',
     'apps.recommender',
     'apps.jobs',
-    'apps.assessment',
     'apps.personality',
-    'apps.acad',
+    'apps.website',
+    
     'grades',
 ]
 
