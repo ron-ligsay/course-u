@@ -51,5 +51,6 @@
     "python.autoComplete.extraPaths": [
         "C:Users/aky/AppData/Local/Programs/Python/Python38/course_u",
     ],
+    "python.analysis.completeFunctionParens": true,
 
 }
