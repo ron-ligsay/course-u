@@ -1,44 +1,44 @@
-id,subject_name,description
-1,Introduction to Computing,Subject Description
-2,Computer Programming 1,Subject Description
-3,Computer Programming 2,Subject Description
-4,Discrete Structures 1,Subject Description
-5,Modeling and Simulation,Subject Description
-6,Data Structures and Algorithms,Subject Description
-7,Discrete Structures 2,Subject Description
-8,Object Oriented Programming,Subject Description
-9,Logic Design and Digital Computer Circuits,Subject Description
-10,Design and Analysis of Algorithms,Subject Description
-11,Information Management,Subject Description
-12,Operating Systems,Subject Description
-13,Technical Documentation and Presentation Skills in ICT,Subject Description
-14,Fundamentals of Research,Subject Description
-15,Application Development and Emerging Technologies,Subject Description
-16,Computer Organization and Assembly Language,Subject Description
-17,Automata and Language Theory,Subject Description
-18,Principles of Programming Languages,Subject Description
-19,Human Computer Interaction,Subject Description
-20,Information Assurance and Security,Subject Description
-21,Software Engineering 1,Subject Description
-22,Web Development,Subject Description
-23,CS Thesis Writing 1,Subject Description
-24,Introduction to Artificial Intelligence,Subject Description
-25,Data Communications and Networking,Subject Description
-26,CS Thesis Writing 2,Subject Description
-27,Software Engineering 2,Subject Description
-28,Professional Ethics for Computer Scientist,Subject Description
-29,IT Social and Professional Issues,Subject Description
-30,Programming 3 (Structured Programming),Subject Description
-31,Network Administration,Subject Description
-32,Quantitative Methods with Modeling and Simulation,Subject Description
-33,Integrative Programming and Technology,Subject Description
-34,Systemm Integration and Architecture 1,Subject Description
-35,Multimedia,Subject Description
-36,Database Administration,Subject Description
-37,Principles of Management and Organization,Subject Description
-38,Technopreneurship,Subject Description
-39,Systems Analysis and Design,Subject Description
-40,Applications Development and Emerging Technologies,Subject Description
-41,Information Assurance and Security 2,Subject Description
-42,Systems Administration and Maintenance,Subject Description
-43,Social and Professional Issues in IT,Subject Description
+id,subject_name,description,skill_list
+1,Introduction to Computing,Introduction to Computing is a fundamental course that provides an overview of the computing field.,problem-solving, programming, algorithms
+2,Computer Programming 1,Computer Programming 1 covers the basics of programming and introduces students to coding and software development.,programming, coding, software development
+3,Computer Programming 2,Computer Programming 2 builds upon the concepts learned in Computer Programming 1 and delves deeper into software development.,advanced programming, software development, algorithms
+4,Discrete Structures 1,Discrete Structures 1 explores mathematical structures and their applications in computer science.,mathematics, data structures, computer science
+5,Modeling and Simulation,Modeling and Simulation is a course that focuses on creating and analyzing models for various systems and simulating real-world scenarios.,modeling, simulation, analysis
+6,Data Structures and Algorithms,Data Structures and Algorithms delve into organizing and optimizing data storage and retrieval processes.,data structures, algorithms, optimization
+7,Discrete Structures 2,Discrete Structures 2 continues the exploration of mathematical structures and their applications in computer science.,advanced mathematics, computer science, data analysis
+8,Object Oriented Programming,Object-Oriented Programming introduces students to the principles of object-oriented design and software development.,object-oriented design, software development, coding
+9,Logic Design and Digital Computer Circuits,Logic Design and Digital Computer Circuits covers the design and implementation of digital circuits and logic systems.,digital circuits, logic design, electronics
+10,Design and Analysis of Algorithms,Design and Analysis of Algorithms focuses on the development and evaluation of efficient algorithms for problem-solving.,algorithm design, problem-solving, complexity analysis
+11,Information Management,Information Management explores strategies for organizing and managing data and information in organizations.,data management, information organization, databases
+12,Operating Systems,Operating Systems covers the fundamental concepts of computer operating systems and their management.,operating systems, system administration, computer architecture
+13,Technical Documentation and Presentation Skills in ICT,Technical Documentation and Presentation Skills in ICT emphasizes effective communication and documentation in the IT field.,technical communication, documentation, presentation skills
+14,Fundamentals of Research,Fundamentals of Research introduces students to research methodologies and techniques for academic and professional projects.,research methods, data analysis, research planning
+15,Application Development and Emerging Technologies,Application Development and Emerging Technologies explores the latest trends and technologies in software development and applications.,software development, emerging technologies, application design
+16,Computer Organization and Assembly Language,Computer Organization and Assembly Language delve into computer architecture and low-level programming.,computer architecture, assembly language, hardware
+17,Automata and Language Theory,Automata and Language Theory explores formal languages, automata, and their applications in computation and linguistics.,formal languages, automata theory, language theory
+18,Principles of Programming Languages,Principles of Programming Languages introduces students to various programming languages and their design principles.,programming languages, language design, syntax
+19,Human Computer Interaction,Human-Computer Interaction focuses on user experience, interface design, and usability in software and hardware systems.,user experience, interface design, usability
+20,Information Assurance and Security,Information Assurance and Security covers strategies and technologies for protecting data and information systems.,information security, cybersecurity, data protection
+21,Software Engineering 1,Software Engineering 1 introduces the principles and practices of software engineering and project management.,software engineering, project management, software development
+22,Web Development,Web Development focuses on web technologies, front-end and back-end development, and web application design.,web development, front-end, back-end, web design
+23,CS Thesis Writing 1,CS Thesis Writing 1 is a course that guides students in developing their research and thesis writing skills.,research writing, thesis development, research methodology
+24,Introduction to Artificial Intelligence,Introduction to Artificial Intelligence explores the foundations of AI and machine learning.,artificial intelligence, machine learning, AI foundations
+25,Data Communications and Networking,Data Communications and Networking covers networking protocols, data transmission, and network design.,networking, data communication, network protocols
+26,CS Thesis Writing 2,CS Thesis Writing 2 continues to support students in their research and thesis writing endeavors.,research writing, thesis development, research methodology
+27,Software Engineering 2,Software Engineering 2 builds upon the principles and practices of software engineering with a focus on advanced topics.,advanced software engineering, software development, project management
+28,Professional Ethics for Computer Scientist,Professional Ethics for Computer Scientists explores ethical considerations and responsibilities in the computing profession.,professional ethics, ethical decision-making, computing ethics
+29,IT Social and Professional Issues,IT Social and Professional Issues examines social and professional topics related to the IT field.,social issues, professional development, IT industry
+30,Programming 3 (Structured Programming),Programming 3 (Structured Programming) covers structured programming techniques and problem-solving with coding.,structured programming, problem-solving, coding
+31,Network Administration,Network Administration focuses on network management, configuration, and administration.,network administration, network management, IT infrastructure
+32,Quantitative Methods with Modeling and Simulation,Quantitative Methods with Modeling and Simulation explores quantitative analysis and modeling techniques.,quantitative analysis, modeling, simulation
+33,Integrative Programming and Technology,Integrative Programming and Technology combines programming and technology skills for practical applications.,integrative programming, technology integration, coding
+34,System Integration and Architecture 1,System Integration and Architecture 1 explores system integration, architecture design, and engineering principles.,system integration, architecture design, engineering
+35,Multimedia,Multimedia focuses on multimedia technologies, design, and multimedia content creation.,multimedia technologies, design, multimedia content creation
+36,Database Administration,Database Administration covers database management, administration, and SQL.,database management, administration, SQL
+37,Principles of Management and Organization,Principles of Management and Organization introduces management and organizational principles.,management principles, organizational management, leadership
+38,Technopreneurship,Technopreneurship explores entrepreneurship in the technology sector and innovative business practices.,entrepreneurship, technology business, innovation
+39,Systems Analysis and Design,Systems Analysis and Design focuses on analyzing systems and designing effective solutions.,systems analysis, solution design, system architecture
+40,Applications Development and Emerging Technologies,Applications Development and Emerging Technologies explores the latest trends and technologies in application development.,application development, emerging technologies, software design
+41,Information Assurance and Security 2,Information Assurance and Security 2 builds upon the strategies and technologies for data protection and security.,advanced information security, cybersecurity, data protection
+42,Systems Administration and Maintenance,Systems Administration and Maintenance covers system administration, maintenance, and IT support.,system administration, IT support, maintenance
+43,Social and Professional Issues in IT,Social and Professional Issues in IT explores social and professional topics specific to the IT industry.,social issues, professional development, IT industry
