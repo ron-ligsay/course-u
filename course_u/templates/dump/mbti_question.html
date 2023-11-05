@@ -1,0 +1,55 @@
+{% extends "base_user.html" %}
+
+{% block title %}MBTI Questions{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/mbti_question.css' %}">
+{% endblock head_extra %}
+
+<h2 class="personality-title">MBTI Questions</h2>
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="response">
+  {% for response in responses %}
+    <h3 class="question">{{ response.mbti.mbti_question }}</h3>
+    <p class="response-text">{{ response.option_a }}</p>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="-3" class="option-neg option-3">
+      
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="-2" class="option-neg option-2">
+      
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="-1" class="option-neg option-1">
+      
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="0" class="option">
+      
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="1" class="option-pos option-1">
+      
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="2" class="option-pos option-2">
+      
+    </label>
+    <label>
+      <input type="radio" name="question_{{ response.mbti_id }}" value="3" class="option-pos option-3">
+
+    </label>
+    <p class="response-text">{{ response.option_b }}</p>
+  {% endfor %}
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

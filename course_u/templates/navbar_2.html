@@ -5,6 +5,10 @@
                 <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
                 <span class="title"> Course-U </span>
             </a>
+            {% load static %}
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" href="{% url 'home' %}">
+            </div>
         </li>
         {% if user.is_authenticated %}
         {% if request.user.is_staff %}
