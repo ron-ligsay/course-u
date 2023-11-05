@@ -1,4 +1,4 @@
-cd ..
+cd ..\..
 courseu\Scripts\activate
 cd course_u\course_u
 
