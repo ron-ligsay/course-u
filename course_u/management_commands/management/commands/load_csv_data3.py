@@ -87,7 +87,7 @@ class Command(BaseCommand):
             #     'table_name': 'personality_mbtiset',
             #     'model_name': 'MBTISet',
             #     'columns':  ["mbti_set_id","user_id","is_completed","mind","energy","nature","tactics","identity"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5)"]
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "FLOAT", "FLOAT","FLOAT","FLOAT","VARCHAR(5) NULL"]
             # },
             # base_dir + '\\static\\csv\\user_mbti_response.csv': {
             #     'table_name': 'personality_mbtiresponse',

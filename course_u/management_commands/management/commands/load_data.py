@@ -38,13 +38,20 @@ class Command(BaseCommand):
         
 
         this_only_list = [
-        
+             #'acad_student','acad_course',
+            'acad_studentgrades','acad_subject_skills','acad_curriculum','acad_subject',
+            #'assessment_userresponse','assessment_questionset', 
+            'assessment_test_skills','assessment_test', 
+            #'personality_mbtiresponse', 'personality_mbti', 'personality_mbtiset',
+            #'jobs_jobposting',
+            #'website_specialization', 'website_field','website_userprofile', 
+            'website_skill',
         ]
         
         skip_list = [
-            'website_userrecommendations', 'website_skill', 
-            'assessment_test_skills', 
-            'acad_course', 'acad_subject', 'acad_curriculum', 'acad_studentprofile'
+            #'website_userrecommendations', 'website_skill', 
+            #'assessment_test_skills', 
+            #'acad_course', 'acad_subject', 'acad_curriculum', 'acad_studentprofile'
             ]
         
         #csv_table_mapping = {}
