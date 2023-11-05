@@ -20,8 +20,8 @@ class Command(BaseCommand):
             ]
         
         table_names = [
-            #'acad_curriculum','acad_student','acad_course',
-            'acad_subject_skills','acad_subject',
+            #'acad_student','acad_course',
+            'acad_studentgrades','acad_subject_skills','acad_curriculum','acad_subject',
             #'assessment_userresponse','assessment_questionset', 
             'assessment_test_skills','assessment_test', 
             #'personality_mbtiresponse', 'personality_mbti', 'personality_mbtiset',
