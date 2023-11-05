@@ -128,19 +128,19 @@ def calculate_personality(user, mbti_set_id):
 
     # Determine the personality type and update the user's MBTI instance
     personality_type = ''
-    if mind >= 2.5:
+    if mind >= 0:
         personality_type += 'I'
     else:
         personality_type += 'E'
-    if energy >= 2.5:
+    if energy >= 0:
         personality_type += 'N'
     else:
         personality_type += 'S'
-    if nature >= 2.5:
+    if nature >= 0:
         personality_type += 'F'
     else:
         personality_type += 'T'
-    if tactics >= 2.5:
+    if tactics >= 0:
         personality_type += 'P'
     else:
         personality_type += 'J'
@@ -157,13 +157,43 @@ def mbti_results(request, mbti_set_id):
     mbti_set = MBTISet.objects.get(pk=mbti_set_id)
 
     # Convert float into percentage
-    mbti_set.mind = int(mbti_set.mind * 20)
-    mbti_set.energy = int(mbti_set.energy * 20)
-    mbti_set.nature = int(mbti_set.nature * 20)
-    mbti_set.tactics = int(mbti_set.tactics * 20)
+    mbti_set.mind = int((mbti_set.mind + 3)/6 * 100)
+    mbti_set.energy = int((mbti_set.energy + 3)/6 * 100)
+    mbti_set.nature = int((mbti_set.nature + 3)/6 * 100)
+    mbti_set.tactics = int((mbti_set.tactics + 3)/6 * 100)
+
+    # get the reverse percentage
+    mind_ = 100 - mbti_set.mind
+    energy_ = 100 - mbti_set.energy
+    nature_ = 100 - mbti_set.nature
+    tactics_ = 100 - mbti_set.tactics
+
+    # get the personality type
+    personality_type = mbti_set.identity
+
+    mbti_name = mbti_data[personality_type]['name']
+    mbti_description = mbti_data[personality_type]['description']
+
+    # get the personality type description
+    mbti_energy = mbti_meaning[personality_type[0]]
+    mbti_mind = mbti_meaning[personality_type[1]]
+    mbti_nature = mbti_meaning[personality_type[2]]
+    mbti_tactics = mbti_meaning[personality_type[3]]
+
+
 
     return render(request, 'test/mbti_results.html', {
         'mbti_set': mbti_set,
-        'mbti_data': mbti_data,
-        'mbti_meaning': mbti_meaning,
+        #'mbti_data': mbti_data,
+        #'mbti_meaning': mbti_meaning,
+        'mbti_name': mbti_name,
+        'mbti_description': mbti_description,
+        'mbti_energy': mbti_energy,
+        'mbti_mind': mbti_mind,
+        'mbti_nature': mbti_nature,
+        'mbti_tactics': mbti_tactics,
+        'mind_': mind_,
+        'energy_': energy_,
+        'nature_': nature_,
+        'tactics_': tactics_,
         })

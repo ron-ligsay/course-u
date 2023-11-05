@@ -1,79 +1,98 @@
 {% extends "base_user.html" %}
 
 {% block content %}
+{% load mbti_filters %}
+
     <br>
     <h1>Your MBTI Results</h1>
 
     <p> Your Personality type is </p>
-    <h2> Mediator </h2>
+    <h2>{{ mbti_name }} </h2>
     <h4>Identity: {{ mbti_set.identity }}</h4>
-
-    {% with matching_mbti=mbti_data|dictlookup:mbti_set.identity %}
-        <p>{{ matching_mbti.name }}</p>
-        <p>Description: {{ matching_mbti.description }}</p>
-    {% endwith %}
+    <p>Description: {{ mbti_description }}</p>
 
     <br>
     
+    
+    <p>{{ mbti_energy.meaning }}</p>
+    <p>{{ mbti_energy.description }}</p>
+        
 
     <br>
     <h3>Energy</h3>
     {% if mbti_set.energy >= 50 %}
-        <p>Extrovert vs Introvert {{mbti_set.energy}}%</p>
+        <p>Extrovert {{energy_}}% vs Introvert {{mbti_set.energy}}%</p>
         <p>Extrovert individuals are outgoing, social, and enthusiastic. They are assertive and very talkative.
         They are energized by social gatherings, parties, and group activities. </p>
         <p>{{ mbti_meaning.E.meaning}}</p>
+        <p>{{ mbti_energy.meaning }}</p>
+        <p>{{ mbti_energy.description }}</p>
     {% else %}
-        <p>Extrovert{{mbti_set.energy}}% vs Introvert </p>
+        <p>Extrovert {{mbti_set.energy}}% vs Introvert {{energy_}}%</p>
         <p>Introvert individuals are reserved, quiet, and thoughtful.
         They are more comfortable working by themselves and focusing on one task at a time. They are reserved, quiet, and
         thoughtful.</p>
         <p>{{ mbti_meaning.I.meaning}}</p>
+        <p>{{ mbti_energy.meaning }}</p>
+        <p>{{ mbti_energy.description }}</p>
+        
     {% endif %}
 
     <br>
     <h3>Mind</h3>
     {% if mbti_set.mind >= 50 %}
-        <p>Intuitive vs Sensing {{mbti_set.mind}}%</p>
+        <p>Intuitive {{mind_}}% vs Sensing {{mbti_set.mind}}%</p>
         <p>Intuitive individuals are very imaginative, open-minded and curious.
         They prefer novelty over stability and focus on hidden meanings and future possibilities.
         They are very imaginative, open-minded and curious. </p>
         <p>{{ mbti_meaning.N.meaning}}</p>
+        <p>{{ mbti_mind.meaning }}</p>
+        <p>{{ mbti_mind.description }}</p>
     {% else %}
-        <p>Intuitive {{mbti_set.mind}}% vs Sensing </p>
+        <p>Intuitive {{mbti_set.mind}}% vs Sensing {{mind_}}%</p>
         <p>Sensing individuals </p>
         <p>{{ mbti_meaning.S.meaning}}</p>
+        <p>{{ mbti_mind.meaning }}</p>
+        <p>{{ mbti_mind.description }}</p>
     {% endif %}
 
     <br>
 
     <h3>Nature</h3>
     {% if mbti_set.nature >= 50 %}
-        <p>Thinking vs Feeling {{mbti_set.nature}}%</p>
+        <p>Thinking {{nature_}}% vs Feeling {{mbti_set.nature}}%</p>
         <p>Thinking individuals focus on objectivity and rationality, prioritizing logic over emotions.
         They tend to hide their feelings and see efficiency as more important than cooperation. They are more competitive
         and focus on achieving goals.</p>
         <p>{{ mbti_meaning.T.meaning}}</p>
+        <p>{{ mbti_nature.meaning }}</p>
+        <p>{{ mbti_nature.description }}</p>
     {% else %}
-        <p>Thinking {{mbti_set.nature}}% vs Feeling</p>
+        <p>Thinking {{mbti_set.nature}}% vs Feeling {{nature_}}%</p>
         <p>Feeling individuals are sensitive and emotionally expressive.
         They are more empathic and less competitive than Thinking types, and focus on social harmony and cooperation. </p>
         <p>{{ mbti_meaning.F.meaning}}</p>
+        <p>{{ mbti_nature.meaning }}</p>
+        <p>{{ mbti_nature.description }}</p>
     {% endif %}
 
     <br>
 
     <h3>Tactics</h3>
     {% if mbti_set.tactics >= 50 %}
-        <p>Judging vs Prospecting {{mbti_set.tactics}}%</p>
+        <p>Judging {{tactics_}}% vs Prospecting {{mbti_set.tactics}}%</p>
         <p>Judging individuals are decisive, thorough and highly organized.
         They value clarity, predictability and closure, preferring structure and planning to spontaneity.</p>
         <p>{{ mbti_meaning.J.meaning}}</p>
+        <p>{{ mbti_tactics.meaning }}</p>
+        <p>{{ mbti_tactics.description }}</p>
     {% else %}
-        <p>Judging {{mbti_set.tactics}}% vs Prospecting</p>
+        <p>Judging {{mbti_set.tactics}}% vs Prospecting {{tactics_}}%</p>
         <p>Prospecting individuals are very good at improvising and spotting opportunities.
         They tend to be flexible, relaxed nonconformists who prefer keeping their options open. </p>
         <p>{{ mbti_meaning.P.meaning}}</p>
+        <p>{{ mbti_tactics.meaning }}</p>
+        <p>{{ mbti_tactics.description }}</p>
     {% endif %}
 
     <br>
