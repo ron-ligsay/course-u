@@ -17,59 +17,58 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='sql2023', # 'sql2023' , 'sawadekap', '022002
+            password='022002', # 'sql2023' , 'sawadekap', '022002
             database= 'courseu_db', #config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
         base_dir = os.getcwd()
         csv_table_mapping = {
-            # base_dir + '\\static\\csv\\field.csv': {
-            #     'table_name': 'website_field',
-            #     'model_name' : 'Field',
-            #     'columns' : ['field','field_name','description'],
-            #     'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
-            # },
+            base_dir + '\\static\\csv\\field.csv': {
+                'table_name': 'website_field',
+                'model_name' : 'Field',
+                'columns' : ['field','field_name','description'],
+                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
+            },
             # base_dir + '\\static\\csv\\userdb.csv': {
             #     'table_name': 'userdb',
             #     'model_name' : 'User',
             #     'columns' : ['userid','username','password','email'],
             #     'attributes' : ['INT PRIMARY KEY', 'VARCHAR(25)', 'VARCHAR(25)', 'VARCHAR(100)' ]
             # },
-            # base_dir + '\\static\\csv\\specialization1.csv': {
-            #     'table_name': 'website_specialization',
-            #     'model_name': 'Specialization',
-            #     'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
-            #     'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
-            # },
-            # base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
-            #     'table_name': 'jobs_jobposting',
-            #     'model_name': 'JobPosting',
-            #     #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
-            #     'columns': ['id','link','job_title',
-            #                 'company_name','company_link','date_posted',
-            #                 'keyword','keyword_id','location',
-            #                 'employment_type','job_function','industries','seniority_level',
-            #                 'job_description'],
-            #     'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
-            #                     'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
-            #                     'VARCHAR(100)','INT','VARCHAR(300)',
-            #                     'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
-            #                     'TEXT'
-            #                     ]
-            # },
-            # base_dir + '\\static\\csv\\test.csv': {
-            #     'table_name': 'assessment_test',
-            #     'model_name': 'Test',
-            #     'columns':  ['question_id', 'field_id','question','description','options', 'correct_option',],
-            #     'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
-            # },
-            # base_dir + '\\static\\csv\\questionset.csv': {
-            #     'table_name': 'assessment_questionset',
-            #     'model_name': 'QuestionSet',
-            #     'columns':  ['set_id','user_id','n_questions','is_completed','score',],
-            #     'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
-            # },  
-            #selected_option,is_correct,set_id,question
+            base_dir + '\\static\\csv\\specialization1.csv': {
+                'table_name': 'website_specialization',
+                'model_name': 'Specialization',
+                'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
+                'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
+            },
+            base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
+                'table_name': 'jobs_jobposting',
+                'model_name': 'JobPosting',
+                #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
+                'columns': ['id','link','job_title',
+                            'company_name','company_link','date_posted',
+                            'keyword','keyword_id','location',
+                            'employment_type','job_function','industries','seniority_level',
+                            'job_description'],
+                'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
+                                'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
+                                'VARCHAR(100)','INT','VARCHAR(300)',
+                                'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
+                                'TEXT'
+                                ]
+            },
+            base_dir + '\\static\\csv\\test.csv': {
+                'table_name': 'assessment_test',
+                'model_name': 'Test',
+                'columns':  ['question_id', 'field_id','question','description','options', 'correct_option',],
+                'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
+            },
+            base_dir + '\\static\\csv\\questionset.csv': {
+                'table_name': 'assessment_questionset',
+                'model_name': 'QuestionSet',
+                'columns':  ['set_id','user_id','n_questions','is_completed','score',],
+                'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
+            },  
             # base_dir + '\\static\\csv\\userresponse.csv': {
             #     'table_name': 'assessment_userresponse',
             #     'model_name': 'UserResponse',
@@ -131,12 +130,12 @@ class Command(BaseCommand):
                 'columns':  ["id","year","course_id","subject_id"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT","INT"]
             },
-            # base_dir + '\\static\\csv\\studentprofile.csv': {
-            #     'table_name': 'acad_studentprofile',
-            #     'model_name': 'StudentProfile',
-            #     'columns':  ["studentprofile_id","user_id","is_student","enrolled_courses","current_year"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","BOOLEAN","VARCHAR(100)","INT"]
-            # },
+            base_dir + '\\static\\csv\\studentprofile.csv': {
+                'table_name': 'acad_studentprofile',
+                'model_name': 'StudentProfile',
+                'columns':  ["studentprofile_id","user_id","is_student","enrolled_courses","current_year"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","BOOLEAN","VARCHAR(100)","INT"]
+            },
         }
         
         cursor = connection.cursor()
