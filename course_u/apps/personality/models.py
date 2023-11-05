@@ -17,6 +17,18 @@ class MBTI(models.Model):
     def __str__(self):
         return f"{self.mbti_question} ({self.ans_a}/{self.ans_b})"
     
+
+
+# class Indicator(models.Model):
+#     indicator_id = models.AutoField(primary_key=True,serialize=False, auto_created=True)
+#     indicator = models.CharField(max_length=4)
+#     indicator_name = models.CharField(max_length=50)
+#     indicator_description = models.CharField(max_length=1000)
+
+#     def __str__(self):
+#         return f"{self.indicator} ({self.indicator_type})"
+
+
 class MBTISet(models.Model):
     mbti_set_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -26,8 +38,10 @@ class MBTISet(models.Model):
     energy = models.FloatField(default=0)
     nature = models.FloatField(default=0)
     tactics = models.FloatField(default=0)
-    # identity is the personality type
-    identity = models.CharField(max_length=5, default="")
+    
+    #indicator =  models.ForeignKey(Indicator, on_delete=models.CASCADE, null=True, blank=True)
+    # let identity to be null
+    identity = models.CharField(max_length=4, null=True, blank=True)
 
     def __str__(self):
         return f"{self.mbti_set_id}: Status : {self.is_completed} by User: {self.user} (Identity: {self.identity}) "
@@ -35,12 +49,29 @@ class MBTISet(models.Model):
     class Meta:
         unique_together = ('user',)
 
+# class Option:
+#     def __init__(self):
+#         self._selected_option = 0
+
+#     @property
+#     def selected_option(self):
+#         return self._selected_option
+
+#     @selected_option.setter
+#     def selected_option(self, value):
+#         if -3 <= value <= 3:
+#             self._selected_option = value
+#         else:
+#             raise ValueError("Option must be between -3 and 3")
+
+
 class MBTIResponse(models.Model):
     mbti_response_id = models.AutoField(primary_key=True,serialize=False, auto_created=True)
     mbti_set = models.ForeignKey(MBTISet, on_delete=models.CASCADE, null=True, blank=True)
     mbti = models.ForeignKey(MBTI, on_delete=models.CASCADE)
     is_answered = models.BooleanField(default=False)
-    selected_option = models.IntegerField(null=True, blank=True) 
+    #  make selected_option ranges from -3 to 3, default = 0 
+    selected_option = models.IntegerField(default=0)
 
     def __str__(self):
         return f"Set: {self.mbti_set.mbti_set_id}, Question: {self.mbti_response_id}"

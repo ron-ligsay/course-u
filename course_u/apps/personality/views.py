@@ -24,18 +24,29 @@ def initialize_mbti_test(request):
     
     print("mbti_set_id: ", mbti_set_id)
    
+    mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id, identity="AAAA")
 
-    try:
-         # Attempt to create a new MBTISet without explicitly setting the mbti_set_id
-        mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id)
+    # try:
+    #     # Attempt to create a new MBTISet without explicitly setting the mbti_set_id
+    #     mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id)
         
-    except IntegrityError:
-        print("IntegrityError")
-        # Handle the case where IntegrityError is raised (duplicate entry)
-        # This means there is an existing set with the same mbti_set_id
-        # You can handle this situation based on your application's logic
-        # For example, you could generate a unique ID in a loop or display an error message
-        pass
+    # except IntegrityError:
+    #     print("IntegrityError", IntegrityError)
+    #     # Handle the case where IntegrityError is raised (duplicate entry)
+    #     # This means there is an existing set with the same mbti_set_id
+    #     # You can handle this situation based on your application's logic
+    #     # For example, you could generate a unique ID in a loop or display an error message
+        
+    #     # use the existing user mbti_set_id
+    #     #mbti_set = MBTISet.objects.get(user=user, mbti_set_id=mbti_set_id)
+
+    #     pass
+    # except Exception as e:
+    #     print("Exception", e)
+    #     # Handle other exceptions
+    #     # You can take appropriate actions or return an error response
+    #     # For example, you could redirect to an error page
+    #     return HttpResponse("Failed to initialize MBTI test.")
 
     if mbti_set is not None:
         # Create responses for all MBTI questions
@@ -140,6 +151,7 @@ def calculate_personality(user, mbti_set_id):
     mbti_set.is_completed = True
     mbti_set.save()
 
+from apps.personality.mbti_data import mbti_data, mbti_meaning
 
 def mbti_results(request, mbti_set_id):
     mbti_set = MBTISet.objects.get(pk=mbti_set_id)
@@ -150,4 +162,8 @@ def mbti_results(request, mbti_set_id):
     mbti_set.nature = int(mbti_set.nature * 20)
     mbti_set.tactics = int(mbti_set.tactics * 20)
 
-    return render(request, 'test/mbti_results.html', {'mbti_set': mbti_set})
+    return render(request, 'test/mbti_results.html', {
+        'mbti_set': mbti_set,
+        'mbti_data': mbti_data,
+        'mbti_meaning': mbti_meaning,
+        })
