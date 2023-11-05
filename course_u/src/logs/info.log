@@ -741,3 +741,8 @@ INFO 2023-11-05 17:45:30,420 django.server basehttp basehttp.py 212 log_message 
 INFO 2023-11-05 17:45:31,204 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
 INFO 2023-11-05 17:45:42,937 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
 INFO 2023-11-05 17:45:42,946 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_question.css HTTP/1.1" 304 0
+INFO 2023-11-05 18:03:14,045 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-05 18:03:17,136 django.server basehttp basehttp.py 212 log_message "GET /mbti/8/ HTTP/1.1" 200 41292
+INFO 2023-11-05 18:03:17,171 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-05 18:03:17,203 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_question.css HTTP/1.1" 200 1046
+INFO 2023-11-05 18:03:21,186 django.server basehttp basehttp.py 212 log_message "GET /mbti/8/ HTTP/1.1" 200 41292
