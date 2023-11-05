@@ -1,0 +1,86 @@
+
+
+h2 .personality-title
+{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+div .response
+{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+
+}
+
+div.card
+{
+    margin: 50px;
+}
+
+div.card h3
+{
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* center */
+    text-align: center;
+}
+
+div.items
+{
+    /* make them into one row */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    max-width: 70%;
+
+}
+
+p .response-text
+{
+    color: darkblue;
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 70px;
+}
+
+input .option,
+input .option-neg,
+input .option-pos
+{
+    display: none;
+    size: 5px;
+}
+
+
+
+input .option-neg
+{
+    background-color: #ff0000;
+}
+
+input .option-pos
+{
+    background-color: #00ff00;
+}
+
+input .option-3
+{
+    size: 10px;
+}
+
+input .option-2
+{
+    size: 7.5px;
+}
+
+input .option-1
+{
+    size: 5px;
+}
+
