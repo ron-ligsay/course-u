@@ -17,13 +17,13 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='022002', # 'sql2023' , 'sawadekap', '022002
+            password='sql2023', # 'sql2023' , 'sawadekap', '022002
             database= 'courseu_db', #config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
         base_dir = os.getcwd()
         csv_table_mapping = {
-            base_dir + '\\static\\csv\\field.csv': {
+            base_dir + '\\static\\csv\\website_field.csv': {
                 'table_name': 'website_field',
                 'model_name' : 'Field',
                 'columns' : ['field','field_name','description'],
@@ -35,11 +35,11 @@ class Command(BaseCommand):
             #     'columns' : ['userid','username','password','email'],
             #     'attributes' : ['INT PRIMARY KEY', 'VARCHAR(25)', 'VARCHAR(25)', 'VARCHAR(100)' ]
             # },
-            base_dir + '\\static\\csv\\specialization1.csv': {
+            base_dir + '\\static\\csv\\website_specialization.csv': {
                 'table_name': 'website_specialization',
                 'model_name': 'Specialization',
-                'columns': ['specialization_id', 'field_id', 'title','description','roadmap_id'],
-                'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(100)', 'VARCHAR(1000)', 'INT',]
+                'columns': ['specialization_id', 'title','description','roadmap_id', 'field_id',],
+                'attributes': ['INT PRIMARY KEY',  'VARCHAR(150)', 'VARCHAR(1000)', 'INT','INT',]
             },
             base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
                 'table_name': 'jobs_jobposting',
@@ -57,31 +57,49 @@ class Command(BaseCommand):
                                 'TEXT'
                                 ]
             },
-            base_dir + '\\static\\csv\\test.csv': {
+            base_dir + '\\static\\csv\\assessment_test.csv': {
                 'table_name': 'assessment_test',
                 'model_name': 'Test',
-                'columns':  ['question_id', 'field_id','question','description','options', 'correct_option',],
-                'attributes': ['INT PRIMARY KEY', 'INT', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT',]
+                'columns':  ['question_id', 'question','description','options', 'correct_option','field_id',],
+                'attributes': ['INT PRIMARY KEY', 'VARCHAR(1000)', 'VARCHAR(1000)', 'JSON', 'INT', 'INT',]
             },
-            base_dir + '\\static\\csv\\questionset.csv': {
-                'table_name': 'assessment_questionset',
-                'model_name': 'QuestionSet',
-                'columns':  ['set_id','user_id','n_questions','is_completed','score',],
-                'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT', 'INT', 'INT', 'BOOLEAN', 'INT',]
-            },  
-            # base_dir + '\\static\\csv\\userresponse.csv': {
+            # base_dir + '\\static\\csv\\assessment_questionset.csv': {
+            #     'table_name': 'assessment_questionset',
+            #     'model_name': 'QuestionSet',
+            #     'columns':  ['set_id','n_questions','is_completed','score','user_id',],
+            #     'attributes': ['INT PRIMARY KEY NOT NULL AUTO_INCREMENT',  'INT', 'BOOLEAN', 'INT','INT',]
+            # },  
+            # base_dir + '\\static\\csv\\assessment_userresponse.csv': {
             #     'table_name': 'assessment_userresponse',
             #     'model_name': 'UserResponse',
             #     'columns':  ["response","selected_option","is_correct","set_id","question_id","is_answered",],
             #     # add default values for response and is_answered
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "BOOLEAN", "INT", "INT","BOOLEAN"]
             # },
-            # base_dir + '\\static\\csv\\mbti.csv': {
-            #     'table_name': 'personality_mbti',
-            #     'model_name': 'MBTI',
-            #     'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
-            # },
+            base_dir + '\\static\\csv\\personality_mbti.csv': {
+                'table_name': 'personality_mbti',
+                'model_name': 'MBTI',
+                'columns':  ["mbti","mbti_question","option_a","option_b","ans_a","ans_b","acr_a","acr_b"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(1000)", "VARCHAR(15)","VARCHAR(15)","VARCHAR(1)","VARCHAR(1)"]
+            },
+            base_dir + '\\static\\csv\\personality_indicator.csv': {
+                'table_name': 'personality_indicator',
+                'model_name': 'Indicator',
+                'columns':  ["indicator_id","indicator","indicator_name","indicator_description"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","VARCHAR(4)", "VARCHAR(50)", "VARCHAR(1000)"]
+            },
+            base_dir + '\\static\\csv\\website_skill.csv': {
+                'table_name': 'website_skill',
+                'model_name': 'Skill',
+                'columns':  ["id","skill"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)"]
+            },
+            base_dir + '\\static\\csv\\personality_indicator_skills.csv': {
+                'table_name': 'personality_indicator_skills',
+                'model_name': 'IndicatorSkills',
+                'columns':  ["id","indicator_id","skill_id"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT","INT", "INT"]
+            },
             # base_dir + '\\static\\csv\\mbti_set.csv': {
             #     'table_name': 'personality_mbtiset',
             #     'model_name': 'MBTISet',
@@ -100,42 +118,43 @@ class Command(BaseCommand):
             #     'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
             # },
-            # base_dir + '\\static\\csv\\skill.csv': {
-            #     'table_name': 'website_skill',
-            #     'model_name': 'Skill',
-            #     'columns':  ["id","skill"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)"]
-            # },
-            # base_dir + '\\static\\csv\\test_skill.csv': {
-            #     'table_name': 'assessment_test_skills',
-            #     'model_name': 'TestSkill',
-            #     'columns':  ["id","test_id","skill_id"],
-            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
-            # },
-            base_dir + '\\static\\csv\\courses.csv': {
+            
+            base_dir + '\\static\\csv\\assessment_test_skills.csv': {
+                'table_name': 'assessment_test_skills',
+                'model_name': 'TestSkill',
+                'columns':  ["id","test_id","skill_id"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
+            },
+            base_dir + '\\static\\csv\\acad_course.csv': {
                 'table_name': 'acad_course',
                 'model_name': 'Course',
                 'columns':  ["id","course_name","number_of_years","description"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(100)","INT","VARCHAR(1000)"]
             },
-            base_dir + '\\static\\csv\\subjects.csv': {
+            base_dir + '\\static\\csv\\acad_subject.csv': {
                 'table_name': 'acad_subject',
                 'model_name': 'Subject',
                 'columns':  ["id","subject_name","description"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(100)","VARCHAR(1000)"]
             },
-            base_dir + '\\static\\csv\\curriculum.csv': {
+            base_dir + '\\static\\csv\\acad_subject_skills.csv': {
+                'table_name': 'acad_subject_skills',
+                'model_name': 'SubjectSkills',
+                'columns':  ["id","subject_id","skill_id"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
+            },
+            base_dir + '\\static\\csv\\acad_curriculum.csv': {
                 'table_name': 'acad_curriculum',
                 'model_name': 'Curriculum',
                 'columns':  ["id","year","course_id","subject_id"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT","INT"]
             },
-            base_dir + '\\static\\csv\\studentprofile.csv': {
-                'table_name': 'acad_studentprofile',
-                'model_name': 'StudentProfile',
-                'columns':  ["studentprofile_id","user_id","is_student","enrolled_courses","current_year"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","BOOLEAN","VARCHAR(100)","INT"]
-            },
+            # base_dir + '\\static\\csv\\studentprofile.csv': {
+            #     'table_name': 'acad_studentprofile',
+            #     'model_name': 'StudentProfile',
+            #     'columns':  ["id","is_student","current_year","enrolled_courses","user_id"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "BOOLEAN","INT","INT","VARCHAR(100)"]
+            # },
         }
         
         cursor = connection.cursor()
