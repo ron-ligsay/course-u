@@ -1,42 +1,42 @@
-specialization_id,field_id,title,description,roadmap_id
-1,1,front-end,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",1
-2,1,back-end,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",2
-3,1,full stack,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",3
-4,1,software engineer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",4
-5,1,software developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",5
-6,1,mobile app developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",6
-7,1,devops engineer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",7
-8,1,game developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",8
-9,1,embedded systems developer,"Developer roles, including front-end, back-end, full stack, and specialized roles like game and mobile app developers.",9
-10,2,data scientist,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",10
-11,2,data analyst,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",11
-12,2,business intelligence (BI) developer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",12
-13,2,machine learning engineer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",13
-14,2,ai engineer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",14
-15,2,data engineer,"Roles focused on data analysis, including data scientists, analysts, and engineers working on machine learning and AI.",15
-16,3,UI Designer,Roles involved in designing user interfaces and creating optimal user experiences.,16
-17,3,UX Designer,Roles involved in designing user interfaces and creating optimal user experiences.,17
-18,3,Interaction Designer,Roles involved in designing user interfaces and creating optimal user experiences.,18
-19,3,Visual Designer,Roles involved in designing user interfaces and creating optimal user experiences.,19
-20,4,product manager,"Roles overseeing product development, strategy, and roadmap.",20
-21,4,technical product manager,"Roles overseeing product development, strategy, and roadmap.",21
-22,5,qa engineer,Roles responsible for ensuring software quality through testing.,22
-23,5,test automation engineer,Roles responsible for ensuring software quality through testing.,23
-24,6,cybersecurity analyst,Roles centered around cybersecurity and protecting systems and data.,24
-25,6,security engineer,Roles centered around cybersecurity and protecting systems and data.,25
-26,6,ethical hacker (penetration tester),Roles centered around cybersecurity and protecting systems and data.,26
-27,6,security consultant,Roles centered around cybersecurity and protecting systems and data.,27
-28,7,network engineer,"Roles managing networks, systems, and cloud infrastructure.",28
-29,7,system administrator,"Roles managing networks, systems, and cloud infrastructure.",29
-30,7,cloud engineer,"Roles managing networks, systems, and cloud infrastructure.",30
-31,7,site reliability engineer (se),"Roles managing networks, systems, and cloud infrastructure.",31
-32,4,it project mananger,Roles providing technical assistance to end-users.,32
-33,4,scrum master,Roles providing technical assistance to end-users.,33
-34,9,it business analyst,Roles leading and managing IT projects.,34
-35,9,it consultant,Roles leading and managing IT projects.,35
-36,9,technology strategist,Roles leading and managing IT projects.,36
-37,10,blockchain developer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",37
-38,10,quantum computing scientist,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",38
-39,10,virtual reality (vr) developer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",39
-40,10,augmented reality (ar) developer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",40
-41,10,edge computing engineer,"Roles in cutting-edge technologies and areas like blockchain, VR, and quantum computing.",41
+specialization_id,title,description,roadmap_id,field_id
+1,Front-End,Front-End Developers are responsible for creating the user interface and user experience on websites and web applications. They focus on designing and building the visible components that users interact with.,1,1
+2,Back-End,"Back-End Developers work on the server-side of web applications, managing data, server infrastructure, and the logic that powers the functionality of websites and web services.",2,1
+3,Full Stack,"Full Stack Developers have expertise in both Front-End and Back-End development, allowing them to work on all aspects of web applications, from user interfaces to server logic.",3,1
+4,Software Engineer,"Software Engineers design and develop software applications, focusing on creating efficient, maintainable, and scalable code.",4,1
+5,Software Developer,"Software Developers write, test, and maintain software applications to meet specific requirements, ensuring functionality and performance.",5,1
+6,Mobile App Developer,"Mobile App Developers specialize in creating applications for smartphones and tablets, optimizing them for the respective platforms.",6,1
+7,DevOps Engineer,"DevOps Engineers bridge the gap between development and operations, automating processes, and ensuring efficient, reliable software deployment.",7,1
+8,Game Developer,"Game Developers create interactive, immersive gaming experiences, including game design, development, and testing",8,1
+9,Embedded Systems Developer,"Embedded Systems Developers work on software that runs on embedded devices, such as microcontrollers, ensuring real-time functionality.",9,1
+10,Data Scientist,"Data Scientists collect, analyze, and interpret large datasets to extract valuable insights, create predictive models, and support data-driven decision-making.",10,2
+11,Data Analyst,"Data Analysts focus on examining data to identify trends, generate reports, and support business decisions.",11,2
+12,Business Intelligence (BI) Developer,BI Developers create data dashboards and reports to help organizations make data-driven decisions.,12,2
+13,Machine learning Engineer,Machine Learning Engineers develop and deploy machine learning models to solve specific problems or automate tasks.,13,2
+14,AI Engineer,"AI Engineers work on AI projects, including speech recognition, image analysis, and chatbots.",14,2
+15,Data Engineer,"Data Engineers build and maintain the data infrastructure needed for data collection, processing, and analysis.",15,2
+16,UI Designer,UI Designers focus on creating visually appealing and user-friendly interfaces for web and mobile applications.,16,3
+17,UX Designer,UX Designers ensure that digital products provide a seamless and enjoyable user experience.,17,3
+18,Interaction Designer,"Interaction Designers specialize in designing how users interact with digital interfaces, focusing on navigation and user engagement.",18,3
+19,Visual Designer,"Visual Designers create graphics, illustrations, and layouts to enhance the visual appeal of digital and print materials.",19,3
+20,Product Manager,"Product Managers are responsible for defining product features, setting priorities, and managing product development processes.",20,4
+21,Technical Product mManager,"Technical Product Managers bridge the gap between technical teams and product development, ensuring that products meet technical and business requirements.",21,4
+22,QA Engineer,"QA Engineers test software to ensure its functionality, performance, and security meet quality standards.",22,5
+23,Test Automation Engineer,Test Automation Engineers automate test cases to improve efficiency and consistency in the testing process.,23,5
+24,Cybersecurity Analyst,Cybersecurity Analysts protect an organization's digital assets by identifying and mitigating security threats.,24,6
+25,Security Engineer,Security Engineers design and implement security measures to protect information systems from threats and breaches.,25,6
+26,Ethical Hacker (Penetration Tester),"Penetration Testing, Vulnerability Scanning, Exploitation Techniques, Security Tools, Metasploit",26,6
+27,Security Consultant,Security Consultants advise organizations on security strategies and help them meet compliance requirements.,27,6
+28,Network Engineer,"Network Engineers design, implement, and manage computer networks, ensuring their reliability and security.",28,7
+29,System Administrator,System Administrators maintain and optimize an organization's computer systems and servers.,29,7
+30,Cloud Engineer,"Cloud Engineers design, deploy, and manage cloud infrastructure and services.",30,7
+31,Site Reliability Engineer (SE),SREs focus on maintaining the reliability and availability of software services through automation and collaboration.,31,7
+32,IT Project Mananger,"IT Project Managers oversee the planning, execution, and successful delivery of IT projects.",32,8
+33,Scrum Master,"Scrum Masters guide Agile teams through the Scrum process, ensuring effective collaboration and delivery.",33,8
+34,IT Business Analyst,"IT Business Analysts bridge the gap between business needs and IT solutions, identifying requirements and process improvements.",34,9
+35,IT Consultant,IT Consultants provide expert advice on IT strategies and solutions to clients.,35,9
+36,Technology Strategist,Technology Strategists develop long-term plans for technology adoption and innovation within an organization.,36,9
+37,Blockchain Developer,Technology Strategists develop long-term plans for technology adoption and innovation within an organization.,37,10
+38,Quantum Computing Scientist,Quantum Computing Scientists research and develop quantum computing technologies and algorithms.,38,10
+39,Virtual Reality (VR) Developer,VR Developers create immersive virtual reality experiences and applications.,39,10
+40,Augmented Reality (AR) Developer,AR Developers build applications that overlay digital information on the real world using augmented reality.,40,10
+41,Edge Computing Engineer,Edge Computing Engineers design and implement computing solutions at the edge of the network to reduce latency and process data closer to the source.',41,10

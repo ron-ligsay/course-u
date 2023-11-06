@@ -54,7 +54,7 @@ id,skill
 53,user experience testing
 54,complementary colors
 55,data visualization
-56,user-centered design
+56,user centered design
 57,software testing
 58,code quality
 59,iterative development
@@ -88,7 +88,7 @@ id,skill
 87,advanced software engineering
 88,automata theory
 89,syntax
-90,ethical decision-making
+90,ethical decision making
 91,operating systems
 92,analysis
 93,quantitative analysis
@@ -109,7 +109,7 @@ id,skill
 108,language design
 109,advanced mathematics
 110,networking
-111,back-end
+111,back end
 112,technical communication
 113,emerging technologies
 114,research methodology
@@ -149,114 +149,16 @@ id,skill
 148,optimization
 149,innovation
 150,ai foundations
-151,object-oriented design
+151,object oriented design
 152,it industry
-153,problem-solving
+153,problem solving
 154,databases
 155,software development
 156,professional ethics
 157,interface design
 158,user experience
 159,technology business
-160,front-end
-161,hardware
-162,system administration
-163,assembly language
-164,information organization
-165,integrative programming
-166,simulation
-69,advanced programming
-70,algorithms
-71,application design
-72,network protocols
-73,maintenance
-74,design
-75,engineering
-76,electronics
-77,language theory
-78,leadership
-79,technology integration
-80,solution design
-81,data structures
-82,organizational management
-83,it infrastructure
-84,system integration
-85,system architecture
-86,presentation skills
-87,advanced software engineering
-88,automata theory
-89,syntax
-90,ethical decision-making
-91,operating systems
-92,analysis
-93,quantitative analysis
-94,software design
-95,web development
-96,algorithm design
-97,sql
-98,structured programming
-99,network administration
-100,advanced information security
-101,application development
-102,research planning
-103,formal languages
-104,digital circuits
-105,information security
-106,coding
-107,modeling
-108,language design
-109,advanced mathematics
-110,networking
-111,back-end
-112,technical communication
-113,emerging technologies
-114,research methodology
-115,machine learning
-116,data protection
-117,systems analysis
-118,entrepreneurship
-119,research writing
-120,data communication
-121,mathematics
-122,management principles
-123,computer architecture
-124,architecture design
-125,professional development
-126,network management
-127,multimedia content creation
-128,data management
-129,administration
-130,cybersecurity
-131,programming
-132,software engineering
-133,programming languages
-134,web design
-135,computing ethics
-136,documentation
-137,multimedia technologies
-138,it support
-139,computer science
-140,social issues
-141,complexity analysis
-142,research methods
-143,project management
-144,logic design
-145,usability
-146,thesis development
-147,artificial intelligence
-148,optimization
-149,innovation
-150,ai foundations
-151,object-oriented design
-152,it industry
-153,problem-solving
-154,databases
-155,software development
-156,professional ethics
-157,interface design
-158,user experience
-159,technology business
-160,front-end
+160,front end
 161,hardware
 162,system administration
 163,assembly language
@@ -265,57 +167,44 @@ id,skill
 166,simulation
 167,strategic planning
 168,critical thinking
-169,problem solving
-170,decision making
-171,management
-172,strategic thinking
-173,research
-174,creative problem solving
-175,logic
-176,scientific inquiry
-177,idea generation
-178,adaptability
-179,problem solving
-180,counseling
-181,empathy
-182,active listening
-183,emotional intelligence
-184,relationship building
-185,mentorship
-186,empathy
-187,creative writing
-188,artistic expression
-189,advocacy
-190,empathy
-191,creative brainstorming
-192,public speaking
-193,adaptability
-194,organization
-195,reliability
-196,time management
-197,process improvement
-198,decision making
-199,caregiving
-200,active listening
-201,attention to detail
-202,empathy
-203,social organizing
-204,event planning
-205,community building
-206,empathy
-207,troubleshooting
-208,mechanical skills
-209,outdoor activities
-210,problem solving
-211,risk taking
-212,physical activities
-213,spontaneous decision making
-214,adaptability
-215,artistic expression
-216,emotional expression
-217,individualism
-218,creativity
-219,entertaining
-220,social interactions
-221,adaptability
-222,spontaneity
+169,decision making
+170,management
+171,strategic thinking
+172,research
+173,creative problem solving
+174,logic
+175,scientific inquiry
+176,idea generation
+177,adaptability
+178,counseling
+179,empathy
+180,active listening
+181,emotional intelligence
+182,relationship building
+183,mentorship
+184,creative writing
+185,artistic expression
+186,advocacy
+187,creative brainstorming
+188,public speaking
+189,organization
+190,reliability
+191,time management
+192,process improvement
+193,caregiving
+194,attention to detail
+195,social organizing
+196,event planning
+197,community building
+198,troubleshooting
+199,mechanical skills
+200,outdoor activities
+201,risk taking
+202,physical activities
+203,spontaneous decision making
+204,emotional expression
+205,individualism
+206,creativity
+207,entertaining
+208,social interactions
+209,spontaneity
