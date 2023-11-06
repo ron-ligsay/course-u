@@ -23,8 +23,9 @@ class Test(models.Model):
     def __str__(self):
         return self.question
 
-    class Meta:
-        unique_together = ('field',)
+    # class Meta:
+        #allow field to have duplicate values
+        # unique_together = ('field',)
 
 class QuestionSet(models.Model):
     set_id = models.AutoField(primary_key=True)
