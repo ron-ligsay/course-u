@@ -8,15 +8,21 @@ class Command(BaseCommand):
         # Get a list of table names from the database
         #table_names = connection.introspection.table_names()
         #print(table_names)
-        table_names1 = [
-            'acad_curriculum','acad_student','acad_course','acad_subject', 'acad_subject_skills',
+        table_names1 = [ # Ordered by dependency
+            'acad_curriculum','acad_studentprofile','acad_course','acad_subject', 'acad_subject_skills', 'acad_studentgrades',
             'assessment_userresponse','assessment_questionset', 'assessment_test', 'assessment_test_skills',
+            
+            'personality_mbtiresponse', 'personality_mbti', 'personality_mbtiset', 'personality_indicator_skills','personality_indicator',
+            'recommender_userskill',
+
             'auth_group_permissions','auth_user_groups','auth_group', 'auth_user_user_permissions',
             'auth_permission', 'django_admin_log','auth_user', 
             'django_content_type', 'django_migrations', 'django_session', 
-            'personality_mbtiresponse', 'personality_mbti', 'personality_mbtiset',
+            
+            
+
             'jobs_jobposting',
-            'website_specialization', 'website_field','website_userprofile', 
+            'website_specialization', 'website_field','website_userprofile', 'website_skill', 'website_userrecommendations'
             ]
         
         table_names = [
@@ -32,7 +38,7 @@ class Command(BaseCommand):
 
         # Iterate through the table names and delete each table
         with connection.cursor() as cursor:
-            for table_name in table_names:
+            for table_name in table_names1:
                 #cursor.execute(f"DROP TABLE {table_name};")
                 cursor.execute(f"DROP TABLE IF EXISTS {table_name};")
                 self.stdout.write(self.style.SUCCESS(f'Deleted table: {table_name}'))
