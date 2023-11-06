@@ -12,7 +12,8 @@ class MBTI(models.Model):
     option_b = models.CharField(max_length=1000)
     ans_a = models.CharField(max_length=15)
     ans_b = models.CharField(max_length=15)
-    acr_a = models.CharField(max_length=1)
+    acr_a = models.CharField(max_length=1, default='a')
+    acr_b = models.CharField(max_length=1, default='b')
 
     def __str__(self):
         return f"{self.mbti_question} ({self.ans_a}/{self.ans_b})"
