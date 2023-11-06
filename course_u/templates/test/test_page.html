@@ -18,29 +18,28 @@
         {% csrf_token %}
         <div class="form-check">
             <label>
-                <input type="radio" name="selected_option" value="0" {% if selected_option_index == 0 %}checked{% endif %}>
+                <input type="radio" name="selected_option" value="0" {% if user_response.selected_option == 0 %}checked{% endif %}>
                 {{ question.options.0 }}
             </label><br>
-
+    
             <label>
-                <input type="radio" name="selected_option" value="1" {% if selected_option_index == 1 %}checked{% endif %}>
+                <input type="radio" name="selected_option" value="1" {% if user_response.selected_option == 1 %}checked{% endif %}>
                 {{ question.options.1 }}
             </label><br>
-
+    
             <label>
-                <input type="radio" name="selected_option" value="2" {% if selected_option_index == 2 %}checked{% endif %}>
+                <input type="radio" name="selected_option" value="2" {% if user_response.selected_option == 2 %}checked{% endif %}>
                 {{ question.options.2 }}
             </label><br>
-
+    
             <label>
-                <input type="radio" name="selected_option" value="3" {% if selected_option_index == 3 %}checked{% endif %}>
+                <input type="radio" name="selected_option" value="3" {% if user_response.selected_option == 3 %}checked{% endif %}>
                 {{ question.options.3 }}
             </label><br>
-
         </div>
-
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    
     <br>
     <!-- Navigation buttons -->
     <a href="{% url 'prev_test' question_id=question.question_id %}" class="btn btn-secondary">Previous</a>
