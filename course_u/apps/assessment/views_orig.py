@@ -29,185 +29,218 @@ from utilities.decorators import unauthenticated_user, allowed_users, admin_only
 from utilities.plots import generate_pie_chart
 from utilities.sessions import clear_session_variables#, get_last_question_set, create_or_retrieve_question_set, display_question_set, submit_test
 
+# Create your views here:
 
 def test_home(request):
     return render(request, 'test/test_home.html')
 
-def session_test(request):
-
-    # Test Started is a boolean that indicates if the test has started
-    # You cannot exit or start a new test if the test has started
-    request.session['test_started'] = True
-    test_started = request.session['test_started']
-    
-    # Question Set ID is the current question set
-    request.session['question_set_id'] = 1
-    question_set_id = request.session['question_set_id']
-    
-    # Question Set is a list of User Response objects for the current question set
-    # This list are the question ids that needed to be answered
-    request.session['question_set'] = [1,2,3,4,5,6,7,8,9,10,11,12]
-    question_set = request.session['question_set']
-    
-    # Number of questions in the question set
-    request.session['n_questions'] = 12
-    n_questions = request.session['n_questions']
-
-    # Number of questions answered
-    request.session['questions_answered'] = 0 
-    questions_answered = request.session['questions_answered']
-
-    return redirect('test_overview')
-
-# Create your views here:
 @login_required
 def start_test(request):
+
+    question_per_field = 2
+
+    # Clear session variables
     clear_session_variables(request)
-    start = None
 
-    # If there is no incomplete set, incomplete is None, last set is the last set
-    # If there is an incomplete set, incomplete is the set, last set is None
-    incomplete, last_set = get_question_set(request.user)
-    print("incomplete: ", incomplete, "last_set: ", last_set)
+    # Check user's QuestionSet if it has incomplete test
+    try:
+        incomplete = QuestionSet.objects.filter(user=request.user, is_completed=False).first()
+        print("incomplete Question Set: ", incomplete)
+        last_set = 0
+    except QuestionSet.DoesNotExist:
+        incomplete = None
+        # If none, get the last question set
+        last_set = QuestionSet.objects.last()
+        print("last_set: ", last_set)
 
+    # If yes, retrieve the last question set
     if incomplete:
-        print("Process Incomplete")
-        process_incomplete_set(request, incomplete)
+        print("You have incomplete test! Retrieving the last question set...")
+        incomplete_set_id = incomplete.set_id
+
+        # Store the question set ID in the session
+        request.session['question_set_id'] = incomplete_set_id
+
+        # Retrieve the questions for the question set, where set_id = incomplete_set_id
+        question_set = UserResponse.objects.filter(set_id=incomplete_set_id)
+
+        # get number of questions
+        n_questions = question_set.count()
+
+        # Store the question IDs in the session
+        question_ids = list(question_set.values_list('question_id', flat=True))
+        request.session['question_set'] = question_ids
+
+        n_questions = len(question_set)
+        print("n_questions: ", n_questions, "question_ids: ", question_ids)
+        request.session['n_questions'] = n_questions
+
+        # Check if UserResponse with set_id are equal to n_questions
+        if n_questions == incomplete.n_questions:
+            # If yes, redirect to test_overview
+            print("You have complete Responses n_questions: ", n_questions, "incomplete.n_questions: ", incomplete.n_questions, "equal!")
+            print("Redirecting to test_overview")
+
+            # need to store session variables!!! -----------------------------------------------------------------------------------------------------!!!
+
+            request.session['test_started'] = True
+            print("Test started!")
+
+            return redirect('test_overview')
+        else:
+            print("You have incomplete Responses n_questions: ", n_questions, "incomplete.n_questions: ", incomplete.n_questions, "not equal!")
+            # count number of unfinished response on UserResponse per test Field
+            # get unique fields
+            unique_fields = question_set.objects.values('field').distinct()
+
+            print("fields: ", unique_fields)
+
+
+            for field in unique_fields:
+                # get UserResponse with set_id 
+                n_field_responses = UserResponse.objects.filter(set_id=incomplete_set_id, question__field=field).count()
+                print("n_field_responses: ", n_field_responses, "field: ", field)
+
+                if n_field_responses < question_per_field:
+                    # get list of question_id in this field
+                    question_ids = question_set.filter(question__field=field).values_list('question_id', flat=True)
+
+                    # get current UserResponse in this field
+                    current_responses = UserResponse.objects.filter(set_id=incomplete_set_id, question__field=field)
+
+                    # get last question_id in this field
+                    last_question_id = current_responses.last().question.question_id
+                    
+                    # get difference between question_per_field and n_field_responses
+                    n_questions_to_add = question_per_field - n_field_responses
+                    print("n_questions_to_add: ", n_questions_to_add, "in field:", field)
+                    # create UserResponse objects
+                    for question in range(n_questions_to_add):
+                        # get next question_id for UserResponse in this field
+                        next_question_id = last_question_id + 1
+                        next_question = Test.objects.get(question_id=next_question_id)
+                        print("last question: ", current_responses.last(),"next_question_id: ", next_question_id)
+                        UserResponse.objects.create(
+                            question=next_question,
+                            set_id=incomplete_set_id,
+                            is_answered=False,
+                        )
+                        print("Created a UserResponse object for question: ", next_question_id)    
+
+            # get UserResponses with set_id and is_answered=False
+            question_set = UserResponse.objects.filter(set_id=incomplete_set_id, is_answered=False)
+            question_ids = list(question_set.values_list('question_id', flat=True))
+            # save unfinished question_set to session
+            request.session['question_set'] = question_ids
+
+            # number of questions
+            n_questions = len(question_set)
+            request.session['n_questions'] = n_questions
+            print("n_questions: ", n_questions, "question_ids: ", question_ids)
+            # questions to be answered, store in session
+            request.session['questions_answered'] = 0
+
+            # get first question_id in question_set
+            start = question_set.first().question.question_id
+
+            # Start test
+            request.session['test_started'] = True
+            print("Test started!")
     else:
-        print("Create New Set")
-        start = create_new_question_set(request, last_set)
+        # If no, create a new question set
+        print("No incomplete test! Creating a new test...")
+        # Create new question set
+        
+        try:
+            # get last test
+            last_set = QuestionSet.objects.last()
+            print("last_set: ", last_set)
+            if last_set == 0 or last_set is None:
+                # No question set exists, start a new test
+                new_set = 1
+            else:
+                # get last set_id
+                new_set = last_set.set_id + 1
+            
+        except QuestionSet.DoesNotExist:
+            print("No question set exists, start a new test!")
+            new_set = 1
+        except:
+            print("Error in getting last_set")
+            new_set = 1
+
+        QuestionSet.objects.create(set_id=new_set, user=request.user, n_questions=12, is_completed=False, score=0)
+
+        # Store the question set ID in the session
+        request.session['question_set_id'] = new_set
+
+        # Retrieve the questions for the question set, using get_test_questions()
+        question_set, start, end = get_test_questions(x=2) # x = 2, 2 questions per Field
+        
+        question_ids = question_set.values_list('question_id', flat=True)
+
+        # Store the question IDs in the session
+        request.session['question_set'] = list(question_ids)
+
+        n_questions = len(question_ids)
+        request.session['n_questions'] = n_questions
+
+        # Create new UserResponse objects
+        for question in question_set:
+            UserResponse.objects.create(
+                question=question,
+                set_id=new_set,
+                is_answered=False,
+            )
+        
+        print("Created new UserResponse objects")
+
+        # store questions_answered in session
+        request.session['questions_answered'] = 0
+
+        # Start test
+        request.session['test_started'] = True
+        
+        print("Test started!")
+
 
     return redirect('display_question', question_id=start)
 
-def get_question_set(user):
-    print("get_question_set() user: ", user)
-    try:
-        incomplete = QuestionSet.objects.filter(user=user, is_completed=False).first()
-    except QuestionSet.DoesNotExist:
-        incomplete = None
-    last_set = None
 
-    if not incomplete: # this means that the user has no incomplete sets
-        last_set = QuestionSet.objects.last()
+def display_question(request, question_id):
+    print("display_question() question_id: ", question_id)
+    # Retrieve the question set and answered questions from the session
+    question_set_id = request.session.get('question_set_id')
+    question_ids = request.session.get('question_set', [])
+    #questions_answered = request.session.get('questions_answered', 0)
 
+    if not question_set_id:
+        # Handle the case where the question set ID is not found in the session
+        return HttpResponse("No question set ID found in the session.")
 
-    return incomplete, last_set 
+    if not question_ids:
+        # Handle the case where the list of question IDs is not found in the session
+        return HttpResponse("No question IDs found in the session.")
 
-def process_incomplete_set(request, incomplete):
-    print("process_incomplete_set() incomplete: ", incomplete)
-    # Process the incomplete question set
-    n_questions = UserResponse.objects.filter(set_id=incomplete.set_id).count()
+    if not question_id:
+        # Handle the case where the question ID is not provided
+        return HttpResponse("No question ID provided.")
 
-    if n_questions == incomplete.n_questions:
-        # Has answered all questions, but marks as incomplete
-        resume_uncompleted_set(request)
-    else:
-        # Handle incomplete set where UserResponse objects are not equal to n_questions
-        handle_incomplete_user_response(request, incomplete)
+    if int(question_id) not in question_ids:
+        # Handle the case where the provided question ID is not in the list of question IDs
+        return HttpResponse("Invalid question ID provided.")
 
+    # Retrieve the question based on the provided question ID
+    question = get_test_question_by_id(question_id)
 
-def handle_incomplete_user_response(request, incomplete):
-    print("handle_incomplete_user_response() incomplete: ", incomplete)
+    # Retrieve the UserResponse object for the current question and question set
+    user_response = UserResponse.objects.filter(question=question, set_id=question_set_id).first()
 
-    #unique_fields = Field.objects.filter(test__userresponse__set_id=incomplete.set_id).distinct()
-    question_set = UserResponse.objects.filter(set_id=incomplete.set_id)
-    unique_fields = question_set.objects.values('field').distinct()
-    print("unique_fields: ", unique_fields)
-    for field in unique_fields:
-        # get UserResponse objects with the same set_id and field
-        n_field_responses = UserResponse.objects.filter(set_id=incomplete.set_id, question__field=field).count()
-        
-        if n_field_responses < 2: # if the user has not answered 3 questions for this field
-
-            question_ids = incomplete.filter(question__field=field).values_list('question_id', flat=True)
-
-            current_responses = UserResponse.objects.filter(set_id=incomplete.set_id, question__field=field)
-
-            last_question_id = current_responses.last().question.question_id
-
-            n_question_to_add = 2 - n_field_responses
-
-            for question in range(n_question_to_add):
-                next_question_id = last_question_id + 1
-                next_question = Test.objects.get(question_id=next_question_id)  #get_test_question_by_id(next_question_id)
-                UserResponse.objects.create(
-                    question=next_question,
-                    set_id=incomplete.set_id,
-                    is_answered=False,
-                )
-            
-
-    question_set = UserResponse.objects.filter(set_id=incomplete.set_id, is_answered=False)
-    question_ids = list(question_set.values_list('question_id', flat=True))
-    request.session['question_set'] = list(question_ids)
-
-    n_questions = UserResponse.objects.filter(set_id=incomplete.set_id).count()
-    request.session['n_questions'] = n_questions
-    print("n_questions: ", n_questions,"incomplete.n_questions: ", incomplete.n_questions)
-    if n_questions == incomplete.n_questions:
-        # Has now complete User Response objects
-        handle_incomplete_set(request)
-    else:
-        # Handle incomplete set where UserResponse objects are not equal to n_questions
-        # handle_incomplete_user_response(request, incomplete) # Commented out to avoid infinite loop
-        # Critical error, should not happen
-        print("Critical error, should not happen")
-        return HttpResponse("Critical error, should not happen!")
-        
-
-
-def handle_incomplete_set(request, incomplete):
-    print("handle_incomplete_set() incomplete: ", incomplete)
-    
-    # Count the number of unanswered user responses
-    n_unanswered = UserResponse.objects.filter(set_id=incomplete.set_id, is_answered=False).count()
-    request.session['questions_answered'] = incomplete.n_questions - n_unanswered
-    request.session['question_set_id'] = incomplete.set_id
-    if n_unanswered == 0: # All questions are answered
-        # mark the set as completed
-        incomplete.is_completed = True
-        incomplete.save()
-        # this means that the test is over and redirect to test results
-        return redirect('test_results')
-    else:
-        resume_uncompleted_set(request)
-
-
-def resume_uncompleted_set(request): 
-    print("resume_uncompleted_set()")
-    request.session['test_started'] = True
-    print("Test started!")
-    return redirect('test_overview')
-
-
-def create_new_question_set(request, last_set):
-    print("create_new_question_set() last_set: ", last_set)
-    if not last_set or last_set == 0:
-        new_set = 1
-    else:
-        new_set = last_set.set_id + 1
-
-    QuestionSet.objects.create(set_id=new_set, user=request.user, n_questions=12, is_completed=False, score=0)
-    
-    request.session['question_set_id'] = new_set
-    question_set, start, end = get_test_questions(x=2)
-    question_ids = question_set.values_list('question_id', flat=True)
-
-    request.session['question_set'] = list(question_ids)
-    request.session['n_questions'] = len(question_ids)
-    request.session['questions_answered'] = 0
-    request.session['test_started'] = True
-
-    for question in question_set:
-        UserResponse.objects.create(
-            question=question,
-            set_id=new_set,
-            is_answered=False,
-        )
-        print("Created new UserResponse objects")
-
-    print("Created new UserResponse objects")
-    return start
+    # Render the question page with the question and question set information
+    return render(request, 'test/test_page.html', {
+        'question': question, 'question_set_id': question_set_id,
+        'user_response': user_response, 
+        })#, 'questions_answered': questions_answered
 
 
 def test_overview(request):
@@ -243,149 +276,190 @@ def test_overview(request):
 
     return render(request, 'test/test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info, 'is_admin': is_admin})
 
-
-def display_question(request, question_id):
-    question_set_id = request.session.get('question_set_id')
-    question_ids = request.session.get('question_set', [])
-
-    if not (question_set_id and question_ids):
-        return HttpResponse("Invalid session data.")
-
-    try:
-        question_id = int(question_id)
-    except ValueError:
-        return HttpResponse("Invalid question ID provided.")
-
-    if question_id not in question_ids:
-        return HttpResponse("Invalid question ID provided.")
-
-    question = get_test_question_by_id(question_id)
-    user_response = UserResponse.objects.filter(question=question, set_id=question_set_id).first()
-    print("Selected option: ", user_response.selected_option)
-    return render(request, 'test/test_page.html', {
-        'question': question,
-        'question_set_id': question_set_id,
-        'user_response': user_response,
-    })
-
-
 def next_test(request, question_id):
-    question_set = request.session.get('question_set')
-    n_question = request.session.get('n_questions', 0)
-
-    if question_id + 1 < n_question:
+    print("next_test() question_id: ", question_id)
+    try:
+        question_set = request.session.get('question_set')
+        n_question = request.session.get('n_questions', 0)
         question = get_object_or_404(Test, question_id=question_id + 1)
-        #return render(request, 'test/test_page.html', {'question': question})
-        return redirect('display_question', question_id=question_id + 1)
+        #if question not in question_set:
+        #    raise Test.DoesNotExist
 
-    if question_id + 1 == n_question:
+        if question_id + 1 < n_question:
+            #options = question.options
+            return render(request, 'test/test_page.html', {'question': question})
+        if question_id + 1 == n_question:
+            # This is the last question
+            messages.success(request, 'You have completed the test')
+            return redirect('test_overview')
+        else:
+            # Handle the case where the next question is out of bounds
+            messages.success(request, 'You have completed the test')
+            return redirect('home')
+
+    except: #Test.DoesNotExist:
         messages.success(request, 'You have completed the test')
         return redirect('test_overview')
-    else:
-        messages.success(request, 'You have completed the test')
-        return redirect('home')
 
+    #options = question.options
+    return render(request, 'test/test_page.html', {'question': question})#, 'options': options
 
 def prev_test(request, question_id):
+    print("prev_test() question_id: ", question_id)
     if question_id <= 1:
         messages.success(request, 'You have reached the first question')
         return redirect('test_overview')
 
     questions = request.session.get('question_set')
-
+    
+    # Ensure that the question_id is within a valid range
     if 1 <= question_id - 1 < len(questions):
         question = get_object_or_404(Test, question_id=question_id - 1)
-        #return render(request, 'test/test_page.html', {'question': question})
-        return redirect('display_question', question_id=question_id - 1)
+        #question = questions[question_id - 2]  # Subtract 2 to get the previous question
+        #options = question.options
+        return render(request, 'test/test_page.html', {'question': question})#, 'options': options
     else:
+        # Handle the case where the previous question is out of bounds
         messages.success(request, 'You have reached the first question')
         return redirect('home')
-    
-from django.shortcuts import get_object_or_404
+
 
 def submit_question(request, question_id):
-    question = get_object_or_404(Test, question_id=question_id)
-    user_response_key = f'user_response_{question_id}'
+    print("submit_question() question_id: ", question_id)
 
+    # Retrieve the current question
+    question = get_object_or_404(Test, question_id=question_id)
+
+    user_response_key = f'user_response_{question_id}'
+    print("user_response_key: ", user_response_key)
+
+    # Get the user's response form data
     if request.method == 'POST':
         form = UserResponseForm(request.POST)
         selected_option = request.POST.get('selected_option')
 
         if selected_option is not None:
+            # Store the user's answer in the session
             request.session[user_response_key] = int(selected_option)
 
         if form.is_valid():
-            set_id = request.session.get('question_set_id')
+            selected_option = form.cleaned_data['selected_option']
             is_correct = (selected_option == question.correct_option)
-            existing_response = UserResponse.objects.filter(question=question.question_id, set_id=set_id).first()
+
+            # Get the current question set ID
+            set_id = request.session.get('question_set_id')
+            
+            # Check if a UserResponse with the same question_id and set_id exists
+            existing_response = UserResponse.objects.filter(
+                question=question.question_id,set_id=set_id
+                ).first()
 
             if existing_response:
+                # If an existing response is found, update it
                 existing_response.selected_option = selected_option
                 existing_response.is_correct = is_correct
                 existing_response.is_answered = True
                 existing_response.save()
                 messages.success(request, 'Your answer has been updated')
+            
             else:
-                UserResponse.objects.create(
+                # Otherwise, create a new UserResponse object
+                UserResponse.objects.create( #user=request.user, #response=None,
                     question=question,
                     selected_option=selected_option,
                     is_correct=is_correct,
                     set_id=set_id,
                     is_answered=True,
                 )
+
                 messages.success(request, 'Your answer has been submitted')
-            print("Submitted!")
-            current_question_id = question_id
-            question_ids = request.session.get('question_set', [])
             
+            current_question_id = question_id
+
+            # get questions_ids
+            question_ids = request.session.get('question_set', [])
+
+            # Find the index of the current question ID in the list
             try:
+                # Calculate the index of the next question
                 current_index = question_ids.index(current_question_id)
                 next_question_id = question_ids[current_index + 1]
-                
-                if next_question_id == max(question_ids):
+
+                # Check if this is the last question by comparing with the maximun ID
+                max_question_id = max(question_ids)
+                if next_question_id == max_question_id:
                     messages.success(request, 'You have completed the test')
                     return redirect('test_overview')
 
+                # Retrieve the next question and its options
                 next_question = get_object_or_404(Test, question_id=next_question_id)
                 options = next_question.options
                 return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
-            except (ValueError, IndexError):
+            
+            except ValueError:
+                # Handle the case where the current_question_id is not found in the list
                 messages.warning(request, 'Invalid question ID')
+            except IndexError:
+                # Handle the case where there is no next question
+                messages.success(request, 'You have completed the test')
+                return redirect('home')
         else:
+            # Display the question and form again with validation errors
             options = question.options
             return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': form})
     else:
+        # Display the question and form for the first time
         options = question.options
         return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
 
     return redirect('home')
 
-
 def submit_test(request):
+    print("submit_test()")
+    # process the submitted test
     set_id = request.session.get('question_set_id')
     unfinished_response = UserResponse.objects.filter(set_id=set_id, is_answered=False).count()
+    print("unfinished_response: ", unfinished_response) 
 
-    if unfinished_response == 0:
+    if unfinished_response == 0:       
+        # retrieve session variables
+        #question_set_id = request.session['question_set_id']
+        #question_set = QuestionSet.objects.get(pk=question_set_id)
+        #questions_answered = request.session['questions_answered']
         test_started = request.session.get('test_started', False)
+        print("test_started: ", test_started)
+        questions_answered = request.session.get('questions_answered', 0)
         question_set_id = request.session.get('question_set_id')
-        
         if test_started:
+            # perform actions based on the session data
+
+            # update QuestionSet object where set_id = question_set_id
             question_set = QuestionSet.objects.get(set_id=question_set_id)
             question_set.is_completed = True
+            # count number of correct answers on UserResponse objects where set_id = question_set_id
             total_correct = UserResponse.objects.filter(set_id=question_set_id, is_correct=True).count()
             question_set.score = total_correct
             question_set.save()
+            print("Saving QuestionSet object: ", question_set)
+            print("Total correct: ", total_correct, "is completed: ", question_set.is_completed, "score: ", question_set.score)
+            print("QuestionSet object saved!")
+            # Clear session variables
             clear_session_variables(request)
+
             messages.success(request, 'You have completed the test')
+            print('You have completed the test')
             return redirect('student_test_report', question_set_id=question_set_id)
         else:
             messages.success(request, 'You have not started the test')
+            print('You have not started the test')
             return redirect('home')
     else:
         messages.success(request, 'You have not answered all questions')
+        print("unfinished_response: ", unfinished_response, "YOU ARE NOT YET FINISHED!")
+        # get question_set_id
         question_set_id = request.session.get('question_set_id')
-        #return redirect('test_overview', question_set_id=question_set_id)
-        return redirect('test_overview')
+        # back to test_overview
+        return redirect('test_overview', question_set_id=question_set_id)
 
 
 def view_test_results(request):

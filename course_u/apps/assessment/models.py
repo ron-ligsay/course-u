@@ -46,8 +46,10 @@ class UserResponse(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     response = models.AutoField(primary_key=True,serialize=False, auto_created=True)
     question = models.ForeignKey(Test, on_delete=models.CASCADE) 
-    selected_option = models.IntegerField() # Index of the selected option in the options list
-    is_correct = models.BooleanField()
+    # can be null
+    selected_option = models.IntegerField(null=True, blank=True)
+     # Index of the selected option in the options list
+    is_correct = models.BooleanField(null=True, blank=True)
     is_answered = models.BooleanField(default=False)
     set = models.ForeignKey(QuestionSet, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
