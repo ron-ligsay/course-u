@@ -33,11 +33,14 @@ class QuestionSet(models.Model):
     n_questions = models.IntegerField()
     is_completed = models.BooleanField(default=False)
     score = models.IntegerField(default=0)
-    
+    year = models.PositiveIntegerField(default=1)  # Add the year field
+
     def __str__(self):
-        return f"{self.set_id}: Status : {self.is_completed} by User: {self.user} (Score: {self.score} / {self.n_questions}) "#str(self.set_id)
+        return f"{self.set_id}: Status : {self.is_completed} by User: {self.user} (Score: {self.score} / {self.n_questions}) "
+
     class Meta:
-        unique_together = ('user',)
+        unique_together = ('user', 'year')  # Enforce uniqueness based on user and year
+
 
 class UserResponse(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
