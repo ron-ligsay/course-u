@@ -54,8 +54,13 @@ ion-icon:hover{
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 100px;
+  padding-top: 30px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input a {
+  text-decoration: none;
+  color: white;
 }
 
 
@@ -179,8 +184,9 @@ p{
   font-size: 22px;
   font-family: "Times New Roman", sans-serif;
 }
-.btn {
-    
+.btn{
+    display: block;
+    margin: 0 auto;
     padding: 10px 20px;
     background-color: #ff5133;
     color: white;

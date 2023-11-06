@@ -1,5 +1,4 @@
 
-
 /* Job Card Styles */
 
 .job.row
@@ -18,10 +17,11 @@
 }
 
 .job-card {
-    background-color: #ffffff;
+    background-image:url('/static/images/2.jpg');
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     padding: 10px;
+    background-size: cover;
     margin-bottom: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -34,11 +34,13 @@
 .job-title {
     font-size: 18px;
     font-weight: bold;
+    color:white;    
 }
 
 .company-name {
     font-size: 14px;
-    color: #555555;
+    /*color: #555555;*/
+    color:lightgray;
 }
 
 .job-location,
