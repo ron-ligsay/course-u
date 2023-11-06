@@ -233,8 +233,14 @@ def display_question(request, question_id):
     # Retrieve the question based on the provided question ID
     question = get_test_question_by_id(question_id)
 
+    # Retrieve the UserResponse object for the current question and question set
+    user_response = UserResponse.objects.filter(question=question, set_id=question_set_id).first()
+
     # Render the question page with the question and question set information
-    return render(request, 'test/test_page.html', {'question': question, 'question_set_id': question_set_id})#, 'questions_answered': questions_answered
+    return render(request, 'test/test_page.html', {
+        'question': question, 'question_set_id': question_set_id,
+        'user_response': user_response, 
+        })#, 'questions_answered': questions_answered
 
 
 def test_overview(request):
