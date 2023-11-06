@@ -2224,3 +2224,790 @@ INFO 2023-11-05 21:01:19,244 django.server basehttp basehttp.py 212 log_message 
 INFO 2023-11-05 21:01:19,253 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 200 1412
 INFO 2023-11-05 21:01:31,005 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
 INFO 2023-11-05 21:01:34,902 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 14:06:38,610 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 14:15:40,827 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 14:15:49,329 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 302 0
+INFO 2023-11-06 14:15:49,459 django.server basehttp basehttp.py 212 log_message "GET /login_user/?next=/home HTTP/1.1" 200 10826
+INFO 2023-11-06 14:15:49,641 django.server basehttp basehttp.py 212 log_message "GET /static/css/login_user.css HTTP/1.1" 200 1255
+INFO 2023-11-06 14:15:49,751 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 14:15:49,850 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 14:15:49,926 django.server basehttp basehttp.py 212 log_message "GET /static/images/log.jpg HTTP/1.1" 200 43888
+INFO 2023-11-06 14:15:50,041 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 14:15:50,051 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 14:15:50,380 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 14:16:27,172 django.server basehttp basehttp.py 212 log_message "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-06 14:16:27,469 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 17101
+INFO 2023-11-06 14:16:27,513 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 14:16:27,539 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 14:16:27,540 django.server basehttp basehttp.py 212 log_message "GET /static/css/home.css HTTP/1.1" 200 1245
+INFO 2023-11-06 14:16:27,586 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 200 1412
+INFO 2023-11-06 14:16:32,932 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-11-06 14:16:33,014 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16804
+INFO 2023-11-06 14:16:34,492 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16804
+INFO 2023-11-06 14:16:35,253 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-11-06 14:16:35,324 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16804
+INFO 2023-11-06 14:16:36,326 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-11-06 14:16:36,408 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16804
+INFO 2023-11-06 14:16:40,260 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16590
+INFO 2023-11-06 14:16:41,522 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15273
+WARNING 2023-11-06 14:16:43,147 django.request log log.py 241 log_response Not Found: /job_list/
+WARNING 2023-11-06 14:16:43,151 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 404 14949
+WARNING 2023-11-06 14:16:43,420 django.request log log.py 241 log_response Not Found: /favicon.ico
+WARNING 2023-11-06 14:16:43,421 django.server basehttp basehttp.py 212 log_message "GET /favicon.ico HTTP/1.1" 404 20555
+INFO 2023-11-06 14:16:46,341 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-11-06 14:16:46,411 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 16804
+INFO 2023-11-06 16:06:32,677 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:06:39,751 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 39895
+INFO 2023-11-06 16:06:45,496 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 40
+INFO 2023-11-06 16:06:45,735 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=dbb04e58f3c549fd9d47d4610fdf87f1 HTTP/1.1" 200 9047
+INFO 2023-11-06 16:06:47,213 django.server basehttp basehttp.py 212 log_message "GET /field/2/ HTTP/1.1" 200 40
+INFO 2023-11-06 16:06:47,436 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=91530cce50a5472a8e9683f14318dd69 HTTP/1.1" 200 9047
+INFO 2023-11-06 16:06:48,813 django.server basehttp basehttp.py 212 log_message "GET /field/3/ HTTP/1.1" 200 40
+INFO 2023-11-06 16:06:49,037 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=5a03a46134ea449b90d8decacbe72f6a HTTP/1.1" 200 9047
+INFO 2023-11-06 16:06:55,532 django.server basehttp basehttp.py 212 log_message "GET /field/6/ HTTP/1.1" 200 40
+INFO 2023-11-06 16:06:55,766 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=6cc3994347844ae983710f06fbce6d98 HTTP/1.1" 200 9047
+INFO 2023-11-06 16:06:57,154 django.server basehttp basehttp.py 212 log_message "GET /field/9/ HTTP/1.1" 200 40
+INFO 2023-11-06 16:06:57,365 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=dd569a3865604c72801179bee845a470 HTTP/1.1" 200 9047
+INFO 2023-11-06 16:07:00,104 django.server basehttp basehttp.py 212 log_message "GET /field/2/ HTTP/1.1" 200 40
+INFO 2023-11-06 16:07:00,314 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=7b021bebe7dc4bc9ae2ffec946958c15 HTTP/1.1" 200 9047
+INFO 2023-11-06 16:07:09,341 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:07:09,472 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 39894
+INFO 2023-11-06 16:07:11,959 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:07:12,041 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 39893
+INFO 2023-11-06 16:07:18,053 django.server basehttp basehttp.py 212 log_message "GET /admin HTTP/1.1" 301 0
+INFO 2023-11-06 16:07:18,390 django.server basehttp basehttp.py 212 log_message "GET /admin/ HTTP/1.1" 200 21168
+INFO 2023-11-06 16:07:18,470 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2023-11-06 16:07:18,501 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2023-11-06 16:07:18,509 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2023-11-06 16:07:18,526 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2023-11-06 16:07:18,535 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2023-11-06 16:07:18,578 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2023-11-06 16:07:18,613 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-11-06 16:07:18,627 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2023-11-06 16:07:18,629 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-11-06 16:07:28,244 django.server basehttp basehttp.py 212 log_message "GET /admin/auth/user/ HTTP/1.1" 200 24486
+INFO 2023-11-06 16:07:28,298 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2023-11-06 16:07:28,412 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2023-11-06 16:07:28,421 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2023-11-06 16:07:28,439 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2023-11-06 16:07:28,459 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2023-11-06 16:07:28,550 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2023-11-06 16:07:28,550 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2023-11-06 16:07:28,572 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2023-11-06 16:07:28,605 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2023-11-06 16:07:28,675 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2023-11-06 16:07:28,697 django.server basehttp basehttp.py 212 log_message "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-06 16:07:28,721 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2023-11-06 16:07:28,772 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2023-11-06 16:07:28,836 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2023-11-06 16:07:28,845 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2023-11-06 16:07:31,190 django.server basehttp basehttp.py 212 log_message "GET /admin/auth/user/1/change/ HTTP/1.1" 200 39535
+INFO 2023-11-06 16:07:31,295 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2023-11-06 16:07:31,298 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2023-11-06 16:07:31,324 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2023-11-06 16:07:31,338 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+INFO 2023-11-06 16:07:31,378 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+INFO 2023-11-06 16:07:31,384 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-11-06 16:07:31,427 django.server basehttp basehttp.py 212 log_message "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-06 16:07:31,436 django.server basehttp basehttp.py 212 log_message "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+INFO 2023-11-06 16:07:31,558 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2023-11-06 16:07:31,703 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2023-11-06 16:07:31,703 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2023-11-06 16:07:31,703 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2023-11-06 16:07:31,709 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2023-11-06 16:07:31,709 django.server basehttp basehttp.py 212 log_message "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2023-11-06 16:07:37,297 django.server basehttp basehttp.py 212 log_message "GET /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 21890
+INFO 2023-11-06 16:07:37,408 django.server basehttp basehttp.py 212 log_message "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-06 16:07:43,646 django.server basehttp basehttp.py 212 log_message "POST /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 9360
+INFO 2023-11-06 16:07:43,699 django.server basehttp basehttp.py 212 log_message "GET /static/admin/js/popup_response.js HTTP/1.1" 200 551
+INFO 2023-11-06 16:07:49,873 django.server basehttp basehttp.py 212 log_message "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:07:49,980 django.server basehttp basehttp.py 212 log_message "GET /admin/auth/user/ HTTP/1.1" 200 24966
+INFO 2023-11-06 16:07:50,084 django.server basehttp basehttp.py 212 log_message "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-06 16:07:54,907 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-06 16:07:54,950 django.server basehttp basehttp.py 212 log_message "GET /static/css/landing.css HTTP/1.1" 200 1072
+INFO 2023-11-06 16:07:55,015 django.server basehttp basehttp.py 212 log_message "GET /static/images/landing2.png HTTP/1.1" 200 1935293
+INFO 2023-11-06 16:07:56,272 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:07:56,358 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 39893
+INFO 2023-11-06 16:07:57,978 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 39893
+INFO 2023-11-06 16:07:59,374 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 4228
+INFO 2023-11-06 16:07:59,592 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=0a2141e99e82420bb14307ba6829474f HTTP/1.1" 200 9092
+INFO 2023-11-06 16:08:00,943 django.server basehttp basehttp.py 212 log_message "GET /field/2/ HTTP/1.1" 200 2630
+INFO 2023-11-06 16:08:01,175 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=f9b9d0f7f2ba405d9b7950635d9b0a57 HTTP/1.1" 200 9090
+INFO 2023-11-06 16:08:02,071 django.server basehttp basehttp.py 212 log_message "GET /field/3/ HTTP/1.1" 200 1737
+INFO 2023-11-06 16:08:02,309 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=8edc32678f774900a269b15953aef54a HTTP/1.1" 200 9091
+INFO 2023-11-06 16:08:03,104 django.server basehttp basehttp.py 212 log_message "GET /field/4/ HTTP/1.1" 200 935
+INFO 2023-11-06 16:08:03,342 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=8854a69378ce463c8783edb7115b7ed8 HTTP/1.1" 200 9092
+INFO 2023-11-06 16:08:06,055 django.server basehttp basehttp.py 212 log_message "GET /field/8/ HTTP/1.1" 200 840
+INFO 2023-11-06 16:08:06,292 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=701d77966f4141a8bf3b833c81da4d96 HTTP/1.1" 200 9090
+INFO 2023-11-06 16:08:07,937 django.server basehttp basehttp.py 212 log_message "GET /field/10/ HTTP/1.1" 200 2206
+INFO 2023-11-06 16:08:08,154 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=062aa966387d4cc7a497f9d90be3daa8 HTTP/1.1" 200 9091
+INFO 2023-11-06 16:08:08,688 django.server basehttp basehttp.py 212 log_message "GET /field/9/ HTTP/1.1" 200 1286
+INFO 2023-11-06 16:08:08,926 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=9dce70c033f04cefa7f5a4e36de0a3bc HTTP/1.1" 200 9090
+INFO 2023-11-06 16:08:10,252 django.server basehttp basehttp.py 212 log_message "GET /field/2/ HTTP/1.1" 200 2630
+INFO 2023-11-06 16:08:10,507 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=76b3f7d0fdf146ea83de383add0d69f0 HTTP/1.1" 200 9091
+INFO 2023-11-06 16:08:11,254 django.server basehttp basehttp.py 212 log_message "GET /field/3/ HTTP/1.1" 200 1737
+INFO 2023-11-06 16:08:11,507 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=7c1b40a7f55a460b947530dbe4796302 HTTP/1.1" 200 9090
+INFO 2023-11-06 16:08:12,172 django.server basehttp basehttp.py 212 log_message "GET /field/1/ HTTP/1.1" 200 4228
+INFO 2023-11-06 16:08:12,409 django.server basehttp basehttp.py 212 log_message "GET /__debug__/history_sidebar/?store_id=b70d9f7aeb1541cc8a8ba915f862b16b HTTP/1.1" 200 9090
+INFO 2023-11-06 16:08:13,844 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 39894
+INFO 2023-11-06 16:08:15,633 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 23267
+INFO 2023-11-06 16:08:15,690 django.server basehttp basehttp.py 212 log_message "GET /static/css/admin_home.css HTTP/1.1" 200 3482
+INFO 2023-11-06 16:08:25,552 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 16590
+INFO 2023-11-06 16:08:28,031 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:08:28,267 django.server basehttp basehttp.py 212 log_message "GET /mbti/1/ HTTP/1.1" 200 41291
+INFO 2023-11-06 16:08:28,310 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_question.css HTTP/1.1" 200 1046
+INFO 2023-11-06 16:08:59,627 django.server basehttp basehttp.py 212 log_message "POST /mbti/1/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:08:59,701 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 17760
+INFO 2023-11-06 16:10:33,375 django.server basehttp basehttp.py 212 log_message "GET /mbti/1/ HTTP/1.1" 200 15215
+INFO 2023-11-06 16:10:48,091 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:10:50,607 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:11:21,205 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:11:25,029 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:11:30,443 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:11:32,657 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:11:37,630 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:11:39,992 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:14:47,198 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:14:49,940 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-06 16:14:54,040 django.request log log.py 241 log_response Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 187, in mbti_results
+    mbti_name = indicator.indicactor_name
+AttributeError: 'NoneType' object has no attribute 'indicactor_name'
+ERROR 2023-11-06 16:14:54,133 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 500 93773
+INFO 2023-11-06 16:15:11,037 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:15:13,339 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-06 16:15:15,191 django.request log log.py 241 log_response Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 187, in mbti_results
+    mbti_name = indicator.indicator_name
+AttributeError: 'NoneType' object has no attribute 'indicator_name'
+ERROR 2023-11-06 16:15:15,282 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 500 93763
+ERROR 2023-11-06 16:15:17,884 django.request log log.py 241 log_response Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 187, in mbti_results
+    mbti_name = indicator.indicator_name
+AttributeError: 'NoneType' object has no attribute 'indicator_name'
+ERROR 2023-11-06 16:15:17,931 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 500 93763
+INFO 2023-11-06 16:15:35,398 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:15:38,534 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:15:43,014 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:15:44,985 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:16:17,459 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:16:19,922 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:16:24,852 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:16:26,859 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-06 16:16:30,175 django.request log log.py 241 log_response Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 180, in mbti_results
+    indicator = Indicator.objects.get(indicator=indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.personality.models.Indicator.DoesNotExist: Indicator matching query does not exist.
+ERROR 2023-11-06 16:16:30,284 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 500 102126
+INFO 2023-11-06 16:16:44,359 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:16:46,758 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-06 16:16:53,097 django.request log log.py 241 log_response Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 180, in mbti_results
+    indicator = Indicator.objects.get(indicator_id=indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.personality.models.Indicator.DoesNotExist: Indicator matching query does not exist.
+ERROR 2023-11-06 16:16:53,211 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 500 102138
+ERROR 2023-11-06 16:17:16,011 django.request log log.py 241 log_response Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 82, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 152, in calculate_personality
+    print("indicator: ", indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:17:16,145 django.server basehttp basehttp.py 212 log_message "POST /mbti/1/ HTTP/1.1" 500 104533
+INFO 2023-11-06 16:19:01,973 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:19:04,148 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-06 16:19:11,843 django.request log log.py 241 log_response Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 82, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 152, in calculate_personality
+    print("indicator: ", indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:19:12,017 django.server basehttp basehttp.py 212 log_message "POST /mbti/1/ HTTP/1.1" 500 104546
+ERROR 2023-11-06 16:20:26,477 django.request log log.py 241 log_response Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry '1' for key 'personality_mbtiset.personality_mbtiset_user_id_12dbdb3b_uniq'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 27, in initialize_mbti_test
+    mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id, identity="AAAA")
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1062, "Duplicate entry '1' for key 'personality_mbtiset.personality_mbtiset_user_id_12dbdb3b_uniq'")
+ERROR 2023-11-06 16:20:26,557 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 500 219663
+INFO 2023-11-06 16:22:57,526 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:22:59,915 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:23:04,036 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:23:05,818 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:23:35,052 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:23:37,249 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:23:41,560 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:23:44,021 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:24:19,979 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:24:22,072 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:25:36,877 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:25:39,264 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:25:46,545 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:25:49,117 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:25:55,582 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:25:58,292 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:26:02,687 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:26:04,601 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:26:26,484 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:26:29,219 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:26:47,508 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:26:49,738 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:26:56,848 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 302 0
+INFO 2023-11-06 16:26:57,168 django.server basehttp basehttp.py 212 log_message "GET /mbti/1/ HTTP/1.1" 200 41291
+INFO 2023-11-06 16:26:57,213 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-11-06 16:26:57,214 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+ERROR 2023-11-06 16:27:30,372 django.request log log.py 241 log_response Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 113, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 183, in calculate_personality
+    print("indicator: ", indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:27:30,574 django.server basehttp basehttp.py 212 log_message "POST /mbti/1/ HTTP/1.1" 500 108434
+INFO 2023-11-06 16:28:44,045 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:28:46,374 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:29:26,855 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:29:29,829 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:31:43,721 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:31:47,381 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:31:52,585 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:31:55,730 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:32:19,100 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:32:21,266 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:32:34,238 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:32:38,546 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:32:54,195 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:32:56,613 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-06 16:33:07,121 django.request log log.py 241 log_response Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 113, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 193, in calculate_personality
+    mbti_set.indicator = indicator.indicator_id
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\fields\related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "4": "MBTISet.indicator" must be a "Indicator" instance.
+ERROR 2023-11-06 16:33:07,307 django.server basehttp basehttp.py 212 log_message "POST /mbti/1/ HTTP/1.1" 500 107989
+INFO 2023-11-06 16:33:24,944 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:33:28,175 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:33:35,246 django.server basehttp basehttp.py 212 log_message "POST /mbti/1/ HTTP/1.1" 302 0
+ERROR 2023-11-06 16:33:35,418 django.request log log.py 241 log_response Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Indicator'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 231, in mbti_results
+    indicator = Indicator.objects.get(indicator_id=indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\fields\__init__.py", line 2056, in get_prep_value
+    "Field '%s' expected a number but got %r." % (self.name, value),
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 588, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:33:35,507 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 500 167462
+INFO 2023-11-06 16:34:47,956 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:34:50,113 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:35:26,134 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:35:28,606 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:35:33,661 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:35:35,551 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:35:42,410 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 17499
+INFO 2023-11-06 16:35:42,677 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-11-06 16:35:49,316 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 16:35:52,731 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 16:35:57,678 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 17499
+INFO 2023-11-06 16:37:35,463 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 17276
+INFO 2023-11-06 16:40:33,963 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16567
+INFO 2023-11-06 16:41:32,629 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16589
+INFO 2023-11-06 16:41:40,979 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16587
+INFO 2023-11-06 16:41:47,429 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16587
+INFO 2023-11-06 16:42:28,938 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16608
+INFO 2023-11-06 16:44:15,237 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16748
+INFO 2023-11-06 16:44:15,445 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 83
+INFO 2023-11-06 16:45:28,668 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:45:28,747 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 133
+INFO 2023-11-06 16:45:34,758 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 304 0
+INFO 2023-11-06 16:45:52,203 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:45:52,260 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:45:52,262 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 132
+INFO 2023-11-06 16:45:52,292 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:45:52,325 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:45:52,328 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:45:52,762 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:45:52,763 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:45:53,167 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:46:14,362 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:46:14,409 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:46:14,420 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:46:14,420 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:46:14,420 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:46:14,504 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 133
+INFO 2023-11-06 16:46:14,701 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:46:14,710 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:46:15,199 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:46:34,288 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:46:34,321 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:46:34,355 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:46:34,358 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:46:34,366 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 131
+INFO 2023-11-06 16:46:34,486 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:46:34,749 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:46:34,750 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:46:35,414 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:46:58,665 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:46:58,694 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:46:58,713 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 133
+INFO 2023-11-06 16:46:58,731 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:46:58,735 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:46:58,743 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:46:59,040 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:46:59,065 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:46:59,653 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:47:07,220 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:47:07,258 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:47:07,274 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 133
+INFO 2023-11-06 16:47:07,274 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:47:07,296 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:47:07,300 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:47:07,606 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:47:07,607 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:47:08,233 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:47:19,873 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:47:19,914 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:47:19,938 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:47:19,948 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 131
+INFO 2023-11-06 16:47:19,963 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:47:20,033 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:47:20,256 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:47:20,256 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:47:20,852 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:47:25,756 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:47:25,889 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:47:25,891 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:47:25,892 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:47:25,892 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:47:25,922 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 131
+INFO 2023-11-06 16:47:26,506 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:47:26,510 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:47:27,407 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:47:46,544 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:47:46,575 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:47:46,594 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 212
+INFO 2023-11-06 16:47:46,595 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:47:46,603 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:47:46,609 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:47:46,956 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:47:46,988 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:47:47,540 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:48:06,326 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:48:06,364 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:48:06,389 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 169
+INFO 2023-11-06 16:48:06,391 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:48:06,405 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:48:06,611 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:48:06,737 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:48:06,752 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:48:07,309 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:48:26,421 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:48:26,461 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:48:26,482 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 195
+INFO 2023-11-06 16:48:26,484 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:48:26,494 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:48:26,496 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:48:26,680 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:48:26,680 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:48:27,439 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:48:45,868 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:48:45,912 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:48:45,930 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 229
+INFO 2023-11-06 16:48:45,946 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:48:45,951 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:48:45,952 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:48:46,310 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:48:46,341 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:48:47,030 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:48:53,701 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:48:53,750 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:48:53,763 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 227
+INFO 2023-11-06 16:48:53,828 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:48:53,996 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:48:54,123 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:48:54,133 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:48:54,175 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:48:54,497 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:49:06,359 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:49:06,485 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:49:06,517 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 227
+INFO 2023-11-06 16:49:06,542 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:49:06,661 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:49:06,756 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:49:07,005 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:49:07,008 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:49:07,621 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:49:27,661 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:49:27,748 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:49:27,814 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 248
+INFO 2023-11-06 16:49:27,825 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:49:27,978 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:49:28,010 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:49:28,111 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:49:28,164 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:49:28,658 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:49:47,934 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:49:47,977 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:49:48,001 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 248
+INFO 2023-11-06 16:49:48,010 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:49:48,093 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:49:48,176 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:49:48,369 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:49:48,431 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:49:49,076 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:49:56,027 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:49:56,067 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:49:56,073 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:49:56,074 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:49:56,075 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:49:56,081 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 248
+INFO 2023-11-06 16:49:56,369 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:49:56,424 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:49:56,693 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:50:04,198 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:50:04,250 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:50:04,275 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:50:04,284 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:50:04,354 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 268
+INFO 2023-11-06 16:50:04,444 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:50:04,690 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:50:04,690 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:50:05,042 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:50:18,347 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:50:18,385 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:50:18,417 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 335
+INFO 2023-11-06 16:50:18,424 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:50:18,426 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:50:18,430 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:50:18,740 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:50:18,748 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:50:19,380 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:50:37,337 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16767
+INFO 2023-11-06 16:50:37,382 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:50:37,402 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 362
+INFO 2023-11-06 16:50:37,408 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:50:37,418 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:50:37,453 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:50:37,695 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:50:37,747 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:50:38,269 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:50:44,559 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16768
+INFO 2023-11-06 16:50:44,609 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:50:44,610 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:50:44,610 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:50:44,610 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:50:44,623 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 361
+INFO 2023-11-06 16:50:44,924 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:50:44,969 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:50:45,225 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:56:58,489 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:56:58,699 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:56:58,918 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 590
+INFO 2023-11-06 16:56:59,025 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:56:59,384 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:56:59,675 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:56:59,921 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:56:59,921 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:57:00,527 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:57:24,245 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:57:24,290 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:57:24,308 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 553
+INFO 2023-11-06 16:57:24,316 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:57:24,365 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:57:24,455 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:57:24,625 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:57:24,659 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:57:25,186 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:57:57,996 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:57:58,064 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:57:58,066 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:57:58,076 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:57:58,078 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:57:58,134 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 565
+INFO 2023-11-06 16:57:58,389 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:57:58,391 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:57:59,093 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:58:03,817 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:58:04,119 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:58:04,120 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 565
+INFO 2023-11-06 16:58:04,427 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:58:04,596 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:58:04,711 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:58:04,952 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:58:04,953 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:58:05,491 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:58:17,063 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:58:18,032 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:58:18,141 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:58:18,166 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 563
+INFO 2023-11-06 16:58:18,250 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:58:18,277 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:58:18,560 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:58:18,564 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:58:18,999 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:58:27,806 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:58:28,099 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:58:28,380 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 565
+INFO 2023-11-06 16:58:28,427 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:58:28,561 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:58:28,733 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:58:28,867 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:58:28,930 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:58:29,274 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:58:34,512 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16859
+INFO 2023-11-06 16:58:34,557 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:58:34,563 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 565
+INFO 2023-11-06 16:58:34,590 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:58:34,679 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:58:34,823 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:58:35,003 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:58:35,016 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:58:35,512 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:59:09,390 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:59:09,536 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:59:09,539 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 565
+INFO 2023-11-06 16:59:09,578 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:59:09,648 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:59:09,764 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:59:10,439 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:59:10,439 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:59:10,676 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 16:59:55,129 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 16:59:55,186 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 16:59:55,188 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 553
+INFO 2023-11-06 16:59:55,234 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 16:59:55,266 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 16:59:55,319 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 16:59:55,425 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 16:59:55,432 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 16:59:56,167 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:00:16,040 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 17:00:16,077 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 17:00:16,098 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 17:00:16,099 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 17:00:16,162 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 17:00:16,671 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 595
+INFO 2023-11-06 17:00:16,905 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 17:00:16,923 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 17:00:17,225 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:00:22,168 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 17:00:22,210 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 17:00:22,211 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 595
+INFO 2023-11-06 17:00:22,227 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 17:00:22,248 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 17:00:22,250 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 17:00:22,555 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 17:00:22,638 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 17:00:23,055 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:00:50,238 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 17:00:50,289 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 17:00:50,305 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 17:00:50,422 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 17:00:50,440 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 621
+INFO 2023-11-06 17:00:50,572 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 17:00:50,623 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 17:00:50,674 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 17:00:51,300 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:01:06,838 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16860
+INFO 2023-11-06 17:01:06,900 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 17:01:06,919 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 648
+INFO 2023-11-06 17:01:06,921 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 17:01:06,928 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 17:01:06,939 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 17:01:07,295 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 17:01:07,296 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 17:01:07,909 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:02:07,433 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16859
+INFO 2023-11-06 17:02:07,472 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 17:02:07,486 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 17:02:07,486 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 17:02:07,503 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 17:02:07,507 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 679
+INFO 2023-11-06 17:02:07,824 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 17:02:07,838 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 17:02:08,477 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:03:11,954 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16859
+INFO 2023-11-06 17:03:11,996 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-06 17:03:12,002 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-06 17:03:12,013 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-06 17:03:12,028 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 739
+INFO 2023-11-06 17:03:12,029 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-06 17:03:12,406 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-06 17:03:12,406 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-06 17:03:13,148 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-06 17:03:57,524 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16896
+INFO 2023-11-06 17:03:57,550 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 304 0
+INFO 2023-11-06 17:04:25,784 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16897
+INFO 2023-11-06 17:04:25,861 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 745
+INFO 2023-11-06 17:04:58,686 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16897
+INFO 2023-11-06 17:04:58,749 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 768
+INFO 2023-11-06 17:05:03,278 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16895
+INFO 2023-11-06 17:05:03,330 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 768
+INFO 2023-11-06 17:05:07,882 django.server basehttp basehttp.py 212 log_message "GET /mbti/results/1/ HTTP/1.1" 200 16895
+INFO 2023-11-06 17:05:07,925 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_results.css HTTP/1.1" 200 769
+INFO 2023-11-06 17:07:38,948 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py changed, reloading.
+INFO 2023-11-06 17:07:42,979 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 17:15:19,487 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\recommender\models.py changed, reloading.
+INFO 2023-11-06 17:15:22,029 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 17:16:51,917 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\recommender\models.py changed, reloading.
+INFO 2023-11-06 17:16:54,489 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 18:00:03,704 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\recommender\models.py changed, reloading.
+INFO 2023-11-06 18:00:09,071 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 18:00:59,902 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\recommender\models.py changed, reloading.
+INFO 2023-11-06 18:01:10,032 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader

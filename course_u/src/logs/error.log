@@ -1664,3 +1664,235 @@ Traceback (most recent call last):
     raise TemplateSyntaxError(
 django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' - mbti_set.energy' from '100 - mbti_set.energy'
 ERROR 2023-11-05 20:40:49,654 django.server Thread-1 18528 basehttp basehttp.py 212 django.server log_message 63032 "GET /mbti/results/8/ HTTP/1.1" 500 277788
+WARNING 2023-11-06 14:16:43,147 django.request Thread-4 23764 log log.py 241 django.request log_response 27840 Not Found: /job_list/
+WARNING 2023-11-06 14:16:43,151 django.server Thread-4 23764 basehttp basehttp.py 212 django.server log_message 27840 "GET /job_list/ HTTP/1.1" 404 14949
+WARNING 2023-11-06 14:16:43,420 django.request Thread-4 23764 log log.py 241 django.request log_response 27840 Not Found: /favicon.ico
+WARNING 2023-11-06 14:16:43,421 django.server Thread-4 23764 basehttp basehttp.py 212 django.server log_message 27840 "GET /favicon.ico HTTP/1.1" 404 20555
+ERROR 2023-11-06 16:14:54,040 django.request Thread-1 39944 log log.py 241 django.request log_response 10932 Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 187, in mbti_results
+    mbti_name = indicator.indicactor_name
+AttributeError: 'NoneType' object has no attribute 'indicactor_name'
+ERROR 2023-11-06 16:14:54,133 django.server Thread-1 39944 basehttp basehttp.py 212 django.server log_message 10932 "GET /mbti/results/1/ HTTP/1.1" 500 93773
+ERROR 2023-11-06 16:15:15,191 django.request Thread-1 46600 log log.py 241 django.request log_response 64736 Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 187, in mbti_results
+    mbti_name = indicator.indicator_name
+AttributeError: 'NoneType' object has no attribute 'indicator_name'
+ERROR 2023-11-06 16:15:15,282 django.server Thread-1 46600 basehttp basehttp.py 212 django.server log_message 64736 "GET /mbti/results/1/ HTTP/1.1" 500 93763
+ERROR 2023-11-06 16:15:17,884 django.request Thread-1 46600 log log.py 241 django.request log_response 64736 Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 187, in mbti_results
+    mbti_name = indicator.indicator_name
+AttributeError: 'NoneType' object has no attribute 'indicator_name'
+ERROR 2023-11-06 16:15:17,931 django.server Thread-1 46600 basehttp basehttp.py 212 django.server log_message 64736 "GET /mbti/results/1/ HTTP/1.1" 500 93763
+ERROR 2023-11-06 16:16:30,175 django.request Thread-1 720 log log.py 241 django.request log_response 38660 Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 180, in mbti_results
+    indicator = Indicator.objects.get(indicator=indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.personality.models.Indicator.DoesNotExist: Indicator matching query does not exist.
+ERROR 2023-11-06 16:16:30,284 django.server Thread-1 720 basehttp basehttp.py 212 django.server log_message 38660 "GET /mbti/results/1/ HTTP/1.1" 500 102126
+ERROR 2023-11-06 16:16:53,097 django.request Thread-1 58336 log log.py 241 django.request log_response 68660 Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 180, in mbti_results
+    indicator = Indicator.objects.get(indicator_id=indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.personality.models.Indicator.DoesNotExist: Indicator matching query does not exist.
+ERROR 2023-11-06 16:16:53,211 django.server Thread-1 58336 basehttp basehttp.py 212 django.server log_message 68660 "GET /mbti/results/1/ HTTP/1.1" 500 102138
+ERROR 2023-11-06 16:17:16,011 django.request Thread-1 58336 log log.py 241 django.request log_response 68660 Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 82, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 152, in calculate_personality
+    print("indicator: ", indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:17:16,145 django.server Thread-1 58336 basehttp basehttp.py 212 django.server log_message 68660 "POST /mbti/1/ HTTP/1.1" 500 104533
+ERROR 2023-11-06 16:19:11,843 django.request Thread-1 40616 log log.py 241 django.request log_response 86336 Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 82, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 152, in calculate_personality
+    print("indicator: ", indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:19:12,017 django.server Thread-1 40616 basehttp basehttp.py 212 django.server log_message 86336 "POST /mbti/1/ HTTP/1.1" 500 104546
+ERROR 2023-11-06 16:20:26,477 django.request Thread-1 40616 log log.py 241 django.request log_response 86336 Internal Server Error: /mbti/initialize/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.IntegrityError: (1062, "Duplicate entry '1' for key 'personality_mbtiset.personality_mbtiset_user_id_12dbdb3b_uniq'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 27, in initialize_mbti_test
+    mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id, identity="AAAA")
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1062, "Duplicate entry '1' for key 'personality_mbtiset.personality_mbtiset_user_id_12dbdb3b_uniq'")
+ERROR 2023-11-06 16:20:26,557 django.server Thread-1 40616 basehttp basehttp.py 212 django.server log_message 86336 "GET /mbti/initialize/ HTTP/1.1" 500 219663
+ERROR 2023-11-06 16:27:30,372 django.request Thread-1 12592 log log.py 241 django.request log_response 83176 Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 113, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 183, in calculate_personality
+    print("indicator: ", indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:27:30,574 django.server Thread-1 12592 basehttp basehttp.py 212 django.server log_message 83176 "POST /mbti/1/ HTTP/1.1" 500 108434
+ERROR 2023-11-06 16:33:07,121 django.request Thread-1 36440 log log.py 241 django.request log_response 84880 Internal Server Error: /mbti/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 113, in mbti_test
+    calculate_personality(request.user, mbti_set.mbti_set_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 193, in calculate_personality
+    mbti_set.indicator = indicator.indicator_id
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\fields\related_descriptors.py", line 266, in __set__
+    raise ValueError(
+ValueError: Cannot assign "4": "MBTISet.indicator" must be a "Indicator" instance.
+ERROR 2023-11-06 16:33:07,307 django.server Thread-1 36440 basehttp basehttp.py 212 django.server log_message 84880 "POST /mbti/1/ HTTP/1.1" 500 107989
+ERROR 2023-11-06 16:33:35,418 django.request Thread-1 76612 log log.py 241 django.request log_response 20940 Internal Server Error: /mbti/results/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Indicator'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\views.py", line 231, in mbti_results
+    indicator = Indicator.objects.get(indicator_id=indicator)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\fields\__init__.py", line 2056, in get_prep_value
+    "Field '%s' expected a number but got %r." % (self.name, value),
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\base.py", line 588, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\models.py", line 32, in __str__
+    return f"{self.indicator} ({self.indicator_type})"
+AttributeError: 'Indicator' object has no attribute 'indicator_type'
+ERROR 2023-11-06 16:33:35,507 django.server Thread-1 76612 basehttp basehttp.py 212 django.server log_message 20940 "GET /mbti/results/1/ HTTP/1.1" 500 167462
