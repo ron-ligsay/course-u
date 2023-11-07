@@ -8,6 +8,8 @@
 
 
 {% block content %}
+{% include 'test/check_school_year_model.html'  %}
+{% include 'test/school_year_model.html'  %}
 
 <h2>You have Saved your Grades</h2>
 <p>Course:{{ course }}, Year Level:{{year_level}}</p><br>
@@ -20,5 +22,33 @@
     <p>Take the test!</p>
     <a href="{% url 'start_test' %}" class="submit-button" id="submit-button"><b>Take Test</b></a>
 </div>
+<!-- Include this code within your HTML template -->
+<script>
+    // Function to display the modal
+    function openSchoolYearModal() {
+        var modal = document.getElementById("schoolYearModal");
+        modal.style.display = "block";
+
+        // Handle "Yes" button click
+        document.getElementById("yesButton").addEventListener("click", function() {
+            // User has completed the school year, handle this as needed
+            modal.style.display = "none";
+            // Redirect or perform any required actions
+            window.location.href = "{% url 'handle_school_year' choice='yes' %}";
+        });
+
+        // Handle "No" button click
+        document.getElementById("noButton").addEventListener("click", function() {
+            // User hasn't completed the school year, display a message or perform actions as needed
+            modal.style.display = "none";
+            //alert("Sorry, you need to finish the school year to retake the test.");
+            // You can also redirect the user to another page if necessary
+            window.location.href = "{% url 'handle_school_year' choice='no' %}";
+        });
+    }
+
+    // Call the function when the page loads
+    window.onload = openSchoolYearModal;
+</script>
 
 {% endblock content %}
