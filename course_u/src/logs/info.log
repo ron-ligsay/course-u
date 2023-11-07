@@ -6622,3 +6622,4 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'test' into field. Cho
 ERROR 2023-11-08 01:18:56,710 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 142721
 INFO 2023-11-08 01:19:25,105 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
 INFO 2023-11-08 01:19:29,103 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 01:19:34,986 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 200 7225446
