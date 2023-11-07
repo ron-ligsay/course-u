@@ -722,3 +722,56 @@ class QuestionDeleteView(DeleteView):
     model = Test
     template_name = 'question_confirm_delete.html'
     success_url = reverse_lazy('question_list')
+
+
+
+
+
+
+def check_school_year(request):
+    if request.method == 'POST':
+        completed_year = request.POST.get('completed_year', '')
+
+        if completed_year == 'yes':
+            # User has completed the school year, redirect to the 'create_or_overwrite_test' view
+            return redirect('create_or_overwrite_test')
+
+        elif completed_year == 'no':
+            # User hasn't completed the school year, display a message
+            return HttpResponse("Sorry, you need to finish the school year to retake the test.")
+    
+    return render(request, 'check_school_year.html')
+
+
+
+def create_or_overwrite_test(request):
+    year = request.user.studentprofile.current_year
+
+    # Check if the User has already taken the test in their current StudentProfile year
+    has_taken_test = QuestionSet.objects.filter(user=request.user, year=year).exists()
+
+    if has_taken_test:
+        # If the User has already taken the test in their current StudentProfile year, provide options
+        if request.method == 'POST':
+            option = request.POST.get('option', '')
+
+            if option == 'delete':
+                # Delete the existing test
+                QuestionSet.objects.filter(user=request.user, year=year).delete()
+                return HttpResponse("Your existing test has been deleted. You can now start a new test.")
+
+            elif option == 'overwrite':
+                # Overwrite the existing test (you can modify this part as needed)
+                existing_test = QuestionSet.objects.get(user=request.user, year=year)
+                existing_test.n_questions = 12  # Update the number of questions or any other relevant changes
+                existing_test.is_completed = False
+                existing_test.score = 0
+                existing_test.save()
+                return HttpResponse("Your existing test has been overwritten. You can now start a new test.")
+
+        return render(request, 'options.html')  # Render a template with options (delete or overwrite)
+    else:
+        # Create a new test if the User hasn't taken the test in their current StudentProfile year
+        new_set = Test.objects.create_set()  # You should implement the method to create a new set
+        QuestionSet.objects.create(set_id=new_set, user=request.user, year=year, n_questions=12, is_completed=False, score=0)
+        return HttpResponse("A new test has been created for you.")
