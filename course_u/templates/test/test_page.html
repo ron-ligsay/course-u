@@ -42,9 +42,9 @@
     
     <br>
     <!-- Navigation buttons -->
-    <a href="{% url 'prev_test' question_id=question.question_id %}" class="btn btn-secondary">Previous</a>
-    <a href="{% url 'next_test' question_id=question.question_id %}" class="btn btn-secondary">Next</a>
-    <a href="{% url 'test_overview' %}" class="btn btn-secondary">Page Overview</a>
+    <a href="{% url 'prev_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Previous</a>
+    <a href="{% url 'next_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Next</a>
+    <a href="{% url 'test_overview' question_set_id=question_set_id %}" class="btn btn-secondary">Page Overview</a>
 </div>
 
 {% else %}
