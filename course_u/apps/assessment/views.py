@@ -8,8 +8,9 @@ from django.contrib.auth.models import User
 
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import user_passes_test
 
-
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum, Case, When, IntegerField, F, Count
 
 # App imports
@@ -18,6 +19,8 @@ from apps.assessment.forms import UserResponseForm, TestCreateForm, TestUpdateFo
 from apps.assessment.models import Test, QuestionSet, UserResponse
 
 from apps.website.models import Field, Specialization, UserRecommendations, Skill
+
+from apps.acad.models import StudentProfile
 
 # Other Imports
 import plotly.express as px
@@ -57,11 +60,18 @@ def session_test(request):
     request.session['questions_answered'] = 0 
     questions_answered = request.session['questions_answered']
 
-    return redirect('test_overview')
+    return redirect('test_overview', question_set_id=question_set_id)
 
 # Create your views here:
 @login_required
 def start_test(request):
+    # Check if the user has a student profile
+    studentprofile = StudentProfile.objects.filter(user_id=request.user.id).exists()
+    if not studentprofile:
+        # If the user doesn't have a student profile, redirect to the course selection page
+        return redirect('select_course')  # Replace 'select_course' with the actual URL name
+
+
     clear_session_variables(request)
     start = None
 
@@ -72,12 +82,20 @@ def start_test(request):
 
     if incomplete:
         print("Process Incomplete")
-        process_incomplete_set(request, incomplete)
+        # process_incomplete_set(request, incomplete)
+        return redirect('process_incomplete_set', incomplete=incomplete.set_id)
     else:
         print("Create New Set")
-        start = create_new_question_set(request, last_set)
-
-    return redirect('display_question', question_id=start)
+        #start = create_new_question_set(request, last_set)
+        #create_new_question_set(request, last_set)
+        return redirect('create_new_question_set', last_set=last_set.set_id)
+        # Will not return start anymore
+        # will have to cut this part and make a different function that will go to display_question
+        # if start:
+        #     return redirect('display_question', question_id=start)
+        # else:
+        #     return HttpResponse("Error creating new question set")
+    #return redirect('test_overview')
 
 def get_question_set(user):
     print("get_question_set() user: ", user)
@@ -96,14 +114,18 @@ def get_question_set(user):
 def process_incomplete_set(request, incomplete):
     print("process_incomplete_set() incomplete: ", incomplete)
     # Process the incomplete question set
-    n_questions = UserResponse.objects.filter(set_id=incomplete.set_id).count()
-
-    if n_questions == incomplete.n_questions:
-        # Has answered all questions, but marks as incomplete
-        resume_uncompleted_set(request)
+    n_questions = UserResponse.objects.filter(set_id=incomplete).count()
+    question_set = QuestionSet.objects.get(set_id=incomplete)
+    # get number of questions in the set
+    if n_questions == question_set.n_questions:
+        print("Complete UserResponse objects")
+        # Has complete UserResponse Objects for the set
+        #resume_uncompleted_set(request, incomplete)
+        return redirect('resume_uncompleted_set', incomplete=incomplete)
     else:
         # Handle incomplete set where UserResponse objects are not equal to n_questions
-        handle_incomplete_user_response(request, incomplete)
+        # handle_incomplete_user_response(request, incomplete)
+        return redirect('handle_incomplete_user_response', incomplete=incomplete)
 
 
 def handle_incomplete_user_response(request, incomplete):
@@ -146,14 +168,15 @@ def handle_incomplete_user_response(request, incomplete):
     print("n_questions: ", n_questions,"incomplete.n_questions: ", incomplete.n_questions)
     if n_questions == incomplete.n_questions:
         # Has now complete User Response objects
-        handle_incomplete_set(request)
+        #handle_incomplete_set(request)
+        return redirect('handle_incomplete_set', incomplete=incomplete)
     else:
         # Handle incomplete set where UserResponse objects are not equal to n_questions
         # handle_incomplete_user_response(request, incomplete) # Commented out to avoid infinite loop
         # Critical error, should not happen
         print("Critical error, should not happen")
         return HttpResponse("Critical error, should not happen!")
-        
+    return HttpResponse("handle_incomplete_user_response()")
 
 
 def handle_incomplete_set(request, incomplete):
@@ -163,6 +186,7 @@ def handle_incomplete_set(request, incomplete):
     n_unanswered = UserResponse.objects.filter(set_id=incomplete.set_id, is_answered=False).count()
     request.session['questions_answered'] = incomplete.n_questions - n_unanswered
     request.session['question_set_id'] = incomplete.set_id
+    request.session['question_set'] = list(UserResponse.objects.filter(set_id=incomplete.set_id).values_list('question_id', flat=True))
     if n_unanswered == 0: # All questions are answered
         # mark the set as completed
         incomplete.is_completed = True
@@ -170,33 +194,214 @@ def handle_incomplete_set(request, incomplete):
         # this means that the test is over and redirect to test results
         return redirect('test_results')
     else:
-        resume_uncompleted_set(request)
-
-
-def resume_uncompleted_set(request): 
-    print("resume_uncompleted_set()")
-    request.session['test_started'] = True
-    print("Test started!")
-    return redirect('test_overview')
-
-
-def create_new_question_set(request, last_set):
-    print("create_new_question_set() last_set: ", last_set)
-    if not last_set or last_set == 0:
-        new_set = 1
-    else:
-        new_set = last_set.set_id + 1
-
-    QuestionSet.objects.create(set_id=new_set, user=request.user, n_questions=12, is_completed=False, score=0)
+        #resume_uncompleted_set(request)
+        # return to resume_uncompleted_set
+        return redirect('resume_uncompleted_set', incomplete) 
     
-    request.session['question_set_id'] = new_set
-    question_set, start, end = get_test_questions(x=2)
-    question_ids = question_set.values_list('question_id', flat=True)
 
+
+def resume_uncompleted_set(request, incomplete): 
+    print("resume_uncompleted_set()")
+    request.session['question_set_id'] = incomplete
+    request.session['question_set'] = list(UserResponse.objects.filter(set_id=incomplete).values_list('question_id', flat=True))
+    request.session['test_started'] = True
+    request.session['n_questions'] = UserResponse.objects.filter(set_id=incomplete).count()
+    request.session['questions_answered'] = UserResponse.objects.filter(set_id=incomplete, is_answered=True).count()
+    print("Test started!")
+    return redirect('test_overview', question_set_id=incomplete)
+
+def recreate_overwritten_test(request, new_set):
+    print("recreate_overwritten_test() new_set: ", new_set)
+    # get Test ids from UserResponse where set_id = new_set
+    question_set = UserResponse.objects.filter(set_id=new_set)
+    question_set = question_set.values_list('question_id', flat=True)
+    start = question_set[0]
+    end = question_set[-1]
+
+    question_ids = question_ids_and_session_test(request,question_set)
+    
+    return question_ids, question_set, start, end
+
+def question_ids_and_session_test(request,question_set):
+    print("question_ids_and_session_test()")
+    question_ids = question_set.values_list('question_id', flat=True)
     request.session['question_set'] = list(question_ids)
     request.session['n_questions'] = len(question_ids)
     request.session['questions_answered'] = 0
     request.session['test_started'] = True
+    
+    return question_ids
+
+
+def create_new_question_set(request, last_set):
+    print("create_new_question_set() last_set: ", last_set)
+    
+    start = None
+
+    if not last_set or last_set == 0:
+        last_set = 1
+    else:
+        last_set = last_set + 1
+
+     # Verify first if the User has already taken the test in his current StudentProfile year
+    # Get year of User's StudentProfile
+    if request.user.is_authenticated:
+        try:
+            year = StudentProfile.objects.get(user_id=request.user.id).current_year
+        except ObjectDoesNotExist:
+            year = None  # or some default value
+    else:
+        year = None  # or some default value
+    # Check if the User has already taken the test in his current StudentProfile year
+    has_taken_test = QuestionSet.objects.filter(user=request.user, year=year).exists()
+
+    if has_taken_test:
+        # If the User has already taken the test in his current StudentProfile year, return an error
+        # return HttpResponse("You have already taken the test in your current StudentProfile year.")
+        
+        # Have you Completed the School Year? Yes or No, goes to handle_school_year
+        print("Has Take Test")
+        return redirect('check_school_year')
+    
+        # handle_school_year
+        #print("has_taken_test: ", has_taken_test, "overwritten: ", overwritten, "no_record: ", no_record, "completed_year: ", completed_year)
+    else: # No test in current year
+        # QuestionSet.objects.create(set_id=new_set, user=request.user, n_questions=12, is_completed=False, score=0)
+        print("No overwritten, no_record, and completed_year")
+        no_record = True
+        # year = StudentProfile.objects.get(user_id=request.user.id).current_year
+        # continue to create new question set
+        # continue_create_new_question_set # no record
+        # basically this is a new set for the user
+        return redirect('continue_create_new_question_set', last_set=last_set)
+    
+    return HttpResponse("create_new_question_set()")
+
+def check_school_year(request):
+    print("Render check_school_year.html")
+    return render(request, 'test/check_school_year.html')
+
+def check_school_year_choice(request, choice):
+    print('handle_school_year() choice: ', choice)
+    if choice == 'yes':
+        # User has completed the school year
+        # completed_year = True
+        
+        #return HttpResponse("You have completed the school year. You can proceed.")
+        # to check_school_year
+        return redirect('check_school_year_status', status='completed')
+    elif choice == 'no':
+        # User hasn't completed the school year
+        # completed_year = False
+
+        #return HttpResponse("Sorry, you need to finish the school year to retake the test.")
+        return redirect('check_school_year_status', status='not_completed')
+    # Handle other cases or invalid choices
+    return HttpResponse("Invalid choice.")
+
+def check_school_year_status(request, status=None):
+    print('check_school_year() status: ', status)
+    if status == 'completed':
+        # if user is admin
+        if request.user.is_superuser:
+            return render(request, 'test/create_or_overwrite_test.html',)
+
+        course_id = StudentProfile.objects.get(user_id=request.user.id).enrolled_courses_id
+        return redirect('select_year', course_id=course_id)
+    
+    elif status == 'not_completed':
+        messages.info(request, 'Sorry, you need to finish the school year to retake the test.')
+        # return to test home
+        return redirect('test_home')
+    else:
+        return HttpResponse("check_school_year Invalid status.")
+
+def create_or_overwrite_test(request, action):
+    print('create_or_overwrite_test() action: ', action)
+    year = request.user.studentprofile.current_year
+    if action == 'delete':
+        # Handle the "Delete Existing Test" action
+        # For example, delete the existing test and display a message
+        QuestionSet.objects.filter(user=request.user, year=year).delete()
+        messages.success(request, 'Your existing test has been deleted. You can now start a new test.')
+        # return redirect('test_home')
+        # Continue to create new question set
+        # continue_create_new_question_set # No record
+        return redirect('continue_create_new_question_set', last_set=0)
+
+    elif action == 'overwrite':
+        # Handle the "Overwrite Existing Test" action
+        # For example, update the existing test or perform necessary actions
+        # Overwrite the existing test (you can modify this part as needed)
+        existing_test = QuestionSet.objects.get(user=request.user, year=year)
+        existing_test.n_questions = 12  # Update the number of questions or any other relevant changes
+        existing_test.is_completed = False
+        existing_test.score = 0
+        existing_test.save()
+
+         # remove selected options from UserResponse
+        user_responses = UserResponse.objects.filter(set_id=existing_test.set_id)
+        for user_response in user_responses:
+            user_response.selected_option = None
+            user_response.is_correct = None
+            user_response.is_answered = False
+            user_response.save()
+
+        # overwritten = True # no_record = False
+        # return redirect('continue_create_new_question_set', last_set=None, overwritten=True, no_record=False)
+        # return this to resume_uncompleted_set
+        return redirect('resume_uncompleted_set', existing_test)
+    elif action == 'just_delete':
+         # Handle the "Delete Existing Test" action
+        # For example, delete the existing test and display a message
+        QuestionSet.objects.filter(user=request.user, year=year).delete()
+        messages.success(request, 'Your existing test has been deleted. You can now start a new test.')
+        return redirect('test_home')
+        # Continue to create new question set
+        # continue_create_new_question_set
+
+    elif action == 'home':
+        return redirect('test_home')
+    
+    else:
+        return HttpResponse("Invalid action provided.")
+    
+    # Handle other cases or invalid choices
+    return HttpResponse("Invalid choice.")
+
+def continue_create_new_question_set(request, last_set):
+    print('continue_create_new_question_set() last_set: ', last_set)
+    if last_set == 0 or last_set == None:
+        # get last set
+        try:
+            last_set = QuestionSet.objects.last().set_id
+        except:
+            print("No Sets, Exception: ", Exception)
+            last_set = None
+        if last_set == 0 or last_set == None:
+            new_set = 1
+        else:
+            new_set = last_set + 1
+
+    year = StudentProfile.objects.get(user_id=request.user.id).current_year
+    
+    print("if no_record, Set: ", new_set, "created for user: ", request.user)
+    request.session['question_set_id'] = new_set
+    
+    
+    question_set, start, end = get_test_questions(x=2)
+    question_ids = question_ids_and_session_test(request,question_set)      
+
+
+    # Create QuestionSet object
+    QuestionSet.objects.create(
+        set_id=new_set,
+        user=request.user,
+        n_questions=len(question_ids),
+        is_completed=False,
+        score=0,
+        year=year,
+    )
 
     for question in question_set:
         UserResponse.objects.create(
@@ -205,34 +410,59 @@ def create_new_question_set(request, last_set):
             is_answered=False,
         )
         print("Created new UserResponse objects")
+    start = question_ids[0]
 
-    print("Created new UserResponse objects")
-    return start
+    return redirect('display_question', question_id=start)
 
 
-def test_overview(request):
+def test_overview(request, question_set_id=None):
     print("Test Overview()")
     user = request.user
     is_admin = user.is_superuser
-
-    # Retrieve the current session's question set
-    question_set_id = request.session.get('question_set_id')
-    #question_set = QuestionSet.objects.get(set_id=question_set_id)
+    
     question_set = request.session.get('question_set', [])
+    print("question_set: ", question_set)
+    question_set_id = request.session.get('question_set_id')
+    print("question_set_id: ", question_set_id)
+    questions_answered = request.session.get('questions_answered', 0)
+    print("questions_answered: ", questions_answered)
+    if not question_set_id:
+        return HttpResponse("Invalid session data.")
+
+    try:
+        question_set = request.session.get('question_set', [])
+        if not question_set:
+            try:
+                question_set = QuestionSet.objects.get(set_id=question_set_id)
+            except QuestionSet.DoesNotExist:
+                return HttpResponse("Invalid question set provided.")
+    except ValueError:
+        return HttpResponse("Invalid question set provided.")
+    
     n_question = request.session.get('n_questions', 0)
+    if n_question != len(question_set) or n_question != 12:
+        print("Some UserResponse Objects are missing")
+        n_question = len(question_set)
+        request.session['n_questions'] = n_question
+
 
     # Retrieve the user's responses for the current question set
-    user_responses = UserResponse.objects.filter(set_id=question_set_id)
-
+    try:
+        user_responses = UserResponse.objects.filter(set_id=question_set_id)
+    except:
+        return HttpResponse("Invalid question set provided.")
+    
     # Create a dictionary to store question info and its answered status
     question_info = []
-
     # Iterate through the questions in the current question set
     for question in question_set:
         # get question is_answered status
-         # Get the UserResponse object for the current question
-        user_response = user_responses.filter(question=question).first()
-
+        # Get the UserResponse object for the current question
+        try:
+            user_response = user_responses.filter(question=question).first()
+        except UserResponse.DoesNotExist:
+            return HttpResponse("Invalid question set provided.")
+        
         # Get the is_answered status of the UserResponse object
         has_answered = user_response.is_answered if user_response else False
 
@@ -241,7 +471,13 @@ def test_overview(request):
         # Create a dictionary with question and answered status
         question_info.append({'question': question, 'has_answered': has_answered, 'n_question': n_question})
 
-    return render(request, 'test/test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info, 'is_admin': is_admin})
+    return render(request, 'test/test_overview.html', {
+        'question_set_id': question_set_id, 
+        'question_info': question_info, 
+        'is_admin': is_admin,
+        'n_question': n_question,
+        'questions_answered': questions_answered,
+        })
 
 
 def display_question(request, question_id):
@@ -269,7 +505,7 @@ def display_question(request, question_id):
     })
 
 
-def next_test(request, question_id):
+def next_test(request, question_id, question_set_id):
     question_set = request.session.get('question_set')
     n_question = request.session.get('n_questions', 0)
 
@@ -280,16 +516,16 @@ def next_test(request, question_id):
 
     if question_id + 1 == n_question:
         messages.success(request, 'You have completed the test')
-        return redirect('test_overview')
+        return redirect('test_overview', question_set_id=question_set_id)
     else:
         messages.success(request, 'You have completed the test')
         return redirect('home')
 
 
-def prev_test(request, question_id):
+def prev_test(request, question_id, question_set_id):
     if question_id <= 1:
         messages.success(request, 'You have reached the first question')
-        return redirect('test_overview')
+        return redirect('test_overview', question_set_id=question_set_id)
 
     questions = request.session.get('question_set')
 
@@ -334,6 +570,9 @@ def submit_question(request, question_id):
                     is_answered=True,
                 )
                 messages.success(request, 'Your answer has been submitted')
+                # add questions answered
+                questions_answered = request.session.get('questions_answered', 0)
+                request.session['questions_answered'] = questions_answered + 1
             print("Submitted!")
             current_question_id = question_id
             question_ids = request.session.get('question_set', [])
@@ -344,21 +583,21 @@ def submit_question(request, question_id):
                 
                 if next_question_id == max(question_ids):
                     messages.success(request, 'You have completed the test')
-                    return redirect('test_overview')
+                    return redirect('test_overview', question_set_id=set_id)
 
                 next_question = get_object_or_404(Test, question_id=next_question_id)
                 options = next_question.options
                 return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
             except (ValueError, IndexError):
                 messages.warning(request, 'Invalid question ID')
+            
+            return redirect("test_overview", question_set_id=set_id)            
         else:
             options = question.options
             return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': form})
     else:
         options = question.options
         return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
-
-    return redirect('home')
 
 
 def submit_test(request):
@@ -385,8 +624,7 @@ def submit_test(request):
         messages.success(request, 'You have not answered all questions')
         question_set_id = request.session.get('question_set_id')
         #return redirect('test_overview', question_set_id=question_set_id)
-        return redirect('test_overview')
-
+        return redirect('test_overview', question_set_id=question_set_id)
 
 def view_test_results(request):
     return render(request, 'test/test_home.html')
@@ -501,15 +739,29 @@ def student_test_report(request, question_set_id):
     # check  if user_recommendation is saved
     print("user_recommendation: ", user_recommendation)
 
+    
+   # Get all the UserResponse instances related to the question_set_id and where is_correct=True
+    correct_responses = UserResponse.objects.filter(set_id=question_set_id, is_correct=True)
+
+    # Get all the Test instances related to these UserResponse instances
+    tests = Test.objects.filter(userresponse__in=correct_responses)
+
     # Get a count of correct user responses for each skill
     skill_correct_counts = Skill.objects.filter(
-        test__userresponse__set_id=question_set_id,
-        test__userresponse__is_correct=True
-    ).annotate(correct_count=Count('test__userresponse'))
+        tests__in=tests
+    ).annotate(correct_count=Count('tests'))
 
     # Create a bar graph for correct skill counts
     skill_names = list(skill_correct_counts.values_list("skill", flat=True))
     correct_counts = list(skill_correct_counts.values_list("correct_count", flat=True))
+
+    if len(skill_names) == 0:
+        skill_names = ["No Skills"]
+        correct_counts = [0]
+
+
+    print("skill_names: ", skill_names)
+    print("correct_counts: ", correct_counts)
 
     bar_fig = px.bar(
         x=skill_names,
