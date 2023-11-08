@@ -26,7 +26,13 @@
                     {% if is_admin %}
                     <td>{{ item.question.question_id }}</td>
                     <td>{{ item.question.field_id }}</td>
-                    <td>{{ item.is_correct }}</td>
+                    <td>
+                        {% if item.is_correct %}
+                        <span class="text-sucess">{{ item.is_correct }}</span>
+                        {% else %}
+                        <span class="text-danger">{{ item.is_correct }}</span>
+                        {% endif %}
+                    </td>
                     {% else %}
                     {% endif %}
                     <td>{{item.question.question}}</td>
