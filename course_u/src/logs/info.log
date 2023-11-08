@@ -6623,3 +6623,575 @@ ERROR 2023-11-08 01:18:56,710 django.server basehttp basehttp.py 212 log_message
 INFO 2023-11-08 01:19:25,105 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
 INFO 2023-11-08 01:19:29,103 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
 INFO 2023-11-08 01:19:34,986 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 200 7225446
+INFO 2023-11-08 12:11:21,400 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-08 12:14:23,768 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 691, in student_test_report
+    username = User.objects.get(id=user_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2023-11-08 12:14:23,913 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 100718
+INFO 2023-11-08 12:14:24,000 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-08 12:14:24,025 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-08 12:14:24,027 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-08 12:14:24,301 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2023-11-08 12:14:24,503 django.request log log.py 241 log_response Not Found: /favicon.ico
+WARNING 2023-11-08 12:14:24,506 django.server basehttp basehttp.py 212 log_message "GET /favicon.ico HTTP/1.1" 404 23668
+ERROR 2023-11-08 12:14:34,055 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 691, in student_test_report
+    username = User.objects.get(id=user_id)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2023-11-08 12:14:34,101 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 100551
+INFO 2023-11-08 12:14:40,101 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9438
+INFO 2023-11-08 12:14:40,134 django.server basehttp basehttp.py 212 log_message "GET /static/css/landing.css HTTP/1.1" 200 1072
+INFO 2023-11-08 12:14:40,192 django.server basehttp basehttp.py 212 log_message "GET /static/images/landing2.png HTTP/1.1" 200 1935293
+INFO 2023-11-08 12:14:46,107 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 200 10814
+INFO 2023-11-08 12:14:46,145 django.server basehttp basehttp.py 212 log_message "GET /static/css/login_user.css HTTP/1.1" 200 1283
+INFO 2023-11-08 12:14:46,407 django.server basehttp basehttp.py 212 log_message "GET /static/images/log.jpg HTTP/1.1" 200 43888
+INFO 2023-11-08 12:14:46,495 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-08 12:14:58,208 django.server basehttp basehttp.py 212 log_message "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-08 12:14:58,529 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40695
+INFO 2023-11-08 12:14:58,562 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-08 12:14:58,577 django.server basehttp basehttp.py 212 log_message "GET /static/css/home.css HTTP/1.1" 200 1245
+INFO 2023-11-08 12:14:58,597 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5039
+INFO 2023-11-08 12:14:58,626 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 200 1412
+WARNING 2023-11-08 12:15:54,312 django.request log log.py 241 log_response Not Found: /test_result/1
+WARNING 2023-11-08 12:15:54,316 django.server basehttp basehttp.py 212 log_message "GET /test_result/1 HTTP/1.1" 404 23676
+INFO 2023-11-08 12:16:09,792 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 200 7225446
+INFO 2023-11-08 12:16:26,219 django.server basehttp basehttp.py 212 log_message "GET /__debug__/render_panel/?store_id=ad1708ade1764e19bf1d88c371b82155&panel_id=SQLPanel HTTP/1.1" 200 91660
+INFO 2023-11-08 12:42:18,991 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:42:23,961 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:43:23,622 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:43:27,477 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:43:46,034 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:43:49,371 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:44:41,426 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:44:43,596 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:45:28,993 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:45:31,054 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:55:07,126 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:55:09,753 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:56:33,466 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:56:37,266 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:56:47,232 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:56:52,921 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:57:05,638 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:57:08,358 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:57:23,496 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:57:26,301 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:58:27,410 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:58:30,477 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 12:58:38,356 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 12:58:43,566 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:01:23,467 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:01:25,782 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:01:40,856 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 21
+INFO 2023-11-08 13:01:44,832 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9436
+INFO 2023-11-08 13:01:46,461 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:01:46,601 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40398
+INFO 2023-11-08 13:01:48,786 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 17746
+INFO 2023-11-08 13:01:51,733 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:01:55,497 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:01:59,331 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:01:59,438 django.server basehttp basehttp.py 212 log_message "GET /create_new_question_set/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:01:59,536 django.server basehttp basehttp.py 212 log_message "GET /check_school_year/ HTTP/1.1" 200 16060
+INFO 2023-11-08 13:01:59,585 django.server basehttp basehttp.py 212 log_message "GET /static/css/check_school_year.css HTTP/1.1" 200 1134
+INFO 2023-11-08 13:02:04,220 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_choice/no/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:04,287 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_status/not_completed/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:04,438 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18071
+INFO 2023-11-08 13:02:06,047 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:06,178 django.server basehttp basehttp.py 212 log_message "GET /create_new_question_set/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:06,305 django.server basehttp basehttp.py 212 log_message "GET /check_school_year/ HTTP/1.1" 200 16060
+INFO 2023-11-08 13:02:07,806 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_choice/yes/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:07,991 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_status/completed/ HTTP/1.1" 200 16972
+INFO 2023-11-08 13:02:08,082 django.server basehttp basehttp.py 212 log_message "GET /static/css/create_or_overwrite_test.css HTTP/1.1" 200 1292
+INFO 2023-11-08 13:02:13,425 django.server basehttp basehttp.py 212 log_message "GET /create_or_overwrite_test/delete/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:13,717 django.server basehttp basehttp.py 212 log_message "GET /continue_create_new_question_set/0 HTTP/1.1" 302 0
+INFO 2023-11-08 13:02:13,814 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16669
+ERROR 2023-11-08 13:02:16,079 django.request log log.py 241 log_response Internal Server Error: /submit_question/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 599, in submit_question
+    return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'prev_test' with keyword arguments '{'question_id': 2, 'question_set_id': ''}' not found. 2 pattern(s) tried: ['prev_test/(?P<question_id>[0-9]+)/(?P<question_set_id>[0-9]+)/\\Z', 'prev_test/(?P<question_id>[0-9]+)/\\Z']
+ERROR 2023-11-08 13:02:16,174 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 500 241953
+INFO 2023-11-08 13:04:43,934 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\urls.py changed, reloading.
+INFO 2023-11-08 13:04:46,637 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-08 13:04:54,051 django.request log log.py 241 log_response Internal Server Error: /submit_question/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 599, in submit_question
+    return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'prev_test' with keyword arguments '{'question_id': 2, 'question_set_id': ''}' not found. 1 pattern(s) tried: ['prev_test/(?P<question_id>[0-9]+)/(?P<question_set_id>[0-9]+)/\\Z']
+ERROR 2023-11-08 13:04:54,327 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 500 241474
+ERROR 2023-11-08 13:05:00,743 django.request log log.py 241 log_response Internal Server Error: /submit_question/1/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 599, in submit_question
+    return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'prev_test' with keyword arguments '{'question_id': 2, 'question_set_id': ''}' not found. 1 pattern(s) tried: ['prev_test/(?P<question_id>[0-9]+)/(?P<question_set_id>[0-9]+)/\\Z']
+ERROR 2023-11-08 13:05:00,818 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 500 241473
+INFO 2023-11-08 13:05:04,501 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\urls.py changed, reloading.
+INFO 2023-11-08 13:05:09,497 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:05:54,285 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:05:57,524 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:06:01,123 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16620
+INFO 2023-11-08 13:06:04,111 django.server basehttp basehttp.py 212 log_message "POST /submit_question/2/ HTTP/1.1" 200 16633
+INFO 2023-11-08 13:06:06,242 django.server basehttp basehttp.py 212 log_message "POST /submit_question/6/ HTTP/1.1" 200 16642
+INFO 2023-11-08 13:06:07,768 django.server basehttp basehttp.py 212 log_message "POST /submit_question/7/ HTTP/1.1" 200 16637
+INFO 2023-11-08 13:06:09,709 django.server basehttp basehttp.py 212 log_message "POST /submit_question/11/ HTTP/1.1" 200 16641
+INFO 2023-11-08 13:06:11,237 django.server basehttp basehttp.py 212 log_message "POST /submit_question/12/ HTTP/1.1" 200 16663
+INFO 2023-11-08 13:06:12,765 django.server basehttp basehttp.py 212 log_message "POST /submit_question/16/ HTTP/1.1" 200 16665
+INFO 2023-11-08 13:06:16,221 django.server basehttp basehttp.py 212 log_message "POST /submit_question/17/ HTTP/1.1" 200 16663
+INFO 2023-11-08 13:06:55,740 django.server basehttp basehttp.py 212 log_message "POST /submit_question/21/ HTTP/1.1" 200 16714
+INFO 2023-11-08 13:06:59,207 django.server basehttp basehttp.py 212 log_message "POST /submit_question/22/ HTTP/1.1" 200 16637
+INFO 2023-11-08 13:07:01,642 django.server basehttp basehttp.py 212 log_message "POST /submit_question/26/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:07:01,936 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23555
+INFO 2023-11-08 13:07:04,559 django.server basehttp basehttp.py 212 log_message "GET /question/27/ HTTP/1.1" 200 16444
+INFO 2023-11-08 13:07:06,779 django.server basehttp basehttp.py 212 log_message "POST /submit_question/27/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:07:06,993 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23538
+INFO 2023-11-08 13:08:37,458 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:08:39,813 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:08:45,596 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:08:48,647 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:08:58,053 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:09:01,426 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:09:05,935 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:09:08,146 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:09:10,773 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16346
+INFO 2023-11-08 13:09:12,431 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16326
+INFO 2023-11-08 13:09:16,899 django.server basehttp basehttp.py 212 log_message "POST /submit_question/2/ HTTP/1.1" 200 16340
+INFO 2023-11-08 13:09:19,201 django.server basehttp basehttp.py 212 log_message "GET /prev_test/6/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:09:19,332 django.server basehttp basehttp.py 212 log_message "GET /question/5/ HTTP/1.1" 200 29
+INFO 2023-11-08 13:09:23,997 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 22961
+INFO 2023-11-08 13:09:25,216 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16345
+INFO 2023-11-08 13:09:27,149 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16326
+INFO 2023-11-08 13:09:29,279 django.server basehttp basehttp.py 212 log_message "POST /submit_question/2/ HTTP/1.1" 200 16340
+INFO 2023-11-08 13:09:31,694 django.server basehttp basehttp.py 212 log_message "POST /submit_question/6/ HTTP/1.1" 200 16348
+INFO 2023-11-08 13:09:33,667 django.server basehttp basehttp.py 212 log_message "POST /submit_question/7/ HTTP/1.1" 200 16343
+INFO 2023-11-08 13:09:35,839 django.server basehttp basehttp.py 212 log_message "POST /submit_question/11/ HTTP/1.1" 200 16348
+INFO 2023-11-08 13:09:37,370 django.server basehttp basehttp.py 212 log_message "GET /prev_test/12/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:09:37,468 django.server basehttp basehttp.py 212 log_message "GET /question/11/ HTTP/1.1" 200 16344
+INFO 2023-11-08 13:09:38,701 django.server basehttp basehttp.py 212 log_message "POST /submit_question/11/ HTTP/1.1" 200 16347
+INFO 2023-11-08 13:09:40,232 django.server basehttp basehttp.py 212 log_message "POST /submit_question/12/ HTTP/1.1" 200 16369
+INFO 2023-11-08 13:10:11,427 django.server basehttp basehttp.py 212 log_message "POST /submit_question/16/ HTTP/1.1" 200 16372
+INFO 2023-11-08 13:10:12,933 django.server basehttp basehttp.py 212 log_message "GET /prev_test/17/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:10:13,093 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40698
+INFO 2023-11-08 13:10:28,996 django.server basehttp basehttp.py 212 log_message "POST /submit_question/17/ HTTP/1.1" 200 16369
+INFO 2023-11-08 13:10:30,771 django.server basehttp basehttp.py 212 log_message "POST /submit_question/21/ HTTP/1.1" 200 16420
+INFO 2023-11-08 13:10:32,335 django.server basehttp basehttp.py 212 log_message "POST /submit_question/22/ HTTP/1.1" 200 16343
+INFO 2023-11-08 13:10:34,177 django.server basehttp basehttp.py 212 log_message "POST /submit_question/26/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:10:34,478 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23253
+INFO 2023-11-08 13:11:59,107 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:12:01,634 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:12:05,374 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:12:09,577 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:12:24,142 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:12:28,724 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:12:39,455 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:12:44,236 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:13:03,532 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:13:06,084 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:13:30,125 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:13:32,854 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:13:35,060 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16346
+INFO 2023-11-08 13:13:36,993 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16326
+INFO 2023-11-08 13:13:45,280 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 22961
+INFO 2023-11-08 13:13:58,519 django.server basehttp basehttp.py 212 log_message "GET /submit_test/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:14:01,106 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 200 7225738
+INFO 2023-11-08 13:14:02,354 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 17745
+INFO 2023-11-08 13:14:03,817 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:14:03,918 django.server basehttp basehttp.py 212 log_message "GET /create_new_question_set/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:14:03,998 django.server basehttp basehttp.py 212 log_message "GET /check_school_year/ HTTP/1.1" 200 16060
+INFO 2023-11-08 13:14:05,880 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_choice/yes/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:14:05,949 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_status/completed/ HTTP/1.1" 200 16971
+INFO 2023-11-08 13:14:07,314 django.server basehttp basehttp.py 212 log_message "GET /create_or_overwrite_test/delete/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:14:07,610 django.server basehttp basehttp.py 212 log_message "GET /continue_create_new_question_set/0 HTTP/1.1" 302 0
+INFO 2023-11-08 13:14:07,703 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16669
+INFO 2023-11-08 13:14:15,793 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16327
+INFO 2023-11-08 13:14:31,401 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:14:33,853 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:14:52,266 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:14:54,881 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:14:57,017 django.server basehttp basehttp.py 212 log_message "POST /submit_question/2/ HTTP/1.1" 200 16339
+INFO 2023-11-08 13:15:02,427 django.server basehttp basehttp.py 212 log_message "POST /submit_question/6/ HTTP/1.1" 200 16349
+INFO 2023-11-08 13:15:05,961 django.server basehttp basehttp.py 212 log_message "POST /submit_question/7/ HTTP/1.1" 200 16343
+INFO 2023-11-08 13:15:08,167 django.server basehttp basehttp.py 212 log_message "POST /submit_question/11/ HTTP/1.1" 200 16348
+INFO 2023-11-08 13:15:12,806 django.server basehttp basehttp.py 212 log_message "POST /submit_question/12/ HTTP/1.1" 200 16369
+INFO 2023-11-08 13:15:16,538 django.server basehttp basehttp.py 212 log_message "POST /submit_question/16/ HTTP/1.1" 200 16373
+INFO 2023-11-08 13:15:19,173 django.server basehttp basehttp.py 212 log_message "POST /submit_question/17/ HTTP/1.1" 200 16369
+INFO 2023-11-08 13:15:20,837 django.server basehttp basehttp.py 212 log_message "POST /submit_question/21/ HTTP/1.1" 200 16420
+INFO 2023-11-08 13:15:23,089 django.server basehttp basehttp.py 212 log_message "POST /submit_question/22/ HTTP/1.1" 200 16344
+INFO 2023-11-08 13:15:27,287 django.server basehttp basehttp.py 212 log_message "POST /submit_question/26/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:15:27,630 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23263
+INFO 2023-11-08 13:15:30,343 django.server basehttp basehttp.py 212 log_message "GET /question/27/ HTTP/1.1" 200 16444
+INFO 2023-11-08 13:15:32,544 django.server basehttp basehttp.py 212 log_message "POST /submit_question/27/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:15:32,715 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23246
+INFO 2023-11-08 13:15:35,969 django.server basehttp basehttp.py 212 log_message "GET /submit_test/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:15:38,062 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 200 7225738
+INFO 2023-11-08 13:24:25,771 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:24:28,351 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:25:13,716 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:25:16,783 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:25:24,620 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:25:28,956 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:25:38,152 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:25:41,131 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:29:20,046 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:29:22,566 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-08 13:29:27,967 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 790, in student_test_report
+    skill_correct_counts = Skill.objects.filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'test' into field. Choices are: id, indicator, skill, subject, tests, testskill, userskill
+ERROR 2023-11-08 13:29:28,139 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 142737
+ERROR 2023-11-08 13:29:31,934 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 790, in student_test_report
+    skill_correct_counts = Skill.objects.filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'test' into field. Choices are: id, indicator, skill, subject, tests, testskill, userskill
+ERROR 2023-11-08 13:29:32,087 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 142736
+INFO 2023-11-08 13:29:44,718 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:29:46,858 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-08 13:29:50,256 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 790, in student_test_report
+    skill_correct_counts = Skill.objects.filter(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1133, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1976, in resolve_ref
+    join_info = self.setup_joins(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1823, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'test' into field. Choices are: id, indicator, skill, subject, tests, testskill, userskill
+ERROR 2023-11-08 13:29:50,425 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 140864
+INFO 2023-11-08 13:30:09,722 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:30:14,221 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+ERROR 2023-11-08 13:30:17,831 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 803, in student_test_report
+    bar_fig = px.bar(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\plotly\express\_chart_types.py", line 373, in bar
+    return make_figure(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\plotly\express\_core.py", line 2076, in make_figure
+    args = build_dataframe(args, constructor)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\plotly\express\_core.py", line 1365, in build_dataframe
+    raise ValueError(
+ValueError: Cannot accept list of column references or list of columns for both `x` and `y`.
+INFO 2023-11-08 13:30:18,036 django.server basehttp basehttp.py 81 handle_error - Broken pipe from ('127.0.0.1', 40333)
+ERROR 2023-11-08 13:30:19,233 django.request log log.py 241 log_response Internal Server Error: /test_reults/1
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 803, in student_test_report
+    bar_fig = px.bar(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\plotly\express\_chart_types.py", line 373, in bar
+    return make_figure(
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\plotly\express\_core.py", line 2076, in make_figure
+    args = build_dataframe(args, constructor)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\plotly\express\_core.py", line 1365, in build_dataframe
+    raise ValueError(
+ValueError: Cannot accept list of column references or list of columns for both `x` and `y`.
+ERROR 2023-11-08 13:30:19,298 django.server basehttp basehttp.py 212 log_message "GET /test_reults/1 HTTP/1.1" 500 120342
+INFO 2023-11-08 13:31:13,969 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:31:19,762 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:32:03,843 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:32:09,024 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:33:18,630 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:33:20,982 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:33:27,479 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:33:30,126 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:34:36,986 django.server basehttp basehttp.py 81 handle_error - Broken pipe from ('127.0.0.1', 40453)
+INFO 2023-11-08 13:34:38,459 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 21
+INFO 2023-11-08 13:34:42,058 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 21
+INFO 2023-11-08 13:34:44,533 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9436
+INFO 2023-11-08 13:34:45,944 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:34:46,099 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40398
+INFO 2023-11-08 13:34:47,505 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 17745
+INFO 2023-11-08 13:34:48,870 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:34:48,960 django.server basehttp basehttp.py 212 log_message "GET /create_new_question_set/1/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:34:49,054 django.server basehttp basehttp.py 212 log_message "GET /check_school_year/ HTTP/1.1" 200 16060
+INFO 2023-11-08 13:34:50,310 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_choice/yes/ HTTP/1.1" 302 0
+ERROR 2023-11-08 13:34:50,450 django.request log log.py 241 log_response Internal Server Error: /check_school_year_status/completed/
+Traceback (most recent call last):
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\courseu\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py", line 305, in check_school_year_status
+    messages.infor("You have completed the school year. You can proceed.")
+AttributeError: module 'django.contrib.messages' has no attribute 'infor'
+ERROR 2023-11-08 13:34:50,505 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_status/completed/ HTTP/1.1" 500 93277
+INFO 2023-11-08 13:35:07,986 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:35:17,252 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 13:35:23,895 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_choice/no/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:35:24,420 django.server basehttp basehttp.py 212 log_message "GET /check_school_year_status/not_completed/ HTTP/1.1" 200 17302
+INFO 2023-11-08 13:35:26,751 django.server basehttp basehttp.py 212 log_message "GET /create_or_overwrite_test/delete/ HTTP/1.1" 302 0
+INFO 2023-11-08 13:35:27,348 django.server basehttp basehttp.py 212 log_message "GET /continue_create_new_question_set/0 HTTP/1.1" 302 0
+INFO 2023-11-08 13:35:27,505 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16670
+INFO 2023-11-08 13:35:29,532 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16327
+INFO 2023-11-08 13:35:31,753 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23502
+INFO 2023-11-08 13:35:38,045 django.server basehttp basehttp.py 212 log_message "GET /question/1/ HTTP/1.1" 200 16345
+INFO 2023-11-08 13:35:39,936 django.server basehttp basehttp.py 212 log_message "POST /submit_question/1/ HTTP/1.1" 200 16325
+INFO 2023-11-08 13:35:42,019 django.server basehttp basehttp.py 212 log_message "GET /test_overview/1 HTTP/1.1" 200 23502
+INFO 2023-11-08 13:42:07,650 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\assessment\views.py changed, reloading.
+INFO 2023-11-08 13:42:11,436 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader

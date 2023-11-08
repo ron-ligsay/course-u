@@ -302,15 +302,17 @@ def check_school_year_choice(request, choice):
 def check_school_year_status(request, status=None):
     print('check_school_year() status: ', status)
     if status == 'completed':
-        # if user is admin
-        if request.user.is_superuser:
-            return render(request, 'test/create_or_overwrite_test.html',)
-
+        messages.info("You have completed the school year. You can proceed.")       
         course_id = StudentProfile.objects.get(user_id=request.user.id).enrolled_courses_id
         return redirect('select_year', course_id=course_id)
     
     elif status == 'not_completed':
         messages.info(request, 'Sorry, you need to finish the school year to retake the test.')
+        # if user is admin
+        if request.user.is_superuser:
+            return render(request, 'test/create_or_overwrite_test.html',)
+
+        
         # return to test home
         return redirect('test_home')
     else:
@@ -465,11 +467,12 @@ def test_overview(request, question_set_id=None):
         
         # Get the is_answered status of the UserResponse object
         has_answered = user_response.is_answered if user_response else False
+        is_correct = user_response.is_correct if user_response else False
 
         print("has_answered: ", has_answered, "question: ", question)
         question = Test.objects.get(pk=question)
         # Create a dictionary with question and answered status
-        question_info.append({'question': question, 'has_answered': has_answered, 'n_question': n_question})
+        question_info.append({'question': question, 'has_answered': has_answered, 'n_question': n_question, 'is_correct': is_correct})
 
     return render(request, 'test/test_overview.html', {
         'question_set_id': question_set_id, 
@@ -539,44 +542,64 @@ def prev_test(request, question_id, question_set_id):
     
 from django.shortcuts import get_object_or_404
 
+    # The submit_question view function is responsible for handling the submission of a test question answer.
 def submit_question(request, question_id):
+    # The function first retrieves the question object from the database using the get_object_or_404 function.
     question = get_object_or_404(Test, question_id=question_id)
     user_response_key = f'user_response_{question_id}'
-
+    # The function then checks the request method. If it is a POST request, it means that the user is submitting an answer.
     if request.method == 'POST':
         form = UserResponseForm(request.POST)
         selected_option = request.POST.get('selected_option')
 
+        # The function then checks if the selected option is not None. If it is, it means that the user has selected an option.
         if selected_option is not None:
             request.session[user_response_key] = int(selected_option)
-
+            print("Selected option: ", selected_option)
+        # The function then checks if the form is valid. If it is, it means that the user has selected an option.
         if form.is_valid():
             set_id = request.session.get('question_set_id')
-            is_correct = (selected_option == question.correct_option)
+            is_correct = (int(selected_option) == int(question.correct_option))
+            print("selected option: ", selected_option, "correct option: ", question.correct_option, "is_correct: ", is_correct)
+            #The function then checks if the answer exists in the database. If it does, it means that the user has already answered the question.
             existing_response = UserResponse.objects.filter(question=question.question_id, set_id=set_id).first()
 
             if existing_response:
+                if existing_response.selected_option != None:
+                    #messages.warning(request, 'You have already answered this question')
+                    print("You have already answered this question")
+                else:
+                    questions_answered = request.session.get('questions_answered', 0)
+                    request.session['questions_answered'] = questions_answered + 1
+                    print("questions_answered: ", questions_answered, " and added to session variables")
                 existing_response.selected_option = selected_option
                 existing_response.is_correct = is_correct
                 existing_response.is_answered = True
                 existing_response.save()
-                messages.success(request, 'Your answer has been updated')
-            else:
-                UserResponse.objects.create(
+                print("Existing response: ", existing_response, "selected option", selected_option)
+                #messages.success(request, 'Your answer has been updated')
+                print("Updated!")
+                # Note that if the user has already answered the question, the function will update the existing UserResponse object instead of creating a new one.
+                # But is should record the answer at questions_answered session variables at first
+            else: 
+                userresponse = UserResponse.objects.create(
                     question=question,
                     selected_option=selected_option,
                     is_correct=is_correct,
                     set_id=set_id,
                     is_answered=True,
                 )
+                userresponse.save()
                 messages.success(request, 'Your answer has been submitted')
                 # add questions answered
                 questions_answered = request.session.get('questions_answered', 0)
                 request.session['questions_answered'] = questions_answered + 1
+
             print("Submitted!")
             current_question_id = question_id
             question_ids = request.session.get('question_set', [])
             
+            #The function then checks if there are more questions in the set. If there are, it means that the test is not over.
             try:
                 current_index = question_ids.index(current_question_id)
                 next_question_id = question_ids[current_index + 1]
@@ -584,17 +607,23 @@ def submit_question(request, question_id):
                 if next_question_id == max(question_ids):
                     messages.success(request, 'You have completed the test')
                     return redirect('test_overview', question_set_id=set_id)
-
+                # else
                 next_question = get_object_or_404(Test, question_id=next_question_id)
                 options = next_question.options
-                return render(request, 'test/test_page.html', {'question': next_question, 'options': options, 'form': UserResponseForm()})
+                return render(request, 'test/test_page.html', {
+                    'question_set_id': set_id,
+                    'question': next_question, 'options': options, 'form': UserResponseForm()
+                    })
             except (ValueError, IndexError):
                 messages.warning(request, 'Invalid question ID')
             
+            # The function then redirects the user to the test overview page.
             return redirect("test_overview", question_set_id=set_id)            
+        # If the form is not valid, it means that the user has not selected an option.
         else:
             options = question.options
             return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': form})
+    #If the request method is not a POST request, it means that the user is not submitting an answer.
     else:
         options = question.options
         return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
@@ -740,24 +769,33 @@ def student_test_report(request, question_set_id):
     print("user_recommendation: ", user_recommendation)
 
     
-   # Get all the UserResponse instances related to the question_set_id and where is_correct=True
-    correct_responses = UserResponse.objects.filter(set_id=question_set_id, is_correct=True)
+#    # Get all the UserResponse instances related to the question_set_id and where is_correct=True
+#     correct_responses = UserResponse.objects.filter(set_id=question_set_id, is_correct=True)
 
-    # Get all the Test instances related to these UserResponse instances
-    tests = Test.objects.filter(userresponse__in=correct_responses)
+#     # Get all the Test instances related to these UserResponse instances
+#     tests = Test.objects.filter(userresponse__in=correct_responses)
 
+#     # Get a count of correct user responses for each skill
+#     skill_correct_counts = Skill.objects.filter(
+#         tests__in=tests
+#     ).annotate(correct_count=Count('tests'))
+
+#     # Create a bar graph for correct skill counts
+#     skill_names = list(skill_correct_counts.values_list("skill", flat=True))
+#     correct_counts = list(skill_correct_counts.values_list("correct_count", flat=True))
+
+#     if len(skill_names) == 0:
+#         skill_names = ["No Skills"]
+#         correct_counts = [0]
     # Get a count of correct user responses for each skill
     skill_correct_counts = Skill.objects.filter(
-        tests__in=tests
-    ).annotate(correct_count=Count('tests'))
+        tests__userresponse__set_id=question_set_id,
+        tests__userresponse__is_correct=True
+    ).annotate(correct_count=Count('tests__userresponse'))
 
     # Create a bar graph for correct skill counts
     skill_names = list(skill_correct_counts.values_list("skill", flat=True))
     correct_counts = list(skill_correct_counts.values_list("correct_count", flat=True))
-
-    if len(skill_names) == 0:
-        skill_names = ["No Skills"]
-        correct_counts = [0]
 
 
     print("skill_names: ", skill_names)

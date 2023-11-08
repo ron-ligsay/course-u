@@ -276,7 +276,7 @@ def test_overview(request):
 
     return render(request, 'test/test_overview.html', {'question_set_id': question_set_id, 'question_info': question_info, 'is_admin': is_admin})
 
-def next_test(request, question_id):
+def next_te12121st(request, question_id):
     print("next_test() question_id: ", question_id)
     try:
         question_set = request.session.get('question_set')

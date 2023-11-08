@@ -11,9 +11,9 @@ urlpatterns = [
     #path('test/<int:pk>/', views.test, name='test'),
 
     path('start_test/', views.start_test, name='start_test'),
-    path('next_test/<int:question_id>/', views.next_test, name='next_test'),
+    #path('next_test/<int:question_id>/', views.next_test, name='next_test'),
     path('next_test/<int:question_id>/<int:question_set_id>/', views.next_test, name='next_test'),
-    path('prev_test/<int:question_id>/', views.prev_test, name='prev_test'),
+    #path('prev_test/<int:question_id>/', views.prev_test, name='prev_test'),
     path('prev_test/<int:question_id>/<int:question_set_id>/', views.prev_test, name='prev_test'),
     #path('test_page/<int:test_id>/', views.test_page, name='test_page'),
     path('question/<int:question_id>/', views.display_question, name='display_question'),
