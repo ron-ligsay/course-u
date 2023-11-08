@@ -18,7 +18,7 @@ class Test(models.Model):
     correct_option = models.IntegerField() # Index of the correct option in the options list
 
      # Add the many-to-many relationship with Skill
-    skills = models.ManyToManyField(Skill,through='TestSkill', related_name='tests')
+    skills = models.ManyToManyField(Skill)
 
     def __str__(self):
         return self.question
@@ -27,10 +27,6 @@ class Test(models.Model):
         #allow field to have duplicate values
         # unique_together = ('field',)
 
-class TestSkill(models.Model):
-    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
-    test = models.ForeignKey(Test, on_delete=models.CASCADE)
-   
 
 class QuestionSet(models.Model):
     set_id = models.AutoField(primary_key=True)

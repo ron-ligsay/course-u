@@ -19,6 +19,7 @@ from apps.assessment.forms import UserResponseForm, TestCreateForm, TestUpdateFo
 from apps.assessment.models import Test, QuestionSet, UserResponse
 
 from apps.website.models import Field, Specialization, UserRecommendations, Skill
+from apps.recommender.models import UserSkill
 
 from apps.acad.models import StudentProfile
 
@@ -630,12 +631,12 @@ def submit_question(request, question_id):
 
 
 def submit_test(request):
-    set_id = request.session.get('question_set_id')
-    unfinished_response = UserResponse.objects.filter(set_id=set_id, is_answered=False).count()
+    question_set_id = request.session.get('question_set_id')
+    unfinished_response = UserResponse.objects.filter(set_id=question_set_id, is_answered=False).count()
 
     if unfinished_response == 0:
         test_started = request.session.get('test_started', False)
-        question_set_id = request.session.get('question_set_id')
+        #question_set_id = request.session.get('question_set_id')
         
         if test_started:
             question_set = QuestionSet.objects.get(set_id=question_set_id)
@@ -643,6 +644,7 @@ def submit_test(request):
             total_correct = UserResponse.objects.filter(set_id=question_set_id, is_correct=True).count()
             question_set.score = total_correct
             question_set.save()
+            save_user_skills(request, question_set_id)
             clear_session_variables(request)
             messages.success(request, 'You have completed the test')
             return redirect('student_test_report', question_set_id=question_set_id)
@@ -654,6 +656,25 @@ def submit_test(request):
         question_set_id = request.session.get('question_set_id')
         #return redirect('test_overview', question_set_id=question_set_id)
         return redirect('test_overview', question_set_id=question_set_id)
+
+def save_user_skills(request, set_id):
+    skill_correct_counts = Skill.objects.filter(
+        test__userresponse__set_id=set_id,
+        test__userresponse__is_correct=True
+    ).annotate(correct_count=Count('test__userresponse'))
+
+    # save to userskill
+    for skill in skill_correct_counts:
+        print("skill: ", skill)
+        userskill = UserSkill.objects.create(
+            user=request.user,
+            skill=skill,
+            level=skill.correct_count,
+        )
+        userskill.save()
+    return
+
+
 
 def view_test_results(request):
     return render(request, 'test/test_home.html')
@@ -789,9 +810,9 @@ def student_test_report(request, question_set_id):
 #         correct_counts = [0]
     # Get a count of correct user responses for each skill
     skill_correct_counts = Skill.objects.filter(
-        tests__userresponse__set_id=question_set_id,
-        tests__userresponse__is_correct=True
-    ).annotate(correct_count=Count('tests__userresponse'))
+        test__userresponse__set_id=question_set_id,
+        test__userresponse__is_correct=True
+    ).annotate(correct_count=Count('test__userresponse'))
 
     # Create a bar graph for correct skill counts
     skill_names = list(skill_correct_counts.values_list("skill", flat=True))
