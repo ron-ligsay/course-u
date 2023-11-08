@@ -125,12 +125,6 @@ class Command(BaseCommand):
             #     'columns':  ["id","test_id","skill_id"],
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
             # },
-            base_dir + '\\static\\csv\\assessment_testskill.csv': {
-                'table_name': 'assessment_testskill',
-                'model_name': 'TestSkill',
-                'columns':  ["id","skill_id","test_id"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT"]
-            },
             # base_dir + '\\static\\csv\\acad_course.csv': {
             #     'table_name': 'acad_course',
             #     'model_name': 'Course',
