@@ -11,51 +11,52 @@
 
 <!-- Additional stylesheets or scripts specific to this page -->
 <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
-
+<link rel="stylesheet" href="{% static 'css/test_home.css' %}">
 {% endblock head_extra %}
 
 {% block content %}
 
 {% if user.is_authenticated %}
-<div class="col-md-6">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Define youre Course, Year and Grades</h5>
-            <p class="card-text">Click the button below to start the form.</p>
-            <a href="{% url 'select_course' %}" class="btn btn-primary">Here</a>
-        </div>
-    </div>
-</div>
 
-<div class="container">
-    <div class="row mt-5">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Start Test</h5>
-                    <p class="card-text">Click the button below to start the test.</p>
-                    <a href="{% url 'start_test' %}" class="btn btn-primary">Start Test</a>
-                </div>
+
+<div class="test-container">
+    <div class="col-md-6">
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Define youre Course, Year and Grades</h5>
+                <p class="card-text">Click the button below to start the form.</p>
+                <a href="{% url 'select_course' %}" class="btn btn-primary">Here</a>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">View Test Result/s</h5>
-                    <p class="card-text">Click the button below to view test results.</p>
-                    <a href="{% url 'test_results_overall' %}" class="btn btn-primary">View Results</a>
-                </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Start Test</h5>
+                <p class="card-text">Click the button below to start the test.</p>
+                <a href="{% url 'start_test' %}" class="btn btn-primary">Start Test</a>
             </div>
         </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Start Personality Test</h5>
+                <p class="card-text">Click the button below to start the test.</p>
+                <a href="{% url 'initialize_mbti_test' %}" class="btn btn-primary">Start Test</a>
+            </div>
+        </div>
+
     </div>
 </div>
 <br>
-<div class="col-md-6">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Start Personality Test</h5>
-            <p class="card-text">Click the button below to start the test.</p>
-            <a href="{% url 'initialize_mbti_test' %}" class="btn btn-primary">Start Test</a>
+<div class="test-container">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Test Result/s</h5>
+                <p class="card-text">Click the button below to view test results.</p>
+                <a href="{% url 'test_results_overall' %}" class="btn btn-primary">View Results</a>
+            </div>
         </div>
     </div>
 </div>
