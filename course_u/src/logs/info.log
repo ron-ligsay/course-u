@@ -1,0 +1,7 @@
+INFO 2023-11-09 20:50:46,742 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-09 20:51:50,726 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\website\admin.py changed, reloading.
+INFO 2023-11-09 20:52:00,641 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-09 20:52:34,317 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\personality\admin.py changed, reloading.
+INFO 2023-11-09 20:52:45,615 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-09 20:53:39,335 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\acad\admin.py changed, reloading.
+INFO 2023-11-09 20:53:49,035 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
