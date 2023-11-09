@@ -6,7 +6,7 @@ from django.db.models import Max
 from django.db import IntegrityError
 
 # App imports
-from apps.personality.models import  MBTI, MBTISet, MBTIResponse
+from apps.personality.models import  MBTI, MBTISet, MBTIResponse, Indicator
 
 from django.db.models import Max
 
@@ -15,16 +15,47 @@ def initialize_mbti_test(request):
     mbti_set = None  # Initialize the variable
 
     # get the last mbti_set_id
-    mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']    
+    #mbti_set_id = MBTISet.objects.all().aggregate(Max('mbti_set_id'))['mbti_set_id__max']    
 
-    if mbti_set_id is None:
-        mbti_set_id = 1
+    try:
+        # get mbti_set of the user
+        mbti_set = MBTISet.objects.filter(user=user).first()
+    except Exception as e:
+        print("Exception", e)
+        # Handle other exceptions
+        # You can take appropriate actions or return an error response
+        # For example, you could redirect to an error page
+        return HttpResponse("Failed to initialize MBTI test.")
+
+    if mbti_set is None:
+        # If it doesn't exist, create a new one
+        mbti_set = MBTISet.objects.create(user=user, mbti_set_id=1, identity="AAAA")
+        print("Created new mbti_set: ", mbti_set)
+        # Create responses for all MBTI questions
+        
     else:
-        mbti_set_id += 1
+        # use the existing user mbti_set_id
+        mbti_set_id = mbti_set.mbti_set_id
+        # renew mbtiresponses
+        MBTIResponse.objects.filter(mbti_set=mbti_set).delete()
+        print("Reset the previous mbti_set: ", mbti_set)
+        # Create responses for all MBTI questions
+
+    mbti_questions = MBTI.objects.all()
+    for question in mbti_questions:
+        MBTIResponse.objects.get_or_create(mbti_set=mbti_set, mbti=question)
+    
+    return redirect('mbti_test', mbti_set_id=mbti_set.pk)
+
+
+    # if mbti_set_id is None:
+    #     mbti_set_id = 1
+    # else:
+    #     mbti_set_id += 1
     
     print("mbti_set_id: ", mbti_set_id)
    
-    mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id, identity="AAAA")
+    # mbti_set = MBTISet.objects.create(user=user, mbti_set_id=mbti_set_id, identity="AAAA")
 
     # try:
     #     # Attempt to create a new MBTISet without explicitly setting the mbti_set_id
@@ -128,24 +159,49 @@ def calculate_personality(user, mbti_set_id):
 
     # Determine the personality type and update the user's MBTI instance
     personality_type = ''
-    if mind >= 2.5:
+    if mind >= 0:
         personality_type += 'I'
     else:
         personality_type += 'E'
-    if energy >= 2.5:
+    if energy >= 0:
         personality_type += 'N'
     else:
         personality_type += 'S'
-    if nature >= 2.5:
+    if nature >= 0:
         personality_type += 'F'
     else:
         personality_type += 'T'
-    if tactics >= 2.5:
+    if tactics >= 0:
         personality_type += 'P'
     else:
         personality_type += 'J'
     print("Personality Type: ", personality_type)
     mbti_set.identity = personality_type
+
+    # get the indicator
+    try:
+        indicator = Indicator.objects.get(indicator=personality_type)
+        print("indicator: ", indicator)
+    except Exception as e:
+        print("Exception", e)
+        # Handle other exceptions
+        # You can take appropriate actions or return an error response
+        # For example, you could redirect to an error page
+        print("Failed to get indicator.")
+    
+    if indicator is not None:
+        mbti_set.indicator = indicator
+    else:
+       # get the indicator
+        try:
+            indicator = Indicator.objects.get(indicator=personality_type)
+            print("indicator: ", indicator)
+        except Exception as e:
+            print("Exception", e)
+            # Handle other exceptions
+            # You can take appropriate actions or return an error response
+            # For example, you could redirect to an error page
+            print("Failed to get indicator.")
 
     # marks as completed
     mbti_set.is_completed = True
@@ -157,13 +213,51 @@ def mbti_results(request, mbti_set_id):
     mbti_set = MBTISet.objects.get(pk=mbti_set_id)
 
     # Convert float into percentage
-    mbti_set.mind = int(mbti_set.mind * 20)
-    mbti_set.energy = int(mbti_set.energy * 20)
-    mbti_set.nature = int(mbti_set.nature * 20)
-    mbti_set.tactics = int(mbti_set.tactics * 20)
+    mbti_set.mind = int((mbti_set.mind + 3)/6 * 100)
+    mbti_set.energy = int((mbti_set.energy + 3)/6 * 100)
+    mbti_set.nature = int((mbti_set.nature + 3)/6 * 100)
+    mbti_set.tactics = int((mbti_set.tactics + 3)/6 * 100)
+
+    # get the reverse percentage
+    mind_ = 100 - mbti_set.mind
+    energy_ = 100 - mbti_set.energy
+    nature_ = 100 - mbti_set.nature
+    tactics_ = 100 - mbti_set.tactics
+
+    
+
+    # get the personality type from mbti_set.indicator
+    personality_type = mbti_set.indicator.indicator
+
+
+    #mbti_name = mbti_data[personality_type]['name']
+    #mbti_description = mbti_data[personality_type]['description']
+    mbti_name = mbti_set.indicator.indicator_name
+    mbti_description = mbti_set.indicator.indicator_description
+
+    print("mbti_name: ", mbti_name)
+    print("mbti_description: ", mbti_description)
+
+    # get the personality type description
+    mbti_energy = mbti_meaning[personality_type[0]]
+    mbti_mind = mbti_meaning[personality_type[1]]
+    mbti_nature = mbti_meaning[personality_type[2]]
+    mbti_tactics = mbti_meaning[personality_type[3]]
+
+     
 
     return render(request, 'test/mbti_results.html', {
         'mbti_set': mbti_set,
-        'mbti_data': mbti_data,
-        'mbti_meaning': mbti_meaning,
+        #'mbti_data': mbti_data,
+        #'mbti_meaning': mbti_meaning,
+        'mbti_name': mbti_name,
+        'mbti_description': mbti_description,
+        'mbti_energy': mbti_energy,
+        'mbti_mind': mbti_mind,
+        'mbti_nature': mbti_nature,
+        'mbti_tactics': mbti_tactics,
+        'mind_': mind_,
+        'energy_': energy_,
+        'nature_': nature_,
+        'tactics_': tactics_,
         })

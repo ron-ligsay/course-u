@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django import forms
 
-
+from apps.website.models import Field, Skill
 
 # Create your models here.
 class MBTI(models.Model):
@@ -12,21 +12,24 @@ class MBTI(models.Model):
     option_b = models.CharField(max_length=1000)
     ans_a = models.CharField(max_length=15)
     ans_b = models.CharField(max_length=15)
-    acr_a = models.CharField(max_length=1)
+    acr_a = models.CharField(max_length=1, default='a')
+    acr_b = models.CharField(max_length=1, default='b')
 
     def __str__(self):
         return f"{self.mbti_question} ({self.ans_a}/{self.ans_b})"
     
 
 
-# class Indicator(models.Model):
-#     indicator_id = models.AutoField(primary_key=True,serialize=False, auto_created=True)
-#     indicator = models.CharField(max_length=4)
-#     indicator_name = models.CharField(max_length=50)
-#     indicator_description = models.CharField(max_length=1000)
+class Indicator(models.Model):
+    indicator_id = models.AutoField(primary_key=True,serialize=False, auto_created=True)
+    indicator = models.CharField(max_length=4)
+    indicator_name = models.CharField(max_length=50)
+    indicator_description = models.CharField(max_length=1000)
 
-#     def __str__(self):
-#         return f"{self.indicator} ({self.indicator_type})"
+    skills = models.ManyToManyField(Skill)
+
+    def __str__(self):
+        return f"{self.indicator} ({self.indicator_type})"
 
 
 class MBTISet(models.Model):
@@ -39,7 +42,7 @@ class MBTISet(models.Model):
     nature = models.FloatField(default=0)
     tactics = models.FloatField(default=0)
     
-    #indicator =  models.ForeignKey(Indicator, on_delete=models.CASCADE, null=True, blank=True)
+    indicator =  models.ForeignKey(Indicator, on_delete=models.CASCADE, null=True, blank=True)
     # let identity to be null
     identity = models.CharField(max_length=4, null=True, blank=True)
 
@@ -78,3 +81,5 @@ class MBTIResponse(models.Model):
     
     class Meta:
         unique_together = ('mbti_set','mbti')
+
+

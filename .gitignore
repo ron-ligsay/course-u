@@ -68,4 +68,18 @@ static/js/Chart.js-4.4.0.zip
 
 # activate_env.txt
 #courseu/settings.py
+
 course-u/static/csv/student_profiles.csv
+course_u/static/csv/test_.csv
+
+course_u/static/csv/skill_2.csv
+course_u/static/csv/skill_1.csv
+
+course_u/static/csv/skill_3.csv
+course_u/static/csv/mbti_skills.csv
+course_u/static/csv/test_.csv
+course_u/static/csv/subject_.csv
+course_u/static/csv/indicator_.csv
+course_u/static/csv/nakuri_skills.csv
+.gitignore
+course_u/static/csv/normalized_df.csv

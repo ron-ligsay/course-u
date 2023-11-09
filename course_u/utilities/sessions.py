@@ -5,8 +5,6 @@
 
 def clear_session_variables(request):
     print("clear_session_variables()")
-    print("clearing session variables")
-
     # delete session vairables
     if 'test_started' in request.session:
         del request.session['test_started']

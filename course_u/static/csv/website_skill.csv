@@ -1,167 +1,210 @@
 id,skill
-1,it industry
-2,application design
-3,hardware
-4,user experience testing
-5,algorithms
-6,language design
-7,product development
-8,structured programming
-9,usability evaluation
-10,user testing
-11,product planning
-12,thesis development
-13,architecture design
-14,entrepreneurship
-15,application development
+1,data analysis
+2,usability evaluation
+3,load testing
+4,software integration
+5,sql (structured query language)
+6,color schemes
+7,authorization
+8,data preprocessing
+9,usability testing
+10,tableau
+11,database management
+12,data analytics
+13,mobile app development
+14,scrum
+15,security principles
 16,code reusability
-17,technology business
-18,usability
-19,user experience
-20,artificial intelligence
-21,design principles
-22,analysis
-23,programming languages
-24,research methodology
-25,design
-26,color theory
-27,web development
-28,advanced information security
-29,data management
-30,mathematics
-31,networking
-32,network protocols
-33,modeling
-34,engineering
-35,wireframing
-36,presentation skills
-37,formal languages
-38,cybersecurity
-39,collaborative development
-40,data preprocessing
-41,software development principles
-42,optimization
-43,user interface design
-44,programming
-45,coding
-46,network administration
-47,version control
-48,design tools
-49,sql (structured query language)
-50,social issues
-51,dry (don't repeat yourself) principle
-52,android development
-53,identity verification
-54,computer science
-55,solution design
-56,product documentation
-57,performance testing
-58,interface design
-59,it infrastructure
-60,data protection
-61,professional ethics
-62,software integration
-63,advanced software engineering
-64,median
-65,security principles
-66,java programming
-67,complementary colors
-68,data structures
-69,web design
-70,documentation
-71,system architecture
-72,product goals
-73,advanced mathematics
-74,object-oriented design
-75,assembly language
-76,algorithm design
-77,back-end
-78,professional development
-79,information organization
-80,web services
-81,software testing
-82,data communication
-83,multimedia technologies
-84,automata theory
-85,data dashboards
-86,integrative programming
-87,software development
-88,research methods
-89,regression testing
-90,software design
-91,access control
-92,data analytics
-93,management principles
-94,project management
-95,mobile app development
-96,prototyping
-97,load testing
-98,ui/ux design software
-99,user-centered design
-100,ai foundations
-101,maintenance
-102,innovation
-103,color schemes
-104,agile methodology
-105,product roadmap
-106,research planning
-107,administration
-108,front-end
-109,code quality
-110,database management
-111,unit testing
-112,machine learning
-113,data analysis
-114,ethical decision-making
-115,iterative development
-116,authentication
-117,syntax
-118,technical communication
-119,source code management
-120,testing changes
-121,customer feedback
-122,software engineering
-123,complexity analysis
-124,sql
-125,quantitative analysis
-126,digital circuits
-127,emerging technologies
-128,product strategy
-129,multimedia content creation
-130,language theory
-131,product launch
-132,scrum
-133,advanced programming
-134,product manager
+17,performance testing
+18,product development
+19,version control
+20,defect detection
+21,user interface design
+22,data cleaning
+23,database querying
+24,api (application programming interface)
+25,product strategy
+26,product goals
+27,collaborative development
+28,source code management
+29,product management
+30,java programming
+31,design principles
+32,testing changes
+33,unit testing
+34,product planning
+35,product manager
+36,statistics
+37,data dashboards
+38,product roadmap
+39,quality assurance
+40,product launch
+41,identity verification
+42,agile methodology
+43,android development
+44,access control
+45,feature prioritization
+46,design tools
+47,customer feedback
+48,mvp (minimum viable product)
+49,web services
+50,prototyping
+51,ui/ux design software
+52,software development principles
+53,user experience testing
+54,complementary colors
+55,data visualization
+56,user centered design
+57,software testing
+58,code quality
+59,iterative development
+60,user testing
+61,median
+62,consistency in design
+63,product documentation
+64,regression testing
+65,authentication
+66,color theory
+67,dry (don't repeat yourself) principle
+68,wireframing
+69,advanced programming
+70,algorithms
+71,application design
+72,network protocols
+73,maintenance
+74,design
+75,engineering
+76,electronics
+77,language theory
+78,leadership
+79,technology integration
+80,solution design
+81,data structures
+82,organizational management
+83,it infrastructure
+84,system integration
+85,system architecture
+86,presentation skills
+87,advanced software engineering
+88,automata theory
+89,syntax
+90,ethical decision making
+91,operating systems
+92,analysis
+93,quantitative analysis
+94,software design
+95,web development
+96,algorithm design
+97,sql
+98,structured programming
+99,network administration
+100,advanced information security
+101,application development
+102,research planning
+103,formal languages
+104,digital circuits
+105,information security
+106,coding
+107,modeling
+108,language design
+109,advanced mathematics
+110,networking
+111,back end
+112,technical communication
+113,emerging technologies
+114,research methodology
+115,machine learning
+116,data protection
+117,systems analysis
+118,entrepreneurship
+119,research writing
+120,data communication
+121,mathematics
+122,management principles
+123,computer architecture
+124,architecture design
+125,professional development
+126,network management
+127,multimedia content creation
+128,data management
+129,administration
+130,cybersecurity
+131,programming
+132,software engineering
+133,programming languages
+134,web design
 135,computing ethics
-136,defect detection
-137,problem-solving
-138,operating systems
-139,data visualization
-140,databases
-141,data cleaning
-142,authorization
-143,organizational management
-144,statistics
-145,network management
-146,electronics
-147,tableau
-148,product management
-149,quality assurance
-150,logic design
-151,usability testing
-152,consistency in design
-153,leadership
-154,computer architecture
-155,api (application programming interface)
-156,information security
-157,system integration
-158,it support
-159,research writing
-160,simulation
-161,technology integration
-162,feature prioritization
-163,systems analysis
-164,system administration
-165,mvp (minimum viable product)
-166,database querying
+136,documentation
+137,multimedia technologies
+138,it support
+139,computer science
+140,social issues
+141,complexity analysis
+142,research methods
+143,project management
+144,logic design
+145,usability
+146,thesis development
+147,artificial intelligence
+148,optimization
+149,innovation
+150,ai foundations
+151,object oriented design
+152,it industry
+153,problem solving
+154,databases
+155,software development
+156,professional ethics
+157,interface design
+158,user experience
+159,technology business
+160,front end
+161,hardware
+162,system administration
+163,assembly language
+164,information organization
+165,integrative programming
+166,simulation
+167,strategic planning
+168,critical thinking
+169,decision making
+170,management
+171,strategic thinking
+172,research
+173,creative problem solving
+174,logic
+175,scientific inquiry
+176,idea generation
+177,adaptability
+178,counseling
+179,empathy
+180,active listening
+181,emotional intelligence
+182,relationship building
+183,mentorship
+184,creative writing
+185,artistic expression
+186,advocacy
+187,creative brainstorming
+188,public speaking
+189,organization
+190,reliability
+191,time management
+192,process improvement
+193,caregiving
+194,attention to detail
+195,social organizing
+196,event planning
+197,community building
+198,troubleshooting
+199,mechanical skills
+200,outdoor activities
+201,risk taking
+202,physical activities
+203,spontaneous decision making
+204,emotional expression
+205,individualism
+206,creativity
+207,entertaining
+208,social interactions
+209,spontaneity

@@ -245,6 +245,7 @@ body{
 footer
 {
     /* always at bottom position: absolute;*/
+    margin-top: 20px;
     bottom: 0;
     width: 100%;
     padding: 20px;
