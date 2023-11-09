@@ -80,3 +80,6 @@ course_u/static/csv/mbti_skills.csv
 course_u/static/csv/test_.csv
 course_u/static/csv/subject_.csv
 course_u/static/csv/indicator_.csv
+course_u/static/csv/nakuri_skills.csv
+.gitignore
+course_u/static/csv/normalized_df.csv
