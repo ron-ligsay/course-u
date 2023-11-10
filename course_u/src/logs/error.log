@@ -4625,3 +4625,4 @@ Traceback (most recent call last):
 django.core.exceptions.FieldError: Cannot resolve keyword 'tests' into field. Choices are: id, indicator, skill, subject, test, userskill
 ERROR 2023-11-08 14:03:30,679 django.server Thread-1 18976 basehttp basehttp.py 212 django.server log_message 12968 "GET /test_reults/1 HTTP/1.1" 500 142813
 WARNING 2023-11-08 15:14:45,117 django.server Thread-30 78000 basehttp basehttp.py 212 django.server log_message 23392 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+WARNING 2023-11-09 20:56:04,317 django.server Thread-3 4828 basehttp basehttp.py 212 django.server log_message 5088 "GET /static/images/2.jpg HTTP/1.1" 404 1795

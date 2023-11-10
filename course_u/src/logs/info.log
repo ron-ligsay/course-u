@@ -5,3 +5,32 @@ INFO 2023-11-09 20:52:34,317 django.utils.autoreload autoreload autoreload.py 26
 INFO 2023-11-09 20:52:45,615 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
 INFO 2023-11-09 20:53:39,335 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\apps\acad\admin.py changed, reloading.
 INFO 2023-11-09 20:53:49,035 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-09 20:54:50,906 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 302 0
+INFO 2023-11-09 20:54:51,873 django.server basehttp basehttp.py 212 log_message "GET /login_user/?next=/home HTTP/1.1" 200 10826
+INFO 2023-11-09 20:54:52,638 django.server basehttp basehttp.py 212 log_message "GET /static/css/login_user.css HTTP/1.1" 200 1283
+INFO 2023-11-09 20:54:52,753 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2023-11-09 20:54:53,323 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2023-11-09 20:54:53,339 django.server basehttp basehttp.py 212 log_message "GET /static/images/log.jpg HTTP/1.1" 200 43888
+INFO 2023-11-09 20:54:53,865 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2023-11-09 20:54:53,868 django.server basehttp basehttp.py 212 log_message "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2023-11-09 20:54:54,466 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 200 1030
+INFO 2023-11-09 20:55:41,751 django.server basehttp basehttp.py 212 log_message "POST /login_user/ HTTP/1.1" 302 0
+INFO 2023-11-09 20:55:43,259 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40696
+INFO 2023-11-09 20:55:43,371 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 200 17386
+INFO 2023-11-09 20:55:43,542 django.server basehttp basehttp.py 212 log_message "GET /static/css/home.css HTTP/1.1" 200 1245
+INFO 2023-11-09 20:55:43,542 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5062
+INFO 2023-11-09 20:55:43,826 django.server basehttp basehttp.py 212 log_message "GET /static/js/specialization_filter.js HTTP/1.1" 200 1412
+INFO 2023-11-09 20:55:54,927 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40400
+INFO 2023-11-09 20:55:56,609 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 17742
+INFO 2023-11-09 20:55:56,678 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 265
+INFO 2023-11-09 20:55:58,456 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15275
+INFO 2023-11-09 20:55:59,744 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 23268
+INFO 2023-11-09 20:55:59,843 django.server basehttp basehttp.py 212 log_message "GET /static/css/admin_home.css HTTP/1.1" 200 3482
+INFO 2023-11-09 20:56:03,324 django.server basehttp basehttp.py 212 log_message "GET /job_list/ HTTP/1.1" 200 22960
+INFO 2023-11-09 20:56:03,402 django.server basehttp basehttp.py 212 log_message "GET /static/css/job_post.css HTTP/1.1" 200 1963
+INFO 2023-11-09 20:56:03,655 django.server basehttp basehttp.py 212 log_message "GET /static/js/job_list.js HTTP/1.1" 200 1060
+WARNING 2023-11-09 20:56:04,317 django.server basehttp basehttp.py 212 log_message "GET /static/images/2.jpg HTTP/1.1" 404 1795
+INFO 2023-11-09 20:56:06,562 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40399
+INFO 2023-11-09 20:56:09,110 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 200 23267
+INFO 2023-11-09 20:56:13,080 django.server basehttp basehttp.py 81 handle_error - Broken pipe from ('127.0.0.1', 9896)
+INFO 2023-11-09 20:56:13,244 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 200 40399
