@@ -81,16 +81,11 @@ course_u/static/csv/test_.csv
 course_u/static/csv/subject_.csv
 course_u/static/csv/indicator_.csv
 course_u/static/csv/nakuri_skills.csv
-.gitignore
 course_u/static/csv/normalized_df.csv
 course_u/static/csv/field_skills.csv
 course_u/static/csv/roles_normalized_skills.csv
 course_u/static/csv/role_job_skills.csv
-.gitignore
 course_u/static/csv/roles_normalized_skills.csv
-.gitignore
-.gitignore
-.gitignore
 course_u/static/csv/specialization3.csv
 course_u/static/csv/nakuri_skill_list.csv
 course_u/static/csv/specialization3_skills.csv
