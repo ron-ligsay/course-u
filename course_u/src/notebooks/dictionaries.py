@@ -1,9 +1,18 @@
 
+import numpy as np
+import pandas as pd
+
+IT = pd.read_csv('IT.csv', encoding='latin-1')
 
 # Clean Job Titles
 IT['job_title'] = IT['Job Title'].str.strip()
 IT['job_title'] = IT['job_title'].str.lower()
 
+
+# job_title list
+
+
+# cleaned job title to job_title_dic
 dic = {
     ('php developer', 'php web developer', 'magento developer', 'senior php developer', 'php developers', 'php developer','sr. php developer'): 'php developer', 
     ('senior software engineer', 'software engineer 2', 'sr. software engineer', 'delv senior software eng', 'sharepoint developer', 'senior software engg = systems', 'software development engineer', 'software engineer', 'sr software engineer', 'principal software engineer', 'software engineering', 'senior software engineer - java',  'software architect','delv software engineer', 'senior software engineer'): 'software engineer', 
@@ -35,6 +44,7 @@ dic = {
     ('front end developer', 'front end developer', 'front-end developer'): 'frontend developer'
     
 }
+# cleaned job_title_dic to job_title_dic_sub
 dic2 = {
     ('php developer', 'php web developer', 'magento developer', 'senior php developer', 'php developers', 'php developer','sr. php developer','technical lead - php'): 'php developer', 
     ('senior software engineer', 'software engineer 2', 'sr. software engineer', 'delv senior software eng', 'sharepoint developer', 'senior software engg = systems', 'software development engineer', 'software engineer', 'sr software engineer', 'principal software engineer', 'software engineering', 'senior software engineer - java',  'software architect','delv software engineer', 'senior software engineer'): 'software engineer', 
@@ -87,6 +97,25 @@ dic2 = {
      'saas bi administrator', 'software system testing for mnc spaze it park sohna road gurgaon'): 'Other',
 }
 
+
+# Create a new column 'job_title_dic' in the DataFrame
+IT['job_title_dic'] = IT['job_title']
+
+# Iterate through the dictionary and apply the mappings
+for key, value in dic.items():
+    IT['job_title_dic'] = IT['job_title_dic'].apply(lambda title: value if title in key else title)
+
+
+# Create a new column 'job_title_dic' in the DataFrame
+IT['job_title_dic_sub'] = IT['job_title']
+
+# Iterate through the dictionary and apply the mappings
+for key, value in dic2.items():
+    # Apply the mapping to titles that contain any substring from 'key'
+    IT['job_title_dic_sub'] = IT['job_title_dic_sub'].apply(lambda title: value if any(substring in title for substring in key) else title)
+
+
+# role to role_job
 role_dic = {
  'Testing Engineer': 'quality assurance engineer', # 56% qa engineer, 16% BusAna, ..., possible all to Quality Assurance
  'Webmaster': 'web developer', # Web Developer # 70% is seo, 2% BusAna diverse, so choosing between Web Dev or SEO
@@ -145,7 +174,73 @@ role_dic = {
 # missing Instructional Designer (9)
 # 6-2 should not use the same, their roles and job title are mixed, then 1 is lacking data too, so lets remove this guys
 
+role_job = ['quality assurance engineer', 'web developer', 'php developer',
+       'application developer', 'software engineer', 'ui/ux developer',
+       'backend developer', 'database administrator', 'devops engineer',
+       'network manager', 'business analyst', 'python developer',
+       'team/technical lead', 'project manager', 'software developer',
+       'consultant', 'frontend developer', 'data engineer',
+       'full stack developer', 'manager', 'solution architect',
+       'technical support engineer', 'release manager', 'lead',
+       'developer', 'project lead', 'network administrator',
+       'network engineer', 'program manager', 'c++ developer',
+       'javascript developer', 'technical content developer', 'trainee',
+       'product manager', 'seo', 'technical architect',
+       'salesforce developer', 'support engineer', 'senior developer',
+       'subject matter expert', 'solution/enterprise architect',
+       'system security', 'support engineer/technician',
+       'senior software engg - systems', 'system administrator',
+       'senior programmer', 'head/vp/gm-technology/cto',
+       'reactjs developer', 'database architect/designer',
+       'hadoop developer', 'data scientist', 'servicenow developer',
+       'trainer/faculty', 'systems engineer', 'mean stack developer',
+       'dft engineer', 'teradata developer', 'software technologist i',
+       'qlikview developer', 'functional test planning',
+       'graphic designer', 'hardware engineer', 'technical lead',
+       'instructional designer']
 
+
+# role_jobs_to field
+field_mapping = {
+    # Software Development
+    ('web developer', 'php developer', 'application developer', 'software engineer',
+     'backend developer', 'devops engineer', 'python developer', 'frontend developer', 'full stack developer',
+     'developer', 'javascript developer', 'reactjs developer', 'mean stack developer', 'dft engineer',
+     'teradata developer', 'software technologist i','senior software engg - systems', 'seo','mean stack developer',
+     'software developer','senior developer','senior programmer','c++ developer'): 'Software Development',
+
+    # Data and Analytics
+    ('database administrator', 'data engineer', 'data scientist', 'database architect/designer','qlikview developer', 'teradata developer'): 'Data and Analytics',
+
+    # Design and UX/UI
+    ('ui/ux developer', 'frontend developer', 'graphic designer', 'instructional designer', 'graphic designer', 'ui/ux developer'): 'Design and UX/UI',
+
+    # Product Management
+    ('product manager', 'project manager', 'program manager', 'project lead','team/technical lead','manager','lead'): 'Product Management',
+
+    # Testing and Quality Assurance
+    ('quality assurance engineer', 'testing engineer', 'functional test planning','functional test planning'): 'Testing and Quality Assurance',
+
+    # Security
+    ('system security',): 'Security',
+
+    # Networking and Infrastructure
+    ('network manager', 'network administrator', 'network engineer', 'systems engineer',  'system administrator'): 'Networking and Infrastructure',
+
+    # Project Management
+    ('project manager', 'program manager', 'project lead', 'release manager'): 'Project Management',
+
+    # Business and Strategy
+    ('business analyst', 'consultant', 'technical architect', 'salesforce developer', 'solution architect',
+     'subject matter expert', 'solution/enterprise architect', 'systems engineer'): 'Business and Strategy',
+
+    # Emerging and Specialized
+    ('support engineer', 'technical content developer', 'trainee', 'technical architect', 'servicenow developer',
+     'trainer/faculty', 'support engineer/technician', 'technical support engineer',
+     'senior programmer', 'head/vp/gm-technology/cto',  'hadoop developer',
+    'dft engineer', 'software technologist i',
+     'hardware engineer', 'technical lead', 'instructional designer'): 'Emerging and Specialized'
+}
 
 
 
