@@ -19,3 +19,33 @@ def predictor(request):
         y_pred = 'Virginica'
         return render(request, 'recommender.html', {'result': y_pred})
     return render(request, 'recommender.html')
+
+
+
+
+# Path: course_u/apps/recommender/views.py
+
+
+# get user skills
+
+
+# calculate similarity
+
+# get top 5 similar users
+
+
+# save top 5 similar users in a list
+
+
+# update user profile with top 5 similar users
+
+
+# user interaction
+
+# save user interaction in a list
+
+
+
+# get user interaction list
+
+
