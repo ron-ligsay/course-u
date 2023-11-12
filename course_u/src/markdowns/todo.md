@@ -107,10 +107,25 @@ else, do nothing
 
 ## Recommender Section
 
-- [ ]: Modify User Skill database to have a level field
 - [ ]: After every assessment, personality and grade inputs, update the user skill database
     - [x]: add subject-skills
-    - [ ]: add and update skill database with new skill sets from nakuri
+    - [x]: add and update skill database with new skill sets from nakuri
+    - [ ]: model for specialization skills with level
+    - [X]: complete skills for test, subject, mbti, specialization (jobs are generated per scrape events)
+    - [X]: Modify User Skill database to have a level field
+    - [ ]: load csv data using management commands load_data
+    - [ ]: views that would initiate or start the recommendation process
+        - [ ]: crete a normalized data, from specialization (the database that would be recommended)
+        - [ ]: create a normalized data, from user skills
+        - [ ]: load the data to the recommendation system
+        - [ ]: get the recommendation
+        - [ ]: display the recommendation (with detailed information including the skills)
+        - [ ]: save the recommendation
+
+- [ ]: Create recommendation for job post
+    - [ ]: use existing skill lists to get job post skills
+    - [ ]: save data of jobs - csv/model/database for job_skills
+    - [ ]: use recommendation system to recommend jobs
 
 - [ ]: Recommendatioon algorithms
     - Develop algorithms that take into account a student's assessment history, academic preferences, and career goals to recommend academic tracks, specializations, and job postings.
