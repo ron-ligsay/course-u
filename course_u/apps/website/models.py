@@ -29,6 +29,17 @@ class Specialization(models.Model):
     # class Meta:
     #     unique_together = ('field')
 
+class SpecializationSkills(models.Model):
+    specialization = models.ForeignKey(Specialization, on_delete=models.CASCADE)
+    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+    level = models.IntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.specialization.title} - {self.skill.skill}"
+
+    class Meta:
+        unique_together = ('specialization', 'skill')
+
 class UserRecommendations(models.Model):
     recommendation_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
