@@ -1,15 +1,15 @@
 
 ***course_subjects.py***
 - used skill_1 for mapping
-- saved to subject_.csv
-- acad_subject_skills.csv
-- saved to skill_2.csv
+- output: saved to subject_.csv
+- output: acad_subject_skills.csv
+- output: skill_2.csv
 
 
 ***mbti_skills***
 - using skill_2.csv to create a skill mapping dictionary for mbti_skills
-- got skill_3 from here
-
+- output: skill_3 from here
+- output: indicator_skills.csv
 
 ***recommender.py***
 - key codes for recommendation system
@@ -22,11 +22,13 @@
 ***specialization_x_field_skills.ipynb***
 - using specialization2.csv
 - using nakuri_skill_list.csv
-- using role_job_skillscsv
-- map field id
+- using role_job_skills.csv
+- map field id for role_job_skills.
 - remove duplicate and append skills to specialization
 - combine specialization and IT (nakuri_IT)
 - saved to specialization3_skills.csv 
+- output skills_4.csv
+- output website_specialization_skills.csv with level
 
 ***unique_skills.py***
 - used for mapping test skills
