@@ -672,6 +672,7 @@ def save_user_skills(request, set_id):
             level=skill.correct_count,
         )
         userskill.save()
+
     return
 
 
