@@ -106,6 +106,12 @@ else, do nothing
 ## Report Section
 
 ## Recommender Section
+
+- [ ]: Modify User Skill database to have a level field
+- [ ]: After every assessment, personality and grade inputs, update the user skill database
+    - [x]: add subject-skills
+    - [ ]: add and update skill database with new skill sets from nakuri
+
 - [ ]: Recommendatioon algorithms
     - Develop algorithms that take into account a student's assessment history, academic preferences, and career goals to recommend academic tracks, specializations, and job postings.
 - [ ]: Job Recommendations
