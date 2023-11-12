@@ -110,9 +110,11 @@ else, do nothing
 - [ ]: After every assessment, personality and grade inputs, update the user skill database
     - [x]: add subject-skills
     - [x]: add and update skill database with new skill sets from nakuri
-    - [ ]: model for specialization skills with level
+    - [X]: model for specialization skills with level
+    - [X]: reorganize the specialization skills data's fields
     - [X]: complete skills for test, subject, mbti, specialization (jobs are generated per scrape events)
     - [X]: Modify User Skill database to have a level field
+    - [ ]: fix acad subject skill id (note reset index, then recreate id)
     - [ ]: load csv data using management commands load_data
     - [ ]: views that would initiate or start the recommendation process
         - [ ]: crete a normalized data, from specialization (the database that would be recommended)
