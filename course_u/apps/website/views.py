@@ -180,8 +180,10 @@ def sign_in(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')            
             user = authenticate(username=username, password=password)
-            group = Group.objects.get(name='student')
-            user.groups.add(group)
+            # check if student group exisits
+            # else create group
+            #group = Group.objects.get(name='student')
+            #user.groups.add(group)
             login(request,user)
             messages.success(request, 'Student ' + username + ' have successfully created an account')
             return redirect('home')
