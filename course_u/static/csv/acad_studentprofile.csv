@@ -1,2 +1,2 @@
-user_id,enrolled_course_id,current_year_level
-1,1,1
+id,is_student,current_year,enrolled_courses_id,user_id
+1,1,1,1,1
