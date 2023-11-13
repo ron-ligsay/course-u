@@ -69,9 +69,11 @@ def start_test(request):
     # Check if the user has a student profile
     studentprofile = StudentProfile.objects.filter(user_id=request.user.id).exists()
     if not studentprofile:
-        # If the user doesn't have a student profile, redirect to the course selection page
+        # If the user doesn't have a student profile, redirect to the course selection 
+        print("No Student Profile")
         return redirect('select_course')  # Replace 'select_course' with the actual URL name
-
+    else:
+        print("Has Student Profile")
 
     clear_session_variables(request)
     start = None
