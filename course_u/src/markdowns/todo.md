@@ -1,15 +1,5 @@
 # TODO
 
-check if tables exists
-else, load_csv_data
-
-on load_csv_data
-import db_connection from different file
-create a connection
-import zip csv table files
-if table not exits, create table
-if table is empty, load csv data
-else, do nothing
 
 
 ## High Priority
@@ -93,7 +83,12 @@ else, do nothing
 ## Test Section
 - [X]: User Grade Form
 - [X]: User Year Level Form
+    - [ ]: for year level options are (just enrolled, 1st year, 2nd year,3rd year, 4th year)
 - [ ]: Test Division, test should get only 1/4 set from the test, then when it wants to get again, it will get the next 1/4 set of the test. test should be randomized, test should not be repeated
+- [ ]: User Grade Input
+    - [ ]: 
+- [X]: Use can't start test student profile is not yet created
+    - #error
 - [ ]: Test Session # Path:
     - [X]: test session working properly
     - [X]: test session continous unfinished task of the user, else create new one
@@ -105,12 +100,20 @@ else, do nothing
     - [ ]: After test is completed and submitted, go to result page
     - [ ]: On result page record the User's Skills
 
-## Personlaity
 
+
+## Personlaity
+- [X]: working properly
+- [ ]: have results report
 
 ## Job Section
+- [ ]: can run scraper
+- [ ]: or have trigger/schedules event runner
+- [ ]: 
 
 ## Report Section
+- [ ]: recommender report
+- [ ]: instructor report 
 
 ## Recommender Section
 
@@ -122,7 +125,7 @@ else, do nothing
     - [X]: complete skills for test, subject, mbti, specialization (jobs are generated per scrape events)
     - [X]: Modify User Skill database to have a level field
     - [X]: fix acad subject skill id (note reset index, then recreate id)
-    - [ ]: load csv data using management commands load_data
+    - [ ]: load csv data using management commands load_data (test, specialization, subject, mbti, skills)
     - [ ]: views that would initiate or start the recommendation process
         - [ ]: crete a normalized data, from specialization (the database that would be recommended)
         - [ ]: create a normalized data, from user skills
@@ -160,6 +163,18 @@ else, do nothing
     - Records variables such as number of questions per field
 - [ ]: User Interaction - database
 
+
+## Database/Models
+check if tables exists
+else, load_csv_data
+
+on load_csv_data
+import db_connection from different file
+create a connection
+import zip csv table files
+if table not exits, create table
+if table is empty, load csv data
+else, do nothing
 
 
 ## Field/Specialization Section
