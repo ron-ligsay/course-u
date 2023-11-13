@@ -1,7 +1,7 @@
 cd ..\..
 courseu\Scripts\activate
 cd .\course_test\course-u\course_u\
-
+python manage.py runserver
 
 
 djnago-oscar (dir structure)

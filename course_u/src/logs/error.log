@@ -4626,3 +4626,9 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'tests' into field. Ch
 ERROR 2023-11-08 14:03:30,679 django.server Thread-1 18976 basehttp basehttp.py 212 django.server log_message 12968 "GET /test_reults/1 HTTP/1.1" 500 142813
 WARNING 2023-11-08 15:14:45,117 django.server Thread-30 78000 basehttp basehttp.py 212 django.server log_message 23392 "GET /static/images/2.jpg HTTP/1.1" 404 1795
 WARNING 2023-11-09 20:56:04,317 django.server Thread-3 4828 basehttp basehttp.py 212 django.server log_message 5088 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+WARNING 2023-11-13 11:24:45,185 django.request Thread-2 14224 log log.py 241 django.request log_response 20724 Not Found: /favicon.ico
+WARNING 2023-11-13 11:24:45,185 django.server Thread-2 14224 basehttp basehttp.py 212 django.server log_message 20724 "GET /favicon.ico HTTP/1.1" 404 23271
+WARNING 2023-11-13 11:41:04,349 django.server Thread-9 5444 basehttp basehttp.py 212 django.server log_message 20724 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+WARNING 2023-11-13 11:42:04,071 django.server Thread-8 17956 basehttp basehttp.py 212 django.server log_message 20724 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+WARNING 2023-11-13 11:48:21,013 django.server Thread-11 9212 basehttp basehttp.py 212 django.server log_message 20724 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+WARNING 2023-11-13 12:25:31,044 django.server Thread-3 12860 basehttp basehttp.py 212 django.server log_message 12328 "GET /static/images/2.jpg HTTP/1.1" 404 1795

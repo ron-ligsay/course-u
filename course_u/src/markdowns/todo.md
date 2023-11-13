@@ -33,12 +33,12 @@ else, do nothing
     - [ ]: Feedbacks
     - [ ]: Instructors/Faculty
 - [ ]: Track Page
-    - [ ]: Courses
+    - [ ]: Courses 
 ## Medium Priority
 - [ ]: # Path: todo.
 - [ |-|x]: something
 - [X]: git rm <files> that are on the [.gitignore]
-- [ ]: utils folder, for recommendation system model, job_post_scrapy, static_website
+- [X]: utils folder, for recommendation system model, job_post_scrapy, static_website
 - [ ]: create submodules
     - [ ]: for recommender system model
     - [ ]: for job_post_scrapy
@@ -91,15 +91,22 @@ else, do nothing
 
 
 ## Test Section
-- [ ]: User Grade Form
-- [ ]: User Year Level Form
+- [X]: User Grade Form
+- [X]: User Year Level Form
 - [ ]: Test Division, test should get only 1/4 set from the test, then when it wants to get again, it will get the next 1/4 set of the test. test should be randomized, test should not be repeated
 - [ ]: Test Session # Path:
     - [X]: test session working properly
     - [X]: test session continous unfinished task of the user, else create new one
+    - [X]: if test is complited for the year, it will prompt user if he/she finished the school year
+    - [X]: if no, and user is superuser, use can either erase test set or delete entire set and create new one
     - [ ]: Create Notification or Pop up windows
         - user cannot exit test session when test is not finished
         - if user was forced or unintentionally exit test session, user will be redirected to test session page
+    - [ ]: After test is completed and submitted, go to result page
+    - [ ]: On result page record the User's Skills
+
+## Personlaity
+
 
 ## Job Section
 
