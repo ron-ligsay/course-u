@@ -43,6 +43,7 @@ def subjects_grade_input(request):
     course = student.enrolled_courses_id
     course_name = Course.objects.get(pk=course)
     year_level = student.current_year
+    print("year level:", year_level)
 
     # Get the curriculum for the course and year level
     curriculum = Curriculum.objects.filter(course_id=course, year=year_level)
