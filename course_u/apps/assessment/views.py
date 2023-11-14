@@ -305,7 +305,7 @@ def check_school_year_choice(request, choice):
 def check_school_year_status(request, status=None):
     print('check_school_year() status: ', status)
     if status == 'completed':
-        messages.info("You have completed the school year. You can proceed.")       
+        messages.info(request, "You have completed the school year. You can proceed.")       
         course_id = StudentProfile.objects.get(user_id=request.user.id).enrolled_courses_id
         return redirect('select_year', course_id=course_id)
     
@@ -376,6 +376,7 @@ def create_or_overwrite_test(request, action):
 
 def continue_create_new_question_set(request, last_set):
     print('continue_create_new_question_set() last_set: ', last_set)
+    new_set = None
     if last_set == 0 or last_set == None:
         # get last set
         try:
@@ -387,6 +388,8 @@ def continue_create_new_question_set(request, last_set):
             new_set = 1
         else:
             new_set = last_set + 1
+    else:
+        new_set = last_set + 1 
 
     year = StudentProfile.objects.get(user_id=request.user.id).current_year
     
