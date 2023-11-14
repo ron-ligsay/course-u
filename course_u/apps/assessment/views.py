@@ -392,7 +392,7 @@ def continue_create_new_question_set(request, last_set):
         new_set = last_set + 1 
 
     year = StudentProfile.objects.get(user_id=request.user.id).current_year
-    
+
     print("if no_record, Set: ", new_set, "created for user: ", request.user)
     request.session['question_set_id'] = new_set
     
@@ -671,12 +671,33 @@ def save_user_skills(request, set_id):
     # save to userskill
     for skill in skill_correct_counts:
         print("skill: ", skill)
-        userskill = UserSkill.objects.create(
-            user=request.user,
-            skill=skill,
-            level=skill.correct_count,
-        )
+        skill_id = skill.id
+        # userskill = UserSkill.objects.create(
+        #     user=request.user,
+        #     skill=skill,
+        #     level=skill.correct_count,
+        # )
+        # get or create userskill
+        try:
+            userskill, created = UserSkill.objects.get_or_create(
+                user=request.user,
+                skill=skill,
+            )#.first()
+        except:
+            # delete userskill
+            while UserSkill.objects.filter(user=request.user,skill=skill,).first():
+                userskill = UserSkill.objects.filter(user=request.user,skill=skill,).first()
+                userskill.delete()
+                print("deleted userskill: ", userskill)
+        # update userskill
+        if created:
+            userskill.level = skill.correct_count
+            print("created userskill: ", userskill)
+        else:
+            userskill.level = userskill.level + skill.correct_count
+            print("updated userskill: ", userskill)
         userskill.save()
+        # add skill source
 
     return
 
