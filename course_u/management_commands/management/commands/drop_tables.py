@@ -52,10 +52,7 @@ class Command(BaseCommand):
         # Iterate through the table names and delete each table
         with connection.cursor() as cursor:
             for table_name in table_names1:
-                #cursor.execute(f"DROP TABLE {table_name};")
-                #cursor.execute(f"DROP TABLE IF EXISTS {table_name};")
-                # delete contents of table
-                cursor.execute(f"DELETE FROM {table_name};")
+                cursor.execute(f"DROP TABLE IF EXISTS {table_name};")
                 self.stdout.write(self.style.SUCCESS(f'Deleted table: {table_name}'))
 
         self.stdout.write(self.style.SUCCESS('All database tables deleted'))
