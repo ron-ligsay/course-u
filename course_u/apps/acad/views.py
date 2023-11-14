@@ -109,7 +109,9 @@ def success_page(request):
             skill_id = skill.id
             print('skill: ', skill)
             # get or create UserSkill
+            # make sure to get only one
             user_skill, created = UserSkill.objects.get_or_create(user_id=user_id, skill_id=skill_id)
+
             # update score
             level = 0
             if created:
