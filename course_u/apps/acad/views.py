@@ -5,6 +5,8 @@ from django.shortcuts import redirect
 from apps.acad.models import Course, Subject, Curriculum, StudentProfile, StudentGrades
 from apps.acad.forms import StudentGradeForm
 
+from apps.website.models import Skill
+from apps.recommender.models import UserSkill
 
 def select_course(request):
     courses = Course.objects.all()
@@ -86,13 +88,55 @@ def success_page(request):
     # Get the Student Profile
     student = StudentProfile.objects.get(user=request.user)
 
+    user_id = request.user.id
+
     # Get the enrolled course of the student and year
     course = student.enrolled_courses_id
 
     # Get the grades
     grades = StudentGrades.objects.filter(student=student)
     
-    # return warning if failed to save grades
+    # loop through grades and get the score and skills
+    for grade in grades:
+        # get skils from subject
+        subject = Subject.objects.get(pk=grade.subject_id)
+        #grade.skills = subject.skills 
+        
+        # get grade score
+        print('grade: ', grade.grade)
+        # loop through skills
+        for skill in subject.skills.all():
+            skill_id = skill.id
+            print('skill: ', skill)
+            # get or create UserSkill
+            user_skill, created = UserSkill.objects.get_or_create(user_id=user_id, skill_id=skill_id)
+            # update score
+            level = 0
+            if created:
+                print('created user skill: ', user_skill)
+                user_skill.level = level
+            else:
+                print('existing user skill: ', user_skill)
+                level = user_skill.level
+            if grade.grade == 1.00 or grade.grade == 1:
+                level += 5
+            elif grade.grade == 1.25:
+                level += 4
+            elif grade.grade == 1.50:
+                level += 3
+            elif grade.grade == 1.75:
+                level += 2
+            elif grade.grade == 2.00 or grade.grade == 2:
+                level += 1
+            elif grade.grade >= 2.25 and grade.grade <= 3.00 or grade.grade >= 2.25 and grade.grade <= 3:
+                level += 1
+            else:
+                level += 0
+            user_skill.level = level
+            user_skill.save()
+            print("saved user skill: ", user_skill)
+            # add skill source
+
 
     return render(request, 'acad/success_page.html', {
         'student': student,
