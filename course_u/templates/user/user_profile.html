@@ -1,0 +1,34 @@
+{% extends 'base_user.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <!-- user_profile.html -->
+    <h1>User Profile</h1>
+    <p>Welcome, {{ user.username }}!</p>
+    <p>Email: {{ user.email }}</p>
+
+    <!-- Add buttons for actions -->
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    <a href="{% url 'terms_and_conditions' %}" >Terms and Conditions</a>
+    <a href="{% url 'settings' %}">Settings</a>
+    <!-- Add more buttons as needed -->
+
+
+
+{% else %}
+<!-- 
+<div class="col-md-6 offset-md-3">
+    <br><br><br>
+    <h3 class="">You need to login first</h3>
+    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
+</div> -->
+
+{% endif %}
+
+
+
+{% endblock content %}
+```

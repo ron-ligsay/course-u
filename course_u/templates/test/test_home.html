@@ -1,0 +1,103 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Home{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+
+<!-- Additional stylesheets or scripts specific to this page -->
+<!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/test_home.css' %}">
+{% endblock head_extra %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<div class="test-container">
+    <div class="col-md-6">
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Define youre Course, Year and Grades</h5>
+                <p class="card-text">Click the button below to start the form.</p>
+                <a href="{% url 'select_course' %}" class="btn btn-primary">Here</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Start Test</h5>
+                <p class="card-text">Click the button below to start the test.</p>
+                <a href="{% url 'start_test' %}" class="btn btn-primary">Start Test</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Start Personality Test</h5>
+                <p class="card-text">Click the button below to start the test.</p>
+                <a href="{% url 'initialize_mbti_test' %}" class="btn btn-primary">Start Test</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+<div class="test-container">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">View Test Result/s</h5>
+                <p class="card-text">Click the button below to view test results.</p>
+                <a href="{% url 'test_results_overall' %}" class="btn btn-primary">View Results</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<!-- 
+<div class="col-md-6 offset-md-3">
+    <br><br><br>
+    <h3 class="">You need to login first</h3>
+    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
+</div> -->
+
+{% endif %}
+
+<!-- Include this code within your HTML template -->
+<!-- <script>
+    // Function to display the modal
+    function openSchoolYearModal() {
+        var modal = document.getElementById("schoolYearModal");
+        modal.style.display = "block";
+
+        // Handle "Yes" button click
+        document.getElementById("yesButton").addEventListener("click", function() {
+            // User has completed the school year, handle this as needed
+            modal.style.display = "none";
+            // Redirect or perform any required actions
+            window.location.href = "{% url 'create_or_overwrite_test' %}";
+        });
+
+        // Handle "No" button click
+        document.getElementById("noButton").addEventListener("click", function() {
+            // User hasn't completed the school year, display a message or perform actions as needed
+            modal.style.display = "none";
+            alert("Sorry, you need to finish the school year to retake the test.");
+            // You can also redirect the user to another page if necessary
+        });
+    }
+
+    // Call the function when the page loads
+    window.onload = openSchoolYearModal;
+</script> -->
+
+
+{% endblock content %}
+```

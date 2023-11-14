@@ -1,0 +1,56 @@
+/*.course {
+    display: block;
+    margin: 0 auto;
+    margin-bottom:5px;
+    width: 400px;
+    height: 100px;
+    line-height: 80px;
+    font-size: 30px;
+    text-align:center;
+    color: black;
+    background-color: #ececec;
+    border-radius: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+  }
+  .course:hover {
+    background-color: rgb(228, 95, 65);
+
+  }
+  p{
+    text-align:  center;
+    color:rgb(228, 95, 65);
+    font-family:georgia;
+    font-size: 50px;
+  }
+  */
+  p{
+    text-align:  center;
+    color:rgb(228, 95, 65);
+    font-family:georgia;
+    font-size: 50px;
+  }
+.course{
+    text-align:center;
+    border-radius: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.btn{ 
+  display: block;
+  margin: 0 auto;
+  margin-bottom:5px;
+  width: 600px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 25px;
+  padding: 2px 1px;
+  background-color: #ececec;
+  color: black;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: rgb(228, 95, 65);
+
+}

@@ -1,0 +1,45 @@
+/* Modal background overlay */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Modal content container */
+.modal-content {
+    border-radius: 0; /* Adjust as needed */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Adjust as needed */
+    background-color: #fff; /* Background color of the modal */
+}
+
+/* Modal title */
+.modal-title {
+    font-size: 1.5rem; /* Adjust as needed */
+    color: #333; /* Text color for the title */
+}
+
+/* Modal close button */
+.close {
+    color: #999; /* Color of the close button */
+}
+
+/* Modal body text */
+.modal-body {
+    font-size: 1.2rem; /* Adjust as needed */
+    color: #555; /* Text color for the body */
+}
+
+/* Modal footer buttons */
+.modal-footer .btn-secondary {
+    background-color: #ccc; /* Background color for Cancel button */
+    color: #333; /* Text color for Cancel button */
+}
+
+.modal-footer .btn-danger {
+    background-color: #dc3545; /* Background color for Delete button */
+    color: #fff; /* Text color for Delete button */
+}
+
+.modal-footer .btn-primary {
+    background-color: #007bff; /* Background color for Overwrite button */
+    color: #fff; /* Text color for Overwrite button */
+    margin-left: 5px; /* Adjust as needed to separate buttons */
+}

@@ -1,0 +1,58 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Test Option{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+<!-- css -->
+<link rel="stylesheet" href="{% static 'css/create_or_overwrite_test.css' %}">
+{% endblock head_extra %}
+
+{% block content %}
+<!-- Modal for confirming the action -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirm Action</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>You have already taken the test in your current StudentProfile year. What would you like to do?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="deleteButton">Delete Existing Test</button>
+                <button type="button" class="btn btn-primary" id="overwriteButton">Overwrite Existing Test</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle "Delete Existing Test" button click
+    document.getElementById("deleteButton").addEventListener("click", function() {
+        // Handle the delete action here, for example, redirect to the URL
+        window.location.href = "{% url 'create_or_overwrite_test' 'delete' %}";
+    });
+
+    // Handle "Overwrite Existing Test" button click
+    document.getElementById("overwriteButton").addEventListener("click", function() {
+        // Handle the overwrite action here, for example, redirect to the URL
+        window.location.href = "{% url 'create_or_overwrite_test' 'overwrite' %}";
+    });
+
+    // Automatically open the modal when the page loads
+    $(window).on('load', function() {
+        $('#confirmModal').modal('show');
+    });
+</script>
+
+
+{% endblock content %}

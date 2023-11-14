@@ -1,0 +1,52 @@
+
+:root {
+    --bright-color-1: blue;
+    --bright-color-2: yellow;
+    --bright-color-3: green;
+    --bright-color-4: purple;
+}
+div .results
+{
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+div.personality h3
+{
+    padding: 10px;
+}
+
+div.card
+{
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    /* border-style: dashed; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 30px 0;
+    padding: 20px;
+}
+
+div.card h3
+{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+div.card:nth-child(1)
+{
+    border-color: var(--bright-color-1);
+}
+
+div.card b
+{
+    color: var(--bright-color-1);
+}
+
+div.card p
+{
+    font-size: 20px;
+    padding: 10px 0;
+}

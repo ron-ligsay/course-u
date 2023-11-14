@@ -1,0 +1,79 @@
+{% extends "base_user.html" %}
+
+{% block title %}MBTI Results{% endblock %}
+
+{% block head_extra %}
+{% load static %}
+<!-- Additional stylesheets or scripts specific to this page -->
+<link rel="stylesheet" href="{% static 'css/mbti_results.css' %}">
+{% endblock head_extra %}
+
+
+{% block content %}
+{% load mbti_filters %}
+
+<br>
+<div class="results">
+<h1>Your MBTI Results</h1>
+
+<div class="personality">
+    <p> Your Personality type is <b>{{ mbti_name }}</b></p>
+    <h3>Identity: {{ mbti_set.identity }}</h4>
+    <p>Description: {{ mbti_description }}</p>
+</div>
+
+<br><br>
+
+<div class="card">
+    <h3>Energy</h3>
+    {% if mbti_set.energy >= 50 %}
+    <p>Extrovert {{energy_}}% vs <b class="more-on">Introvert {{mbti_set.energy}}%</b></p>
+    {% else %}
+    <p><b class="more-on">Extrovert {{mbti_set.energy}}%</b> vs Introvert {{energy_}}%</p>
+    {% endif %}
+    <!-- <p>{{ mbti_energy.meaning }}</p> -->
+    <p>{{ mbti_energy.description }}</p>
+</div>
+
+<div class="card">
+    <h3>Mind</h3>
+    {% if mbti_set.mind >= 50 %}
+    <p>Intuitive {{mind_}}% vs <b class="more-on">Sensing {{mbti_set.mind}}%</b></p>
+    {% else %}
+    <p><b class="more-on">Intuitive {{mbti_set.mind}}%</b> vs Sensing {{mind_}}%</p>
+
+    {% endif %}
+    <!-- <p>{{ mbti_mind.meaning }}</p> -->
+    <p>{{ mbti_mind.description }}</p>
+</div>
+
+<div class="card">
+    <h3>Nature</h3>
+    {% if mbti_set.nature >= 50 %}
+    <p>Thinking {{nature_}}% vs <b class="more-on">Feeling {{mbti_set.nature}}%</b></p>
+    {% else %}
+    <p><b class="more-on">Thinking {{mbti_set.nature}}%</b> vs Feeling {{nature_}}%</p>
+
+    {% endif %}
+    <!-- <p>{{ mbti_nature.meaning }}</p> -->
+    <p>{{ mbti_nature.description }}</p>
+</div>
+
+<div class="card">
+
+    <h3>Tactics</h3>
+    {% if mbti_set.tactics >= 50 %}
+    <p>Judging {{tactics_}}% vs<b class="more-on"> Prospecting {{mbti_set.tactics}}%</b></p>
+    {% else %}
+    <p><b class="more-on">Judging {{mbti_set.tactics}}%</b> vs Prospecting {{tactics_}}%</p>
+    {% endif %}
+    <!-- <p>{{ mbti_tactics.meaning }}</p> -->
+    <p>{{ mbti_tactics.description }}</p>
+
+
+</div>
+<br><br>
+<a class="btn btn-primary" href="{% url 'home' %}">Back to Home</a>
+</div>
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Recommender{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+
+{% endblock head_extra %}
+
+{% block content %}
+
+<h2>Recommender</h2>
+
+<ul>
+    {% for specialization in top_3_specialization_recommendations %}
+        <li>{{ specialization }}</li>
+    {% endfor %}
+</ul>
+
+
+{% for field in field_names %}
+    <h4>{{ field }}</h4>
+{% endfor %}
+
+{% endblock content %}

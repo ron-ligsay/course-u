@@ -1,0 +1,125 @@
+
+/* Job Card Styles */
+
+.job.row
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 30px;
+}
+
+.job-list {
+    flex: 1;
+}
+
+.job-card {
+    background-image:url('/static/images/2.jpg');
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    background-size: cover;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.job-card:hover {
+    background-color: #f9f9f9;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    color:white;    
+}
+
+.company-name {
+    font-size: 14px;
+    /*color: #555555;*/
+    color:lightgray;
+}
+
+.job-location,
+.job-date
+{
+    /* dark grey, light font */
+    color: #555555;
+    font-size: 14px;
+}
+
+/* Job Details Styles */
+.job-details {
+    flex: 2;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.job-description,
+.job-requirements {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Responsive styles can be added for smaller screens */
+
+
+
+/*  */
+
+.jobs.col-md-2
+{
+    flex: 0 0 auto;
+    width: 30%;
+    padding: 10px;
+}
+
+.jobs.col-md-4
+{
+    flex: 0 0 auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.job-type
+{
+    padding: 0 30px;
+    margin-bottom: 50px;
+}
+.jobs .card.cl-md-5
+{
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.job-apply
+{
+    /* stick to left side */
+    left: 0;
+    /* spacing above */
+    top: 20px;
+}
+
+.jobs .btn
+{
+    background-color: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
