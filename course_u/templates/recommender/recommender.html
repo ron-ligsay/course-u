@@ -14,6 +14,16 @@
 {% block content %}
 
 <h2>Recommender</h2>
-{{skill_levels_df}}
+
+<ul>
+    {% for specialization in top_3_specialization_recommendations %}
+        <li>{{ specialization }}</li>
+    {% endfor %}
+</ul>
+
+
+{% for field in field_names %}
+    <h4>{{ field }}</h4>
+{% endfor %}
 
 {% endblock content %}
