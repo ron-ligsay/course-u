@@ -5,22 +5,22 @@ specialization_id,title,description,roadmap_id,field_id
 4,Software Engineer,"Software Engineers design and develop software applications, focusing on creating efficient, maintainable, and scalable code.",4,1
 5,Software Developer,"Software Developers write, test, and maintain software applications to meet specific requirements, ensuring functionality and performance.",5,1
 6,Mobile App Developer,"Mobile App Developers specialize in creating applications for smartphones and tablets, optimizing them for the respective platforms.",6,1
-7,DevOps Engineer,"DevOps Engineers bridge the gap between development and operations, automating processes, and ensuring efficient, reliable software deployment.",7,1
+7,Devops Engineer,"DevOps Engineers bridge the gap between development and operations, automating processes, and ensuring efficient, reliable software deployment.",7,1
 8,Game Developer,"Game Developers create interactive, immersive gaming experiences, including game design, development, and testing",8,1
 9,Embedded Systems Developer,"Embedded Systems Developers work on software that runs on embedded devices, such as microcontrollers, ensuring real-time functionality.",9,1
 10,Data Scientist,"Data Scientists collect, analyze, and interpret large datasets to extract valuable insights, create predictive models, and support data-driven decision-making.",10,2
 11,Data Analyst,"Data Analysts focus on examining data to identify trends, generate reports, and support business decisions.",11,2
-12,Business Intelligence (BI) Developer,BI Developers create data dashboards and reports to help organizations make data-driven decisions.,12,2
-13,Machine learning Engineer,Machine Learning Engineers develop and deploy machine learning models to solve specific problems or automate tasks.,13,2
-14,AI Engineer,"AI Engineers work on AI projects, including speech recognition, image analysis, and chatbots.",14,2
+12,Business Intelligence (Bi) Developer,BI Developers create data dashboards and reports to help organizations make data-driven decisions.,12,2
+13,Machine Learning Engineer,Machine Learning Engineers develop and deploy machine learning models to solve specific problems or automate tasks.,13,2
+14,Ai Engineer,"AI Engineers work on AI projects, including speech recognition, image analysis, and chatbots.",14,2
 15,Data Engineer,"Data Engineers build and maintain the data infrastructure needed for data collection, processing, and analysis.",15,2
-16,UI Designer,UI Designers focus on creating visually appealing and user-friendly interfaces for web and mobile applications.,16,3
-17,UX Designer,UX Designers ensure that digital products provide a seamless and enjoyable user experience.,17,3
+16,Ui Designer,UI Designers focus on creating visually appealing and user-friendly interfaces for web and mobile applications.,16,3
+17,Ux Designer,UX Designers ensure that digital products provide a seamless and enjoyable user experience.,17,3
 18,Interaction Designer,"Interaction Designers specialize in designing how users interact with digital interfaces, focusing on navigation and user engagement.",18,3
 19,Visual Designer,"Visual Designers create graphics, illustrations, and layouts to enhance the visual appeal of digital and print materials.",19,3
 20,Product Manager,"Product Managers are responsible for defining product features, setting priorities, and managing product development processes.",20,4
-21,Technical Product mManager,"Technical Product Managers bridge the gap between technical teams and product development, ensuring that products meet technical and business requirements.",21,4
-22,QA Engineer,"QA Engineers test software to ensure its functionality, performance, and security meet quality standards.",22,5
+21,Technical Product Mmanager,"Technical Product Managers bridge the gap between technical teams and product development, ensuring that products meet technical and business requirements.",21,4
+22,Qa Engineer,"QA Engineers test software to ensure its functionality, performance, and security meet quality standards.",22,5
 23,Test Automation Engineer,Test Automation Engineers automate test cases to improve efficiency and consistency in the testing process.,23,5
 24,Cybersecurity Analyst,Cybersecurity Analysts protect an organization's digital assets by identifying and mitigating security threats.,24,6
 25,Security Engineer,Security Engineers design and implement security measures to protect information systems from threats and breaches.,25,6
@@ -29,14 +29,65 @@ specialization_id,title,description,roadmap_id,field_id
 28,Network Engineer,"Network Engineers design, implement, and manage computer networks, ensuring their reliability and security.",28,7
 29,System Administrator,System Administrators maintain and optimize an organization's computer systems and servers.,29,7
 30,Cloud Engineer,"Cloud Engineers design, deploy, and manage cloud infrastructure and services.",30,7
-31,Site Reliability Engineer (SE),SREs focus on maintaining the reliability and availability of software services through automation and collaboration.,31,7
-32,IT Project Mananger,"IT Project Managers oversee the planning, execution, and successful delivery of IT projects.",32,8
+31,Site Reliability Engineer (Se),SREs focus on maintaining the reliability and availability of software services through automation and collaboration.,31,7
+32,It Project Mananger,"IT Project Managers oversee the planning, execution, and successful delivery of IT projects.",32,8
 33,Scrum Master,"Scrum Masters guide Agile teams through the Scrum process, ensuring effective collaboration and delivery.",33,8
-34,IT Business Analyst,"IT Business Analysts bridge the gap between business needs and IT solutions, identifying requirements and process improvements.",34,9
-35,IT Consultant,IT Consultants provide expert advice on IT strategies and solutions to clients.,35,9
+34,It Business Analyst,"IT Business Analysts bridge the gap between business needs and IT solutions, identifying requirements and process improvements.",34,9
+35,It Consultant,IT Consultants provide expert advice on IT strategies and solutions to clients.,35,9
 36,Technology Strategist,Technology Strategists develop long-term plans for technology adoption and innovation within an organization.,36,9
 37,Blockchain Developer,Technology Strategists develop long-term plans for technology adoption and innovation within an organization.,37,10
 38,Quantum Computing Scientist,Quantum Computing Scientists research and develop quantum computing technologies and algorithms.,38,10
-39,Virtual Reality (VR) Developer,VR Developers create immersive virtual reality experiences and applications.,39,10
-40,Augmented Reality (AR) Developer,AR Developers build applications that overlay digital information on the real world using augmented reality.,40,10
+39,Virtual Reality (Vr) Developer,VR Developers create immersive virtual reality experiences and applications.,39,10
+40,Augmented Reality (Ar) Developer,AR Developers build applications that overlay digital information on the real world using augmented reality.,40,10
 41,Edge Computing Engineer,Edge Computing Engineers design and implement computing solutions at the edge of the network to reduce latency and process data closer to the source.',41,10
+42,Application Developer,application developer,42,1
+43,Backend Developer,backend developer,43,1
+44,Business Analyst,business analyst,44,9
+45,C++ Developer,c++ developer,45,1
+46,Consultant,consultant,46,9
+47,Database Administrator,database administrator,47,2
+48,Database Architect/Designer,database architect/designer,48,2
+49,Developer,developer,49,1
+50,Devops Engineer,devops engineer,50,1
+51,Frontend Developer,frontend developer,51,1
+52,Full Stack Developer,full stack developer,52,1
+53,Functional Test Planning,functional test planning,53,5
+54,Graphic Designer,graphic designer,54,3
+55,Hadoop Developer,hadoop developer,55,10
+56,Hardware Engineer,hardware engineer,56,10
+57,Head/Vp/Gm-Technology/Cto,head/vp/gm-technology/cto,57,10
+58,Instructional Designer,instructional designer,58,3
+59,Javascript Developer,javascript developer,59,1
+60,Lead,lead,60,4
+61,Manager,manager,61,4
+62,Network Administrator,network administrator,62,7
+63,Network Engineer,network engineer,63,7
+64,Network Manager,network manager,64,7
+65,Php Developer,php developer,65,1
+66,Program Manager,program manager,66,4
+67,Project Lead,project lead,67,4
+68,Project Manager,project manager,68,4
+69,Python Developer,python developer,69,1
+70,Quality Assurance Engineer,quality assurance engineer,70,5
+71,Reactjs Developer,reactjs developer,71,1
+72,Release Manager,release manager,72,8
+73,Salesforce Developer,salesforce developer,73,9
+74,Senior Programmer,senior programmer,74,10
+75,Servicenow Developer,servicenow developer,75,10
+76,Solution Architect,solution architect,76,9
+77,Solution/Enterprise Architect,solution/enterprise architect,77,9
+78,Subject Matter Expert,subject matter expert,78,9
+79,Support Engineer,support engineer,79,10
+80,Support Engineer/Technician,support engineer/technician,80,10
+81,System Administrator,system administrator,81,7
+82,System Security,system security,82,6
+83,Systems Engineer,systems engineer,83,7
+84,Team/Technical Lead,team/technical lead,84,4
+85,Technical Architect,technical architect,85,9
+86,Technical Content Developer,technical content developer,86,10
+87,Technical Lead,technical lead,87,10
+88,Technical Support Engineer,technical support engineer,88,10
+89,Trainee,trainee,89,10
+90,Trainer/Faculty,trainer/faculty,90,10
+91,Ui/Ux Developer,ui/ux developer,91,3
+92,Web Developer,web developer,92,1
