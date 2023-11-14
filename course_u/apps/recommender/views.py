@@ -53,24 +53,28 @@ def recommender(request):
     # get level of each skill
     user_skills_level = []
     for skill in user_skills_list:
-        user_skills_level.append(UserSkill.objects.filter(user=request.user, skill__skill=skill).first().level)
-    print('user_skills_level: ', user_skills_level)
+        userskill_level = UserSkill.objects.get(user=request.user, skill__skill=skill).level
+        user_skills_level.append(userskill_level)
+        print('skill: ', skill, 'level: ', userskill_level)
+        #user_skills_level.append(UserSkill.objects.filter(user=request.user, skill__skill=skill).first().level)
 
     # create a dictionary of user skills and levels, 
     user_skills_dict = dict(zip(user_skills_list, user_skills_level))
     
     # convert the dictionary to a dataframe, where the columns are the skills and the values are the levels
     user_skills_df = pd.DataFrame.from_dict(user_skills_dict, orient='index').T
-
+    print("user_skills_df: ", user_skills_df)
 
     # fill the missing values with 0
-    user_skills_df = user_skills_df.fillna(0)
+    #user_skills_df = user_skills_df.fillna(0)
 
     # Normalize the user's skills. by getting the sum of the user skills and dividing each skill by the sum. if skill = 0, then = 0
-    normalized_user_skills_df = user_skills_df / user_skills_df.sum(axis=1, skipna=True)
+    skill_sum = user_skills_df.sum(axis=1)
+    print('skill_sum: ', skill_sum)
+    normalized_user_skills_df = user_skills_df.div(skill_sum, axis=0)
 
     # fill the missing values with 0
-    normalized_user_skills_df = normalized_user_skills_df.fillna(0)
+    #normalized_user_skills_df = normalized_user_skills_df.fillna(0)
     print('normalized_user_skills_df: ', normalized_user_skills_df)
     
     specialization_sparse = load_csv(request)
