@@ -10,7 +10,8 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 
 import os
-
+import plotly.express as px
+import plotly.io as pio
 
 def load_csv(request):
     # Assuming your CSV file is in the same folder as your views
@@ -65,6 +66,13 @@ def recommender(request):
     user_skills_df = pd.DataFrame.from_dict(user_skills_dict, orient='index').T
     print("user_skills_df: ", user_skills_df)
 
+
+    # Create a bar plot using Plotly Express
+    fig = px.bar(user_skills_df, title='User Skills Levels', labels={'index': 'Skills', 'value': 'Skill Level'})
+
+    # Convert the figure to HTML
+    skill_plot = pio.to_html(fig, full_html=False)
+
     # fill the missing values with 0
     #user_skills_df = user_skills_df.fillna(0)
 
@@ -97,6 +105,7 @@ def recommender(request):
     field_ids = specialization_sparse_filtered['field_id'].unique()
     
     # Calculate the sum of the cosine similarity scores for each skill in each field.
+    fields_name = []
     fields_score = {}
     for field_id in field_ids:
         # filter specialization_sparse_filtered by field_id
@@ -104,7 +113,24 @@ def recommender(request):
         cosine_similarities = cosine_similarity(normalized_user_skills_df[user_skills_list], specialization_sparse_filtered_by_field[user_skills_list])
         # get total sum score of each field and add to field_score
         fields_score[field_id] = cosine_similarities.sum(axis=1).sum()
+        # get field name
+        field_name = Field.objects.get(field=field_id).field_name
+        fields_name.append(field_name)
 
+    
+    # Create a DataFrame with Field_ID, Field_Name, and Score
+    fields_df = pd.DataFrame(list(zip(field_ids, fields_name, fields_score.values())), columns=['Field_ID', 'Field_Name', 'Score'])
+
+    # Create a pie chart using Plotly Express
+    fig = px.pie(fields_df, values='Score', names='Field_Name', title='Top Field Recommendation Score')
+
+    # set title
+    fig.update_layout(title_text='Top Field Recommendation Score', title_x=0.5)
+
+    # Convert the figure to HTML
+    field_plot = pio.to_html(fig, full_html=False)
+    
+    
     # Sort the fields by the sum of the cosine similarity scores, in descending order.
     top_3_fields = sorted(fields_score, key=fields_score.get, reverse=True)[:3]
     # top fields score
@@ -112,14 +138,21 @@ def recommender(request):
     print('top_3_fields: ', top_3_fields)
     print('top_3_fields_score: ', top_3_fields_score)
     # Get the field names for the top 3 fields.
+    
     field_names = []
     for field_id in top_3_fields:
         field_name = Field.objects.get(field=field_id).field_name
         field_names.append(field_name)
 
-
+    field_name_1 = field_names[0]
+    field_name_2 = field_names[1]
+    field_name_3 = field_names[2]
 
     return render(request, 'recommender/recommender.html', {
         'top_3_specialization_recommendations': top_3_specializations,
-        'field_names': field_names,
+        'field_name_1': field_name_1,
+        'field_name_2': field_name_2,
+        'field_name_3': field_name_3,
+        'skill_plot': skill_plot,
+        'field_plot': field_plot,
     })

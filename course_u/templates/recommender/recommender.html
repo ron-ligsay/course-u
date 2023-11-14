@@ -15,15 +15,18 @@
 
 <h2>Recommender</h2>
 
+<div class="container">
+    {{ field_plot|safe }}
+</div>
+<div class="container">
+    {{ skill_plot|safe }}
+</div>
+
+<h2>Your Top Field Recommendation</h2>
 <ul>
-    {% for specialization in top_3_specialization_recommendations %}
-        <li>{{ specialization }}</li>
-    {% endfor %}
+    <li><a href="">Top 1: {{field_name_1}}</a></li>
+    <li><a href="">Top 2: {{field_name_2}}</a></li>
+    <li><a href="">Top 3: {{field_name_3}}</a></li>
 </ul>
-
-
-{% for field in field_names %}
-    <h4>{{ field }}</h4>
-{% endfor %}
 
 {% endblock content %}
