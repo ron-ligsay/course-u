@@ -114,7 +114,7 @@ def home_field(request, field_id=None):
         'user_recommendations': user_recommendations  # Pass the user recommendations to the template
     })
 
-@admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
+#@admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
 def admin_home(request):
     admin = True
 
