@@ -20,6 +20,7 @@ urlpatterns = [
     
     path('process_incomplete_set/<int:incomplete>/', views.process_incomplete_set, name='process_incomplete_set'),
     path('handle_incomplete_set/<int:incomplete>/', views.handle_incomplete_set, name='handle_incomplete_set'),
+    path('handle_incomplete_user_response/<int:incomplete>/', views.handle_incomplete_user_response, name='handle_incomplete_user_response'),
     path('resume_uncompleted_set/<int:incomplete>/', views.resume_uncompleted_set, name='resume_uncompleted_set'),
     path('recreate_overwritten_test/<int:new_set>/', views.recreate_overwritten_test, name='recreate_overwritten_test'),
     path('create_new_question_set/', views.create_new_question_set, name='create_new_question_set'),
