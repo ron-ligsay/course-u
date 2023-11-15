@@ -60,6 +60,17 @@
         </div>
     </div>
 </div>
+<div class="test-container">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Recommendation</h5>
+                <p class="card-text">Generate your Recommendation based on your Grades, Tests, Personality, and Interests.</p>
+                <a href="{% url 'recommender' %}" class="btn btn-primary">Compute Recommendation</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% else %}
 <!-- 
 <div class="col-md-6 offset-md-3">
