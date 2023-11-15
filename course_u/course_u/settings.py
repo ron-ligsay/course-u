@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-h_s31sn!wtc)#5sf1^c%*nvy)dp3t*5ja)n+g6*(0nw-wge(s=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'courseu_db',
         'USER': 'root',
-        'PASSWORD': 'sql2023',#'sawadeeKA456', #'022002'
+        'PASSWORD': '022002',#'sawadeeKA456', #'022002'
         'HOST': 'localhost',
         'PORT': '3306',
     }
