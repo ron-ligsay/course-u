@@ -190,22 +190,39 @@ def recommendation_field(request, field_id):
     user_skills = UserSkill.objects.filter(user=request.user)
     user_skills_list = [skill.skill.skill for skill in user_skills]
     user_skills_list = list(set(user_skills_list))
-    print('user_skills_list: ', user_skills_list)
+    user_skills_set = set(user_skills_list)
+
+    #print('user_skills_list: ', user_skills_list)
 
     specialization_skills = SpecializationSkills.objects.filter(specialization__field=field_id)
-    specialization_skills = specialization_skills.filter(skill__skill__in=user_skills_list)
-    print('specialization_skills: ', specialization_skills)
+    specialization_skills = specialization_skills.filter(skill__skill__in=user_skills_set)
+
+    # Create a set to store unique skills
+    unique_skills_set = set()
+
+    # Create a list to store the final unique specialization skills
+    specialization_skills_list = []
+
+    # Iterate through the specialization skills and filter duplicates
+    for skill in specialization_skills:
+        skill_name = skill.skill.skill
+        level = skill.level
+        # Check if the skill is not in the set to add it
+        if skill_name not in unique_skills_set:
+            unique_skills_set.add(skill_name)
+            specialization_skills_list.append((skill_name, level))
+
+    # Sort the list by level
+    specialization_skills_list = sorted(specialization_skills_list, key=lambda x: x[1], reverse=True)
 
 
-    # sort by level
-    specialization_skills = specialization_skills.order_by('-level') 
-    # get the name
-    specialization_skills = [(skill.skill.skill, skill.skill.skill, skill.level) for skill in specialization_skills]
-
-    print('specialization_skills: ', specialization_skills)
+    # filter to 10 only
+    specialization_skills_list = specialization_skills_list[:10]
+    print('')
+    print('!!!!specialization_skills: ', specialization_skills_list)
     # specialization, jobs, roadmap
 
     return render(request, 'recommender/recommendation_field.html', {
         'field_object': field_object,
-        'specialization_skills': specialization_skills,
+        'specialization_skills': specialization_skills_list,
     })
