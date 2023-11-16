@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "C:\Users\krstf\course-u\course_u\course_u\wsgi.py",
+        "src": "course_u/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "C:\Users\krstf\course-u\course_u\course_u\wsgi.py"
+            "dest": "course_u/wsgi.py"
         }
     ]
 }
