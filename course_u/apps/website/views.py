@@ -44,26 +44,26 @@ def home(request):
     # Fetch user recommendations
     user_recommendations = None
     recommended_fields = None
-    field_items = []
-    # if request.user.is_authenticated:
-    #     user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+    #field_items = []
+    if request.user.is_authenticated:
+        user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
 
-    # # Create a list to store the recommended fields
-    # recommended_fields = []
+    # Create a list to store the recommended fields
+    recommended_fields = []
 
-    # # Order recommended fields first
-    # if user_recommendations:
-    #     recommended_fields.extend([user_recommendations.field_1, user_recommendations.field_2, user_recommendations.field_3])
+    # Order recommended fields first
+    if user_recommendations:
+        recommended_fields.extend([user_recommendations.field_1, user_recommendations.field_2, user_recommendations.field_3])
 
-    # print("recommended_fields: ", recommended_fields)
+    print("recommended_fields: ", recommended_fields)
 
-    # # Use a list comprehension to get the IDs of the recommended fields
-    # recommended_field_ids = [field.pk for field in recommended_fields]
+    # Use a list comprehension to get the IDs of the recommended fields
+    recommended_field_ids = [field.pk for field in recommended_fields]
 
-    # print("recommended_field_ids: ", recommended_field_ids)
+    print("recommended_field_ids: ", recommended_field_ids)
 
-    # # Filter out the recommended fields from the field_items queryset
-    # field_items = field_items.exclude(pk__in=recommended_field_ids)
+    # Filter out the recommended fields from the field_items queryset
+    field_items = field_items.exclude(pk__in=recommended_field_ids)
 
 
     return render(request, 'home.html', {
@@ -82,33 +82,33 @@ def home_field(request, field_id=None):
     # Fetch user recommendations
     user_recommendations = None
     recommended_fields = []
-    # if request.user.is_authenticated:
-    #     user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+    if request.user.is_authenticated:
+        user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
 
-    # # Create a list to store the recommended fields
-    # recommended_fields = []
+    # Create a list to store the recommended fields
+    recommended_fields = []
 
-    # # Order recommended fields first
-    # if user_recommendations:
-    #     recommended_fields.extend([user_recommendations.field_1, user_recommendations.field_2, user_recommendations.field_3])
+    # Order recommended fields first
+    if user_recommendations:
+        recommended_fields.extend([user_recommendations.field_1, user_recommendations.field_2, user_recommendations.field_3])
 
-    # print("recommended_fields: ", recommended_fields)
+    print("recommended_fields: ", recommended_fields)
 
-    # # Use a list comprehension to get the IDs of the recommended fields
-    # recommended_field_ids = [field.pk for field in recommended_fields]
+    # Use a list comprehension to get the IDs of the recommended fields
+    recommended_field_ids = [field.pk for field in recommended_fields]
 
-    # print("recommended_field_ids: ", recommended_field_ids)
+    print("recommended_field_ids: ", recommended_field_ids)
 
-    # # Filter out the recommended fields from the field_items queryset
-    # field_items = field_items.exclude(pk__in=recommended_field_ids)
+    # Filter out the recommended fields from the field_items queryset
+    field_items = field_items.exclude(pk__in=recommended_field_ids)
 
-    # if field_id is not None:
-    #     selected_field = get_object_or_404(Field, field=field_id)
-    #     specialization_items = Specialization.objects.filter(field=selected_field)
-    #     #messages.success(request, "specialization items is filtered")
-    # else:
-    #     specialization_items = Specialization.objects.all()
-    #     messages.success(request, "specialization items is not filtered")
+    if field_id is not None:
+        selected_field = get_object_or_404(Field, field=field_id)
+        specialization_items = Specialization.objects.filter(field=selected_field)
+        #messages.success(request, "specialization items is filtered")
+    else:
+        specialization_items = Specialization.objects.all()
+        messages.success(request, "specialization items is not filtered")
 
     specialization_items = Specialization.objects.all()
     
