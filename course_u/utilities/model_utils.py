@@ -212,7 +212,7 @@ def static_csv_table_mapping():
             'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT NULL"]
         },
         BASE_DIR + '\\static\\csv\\user_recommendations.csv': {
-            'table_name': 'website_userrecommendations',
+            'table_name': 'recommender_userrecommendations',
             'model_name': 'UserRecommendations',
             'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
             'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
