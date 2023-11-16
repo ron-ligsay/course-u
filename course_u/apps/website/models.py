@@ -11,6 +11,7 @@ class Field(models.Model):
     field = models.AutoField(primary_key=True)
     field_name = models.CharField(max_length=150)
     description = models.CharField(max_length=1000)
+    explanation = models.CharField(max_length=1000, default='')
 
     def __str__(self):
         return self.field_name
