@@ -20,13 +20,13 @@ class Command(BaseCommand):
             # 'django_content_type', 'django_migrations', 'django_session', 
 
             'jobs_jobposting',
-            'website_specialization', 'website_field','website_userprofile', 'website_skill', 'website_userrecommendations'
+            'website_specialization', 'website_field','website_userprofile', 'website_skill', 'recommender_userrecommendations'
             ]
 
         table_skill = [
             'acad_subject_skills', 'assessment_test_skills', 'personality_indicator_skills','website_specializationskills', 
             'recommender_userskillsource','recommender_userskill',
-            'website_skill', 'website_userrecommendations'
+            'website_skill', 'recommender_userrecommendations'
         ]
         
         table_names = [
