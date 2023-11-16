@@ -17,7 +17,7 @@ from apps.assessment.utils import get_test_questions, get_test_question_by_id, c
 from apps.assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
 from apps.assessment.models import Test, QuestionSet, UserResponse
 
-from apps.website.models import Field, Specialization, UserRecommendations, Skill
+from apps.website.models import Field, Specialization, Skill
 
 # Other Imports
 import plotly.express as px
@@ -558,22 +558,22 @@ def student_test_report(request, question_set_id):
 
     
      # Save recommendation to UserRecommendation
-    user_recommendation = UserRecommendations.objects.create(
-        user=request.user,
-        field_1=top_fields[0],
-        field_2=top_fields[1],
-        field_3=top_fields[2],
-        score_1=top_fields[0].total_correct,
-        score_2=top_fields[1].total_correct,
-        score_3=top_fields[2].total_correct,
-        # Additional Info Goes here, for example explanation of the recommendation
-    )  
+    # user_recommendation = UserRecommendations.objects.create(
+    #     user=request.user,
+    #     field_1=top_fields[0],
+    #     field_2=top_fields[1],
+    #     field_3=top_fields[2],
+    #     score_1=top_fields[0].total_correct,
+    #     score_2=top_fields[1].total_correct,
+    #     score_3=top_fields[2].total_correct,
+    #     # Additional Info Goes here, for example explanation of the recommendation
+    # )  
 
-    # Save the recommendation 
-    user_recommendation.save()
+    # # Save the recommendation 
+    # user_recommendation.save()
 
-    # check  if user_recommendation is saved
-    print("user_recommendation: ", user_recommendation)
+    # # check  if user_recommendation is saved
+    # print("user_recommendation: ", user_recommendation)
 
     # Get a count of correct user responses for each skill
     skill_correct_counts = Skill.objects.filter(

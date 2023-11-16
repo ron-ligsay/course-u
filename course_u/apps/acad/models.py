@@ -34,7 +34,7 @@ class StudentProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_student = models.BooleanField(default=False)
     enrolled_courses = models.ForeignKey('Course', on_delete=models.SET_NULL, null=True, blank=True)
-    current_year = models.PositiveIntegerField(null=True, blank=True)
+    current_year = models.PositiveIntegerField(null=True, blank=True, default=0)
 
     def __str__(self):
         return self.user.username
