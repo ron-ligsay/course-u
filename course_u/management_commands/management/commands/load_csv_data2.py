@@ -26,8 +26,8 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\website_field.csv': {
                 'table_name': 'website_field',
                 'model_name' : 'Field',
-                'columns' : ['field','field_name','description'],
-                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
+                'columns' : ['field','field_name','description','explanation'],
+                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)', 'VARCHAR(1000)']
             },
             # base_dir + '\\static\\csv\\userdb.csv': {
             #     'table_name': 'userdb',
@@ -157,7 +157,7 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\acad_studentprofile.csv': {
                 'table_name': 'acad_studentprofile',
                 'model_name': 'StudentProfile',
-                'columns':  ["id","is_student","current_year","enrolled_courses","user_id"],
+                'columns':  ["id","is_student","current_year","enrolled_courses_id","user_id"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "BOOLEAN","INT","INT","VARCHAR(100)"]
             },
             base_dir + '\\static\\csv\\recommender_userskillsource.csv': {

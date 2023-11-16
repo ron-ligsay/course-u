@@ -9,8 +9,8 @@ class Command(BaseCommand):
         #table_names = connection.introspection.table_names()
         #print(table_names)
         table_names1 = [ # Ordered by dependency
-            'acad_curriculum','acad_studentgrades','acad_studentprofile','acad_course','acad_subject', 'acad_subject_skills', 
-            'assessment_userresponse','assessment_questionset', 'assessment_test', 'assessment_test_skills',
+            'acad_curriculum','acad_studentgrades','acad_studentprofile','acad_course','acad_subject_skills', 'acad_subject', 
+            'assessment_userresponse','assessment_questionset', 'assessment_test_skills','assessment_test', 
             
             'personality_mbtiresponse', 'personality_mbti', 'personality_mbtiset', 'personality_indicator_skills','personality_indicator',
             'recommender_userskillsource','recommender_userskill',
@@ -20,13 +20,15 @@ class Command(BaseCommand):
             # 'django_content_type', 'django_migrations', 'django_session', 
 
             'jobs_jobposting',
-            'website_specialization', 'website_field','website_userprofile', 'website_skill', 'recommender_userrecommendations'
+            'website_specializationskills','website_specialization',  'recommender_userrecommendations',
+            'website_field', 'website_skill', 
+            #'website_userprofile',
             ]
 
         table_skill = [
             'acad_subject_skills', 'assessment_test_skills', 'personality_indicator_skills','website_specializationskills', 
             'recommender_userskillsource','recommender_userskill',
-            'website_skill', 'recommender_userrecommendations'
+            'website_skill',
         ]
         
         table_names = [
@@ -49,7 +51,7 @@ class Command(BaseCommand):
             'assessment_userresponse'
         ]
 
-        # Iterate through the table names and delete each table
+        # Iterate through the table names and delete table contents!!!! ONLY
         with connection.cursor() as cursor:
             for table_name in table_names1:
                 #cursor.execute(f"DROP TABLE {table_name};")
