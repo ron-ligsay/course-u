@@ -1,0 +1,2 @@
+INFO 2023-11-17 18:30:08,958 django.utils.autoreload autoreload autoreload.py 266 trigger_reload C:\Users\aky\AppData\Local\Programs\Python\Python38\course_test\course-u\course_u\course_u\settings.py changed, reloading.
+INFO 2023-11-17 18:30:12,307 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
