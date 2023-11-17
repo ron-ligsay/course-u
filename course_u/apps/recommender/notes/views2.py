@@ -17,8 +17,7 @@ import plotly.io as pio
 
 def load_csv(request):
     # Assuming your CSV file is in the same folder as your views
-    #csv_file_name = 'specialization_sparse.csv'
-    csv_file_name = 'normalized_field_skills.csv'
+    csv_file_name = 'specialization_sparse.csv'
     csv_file_path = os.path.join(os.path.dirname(__file__), csv_file_name)
 
     try:
@@ -37,87 +36,90 @@ def load_csv(request):
 
         return specialization_sparse
 
-# import minmaxscaler
-from sklearn.preprocessing import MinMaxScaler
+
 
 def recommender(request):
     # Get the user's skills from the request.
     user_skills = UserSkill.objects.filter(user=request.user)
+
+    # Get a list of user skill titles
     user_skills_list = [skill.skill.skill for skill in user_skills]
+
+    # unique user skills
     user_skills_list = list(set(user_skills_list))
+    #print('user_skills_list: ', user_skills_list)
+
+    # convert to list
     user_skills_list = list(user_skills_list)
-    
+    #print("type: ", type(user_skills_list))
+
     # get level of each skill
     user_skills_level = []
     for skill in user_skills_list:
         userskill_level = UserSkill.objects.get(user=request.user, skill__skill=skill).level
         user_skills_level.append(userskill_level)
+        #print('skill: ', skill, 'level: ', userskill_level)
+        #user_skills_level.append(UserSkill.objects.filter(user=request.user, skill__skill=skill).first().level) - not used
 
+    # create a dictionary of user skills and levels, 
     user_skills_dict = dict(zip(user_skills_list, user_skills_level))
     
+    # convert the dictionary to a dataframe, where the columns are the skills and the values are the levels
     user_skills_df = pd.DataFrame.from_dict(user_skills_dict, orient='index').T
+    #print("user_skills_df: ", user_skills_df)
+
 
     # Create a bar plot using Plotly Express
     fig = px.bar(user_skills_df, title='User Skills Levels', labels={'index': 'Skills', 'value': 'Skill Level'})
+
+    # Convert the figure to HTML
     skill_plot = pio.to_html(fig, full_html=False)
 
     # fill the missing values with 0
     #user_skills_df = user_skills_df.fillna(0) - not used
 
     # Normalize the user's skills. by getting the sum of the user skills and dividing each skill by the sum. if skill = 0, then = 0
-    #skill_sum = user_skills_df.sum(axis=1)
-    #normalized_user_skills_df = user_skills_df.div(skill_sum, axis=0)
+    skill_sum = user_skills_df.sum(axis=1)
+    #print('skill_sum: ', skill_sum)
+    normalized_user_skills_df = user_skills_df.div(skill_sum, axis=0)
 
-
-    # use minmaxscaler
-    scaler = MinMaxScaler()
-    normalized_user_skills_df = pd.DataFrame(scaler.fit_transform(user_skills_df), columns=user_skills_df.columns, index=user_skills_df.index)
-
-    normalized_field_skills = load_csv(request)
-
-    normalized_user_skills_df_columns = normalized_user_skills_df.columns
-    normalized_field_skills_columns = normalized_field_skills.columns
-
-    # get the intersection of the two dataframes
-    intersection_columns = normalized_user_skills_df_columns.intersection(normalized_field_skills_columns)
-
-    # to list for filtering
-    intersection_columns = list(intersection_columns)
-
-    print('intersection_columns: ', intersection_columns)
-
+    # fill the missing values with 0
+    #normalized_user_skills_df = normalized_user_skills_df.fillna(0) - not used
+    #print('normalized_user_skills_df: ', normalized_user_skills_df)
+    
+    specialization_sparse = load_csv(request)
 
     # Filter the specialization data frame columns by the user's skills. except the first and second columns
-    normalized_field_skills_filtered = normalized_field_skills[['field_id'] + intersection_columns]
+    specialization_sparse_filtered = specialization_sparse[['title','field_id'] + user_skills_list]
     # remove rows with all 0
-    normalized_field_skills_filtered = normalized_field_skills_filtered[(normalized_field_skills_filtered[intersection_columns] != 0).any(axis=1)]
+    specialization_sparse_filtered = specialization_sparse_filtered[(specialization_sparse_filtered[user_skills_list] != 0).any(axis=1)]
 
 
-    cosine_similarities = cosine_similarity(normalized_user_skills_df[intersection_columns], normalized_field_skills_filtered[intersection_columns])
+    #print('specialization_sparse_filtered: ', specialization_sparse_filtered)
+
+    cosine_similarities = cosine_similarity(normalized_user_skills_df[user_skills_list], specialization_sparse_filtered[user_skills_list])
     top_3_indices = cosine_similarities.argsort(axis=1)[:, -3:]
-    top_3_field = normalized_field_skills_filtered.iloc[:, 0].values[top_3_indices]
-    print('top_3_field: ', top_3_field)
+    top_3_specializations = specialization_sparse_filtered.iloc[:, 0].values[top_3_indices]
+    #print('top_3_specializations: ', top_3_specializations)
 
     
     # get unique field_id
-    field_ids = normalized_field_skills_filtered['field_id'].unique()
+    field_ids = specialization_sparse_filtered['field_id'].unique()
     
-    # Create a dictionary to store the field names and the sum of the cosine similarity scores
+    # Calculate the sum of the cosine similarity scores for each skill in each field.
+    fields_name = []
     fields_score = {}
     for field_id in field_ids:
         # filter specialization_sparse_filtered by field_id
-        normalized_field_skills_filtered_by_field = normalized_field_skills_filtered[normalized_field_skills_filtered['field_id'] == field_id]
-        # Calculate the sum of the cosine similarity scores for each skill in each field.
-        fields_score[field_id] = normalized_field_skills_filtered_by_field.iloc[:, 1:].sum(axis=1).sum()
-    
-    # get field names
-    fields_name = []
-    for field_id in field_ids:
+        specialization_sparse_filtered_by_field = specialization_sparse_filtered[specialization_sparse_filtered['field_id'] == field_id]
+        cosine_similarities = cosine_similarity(normalized_user_skills_df[user_skills_list], specialization_sparse_filtered_by_field[user_skills_list])
+        # get total sum score of each field and add to field_score
+        fields_score[field_id] = cosine_similarities.sum(axis=1).sum()
+        # get field name
         field_name = Field.objects.get(field=field_id).field_name
         fields_name.append(field_name)
 
-
-
+    
     # Create a DataFrame with Field_ID, Field_Name, and Score
     fields_df = pd.DataFrame(list(zip(field_ids, fields_name, fields_score.values())), columns=['Field_ID', 'Field_Name', 'Score'])
 
@@ -170,7 +172,7 @@ def recommender(request):
 
 
     return render(request, 'recommender/recommender.html', {
-        'top_3_field_recommendations': top_3_field,
+        'top_3_specialization_recommendations': top_3_specializations,
         'field_name_1': field_name_1,
         'field_name_2': field_name_2,
         'field_name_3': field_name_3,
