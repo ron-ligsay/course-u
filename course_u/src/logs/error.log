@@ -4841,3 +4841,624 @@ ERROR 2023-11-16 18:39:56,663 django.server Thread-1 (process_request_thread) 83
 WARNING 2023-11-16 19:15:30,621 django.request Thread-3 (process_request_thread) 16964 log log.py 241 django.request log_response 12896 Not Found: /favicon.ico
 WARNING 2023-11-16 19:15:30,624 django.server Thread-3 (process_request_thread) 16964 basehttp basehttp.py 212 django.server log_message 12896 "GET /favicon.ico HTTP/1.1" 404 23514
 WARNING 2023-11-16 19:16:14,927 django.server Thread-10 (process_request_thread) 9152 basehttp basehttp.py 212 django.server log_message 12896 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+WARNING 2023-11-17 09:15:12,189 django.request Thread-1 (process_request_thread) 15596 log log.py 241 django.request log_response 1484 Not Found: /favicon.ico
+WARNING 2023-11-17 09:15:12,192 django.server Thread-1 (process_request_thread) 15596 basehttp basehttp.py 212 django.server log_message 1484 "GET /favicon.ico HTTP/1.1" 404 23727
+ERROR 2023-11-17 09:15:18,330 django.request Thread-1 (process_request_thread) 15596 log log.py 241 django.request log_response 1484 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 09:15:18,467 django.server Thread-1 (process_request_thread) 15596 basehttp basehttp.py 212 django.server log_message 1484 "GET /home HTTP/1.1" 500 203964
+WARNING 2023-11-17 09:29:58,567 django.request Thread-1 (process_request_thread) 17720 log log.py 241 django.request log_response 10252 Not Found: /favicon.ico
+WARNING 2023-11-17 09:29:58,569 django.server Thread-1 (process_request_thread) 17720 basehttp basehttp.py 212 django.server log_message 10252 "GET /favicon.ico HTTP/1.1" 404 23727
+ERROR 2023-11-17 09:30:01,505 django.request Thread-3 (process_request_thread) 11756 log log.py 241 django.request log_response 10252 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 09:30:01,615 django.server Thread-3 (process_request_thread) 11756 basehttp basehttp.py 212 django.server log_message 10252 "GET /home HTTP/1.1" 500 204035
+ERROR 2023-11-17 09:32:04,392 django.request Thread-13 (process_request_thread) 16888 log log.py 241 django.request log_response 10252 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 09:32:04,465 django.server Thread-13 (process_request_thread) 16888 basehttp basehttp.py 212 django.server log_message 10252 "GET /home HTTP/1.1" 500 203979
+WARNING 2023-11-17 09:32:14,734 django.server Thread-16 (process_request_thread) 6480 basehttp basehttp.py 212 django.server log_message 10252 "GET /static/images/2.jpg HTTP/1.1" 404 1795
+ERROR 2023-11-17 09:32:19,041 django.request Thread-15 (process_request_thread) 13072 log log.py 241 django.request log_response 10252 Internal Server Error: /admin_home/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'website_field.explanation' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 137, in admin_home
+    field_name = Field.objects.get(field=field_id).field_name  # Get the field name
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'website_field.explanation' in 'field list'")
+ERROR 2023-11-17 09:32:19,146 django.server Thread-15 (process_request_thread) 13072 basehttp basehttp.py 212 django.server log_message 10252 "GET /admin_home/ HTTP/1.1" 500 191549
+ERROR 2023-11-17 09:40:52,012 django.request Thread-1 (process_request_thread) 8384 log log.py 241 django.request log_response 18872 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 09:40:52,076 django.server Thread-1 (process_request_thread) 8384 basehttp basehttp.py 212 django.server log_message 18872 "GET /home HTTP/1.1" 500 204034
+WARNING 2023-11-17 09:40:59,132 django.request Thread-2 (process_request_thread) 5540 log log.py 241 django.request log_response 18872 Not Found: /text_home
+WARNING 2023-11-17 09:40:59,135 django.server Thread-2 (process_request_thread) 5540 basehttp basehttp.py 212 django.server log_message 18872 "GET /text_home HTTP/1.1" 404 23718
+ERROR 2023-11-17 09:54:33,710 django.request Thread-1 (process_request_thread) 8408 log log.py 241 django.request log_response 10512 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 09:54:33,758 django.server Thread-1 (process_request_thread) 8408 basehttp basehttp.py 212 django.server log_message 10512 "GET /home HTTP/1.1" 500 204034
+ERROR 2023-11-17 09:56:47,122 django.request Thread-2 (process_request_thread) 17600 log log.py 241 django.request log_response 18604 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 09:56:47,174 django.server Thread-2 (process_request_thread) 17600 basehttp basehttp.py 212 django.server log_message 18604 "GET /home HTTP/1.1" 500 204034
+ERROR 2023-11-17 11:06:47,890 django.request Thread-1 (process_request_thread) 16756 log log.py 241 django.request log_response 15792 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 11:06:47,931 django.server Thread-1 (process_request_thread) 16756 basehttp basehttp.py 212 django.server log_message 15792 "GET /home HTTP/1.1" 500 204037
+ERROR 2023-11-17 11:16:43,417 django.request Thread-1 (process_request_thread) 10696 log log.py 241 django.request log_response 2180 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 11:16:43,467 django.server Thread-1 (process_request_thread) 10696 basehttp basehttp.py 212 django.server log_message 2180 "GET /home HTTP/1.1" 500 204035
+ERROR 2023-11-17 11:18:15,006 django.request Thread-1 (process_request_thread) 8280 log log.py 241 django.request log_response 16176 Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 11:18:15,112 django.server Thread-1 (process_request_thread) 8280 basehttp basehttp.py 212 django.server log_message 16176 "GET /home HTTP/1.1" 500 203967
+WARNING 2023-11-17 11:32:33,381 django.request Thread-27 (process_request_thread) 6416 log log.py 241 django.request log_response 16176 Not Found: /test_home/images/course.png
+WARNING 2023-11-17 11:32:33,382 django.server Thread-27 (process_request_thread) 6416 basehttp basehttp.py 212 django.server log_message 16176 "GET /test_home/images/course.png HTTP/1.1" 404 23790
+WARNING 2023-11-17 11:33:14,794 django.request Thread-28 (process_request_thread) 11540 log log.py 241 django.request log_response 16176 Not Found: /test_home/images/favicon.png
+WARNING 2023-11-17 11:33:14,799 django.server Thread-28 (process_request_thread) 11540 basehttp basehttp.py 212 django.server log_message 16176 "GET /test_home/images/favicon.png HTTP/1.1" 404 23794
