@@ -34,20 +34,21 @@
 <br><br>
 
 <div>
+    <h4>Explore more about the possible future path for you.</h4>
     <div class="card">
         <p>Specialization</p>
-        <a href="" class="btn">Specializations</a>
+        <a href="{% url 'recommendation_specialization' field_id=field_object.field  %}" class="btn">Specializations</a>
     </div>
     <br>
     <div class="card">
         <p>Roadmap</p>
-        <a href="" class="btn">Roadmap</a>
+        <a href="{% url 'recommendation_course' field_id=field_object.field %}" class="btn">Roadmap</a>
     </div>
     <br>
     <div class="card">
         <p>Jobs</p>
-        <a href="" class="btn">Jobs</a>
+        <a href="{% url 'recommendation_jobs' field_id=field_object.field %}" class="btn">Jobs</a>
     </div>
 </div>
-
+<br><br><br>
 {% endblock content %}

@@ -47,19 +47,42 @@ def recommender(request):
     user_skills_list = list(set(user_skills_list))
     user_skills_list = list(user_skills_list)
     
+
+    normalized_field_skills = load_csv(request)
+
+    normalized_user_skills_df_columns = user_skills_list
+    
+    normalized_field_skills_columns = normalized_field_skills.columns
+    # convert to list
+    normalized_field_skills_columns = list(normalized_field_skills_columns)
+
+    # get the intersection of the two dataframes
+    #intersection_columns = normalized_user_skills_df_columns.intersection(normalized_field_skills_columns)
+    intersection_columns = set(normalized_user_skills_df_columns).intersection(set(normalized_field_skills_columns))
+
+
+    # to list for filtering
+    intersection_columns = list(intersection_columns)
+
+    #print('intersection_columns: ', intersection_columns)
+
+
     # get level of each skill
     user_skills_level = []
-    for skill in user_skills_list:
+    for skill in intersection_columns:
         userskill_level = UserSkill.objects.get(user=request.user, skill__skill=skill).level
         user_skills_level.append(userskill_level)
 
-    user_skills_dict = dict(zip(user_skills_list, user_skills_level))
+
+    user_skills_dict = dict(zip(intersection_columns, user_skills_level))
     
     user_skills_df = pd.DataFrame.from_dict(user_skills_dict, orient='index').T
 
-    # Create a bar plot using Plotly Express
-    fig = px.bar(user_skills_df, title='User Skills Levels', labels={'index': 'Skills', 'value': 'Skill Level'})
-    skill_plot = pio.to_html(fig, full_html=False)
+        
+    # use minmaxscaler
+    scaler = MinMaxScaler()
+    normalized_user_skills_df = pd.DataFrame(scaler.fit_transform(user_skills_df), columns=user_skills_df.columns, index=user_skills_df.index)
+
 
     # fill the missing values with 0
     #user_skills_df = user_skills_df.fillna(0) - not used
@@ -69,22 +92,6 @@ def recommender(request):
     #normalized_user_skills_df = user_skills_df.div(skill_sum, axis=0)
 
 
-    # use minmaxscaler
-    scaler = MinMaxScaler()
-    normalized_user_skills_df = pd.DataFrame(scaler.fit_transform(user_skills_df), columns=user_skills_df.columns, index=user_skills_df.index)
-
-    normalized_field_skills = load_csv(request)
-
-    normalized_user_skills_df_columns = normalized_user_skills_df.columns
-    normalized_field_skills_columns = normalized_field_skills.columns
-
-    # get the intersection of the two dataframes
-    intersection_columns = normalized_user_skills_df_columns.intersection(normalized_field_skills_columns)
-
-    # to list for filtering
-    intersection_columns = list(intersection_columns)
-
-    print('intersection_columns: ', intersection_columns)
 
 
     # Filter the specialization data frame columns by the user's skills. except the first and second columns
@@ -93,10 +100,11 @@ def recommender(request):
     normalized_field_skills_filtered = normalized_field_skills_filtered[(normalized_field_skills_filtered[intersection_columns] != 0).any(axis=1)]
 
 
+
     cosine_similarities = cosine_similarity(normalized_user_skills_df[intersection_columns], normalized_field_skills_filtered[intersection_columns])
     top_3_indices = cosine_similarities.argsort(axis=1)[:, -3:]
     top_3_field = normalized_field_skills_filtered.iloc[:, 0].values[top_3_indices]
-    print('top_3_field: ', top_3_field)
+    #print('top_3_field: ', top_3_field)
 
     
     # get unique field_id
@@ -116,6 +124,46 @@ def recommender(request):
         field_name = Field.objects.get(field=field_id).field_name
         fields_name.append(field_name)
 
+
+
+    # Calculate the field with the highest matching for each skill
+    user_skills_field = []
+    for skill in intersection_columns:
+        # Assuming normalized_user_skills_df has a column for each field and a row for each skill
+        #field = normalized_field_skills_filtered[skill].idxmax()
+        # Assuming field_id is a column in normalized_field_skills_filtered
+        field_id = normalized_field_skills_filtered.loc[normalized_field_skills_filtered[skill].idxmax(), 'field_id']
+        field = Field.objects.get(field=field_id).field_name
+        user_skills_field.append(field)
+    
+    # Create a DataFrame
+    user_skills_df = pd.DataFrame({
+        'skill': intersection_columns,
+        'level': user_skills_level,
+        'field': user_skills_field,
+    })
+
+    # Create a bar plot using Plotly Express
+    #fig = px.bar(user_skills_df, title='User Skills Levels', labels={'index': 'Skills', 'value': 'Skill Level'})
+    
+    # sort df by field then by level
+    user_skills_df = user_skills_df.sort_values(by=['field', 'level'], ascending=False)
+
+    fig = px.bar(
+        x=user_skills_df['skill'],
+        y=user_skills_df['level'],
+        color=user_skills_df['field'],
+        #facet_col=user_skills_df['field'],
+        title='User Skills Levels',
+        labels={'index': 'Skills', 'value': 'Skill Level'},
+        #color_continuous_scale=px.colors.sequential.Plasma,
+    )
+    
+    # x and y title
+    fig.update_xaxes(title_text='Skills')
+    fig.update_yaxes(title_text='Skill Level')
+
+    skill_plot = pio.to_html(fig, full_html=False)
 
 
     # Create a DataFrame with Field_ID, Field_Name, and Score
@@ -138,8 +186,8 @@ def recommender(request):
     top_3_fields = sorted(fields_score, key=fields_score.get, reverse=True)[:3]
     # top fields score
     top_3_fields_score = [fields_score[field_id] for field_id in top_3_fields]
-    print('top_3_fields: ', top_3_fields)
-    print('top_3_fields_score: ', top_3_fields_score)
+    #print('top_3_fields: ', top_3_fields)
+    #print('top_3_fields_score: ', top_3_fields_score)
     # Get the field names for the top 3 fields.
     
 
@@ -219,11 +267,91 @@ def recommendation_field(request, field_id):
 
     # filter to 10 only
     specialization_skills_list = specialization_skills_list[:10]
-    print('')
-    print('!!!!specialization_skills: ', specialization_skills_list)
+    #print('')
+    #print('!!!!specialization_skills: ', specialization_skills_list)
     # specialization, jobs, roadmap
 
     return render(request, 'recommender/recommendation_field.html', {
         'field_object': field_object,
         'specialization_skills': specialization_skills_list,
+    })
+
+
+def recommendation_specialization(request, field_id):
+
+    field = Field.objects.get(field=field_id)
+
+    # get specialization
+    specialization = Specialization.objects.filter(field=field_id)
+
+    # get specialization skills
+    specialization_skills = SpecializationSkills.objects.filter(specialization__field=field_id)
+
+    # get user skills
+    user_skills = UserSkill.objects.filter(user=request.user)
+    user_skills_list = [skill.skill.skill for skill in user_skills]
+    user_skills_list = list(set(user_skills_list))
+    user_skills_set = set(user_skills_list)
+
+    # Create a set to store unique skills
+    unique_skills_set = set()
+
+    # Create a list to store the final unique specialization skills
+    specialization_skills_list = []
+
+    # Iterate through the specialization skills and filter duplicates
+    for skill in specialization_skills:
+        skill_name = skill.skill.skill
+        level = skill.level
+        # Check if the skill is not in the set to add it
+        if skill_name not in unique_skills_set:
+            unique_skills_set.add(skill_name)
+            specialization_skills_list.append((skill_name, level))
+
+    # Sort the list by level
+    specialization_skills_list = sorted(specialization_skills_list, key=lambda x: x[1], reverse=True)
+
+    # filter to 10 only
+    specialization_skills_list = specialization_skills_list[:10]
+
+    # get specialization jobs
+    #specialization_jobs = specialization[0].jobs.all()
+
+    # get specialization roadmap
+    #specialization_roadmap = specialization[0].roadmap
+
+    return render(request, 'recommender/recommendation_specialization.html', {
+        'field': field,
+        'specializations': specialization,
+        'specialization': specialization[0],
+        'specialization_skills': specialization_skills_list,
+        #'specialization_jobs': specialization_jobs,
+        #'specialization_roadmap': specialization_roadmap,
+    })
+
+
+def recommendation_course(request, field_id):
+    field = Field.objects.get(field=field_id)
+    #specialization = Specialization.objects.get(id=specialization_id)
+    #roadmap = specialization.roadmap
+
+    return render(request, 'recommender/recommendation_course.html', {
+        'field': field,
+        #'specialization': specialization,
+        #'roadmap': roadmap,
+    })
+
+from apps.jobs.models import JobPosting
+
+def recommendation_jobs(request, field_id):
+    field = Field.objects.get(field=field_id)
+    #specialization = Specialization.objects.get(id=specialization_id)
+    #jobs = specialization.jobs.all()
+
+    jobs = JobPosting.objects.all()
+
+    return render(request, 'recommender/recommendation_jobs.html', {
+        'field': field,
+        #'specialization': specialization,
+        'jobs': jobs,
     })

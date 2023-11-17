@@ -1,0 +1,34 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Recommender{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+
+{% endblock head_extra %}
+
+{% block content %}
+
+<p><a href="">recommendation</a>/<a href="">{{ field.field_name}}</a>/jobs</p>
+<br>
+<h2>Jobs for <b>{{ field.field_name}}</b></h2>
+<p>Explore more about the possible jobs in this Field</p>
+<br>
+{% for job in jobs %}
+<div>
+    <br>
+    <h4>{{ job.job_title}}</h4>
+    <a href="#" class="btn">Apply</a>
+</div>
+{% endfor %}
+
+
+<br><br><br>
+
+
+
+{% endblock content %}
