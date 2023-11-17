@@ -1665,3 +1665,589 @@ INFO 2023-11-17 12:23:50,071 django.server basehttp basehttp.py 212 log_message 
 INFO 2023-11-17 12:23:50,074 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
 INFO 2023-11-17 12:23:50,085 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
 INFO 2023-11-17 12:23:52,569 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+INFO 2023-11-17 12:47:12,589 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-17 12:47:20,469 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9438
+INFO 2023-11-17 12:47:22,428 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+ERROR 2023-11-17 12:47:22,570 django.request log log.py 241 log_response Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 12:47:22,614 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 500 204037
+INFO 2023-11-17 12:47:30,132 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+INFO 2023-11-17 12:47:30,187 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 990
+INFO 2023-11-17 12:47:30,201 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5083
+INFO 2023-11-17 12:47:30,238 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.png HTTP/1.1" 304 0
+INFO 2023-11-17 12:47:30,239 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 200 10167
+INFO 2023-11-17 12:47:30,251 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 200 7290
+INFO 2023-11-17 12:47:30,256 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 200 9464
+INFO 2023-11-17 12:48:31,736 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18298
+INFO 2023-11-17 12:48:33,471 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+INFO 2023-11-17 12:48:49,981 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-17 12:48:56,314 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-17 12:48:58,192 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+ERROR 2023-11-17 12:48:58,323 django.request log log.py 241 log_response Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 12:48:58,375 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 500 204035
+INFO 2023-11-17 12:49:08,395 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+INFO 2023-11-17 12:50:12,514 django.server basehttp basehttp.py 212 log_message "GET /profile/ HTTP/1.1" 200 15285
+INFO 2023-11-17 12:50:12,538 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5084
+INFO 2023-11-17 12:50:32,537 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18298
+INFO 2023-11-17 12:50:32,577 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5084
+INFO 2023-11-17 12:51:43,987 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-17 12:52:06,747 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-17 12:52:09,402 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+ERROR 2023-11-17 12:52:09,568 django.request log log.py 241 log_response Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 12:52:09,611 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 500 204035
+INFO 2023-11-17 12:52:15,949 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+INFO 2023-11-17 12:52:15,996 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 12:52:16,005 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2023-11-17 12:52:16,026 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5088
+INFO 2023-11-17 12:52:16,039 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
+INFO 2023-11-17 12:52:16,173 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:03:00,502 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18298
+INFO 2023-11-17 13:03:00,522 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 200 5088
+INFO 2023-11-17 13:03:00,543 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:03:00,543 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:03:00,551 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:03:00,558 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:03:00,561 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:03:05,453 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+ERROR 2023-11-17 13:03:06,679 django.request log log.py 241 log_response Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 13:03:06,712 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 500 203974
+INFO 2023-11-17 13:07:12,374 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18345
+INFO 2023-11-17 13:07:12,396 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:07:12,408 django.server basehttp basehttp.py 212 log_message "GET /static/images/logo.png HTTP/1.1" 304 0
+WARNING 2023-11-17 13:07:12,409 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.png HTTP/1.1" 404 1813
+INFO 2023-11-17 13:07:12,446 django.server basehttp basehttp.py 212 log_message "GET /static/images/favicon.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:07:33,398 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18345
+WARNING 2023-11-17 13:07:33,435 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.png HTTP/1.1" 404 1813
+WARNING 2023-11-17 13:07:33,436 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.jpg HTTP/1.1" 404 1810
+INFO 2023-11-17 13:07:34,797 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18344
+WARNING 2023-11-17 13:07:34,836 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.jpg HTTP/1.1" 404 1810
+WARNING 2023-11-17 13:07:34,836 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.png HTTP/1.1" 404 1813
+INFO 2023-11-17 13:07:49,512 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18345
+INFO 2023-11-17 13:07:49,557 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:07:49,596 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 200 15533
+INFO 2023-11-17 13:08:01,966 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18344
+INFO 2023-11-17 13:08:28,457 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18345
+INFO 2023-11-17 13:08:28,486 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 304 0
+INFO 2023-11-17 13:08:40,082 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18344
+INFO 2023-11-17 13:14:21,913 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18343
+INFO 2023-11-17 13:14:21,953 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:14:21,953 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:14:21,968 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:14:21,970 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:14:21,975 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:14:21,982 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:14:22,012 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 200 12427
+INFO 2023-11-17 13:14:44,708 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18345
+INFO 2023-11-17 13:14:44,722 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 304 0
+INFO 2023-11-17 13:15:12,423 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18343
+INFO 2023-11-17 13:15:12,439 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 304 0
+INFO 2023-11-17 13:15:24,099 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18345
+INFO 2023-11-17 13:15:25,407 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18343
+ERROR 2023-11-17 13:23:30,138 django.request log log.py 241 log_response Internal Server Error: /admin_home/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'website_field.explanation' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 137, in admin_home
+    field_name = Field.objects.get(field=field_id).field_name  # Get the field name
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'website_field.explanation' in 'field list'")
+ERROR 2023-11-17 13:23:30,249 django.server basehttp basehttp.py 212 log_message "GET /admin_home/ HTTP/1.1" 500 191546
+INFO 2023-11-17 13:26:23,196 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18362
+INFO 2023-11-17 13:26:23,233 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:26:23,239 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:26:23,245 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:26:23,246 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:26:23,249 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:26:23,249 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 304 0
+INFO 2023-11-17 13:26:23,251 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:29:49,701 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18363
+INFO 2023-11-17 13:29:49,739 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 200 17181
+INFO 2023-11-17 13:30:46,793 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18362
+INFO 2023-11-17 13:30:46,805 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:30:46,809 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 304 0
+INFO 2023-11-17 13:31:06,017 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18363
+INFO 2023-11-17 13:31:06,036 django.server basehttp basehttp.py 212 log_message "GET /static/images/process.jpg HTTP/1.1" 304 0
+INFO 2023-11-17 13:35:44,353 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18285
+INFO 2023-11-17 13:35:44,371 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:35:44,371 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:35:44,382 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:35:44,383 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:35:44,387 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:36:08,924 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18297
+INFO 2023-11-17 13:36:28,619 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18310
+INFO 2023-11-17 13:36:50,310 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18306
+INFO 2023-11-17 13:38:55,384 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18317
+INFO 2023-11-17 13:38:55,430 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:39:34,344 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18317
+INFO 2023-11-17 13:39:35,663 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18317
+INFO 2023-11-17 13:39:47,568 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18318
+INFO 2023-11-17 13:39:48,774 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18317
+INFO 2023-11-17 13:39:49,132 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18317
+INFO 2023-11-17 13:39:49,864 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18318
+INFO 2023-11-17 13:39:52,071 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18318
+INFO 2023-11-17 13:40:14,618 django.utils.autoreload autoreload autoreload.py 668 run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-17 13:40:22,921 django.server basehttp basehttp.py 212 log_message "GET / HTTP/1.1" 200 9437
+INFO 2023-11-17 13:40:22,967 django.server basehttp basehttp.py 212 log_message "GET /static/css/landing.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:23,086 django.server basehttp basehttp.py 212 log_message "GET /static/images/landing2.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:25,190 django.server basehttp basehttp.py 212 log_message "GET /login_user/ HTTP/1.1" 302 0
+ERROR 2023-11-17 13:40:25,365 django.request log log.py 241 log_response Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\website\views.py", line 49, in home
+    user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'courseu_db.recommender_userrecommendations' doesn't exist")
+ERROR 2023-11-17 13:40:25,412 django.server basehttp basehttp.py 212 log_message "GET /home HTTP/1.1" 500 204035
+INFO 2023-11-17 13:40:33,525 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18316
+INFO 2023-11-17 13:40:33,576 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:33,584 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 990
+INFO 2023-11-17 13:40:33,635 django.server basehttp basehttp.py 212 log_message "GET /static/images/course.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:33,636 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:33,649 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:33,651 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:40:52,624 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18317
+INFO 2023-11-17 13:40:52,672 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 990
+INFO 2023-11-17 13:42:02,393 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18302
+INFO 2023-11-17 13:42:02,431 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:42:03,755 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18302
+INFO 2023-11-17 13:42:11,604 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:42:20,226 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18301
+INFO 2023-11-17 13:42:20,286 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:43:00,564 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18302
+INFO 2023-11-17 13:43:00,634 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 990
+INFO 2023-11-17 13:43:11,724 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18301
+INFO 2023-11-17 13:43:11,752 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 990
+INFO 2023-11-17 13:43:44,048 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18306
+INFO 2023-11-17 13:43:44,081 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:44:35,932 django.server basehttp basehttp.py 212 log_message "GET /select_course/ HTTP/1.1" 200 15293
+INFO 2023-11-17 13:44:35,989 django.server basehttp basehttp.py 212 log_message "GET /static/css/course.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:44:46,948 django.server basehttp basehttp.py 212 log_message "GET /start_test/ HTTP/1.1" 302 0
+INFO 2023-11-17 13:44:47,032 django.server basehttp basehttp.py 212 log_message "GET /create_new_question_set/1/ HTTP/1.1" 302 0
+INFO 2023-11-17 13:44:47,116 django.server basehttp basehttp.py 212 log_message "GET /check_school_year/ HTTP/1.1" 200 16060
+INFO 2023-11-17 13:44:47,151 django.server basehttp basehttp.py 212 log_message "GET /static/css/check_school_year.css HTTP/1.1" 304 0
+ERROR 2023-11-17 13:44:52,705 django.request log log.py 241 log_response Internal Server Error: /test_results_overall/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'website_field.explanation' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\utilities\decorators.py", line 11, in wrapper_func
+    return view_func(request,*args,**kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\assessment\views.py", line 963, in student_test_report_overall
+    for field in field_correct_answers:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'website_field.explanation' in 'field list'")
+ERROR 2023-11-17 13:44:52,813 django.server basehttp basehttp.py 212 log_message "GET /test_results_overall/ HTTP/1.1" 500 198460
+INFO 2023-11-17 13:44:58,087 django.server basehttp basehttp.py 212 log_message "GET /mbti/initialize/ HTTP/1.1" 302 0
+INFO 2023-11-17 13:44:58,452 django.server basehttp basehttp.py 212 log_message "GET /mbti/1/ HTTP/1.1" 200 41291
+INFO 2023-11-17 13:44:58,500 django.server basehttp basehttp.py 212 log_message "GET /static/css/mbti_question.css HTTP/1.1" 304 0
+ERROR 2023-11-17 13:45:42,550 django.request log log.py 241 log_response Internal Server Error: /recommender/
+Traceback (most recent call last):
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Cedrick Estolas\course-u\course_u\apps\recommender\views.py", line 100, in recommender
+    cosine_similarities = cosine_similarity(normalized_user_skills_df[user_skills_list], specialization_sparse_filtered[user_skills_list])
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\_param_validation.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\metrics\pairwise.py", line 1578, in cosine_similarity
+    X, Y = check_pairwise_arrays(X, Y)
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\metrics\pairwise.py", line 165, in check_pairwise_arrays
+    X = check_array(
+  File "C:\Users\Cedrick Estolas\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\validation.py", line 967, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 0)) while a minimum of 1 is required by check_pairwise_arrays.
+ERROR 2023-11-17 13:45:42,657 django.server basehttp basehttp.py 212 log_message "GET /recommender/ HTTP/1.1" 500 117380
+INFO 2023-11-17 13:47:16,742 django.server basehttp basehttp.py 212 log_message "GET /test_home/ HTTP/1.1" 200 18307
+INFO 2023-11-17 13:47:16,764 django.server basehttp basehttp.py 212 log_message "GET /static/css/base_home.css HTTP/1.1" 304 0
+INFO 2023-11-17 13:47:16,769 django.server basehttp basehttp.py 212 log_message "GET /static/css/test_home.css HTTP/1.1" 200 990
+INFO 2023-11-17 13:47:16,771 django.server basehttp basehttp.py 212 log_message "GET /static/images/test.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:47:16,782 django.server basehttp basehttp.py 212 log_message "GET /static/images/personality.png HTTP/1.1" 304 0
+INFO 2023-11-17 13:47:16,783 django.server basehttp basehttp.py 212 log_message "GET /static/images/recommendation.png HTTP/1.1" 304 0
