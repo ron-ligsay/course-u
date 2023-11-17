@@ -1,0 +1,53 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Recommender{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+
+{% endblock head_extra %}
+
+{% block content %}
+
+<div>
+    <h4>Recommendation</h4>
+    <h1>{{field_object.field_name}}</h1>
+
+    <p>{{field_object.description}}</p>
+</div>
+<br><br>
+<div>
+    <h4>Compability Explanaiton</h4>
+    <p>{{field_object.explanation}}</p>
+</div>
+<!-- 
+<div>
+    <h4>{{field_object.field_name}} Skills</h4>
+    {% for skill, level in specialization_skills %}
+    <p>{{level}} {{skill}}</p>
+    {% endfor %}
+</div> -->
+<br><br>
+
+<div>
+    <div class="card">
+        <p>Specialization</p>
+        <a href="" class="btn">Specializations</a>
+    </div>
+    <br>
+    <div class="card">
+        <p>Roadmap</p>
+        <a href="" class="btn">Roadmap</a>
+    </div>
+    <br>
+    <div class="card">
+        <p>Jobs</p>
+        <a href="" class="btn">Jobs</a>
+    </div>
+</div>
+
+{% endblock content %}

@@ -18,10 +18,12 @@ from apps.assessment.utils import get_test_questions, get_test_question_by_id, c
 from apps.assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
 from apps.assessment.models import Test, QuestionSet, UserResponse
 
-from apps.website.models import Field, Specialization, UserRecommendations, Skill
+from apps.website.models import Field, Specialization, Skill
 from apps.recommender.models import UserSkill
 
 from apps.acad.models import StudentProfile
+
+from apps.personality.models import MBTISet
 
 # Other Imports
 import plotly.express as px
@@ -35,7 +37,28 @@ from utilities.sessions import clear_session_variables#, get_last_question_set, 
 
 
 def test_home(request):
-    return render(request, 'test/test_home.html')
+    recommendation = False
+
+    # check if user has a record in QuestionSet
+    assessment = QuestionSet.objects.filter(user=request.user).exists()
+
+    # check if user has already enrolled in a course
+    studentprofile = StudentProfile.objects.filter(user_id=request.user.id).exists()
+
+    # check if the user has take the personality test
+    personality = MBTISet.objects.filter(user_id=request.user.id).exists()
+
+    # if all three are true
+    if assessment and studentprofile and personality:
+        recommendation = True
+
+    return render(request, 'test/test_home.html',
+                  {
+                        'assessment': assessment,
+                        'studentprofile': studentprofile,
+                        'personality': personality,
+                        'recommendation': recommendation,
+                  })
 
 def session_test(request):
 
@@ -844,22 +867,22 @@ def student_test_report(request, question_set_id):
 
     
      # Save recommendation to UserRecommendation
-    user_recommendation = UserRecommendations.objects.create(
-        user=request.user,
-        field_1=top_fields[0],
-        field_2=top_fields[1],
-        field_3=top_fields[2],
-        score_1=top_fields[0].total_correct,
-        score_2=top_fields[1].total_correct,
-        score_3=top_fields[2].total_correct,
-        # Additional Info Goes here, for example explanation of the recommendation
-    )  
+    # user_recommendation = UserRecommendations.objects.create(
+    #     user=request.user,
+    #     field_1=top_fields[0],
+    #     field_2=top_fields[1],
+    #     field_3=top_fields[2],
+    #     score_1=top_fields[0].total_correct,
+    #     score_2=top_fields[1].total_correct,
+    #     score_3=top_fields[2].total_correct,
+    #     # Additional Info Goes here, for example explanation of the recommendation
+    # )  
 
-    # Save the recommendation 
-    user_recommendation.save()
+    # # Save the recommendation 
+    # user_recommendation.save()
 
     # check  if user_recommendation is saved
-    print("user_recommendation: ", user_recommendation)
+    #print("user_recommendation: ", user_recommendation)
 
     
 #    # Get all the UserResponse instances related to the question_set_id and where is_correct=True

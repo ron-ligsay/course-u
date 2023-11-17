@@ -24,9 +24,9 @@
 
 <h2>Your Top Field Recommendation</h2>
 <ul>
-    <li><a href="">Top 1: {{field_name_1}}</a></li>
-    <li><a href="">Top 2: {{field_name_2}}</a></li>
-    <li><a href="">Top 3: {{field_name_3}}</a></li>
+    <li><a href="{% url 'recommendation_field' field_id=field_1.field %}">Top 1: {{field_name_1}}</a></li>
+    <li><a href="{% url 'recommendation_field' field_id=field_2.field %}">Top 2: {{field_name_2}}</a></li>
+    <li><a href="{% url 'recommendation_field' field_id=field_3.field %}">Top 3: {{field_name_3}}</a></li>
 </ul>
 
 {% endblock content %}

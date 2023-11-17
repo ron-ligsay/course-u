@@ -26,8 +26,8 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\website_field.csv': {
                 'table_name': 'website_field',
                 'model_name' : 'Field',
-                'columns' : ['field','field_name','description'],
-                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)']
+                'columns' : ['field','field_name','description','explanation'],
+                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)', 'VARCHAR(1000)']
             },
             # base_dir + '\\static\\csv\\userdb.csv': {
             #     'table_name': 'userdb',
@@ -119,10 +119,10 @@ class Command(BaseCommand):
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT", "INT","BOOLEAN", "INT NULL"]
             },
             base_dir + '\\static\\csv\\website_userrecommendations.csv': {
-                'table_name': 'website_userrecommendations',
+                'table_name': 'recommender_userrecommendations',
                 'model_name': 'UserRecommendations',
-                'columns':  ["recommendation_id","user_id","field_1_id","field_2_id","field_3_id", "score_1","score_2","score_3"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT", "INT","INT", "FLOAT","FLOAT","FLOAT"]
+                'columns':  ["recommendation_id","score_1","score_2","score_3","current_year","field_1_id","field_2_id","field_3_id","selected_field_id","user_id",],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "FLOAT","FLOAT","FLOAT","INT","INT", "INT","INT","INT","INT" ]
             },
             base_dir + '\\static\\csv\\assessment_test_skills.csv': {
                 'table_name': 'assessment_test_skills',

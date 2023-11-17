@@ -49,7 +49,7 @@ class Command(BaseCommand):
         ]
         
         skip_list = [
-            #'website_userrecommendations', 'website_skill', 
+            #'recommender_userrecommendations', 'website_skill', 
             #'assessment_test_skills', 
             #'acad_course', 'acad_subject', 'acad_curriculum', 'acad_studentprofile'
             ]

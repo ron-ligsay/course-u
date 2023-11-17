@@ -3,8 +3,10 @@ from django.http import HttpResponse
 
 from django.contrib.auth.models import User
 
-from .models import UserSkill
+from .models import UserSkill, UserSkillSource, UserRecommendations
+
 from apps.website.models import Skill, Specialization, SpecializationSkills, Field
+from apps.acad.models import StudentProfile
 
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
@@ -45,26 +47,26 @@ def recommender(request):
 
     # unique user skills
     user_skills_list = list(set(user_skills_list))
-    print('user_skills_list: ', user_skills_list)
+    #print('user_skills_list: ', user_skills_list)
 
     # convert to list
     user_skills_list = list(user_skills_list)
-    print("type: ", type(user_skills_list))
+    #print("type: ", type(user_skills_list))
 
     # get level of each skill
     user_skills_level = []
     for skill in user_skills_list:
         userskill_level = UserSkill.objects.get(user=request.user, skill__skill=skill).level
         user_skills_level.append(userskill_level)
-        print('skill: ', skill, 'level: ', userskill_level)
-        #user_skills_level.append(UserSkill.objects.filter(user=request.user, skill__skill=skill).first().level)
+        #print('skill: ', skill, 'level: ', userskill_level)
+        #user_skills_level.append(UserSkill.objects.filter(user=request.user, skill__skill=skill).first().level) - not used
 
     # create a dictionary of user skills and levels, 
     user_skills_dict = dict(zip(user_skills_list, user_skills_level))
     
     # convert the dictionary to a dataframe, where the columns are the skills and the values are the levels
     user_skills_df = pd.DataFrame.from_dict(user_skills_dict, orient='index').T
-    print("user_skills_df: ", user_skills_df)
+    #print("user_skills_df: ", user_skills_df)
 
 
     # Create a bar plot using Plotly Express
@@ -74,16 +76,16 @@ def recommender(request):
     skill_plot = pio.to_html(fig, full_html=False)
 
     # fill the missing values with 0
-    #user_skills_df = user_skills_df.fillna(0)
+    #user_skills_df = user_skills_df.fillna(0) - not used
 
     # Normalize the user's skills. by getting the sum of the user skills and dividing each skill by the sum. if skill = 0, then = 0
     skill_sum = user_skills_df.sum(axis=1)
-    print('skill_sum: ', skill_sum)
+    #print('skill_sum: ', skill_sum)
     normalized_user_skills_df = user_skills_df.div(skill_sum, axis=0)
 
     # fill the missing values with 0
-    #normalized_user_skills_df = normalized_user_skills_df.fillna(0)
-    print('normalized_user_skills_df: ', normalized_user_skills_df)
+    #normalized_user_skills_df = normalized_user_skills_df.fillna(0) - not used
+    #print('normalized_user_skills_df: ', normalized_user_skills_df)
     
     specialization_sparse = load_csv(request)
 
@@ -93,12 +95,12 @@ def recommender(request):
     specialization_sparse_filtered = specialization_sparse_filtered[(specialization_sparse_filtered[user_skills_list] != 0).any(axis=1)]
 
 
-    print('specialization_sparse_filtered: ', specialization_sparse_filtered)
+    #print('specialization_sparse_filtered: ', specialization_sparse_filtered)
 
     cosine_similarities = cosine_similarity(normalized_user_skills_df[user_skills_list], specialization_sparse_filtered[user_skills_list])
     top_3_indices = cosine_similarities.argsort(axis=1)[:, -3:]
     top_3_specializations = specialization_sparse_filtered.iloc[:, 0].values[top_3_indices]
-    print('top_3_specializations: ', top_3_specializations)
+    #print('top_3_specializations: ', top_3_specializations)
 
     
     # get unique field_id
@@ -139,6 +141,7 @@ def recommender(request):
     print('top_3_fields_score: ', top_3_fields_score)
     # Get the field names for the top 3 fields.
     
+
     field_names = []
     for field_id in top_3_fields:
         field_name = Field.objects.get(field=field_id).field_name
@@ -148,6 +151,23 @@ def recommender(request):
     field_name_2 = field_names[1]
     field_name_3 = field_names[2]
 
+    # get StudentProfile year
+    student_year = StudentProfile.objects.get(user=request.user).current_year
+
+    #UserRecommendations get or create
+    user_recommendations = UserRecommendations.objects.get_or_create(user=request.user, current_year=student_year)[0]
+
+    user_recommendations.field_1 = Field.objects.get(field=top_3_fields[0])
+    user_recommendations.field_2 = Field.objects.get(field=top_3_fields[1])
+    user_recommendations.field_3 = Field.objects.get(field=top_3_fields[2])
+    user_recommendations.score_1 = float(top_3_fields_score[0])
+    user_recommendations.score_2 = float(top_3_fields_score[1])
+    user_recommendations.score_3 = float(top_3_fields_score[2])
+
+
+    user_recommendations.save()
+
+
     return render(request, 'recommender/recommender.html', {
         'top_3_specialization_recommendations': top_3_specializations,
         'field_name_1': field_name_1,
@@ -155,4 +175,54 @@ def recommender(request):
         'field_name_3': field_name_3,
         'skill_plot': skill_plot,
         'field_plot': field_plot,
+        'field_1': Field.objects.get(field=top_3_fields[0]),
+        'field_2': Field.objects.get(field=top_3_fields[1]),
+        'field_3': Field.objects.get(field=top_3_fields[2]),
+    })
+
+
+
+def recommendation_field(request, field_id):
+
+    field_object = Field.objects.get(field=field_id)
+    
+    # skills
+    user_skills = UserSkill.objects.filter(user=request.user)
+    user_skills_list = [skill.skill.skill for skill in user_skills]
+    user_skills_list = list(set(user_skills_list))
+    user_skills_set = set(user_skills_list)
+
+    #print('user_skills_list: ', user_skills_list)
+
+    specialization_skills = SpecializationSkills.objects.filter(specialization__field=field_id)
+    specialization_skills = specialization_skills.filter(skill__skill__in=user_skills_set)
+
+    # Create a set to store unique skills
+    unique_skills_set = set()
+
+    # Create a list to store the final unique specialization skills
+    specialization_skills_list = []
+
+    # Iterate through the specialization skills and filter duplicates
+    for skill in specialization_skills:
+        skill_name = skill.skill.skill
+        level = skill.level
+        # Check if the skill is not in the set to add it
+        if skill_name not in unique_skills_set:
+            unique_skills_set.add(skill_name)
+            specialization_skills_list.append((skill_name, level))
+
+    # Sort the list by level
+    specialization_skills_list = sorted(specialization_skills_list, key=lambda x: x[1], reverse=True)
+
+
+    # filter to 10 only
+    specialization_skills_list = specialization_skills_list[:10]
+    print('')
+    print('!!!!specialization_skills: ', specialization_skills_list)
+    # specialization, jobs, roadmap
+
+    return render(request, 'recommender/recommendation_field.html', {
+        'field_object': field_object,
+        'specialization_skills': specialization_skills_list,
     })
