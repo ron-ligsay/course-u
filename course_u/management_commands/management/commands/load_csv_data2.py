@@ -17,7 +17,7 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='sql2023', # 'sql2023' , 'sawadekap', '022002
+            password='sawadeeKA456', # 'sql2023' , 'sawadekap', '022002
             database= 'courseu_db', #config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
@@ -157,7 +157,7 @@ class Command(BaseCommand):
             base_dir + '\\static\\csv\\acad_studentprofile.csv': {
                 'table_name': 'acad_studentprofile',
                 'model_name': 'StudentProfile',
-                'columns':  ["id","is_student","current_year","enrolled_courses","user_id"],
+                'columns':  ["id","is_student","current_year","enrolled_courses_id","user_id"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "BOOLEAN","INT","INT","VARCHAR(100)"]
             },
             base_dir + '\\static\\csv\\recommender_userskillsource.csv': {
