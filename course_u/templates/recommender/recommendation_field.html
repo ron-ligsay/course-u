@@ -24,17 +24,32 @@
     <h4>Compability Explanaiton</h4>
     <p>{{field_object.explanation}}</p>
 </div>
-
+<br>
 <div>
-    <h4>{{field_object.field_name}} Skills</h4>
-    {% for skill, level in specialization_skills %}
-    <p>{{level}} {{skill}}</p>
+    <h4>Your {{field_object.field_name}} Skills</h4>
+    {% for skill in top_user_skills %}
+    <p>{{skill}}</p>
+    {% endfor %}
+    {% for skill in top_user_skills_2 %}
+    <p style="color: grey;">{{skill}}</p>
     {% endfor %}
 </div>
-<br><br>
+
+<br>
+<div>
+    <h4>Recommended {{field_object.field_name}} Skills</h4>
+    {% for skill in not_in_user_skills %}
+    <p>{{skill}}</p>
+    {% endfor %}
+    {% for skill in not_in_user_skills_2 %}
+    <p style="color: grey;">{{skill}}</p>
+    {% endfor %}
+</div>
+<br>
 
 <div>
     <h4>Explore more about the possible future path for you.</h4>
+    <br>
     <div class="card">
         <p>Specialization</p>
         <a href="{% url 'recommendation_specialization' field_id=field_object.field  %}" class="btn">Specializations</a>
