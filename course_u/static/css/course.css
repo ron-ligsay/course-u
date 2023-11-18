@@ -39,23 +39,31 @@
 .btn{ 
   display: block;
   margin: 0 auto;
-  margin-bottom:5px;
-  
-  width: 300px;
+  margin-top: 30px;
+  margin-left: 750px;
+  width: 400px;
   height: 80px;
   line-height: 80px;
   font-size: 25px;
   padding: 2px 1px;
-  background-color: #ececec;
-  color: black;
+  background-color: whitesmoke;
   border-radius: 15px;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  font-weight: bold;
+  color:rgb(228, 95, 65);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 .btn:hover {
-  background-color: rgb(228, 95, 65);
+  background-color:transparent;
 
 }
-body{
-  background-image: url("/static/images/bg_tao.png");
+body {
+  background-image: url('http://127.0.0.1:8000/static/images/bg_tao.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Use viewport height */
+  width: 100vw; /* Use viewport width */
+  position: relative;
+  overflow: hidden;
 }
