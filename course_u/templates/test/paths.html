@@ -3,15 +3,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  {% load static %}
   <link rel="stylesheet" href="{% static 'css/paths.css' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Containers with Descriptions and Images</title>
 
-
-
-
 </head>
 <body>
+{% block content %}
   <div class="container">
     <img src="images/user.png" alt="Image for Container 1">
     <h2>Pre Assessment</h2>
@@ -43,4 +42,4 @@
     After 3rd year assessment, users input their grades for 4th-year majors and will recommend career based on the results.</p>
   </div>
 
-  <d
+{% endblock %}

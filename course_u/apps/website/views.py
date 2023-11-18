@@ -215,7 +215,7 @@ def landing_page(request):
     return render(request, 'landing.html')
 
 def paths(request):
-    return render(request,'paths.html' )
+    return render(request,'test/paths.html' )
 
 
 
