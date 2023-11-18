@@ -14,7 +14,7 @@ __pycache__/
 local_settings.py
 
 # Ignore log files
-#*.log
+*.log
 
 # Ignore compiled Python files
 *.pyc
@@ -95,3 +95,10 @@ course_u/static/csv/skill_4.csv
 course_u/static/csv/test_2.csv
 course_u/static/csv/test_3.csv
 course_u/static/csv/test_4.csv
+course_u/static/csv/specialization4_skills1.csv
+course_u/static/csv/specialization3_skills copy.csv
+course_u/static/csv/field_skill.csv
+course_u/static/csv/field_skills_10.csv
+course_u/static/csv/specialization5_.csv
+course_u/static/csv/subject_field.csv
+

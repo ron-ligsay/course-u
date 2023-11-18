@@ -13,7 +13,8 @@ from django.db.models import Count
 
 #from website.utils import *
 from apps.website.forms import SignUpForm, StudentScoreForm
-from apps.website.models import Specialization, Field, UserRecommendations
+from apps.website.models import Specialization, Field
+from apps.recommender.models import UserRecommendations
 
 from apps.assessment.models import Test, QuestionSet
 from apps.jobs.models import JobPosting
@@ -42,6 +43,8 @@ def home(request):
     field_items = Field.objects.all()
     # Fetch user recommendations
     user_recommendations = None
+    recommended_fields = None
+    #field_items = []
     if request.user.is_authenticated:
         user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
 
@@ -70,7 +73,7 @@ def home(request):
         })
 
 
-@allowed_users(allowed_roles=['admin','staff','student','instructor'])
+#@allowed_users(allowed_roles=['admin','staff','student','instructor'])
 def home_field(request, field_id=None):
     print("On home_field, field_id: ", field_id)
     field_items = Field.objects.all()
@@ -78,6 +81,7 @@ def home_field(request, field_id=None):
 
     # Fetch user recommendations
     user_recommendations = None
+    recommended_fields = []
     if request.user.is_authenticated:
         user_recommendations = UserRecommendations.objects.filter(user=request.user).first()
 
@@ -106,6 +110,7 @@ def home_field(request, field_id=None):
         specialization_items = Specialization.objects.all()
         messages.success(request, "specialization items is not filtered")
 
+    specialization_items = Specialization.objects.all()
     
     return render(request, 'specialization_list.html', {
         'specialization_items': specialization_items,
@@ -114,7 +119,7 @@ def home_field(request, field_id=None):
         'user_recommendations': user_recommendations  # Pass the user recommendations to the template
     })
 
-@admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
+#@admin_only # only admin can access this page # if admin only, then no need to add @login_required it will be redundant
 def admin_home(request):
     admin = True
 

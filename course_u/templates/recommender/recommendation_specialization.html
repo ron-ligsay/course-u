@@ -1,0 +1,37 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Recommender{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+
+{% endblock head_extra %}
+
+{% block content %}
+
+<h2>Specialization for <b>{{ field.field_name}}</b></h2>
+
+{% for specialization in specializations %}
+<div>
+    <h4>{{specialization.title}}</h4>
+    <p>{{specialization.description}}</p>
+    <p>{{specialization.explanation}}</p>
+    <p>{{specialization.specialization}}</p>
+    <p>{{specialization.field}}</p>
+    <p>{{specialization.specialization_skills}}</p>
+    <p>{{specialization.specialization_courses}}</p>
+    <p>{{specialization.specialization_jobs}}</p>
+
+    <a href="#" class="btn">Specializations</a>
+</div>
+{% endfor %}
+
+
+
+
+
+{% endblock content %}

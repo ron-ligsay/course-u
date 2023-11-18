@@ -3,3 +3,6 @@ git rm --cached course-u/logs/error.log
 git rm --cached course-u/logs/exception.log
 git rm --cached course-u/logs/info.log
 git rm --cached course-u/course_u/settings.py
+
+
+ git rm --cached course_u/src/logs/info.log

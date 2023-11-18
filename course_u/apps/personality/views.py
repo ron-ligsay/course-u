@@ -8,6 +8,8 @@ from django.db import IntegrityError
 # App imports
 from apps.personality.models import  MBTI, MBTISet, MBTIResponse, Indicator
 
+from apps.recommender.models import UserSkill
+
 from django.db.models import Max
 
 def initialize_mbti_test(request):
@@ -111,6 +113,7 @@ def mbti_test(request, mbti_set_id):
         print("def mbti_test() mbti_set.id: ", mbti_set.mbti_set_id)
         # All questions answered, calculate personality
         calculate_personality(request.user, mbti_set.mbti_set_id)
+        set_personality_skills(request.user, mbti_set.mbti_set_id)
         return redirect('mbti_results', mbti_set_id=mbti_set_id)
 
     return render(request, 'test/mbti_test.html', {'mbti_set': mbti_set, 'responses': responses})
@@ -206,6 +209,35 @@ def calculate_personality(user, mbti_set_id):
     # marks as completed
     mbti_set.is_completed = True
     mbti_set.save()
+
+def set_personality_skills(request, mbti_set_id):
+    # get user_id
+    user_id = request.id
+    
+    # get indicator
+    mbti_set = MBTISet.objects.get(pk=mbti_set_id)
+    indicator = mbti_set.indicator
+    # get indicator skills
+    skills = indicator.skills.all()
+    # loop through skills
+    for skill in skills:
+        level = 3
+        # get or create UserSkill
+        user_skill, created = UserSkill.objects.get_or_create(user_id=user_id, skill_id=skill.id)
+        # update level
+        if created:
+            print('created user skill: ', user_skill)
+            user_skill.level = level
+        else:
+            print('existing user skill: ', user_skill)
+            level = user_skill.level
+            level += 3
+        user_skill.level = level
+        user_skill.save()
+        print("saved user skill: ", user_skill)
+        # add skill source
+
+
 
 from apps.personality.mbti_data import mbti_data, mbti_meaning
 

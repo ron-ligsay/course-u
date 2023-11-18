@@ -18,10 +18,12 @@ from apps.assessment.utils import get_test_questions, get_test_question_by_id, c
 from apps.assessment.forms import UserResponseForm, TestCreateForm, TestUpdateForm
 from apps.assessment.models import Test, QuestionSet, UserResponse
 
-from apps.website.models import Field, Specialization, UserRecommendations, Skill
+from apps.website.models import Field, Specialization, Skill
 from apps.recommender.models import UserSkill
 
 from apps.acad.models import StudentProfile
+
+from apps.personality.models import MBTISet
 
 # Other Imports
 import plotly.express as px
@@ -35,7 +37,28 @@ from utilities.sessions import clear_session_variables#, get_last_question_set, 
 
 
 def test_home(request):
-    return render(request, 'test/test_home.html')
+    recommendation = False
+
+    # check if user has a record in QuestionSet
+    assessment = QuestionSet.objects.filter(user=request.user).exists()
+
+    # check if user has already enrolled in a course
+    studentprofile = StudentProfile.objects.filter(user_id=request.user.id).exists()
+
+    # check if the user has take the personality test
+    personality = MBTISet.objects.filter(user_id=request.user.id).exists()
+
+    # if all three are true
+    if assessment and studentprofile and personality:
+        recommendation = True
+
+    return render(request, 'test/test_home.html',
+                  {
+                        'assessment': assessment,
+                        'studentprofile': studentprofile,
+                        'personality': personality,
+                        'recommendation': recommendation,
+                  })
 
 def session_test(request):
 
@@ -135,41 +158,80 @@ def handle_incomplete_user_response(request, incomplete):
     print("handle_incomplete_user_response() incomplete: ", incomplete)
 
     #unique_fields = Field.objects.filter(test__userresponse__set_id=incomplete.set_id).distinct()
-    question_set = UserResponse.objects.filter(set_id=incomplete.set_id)
-    unique_fields = question_set.objects.values('field').distinct()
+    # get incomplete set
+    incomplete_set = QuestionSet.objects.get(set_id=incomplete)
+
+    user_responses = UserResponse.objects.filter(set_id=incomplete)
+    
+    # mote for future updates
+    # fields should be distinct for user course
+
+    # if user responses is emtpy
+    if not user_responses:
+        # get unique fields
+        print("There are no exsiting UserResponse objects")
+        unique_fields = Test.objects.values('field').distinct()
+    else:
+        # get Test Objects from incomplete set from question_set
+        responses_test_id = user_responses.values_list('question_id', flat=True)
+        # test objects
+        question_set = Test.objects.filter(question_id__in=responses_test_id)
+        #unique_fields = question_set.objects.values('field').distinct()
+        unique_fields = question_set.values('field').distinct()
+
+
     print("unique_fields: ", unique_fields)
+    
     for field in unique_fields:
+
+        field_id = field['field']
+
         # get UserResponse objects with the same set_id and field
-        n_field_responses = UserResponse.objects.filter(set_id=incomplete.set_id, question__field=field).count()
+        n_field_responses = UserResponse.objects.filter(set_id=incomplete, question__field=field_id).count()
         
         if n_field_responses < 2: # if the user has not answered 3 questions for this field
+            
+            #question_ids = incomplete.filter(question__field=field).values_list('question_id', flat=True)
+            #question_ids = incomplete_set.filter(question__field=field_id).values_list('question_id', flat=True)
 
-            question_ids = incomplete.filter(question__field=field).values_list('question_id', flat=True)
 
-            current_responses = UserResponse.objects.filter(set_id=incomplete.set_id, question__field=field)
+            current_responses = UserResponse.objects.filter(set_id=incomplete, question__field=field_id)
 
-            last_question_id = current_responses.last().question.question_id
+            # if not current_responses:
+            #     last_question_id = 0
+            # else:
+            #     last_question_id = current_responses.last().question.question_id
 
-            n_question_to_add = 2 - n_field_responses
+            # n_question_to_add = 2 - n_field_responses
 
-            for question in range(n_question_to_add):
-                next_question_id = last_question_id + 1
-                next_question = Test.objects.get(question_id=next_question_id)  #get_test_question_by_id(next_question_id)
+            # # this should be using random and checking if the question is already in the set
+            # for question in range(n_question_to_add):
+            #     next_question_id = last_question_id + 1
+            #     next_question = Test.objects.get(question_id=next_question_id)  #get_test_question_by_id(next_question_id)
+            #     UserResponse.objects.create(
+            #         question=next_question,
+            #         set_id=incomplete.set_id,
+            #         is_answered=False,
+            #     )
+            queryset, start, end = get_test_questions(x=2, set_id=incomplete, topic=field_id)
+
+            for question in queryset:
                 UserResponse.objects.create(
-                    question=next_question,
-                    set_id=incomplete.set_id,
+                    question=question,
+                    set_id=incomplete,
                     is_answered=False,
                 )
+                print("Created new UserResponse objects")
             
 
-    question_set = UserResponse.objects.filter(set_id=incomplete.set_id, is_answered=False)
+    question_set = UserResponse.objects.filter(set_id=incomplete, is_answered=False)
     question_ids = list(question_set.values_list('question_id', flat=True))
     request.session['question_set'] = list(question_ids)
 
-    n_questions = UserResponse.objects.filter(set_id=incomplete.set_id).count()
+    n_questions = UserResponse.objects.filter(set_id=incomplete).count()
     request.session['n_questions'] = n_questions
-    print("n_questions: ", n_questions,"incomplete.n_questions: ", incomplete.n_questions)
-    if n_questions == incomplete.n_questions:
+    print("n_questions: ", n_questions,"incomplete.n_questions: ", incomplete_set.n_questions)
+    if n_questions == incomplete_set.n_questions:
         # Has now complete User Response objects
         #handle_incomplete_set(request)
         return redirect('handle_incomplete_set', incomplete=incomplete)
@@ -184,7 +246,7 @@ def handle_incomplete_user_response(request, incomplete):
 
 def handle_incomplete_set(request, incomplete):
     print("handle_incomplete_set() incomplete: ", incomplete)
-    
+    incomplete = QuestionSet.objects.get(set_id=incomplete)
     # Count the number of unanswered user responses
     n_unanswered = UserResponse.objects.filter(set_id=incomplete.set_id, is_answered=False).count()
     request.session['questions_answered'] = incomplete.n_questions - n_unanswered
@@ -199,7 +261,7 @@ def handle_incomplete_set(request, incomplete):
     else:
         #resume_uncompleted_set(request)
         # return to resume_uncompleted_set
-        return redirect('resume_uncompleted_set', incomplete) 
+        return redirect('resume_uncompleted_set', incomplete.set_id) 
     
 
 
@@ -305,7 +367,7 @@ def check_school_year_choice(request, choice):
 def check_school_year_status(request, status=None):
     print('check_school_year() status: ', status)
     if status == 'completed':
-        messages.info("You have completed the school year. You can proceed.")       
+        messages.info(request, "You have completed the school year. You can proceed.")       
         course_id = StudentProfile.objects.get(user_id=request.user.id).enrolled_courses_id
         return redirect('select_year', course_id=course_id)
     
@@ -376,6 +438,7 @@ def create_or_overwrite_test(request, action):
 
 def continue_create_new_question_set(request, last_set):
     print('continue_create_new_question_set() last_set: ', last_set)
+    new_set = None
     if last_set == 0 or last_set == None:
         # get last set
         try:
@@ -387,26 +450,34 @@ def continue_create_new_question_set(request, last_set):
             new_set = 1
         else:
             new_set = last_set + 1
+    else:
+        new_set = last_set + 1 
 
     year = StudentProfile.objects.get(user_id=request.user.id).current_year
-    
+
     print("if no_record, Set: ", new_set, "created for user: ", request.user)
     request.session['question_set_id'] = new_set
     
-    
-    question_set, start, end = get_test_questions(x=2)
-    question_ids = question_ids_and_session_test(request,question_set)      
-
+    question_ids = 0
+   
 
     # Create QuestionSet object
     QuestionSet.objects.create(
         set_id=new_set,
         user=request.user,
-        n_questions=len(question_ids),
+        n_questions=0,
         is_completed=False,
         score=0,
         year=year,
     )
+
+    question_set, start, end = get_test_questions(x=2, set_id=new_set)
+    question_ids = question_ids_and_session_test(request,question_set)      
+
+    # modify question_set.n_questions
+    questionset = QuestionSet.objects.get(set_id=new_set)
+    questionset.n_questions = len(question_ids)
+    questionset.save()
 
     for question in question_set:
         UserResponse.objects.create(
@@ -668,12 +739,33 @@ def save_user_skills(request, set_id):
     # save to userskill
     for skill in skill_correct_counts:
         print("skill: ", skill)
-        userskill = UserSkill.objects.create(
-            user=request.user,
-            skill=skill,
-            level=skill.correct_count,
-        )
+        skill_id = skill.id
+        # userskill = UserSkill.objects.create(
+        #     user=request.user,
+        #     skill=skill,
+        #     level=skill.correct_count,
+        # )
+        # get or create userskill
+        try:
+            userskill, created = UserSkill.objects.get_or_create(
+                user=request.user,
+                skill=skill,
+            )#.first()
+        except:
+            # delete userskill
+            while UserSkill.objects.filter(user=request.user,skill=skill,).first():
+                userskill = UserSkill.objects.filter(user=request.user,skill=skill,).first()
+                userskill.delete()
+                print("deleted userskill: ", userskill)
+        # update userskill
+        if created:
+            userskill.level = skill.correct_count
+            print("created userskill: ", userskill)
+        else:
+            userskill.level = userskill.level + skill.correct_count
+            print("updated userskill: ", userskill)
         userskill.save()
+        # add skill source
 
     return
 
@@ -775,22 +867,22 @@ def student_test_report(request, question_set_id):
 
     
      # Save recommendation to UserRecommendation
-    user_recommendation = UserRecommendations.objects.create(
-        user=request.user,
-        field_1=top_fields[0],
-        field_2=top_fields[1],
-        field_3=top_fields[2],
-        score_1=top_fields[0].total_correct,
-        score_2=top_fields[1].total_correct,
-        score_3=top_fields[2].total_correct,
-        # Additional Info Goes here, for example explanation of the recommendation
-    )  
+    # user_recommendation = UserRecommendations.objects.create(
+    #     user=request.user,
+    #     field_1=top_fields[0],
+    #     field_2=top_fields[1],
+    #     field_3=top_fields[2],
+    #     score_1=top_fields[0].total_correct,
+    #     score_2=top_fields[1].total_correct,
+    #     score_3=top_fields[2].total_correct,
+    #     # Additional Info Goes here, for example explanation of the recommendation
+    # )  
 
-    # Save the recommendation 
-    user_recommendation.save()
+    # # Save the recommendation 
+    # user_recommendation.save()
 
     # check  if user_recommendation is saved
-    print("user_recommendation: ", user_recommendation)
+    #print("user_recommendation: ", user_recommendation)
 
     
 #    # Get all the UserResponse instances related to the question_set_id and where is_correct=True
@@ -932,6 +1024,8 @@ def student_test_report_overall(request):
         return HttpResponse("You have not taken any tests yet.")
 
 def test_query(request):
+    print('test_query()')
+    # not been using this
     questions,start,end = get_test_questions(x=1, y=5)
     return render(request, 'test_queries/test_query.html', {'questions': questions})
 

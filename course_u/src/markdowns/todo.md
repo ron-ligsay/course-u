@@ -125,12 +125,12 @@
     - [X]: complete skills for test, subject, mbti, specialization (jobs are generated per scrape events)
     - [X]: Modify User Skill database to have a level field
     - [X]: fix acad subject skill id (note reset index, then recreate id)
-    - [ ]: load csv data using management commands load_data (test, specialization, subject, mbti, skills)
+    - [X]: load csv data using management commands load_data (test, specialization, subject, mbti, skills)
     - [ ]: views that would initiate or start the recommendation process
-        - [ ]: crete a normalized data, from specialization (the database that would be recommended)
+        - [X]: crete a normalized data, from specialization (the database that would be recommended)
         - [ ]: create a normalized data, from user skills
-        - [ ]: load the data to the recommendation system
-        - [ ]: get the recommendation
+        - [X]: load the data to the recommendation system
+        - [X]: get the recommendation
         - [ ]: display the recommendation (with detailed information including the skills)
         - [ ]: save the recommendation
 
