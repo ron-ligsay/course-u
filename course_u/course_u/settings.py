@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'apps.jobs',
     'apps.personality',
     'apps.website',
-    
     'grades',
 ]
 

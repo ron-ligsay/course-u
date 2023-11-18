@@ -1,7 +1,14 @@
 
+/*d
+.test-container
+{
+    display: inline-block;
+    top:50px;
+    left:50px;
+    position: relative;
+}
 
-
-/*div.test-container .card
+iv.test-container .card
 {
     padding: 15px;
     background-color:#fa7e5c; 
@@ -20,9 +27,9 @@
     text-align: center;
     margin:3%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display:inline-block;
-    top:20px;
-    left: 50px;
+    display: flex;
+    top:50px;
+    left:50px;
     position: relative;
 }
 #card1{

@@ -2,18 +2,35 @@
 {% block title %}Courses Selection{% endblock %}
 
 {% load static %}
+
 {% block head_extra %}
 <link rel="stylesheet" href="{% static 'css/course.css' %}">
+<style>
+    body{
+    background-image: url('{% static "static/images/bg_tao.png" %}');
+    /* Replace 'path/to/your/image.jpg' with the actual path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+  }
+</style>
 {% endblock head_extra %}
 
 {% block content %}
+<body>
 <p>Select Course</p><br>
 
 <div class="">
     {% for course in courses %}
     <div class="course">
         <a href="{% url 'select_year' course_id=course.id %}" class="btn btn-primary">{{ course.course_name }}</a>
+        
     </div>
+   
     {% endfor %}
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
 {% endblock content %}
