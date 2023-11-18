@@ -11,8 +11,15 @@
 <p>Select Year Level</p><br>
 <div>
   {% for year in number_of_years|get_range %}
+  
   <div class="year-level">
-    <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">Year {{ year }}</a>
+    <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      {% if year == 0 %}
+      Freshman
+      {% else %}
+      Year {{ year }}
+      {% endif %}
+    </a>
   </div>
   {% endfor %}
 </div>
