@@ -27,7 +27,7 @@ iv.test-container .card
     text-align: center;
     margin:3%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: inline-block;
     top:50px;
     left:50px;
     position: relative;
