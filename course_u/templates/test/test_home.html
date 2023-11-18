@@ -1,8 +1,8 @@
-{% extends 'base_user.html' %}
+{% extends 'base_user.html' %}<!--navbar-->
 
 
 
-{% block title %}Home{% endblock %}
+{% block title %}Home{% endblock %}<!--hindi ko alam kung saan to aky kaya di maedit yung welcome-->
 
 {% load static %}
 
@@ -19,8 +19,7 @@
 {% if user.is_authenticated %}
 <br><br><br><br>
 
-<div class="test-container">
-        
+        <div class = "container">
         <div class="card" id="card1">
            
             <div class="card-body">
@@ -62,8 +61,7 @@
                 <p class="card-text">Generate your Recommendation based on your Grades, Tests, Personality, and Interests.</p>
                 <a href="{% url 'recommender' %}" class="btn btn-primary">Compute</a>
             </div>
-        </div>
-    </div>
+        </div></div>
 <br><br><br><br>
 {% else %}
 <!-- 

@@ -1,9 +1,5 @@
 
 
-.test-container
-{
-    display: flex;
-}
 
 /*div.test-container .card
 {
@@ -24,6 +20,10 @@
     text-align: center;
     margin:3%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display:inline-block;
+    top:20px;
+    left: 50px;
+    position: relative;
 }
 #card1{
     background-color:#fafafa; 
