@@ -9,7 +9,7 @@
   /* Add some padding at the bottom for better visibility */
 }
 
-.card {
+.card {/*box for fields*/
   border: 1px solid #ccc;
   padding: 10px;
   background-color: #f9f9f9;
@@ -19,13 +19,16 @@
   flex-shrink: 0;
   /* Prevent cards from shrinking to fit */
 }
-
+.card img{
+  height:50 px;
+  width:90px;
+}
 .field_title
 {
   font-size: 16px;
   font-weight: bold;
+  color:rgb(228, 95, 65);
 }
-
 .recommended-label
 {
   /* Small font */
