@@ -1,16 +1,13 @@
-{% extends 'base_user.html' %}
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/paths.css' %}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Containers with Descriptions and Images</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containers with Descriptions and Images</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/paths.css' %}">
 </head>
 <body>
-{% block content %}
   <div class="container">
     <img src="{% static 'images/user.png' %}" alt="Image for Container 1">
     <h2>Pre Assessment</h2>
@@ -41,5 +38,6 @@
     <p>
     After 3rd year assessment, users input their grades for 4th-year majors and will recommend career based on the results.</p>
   </div>
-
-{% endblock %}
+  <a href="{% url 'test_home' %}" class="get-started-button" id="get-started-button"><b>Next</b></a>
+</body>
+</html>
