@@ -1,0 +1,25 @@
+
+.btn{ 
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 40px;
+    font-size:15px;
+    margin-left: 7px;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    color:rgb(228, 95, 65);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+  .btn:hover {
+    background-color: rgb(228, 95, 65); /* Change the background color on hover */
+    color:white;
+  
+  }
+  footer{
+    display:none;
+  }

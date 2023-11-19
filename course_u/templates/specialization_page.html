@@ -3,6 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/specialization_page.css' %}">
 
 {% if user.is_authenticated %}
 <h1>{{ specialization_item.title }}</h1>

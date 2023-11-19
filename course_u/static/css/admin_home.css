@@ -11,18 +11,20 @@
     display: grid;
     grid-template-columns: repeat(3,1fr); /* replace with number of box per row */
     grid-gap: 30px;
+   
 }
 
 .cardBox .card
 {
     position: relative;
     background: var(--white);
-    padding: 30px;
+    padding: 20px;
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    
 }
 
 .cardBox .card .numbers
@@ -69,6 +71,7 @@
     grid-template-columns: 3fr 1fr;
     grid-gap: 30px;
     /* margin-top: 10px; */
+    
 }
 
 .details .accounts
@@ -103,6 +106,7 @@
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
+
 }
 
 .details table
@@ -213,4 +217,7 @@
 .users table tr td
 {
     padding: 10px;
+}
+footer{
+    display:none;
 }

@@ -15,26 +15,36 @@
   background-color: #f9f9f9;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   width: 250px;
+  margin-left: 30px;;
   /* Adjust the width as needed */
   flex-shrink: 0;
   /* Prevent cards from shrinking to fit */
+  text-align: center;
+  margin-right: 20px;
 }
 .card img{
-  height:50 px;
-  width:90px;
+  height:80px;
+  width:110px;
+ padding-right: 20px;
+ display:inline-block;
+
 }
 .field_title
 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  color:rgb(228, 95, 65);
+  color:black;
 }
 .recommended-label
 {
   /* Small font */
   font-size: 12px;
 }
-
+h3{
+  font-size: 30px;
+  color:rgb(228, 95, 65);
+  margin-left: 30px;
+}
 .recommended_first
 {
   /* color gold */
@@ -86,4 +96,7 @@ a:hover {
 
 a:active {
   color: #000;
+}
+footer{
+  display: none;
 }
