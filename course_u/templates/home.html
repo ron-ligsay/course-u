@@ -48,7 +48,7 @@
     {% for item in specialization_items %}
     <a href="{% url 'specialization_page' item_id=item.specialization_id %}" class="card-link link-offset-2 link-underline link-underline-opacity-0">
       <div class="card text-truncate">
-        <h4 class="specialization_title">{{ item.title }}</h4>
+        <h4 class="specialization_title">{{ item.title }}</h4><br>
           <p class="small specialization_description">{{ item.description }}</p>
           <!-- Add more fields as needed -->
       </div>
@@ -69,8 +69,8 @@
       <a href="Specialization" class="card-link link-offset-2 link-underline link-underline-opacity-0">
         <div class="card" style="width: 24rem;">
           <img src="{% static 'images/com-1.png' %}" class="card-img-top" alt="..." style="position: relative;">
-          <div class="card-body" style="position: relative;">
-            <h3 class="card-title">Continue your Track</h3>
+          <div class="card-body" style="position: relative;"><br>
+            <h3 class="card-title">Continue your Track</h3><br>
             <p class="card-text">Click to continue to see all the learning materials that will help you to expand your knowlegde.</p>
           </div>
         </div>
@@ -80,7 +80,7 @@
       <a href="Jobs" class="card-link link-offset-2 link-underline link-underline-opacity-0">
         <div class="card" style="width: 24rem;">
           <img src="{% static 'images/com-2.png' %}" class="card-img-top" alt="..." style="position: relative;">
-          <div class="card-body" style="position: relative;">
+          <div class="card-body" style="position: relative;"><br>
             <h3 class="card-title">Your Jobs</h3>
             <p class="card-text">Click to continue to see all the possible jobs recommended</p>
           </div>

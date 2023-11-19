@@ -242,10 +242,10 @@ body{
 
 
 /* footer */
-/*
+
 footer
 {
-    always at bottom position: absolute;
+    /*always at bottom position: absolute;*/
     margin-top: 20px;
     bottom: 0;
     width: 100%;
@@ -271,7 +271,7 @@ footer a
 {
     color: var(--black1);
     text-decoration: none;
-}*/
+}
 .row
 {
     --bs-gutter-x: 0;

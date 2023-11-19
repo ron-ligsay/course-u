@@ -1,11 +1,22 @@
 
+h1{
+  text-align: center;
+  justify-content: center;
+  color:rgb(228, 95, 65);
+}
+p{
+  text-align: center;
+  justify-content: center;
+}
 .btn{ 
     display: block;
     margin: 0 auto;
-    width: 80px;
+    width: 150px;
+    padding-top: 10px;
     height: 40px;
     font-size:15px;
-    margin-left: 7px;
+    margin-top:500px;
+    justify-content: center;
     text-align: center;
     background-color: whitesmoke;
     border-radius: 15px;

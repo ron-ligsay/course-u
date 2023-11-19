@@ -1,4 +1,10 @@
 /* Static CSS file or inline style */
+
+main{
+  background-image: url('../../static/images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .card-container {
   display: flex;
   /* Use flexbox to create a horizontal layout */
@@ -12,7 +18,7 @@
 .card {/*box for fields*/
   border: 1px solid #ccc;
   padding: 10px;
-  background-color: #f9f9f9;
+  color:black;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   width: 250px;
   margin-left: 30px;;
@@ -20,7 +26,17 @@
   flex-shrink: 0;
   /* Prevent cards from shrinking to fit */
   text-align: center;
-  margin-right: 20px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  margin-left: 50px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.4);
+  border-radius: 20px;
+  
+}
+.card:hover{
+  background-color: rgb(248, 128, 101);
+  color:black;
 }
 .card img{
   height:80px;
@@ -42,7 +58,7 @@
 }
 h3{
   font-size: 30px;
-  color:rgb(228, 95, 65);
+  color:black;
   margin-left: 30px;
 }
 .recommended_first

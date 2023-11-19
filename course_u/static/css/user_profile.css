@@ -1,0 +1,32 @@
+footer{
+    display:none;
+}
+h1{
+    color:rgb(228, 95, 65);
+    margin-left: 10px;
+}
+p{
+    margin-left: 10px;
+
+}
+    .btn{ 
+        padding: 10px 20px;
+        background-color: rgb(228, 95, 65);
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        bottom: 50px; 
+        align-items: center;
+        justify-content: center;
+        display:flex;
+        width:250px;
+        height:40px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+        right:50px;
+      }
+      .btn:hover {
+        background-color: rgb(247, 114, 84); /* Change the background color on hover */
+        color:white;
+      }

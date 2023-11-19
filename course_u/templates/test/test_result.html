@@ -1,7 +1,10 @@
 {% extends 'base_user.html' %}
 
 {% block title %}Test Overview{% endblock %}
-
+{% load static %}
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/test_result.css' %}">
+{% endblock head_extra %}
 {% block content %}
     <h4>{{ username }}'s results</h4>
     <div>
@@ -11,14 +14,12 @@
         {{ bar_plot|safe }}
     </div>
 
-    <h4>Top 3 topics</h4>
+    <h4>Top 3 topics</h4><br>
     {% for field in top_fields %}
         <li>
             <a href="">{{ field }}</a>
         </li>
 
     {% endfor %}
-
-    <p>Return to homepage</p>
     <a href="{% url 'test_home' %}" class="btn btn-primary">Back to Recommender Page</a>
 {% endblock %}

@@ -1,0 +1,86 @@
+/* test_overview.css */
+
+/* Style the test container */
+.test-container {
+    max-width: 900px;
+    justify-content: center;
+    padding-left: 200px;
+}
+
+/* Style the table container */
+.table-container {
+    overflow-x: auto;
+   
+}
+
+/* Style the table */
+.table1 {
+    width: 130%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Style table header */
+.table1 th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Style table cells */
+.table1 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Style alternating rows (optional) */
+.table1 tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style the "View" and "Start Test" buttons */
+.table1 .btn {
+    padding: 5px 10px;
+}
+.btn{
+        display: block;
+        margin: 0 auto;
+        background-color: rgb(228, 95, 65); /* Set your desired background color */
+        color:white;/* Set text color to white or a contrasting color */
+        text-decoration: none;
+        border-radius: 10px; /* Add rounded corners */
+        transition: background-color 0.3s ease; /* Add a smooth transition effect on hover */
+        margin-left: 5px;
+        box-shadow:0 4px 6px rgba(0,0,0,0.4);
+        width: 120px;
+        height:35px;
+        text-align: center;
+        justify-content: center;
+        font-size: 15px;
+        padding-top: 8px;
+      }
+      footer{
+        display:none;
+      }
+.btn1{
+        color: rgb(228, 95, 65); 
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+.btn2{
+        display: flex;
+        margin: 0 auto;
+        background-color: rgb(228, 95, 65); /* Set your desired background color */
+        color:white;/* Set text color to white or a contrasting color */
+        text-decoration: none;
+        border-radius: 10px; /* Add rounded corners *//* Add a smooth transition effect on hover */
+        padding-top: 4px;
+        box-shadow:0 4px 6px rgba(0,0,0,0.4);
+        width: 50px;
+        height:25px;
+        text-align: center;
+        justify-content: center;
+        font-size: 15px;
+
+      }
