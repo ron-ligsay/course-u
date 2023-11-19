@@ -2,13 +2,13 @@ from django.core.management.base import BaseCommand
 import csv
 import os
 import mysql.connector
-#from website.models import Specialization, Field  # Import your models
-#from assessment.models import Test, QuestionSet, UserResponse
-#from personality.models import  MBTI, MBTISet, MBTIResponse
+from apps.website.models import Specialization, Field  # Import your models
+from apps.assessment.models import Test, QuestionSet, UserResponse
+from apps.personality.models import  MBTI, MBTISet, MBTIResponse
 from django.apps import apps
 
-# from decouple import Config, RepositoryEnv
-# config = Config(RepositoryEnv('.env'))
+#from decouple import Config, RepositoryEnv
+#config = Config(RepositoryEnv('.env'))
 
 class Command(BaseCommand):
     help = 'Import data from CSV files to MySQL database'
@@ -17,18 +17,18 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='sawadeeKA456', # 'sql2023' , 'sawadekap', '022002
+            password='022002', # 'sql2023' , 'sawadekap', '022002
             database= 'courseu_db', #config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
         base_dir = os.getcwd()
         csv_table_mapping = {
-            base_dir + '\\static\\csv\\website_field.csv': {
-                'table_name': 'website_field',
-                'model_name' : 'Field',
-                'columns' : ['field','field_name','description','explanation'],
-                'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)', 'VARCHAR(1000)']
-            },
+            #base_dir + '\\static\\csv\\website_field.csv': {
+            #    'table_name': 'website_field',
+            #    'model_name' : 'Field',
+            #    'columns' : ['field','field_name','description','explanation'],
+            #    'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)', 'VARCHAR(1000)']
+            #},
             # base_dir + '\\static\\csv\\userdb.csv': {
             #     'table_name': 'userdb',
             #     'model_name' : 'User',
