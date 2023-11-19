@@ -68,3 +68,6 @@ body{
   position: relative;
   overflow: hidden;
 }
+footer{
+  display:none;
+}

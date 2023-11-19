@@ -15,31 +15,36 @@
   {% if year == 0 %}
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      <img src="{% static 'images/light.png' %}">
       Pre-Assessment
     </a>
   </div>
   {% elif year == 1 %}
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      <img src="{% static 'images/html.png' %}">
       {{ year }}st Year
     </a>
   </div>
   {% elif year == 2 %}
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      <img src="{% static 'images/java.png' %}">
       {{ year }}nd Year
     </a>
   </div>
   {% elif year == 3 %}
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
-      {{ year }}rd Year
+      <img src="{% static 'images/php.png' %}">
+       {{ year }}rd Year
     </a>
   </div>
   {% else %}
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
-      {{ year }}th Year
+      <img src="{% static 'images/c.png' %}">
+       {{ year }}th Year
     </a>
   </div>
   {% endif %}

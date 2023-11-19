@@ -49,13 +49,13 @@
     color:white;
 
   }
-  h2{
-    color:rgb(228, 95, 65);
-    margin-left: 70px;
+  h3{
+    margin-left: 20px;
   }
   p{
-    color:black;
-    margin-left: 70px;
+    color:rgb(228, 95, 65);
+    margin-left: 20px;
+   font-size:30px;
   }
   b{
     text-align: center;
