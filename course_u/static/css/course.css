@@ -31,10 +31,9 @@
     font-size: 50px;
   }
 .course{
-    text-align:center;
     border-radius: 10px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- 
+    text-align: center;
 }
 .btn{ 
   display: block;
@@ -55,12 +54,13 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 .btn:hover {
-  background-color:transparent;
+  background-color: rgb(228, 95, 65); /* Change the background color on hover */
+  color:white;
 
 }
 
 body{
-  background-image: url('/http://127.0.0.1:8000/static/images/bg_tao.png');
+  background-image: url("/static/images/bg_tao.png");
   background-size: cover;
   background-position: center;
   height: 100vh; /*Use viewport height*/

@@ -15,9 +15,9 @@
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
       {% if year == 0 %}
-      Freshman
+      Pre-Assessment
       {% else %}
-      Year {{ year }}
+       {{ year }}stYear
       {% endif %}
     </a>
   </div>

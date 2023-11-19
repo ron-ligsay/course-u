@@ -9,14 +9,15 @@
 {% block content %}
 
     
-<br><br>
+<br><br> {% for course in courses %}
     <div class="">
-        {% for course in courses %}
+       
         <div class="course">
             <a href="{% url 'select_year' course_id=course.id %}" class="btn btn-primary">{{ course.course_name }}</a>
         </div>
-        {% endfor %}
+       
     </div>
 </body>
+{% endfor %}
 <br><br><br><br><br><br><br><br><br><br>
 {% endblock content %}

@@ -19,18 +19,25 @@ iv.test-container .card
    position: relative;
 
 }*/
-
+.test-container{
+    display: flex;
+    justify-content:center;
+    margin-top: 20px;
+    margin-right:100px;
+}
 .card{
-    width: 200px;
-    height: 250px;
+    width: 210px;
+    height: 260px;
     border-radius:15px ;
     text-align: center;
     margin:3%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
     display: inline-block;
     top:50px;
     left:50px;
     position: relative;
+   
+    padding-top: 10px;
 }
 #card1{
     background-color:#fafafa; 
@@ -54,15 +61,19 @@ p{
 .btn{ 
     display: block;
     margin: 0 auto;
-    margin-bottom:5px;
+    margin-bottom:10px;
     width: 90px;
     height: 30px;
     font-size: 13px;
-    padding: 2px 1px;
+    padding: 1px 1px;
     text-align: center;
     background-color: rgb(228, 95, 65);
     color: white;
     border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    text-align: center;
+    padding-top: 7px;
+    margin-top: 10px;
+
   }

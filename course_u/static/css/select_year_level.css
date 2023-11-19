@@ -14,16 +14,17 @@ p{
       height: 80px;
       font-size: 25px;
       padding: 2px 1px;
-      background-color: rgb(228, 95, 65);
+      background-color: whitesmoke;
       border-radius: 15px;
       text-decoration: none;
       transition: background-color 0.3s ease;
       font-weight: bold;
-      color: white;
+      color: rgb(228, 95, 65);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
       margin-bottom: 10px; /* Add margin between buttons */
       font-family: Arial, Helvetica, sans-serif;
     }
     .btn:hover {
-      background-color: grey;
+      background-color: rgb(228, 95, 65); /* Change the background color on hover */
+    color:white;
     }
