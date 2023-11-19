@@ -19,7 +19,11 @@ iv.test-container .card
    position: relative;
 
 }*/
-    
+main{
+    background-image: url('../../static/images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .test-container{
     display: flex;
     justify-content:center;
