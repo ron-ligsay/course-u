@@ -1,27 +1,27 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('images/path.png'); /* Replace 'background.jpg' with your image file */
-    background-size: cover;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
 
-  .container {
-    width: 150px;
-    height: 300px; /* Increased height to accommodate the image */
-    margin: 0 10px;
-    text-align: center;
-    padding: 10px;
-  }
+.container {
+  width: 20px;
+  height: 20px; /* Increased height to accommodate the image */
+  margin: 0 10px;
+  text-align: center;
+  padding: 10px;
+}
 
-  .container img {
-    max-width: 100%;
-    max-height: 100px; /* Set a maximum height for the image */
-    margin-bottom: 10px;
-  }
-  .container h2{
-      color:rgb(228, 95,65)
-  }
+.container img {
+  max-width: 40px;
+  max-height: 20px; /* Set a maximum height for the image */
+  margin-bottom: 10px;
+}
+
+.container h2 {
+  color: rgb(228, 95, 65);
+}
