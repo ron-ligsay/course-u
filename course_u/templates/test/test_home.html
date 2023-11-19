@@ -1,8 +1,8 @@
-{% extends 'base_user.html' %}
+{% extends 'base_user.html' %}<!--navbar-->
 
 
 
-{% block title %}Home{% endblock %}
+{% block title %}Home{% endblock %}<!--hindi ko alam kung saan to aky kaya di-->
 
 {% load static %}
 
@@ -17,27 +17,26 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<br><br><br><br>
+<br><br><br>
 
-<div class="test-container">
-        
+        <div class = "test-container">
         <div class="card" id="card1">
            
             <div class="card-body">
-                    <img src="{% static 'images/course.png' %}" alt="course" width="100" height="100">
+                    <img src="{% static 'images/course1.png' %}" alt="course" width="100" height="100">
                 
                 <h5 class="card-title">Define youre Course, Year and Grades</h5>
                 <p class="card-text">Click the button below to start the form.</p>
-                <br>
+              
                 <a href="{% url 'select_course' %}" class="btn btn-primary">Here</a>
             </div>
         </div>
         <div class="card" id="card2">
             <div class="card-body">
-                <img src="{% static 'images/test.png' %}" alt="course" width="100" height="100">
+                <img src="{% static 'images/test1.png' %}" alt="course" width="100" height="100">
                 <h5 class="card-title">Start Test</h5>
                 <p class="card-text">Click the button below to start the test.</p>
-                <br>
+              
                 <a href="{% url 'start_test' %}" class="btn btn-primary">Start Test</a>
                 <a href="{% url 'test_results_overall' %}" class="btn btn-primary">View Results</a>
             </div>
@@ -46,10 +45,10 @@
 
         <div class="card" id="card3">
             <div class="card-body">
-                <img src="{% static 'images/personality.png' %}" alt="course" width="100" height="100">
+                <img src="{% static 'images/personality1.png' %}" alt="course" width="100" height="100">
                 <h5 class="card-title">Start Personality Test</h5>
                 <p class="card-text">Click the button below to start the test.</p>
-                <br><br>
+                <br>
                 <a href="{% url 'initialize_mbti_test' %}" class="btn btn-primary">Start Test</a>
             </div>
         </div>
@@ -57,13 +56,13 @@
 
         <div class="card" id="card4">
             <div class="card-body">
-                <img src="{% static 'images/recommendation.png' %}" alt="course" width="100" height="100">
+                <img src="{% static 'images/recommendation1.png' %}" alt="course" width="100" height="100">
                 <h5 class="card-title">Recommendation</h5>
-                <p class="card-text">Generate your Recommendation based on your Grades, Tests, Personality, and Interests.</p>
+                <p class="card-text">Generate your Recommendation based on you results.</p>
+                
                 <a href="{% url 'recommender' %}" class="btn btn-primary">Compute</a>
             </div>
-        </div>
-    </div>
+        </div></div>
 <br><br><br><br>
 {% else %}
 <!-- 

@@ -37,7 +37,7 @@ urlpatterns = [
 
     #for landing page
     path('', views.landing_page, name='landing_page'),
-
+    path('paths/', views.paths, name = 'paths'),
     path('admin_report/', views.admin_report, name='admin_report'),
     path('admin_students',views.admin_students, name='admin_students'),
     #for grade levl

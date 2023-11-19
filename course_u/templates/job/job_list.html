@@ -24,6 +24,7 @@
             <div class="job-list">
                 {% for job_posting in job_postings %}
                 <div class="job-card" data-job-id="{{ job_posting.id }}">
+                    
                     <h2 class="job-title">{{ job_posting.job_title }}</h2>
                     <p class="company-name">{{ job_posting.company_name }}</p>
                 </div>

@@ -3,7 +3,7 @@
 
 {% load static %}
 {% block head_extra %}
-
+<link rel="stylesheet" href="{% static 'css/success_page.css' %}">
 {% endblock head_extra %}
 
 
@@ -11,15 +11,18 @@
 
 <h2>You have Saved your Grades</h2>
 <p>Course:{{ course }}, Year Level:{{year_level}}</p><br>
-
-<div>
-    <p>Go back to Test Home</p>
+<div class="container">
+<div class="row">
+    <div class="column1">
+        <img src="{% static 'images/com.png' %}" alt="Girl Image">
+    </div>
+<div class="column2">
     <a href="{% url 'test_home' %}" class="submit-button" id="submit-button"><b>Test Home</b></a>
-</div>
-<div>
-    <p>Take the test!</p>
     <a href="{% url 'start_test' %}" class="submit-button" id="submit-button"><b>Take Test</b></a>
+
 </div>
 
 
+
+</div>
 {% endblock content %}

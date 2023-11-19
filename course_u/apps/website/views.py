@@ -214,6 +214,9 @@ def recovery(request):
 def landing_page(request):
     return render(request, 'landing.html')
 
+def paths(request):
+    return render(request,'test/paths.html' )
+
 
 
 #########################################################################
