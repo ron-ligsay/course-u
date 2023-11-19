@@ -9,18 +9,41 @@
 {% load custom_filters %}
 {% block content %}
 <p>Select Year Level</p><br>
+
 <div>
   {% for year in number_of_years|get_range %}
-  
+  {% if year == 0 %}
   <div class="year-level">
     <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
-      {% if year == 0 %}
       Pre-Assessment
-      {% else %}
-       {{ year }}stYear
-      {% endif %}
     </a>
   </div>
+  {% elif year == 1 %}
+  <div class="year-level">
+    <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      {{ year }}st Year
+    </a>
+  </div>
+  {% elif year == 2 %}
+  <div class="year-level">
+    <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      {{ year }}nd Year
+    </a>
+  </div>
+  {% elif year == 3 %}
+  <div class="year-level">
+    <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      {{ year }}rd Year
+    </a>
+  </div>
+  {% else %}
+  <div class="year-level">
+    <a href="{% url 'enroll_student' course_id=course.id year_level=year %}" class="btn btn-primary">
+      {{ year }}th Year
+    </a>
+  </div>
+  {% endif %}
+
   {% endfor %}
 </div>
 
