@@ -3,8 +3,8 @@
 /* Style the main container */
 .container {
     max-width: 700px;
-    height: 400px;
     margin: 0 auto;
+    
 }
 
 /* Style the question details */
@@ -21,14 +21,12 @@
 }
 
 /* Style the form container */
-form {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
-}
 
+form.btn-primary{
+    height: 420px;
+    border: none;
+    
+}
 /* Style the form-check container */
 .form-check {
     margin-bottom: 20px;
@@ -40,6 +38,7 @@ form {
     margin-bottom: 10px;
     font-size: 16px;
     color: #343a40;
+    
 }
 
 .form-check input[type="radio"] {
@@ -47,22 +46,20 @@ form {
 }
 
 /* Style the submit button */
-.btn-primary {
-    background-color:transparent;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    margin-left: 370px;
-    margin-top:19px;
-}
+
 .btn img{
     height:30px;
     width:40px;
+    background-color: white;
+    cursor: pointer;
+    
 }
 footer{
     display: none;
+}
+.btn-primary{
+    margin-left: 370px;
+    border: none;
 }
 .btn-secondary{ 
     display: inline-block;
