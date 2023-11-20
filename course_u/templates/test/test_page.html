@@ -10,7 +10,7 @@
     {% block content %}
 
     {% if user.is_authenticated %}
-    <div class="container">
+    <div class="test card container">
         <p>Question {{ question.question_id }} of {{ question.n_question }}</p>
         
         <form method="post" action="{% url 'submit_question' question_id=question.question_id %}">

@@ -7,6 +7,15 @@
     
 }
 
+.test.card{
+    /* shadow drop */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    margin: 20px;
+    padding: 20px;
+    /* rounded corner */
+    border-radius: 15px;
+}
+
 /* Style the question details */
 .container p {
     margin-bottom: 10px;
