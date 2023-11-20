@@ -48,7 +48,7 @@ class LearningMaterial(models.Model):
     level = models.CharField(max_length=100)
     rating = models.FloatField(default=0)
     url = models.CharField(max_length=1000)
-    description = models.CharField(max_length=1000)
+    description = models.CharField(max_length=3000)
     skills = models.CharField(max_length=1000)
     field = models.ForeignKey(Field, on_delete=models.CASCADE)
 

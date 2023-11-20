@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 from .models import UserSkill, UserSkillSource, UserRecommendations
 
-from apps.website.models import Skill, Specialization, SpecializationSkills, Field
+from apps.website.models import Skill, Specialization, SpecializationSkills, Field, LearningMaterial
 from apps.acad.models import StudentProfile
 
 import pandas as pd
@@ -494,10 +494,29 @@ def recommendation_course(request, field_id):
     #specialization = Specialization.objects.get(id=specialization_id)
     #roadmap = specialization.roadmap
 
+    learning_materials = LearningMaterial.objects.filter(field_id=field_id)
+
+    try:
+        learning_materials_beginner = learning_materials.filter(level='Beginner')
+    except:
+        learning_materials_beginner = None
+    try:
+        learning_materials_intermediate = learning_materials.filter(level='Intermediate')
+    except:
+        learning_materials_intermediate = None
+    try:
+        learning_materials_advanced = learning_materials.filter(level='Advanced')
+    except:
+        learning_materials_advanced = None
+
+
     return render(request, 'recommender/recommendation_course.html', {
         'field': field,
         #'specialization': specialization,
         #'roadmap': roadmap,
+        'learning_materials_beginner': learning_materials_beginner,
+        'learning_materials_intermediate': learning_materials_intermediate,
+        'learning_materials_advanced': learning_materials_advanced,
     })
 
 from apps.jobs.models import JobPosting
