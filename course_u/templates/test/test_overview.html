@@ -1,12 +1,17 @@
 {% extends 'base_user.html' %}
 
 {% block title %}Test Overview{% endblock %}
-
+{% load static %}
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/test_overview.css' %}">
+{% endblock head_extra %}
 {% block content %}
+<div class="test-container">
+
     <h1 class="mt-4">Test Overview</h1>
     <p>Question Set ID: {{ question_set_id }}</p>
     <p>{{questions_answered}} / {{n_question }}</p>
-    <table class="table table-bordered mt-4">
+    <table class="table1">
         <thead class="thead-light">
             <tr>
                 {% if is_admin %}
@@ -45,16 +50,17 @@
                     </td>
                     <td>
                         {% if item.has_answered %}
-                            <a href="{% url 'display_question' question_id=item.question.question_id %}" class="btn btn-primary">View</a>
+                            <a href="{% url 'display_question' question_id=item.question.question_id %}" class="btn2">View</a>
                         {% else %}
-                            <a href="{% url 'display_question' question_id=item.question.question_id %}" class="btn btn-primary">Start Test</a>
+                            <a href="{% url 'display_question' question_id=item.question.question_id %}" class="btn1">Start Test</a>
                         {% endif %}
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <br>
 
     <a class="btn btn-primary" href="{% url 'submit_test' %}">Submit Test</a>
-    
+</div>
 {% endblock %}

@@ -110,8 +110,9 @@ def home_field(request, field_id=None):
         specialization_items = Specialization.objects.all()
         messages.success(request, "specialization items is not filtered")
 
-    specialization_items = Specialization.objects.all()
+    #specialization_items = Specialization.objects.all()
     
+
     return render(request, 'specialization_list.html', {
         'specialization_items': specialization_items,
         'field_items': recommended_fields + list(field_items),
@@ -242,7 +243,7 @@ def terms_and_conditions(request):
     user = request.user
     # Query additional user profile data if using a custom user profile model
     context = {'user': user}
-    return render(request, 'user/user_profile.html', context)
+    return render(request, 'user/terms_and_conditions.html', context)
 
 @login_required(login_url='login_user')
 def settings(request):
@@ -259,7 +260,6 @@ class CustomLogoutView(LogoutView):
         next_page = super().get_next_page()
         # You can add additional logic here if required
         return next_page
-
 
 #########################################################################
 # -----------------------for specialization---------------------------- #

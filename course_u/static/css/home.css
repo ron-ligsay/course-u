@@ -1,37 +1,73 @@
 /* Static CSS file or inline style */
+
+main{
+  background-image: url('../../static/images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .card-container {
   display: flex;
   /* Use flexbox to create a horizontal layout */
-  gap: 20px;
+  /* gap: 20px; */
   overflow-x: auto;
   /* Allow horizontal scrolling if content overflows */
   padding-bottom: 20px;
   /* Add some padding at the bottom for better visibility */
 }
 
-.card {
+.card {/*box for fields*/
   border: 1px solid #ccc;
   padding: 10px;
-  background-color: #f9f9f9;
+  color:black;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   width: 250px;
+  margin-left: 30px;;
   /* Adjust the width as needed */
   flex-shrink: 0;
   /* Prevent cards from shrinking to fit */
+  text-align: center;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  /* margin-left: 50px; */
+  background-color: whitesmoke;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.4);
+  border-radius: 20px;
+   
+}
+.card.specialization,
+.card.field{
+  max-height: 50px;
+  overflow: hidden;
 }
 
+
+.card:hover{
+  background-color: rgb(248, 128, 101);
+  color:black;
+}
+.card img{
+  height:80px;
+  width:119px;
+ padding-right: 20px;
+ display:inline-block;
+
+}
 .field_title
 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
+  color:black;
 }
-
 .recommended-label
 {
   /* Small font */
   font-size: 12px;
 }
-
+h3{
+  font-size: 30px;
+  color:black;
+  margin-left: 30px;
+}
 .recommended_first
 {
   /* color gold */
@@ -83,4 +119,7 @@ a:hover {
 
 a:active {
   color: #000;
+}
+footer{
+  display: none;
 }

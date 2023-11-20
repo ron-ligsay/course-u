@@ -1,0 +1,93 @@
+/* Add this CSS to your existing styles or create a new CSS file */
+
+/* Style the main container */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    
+}
+
+.test.card{
+    /* shadow drop */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    margin: 20px;
+    padding: 20px;
+    /* rounded corner */
+    border-radius: 15px;
+}
+
+/* Style the question details */
+.container p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: rgb(228, 95, 65);
+}
+
+/* Style the form container */
+
+form.btn-primary{
+    height: 420px;
+    border: none;
+    
+}
+/* Style the form-check container */
+.form-check {
+    margin-bottom: 20px;
+}
+
+/* Style the radio buttons and labels */
+.form-check label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #343a40;
+    
+}
+
+.form-check input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style the submit button */
+
+.btn img{
+    height:30px;
+    width:40px;
+    background-color: white;
+    cursor: pointer;
+    
+}
+footer{
+    display: none;
+}
+.btn-primary{
+    margin-left: 370px;
+    border: none;
+}
+.btn-secondary{ 
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom:10px;
+    width: 100px;
+    height: 30px;
+    font-size: 13px;
+    padding: 1px 1px;
+    text-align: center;
+    background-color: rgb(228, 95, 65);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    padding-top: 7px;
+    margin-top: 10px;
+    margin-left: 50px;
+    justify-content: center;
+
+  }

@@ -23,8 +23,8 @@ This is a project for the College of Computer and Information Sciences (CCIS) to
 * Python 3.8 or higher
 
 ## Instruction for Setups/Installation:
-Go to [Setup-Guide.md](Setup-Guide.md) for the full guide.
-Go to [Build-Guide.md](Build-Guide.md) for the full guide.
+Go to [Setup-Guide.md](course_u/src/markdowns/Setup-Guide.md) for the full guide.
+Go to [Build-Guide.md](course_u/src/markdowns/Build-Guide.md) for the full guide.
 
 ## Project Structure:
 ```

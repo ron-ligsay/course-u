@@ -24,6 +24,12 @@
     font-size: 50px;
   }
   */
+  
+body{
+  background-image: url('../../static/images/year.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
   p{
     text-align:  center;
     color:rgb(228, 95, 65);
@@ -67,4 +73,7 @@ body{
   width: 100vw; /*Use viewport width*/
   position: relative;
   overflow: hidden;
+}
+footer{
+  display:none;
 }

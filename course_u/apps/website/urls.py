@@ -18,6 +18,7 @@ urlpatterns = [
     path('sign_in/', views.sign_in, name='sign_in'),
     path('forgot_password/', views.forgot_password, name='forgot_password'),
     path('recovery/', views.recovery, name='recovery'),
+    
    
     # For User Page
     path('profile/', views.user_profile, name='user_profile'),

@@ -1,45 +1,43 @@
-{% extends 'base_user.html' %}
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/paths.css' %}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Containers with Descriptions and Images</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containers with Descriptions and Images</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/paths.css' %}">
 </head>
 <body>
-{% block content %}
   <div class="container">
-    <img src="images/user.png" alt="Image for Container 1">
+    <img src="{% static 'images/user.png' %}" alt="Image for Container 1">
     <h2>Pre Assessment</h2>
     <p> Before entering their first year of college, users undergo an initial assessment to evaluate their knowledge and skills.   </p>
   </div>
 
   <div class="container">
-    <img src="images/user.png" alt="Image for Container 1">
+    <img src="{% static 'images/user.png' %}" alt="Image for Container 1">
     <h2>1st Year Assessment</h2>
     <p>Following the pre assessment, users input grades for 1st-year majors before proceeding to the next assessment.</p>
   </div>
 
   <div class="container">
-    <img src="images/user.png" alt="Image for Container 2">
+    <img src="{% static 'images/user.png' %}" alt="Image for Container 2">
     <h2>2nd Year Assessment</h2>
     <p>Following the 1st year assessment, users input grades for 2nd-year majors before proceeding to the next assessment.   </p>
   </div>
 
   <div class="container">
-    <img src="images/user.png" alt="Image for Container 3">
+    <img src="{% static 'images/user.png' %}" alt="Image for Container 3">
     <h2>3rd Year Assessment</h2>
     <p>After the 2nd year assessment, users input grades for 3rd-year majors before taking another assessment.</p>
   </div>
 
   <div class="container">
-    <img src="images/user.png" alt="Image for Container 4">
+    <img src="{% static 'images/user.png' %}" alt="Image for Container 4">
     <h2>4th Year Assessment</h2>
     <p>
     After 3rd year assessment, users input their grades for 4th-year majors and will recommend career based on the results.</p>
   </div>
-
-{% endblock %}
+  <a href="{% url 'test_home' %}" class="get-started-button" id="get-started-button"><b>Next</b></a>
+</body>
+</html>

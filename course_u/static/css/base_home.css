@@ -179,7 +179,7 @@ body{
     width: calc(100% - 200px);
     left: 200px;
     min-height: 100vh;
-    background-color: var(--white);
+    /* background-color: var(--white); */
     transition: 0,5s;
 }
 
@@ -242,9 +242,10 @@ body{
 
 
 /* footer */
+
 footer
 {
-    /* always at bottom position: absolute;*/
+    /*always at bottom position: absolute;*/
     margin-top: 20px;
     bottom: 0;
     width: 100%;
