@@ -412,12 +412,19 @@ def recommendation_field(request, field_id):
     not_in_user_skills_2 = normalized_field_skills_row_2[~normalized_field_skills_row_2.index.isin(user_skills_set)]
     not_in_user_skills_2 = not_in_user_skills_2.nlargest(7)
 
+    # remove 0
+    top_user_skills = top_user_skills[top_user_skills != 0]
+    top_user_skills_2 = top_user_skills_2[top_user_skills_2 != 0]
+    not_in_user_skills = not_in_user_skills[not_in_user_skills != 0]
+    not_in_user_skills_2 = not_in_user_skills_2[not_in_user_skills_2 != 0]
 
     # Get the column names (skills) as a list
     top_user_skills = top_user_skills.index.tolist()
     not_in_user_skills = not_in_user_skills.index.tolist()
     top_user_skills_2 = top_user_skills_2.index.tolist()
     not_in_user_skills_2 = not_in_user_skills_2.index.tolist()
+
+    
 
     return render(request, 'recommender/recommendation_field.html', {
         'field_object': field_object,
