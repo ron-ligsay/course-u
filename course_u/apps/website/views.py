@@ -110,8 +110,9 @@ def home_field(request, field_id=None):
         specialization_items = Specialization.objects.all()
         messages.success(request, "specialization items is not filtered")
 
-    specialization_items = Specialization.objects.all()
+    #specialization_items = Specialization.objects.all()
     
+
     return render(request, 'specialization_list.html', {
         'specialization_items': specialization_items,
         'field_items': recommended_fields + list(field_items),

@@ -8,7 +8,7 @@ main{
 .card-container {
   display: flex;
   /* Use flexbox to create a horizontal layout */
-  gap: 20px;
+  /* gap: 20px; */
   overflow-x: auto;
   /* Allow horizontal scrolling if content overflows */
   padding-bottom: 20px;
@@ -28,12 +28,19 @@ main{
   text-align: center;
   margin-right: 10px;
   transition: background-color 0.3s ease;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   background-color: whitesmoke;
   box-shadow: 0 4px 6px rgb(0,0,0,0.4);
   border-radius: 20px;
-  
+   
 }
+.card.specialization,
+.card.field{
+  max-height: 50px;
+  overflow: hidden;
+}
+
+
 .card:hover{
   background-color: rgb(248, 128, 101);
   color:black;
