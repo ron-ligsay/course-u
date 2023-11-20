@@ -918,11 +918,15 @@ def student_test_report(request, question_set_id):
     print("correct_counts: ", correct_counts)
 
     bar_fig = px.bar(
-        x=skill_names,
-        y=correct_counts,
-        labels={'x': 'Skill', 'y': 'Correct Count'},
-        title='Correct Responses per Skill'
+        x=correct_counts,
+        y=skill_names,
+        orientation='h',
+        labels={'x': 'Relevance Score', 'y': 'Skill Name'},
+        title='Correct Responses per Skill',
+        height=(len((skill_names) * 25) + 100),
+        width=(max((correct_counts) * 30) + 300),
     )
+
 
     bar_plot = plot(bar_fig, output_type='div')
 
@@ -998,13 +1002,23 @@ def student_test_report_overall(request):
 
         # print("skill_names: ", skill_names)
         # print("correct_counts: ", correct_counts)
+        print(max(correct_counts))
+        print(len(skill_names))
+
+        # sort
+        skill_names, correct_counts = zip(*sorted(zip(skill_names, correct_counts)))
+
         try:
             bar_fig = px.bar(
-                x=skill_names,
-                y=correct_counts,
-                labels={'x': 'Skill', 'y': 'Correct Count'},
-                title='Correct Responses per Skill'
-            )
+                x=correct_counts,
+                y=skill_names,
+                orientation='h',
+                labels={'x': 'Relevance Score', 'y': 'Skill Name'},
+                title='Correct Responses per Skill',
+                height=(len((skill_names) * 25) + 100),
+                width=(max((correct_counts) * 30) + 300),
+            )   
+            
 
             bar_plot = plot(bar_fig, output_type='div')
         except:

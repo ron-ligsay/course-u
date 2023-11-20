@@ -7,19 +7,19 @@
 {% endblock head_extra %}
 {% block content %}
     <h4>{{ username }}'s results</h4>
+    <h4>Top 3 topics</h4><br>
+    {% for field in top_fields %}
+            <p>{{ field }}</p>
+    {% endfor %}
+  
     <div>
         {{ graph|safe }}
     </div>
     <div>
         {{ bar_plot|safe }}
     </div>
-
-    <h4>Top 3 topics</h4><br>
-    {% for field in top_fields %}
-        <li>
-            <a href="">{{ field }}</a>
-        </li>
-
-    {% endfor %}
+ 
     <a href="{% url 'test_home' %}" class="btn btn-primary">Back to Recommender Page</a>
+    
+  
 {% endblock %}
