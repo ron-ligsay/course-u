@@ -17,18 +17,18 @@ class Command(BaseCommand):
         connection = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='022002', # 'sql2023' , 'sawadekap', '022002
+            password='sql2023', # 'sql2023' , 'sawadekap', '022002
             database= 'courseu_db', #config('DB_NAME', default = 'courseu_db')#'courseu_db',
         )
 
         base_dir = os.getcwd()
         csv_table_mapping = {
-            #base_dir + '\\static\\csv\\website_field.csv': {
-            #    'table_name': 'website_field',
-            #    'model_name' : 'Field',
-            #    'columns' : ['field','field_name','description','explanation'],
-            #    'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)', 'VARCHAR(1000)']
-            #},
+            base_dir + '\\static\\csv\\website_field.csv': {
+               'table_name': 'website_field',
+               'model_name' : 'Field',
+               'columns' : ['field','field_name','description','explanation'],
+               'attributes' : ['INT PRIMARY KEY', 'VARCHAR(150)', 'VARCHAR(1000)', 'VARCHAR(1000)']
+            },
             # base_dir + '\\static\\csv\\userdb.csv': {
             #     'table_name': 'userdb',
             #     'model_name' : 'User',
