@@ -3,6 +3,11 @@ from django.http import HttpResponse
 
 from django.contrib.auth.models import User
 
+
+from django.shortcuts import get_object_or_404
+
+from django.utils.safestring import mark_safe
+
 from .models import UserSkill, UserSkillSource, UserRecommendations
 
 from apps.website.models import Skill, Specialization, SpecializationSkills, Field, LearningMaterial
@@ -521,15 +526,16 @@ def recommendation_course(request, field_id):
 
 from apps.jobs.models import JobPosting
 
-def recommendation_jobs(request, field_id):
+def recommendation_jobs(request, field_id, job_id=None):
     field = Field.objects.get(field=field_id)
-    #specialization = Specialization.objects.get(id=specialization_id)
-    #jobs = specialization.jobs.all()
+    
+    job_postings = JobPosting.objects.filter(field=field_id)
+    selected_job = get_object_or_404(JobPosting, pk=1)   
+ 
+    if job_id:
+        selected_job = get_object_or_404(JobPosting, pk=job_id)
+    
 
-    jobs = JobPosting.objects.all()
+    selected_job.job_description = mark_safe(selected_job.job_description)
 
-    return render(request, 'recommender/recommendation_jobs.html', {
-        'field': field,
-        #'specialization': specialization,
-        'jobs': jobs,
-    })
+    return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
