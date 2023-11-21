@@ -18,12 +18,15 @@
 {% if user.is_authenticated %}
 
 <div class="container">
+    {% if field != None %}
+    <h2>Jobs for {{ field.field_name }}</h2>
+    {% endif %}
     <div class="job row">
         <div class="jobs col-md-2">
             <!-- Left Column for Job List -->
             <div class="job-list">
                 {% for job_posting in job_postings %}
-                <div class="job-card" data-job-id="{{ job_posting.id }}">
+                <div class="job-card" data-job-id="{{ job_posting.id }}" data-field-id="{{ field.field }}">
                     
                     <h2 class="job-title">{{ job_posting.job_title }}</h2>
                     <p class="company-name">{{ job_posting.company_name }}</p>
@@ -37,7 +40,7 @@
                 <!-- <p>Selected Job ID: {{ job_posting.id }}</p> -->
                 {% if selected_job %}
                 <h2 class="">{{ selected_job.job_title }}</h2>
-                <h3 class=""><a href="{{ selected_job.company_link}}">{{ selected_job.company_name }}</a></h3>
+                <h3 class=""><a href="{{ selected_job.company_link }}">{{ selected_job.company_name }}</a></h3>
                 <p class="job-location">{{ selected_job.location }}</p>
                 <p class="job-date">Date Posted: {{ selected_job.date_posted }}</p>
                 <div class="job-description">

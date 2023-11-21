@@ -172,6 +172,13 @@ class Command(BaseCommand):
                 'columns':  ["id","user_id","skill_id","source","skill_level"],
                 'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT","VARCHAR(100)","INT"]
             },
+             base_dir + '\\static\\csv\\website_learningmaterial.csv': {
+                'table_name': 'website_learningmaterial',
+                'model_name': 'LearningMaterial',
+                # material_id, title, university, level, rating, url, description, skills. field_id
+                'columns':  ["material_id","title","university","level","rating","url","description","skills","field_id"],
+                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)","VARCHAR(100)","VARCHAR(100)","FLOAT","VARCHAR(1000)","VARCHAR(3000)","VARCHAR(1000)","INT"]
+            },
         }
         
         cursor = connection.cursor()

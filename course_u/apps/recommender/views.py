@@ -3,9 +3,14 @@ from django.http import HttpResponse
 
 from django.contrib.auth.models import User
 
+
+from django.shortcuts import get_object_or_404
+
+from django.utils.safestring import mark_safe
+
 from .models import UserSkill, UserSkillSource, UserRecommendations
 
-from apps.website.models import Skill, Specialization, SpecializationSkills, Field
+from apps.website.models import Skill, Specialization, SpecializationSkills, Field, LearningMaterial
 from apps.acad.models import StudentProfile
 
 import pandas as pd
@@ -494,23 +499,43 @@ def recommendation_course(request, field_id):
     #specialization = Specialization.objects.get(id=specialization_id)
     #roadmap = specialization.roadmap
 
+    learning_materials = LearningMaterial.objects.filter(field_id=field_id)
+
+    try:
+        learning_materials_beginner = learning_materials.filter(level='Beginner')
+    except:
+        learning_materials_beginner = None
+    try:
+        learning_materials_intermediate = learning_materials.filter(level='Intermediate')
+    except:
+        learning_materials_intermediate = None
+    try:
+        learning_materials_advanced = learning_materials.filter(level='Advanced')
+    except:
+        learning_materials_advanced = None
+
+
     return render(request, 'recommender/recommendation_course.html', {
         'field': field,
         #'specialization': specialization,
         #'roadmap': roadmap,
+        'learning_materials_beginner': learning_materials_beginner,
+        'learning_materials_intermediate': learning_materials_intermediate,
+        'learning_materials_advanced': learning_materials_advanced,
     })
 
 from apps.jobs.models import JobPosting
 
-def recommendation_jobs(request, field_id):
+def recommendation_jobs(request, field_id, job_id=None):
     field = Field.objects.get(field=field_id)
-    #specialization = Specialization.objects.get(id=specialization_id)
-    #jobs = specialization.jobs.all()
+    
+    job_postings = JobPosting.objects.filter(field=field_id)
+    selected_job = get_object_or_404(JobPosting, pk=1)   
+ 
+    if job_id:
+        selected_job = get_object_or_404(JobPosting, pk=job_id)
+    
 
-    jobs = JobPosting.objects.all()
+    selected_job.job_description = mark_safe(selected_job.job_description)
 
-    return render(request, 'recommender/recommendation_jobs.html', {
-        'field': field,
-        #'specialization': specialization,
-        'jobs': jobs,
-    })
+    return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
