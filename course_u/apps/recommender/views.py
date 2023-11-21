@@ -524,18 +524,18 @@ def recommendation_course(request, field_id):
         'learning_materials_advanced': learning_materials_advanced,
     })
 
-from apps.jobs.models import JobPosting
+# from apps.jobs.models import JobPosting
 
-def recommendation_jobs(request, field_id, job_id=None):
-    field = Field.objects.get(field=field_id)
+# def recommendation_jobs(request, field_id, job_id=None):
+#     field = Field.objects.get(field=field_id)
     
-    job_postings = JobPosting.objects.filter(field=field_id)
-    selected_job = get_object_or_404(JobPosting, pk=1)   
+#     job_postings = JobPosting.objects.filter(field=field_id)
+#     selected_job = get_object_or_404(JobPosting, pk=1)   
  
-    if job_id:
-        selected_job = get_object_or_404(JobPosting, pk=job_id)
+#     if job_id:
+#         selected_job = get_object_or_404(JobPosting, pk=job_id)
     
 
-    selected_job.job_description = mark_safe(selected_job.job_description)
+#     selected_job.job_description = mark_safe(selected_job.job_description)
 
-    return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
+#     return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
