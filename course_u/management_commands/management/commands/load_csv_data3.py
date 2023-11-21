@@ -41,22 +41,22 @@ class Command(BaseCommand):
             #     'columns': ['specialization_id', 'title','description','roadmap_id', 'field_id',],
             #     'attributes': ['INT PRIMARY KEY',  'VARCHAR(150)', 'VARCHAR(1000)', 'INT','INT',]
             # },
-            # base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
-            #     'table_name': 'jobs_jobposting',
-            #     'model_name': 'JobPosting',
-            #     #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
-            #     'columns': ['id','link','job_title',
-            #                 'company_name','company_link','date_posted',
-            #                 'keyword','keyword_id','location',
-            #                 'employment_type','job_function','industries','seniority_level',
-            #                 'job_description'],
-            #     'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
-            #                     'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
-            #                     'VARCHAR(100)','INT','VARCHAR(300)',
-            #                     'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
-            #                     'TEXT'
-            #                     ]
-            # },
+            base_dir + '\\static\\csv\\jobs_jobposting.csv': {
+                'table_name': 'jobs_jobposting',
+                'model_name': 'JobPosting',
+                #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
+                'columns': ['id','link','keyword','job_title',
+                            'company_name','company_link','date_posted',
+                            'location',
+                            'employment_type','job_function','industries','seniority_level',
+                            'job_description','field_id'],
+                'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 'VARCHAR(100)',
+                                'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
+                                'VARCHAR(300)',
+                                'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
+                                'TEXT','INT'
+                                ]
+            },
             # base_dir + '\\static\\csv\\assessment_test.csv': {
             #     'table_name': 'assessment_test',
             #     'model_name': 'Test',
@@ -172,13 +172,13 @@ class Command(BaseCommand):
             #     'columns':  ["id","user_id","skill_id","source","skill_level"],
             #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "INT","INT","VARCHAR(100)","INT"]
             # },
-            base_dir + '\\static\\csv\\website_learningmaterial.csv': {
-                'table_name': 'website_learningmaterial',
-                'model_name': 'LearningMaterial',
-                # material_id, title, university, level, rating, url, description, skills. field_id
-                'columns':  ["material_id","title","university","level","rating","url","description","skills","field_id"],
-                'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)","VARCHAR(100)","VARCHAR(100)","FLOAT","VARCHAR(1000)","VARCHAR(3000)","VARCHAR(1000)","INT"]
-            },
+            # base_dir + '\\static\\csv\\website_learningmaterial.csv': {
+            #     'table_name': 'website_learningmaterial',
+            #     'model_name': 'LearningMaterial',
+            #     # material_id, title, university, level, rating, url, description, skills. field_id
+            #     'columns':  ["material_id","title","university","level","rating","url","description","skills","field_id"],
+            #     'attributes' : ["INT PRIMARY KEY NOT NULL AUTO_INCREMENT", "VARCHAR(300)","VARCHAR(100)","VARCHAR(100)","FLOAT","VARCHAR(1000)","VARCHAR(3000)","VARCHAR(1000)","INT"]
+            # },
         }
         
         cursor = connection.cursor()
@@ -208,7 +208,7 @@ class Command(BaseCommand):
                 connection.commit()
                 print("Now loading data to the table...")
             # Load data from CSV
-            with open(csv_file_path, 'r') as file:
+            with open(csv_file_path, 'r', encoding='utf-8') as file:
                 csv_reader = csv.DictReader(file)
                 # for row in csv_reader:
                 #     try:
