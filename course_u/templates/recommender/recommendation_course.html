@@ -4,10 +4,12 @@
 
 {% block title %}Recommender{% endblock %}
 
+
 {% load static %}
 
 
 {% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/recommendation_course.css' %}">
 
 {% endblock head_extra %}
 
@@ -21,7 +23,7 @@
 <div>
     <h3>{{ material.title }}</h3>
     <!-- <p>{{ material.description }}</p> -->
-    <a href="{{ material.url }}" target="_blank">Link</a>
+    <a href="{{ material.url }}" target="_blank">Click Link</a>
 </div>
 {% endfor %}
 </div>
@@ -32,7 +34,7 @@
 <div>
     <h3>{{ material.title }}</h3>
     <!-- <p>{{ material.description }}</p> -->
-    <a href="{{ material.url }}" target="_blank">Link</a>
+    <a href="{{ material.url }}" target="_blank">Click Link</a>
 </div>
 {% endfor %}
 </div>
@@ -43,7 +45,7 @@
 <div>
     <h3>{{ material.title }}</h3>
     <!-- <p>{{ material.description }}</p> -->
-    <a href="{{ material.url }}" target="_blank">Link</a>
+    <a href="{{ material.url }}" target="_blank">Click Link</a>
 </div>
 {% endfor %}
 </div>
