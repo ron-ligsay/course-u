@@ -50,17 +50,17 @@
         <h4>Explore more about the possible future path for you.</h4>
 
         <div class="card">
-            <p>Specialization</p>
+            <p>Click to see specialization</p>
             <a href="{% url 'recommendation_specialization' field_id=field_object.field  %}" class="btn">Specializations</a>
         </div>
 
         <div class="card">
-            <p>Roadmap</p>
+            <p>Click to see roadmap</p>
             <a href="{% url 'recommendation_course' field_id=field_object.field %}" class="btn">Roadmap</a>
         </div>
 
         <div class="card">
-            <p>Jobs</p>
+            <p>Click to see Jobs</p>
             <a href="{% url 'job_list_with_field' field_id=field_object.field %}" class="btn">Jobs</a>
         </div>
     </div>
