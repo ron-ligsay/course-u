@@ -1,9 +1,3 @@
-
-body{
-  background-image: url('../../static/images/course.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 body {
   display: flex;
   justify-content: center;
@@ -14,10 +8,33 @@ body {
   background-size: cover;
 }
 
+.container1 {
+text-align: center;
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+padding: 20px;
+box-sizing: border-box;
+background-color: rgba(255, 255, 255, 0.8); 
+z-index: 1; /* Optional: Set a higher z-index to make sure it's above other elements */
+}
+
+.title {
+font-size: 30px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.subtitle {
+font-size: 24px;
+margin-bottom: 20px;
+} 
 .container {
   width: 150px;
   height: 300px; /* Increased height to accommodate the image */
-  margin: 0 20px;
+  margin: 0 10px;
   text-align: center;
   padding: 10px;
 }
@@ -30,23 +47,25 @@ body {
 .container h2{
     color:rgb(228, 95,65)
 }
-.get-started-button{ 
-  padding: 10px 20px;
-  background-color: rgb(228, 95, 65);
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  position: absolute;
-  bottom: 80px; 
-  align-items: center;
-  justify-content: center;
-  display:flex;
-  width:100px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-}
-.get-started-button:hover {
-  background-color: rgb(247, 114, 84); /* Change the background color on hover */
-  color:white;
 
+.get-started-button:hover {
+background-color: rgb(247, 114, 84); /* Change the background color on hover */
+color:white;
+
+
+}
+.get-started-button{ 
+padding: 10px 20px;
+background-color: rgb(228, 95, 65);
+color: white;
+border-radius: 5px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+position: absolute;
+bottom: 80px; 
+align-items: center;
+justify-content: center;
+display:flex;
+width:100px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }

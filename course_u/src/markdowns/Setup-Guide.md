@@ -94,8 +94,6 @@ in your command prompt again, enter this commands:
 <br>
 `python manage.py create_database`
 <br>
-`python manage.py load_csv_data3`
-<br>
 `python manage.py makemigrations`
 <br>
 `python manage.py createsuperuser`
@@ -103,6 +101,8 @@ in your command prompt again, enter this commands:
 (this will prompt you to enter a username, password, password confirmation)
 <br>
 `python manage.py migrate`
+<br>
+`python manage.py load_csv_data2`
 <br>
 ### then to run server
 `python manage.py runserver`
