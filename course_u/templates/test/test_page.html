@@ -38,17 +38,18 @@
                     {{ question.options.3 }}
                 </label><br>
             </div>
-            <button type="submit" class="btn btn-primary">
-                <img src="{% static 'images/arrows.png' %}">
-            </button>
-        </form>
+            <a href="" class="btn btn-secondary">
+                Submit
+            </button></a>
         
-        <br>
+    
         <!-- Navigation buttons -->
         <a href="{% url 'prev_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Previous</a>
-        <a href="{% url 'next_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Home</a>
-        <a href="{% url 'test_overview' question_set_id=question_set_id %}" class="btn btn-secondary">Page Overview</a>
+        <a href="{% url 'next_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Next</a>
+       
     </div>
+</form>
+<a href="{% url 'test_overview' question_set_id=question_set_id %}" class="btn btn-secondary1">Page Overview</a>
 
     {% else %}
     <!-- 

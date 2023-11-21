@@ -1,10 +1,9 @@
 /* Add this CSS to your existing styles or create a new CSS file */
 
 /* Style the main container */
-.container {
-    max-width: 700px;
+.container{
+    max-width: 750px;
     margin: 0 auto;
-    
 }
 
 .test.card{
@@ -14,6 +13,8 @@
     padding: 20px;
     /* rounded corner */
     border-radius: 15px;
+    padding-left: 30px;
+    
 }
 
 /* Style the question details */
@@ -30,7 +31,7 @@
 }
 
 /* Style the form container */
-
+/*
 form.btn-primary{
     height: 420px;
     border: none;
@@ -55,21 +56,29 @@ form.btn-primary{
 }
 
 /* Style the submit button */
-
-.btn img{
-    height:30px;
-    width:40px;
-    background-color: white;
-    cursor: pointer;
-    
-}
 footer{
     display: none;
 }
+/*
 .btn-primary{
-    margin-left: 370px;
-    border: none;
-}
+    display: flex;
+    margin: 0 auto;
+    margin-bottom:5px;
+    width: 100px; 
+    height: 30px;
+    font-size: 13px;
+    padding: 1px 1px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(228, 95, 65);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-left: 50px;
+}*/
 .btn-secondary{ 
     display: inline-block;
     margin: 0 auto;
@@ -84,10 +93,30 @@ footer{
     border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    text-align: center;
-    padding-top: 7px;
+    padding:7px;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 43px;
     justify-content: center;
-
+    box-shadow: 0 4px 6px rgb(0,0,0,0.4);
+    
+  }
+  .btn-secondary1{ 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-size: 13px;
+    padding: 1px 1px;
+    text-align: center;
+    background-color: rgb(228, 95, 65);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    padding:7px;
+    box-shadow: 0 4px 6px rgb(0,0,0,0.4);
+    
+ 
   }
