@@ -1,29 +1,132 @@
-.btn{ 
-    padding: 10px 20px;
-    background-color: rgb(228, 95, 65);
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    position: absolute;
-    bottom: 50px; 
-    align-items: center;
-    justify-content: center;
-    display:flex;
-    width:250px;
-    height:40px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-    right:50px;
-  }
-  .btn:hover {
-    background-color: rgb(247, 114, 84); /* Change the background color on hover */
-    color:white;
-  }
-  h4{
-    color:rgb(247, 114, 84);
-    font-size: 20px;
-    margin-left: 20px;
-  }
-  footer{
-    display:none;
-  }
+.content {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.graph-score {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+}
+
+
+.result {
+  /* margin: 60px 10px 40px 10px; */
+  width: 40%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph-score .result {
+  padding-right: 15px;
+}
+
+.graph {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  /* margin-right: 10px; */
+}
+
+.container h1 {
+  /* dont apply align itme center */
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+
+}
+
+.result h4 {
+  color: grey;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* 
+.graph, .field-plot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.skills-section {
+  margin-bottom: 50px;
+}
+
+.skills-section .result {
+  width: 100%;
+}
+
+.field-score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.field-result {
+  margin-bottom: 20px;
+}
+
+.field-result .result {
+  padding-left: 15px;
+}
+
+.result h4 {
+  margin-top: 0;
+}
+
+.btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.graph,
+.field-plot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn {
+  padding: 10px 20px;
+  background-color: rgb(228, 95, 65);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 250px;
+  height: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  right: 50px;
+}
+
+.btn:hover {
+  background-color: rgb(247, 114, 84);
+  /* Change the background color on hover */
+  color: white;
+}
+
+h4 {
+  color: rgb(247, 114, 84);
+  font-size: 20px;
+  /* margin-left: 20px; */
+}
+
+footer {
+  display: none;
+}
