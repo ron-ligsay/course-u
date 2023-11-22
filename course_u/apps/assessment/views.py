@@ -575,6 +575,7 @@ def display_question(request, question_id):
     question = get_test_question_by_id(question_id)
     user_response = UserResponse.objects.filter(question=question, set_id=question_set_id).first()
     print("Selected option: ", user_response.selected_option)
+    print('question_set_id: ', question_set_id)
     return render(request, 'test/test_page.html', {
         'question': question,
         'question_set_id': question_set_id,
@@ -618,6 +619,7 @@ from django.shortcuts import get_object_or_404
 
     # The submit_question view function is responsible for handling the submission of a test question answer.
 def submit_question(request, question_id):
+    print('submit_question() question_id: ', question_id)
     # The function first retrieves the question object from the database using the get_object_or_404 function.
     question = get_object_or_404(Test, question_id=question_id)
     user_response_key = f'user_response_{question_id}'
@@ -682,8 +684,13 @@ def submit_question(request, question_id):
                     messages.success(request, 'You have completed the test')
                     return redirect('test_overview', question_set_id=set_id)
                 # else
-                next_question = get_object_or_404(Test, question_id=next_question_id)
-                options = next_question.options
+                next_question = None
+                try:
+                    next_question = get_object_or_404(Test, question_id=next_question_id)
+                    options = next_question.options
+                except:
+                    messages.warning(request, 'Invalid question ID')
+                
                 return render(request, 'test/test_page.html', {
                     'question_set_id': set_id,
                     'question': next_question, 'options': options, 'form': UserResponseForm()
