@@ -55,6 +55,64 @@ body {
 .content p {
     line-height: 1.6;
     margin-bottom: 20px;
+
+}
+
+.skill-section {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.skill-section h5 {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+
+.user-skills, .recommended-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* border: 1px solid #ddd;
+    border-radius: 8px; */
+    margin: 0 15px;
+    padding: 7px;
+}
+
+.skill-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 7px;
+}
+
+.skill-card p {
+    margin: 0;
+
+}
+
+.other-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.explore-section {
+    display: flex;
+    justify-content: center;
+}
+
+.explore-section .card {
+    /* margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+    margin: 0 10px;
+    min-width: 230px;
+    min-height: 150px;
 }
 
 .skill-section {

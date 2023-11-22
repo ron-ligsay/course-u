@@ -24,7 +24,7 @@
     
     <a href="javascript:void(0);" class="card-link field-link link-offset-2 link-underline link-underline-opacity-0" data-field-id="{{ item.field }}">
       <div class="card field{% if selected_field and selected_field.field_id == item.field_id %}-selected{% endif %} text-truncate">
-        <h4 class="field_title" >{{ item.field_name }}</h4>
+        <h4 class="field_title" >{{ item.field_name }}</h4> 
         <!-- <p class="small">{{ item.description }}</p> -->
         <!-- Check if the field is recommended -->
         {% if user_recommendations %}
@@ -70,7 +70,7 @@
         <div class="card" style="width: 24rem;">
           <img src="{% static 'images/com-1.png' %}" class="card-img-top" alt="..." style="position: relative;">
           <div class="card-body" style="position: relative;"><br>
-            <h3 class="card-title">Continue your Track</h3><br>
+            <h3 class="card-title">Continue your Track</h3>
             <p class="card-text">Click to continue to see all the learning materials that will help you to expand your knowlegde.</p>
           </div>
         </div>
