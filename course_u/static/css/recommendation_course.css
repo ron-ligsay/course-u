@@ -56,3 +56,6 @@ a:hover {
 .materials.advanced {
     background-color: #f1ff9a;
 }
+footer {
+    display: none;
+}
