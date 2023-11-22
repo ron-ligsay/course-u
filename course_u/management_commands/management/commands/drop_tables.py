@@ -9,8 +9,8 @@ class Command(BaseCommand):
         #table_names = connection.introspection.table_names()
         #print(table_names)
         table_names1 = [ # Ordered by dependency
-            'acad_curriculum','acad_studentgrades','acad_studentprofile','acad_course','acad_subject', 'acad_subject_skills', 
-            'assessment_userresponse','assessment_questionset', 'assessment_test', 'assessment_test_skills',
+            'acad_curriculum','acad_studentgrades','acad_studentprofile','acad_course','acad_subject_skills', 'acad_subject', 
+            'assessment_userresponse','assessment_questionset', 'assessment_test_skills','assessment_test', 
             
             'personality_mbtiresponse', 'personality_mbti', 'personality_mbtiset', 'personality_indicator_skills','personality_indicator',
             'recommender_userskillsource','recommender_userskill',
@@ -19,8 +19,8 @@ class Command(BaseCommand):
             # 'auth_permission', 'django_admin_log','auth_user', 
             # 'django_content_type', 'django_migrations', 'django_session', 
 
-            'jobs_jobposting',
-            'website_specialization', 'website_field','website_userprofile', 'website_skill', 'recommender_userrecommendations'
+            'jobs_jobposting','website_specializationskills', 'recommender_userrecommendations', 'website_learningmaterial',
+            'website_specialization', 'website_field','website_userprofile', 'website_skill', 
             ]
 
         table_skill = [
