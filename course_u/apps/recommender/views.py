@@ -64,7 +64,8 @@ def recommender(request):
     normalized_field_skills_columns = normalized_field_skills.columns
     # convert to list
     normalized_field_skills_columns = list(normalized_field_skills_columns)
-
+    #print('normalized_user_skills_df_columns: ', normalized_user_skills_df_columns)
+    #print('normalized_field_skills_columns len: ', normalized_field_skills_columns)
     # get the intersection of the two dataframes
     #intersection_columns = normalized_user_skills_df_columns.intersection(normalized_field_skills_columns)
     intersection_columns = set(normalized_user_skills_df_columns).intersection(set(normalized_field_skills_columns))
@@ -72,9 +73,24 @@ def recommender(request):
 
     # to list for filtering
     intersection_columns = list(intersection_columns)
-
+    print("Len of interseciotn columns: ", len(intersection_columns))
     #print('intersection_columns: ', intersection_columns)
 
+    if len(intersection_columns) == 0:
+        return HttpResponse('You have few skills to generate Recommendations. Please add take the assessments and grade inputs. <a href="test_home/">Test Home</a>')
+        return render(request, 'recommender/recommender.html', {
+            'top_3_field_recommendations': None,
+            'field_name_1': None,
+            'field_name_2': None,
+            'field_name_3': None,
+            'skill_plot': None,
+            'field_plot': None,
+            'stacked_skills': None,
+            'radar_skills': None,
+            'field_1': None,
+            'field_2': None,
+            'field_3': None,
+        })
 
     # get level of each skill
     user_skills_level = []
