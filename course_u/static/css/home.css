@@ -26,12 +26,12 @@ main{
   flex-shrink: 0;
   /* Prevent cards from shrinking to fit */
   text-align: center;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   transition: background-color 0.3s ease;
   /* margin-left: 50px; */
   background-color: whitesmoke;
   box-shadow: 0 4px 6px rgb(0,0,0,0.4);
-  border-radius: 20px;
+  border-radius: 15px;
    
 }
 .card.specialization,
@@ -42,7 +42,8 @@ main{
 
 
 .card:hover{
-  background-color: rgb(248, 128, 101);
+  background-color: var(--highlight);
+  /* rgb(239, 85, 59); */
   color:black;
 }
 .card img{
@@ -92,8 +93,10 @@ h3{
 }
 
 .card-selected{
-  border: 1px solid blue;
-  background-color: lightblue;
+  font-weight: 900;
+
+  border: 1px solid  var(--highlight);
+  background-color: var(--highlight);
 }
 
 .specialization_title{
