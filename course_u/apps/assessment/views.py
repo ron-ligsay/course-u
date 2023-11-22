@@ -864,6 +864,7 @@ def student_test_report(request, question_set_id):
 
     # Create a plotly pie chart
     fig = generate_pie_chart(field_correct_answers, 'Correct Answers per Field')
+    #fig = px.pie(field_correct_answers, values='total_correct', names='field_name', title='Correct Answers per Field')
 
     # Get top 3 fields with the most correct answers
     top_fields = field_correct_answers.order_by('-total_correct')[:3]
@@ -929,9 +930,9 @@ def student_test_report(request, question_set_id):
         y=skill_names,
         orientation='h',
         labels={'x': 'Relevance Score', 'y': 'Skill Name'},
-        title='Correct Responses per Skill',
-        height=(len((skill_names) * 25) + 100),
-        width=(max((correct_counts) * 30) + 300),
+        #title='Correct Responses per Skill',
+        height=500,#(len((skill_names) * 25) + 100),
+        width=600 #(max((correct_counts) * 30) + 300),
     )
 
 
@@ -1022,8 +1023,8 @@ def student_test_report_overall(request):
                 orientation='h',
                 labels={'x': 'Relevance Score', 'y': 'Skill Name'},
                 title='Correct Responses per Skill',
-                height=(len((skill_names) * 25) + 100),
-                width=(max((correct_counts) * 30) + 300),
+                height=500,#(len((skill_names) * 25) + 100),
+                width=600,#(max((correct_counts) * 30) + 300),
             )   
             
 
