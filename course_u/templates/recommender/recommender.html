@@ -61,8 +61,12 @@
 <div class="container skill-score">
     <h3> Graph Representation</h3>
     <div class="skill-bar">
-        {{ skill_plot|safe }}
-        {{ stacked_skills|safe }}
+        <div class="skill-plot">
+            {{ skill_plot|safe }}
+        </div>
+        <div class="stacked-skills">
+            {{ stacked_skills|safe }}
+        </div>
     </div>
     <div class="skill-result">
         <h4>Explanation</h4>

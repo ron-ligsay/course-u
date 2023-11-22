@@ -153,10 +153,23 @@ div.result {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0;
+    /* margin: 0;
     max-width: 700px;
-    padding: 0 100px;
+    padding: 0 100px; */
 }
+
+.skill-plot {
+    width: 45%;
+    margin: 0 10px;
+}
+
+.stacked-skills {
+    width: 45%;
+    margin: 0 10px;
+}
+
+
+
 
 .skill-result {
     margin: 0 100px;
