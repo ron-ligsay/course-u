@@ -111,17 +111,17 @@ def recommender(request):
 
 
     cosine_similarities = cosine_similarity(normalized_user_skills_df[intersection_columns], normalized_field_skills_filtered[intersection_columns])
-    print('cosine_similarities: ', cosine_similarities)
+    #print('cosine_similarities: ', cosine_similarities)
     top_3_indices = cosine_similarities.argsort(axis=1)[:, -3:]
     top_3_field = normalized_field_skills_filtered.iloc[:, 0].values[top_3_indices]
     all_fields = normalized_field_skills_filtered.iloc[:, 0].values
     #print('top_3_field: ', top_3_field)
 
-    print('all_fields: ', all_fields)
+    #print('all_fields: ', all_fields)
 
     # get unique field_id
     field_ids = normalized_field_skills_filtered['field_id'].unique()
-    print('field_ids: ', field_ids)
+    #print('field_ids: ', field_ids)
     # Create a dictionary to store the field names and the sum of the cosine similarity scores
     fields_score = {}
     for field_id in all_fields:
@@ -174,31 +174,32 @@ def recommender(request):
     # Create a dictionary where the keys are the elements in all_fields and the values are their indices
     order_dict = {field_id: index for index, field_id in enumerate(all_fields)}
 
-    print('fields_score:', fields_score)
+    #print('fields_score:', fields_score)
     # Create a new column 'order' in user_skills_df that represents the index of each field_id in all_fields
     user_skills_df['fields_score'] = user_skills_df['field_id'].map(fields_score)
 
     # Sort user_skills_df by the 'order' column
     user_skills_df = user_skills_df.sort_values('fields_score', ascending=False)
 
-    print('user_skills_df: ', user_skills_df)
+    #print('user_skills_df: ', user_skills_df)
 
     # Drop the 'order' column as it's no longer needed
     user_skills_df = user_skills_df.drop('fields_score', axis=1)
 
     fig = px.bar(
-        x=user_skills_df['skill'],
-        y=user_skills_df['level'],
+        x=user_skills_df['level'],
+        y=user_skills_df['skill'],
         color=user_skills_df['field'],
         #facet_col=user_skills_df['field'],
         # title='User Skills Levels',
-        labels={'index': 'Skills', 'value': 'Skill Level'},
+        orientation='h',
+        labels={'index': 'Level', 'value': 'Skill'},
         #color_continuous_scale=px.colors.sequential.Plasma,
     )
     
     # x and y title
-    fig.update_xaxes(title_text='Skills')
-    fig.update_yaxes(title_text='Skill Level')
+    fig.update_xaxes(title_text='Skill Level')
+    fig.update_yaxes(title_text='Skill Name')
 
     skill_plot = pio.to_html(fig, full_html=False)
 
@@ -227,11 +228,11 @@ def recommender(request):
     # label field id of normalized_field_skills_filtered with field_dict
     normalized_copy['field_name'] = normalized_copy['field_id'].map(field_dict)
 
-    print('normalized_field_skills_filtered: ', normalized_copy)
+    #print('normalized_field_skills_filtered: ', normalized_copy)
 
     # melt normalized_field_skills_filtered
     normalized_copy = normalized_copy.melt(id_vars=['field_id', 'field_name'], var_name='skill', value_name='level')
-    print('normalized_field_skills_filtered: ', normalized_copy)
+    #rint('normalized_field_skills_filtered: ', normalized_copy)
 
     # use fields_score mapping for field_id into field_order
     normalized_copy['field_order'] = normalized_copy['field_id'].map(fields_score)
