@@ -8,41 +8,108 @@
 </head>
 <body>
 
-<div class="container1">
-  <div class="title">COURSE U GUIDELINES</div>
-  <div class="subtitle">Student Assessment</div>
-</div>
+  <h1>A Guide to Course University</h1>
+
+  <h2>Introduction</h2>
+  <p><b>Course University:</b> A career recommendation system caters to a diverse range of users, offering personalized guidance and recommendations to support PUP CCIS students in making well-informed decisions about their educational and professional journeys.</p>
+
+  <h2>Course U Features</h2>
+
+  <ul class="timeline">
+      <li class="timeline-item">
+          <div class="timeline-icon">
+              <i class="fas fa-user-graduate"></i>
+          </div>
+          <div class="timeline-item-content">
+              <h3 class="timeline-item-heading">Assessments</h3>
+              <p> <b>></b> Users will input their information such as their grades, course, and year.</p>
+              <p> <b>></b> Users will take the assessment to evaluate their skills.</p>
+              <p> <b>></b> Users will continue the assessment process until they graduate.</p>
+          </div>
+      </li>
+
+      <li class="timeline-item">
+          <div class="timeline-icon">
+              <i class="fas fa-chart-bar"></i>
+          </div>
+          <div class="timeline-item-content">
+              <h3 class="timeline-item-heading">Generate Results</h3>
+              <p> <b>></b> The system will generate the result based on the assessment.</p>
+              <p> <b>></b> The system will provide transparency and records of the result.</p>
+          </div>
+      </li>
+
+      <li class="timeline-item">
+          <div class="timeline-icon">
+              <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="timeline-item-content">
+              <h3 class="timeline-item-heading">Generate Recommendations</h3>
+              <p> <b>></b> The system will generate the Top 3 field recommendations and provide transparency of the results.</p>
+              <p> <b>></b> The system will also provide a roadmap, jobs, and specializations after the recommendation.</p>
+          </div>
+      </li>
+
+      <li class="timeline-item">
+          <div class="timeline-icon">
+              <i class="fas fa-book"></i>
+          </div>
+          <div class="timeline-item-content">
+              <h3 class="timeline-item-heading">Provide Learning Materials</h3>
+              <p> <b>></b> Learning materials, resources, and links are provided after the recommendation.</p>
+              <p> <b>></b> Tracking of previous activity and jobs are also available in the system.</p>
+          </div>
+      </li>
+
+      <li class="timeline-item">
+          <div class="timeline-icon">
+              <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-item-content">
+              <h3 class="timeline-item-heading">Recommend Jobs</h3>
+              <p><b>></b> The system will generate job recommendations based on the result of the assessment.</p>
+              <p><b>></b> Users will be redirected to LinkedIn once they click apply.</p>
+          </div>
+      </li>
+  </ul>
+
+<br>    
+  <h2>STUDENT GUIDELINES</h2>
 
   <div class="container">
-    <img src="{% static 'images/user.png' %}" alt="Image for Container 1">
-    <h2>Pre Assessment</h2>
-    <p> Before entering their first year of college, users undergo an initial assessment to evaluate their knowledge and skills.   </p>
-  </div>
-
-  <div class="container">
-    <img src="{% static 'images/user.png' %}" alt="Image for Container 1">
-    <h2>1st Year Assessment</h2>
-    <p>Following the pre assessment, users input grades for 1st-year majors before proceeding to the next assessment.</p>
-  </div>
-
-  <div class="container">
-    <img src="{% static 'images/user.png' %}" alt="Image for Container 2">
-    <h2>2nd Year Assessment</h2>
-    <p>Following the 1st year assessment, users input grades for 2nd-year majors before proceeding to the next assessment.   </p>
-  </div>
-
-  <div class="container">
-    <img src="{% static 'images/user.png' %}" alt="Image for Container 3">
-    <h2>3rd Year Assessment</h2>
-    <p>After the 2nd year assessment, users input grades for 3rd-year majors before taking another assessment.</p>
-  </div>
-
-  <div class="container">
-    <img src="{% static 'images/user.png' %}" alt="Image for Container 4">
-    <h2>4th Year Assessment</h2>
-    <p>
-    After 3rd year assessment, users input their grades for 4th-year majors and will recommend career based on the results.</p>
-  </div>
+      <img src="images/user.png" alt="Image for Container 1">
+      <h2>Pre Assessment</h2>
+      <p> Before entering their first year of college, freshmen users will undergo an initial assessment to evaluate their knowledge and skills that will serve as their guide.   </p>
+    </div>
+  
+    <div class="container">
+      <img src="images/user.png" alt="Image for Container 1">
+      <h2>1st Year Assessment</h2>
+      <p>Following the pre assessment, users will input their grades for 1st-year majors before proceeding to the next assessment.</p>
+    </div>
+  
+    <div class="container">
+      <img src="images/user.png" alt="Image for Container 2">
+      <h2>2nd Year Assessment</h2>
+      <p>Following the 1st year assessment, users input grades for 2nd-year majors before proceeding to the next assessment.</p>
+    </div>
+  
+    <div class="container">
+      <img src="images/user.png" alt="Image for Container 3">
+      <h2>3rd Year Assessment</h2>
+      <p>After the 2nd year assessment, users will input grades for their 3rd-year majors before taking their last assessment.</p>
+    </div>
+  
+    <div class="container">
+      <img src="images/user.png" alt="Image for Container 4">
+      <h2>4th Year Assessment</h2>
+      <p>
+      After 3rd year assessment, users input their grades for 4th-year majors and will recommend career based on the results.</p>
+    </div> <br>   
+  
   <a href="{% url 'test_home' %}" class="get-started-button" id="get-started-button"><b>Next</b></a>
+  
+
+
 </body>
 </html>
