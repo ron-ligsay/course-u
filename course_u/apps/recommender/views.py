@@ -191,7 +191,7 @@ def recommender(request):
         y=user_skills_df['level'],
         color=user_skills_df['field'],
         #facet_col=user_skills_df['field'],
-        title='User Skills Levels',
+        # title='User Skills Levels',
         labels={'index': 'Skills', 'value': 'Skill Level'},
         #color_continuous_scale=px.colors.sequential.Plasma,
     )
@@ -207,10 +207,12 @@ def recommender(request):
     fields_df = pd.DataFrame(list(zip(field_ids, fields_name, fields_score.values())), columns=['Field_ID', 'Field_Name', 'Score'])
 
     # Create a pie chart using Plotly Express
-    fig = px.pie(fields_df, values='Score', names='Field_Name', title='Top Field Recommendation Score')
+    fig = px.pie(fields_df, values='Score', names='Field_Name',
+                 #title='Top Field Recommendation Score'
+                 )
 
     # set title
-    fig.update_layout(title_text='Top Field Recommendation Score', title_x=0.5)
+    #fig.update_layout(title_text='Top Field Recommendation Score', title_x=0.5)
 
     # remove white background
     fig.update_layout(plot_bgcolor='rgba(0,0,0,0)')
@@ -245,7 +247,7 @@ def recommender(request):
         x='level', 
         y='skill', 
         color='field_name', 
-        title='Skills Levels',
+        # title='Skills Levels',
         orientation='h',
         labels={'level': 'Relevance Score', 'field_name': 'Field Name'},
         color_continuous_scale=px.colors.sequential.Plasma,
@@ -263,7 +265,7 @@ def recommender(request):
         theta='skill', 
         color='field_name', 
         line_close=True,
-        title='Skills Levels',
+        # title='Skills Levels',
         labels={'level': 'Relevance Score', 'field_name': 'Field Name'},
         #color_continuous_scale=px.colors.sequential.Plasma,
         height=500,
