@@ -27,7 +27,7 @@
     <p>{{specialization.specialization_courses}}</p>
     <p>{{specialization.specialization_jobs}}</p>
 
-    <a href="#" class="btn">Specializations</a>
+    <a href="{% url 'specialization_page' item_id=specialization.specialization_id %}" class="btn">Specializations</a>
 </div>
 {% endfor %}
 </div>
