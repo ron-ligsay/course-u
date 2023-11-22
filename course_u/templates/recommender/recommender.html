@@ -59,19 +59,29 @@
     </div>
 </div>
 <div class="container skill-score">
-    <h3> Graph Representation</h3>
+    <h3> Skill Score Representation</h3>
     <div class="skill-bar">
-        <div class="skill-plot">
-            {{ skill_plot|safe }}
-        </div>
-        <div class="stacked-skills">
-            {{ stacked_skills|safe }}
-        </div>
+        
+    </div>
+    <div class="skill-plot">
+        {{ skill_plot|safe }}
     </div>
     <div class="skill-result">
         <h4>Explanation</h4>
         <p>The skill graph represents the skills you obtained from the your Subjects, Grades and previous records.
             The graph is based from the skills you obtained from your previous records and each skill score color represents the Field of Study that the skill is related to.
+            
+        </p>
+    </div>
+    <br><br><br>
+    <h3> Skill Relevance Representation</h3>
+    <div class="stacked-skills">
+        {{ stacked_skills|safe }}
+    </div>
+    <div class="skill-result">
+        <h4>Explanation</h4>
+        <p>In Skill Relevance it shows the skills that are relevant to the Field of Study you are interested in.
+            The skill also shows what relevance score it has to the Field of Study.
         </p>
     </div>
 </div>

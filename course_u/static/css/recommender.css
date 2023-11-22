@@ -149,23 +149,40 @@ div.result {
 }
 
 .skill-bar {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 0;
+    /* flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-    /* margin: 0;
+    justify-content: space-between;  
     max-width: 700px;
     padding: 0 100px; */
 }
 
+/*
+@media screen and (max-width: 600px) {
+    .skill-bar {
+        flex-direction: column;
+    }
+} */
+
 .skill-plot {
-    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
     margin: 0 10px;
+    margin-left: 70px;
 }
 
 .stacked-skills {
-    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
     margin: 0 10px;
+    margin-left: 70px;
 }
 
 
