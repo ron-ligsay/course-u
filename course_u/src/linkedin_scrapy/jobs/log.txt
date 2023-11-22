@@ -98,3 +98,9 @@ location: Philippines, keyword: networking and infrastructure, page: 2, url: htt
 location: Philippines, keyword: networking and infrastructure, page: 3, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=networking%20and%20infrastructure&start=75
 location: Philippines, keyword: networking and infrastructure, page: 4, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=networking%20and%20infrastructure&start=100
 location: Philippines, keyword: dasign and ui/ux, page: 3, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=dasign%20and%20ui/ux&start=75
+location: Philippines, keyword: software development, page: 0, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=software%20development&start=0
+location: Philippines, keyword: data and analytics, page: 0, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=data%20and%20analytics&start=0
+location: Philippines, keyword: product management, page: 0, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=product%20management&start=0
+location: Philippines, keyword: testing and quality assurance, page: 0, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=testing%20and%20quality%20assurance&start=0
+location: Philippines, keyword: security, page: 0, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=security&start=0
+location: Philippines, keyword: design and ui/ux, page: 0, url: https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=design%20and%20ui/ux&start=0

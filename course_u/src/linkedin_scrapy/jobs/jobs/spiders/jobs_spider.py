@@ -6,13 +6,16 @@ class JobsSpiderSpider(scrapy.Spider):
     allowed_domains = ["linkedin.com"]
     # base_urls = ["http://linkedin.com/"]
     location = ["Philippines"]
+    # keywords = [
+    #     "software development","data and analytics","design and ui/ux",
+    #     "product management","testing and quality assurance","security"
+    #     ]
     keywords = [
-        "software development","data and analytics","dasign and ui/ux",
-        "testing and quality assurance","networking and infrastructure"
+        "design and ui/ux"
         ]
     
-    PAGES = 5
-    
+    PAGES = 1
+    # each page contains 25 jobs
 
     start_urls = ["https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Philippines&keywords=" + str(keyword) for keyword in keywords ]
 

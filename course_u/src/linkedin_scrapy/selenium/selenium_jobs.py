@@ -39,24 +39,26 @@ select_user_agent = random.choice(user_agents)
 def get_random_user_agent():
     return random.choice(user_agents)
 
+#BASE_DIR = 'C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course-u\\src\\linkedin_scrapy\\selenium\\'
+BASE_DIR = 'C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course_test\\course-u\\course_u\\src\\linkedin_scrapy\\selenium\\'
+csv_input_link = BASE_DIR + 'jobs4.csv'
+csv_output = BASE_DIR + 'jobs_post4.csv'
 
 # Create Chrome options
 options = webdriver.ChromeOptions()
 options.add_argument('--lang={}'.format(desired_language))
 options.add_argument(f'user-agent={select_user_agent}')
-
 # Initialize the web driver (make sure the driver executable is in your PATH)
-driver = webdriver.Chrome(chrome_options=options) #,executable_path=driver_path
+driver_path = BASE_DIR + 'chromedriver.exe'
+service = webdriver.ChromeService(executable_path=driver_path)
+driver = webdriver.Chrome(service=service, options=options) #,,executable_path=driver_path
 
 
-BASE_DIR = 'C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course-u\\src\\linkedin_scrapy\\selenium\\'
-csv_input_link = BASE_DIR + 'jobs1.csv'
-csv_output = BASE_DIR + 'jobs_post.csv'
 
 # Define a set to store scraped URLs
 scraped_urls = set()
 
-target_count = 100
+target_count = 130
 total_count = 0
 success_count = 0
 skipped_count = 0
@@ -67,14 +69,15 @@ finished_count = 0
 save_to_csv = True
 
  # Define a dictionary to map keywords to IDs
+# Keyword ID mapping
 keyword_id_mapping = {
     "software development": 1,
     "data and analytics": 2,
     "design and ui/ux": 3,
-    "testing and quality assurance": 4,
-    "networking and infrastructure": 5
+    "product management": 4,
+    "testing and quality assurance": 5,
+    "security": 6
 }
-
 
 # get text by xpath
 def get_text(xpath):

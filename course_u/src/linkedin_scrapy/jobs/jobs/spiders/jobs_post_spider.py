@@ -19,13 +19,15 @@ class JobsPostSpiderSpider(scrapy.Spider):
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36',
         'REDIRECT_ENABLED': False,
     }
-     # Define a dictionary to map keywords to IDs
+    # Define a dictionary to map keywords to IDs
+    # Keyword ID mapping
     keyword_id_mapping = {
         "software development": 1,
         "data and analytics": 2,
         "design and ui/ux": 3,
-        "testing and quality assurance": 4,
-        "networking and infrastructure": 5
+        "product management": 4,
+        "testing and quality assurance": 5,
+        "security": 6
     }
 
 
