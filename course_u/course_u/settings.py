@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.personality',
     'apps.website',
     'grades',
+    'apps.survey',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'courseu_db',
         'USER': 'root',
-        'PASSWORD': 'sawadeeKA456',#sql2023',sawadeeKA456', #'022002'
+        'PASSWORD': '022002',#sql2023',sawadeeKA456', #'022002'
         'HOST': 'localhost',
         'PORT': '3306',
     }
