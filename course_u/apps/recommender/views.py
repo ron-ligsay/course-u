@@ -352,7 +352,7 @@ def recommender(request):
 
 
 def recommendation_field(request, field_id):
-
+    
     field_object = Field.objects.get(field=field_id)
     
     # skills
@@ -401,9 +401,9 @@ def recommendation_field(request, field_id):
     # exclude field_id
     for col in normalized_field_skills.columns[1:]:
         # get field id of the highest value
-        row_field_id = normalized_field_skills[col].idxmax()
+        index_max = normalized_field_skills[col].idxmax()
         # if row_field_id is equal to field_id, get column name
-        if row_field_id == field_id:
+        if normalized_field_skills.loc[index_max, 'field_id'] == field_id:
             column_list.append(col)
         else:
             # if its the second highest value, get the column name
@@ -415,11 +415,13 @@ def recommendation_field(request, field_id):
 
     # filter normalized_field_skills by column_list
     normalized_field_skills_row = normalized_field_skills[['field_id'] + column_list]
+    #print(normalized_field_skills_row['field_id'])
     normalized_field_skills_row_2 = normalized_field_skills[['field_id'] + column_list_2]
     # get only row with field_id = field_id
+    #print('field_id: ', field_id)
     normalized_field_skills_row = normalized_field_skills_row[normalized_field_skills_row['field_id'] == field_id]
     normalized_field_skills_row_2 = normalized_field_skills_row_2[normalized_field_skills_row_2['field_id'] == field_id]
-
+    #print(normalized_field_skills_row['field_id'])
     # convert to series
     normalized_field_skills_row = normalized_field_skills_row.iloc[:, 1:].sum(axis=0).sort_values(ascending=False)
     normalized_field_skills_row_2 = normalized_field_skills_row_2.iloc[:, 1:].sum(axis=0).sort_values(ascending=False)
