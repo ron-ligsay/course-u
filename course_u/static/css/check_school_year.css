@@ -1,3 +1,16 @@
+
+
+.content, .modal {
+    /* max-width: 600px; */
+    min-width: 600px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 /* Modal background overlay */
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.5) !important;
@@ -5,36 +18,84 @@
 
 /* Modal content container */
 .modal-content {
-    border-radius: 0; /* Adjust as needed */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Adjust as needed */
-    background-color: #fff; /* Background color of the modal */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* Modern shadow */
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 30px; /* More padding */
+    border-radius: 8px; /* Rounded corners */
 }
 
 /* Modal title */
 .modal-title {
-    font-size: 1.5rem; /* Adjust as needed */
-    color: #333; /* Text color for the title */
+    font-size: 2rem; /* Larger font size */
+    color: #333; /* Dark grey color */
+    margin-bottom: 15px; /* Space below the title */
+    margin-right: 15px;
+}
+
+/* Modal header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Modal close button */
 .close {
-    color: #999; /* Color of the close button */
+    color: #aaa; /* Lighter color */
+    font-size: 1.5rem; /* Larger close button */
+    transition: color 0.2s; /* Smooth color transition */
+    margin: -3rem -1rem -1rem auto; /* Aligns the close button to the right */
 }
 
+.close:hover {
+    color: #000; /* Dark color on hover */
+}
 /* Modal body text */
 .modal-body {
-    font-size: 1.2rem; /* Adjust as needed */
-    color: #555; /* Text color for the body */
+    font-size: 1.2rem; /* Same font size */
+    color: #555; /* Dark grey color */
+    line-height: 1.6; /* More space between lines */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
 }
 
 /* Modal footer buttons */
 .modal-footer .btn-secondary {
-    background-color: #ccc; /* Background color for Close button */
-    color: #333; /* Text color for Close button */
+    background-color: #6c757d; /* Darker grey background */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .modal-footer .btn-primary {
     background-color: #007bff; /* Background color for Yes and No buttons */
     color: #fff; /* Text color for Yes and No buttons */
     margin-left: 5px; /* Adjust as needed to separate buttons */
+}
+/* Modal buttons */
+.btn-primary {
+    background-color: #007bff; /* Primary color */
+    border: none; /* Remove border */
+    color: #fff; /* White text */
+    padding: 12px 24px; /* Button size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: background-color 0.3s; /* Smooth color transition */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+footer {
+    display: none;
 }

@@ -5,13 +5,12 @@
 {% block title %}Check School Year{% endblock %}
 
 {% load static %}
-
-
 {% block head_extra %}
 <link rel="stylesheet" href="{% static 'css/check_school_year.css' %}">
 {% endblock head_extra %}
 
 {% block content %}
+
 <div class="modal fade" id="schoolYearModal" tabindex="-1" role="dialog" aria-labelledby="schoolYearModalLabel" > 
     <!-- aria-hidden="true" -->
     <div class="modal-dialog" role="document">
@@ -26,7 +25,7 @@
                 <p>Have you completed the school year?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                 <a href="{% url 'check_school_year_choice' choice='yes' %}" class="btn btn-primary">Yes</a>
                 <a href="{% url 'check_school_year_choice' choice='no' %}" class="btn btn-primary">No</a>
             </div>
