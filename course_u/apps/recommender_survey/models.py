@@ -1,6 +1,11 @@
 from django.db import models
 
+from apps.recommender.models import UserRecommendations
+
+
 class Survey(models.Model):
+    recommendation = models.OneToOneField(UserRecommendations, on_delete=models.CASCADE, null=True)
+    
     ques1 = models.CharField(
         max_length=100,
         choices=[('Undergraduate', 'Undergraduate'), ('Graduate', 'Graduate')],
