@@ -32,8 +32,8 @@ div.top {
     margin-bottom: 50px;
     max-width: 900px;
 
-    border: 1px solid #ddd;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
 }
 
 .top-head {
@@ -50,8 +50,8 @@ div.top {
 
 .top-results a {
     border-radius: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
     
     display: flex;
     flex-direction: row; 
