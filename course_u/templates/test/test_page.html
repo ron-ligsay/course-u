@@ -16,7 +16,7 @@
 
 {% if user.is_authenticated %}
 <div class="test card container">
-    <p>Question {{ question.question_id }} of {{ question.n_question }}</p>
+    <p>Question {{ current_index }} of {{ total_questions }}</p>
 
     <form method="post" action="{% url 'submit_question' question_id=question.question_id %}">
         <h2>{{ question.question }}</h2>
