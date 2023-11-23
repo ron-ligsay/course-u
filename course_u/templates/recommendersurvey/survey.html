@@ -1,10 +1,34 @@
-{% extends 'base.html' %}
+{% extends 'base_user.html' %}
+
+
+
+{% load static %}
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/recommender_survey.css' %}">
+
+{% endblock head_extra %}
 
 {% block content %}
+
+<div class="survey">
   <h2>Evaluation of Recommendation System for IT/CS Students</h2>
-  <form method="post" action="{% url 'survey' %}">
+  <form method="post" action="{% url 'recommender_survey' %}">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-  </form>
+    <!-- {{ form.as_p }} -->
+    <div class="forms-container">
+      {% for field in form %}
+      <div class="form-field">
+        <div class="label-section">
+          {{ field.label_tag }}
+        </div>
+        <div class="input-section">
+          {{ field }}
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+    <button type="submit"  class="btn btn-submit btn-primary">Submit</button>
+  </form> 
+</div>
 {% endblock %}

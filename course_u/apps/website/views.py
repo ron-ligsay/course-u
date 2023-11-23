@@ -65,6 +65,8 @@ def home(request):
     # Filter out the recommended fields from the field_items queryset
     field_items = field_items.exclude(pk__in=recommended_field_ids)
 
+    
+        
 
     return render(request, 'home.html', {
         'specialization_items': specialization_items, 

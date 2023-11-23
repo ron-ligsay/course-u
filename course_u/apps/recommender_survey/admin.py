@@ -1,4 +1,4 @@
 from django.contrib import admin
-from apps.recommendersurvey.models import Survey
+from apps.recommender_survey.models import Survey
 
 admin.site.register(Survey) 
