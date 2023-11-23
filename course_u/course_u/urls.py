@@ -33,6 +33,7 @@ urlpatterns = [
     path('', include('apps.acad.urls')),
     path('', include('grades.urls')),
     path('', include('apps.survey.urls')),
+    path('', include('apps.recommendersurvey.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

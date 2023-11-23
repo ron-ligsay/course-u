@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.website',
     'grades',
     'apps.survey',
+    'apps.recommendersurvey',
 ]
 
 MIDDLEWARE = [
