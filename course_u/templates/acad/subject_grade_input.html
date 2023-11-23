@@ -9,23 +9,40 @@
 
 {% block content %}
 
-<p>Please input the grade of each<br> major subject</p><br>
-<p>Course:{{ course }}, Year Level:{{year_level}}</p><br>
-
+<div class="top-block">
+    <h4>Please input the grade of each<br> major subject</h4>
+    <p>Course: {{ course }}, Year Level:{{year_level}}</p>
+</div>
 
 <div class="subject">
-    <form method="post">
-        {% csrf_token %}
-        {% for form, subject in form_subject_pairs %}
-        <h3>{{ subject.subject_name }}</h3>
-        {{ form.grade.errors }}
-        {{ form.grade.label_tag }}
-        {{ form.grade }}
-        {{ form.subject_hidden }}
-        {% endfor %}
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="subject-grade-container">
+        <div class="header">
+            <h2>Subject Name</h2>
+            <h2>Grade</h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {% for form, subject in form_subject_pairs %}
+            <div class="grade-form">
+
+                <div class="subjet-name">
+                    <h3>{{ subject.subject_name }}</h3>
+                </div>
+
+                <div class="grade-input">
+                    <!-- {{ form.grade.label_tag }} -->
+                    {{ form.grade }}
+                    {{ form.grade.errors }}
+                </div>
+
+                {{ form.subject_hidden }}
+            </div>
+            {% endfor %}
+
+            <br>
+            <button class="submit-button"  type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 
