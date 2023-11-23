@@ -1,0 +1,35 @@
+.thank-you {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.thank-you__title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.thank-you__text {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.thank-you__button {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(228, 95, 65);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.thank-you__button:hover {
+    background-color: rgb(200, 80, 50);
+}
+
+footer {
+    display: none;
+}
