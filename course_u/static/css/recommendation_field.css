@@ -84,7 +84,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 3px;
-    border: 1px solid #ddd;
+    border: 3px solid rgb(228, 95, 65);      /*solid #ddd;*/
     border-radius: 8px;
     padding: 7px;
 }
@@ -141,7 +141,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 3px;
-    border: 1px solid #ddd;
+    border: 3px solid rgb(228, 95, 65); 
     border-radius: 8px;
     padding: 7px;
 }
@@ -179,9 +179,10 @@ body {
 .card {
     max-width: 550px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 2px solid rgb(228, 95, 65); 
     border-radius: 8px;
     padding: 15px;
+    text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 

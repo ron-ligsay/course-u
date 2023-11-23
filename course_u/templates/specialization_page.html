@@ -7,11 +7,20 @@
 <link rel="stylesheet" href="{% static 'css/specialization_page.css' %}">
 
 {% if user.is_authenticated %}
+<div class="container">
 <h1>{{ specialization_item.title }}</h1>
-    <p>{{ specialization_item.description }}</p>
+    <p>{{ specialization_item.description }}</p><br><br><br>
     <!-- Add more fields as needed -->
-    <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
-
+    <h1>Compability Explanation</h1><br><br><br>
+    <h1>Compatible Skills</h1>
+    
+      <div class="skills-container">
+        <a href = "#" class = "skills">retake</a>
+        <a href = "#" class = "skills">retake</a>
+        <a href = "#" class = "skills">retake</a>
+        <a href = "#" class = "skills">retake</a>
+      </div> 
+      <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
 {% else %}
 <!-- 
 <div class="col-md-6 offset-md-3">
@@ -19,10 +28,10 @@
     <h3 class="">You need to login first</h3>
     <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
 </div> -->
-
+</div>
 {% endif %}
 
 
 
 {% endblock content %}
-```
+``` 
