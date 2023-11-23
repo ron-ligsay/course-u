@@ -66,17 +66,17 @@
         <div class="explore-section">        
             <a href="{% url 'recommendation_specialization' field_id=field_object.field  %}" >
                 <div class="card">
-                    <p>See more of the possible Specialization Fields for {{field_object.field_name}}!</p>
+                    <p>See more of the possible <strong>Specialization</strong> Fields for {{field_object.field_name}}!</p>
                 </div>
             </a>
             <a href="{% url 'recommendation_course' field_id=field_object.field %}">
                 <div class="card">
-                    <p>Boost your skills through Courses!</p>
+                    <p>Boost your skills through <strong>Courses</strong>!</p>
                 </div>
             </a>
             <a href="{% url 'job_list_with_field' field_id=field_object.field %}" >
                 <div class="card">
-                    <p>Identify the Jobs around you to see what's ahead of your career and plan ahead!</p>
+                    <p>Identify the <strong>Jobs</strong> around you to see what's ahead of your career and plan ahead!</p>
                 </div>
             </a>
         </div>
