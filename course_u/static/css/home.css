@@ -16,12 +16,10 @@ main{
 }
 
 .card {/*box for fields*/
-  border: 1px solid #ccc;
+  border: 2px solid rgb(228, 95, 65); ;
   padding: 10px;
-  color:black;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   width: 300px;
-  
   margin-left: 30px;;
   /* Adjust the width as needed */
   flex-shrink: 0;
@@ -31,21 +29,27 @@ main{
   transition: background-color 0.3s ease;
   /* margin-left: 50px; */
   background-color: whitesmoke;
+  color: rgb(228, 95, 65); 
   box-shadow: 0 4px 6px rgb(0,0,0,0.4);
   border-radius: 15px;
+ 
    
 }
+.card:hover{
+  background-color: var(--highlight);
+  /* rgb(239, 85, 59); */
+  color:white;
+}
+
 .card.specialization,
 .card.field{
   max-height: 50px;
   overflow: hidden;
 }
 
-
-.card:hover{
-  background-color: var(--highlight);
-  /* rgb(239, 85, 59); */
-  color:black;
+.card.field{
+  background-color:rgb(228, 95, 65); 
+  color: white;
 }
 .card img{
   height:80px;
@@ -58,8 +62,10 @@ main{
 {
   font-size: 18px;
   font-weight: bold;
-  color:black;
+  color:white; 
+  
 }
+
 .recommended-label
 {
   /* Small font */
@@ -67,7 +73,7 @@ main{
 }
 h3{
   font-size: 30px;
-  color:black;
+  color:rgb(228, 95, 65); 
   margin-left: 30px;
 }
 .recommended_first
@@ -102,6 +108,7 @@ h3{
 
 .specialization_title{
   font-size: 16px;
+  text-decoration: none;
 }
 
 .specialization_description{
@@ -113,7 +120,7 @@ h3{
 /* remove a styles */
 a {
   text-decoration: none;
-  color: #000;
+  color:transparent;
 }
 
 a:hover {
@@ -123,6 +130,12 @@ a:hover {
 
 a:active {
   color: #000;
+}
+.card-title{
+  color:black;
+}
+.card-text{
+  color:black;
 }
 footer{
   display: none;
