@@ -211,6 +211,7 @@ def recommender(request):
         orientation='h',
         labels={'index': 'Level', 'value': 'Skill'},
         #color_continuous_scale=px.colors.sequential.Plasma,
+        #height=(len(user_skills_df['skill']) * 5 + 200),#*len(user_skills_df['skill']) + 400,
     )
     
     # x and y title
