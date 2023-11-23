@@ -39,7 +39,7 @@ iv.test-container .card
     background-size: cover;
     background-color: transparent;
     background-repeat: no-repeat;
-    min-width: 350px;
+    min-width: 355px;
     min-height: 600px;
     max-width: 350px;
     max-height: 550px;
@@ -111,7 +111,11 @@ p {
     margin-top: 10px;
 
 }
-
+.character-container img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
 footer {
     display: none;
 }
