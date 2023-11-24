@@ -38,9 +38,10 @@
                 <img src="{% static 'images/test1.png' %}" alt="course" width="100" height="100">
                 <h5 class="card-title">Start Test</h5>
                 <p class="card-text">Click the button below to start the test.</p>
-
                 <a href="{% url 'start_test' %}" class="btn btn-primary">Start Test</a>
+                {% if assessment %}
                 <a href="{% url 'test_results_overall' %}" class="btn btn-primary">View Results</a>
+                {% endif %}
             </div>
         </div>
 
