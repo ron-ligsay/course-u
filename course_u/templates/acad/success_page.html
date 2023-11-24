@@ -9,22 +9,24 @@
 
 {% block content %}
 
-<p>You have Saved your Grades</p>
- 
-    <h3>Course:{{ course }}, Year Level:{{year_level}}</h3><br>
-    <br><br>
+<h1>You have Saved your Grades</h1>
+
+<h3><strong>Course:</strong> {{ course }}</h3>
+<h3>Year Level:{{year_level}}</h3>
+
 <div class="container">
-<div class="row">
-    <div class="column1">
-        <img src="{% static 'images/com.png' %}" alt="Girl Image">
+    <div class="row">
+        <div class="column1">
+            <img src="{% static 'images/com.png' %}" alt="Girl Image">
+        </div>
+        <div class="column2">
+            <a href="{% url 'test_home' %}" class="submit-button" id="submit-button"><b>Test Home</b></a>
+            <a href="{% url 'start_test' %}" class="submit-button" id="submit-button"><b>Take Test</b></a>
+
+        </div>
+
+
+
     </div>
-<div class="column2">
-    <a href="{% url 'test_home' %}" class="submit-button" id="submit-button"><b>Test Home</b></a>
-    <a href="{% url 'start_test' %}" class="submit-button" id="submit-button"><b>Take Test</b></a>
-
-</div>
-
-
-
 </div>
 {% endblock content %}
