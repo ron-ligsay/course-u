@@ -26,6 +26,14 @@ iv.test-container .card
 
 }
 
+.test-home-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+}
+
 .character-container {
     /* add image */
     background-image: url('../../static/images/character.png');
@@ -34,16 +42,17 @@ iv.test-container .card
     background-size: cover;
     background-color: transparent;
     background-repeat: no-repeat;
-    min-width: 355px;
-    min-height: 600px;
-    max-width: 350px;
+    min-width: 30%;
+    min-height: 520px;
+    max-width: 30%;
     max-height: 550px;
-    margin-left: 150px;
+    /* margin-left: 150px; */
 }
-.test-container{
+/* .test-container{
     justify-content: left;
     margin-bottom: 100px;
-}
+} */
+
 body{
   
     height: 100vh;
@@ -52,12 +61,22 @@ body{
     margin: 0;
 }
 
+.test-container{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px; */
+    max-width: 70%;
+}
+
 .btn{
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: center;
       font-size: 20px ;
-      margin-left: 600px;
+      /* margin-left: 600px; */
+      /* margin-left: 60%; */
       margin-top: 30px;
       font-weight: bold;
       text-align: center;
