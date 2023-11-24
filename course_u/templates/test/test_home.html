@@ -16,12 +16,9 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
 <div class="test-home-main">
     <div class="character-container">
-        
-    
-    <body>
+    </div>
     <div class="test-container">
 
         <br><br><br><br><br>
@@ -35,11 +32,11 @@
             
                 <a href="{% url 'start_test' %}" class="btn btn-primary"><img src="{% static 'images/boom.png' %}">START TEST</a></div>
                 <div class="card-body">
-                <a href="{% url 'test_results_overall' %}" class="btn btn-primary"><img src="{% static 'images/result.png' %}">VIEW RESULTS</a>
+                <a href="{% url 'test_results_overall' %}" class="btn btn-primary"><img src="{% static 'images/recommendation1.png' %}">VIEW RESULTS</a>
             </div>
         </div>
-
-        <!-- <div class="card" id="card3">
+    </div>
+    <!-- <div class="card" id="card3">
             <div class="card-body">
                 <img src="{% static 'images/personality1.png' %}" alt="course" width="100" height="100">
                 <h5 class="card-title">Start Personality Test</h5>
@@ -48,9 +45,7 @@
                 <a href="{% url 'initialize_mbti_test' %}" class="btn btn-primary">Start Test</a>
             </div>
         </div> -->
-
-
-        <!-- <div class="card" id="card4">
+    <!-- <div class="card" id="card4">
             <div class="card-body">
                 <img src="{% static 'images/recommendation1.png' %}" alt="course" width="100" height="100">
                 <h5 class="card-title">Recommendation</h5>
@@ -59,22 +54,9 @@
                 <a href="{% url 'recommender' %}" class="btn btn-primary">Compute</a>
             </div>
         </div> -->
-    </div>
 </div>
-<!-- <br><br><br><br> -->
-</body>
-{% else %}
-<!-- 
-    <div class="col-md-6 offset-md-3">
-        <br><br><br>
-        <h3 class="">You need to login first</h3>
-        <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
-    </div> 
--->
 
-{% endif %}
 
 
 
 {% endblock content %}
-```
