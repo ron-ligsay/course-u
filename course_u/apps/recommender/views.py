@@ -77,6 +77,7 @@ def recommender(request):
     #print('intersection_columns: ', intersection_columns)
 
     if len(intersection_columns) == 0:
+        return render(request, 'recommender/recommender_failed.html')
         return HttpResponse('You have few skills to generate Recommendations. Please add take the assessments and grade inputs. <a href="test_home/">Test Home</a>')
         return render(request, 'recommender/recommender.html', {
             'top_3_field_recommendations': None,
