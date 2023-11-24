@@ -39,7 +39,7 @@ class Survey(models.Model):
         choices=[('Yes', 'Yes'), ('No', 'No'), ('Not Sure', 'Not Sure')],
         verbose_name='5. In hindsight, do you think a different academic specialization might have better prepared you for your current career?'
     )
-    
+
     q6 = models.CharField(
         max_length=100,
         choices=[
@@ -51,3 +51,51 @@ class Survey(models.Model):
         ],
         verbose_name='6. How satisfied are you with your current job in terms of alignment with your academic specialization and overall career growth?'
     )
+
+    q7 = models.CharField(
+        max_length=100,
+        choices=[
+            ('Software Development', 'Software Development'),
+            ('Data Analytics', 'Data Analytics'),
+            ('Design & UI', 'Design & UI'),
+            ('Product Management', 'Product Management'),
+            ('Testing and Quality Assurance', 'Testing and Quality Assurance'),
+            ('Security', 'Security'),
+        ],
+        verbose_name='7. What was the final field recommendation to you by our system?'
+    )
+    
+    q8 = models.CharField(
+        max_length=100,
+        choices=[
+            ('Software Development', 'Software Development'),
+            ('Data Analytics', 'Data Analytics'),
+            ('Design & UI', 'Design & UI'),
+            ('Product Management', 'Product Management'),
+            ('Testing and Quality Assurance', 'Testing and Quality Assurance'),
+            ('Security', 'Security'),
+        ],
+        verbose_name='8. What field is your job currently aligned on?'
+    )
+
+    q9 = models.CharField(
+        max_length=100,
+        choices=[
+            ('Male', 'Male'),
+            ('Female', 'Female'),
+        ],
+        verbose_name='9. Sex:'
+    )
+
+    q10 = models.CharField(
+        max_length=100,
+        choices=[
+            ('Single', 'Single'),
+            ('Married', 'Married'),
+            ('Divorced', 'Divorced'),
+            ('Widowed', 'Widowed'),
+        ],
+        verbose_name='10. Civil Status:'
+    )
+
+    
