@@ -585,7 +585,7 @@ def display_question(request, question_id):
         'question_set_id': question_set_id,
         'user_response': user_response,
         'current_index': current_index + 1,
-         'total_questions': total_questions,
+        'total_questions': total_questions,
     })
 
 
@@ -714,7 +714,8 @@ def submit_question(request, question_id):
                 current_index = question_ids.index(current_question_id)
                 next_question_id = question_ids[current_index + 1]
                 
-                if next_question_id == max(question_ids):
+                #if next_question_id == max(question_ids):
+                if current_question_id == question_ids[-1]:
                     messages.success(request, 'You have completed the test')
                     return redirect('test_overview', question_set_id=set_id)
                 # else
@@ -736,12 +737,26 @@ def submit_question(request, question_id):
             return redirect("test_overview", question_set_id=set_id)            
         # If the form is not valid, it means that the user has not selected an option.
         else:
+            current_index = question_ids.index(question_id)
+            total_questions = len(question_ids)
             options = question.options
-            return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': form})
+            return render(request, 'test/test_page.html', {
+                'question': question, 'options': options, 
+                'form': form,
+                'current_index': current_index + 1,
+                'total_questions': total_questions,
+                })
     #If the request method is not a POST request, it means that the user is not submitting an answer.
     else:
+        current_index = question_ids.index(question_id)
+        total_questions = len(question_ids)
         options = question.options
-        return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
+        return render(request, 'test/test_page.html', {
+            'question': question, 'options': options, 
+            'form': UserResponseForm(),
+            'current_index': current_index + 1,
+            'total_questions': total_questions,
+            })
 
 
 def submit_test(request):
