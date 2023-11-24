@@ -25,6 +25,28 @@ body{
     overflow-x: hidden;
 }
 
+/* Notification pop-up */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Above all other content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* Modern shadow */
+    padding: 15px; /* More padding */
+}
+
+/* Notification close button */
+.btn-close {
+    color: #aaa; /* Lighter color */
+    font-size: 1.5rem; /* Larger close button */
+    transition: color 0.2s; /* Smooth color transition */
+}
+
+.btn-close:hover {
+    color: #000; /* Dark color on hover */
+}
+
 .container
 {
     position: relative;

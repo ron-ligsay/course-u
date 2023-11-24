@@ -65,6 +65,8 @@ def home(request):
     # Filter out the recommended fields from the field_items queryset
     field_items = field_items.exclude(pk__in=recommended_field_ids)
 
+    
+        
 
     return render(request, 'home.html', {
         'specialization_items': specialization_items, 
@@ -170,7 +172,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, 'You have successfully logged in')
-            return redirect('home')
+            return redirect('paths')
         else:
             messages.success(request, 'Error logging in')
             return redirect('login_user')
