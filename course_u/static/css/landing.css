@@ -6,7 +6,8 @@ body, html {
 
 }.background-image {
     background-image: url('http://127.0.0.1:8000/static/images/landing2.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat; 
     background-position: center;
     height: 100vh; /* Use viewport height */
     width: 100vw; /* Use viewport width */
