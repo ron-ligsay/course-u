@@ -26,11 +26,6 @@ iv.test-container .card
 
 }
 
-.test-home-main {
-    padding: 50px;
-    display: flex;
-}
-
 .character-container {
     /* add image */
     background-image: url('../../static/images/character.png');
@@ -43,81 +38,52 @@ iv.test-container .card
     min-height: 600px;
     max-width: 350px;
     max-height: 550px;
+    margin-left: 150px;
+}
+.test-container{
+    justify-content: left;
+    margin-bottom: 100px;
+}
+body{
+  
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
+    margin: 0;
 }
 
-.test-container {
+.btn{
     display: flex;
+    align-items: center; /* Center items vertically */
     justify-content: center;
-    margin-top: 20px;
-    margin-right: 100px;
-    /* aligh vertically */
-    align-items: center;
-}
-
-.card {
-    width: 260px;
-    height: 260px;
-    border-radius: 15px;
-    text-align: center;
-    margin: 3%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    top: 50px;
-    left: 50px;
-    position: relative;
+      font-size: 20px ;
+      margin-left: 600px;
+      margin-top: 30px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgb(228, 95, 65);
+      color: #fff;
+      border: 2px solid rgb(233, 68, 31);
+      border-radius: 5px;
+      cursor: pointer;
+      width: 400px;
+      height:100px;
+      
+      transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: whitesmoke; /* Change the background color on hover */
+  color:rgb(228, 95, 65);
+  }
+  .btn img{
     padding-top: 10px;
+    width: 100px;
+    height:80px;
    padding-left: 10px;
-   padding-right: 10px;
-}
+   padding-right: 20px;
 
-#card1 {
-    background-color: #fafafa;
-}
-
-#card2 {
-    background-color: #fafafa;
-}
-
-#card3 {
-    background-color: #fafafa;
-}
-
-#card4 {
-    background-color: #fafafa;
-}
-
-h5 {
-    color: black;
-}
-
-p {
-    color: black;
-}
-
-.btn {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 90px;
-    height: 30px;
-    font-size: 13px;
-    padding: 1px 1px;
-    text-align: center;
-    background-color: rgb(228, 95, 65);
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    padding-top: 7px;
-    margin-top: 10px;
-
-}
-.character-container img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-}
+  }
 footer {
     display: none;
 }
