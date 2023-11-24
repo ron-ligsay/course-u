@@ -115,6 +115,11 @@
   right: 50px;
 }
 
+/* button first child */
+.btn.btn-test {
+  margin-right: 300px;
+}
+
 .btn:hover {
   background-color: rgb(247, 114, 84);
   /* Change the background color on hover */
