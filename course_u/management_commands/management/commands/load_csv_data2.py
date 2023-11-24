@@ -41,20 +41,20 @@ class Command(BaseCommand):
                 'columns': ['specialization_id', 'title','description','roadmap_id', 'field_id',],
                 'attributes': ['INT PRIMARY KEY',  'VARCHAR(150)', 'VARCHAR(1000)', 'INT','INT',]
             },
-            base_dir + '\\src\\linkedin_scrapy\\selenium\\jobs_post_2.csv': {
+            base_dir + '\\static\\csv\\jobs_jobposting.csv': {
                 'table_name': 'jobs_jobposting',
                 'model_name': 'JobPosting',
                 #jobpost_id,Link,Job_Title,Company_Name,Company_link,Date,Keyword,Keyword_id,Location,Employment_Type,Job_Function,Industries,Seniority_Level,Job_Description
-                'columns': ['id','link','job_title',
+                'columns': ['id','link','keyword','job_title',
                             'company_name','company_link','date_posted',
-                            'keyword','keyword_id','location',
+                            'location',
                             'employment_type','job_function','industries','seniority_level',
-                            'job_description'],
-                'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 
+                            'job_description','field_id'],
+                'attributes': ['INT AUTO_INCREMENT PRIMARY KEY','VARCHAR(5000)', 'VARCHAR(100)', 'VARCHAR(100)',
                                 'VARCHAR(100)', 'VARCHAR(5000)', 'DATE', 
-                                'VARCHAR(100)','INT','VARCHAR(300)',
+                                'VARCHAR(300)',
                                 'VARCHAR(150)','VARCHAR(150)','VARCHAR(150)','VARCHAR(150)',
-                                'TEXT'
+                                'TEXT','INT'
                                 ]
             },
             base_dir + '\\static\\csv\\assessment_test.csv': {
