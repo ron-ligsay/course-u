@@ -2,10 +2,19 @@
     font-size: 100%;
     font-size: 16px;
     line-height: 1.5;
-    font-family: 'Poppins'sans-serif;
+    font-family: 'Poppins' sans-serif;
 }
-.container{
+
+h2 {
+    margin: 5px;
+}
+
+.container {
     display: flex;
+    flex-wrap: wrap;
+    /* Allow the items to wrap as needed */
+    justify-content: space-between;
+    flex-direction: row;
     height: 550px;
     width: 900px;
     margin: auto;
@@ -14,8 +23,21 @@
     border-radius: 10px;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
 }
+
+.form {
+    flex: 1 0 auto;
+    /* Allow the form to shrink and grow as needed */
+    /* margin: 1em; */
+    /* Add some margin around each form */
+}
+
+.input-container {
+    margin-bottom: 1em;
+    /* Add some margin below each input */
+}
+
 .right {
-    width: 50%; 
+    width: 50%;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -23,40 +45,47 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+
 .side {
-    width: 50%; 
+    width: 50%;
     display: flex;
-    justify-content: flex-end; 
-    align-items: center; 
+    justify-content: flex-end;
+    align-items: center;
     padding: 20px;
 }
 
 .side img {
-    max-width: 100%; 
-    height: 450px; 
+    max-width: 100%;
+    height: 450px;
 }
+
 body {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
-h1{
+
+h1 {
     font-size: 2.25 rem;
     font-weight: 700;
 }
-h2{
+
+h2 {
     font-size: 1.5rem;
     font-weight: 700;
 }
+
 a {
     text-decoration: none;
     color: var(--primary-blue);
 }
+
 a:hover {
     text-decoration: underline;
 }
-.small{
+
+.small {
     font-size: 80%;
     text-align: center;
 }
@@ -64,35 +93,47 @@ a:hover {
 .left {
     height: 200px;
 }
-.left, .right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}.left {
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('images/pic.jpg');
-background-size: cover;
+
+.left,
+.right {
+  flex: 1; /* Make the left and right sections take up equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.left {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('images/pic.jpg');
+    background-size: cover;
+}
+
 .left .copy {
     color: white;
     text-align: center;
 }
+
 .left p {
     font-weight: 400;
 }
+
 .right .copy {
-    color:black;
+    color: black;
     text-align: center;
 }
-.right .copy p{
-    margin: 1.5em 0;
+
+.right .copy p {
+    /* margin: 1.5em 0; */
     font-size: 0.875rem;
+    margin: 5px;
 }
+
 .right form {
     width: 328px;
 }
+
 form input[type="text"],
- form input[type="email"], 
- form input[type="password"]    {
+form input[type="email"],
+form input[type="password"] {
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -102,21 +143,25 @@ form input[type="text"],
     margin-bottom: 1.25rem;
     font-size: 0.875rem;
     border-radius: 20px;
- }
- label {
+}
+
+label {
     display: block;
     margin-bottom: 0.5rem;
     font-size: 0.75rem;
- }
- .input-container.password {
+}
+
+.input-container.password {
     position: relative;
- }
- .input-container.password i {
+}
+
+.input-container.password i {
     position: absolute;
     top: 42px;
     right: 16px;
- }
- .signup-btn {
+}
+
+.signup-btn {
     display: block;
     width: 100%;
     background: black;
@@ -129,8 +174,9 @@ form input[type="text"],
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 20px;
- }
- .signup-btn:hover {
+}
+
+.signup-btn:hover {
     background: blue;
     cursor: pointer;
- }
+}
