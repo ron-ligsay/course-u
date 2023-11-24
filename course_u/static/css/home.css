@@ -7,9 +7,7 @@ main{
 }
 .card-container {
   display: flex;
-  /* Use flexbox to create a horizontal layout */
-  /* gap: 20px; */
-  overflow-x: auto;
+  overflow-x: auto; 
   /* Allow horizontal scrolling if content overflows */
   padding-bottom: 20px;
   /* Add some padding at the bottom for better visibility */
@@ -20,8 +18,7 @@ main{
   padding: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   width: 300px;
-  margin-left: 30px;;
-  /* Adjust the width as needed */
+  margin-left: 30px;
   flex-shrink: 0;
   /* Prevent cards from shrinking to fit */
   text-align: center;
@@ -43,7 +40,7 @@ main{
 
 .card.specialization,
 .card.field{
-  max-height: 50px;
+  max-height: 60px;
   overflow: hidden;
 }
 
@@ -79,19 +76,22 @@ h3{
 .recommended_first
 {
   /* color gold */
-  color: #FFD700;
+  color: #ffff00;
+  font-weight: bold;
 }
 
 .recommended_second
 {
   /* color silver */
-  color: #C0C0C0;
+  color: gold;
+  font-weight: bold;
 }
 
 .recommended_third
 {
   /* color bronze */
-  color: #CD7F32;
+  color: #f0e68c;
+  font-weight: bold;
 }
 
 .card h3 {
