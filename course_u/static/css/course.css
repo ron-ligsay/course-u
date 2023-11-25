@@ -64,8 +64,7 @@ h2 {
   background-size: contain; /* Adjust this */
   background-position: center;
   background-repeat: no-repeat; /* Add this to prevent the image from repeating */
-  height: 60vh;
-  width: 30%;
+
   position: relative;
 }
 

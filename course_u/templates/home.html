@@ -16,7 +16,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
+<body>
 <div class="section">
   <h3>Fields</h3>
   <div class="card-container">
@@ -47,7 +47,6 @@
   </div>
 </div>
 
-
 <div class="section">
   <h3>Specialization Tracks</h3>
   <div class="card-container" id="specialization-container">
@@ -68,7 +67,7 @@
 </div>
 
 <div class="section">
-  <h3>Fields</h3>
+ <br><br>
 
   <div class="container">
     <div class="row align-items-center justify-content-evenly gx-5">
@@ -133,4 +132,4 @@
 
 
 
-{% endblock content %}
+{% endblock content %}</body>
