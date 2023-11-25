@@ -288,21 +288,6 @@ from plotly.subplots import make_subplots
 import plotly.express as px
 
 
-# def extract_relevant_data(survey_responses):
-#     # Extract relevant fields from survey responses
-#     extracted_data = []
-#     for survey_response in survey_responses:
-#         student_name = survey_response.student.name
-#         job_title = survey_response.job_title
-#         satisfaction = survey_response.satisfaction
-
-#         extracted_data.append({
-#             'student_name': student_name,
-#             'job_title': job_title,
-#             'satisfaction': satisfaction
-#         })
-
-#     return extracted_data
 
 def extract_relevant_data(survey_responses):
     # Extract relevant fields from survey responses
@@ -324,6 +309,10 @@ def extract_relevant_data(survey_responses):
         better_preparation = survey_response.q5 # yes no 
         #6.	How satisfied are you with your current job in terms of alignment with your academic specialization and overall career growth?
         satisfaction = survey_response.q6 # # very satisfied, satisfied, neutral, dissatisfied, very dissatisfied
+        #7. What was the final field recommendation to you by our system?
+        field_recommendation = survey_response.q7 # Software Development, Data Analytics, Design & UI, Product Management, Testing and Quality Assurance, Security
+        #8. What field is your job currently aligned on?'
+        
 
         extracted_data.append({
             #'student_name': student_name,
@@ -477,80 +466,6 @@ def analyze_data(extracted_data):
 
 
 
-# def analyze_data(extracted_data):
-#     # Calculate statistics
-#     satisfaction_counts = {}
-#     for data_item in extracted_data:
-#         satisfaction_level = data_item['satisfaction']
-#         if satisfaction_level not in satisfaction_counts:
-#             satisfaction_counts[satisfaction_level] = 0
-#         satisfaction_counts[satisfaction_level] += 1
-
-#     satisfaction_percentages = {}
-#     for satisfaction_level, count in satisfaction_counts.items():
-#         satisfaction_percentages[satisfaction_level] = round(count / len(extracted_data) * 100, 2)
-
-#     # Create visualizations
-#     import matplotlib.pyplot as plt
-
-#     plt.bar(satisfaction_percentages.keys(), satisfaction_percentages.values())
-#     plt.xlabel('Satisfaction Level')
-#     plt.ylabel('Percentage of Responses')
-#     plt.title('Satisfaction with Recommendation System')
-#     plt.show()
-
-#        # Analyze job titles
-#     job_titles = []
-#     for data_item in extracted_data:
-#         job_title = data_item['job_title']
-#         job_titles.append(job_title)
-
-#     unique_job_titles = set(job_titles)
-#     job_title_counts = {}
-#     for job_title in unique_job_titles:
-#         count = job_titles.count(job_title)
-#         job_title_counts[job_title] = count
-
-#     most_common_job_titles = sorted(job_title_counts.items(), key=lambda item: item[1], reverse=True)[:5]
-
-#     print("Top 5 Most Common Job Titles:")
-#     for job_title, count in most_common_job_titles:
-#         print(f"{job_title}: {count} respondents")
-
-#     # Analyze additional certifications
-#     additional_certifications_counts = {}
-#     for data_item in extracted_data:
-#         additional_certifications = data_item['additional_certifications']
-#         if additional_certifications not in additional_certifications_counts:
-#             additional_certifications_counts[additional_certifications] = 0
-#         additional_certifications_counts[additional_certifications] += 1
-
-#     print("\nPercentage of Respondents with Additional Certifications:")
-#     for additional_certifications, count in additional_certifications_counts.items():
-#         percentage = round(count / len(extracted_data) * 100, 2)
-#         print(f"{additional_certifications}: {percentage}%")
-
-#     # Analyze satisfaction with specialization and career growth
-#     satisfaction_with_specialization_counts = {}
-#     for data_item in extracted_data:
-#         satisfaction_with_specialization = data_item['satisfaction_with_specialization']
-#         if satisfaction_with_specialization not in satisfaction_with_specialization_counts:
-#             satisfaction_with_specialization_counts[satisfaction_with_specialization] = 0
-#         satisfaction_with_specialization_counts[satisfaction_with_specialization] += 1
-
-#     print("\nSatisfaction with Academic Specialization and Career Growth:")
-#     for satisfaction_level, count in satisfaction_with_specialization_counts.items():
-#         percentage = round(count / len(extracted_data) * 100, 2)
-#         print(f"{satisfaction_level}: {percentage}%")
-
-#     return {
-#         'satisfaction_percentages': satisfaction_percentages,
-#         'most_common_job_titles': most_common_job_titles,
-#         'additional_certifications_counts': additional_certifications_counts,
-#         'satisfaction_with_specialization_counts': satisfaction_with_specialization_counts
-#     }
-
-
 def process_survey_data(survey_responses):
     # Extract relevant data from survey responses
     # This may involve filtering, aggregating, or transforming data
@@ -593,43 +508,12 @@ def admin_report(request):
         })
     
     chart = fig.to_html()#full_html=False, include_plotlyjs=False
-    # to image
+
 
     buffer = io.BytesIO()
     fig.write_image(buffer, format='png')
     chart_img = base64.b64encode(buffer.getvalue()).decode()
 
-    #chart_img = fig.to_image(format="png")
-
-   # Get all Field objects
-    # all_fields = Field.objects.all()
-
-    # # Initialize list to store all charts
-    # all_charts = []
-
-    # for field in all_fields:
-    #     # Get Test objects for the current field
-    #     test_items = Test.objects.filter(field=field.id)
-
-    #     # Calculate average score for each test
-    #     avg_scores = test_items.annotate(avg_score=Avg('score'))
-
-    #     # Generate chart
-    #     fig = go.Figure(data=[
-    #         go.Bar(name='Test', x=[test.name for test in test_items], y=[score.avg_score for score in avg_scores])
-    #     ])
-    #     fig.update_layout(title=f'Average Scores for Each Test in {field.name}', xaxis_title='Test', yaxis_title='Average Score')
-    #     field_chart = plot(fig, output_type='div')
-
-    #     # Add chart to list
-    #     all_charts.append(field_chart)
-
-    #     # convert to html
-    #     field_chart_html = fig.to_html(full_html=False, include_plotlyjs=False)
-    #     # convert to img
-    #     buffer = io.BytesIO()
-    #     fig.write_image(buffer, format='png')
-    #     field_chart_img = base64.b64encode(buffer.getvalue()).decode()
 
     survey_data = Survey.objects.all()
 
@@ -723,7 +607,7 @@ def admin_report(request):
                 'preparation_data': preparation_data,
                 #'preparation_chart': preparation_chart,
                 'charts': charts,
-                
+
                 'additional_certifications': additional_certifications,
                 'additional_certifications_chart': additional_certifications_chart,
                 
