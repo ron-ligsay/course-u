@@ -5,7 +5,8 @@ from django.contrib.sessions.models import Session
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-
+    
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import user_passes_test
@@ -574,50 +575,85 @@ def display_question(request, question_id):
 
     question = get_test_question_by_id(question_id)
     user_response = UserResponse.objects.filter(question=question, set_id=question_set_id).first()
-    print("Selected option: ", user_response.selected_option)
+    #print("Selected option: ", user_response.selected_option)
+    #print('question_set_id: ', question_set_id)
+    # Get the index of the current question in the list
+    current_index = question_ids.index(question_id)
+    total_questions = len(question_ids)
     return render(request, 'test/test_page.html', {
         'question': question,
         'question_set_id': question_set_id,
         'user_response': user_response,
+        'current_index': current_index + 1,
+        'total_questions': total_questions,
     })
 
 
 def next_test(request, question_id, question_set_id):
-    question_set = request.session.get('question_set')
-    n_question = request.session.get('n_questions', 0)
+    # question_set = request.session.get('question_set')
+    # n_question = request.session.get('n_questions', 0)
 
-    if question_id + 1 < n_question:
-        question = get_object_or_404(Test, question_id=question_id + 1)
-        #return render(request, 'test/test_page.html', {'question': question})
-        return redirect('display_question', question_id=question_id + 1)
+    # if question_id + 1 < n_question:
+    #     question = get_object_or_404(Test, question_id=question_id + 1)
+    #     #return render(request, 'test/test_page.html', {'question': question})
+    #     return redirect('display_question', question_id=question_id + 1)
 
-    if question_id + 1 == n_question:
+    # if question_id + 1 == n_question:
+    #     messages.success(request, 'You have completed the test')
+    #     return redirect('test_overview', question_set_id=question_set_id)
+    # else:
+    #     messages.success(request, 'You have completed the test')
+    #     return redirect('home')
+    questions = request.session.get('question_set')
+
+    try:
+        current_index = questions.index(question_id)
+    except ValueError:
+        messages.error(request, 'Current question not found in question set')
+        return redirect('home')
+
+    if current_index == len(questions) - 1:
         messages.success(request, 'You have completed the test')
         return redirect('test_overview', question_set_id=question_set_id)
-    else:
-        messages.success(request, 'You have completed the test')
-        return redirect('home')
+
+    next_question_id = questions[current_index + 1]
+    return redirect('display_question', question_id=next_question_id)
 
 
 def prev_test(request, question_id, question_set_id):
-    if question_id <= 1:
+    # if question_id <= 1:
+    #     messages.success(request, 'You have reached the first question')
+    #     return redirect('test_overview', question_set_id=question_set_id)
+
+    # questions = request.session.get('question_set')
+
+    # if 1 <= question_id - 1 < len(questions):
+    #     question = get_object_or_404(Test, question_id=question_id - 1)
+    #     #return render(request, 'test/test_page.html', {'question': question})
+    #     return redirect('display_question', question_id=question_id - 1)
+    # else:
+    #     messages.success(request, 'You have reached the first question')
+    #     return redirect('home')
+    questions = request.session.get('question_set')
+
+    try:
+        current_index = questions.index(question_id)
+    except ValueError:
+        messages.error(request, 'Current question not found in question set')
+        print('Current question not found in question set')
+        return redirect('home')
+
+    if current_index == 0:
         messages.success(request, 'You have reached the first question')
         return redirect('test_overview', question_set_id=question_set_id)
 
-    questions = request.session.get('question_set')
+    prev_question_id = questions[current_index - 1]
+    return redirect('display_question', question_id=prev_question_id)
 
-    if 1 <= question_id - 1 < len(questions):
-        question = get_object_or_404(Test, question_id=question_id - 1)
-        #return render(request, 'test/test_page.html', {'question': question})
-        return redirect('display_question', question_id=question_id - 1)
-    else:
-        messages.success(request, 'You have reached the first question')
-        return redirect('home')
-    
-from django.shortcuts import get_object_or_404
 
     # The submit_question view function is responsible for handling the submission of a test question answer.
 def submit_question(request, question_id):
+    print('submit_question() question_id: ', question_id)
     # The function first retrieves the question object from the database using the get_object_or_404 function.
     question = get_object_or_404(Test, question_id=question_id)
     user_response_key = f'user_response_{question_id}'
@@ -678,12 +714,18 @@ def submit_question(request, question_id):
                 current_index = question_ids.index(current_question_id)
                 next_question_id = question_ids[current_index + 1]
                 
-                if next_question_id == max(question_ids):
+                #if next_question_id == max(question_ids):
+                if current_question_id == question_ids[-1]:
                     messages.success(request, 'You have completed the test')
                     return redirect('test_overview', question_set_id=set_id)
                 # else
-                next_question = get_object_or_404(Test, question_id=next_question_id)
-                options = next_question.options
+                next_question = None
+                try:
+                    next_question = get_object_or_404(Test, question_id=next_question_id)
+                    options = next_question.options
+                except:
+                    messages.warning(request, 'Invalid question ID')
+                
                 return render(request, 'test/test_page.html', {
                     'question_set_id': set_id,
                     'question': next_question, 'options': options, 'form': UserResponseForm()
@@ -695,12 +737,26 @@ def submit_question(request, question_id):
             return redirect("test_overview", question_set_id=set_id)            
         # If the form is not valid, it means that the user has not selected an option.
         else:
+            current_index = question_ids.index(question_id)
+            total_questions = len(question_ids)
             options = question.options
-            return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': form})
+            return render(request, 'test/test_page.html', {
+                'question': question, 'options': options, 
+                'form': form,
+                'current_index': current_index + 1,
+                'total_questions': total_questions,
+                })
     #If the request method is not a POST request, it means that the user is not submitting an answer.
     else:
+        current_index = question_ids.index(question_id)
+        total_questions = len(question_ids)
         options = question.options
-        return render(request, 'test/test_page.html', {'question': question, 'options': options, 'form': UserResponseForm()})
+        return render(request, 'test/test_page.html', {
+            'question': question, 'options': options, 
+            'form': UserResponseForm(),
+            'current_index': current_index + 1,
+            'total_questions': total_questions,
+            })
 
 
 def submit_test(request):
@@ -857,6 +913,7 @@ def student_test_report(request, question_set_id):
 
     # Create a plotly pie chart
     fig = generate_pie_chart(field_correct_answers, 'Correct Answers per Field')
+    #fig = px.pie(field_correct_answers, values='total_correct', names='field_name', title='Correct Answers per Field')
 
     # Get top 3 fields with the most correct answers
     top_fields = field_correct_answers.order_by('-total_correct')[:3]
@@ -922,9 +979,9 @@ def student_test_report(request, question_set_id):
         y=skill_names,
         orientation='h',
         labels={'x': 'Relevance Score', 'y': 'Skill Name'},
-        title='Correct Responses per Skill',
-        height=(len((skill_names) * 25) + 100),
-        width=(max((correct_counts) * 30) + 300),
+        #title='Correct Responses per Skill',
+        height=500,#(len((skill_names) * 25) + 100),
+        width=600 #(max((correct_counts) * 30) + 300),
     )
 
 
@@ -1015,8 +1072,8 @@ def student_test_report_overall(request):
                 orientation='h',
                 labels={'x': 'Relevance Score', 'y': 'Skill Name'},
                 title='Correct Responses per Skill',
-                height=(len((skill_names) * 25) + 100),
-                width=(max((correct_counts) * 30) + 300),
+                height=500,#(len((skill_names) * 25) + 100),
+                width=600,#(max((correct_counts) * 30) + 300),
             )   
             
 

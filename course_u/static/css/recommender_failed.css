@@ -1,0 +1,40 @@
+.container {
+    text-align: center;
+    background-color: #f9f9f9;
+
+}
+.text{
+    font-size: 30px;
+    padding-top: 30px;
+    font-weight:bold;
+    padding-bottom: 20px;
+    margin-top: 100px;
+}
+.text2{
+    color: gray;
+}
+.btn{ 
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    padding-top: 10px;
+    height: 40px;
+    font-size:15px;
+    margin-top:50px;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(228, 95, 65);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    color:white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+  .btn:hover {
+    background-color: whitesmoke; /* Change the background color on hover */
+    color:rgb(228, 95, 65);
+  }
+footer{
+    display:none;
+}

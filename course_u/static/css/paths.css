@@ -1,71 +1,170 @@
 body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  color: #333;
+  /* background-color: lightcyan; */
+}
+
+h1 {
+  color: rgb(228, 95, 65);
+  text-align: center;
+}
+
+h2 {
+  color: darkslategrey;
+  text-align: center;
+}
+
+p {
+  color: black;
+}
+
+.introduction-description {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-size: cover;
+
+  flex: 1;
+  /* max-width: 80%; */
+  margin: 0 50px;
 }
 
-.container1 {
-text-align: center;
-position: absolute;
-top: 0;
-left: 50%;
-transform: translateX(-50%);
-width: 100%;
-padding: 20px;
-box-sizing: border-box;
-background-color: rgba(255, 255, 255, 0.8); 
-z-index: 1; /* Optional: Set a higher z-index to make sure it's above other elements */
+
+.timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  list-style-type: none;
+
 }
 
-.title {
-font-size: 30px;
-font-weight: bold;
-margin-bottom: 20px;
+.timeline-item {
+  width: 20%;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
 }
 
-.subtitle {
-font-size: 24px;
-margin-bottom: 20px;
-} 
-.container {
-  width: 150px;
-  height: 300px; /* Increased height to accommodate the image */
-  margin: 0 10px;
+.timeline-icon {
+  font-size: 50px;
+  color: black;
+}
+
+.timeline-item-content {
+  padding-left: 10px;
+}
+.timeline-item-content i.materialIcon {
+  font-size: 24px; /* Adjust the size as needed */
+  color: #4CAF50; /* Adjust the color as needed */
+  margin-bottom: 10px; /* Adjust the margin bottom to provide space between the icon and content */
+  display: block; /* Ensure the icon is displayed as a block element */
+}
+
+.timeline-item-heading {
+  color: rgb(228, 95, 65);
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.containers-wrapper {
+  display: flex;
+}
+
+.container {
+  width: 200px;
+  height: 380px;
+  /* Increased height to accommodate the image */
+  text-align: center;
+  flex-direction: column;
+  display: inline-block;
+  margin-left: 55px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
   padding: 10px;
 }
 
+.container2 {
+  display: flex;
+  /* Add this */
+  justify-content: space-around;
+  /* Add this */
+  flex-wrap: wrap;
+  /* Add this */
+  flex-direction: row;
+}
+
+.container {
+  flex: 1 0 16%;
+  /* Add this */
+  margin: 10px;
+}
+
+
+
 .container img {
   max-width: 100%;
-  max-height: 100px; /* Set a maximum height for the image */
+  max-height: 100px;
+  /* Set a maximum height for the image */
   margin-bottom: 10px;
 }
-.container h2{
-    color:rgb(228, 95,65)
+
+.container h2 {
+  color: rgb(228, 95, 65);
+}
+
+
+.button-continer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.get-started-button {
+
+  padding: 10px 20px;
+  background-color: rgb(228, 95, 65);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  /* margin-left: 700px; */
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  width: 200px;
+  height: 50px;
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+
 }
 
 .get-started-button:hover {
-background-color: rgb(247, 114, 84); /* Change the background color on hover */
-color:white;
-
-
-}
-.get-started-button{ 
-padding: 10px 20px;
-background-color: rgb(228, 95, 65);
-color: white;
-border-radius: 5px;
-text-decoration: none;
-transition: background-color 0.3s ease;
-position: absolute;
-bottom: 80px; 
-align-items: center;
-justify-content: center;
-display:flex;
-width:100px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  background-color: rgb(247, 114, 84);
+  /* Change the background color on hover */
+  color: white;
 }

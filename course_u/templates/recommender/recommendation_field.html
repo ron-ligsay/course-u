@@ -8,62 +8,78 @@
 
 
 {% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/recommendation_field.css' %}">
+
 
 {% endblock head_extra %}
 
 {% block content %}
-
-<div>
-    <h4>Recommendation</h4>
-    <h1>{{field_object.field_name}}</h1>
-
-    <p>{{field_object.description}}</p>
-</div>
-<br><br>
-<div>
-    <h4>Compability Explanaiton</h4>
-    <p>{{field_object.explanation}}</p>
-</div>
-<br>
-<div>
-    <h4>Your {{field_object.field_name}} Skills</h4>
-    {% for skill in top_user_skills %}
-    <p>{{skill}}</p>
-    {% endfor %}
-    {% for skill in top_user_skills_2 %}
-    <p style="color: grey;">{{skill}}</p>
-    {% endfor %}
-</div>
-
-<br>
-<div>
-    <h4>Recommended {{field_object.field_name}} Skills</h4>
-    {% for skill in not_in_user_skills %}
-    <p>{{skill}}</p>
-    {% endfor %}
-    {% for skill in not_in_user_skills_2 %}
-    <p style="color: grey;">{{skill}}</p>
-    {% endfor %}
-</div>
-<br>
-
-<div>
-    <h4>Explore more about the possible future path for you.</h4>
-    <br>
-    <div class="card">
-        <p>Specialization</p>
-        <a href="{% url 'recommendation_specialization' field_id=field_object.field  %}" class="btn">Specializations</a>
+<div class="recommendation-section">
+    <div class="recommendation">
+        <h4>Recommendation</h4>
+        <h1>{{field_object.field_name}}</h1>
+        <p>{{field_object.description}}</p>
     </div>
-    <br>
-    <div class="card">
-        <p>Roadmap</p>
-        <a href="{% url 'recommendation_course' field_id=field_object.field %}" class="btn">Roadmap</a>
+
+    <div class="compatibility">
+        <h4>Compatibility Explanation</h4>
+        <p>{{field_object.explanation}}</p>
     </div>
-    <br>
-    <div class="card">
-        <p>Jobs</p>
-        <a href="{% url 'recommendation_jobs' field_id=field_object.field %}" class="btn">Jobs</a>
+
+    <div class="skill-section">
+        <h5>Your {{field_object.field_name}} Skills</h5>
+        <div class="user-skills">
+            
+            {% for skill in top_user_skills %}
+            <div class="skill-card">
+                <p>{{skill}}</p>
+            </div>
+            {% endfor %}
+            {% for skill in top_user_skills_2 %}
+            <div class="skill-card">
+                <p class="grey-text">{{skill}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="skill-section">
+        <h5>Recommended {{field_object.field_name}} Skills</h5>
+        <div class="recommended-skills">
+
+            {% for skill in not_in_user_skills %}
+            <div class="skill-card">
+                <p>{{skill}}</p>
+            </div>
+            {% endfor %}
+            {% for skill in not_in_user_skills_2 %}
+            <div class="skill-card">
+                <p class="grey-text">{{skill}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+    <div class="other-section">
+        <h4>Explore more about the possible future path for you.</h4>
+        <div class="explore-section">        
+            <a href="{% url 'recommendation_specialization' field_id=field_object.field  %}" >
+                <div class="card">
+                    <p>See more of the possible <strong>Specialization</strong> Fields for {{field_object.field_name}}!</p>
+                </div>
+            </a>
+            <a href="{% url 'recommendation_course' field_id=field_object.field %}">
+                <div class="card">
+                    <p>Boost your skills through <strong>Courses</strong>!</p>
+                </div>
+            </a>
+            <a href="{% url 'job_list_with_field' field_id=field_object.field %}" >
+                <div class="card">
+                    <p>Identify the <strong>Jobs</strong> around you to see what's ahead of your career and plan ahead!</p>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
-<br><br><br>
 {% endblock content %}

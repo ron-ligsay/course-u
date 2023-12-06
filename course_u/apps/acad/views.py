@@ -101,12 +101,13 @@ def success_page(request):
     # Get the enrolled course of the student and year
     course = student.enrolled_courses_id
     year_level = student.current_year
-
+    course_name = Course.objects.get(pk=course).course_name
+    
     if year_level == 0:
-        # redirect to success page
+        year_level = "First Year"
         return render(request, 'acad/success_page.html', {
                 #'student': student,
-                'course': course,
+                'course': course_name,
                 'year_level': year_level,
             })
     else:
@@ -161,9 +162,19 @@ def success_page(request):
                 print("saved user skill: ", user_skill)
                 # add skill source
 
-
+        course_name = Course.objects.get(pk=course).course_name
+        if year_level == 1 or year_level == 0:
+            year_level = "First Year"
+        elif year_level == 2:
+            year_level = "Second Year"
+        elif year_level == 3:
+            year_level = "Third Year"
+        elif year_level == 4:
+            year_level = "Fourth Year"
+        else:
+            year_level = "Graduate"
         return render(request, 'acad/success_page.html', {
             #'student': student,
-            'course': course,
+            'course': course_name,
             'year_level': year_level,
         })

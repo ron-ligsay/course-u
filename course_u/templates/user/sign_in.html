@@ -30,18 +30,31 @@
                 </a></p>
             </div>
         </section>
-        {{ form.as_p}}
-        <div class="input-container cta">
+        {% for field in form %}
+          <div class="input-container">
+            {{ field.label_tag }}
+            {{ field }}
+            <!-- {% if field.help_text %}
+              <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %} -->
+            {% if field.errors %}
+              <div class="alert alert-danger">
+                {{ field.errors }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <!-- <div class="input-container cta">
             <label class="checkbox-container">
                 <input type="checkbox">
                 <span class="checkmark"></span>
                 Sign Up for email updates.
             </label>
-        </div>
+        </div> -->
         <button class="signup-btn" type="submit"> Sign Up </button>
-        <section class="copy legal">
+        <!-- <section class="copy legal">
             <p> <span class="small"> By continuing, you agree to accept our <br> <a href="#"> Privacy Policy </a> &amp; <a href="#"> Terms of Service</a>.</span></p>
-        </section>
+        </section> -->
         
         </form>
         </div>

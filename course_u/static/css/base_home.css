@@ -9,9 +9,10 @@
 }
 
 :root{
-    --blue: white;/*#Ffa07a replace with orange */
+    --highlight: rgb(228, 95, 65);;/*#Ffa07a replace with orange */
     --white: #fff;
-    --grey: /*#f5f5f5;*/rgb(228, 95, 65);
+    --grey: #f5f5f5;
+    /* rgb(228, 95, 65); */
     --black1: white;
     --black2: #999;
     --darkbg: #0D1117;
@@ -22,6 +23,28 @@
 body{
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* Notification pop-up */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Above all other content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* Modern shadow */
+    padding: 15px; /* More padding */
+}
+
+/* Notification close button */
+.btn-close {
+    color: #aaa; /* Lighter color */
+    font-size: 1.5rem; /* Larger close button */
+    transition: color 0.2s; /* Smooth color transition */
+}
+
+.btn-close:hover {
+    color: #000; /* Dark color on hover */
 }
 
 .container
@@ -251,7 +274,7 @@ footer
     width: 100%;
     padding: 20px;
     color: var(--black1);
-    background-color: var(--grey);
+    background-color: var(--highlight);
 }
 
 footer span

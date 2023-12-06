@@ -4,48 +4,52 @@
 
 {% block title %}Recommender{% endblock %}
 
+
 {% load static %}
 
 
 {% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/recommendation_course.css' %}">
 
 {% endblock head_extra %}
 
 {% block content %}
-
 <h2>Roadmap for <b>{{ field.field_name }}</b></h2>
-<br>
-<div class="materials begineer">
-    <h2>Beginner</h2>
-{% for material in learning_materials_beginner %}
-<div>
-    <h3>{{ material.title }}</h3>
-    <!-- <p>{{ material.description }}</p> -->
-    <a href="{{ material.url }}" target="_blank">Link</a>
-</div>
-{% endfor %}
-</div>
-<br>
-<div class="materials intermediate">
-    <h2>Intermediate</h2>
-{% for material in learning_materials_intermediate %}
-<div>
-    <h3>{{ material.title }}</h3>
-    <!-- <p>{{ material.description }}</p> -->
-    <a href="{{ material.url }}" target="_blank">Link</a>
-</div>
-{% endfor %}
-</div>
-<br>
-<div class="materials advanced">
-    <h2>Advanced</h2>
-{% for material in learning_materials_advanced %}
-<div>
-    <h3>{{ material.title }}</h3>
-    <!-- <p>{{ material.description }}</p> -->
-    <a href="{{ material.url }}" target="_blank">Link</a>
-</div>
-{% endfor %}
-</div>
 
+    <div class="materials begineer">
+        <h2>Beginner</h2>
+        {% for material in learning_materials_beginner %}
+        <div>
+            <i class="materialIcon fas fa-check-circle"></i>
+            <h3>{{ material.title }}</h3>
+            <a href="{{ material.url }}" target="_blank">Click Link</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div class="materials intermediate">
+        <h2>Intermediate</h2>
+        {% for material in learning_materials_intermediate %}
+        <div>
+            <i class="materialIcon fas fa-book"></i>
+            <h3>{{ material.title }}</h3>
+            <a href="{{ material.url }}" target="_blank">Click Link</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div class="materials advanced">
+        <h2>Advanced</h2>
+        {% for material in learning_materials_advanced %}
+        <div>
+            <i class="materialIcon fas fa-graduation-cap"></i>
+            <h3>{{ material.title }}</h3>
+            <a href="{{ material.url }}" target="_blank">Click Link</a>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock content %}

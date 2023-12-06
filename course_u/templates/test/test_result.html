@@ -1,25 +1,61 @@
 {% extends 'base_user.html' %}
 
-{% block title %}Test Overview{% endblock %}
+{% block title %}Test Results{% endblock %}
+
 {% load static %}
+
 {% block head_extra %}
 <link rel="stylesheet" href="{% static 'css/test_result.css' %}">
 {% endblock head_extra %}
+
 {% block content %}
     <h4>{{ username }}'s results</h4>
-    <h4>Top 3 topics</h4><br>
+<!--     
+    
+    <h4>Top 3 Field</h4><br>
     {% for field in top_fields %}
             <p>{{ field }}</p>
-    {% endfor %}
-  
-    <div>
-        {{ graph|safe }}
+    {% endfor %} -->
+    
+    <div class="container">
+        <h1>Division of Results</h1>
+        <div class="graph-score">
+            
+            <div class="result">
+                
+                <h4>Explanation</h4>
+                <p>Top Pie Graph represents the overall similarity Score based from your Grades, Test Resutls and Other Records.
+                    In the Pie Graph the color represents the Field of Study that the score is related to. And each Field of Study displays a percentage of the score.
+                    Your Top Field Recommendation is based from the top 3 highest percentage of the score.
+                </p>
+            </div>
+            <div class="graph">
+                {{ graph|safe }}
+            </div>
+        </div>
     </div>
-    <div>
-        {{ bar_plot|safe }}
+
+    <div class="skills-section">
+        <h1>Field Recommendation</h1>
+        <div class="field-score">
+            <div class="field-plot">
+                {{ bar_plot|safe }}
+            </div>
+            <div class="field-result">
+                <div class="result">
+                    <h4>Explanation</h4>
+                    <p>Top Pie Graph represents the overall similarity Score based from your Grades, Test Resutls and Other Records.
+                        In the Pie Graph the color represents the Field of Study that the score is related to. And each Field of Study displays a percentage of the score.
+                        Your Top Field Recommendation is based from the top 3 highest percentage of the score.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
     </div>
- 
-    <a href="{% url 'test_home' %}" class="btn btn-primary">Back to Recommender Page</a>
+    <br><br><br>
+    <a href="{% url 'test_home' %}" class="btn btn-primary btn-test">Back to Test Page</a>
+    <a href="{% url 'recommender_survey' %}" class="btn btn-primary btn-recommender">Generate Recommender</a>
     
   
 {% endblock %}

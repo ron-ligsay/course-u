@@ -1,0 +1,25 @@
+{% extends 'base_user.html' %}
+
+
+
+{% block title %}Recommender{% endblock %}
+
+{% load static %}
+
+
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/recommender_failed.css' %}">
+
+
+{% endblock head_extra %}
+
+{% block content %}
+
+<div class="container">
+<p class="text">You have few skills to generate Recommendations</p>
+<p class="text2">Please add take the assessments and grade inputs</p>
+<a href="{% url 'test_home' %}" class="btn">Test Home</a>
+<br><br>
+</div>
+
+{% endblock content %}

@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-
+from django.contrib.auth.models import Group
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Email Address'}),max_length=100, required=True)
@@ -10,7 +10,12 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1','password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1','password2')
+        help_texts = {
+            'username': None,
+            'password1': None,
+            'password2': None,
+        }
 
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
@@ -30,7 +35,20 @@ class SignUpForm(UserCreationForm):
         self.fields["password2"].label = ""
         self.fields["password2"].help_text = "<span class='form-text text-muted'><small>Enter the same password as before, for verification.</small></span>"
 
+    def save(self, commit=True):
+        user = super().save(commit=False)
 
+        # Check the email of the user
+        if '@admin' in user.email:
+            user.is_superuser = True
+            user.is_staff = True
+        elif '@instructor' in user.email:
+            user.is_staff = True
+
+        if commit:
+            user.save()
+
+        return user
 
 class StudentScoreForm(forms.Form):
     username = forms.CharField(label="",widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Username'}),max_length=100, required=True)

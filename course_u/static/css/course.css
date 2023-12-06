@@ -24,24 +24,80 @@
     font-size: 50px;
   }
   */
-  
-body{
+
+/* .main {
   background-image: url('../../static/images/year.png');
   background-size: cover;
   background-repeat: no-repeat;
+} */
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
 }
-  p{
-    text-align:  center;
-    color:rgb(228, 95, 65);
-    font-family:georgia;
-    font-size: 50px;
-  }
-.course{
-    border-radius: 10px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
+
+.main {
+
 }
-.btn{ 
+h2 {
+  color: rgb(228, 95, 65); /* The orange color from your theme */
+  text-align: center; /* Center the text */
+  margin-bottom: 20px; /* Add some space below the heading */
+  font-size: 50px;
+}
+.course-section {
+  margin: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black;
+  border-radius: 10px;
+  background-color: #ececec;
+  box-sizing: border-box; */
+  width: calc(100% - 100px);
+}
+
+.character-section {
+  background-image: url('../../static/images/character.png');
+  background-size: contain; /* Adjust this */
+  background-position: center;
+  background-repeat: no-repeat; /* Add this to prevent the image from repeating */
+
+  position: relative;
+}
+
+.selection-section {
+  width: 70%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  max-width: 100%;
+}
+
+
+p {
+  text-align: center;
+  color: rgb(228, 95, 65);
+  font-family: georgia;
+  font-size: 50px;
+}
+
+.course {
+  border-radius: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+
+
+.btn {
   display: block;
   margin: 0 auto;
   margin-top: 30px;
@@ -51,29 +107,27 @@ body{
   line-height: 80px;
   font-size: 25px;
   padding: 2px 1px;
-  background-color: whitesmoke;
+  background-color: rgb(228, 95, 65);
   border-radius: 15px;
   text-decoration: none;
   transition: background-color 0.3s ease;
   font-weight: bold;
-  color:rgb(228, 95, 65);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  /* Updated style */
+  margin-left: calc(70% - 200px); /* Position the center of the button on the 3/4 side of the page */
+  margin-right: auto; /* Center the button */
+
 }
+
 .btn:hover {
-  background-color: rgb(228, 95, 65); /* Change the background color on hover */
-  color:white;
+  background-color: whitesmoke;
+  /* Change the background color on hover */
+  color: rgb(228, 95, 65);
 
 }
 
-body{
-  background-image: url("/static/images/bg_tao.png");
-  background-size: cover;
-  background-position: center;
-  height: 100vh; /*Use viewport height*/
-  width: 100vw; /*Use viewport width*/
-  position: relative;
-  overflow: hidden;
-}
-footer{
-  display:none;
+
+footer {
+  display: none;
 }

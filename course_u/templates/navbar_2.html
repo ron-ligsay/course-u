@@ -6,9 +6,9 @@
                 <span class="title"> Course-U </span>
             </a>
             {% load static %}
-            <div class="logo">
+            <!-- <div class="logo">
                 <img src="{% static 'images/logo.png' %}" alt="Logo" href="{% url 'home' %}">
-            </div>
+            </div> -->
         </li>
         {% if user.is_authenticated %}
         {% if request.user.is_staff %}
@@ -28,8 +28,15 @@
         </li>
         <li>
             <!-- <a href="{% url 'test_home' %}"> -->
-            <a href="{% url 'paths' %}">
-                <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+            <a href="{% url 'test_home' %}">
+                <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
+                <span class="title"> Assessment </span>
+            </a>
+        </li>
+        <li>
+            <!-- <a href="{% url 'test_home' %}"> -->
+            <a href="{% url 'recommender_survey' %}">
+                <span class="icon"><ion-icon name="color-filter-outline"></ion-icon></ion-icon></span>
                 <span class="title"> Recommender </span>
             </a>
         </li>
@@ -39,28 +46,28 @@
                 <span class="title"> Profile </span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="{% url 'job_list' %}">
-                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <span class="icon"><ion-icon name="briefcase-outline"></ion-icon></span>
                 <span class="title"> Jobs </span>
             </a>
-        </li>
+        </li> -->
         <li>
             <a href="{% url 'logout' %}">
-                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                 <span class="title"> Logout </span>
             </a>
         </li>
         {% else %}
         <li>
             <a href="#">
-                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <span class="icon"></span><ion-icon name="log-in-outline"></ion-icon></span>
                 <span class="title"> Login </span>
             </a>
         </li>
         <li>
             <a href="#">
-                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
                 <span class="title"> Signup </span>
             </a>
         </li>

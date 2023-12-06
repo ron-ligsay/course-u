@@ -1,32 +1,85 @@
-footer{
-    display:none;
+footer {
+    display: none;
 }
-h1{
-    color:rgb(228, 95, 65);
+
+h1 {
+    color: rgb(228, 95, 65);
     margin-left: 10px;
 }
-p{
+
+p {
     margin-left: 10px;
 
 }
-    .btn{ 
-        padding: 10px 20px;
-        background-color: rgb(228, 95, 65);
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        position: absolute;
-        bottom: 50px; 
-        align-items: center;
-        justify-content: center;
-        display:flex;
-        width:250px;
-        height:40px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.4);
-        right:50px;
-      }
-      .btn:hover {
-        background-color: rgb(247, 114, 84); /* Change the background color on hover */
-        color:white;
-      }
+
+.btn {
+    padding: 10px 20px;
+    background-color: rgb(228, 95, 65);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 250px;
+    height: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    right: 50px;
+}
+
+.btn:hover {
+    background-color: rgb(247, 114, 84);
+    /* Change the background color on hover */
+    color: white;
+}
+
+.profile {
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.profile__title,
+.profile__welcome,
+.profile__email {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile__actions {
+    margin-bottom: 30px;
+}
+
+.profile__button {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(228, 95, 65);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.profile__button:hover {
+    background-color: rgb(200, 80, 50);
+}
+
+.profile__button--login {
+    background-color: #333;
+}
+
+.profile__button--login:hover {
+    background-color: #222;
+}
+
+.profile__login-prompt {
+    text-align: center;
+}
+
+.profile__login-title {
+    color: #333;
+    margin-bottom: 20px;
+}

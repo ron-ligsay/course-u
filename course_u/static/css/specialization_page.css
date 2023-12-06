@@ -7,6 +7,8 @@ h1{
 p{
   text-align: center;
   justify-content: center;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .btn{ 
     display: block;
@@ -15,22 +17,43 @@ p{
     padding-top: 10px;
     height: 40px;
     font-size:15px;
-    margin-top:500px;
+    margin-top:200px;
     justify-content: center;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: rgb(228, 95, 65);
     border-radius: 15px;
     text-decoration: none;
     transition: background-color 0.3s ease;
     font-weight: bold;
-    color:rgb(228, 95, 65);
+    color:white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.4);
   }
   .btn:hover {
-    background-color: rgb(228, 95, 65); /* Change the background color on hover */
-    color:white;
+    background-color: whitesmoke; /* Change the background color on hover */
+    color:rgb(228, 95, 65);
   
   }
+  .skills{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;  
+    text-align: center;
+    
+    text-decoration: none;
+    background-color: rgb(228, 95, 65);
+    color: #fff;
+    border: 2px solid rgb(185, 87, 41);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 30px; /* Optional: Add margin between buttons */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+  .skills-container{
+    text-align: center; /* Use text-align to center inline elements horizontally */
+  }
+
   footer{
     display:none;
   }

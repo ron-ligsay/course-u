@@ -64,7 +64,8 @@ def recommender(request):
     normalized_field_skills_columns = normalized_field_skills.columns
     # convert to list
     normalized_field_skills_columns = list(normalized_field_skills_columns)
-
+    #print('normalized_user_skills_df_columns: ', normalized_user_skills_df_columns)
+    #print('normalized_field_skills_columns len: ', normalized_field_skills_columns)
     # get the intersection of the two dataframes
     #intersection_columns = normalized_user_skills_df_columns.intersection(normalized_field_skills_columns)
     intersection_columns = set(normalized_user_skills_df_columns).intersection(set(normalized_field_skills_columns))
@@ -72,9 +73,25 @@ def recommender(request):
 
     # to list for filtering
     intersection_columns = list(intersection_columns)
-
+    print("Len of interseciotn columns: ", len(intersection_columns))
     #print('intersection_columns: ', intersection_columns)
 
+    if len(intersection_columns) == 0:
+        return render(request, 'recommender/recommender_failed.html')
+        return HttpResponse('You have few skills to generate Recommendations. Please add take the assessments and grade inputs. <a href="test_home/">Test Home</a>')
+        return render(request, 'recommender/recommender.html', {
+            'top_3_field_recommendations': None,
+            'field_name_1': None,
+            'field_name_2': None,
+            'field_name_3': None,
+            'skill_plot': None,
+            'field_plot': None,
+            'stacked_skills': None,
+            'radar_skills': None,
+            'field_1': None,
+            'field_2': None,
+            'field_3': None,
+        })
 
     # get level of each skill
     user_skills_level = []
@@ -111,17 +128,17 @@ def recommender(request):
 
 
     cosine_similarities = cosine_similarity(normalized_user_skills_df[intersection_columns], normalized_field_skills_filtered[intersection_columns])
-    print('cosine_similarities: ', cosine_similarities)
+    #print('cosine_similarities: ', cosine_similarities)
     top_3_indices = cosine_similarities.argsort(axis=1)[:, -3:]
     top_3_field = normalized_field_skills_filtered.iloc[:, 0].values[top_3_indices]
     all_fields = normalized_field_skills_filtered.iloc[:, 0].values
     #print('top_3_field: ', top_3_field)
 
-    print('all_fields: ', all_fields)
+    #print('all_fields: ', all_fields)
 
     # get unique field_id
     field_ids = normalized_field_skills_filtered['field_id'].unique()
-    print('field_ids: ', field_ids)
+    #print('field_ids: ', field_ids)
     # Create a dictionary to store the field names and the sum of the cosine similarity scores
     fields_score = {}
     for field_id in all_fields:
@@ -174,31 +191,33 @@ def recommender(request):
     # Create a dictionary where the keys are the elements in all_fields and the values are their indices
     order_dict = {field_id: index for index, field_id in enumerate(all_fields)}
 
-    print('fields_score:', fields_score)
+    #print('fields_score:', fields_score)
     # Create a new column 'order' in user_skills_df that represents the index of each field_id in all_fields
     user_skills_df['fields_score'] = user_skills_df['field_id'].map(fields_score)
 
     # Sort user_skills_df by the 'order' column
     user_skills_df = user_skills_df.sort_values('fields_score', ascending=False)
 
-    print('user_skills_df: ', user_skills_df)
+    #print('user_skills_df: ', user_skills_df)
 
     # Drop the 'order' column as it's no longer needed
     user_skills_df = user_skills_df.drop('fields_score', axis=1)
 
     fig = px.bar(
-        x=user_skills_df['skill'],
-        y=user_skills_df['level'],
+        x=user_skills_df['level'],
+        y=user_skills_df['skill'],
         color=user_skills_df['field'],
         #facet_col=user_skills_df['field'],
-        title='User Skills Levels',
-        labels={'index': 'Skills', 'value': 'Skill Level'},
+        # title='User Skills Levels',
+        orientation='h',
+        labels={'index': 'Level', 'value': 'Skill'},
         #color_continuous_scale=px.colors.sequential.Plasma,
+        #height=(len(user_skills_df['skill']) * 5 + 200),#*len(user_skills_df['skill']) + 400,
     )
     
     # x and y title
-    fig.update_xaxes(title_text='Skills')
-    fig.update_yaxes(title_text='Skill Level')
+    fig.update_xaxes(title_text='Skill Level')
+    fig.update_yaxes(title_text='Skill Name')
 
     skill_plot = pio.to_html(fig, full_html=False)
 
@@ -207,10 +226,12 @@ def recommender(request):
     fields_df = pd.DataFrame(list(zip(field_ids, fields_name, fields_score.values())), columns=['Field_ID', 'Field_Name', 'Score'])
 
     # Create a pie chart using Plotly Express
-    fig = px.pie(fields_df, values='Score', names='Field_Name', title='Top Field Recommendation Score')
+    fig = px.pie(fields_df, values='Score', names='Field_Name',
+                 #title='Top Field Recommendation Score'
+                 )
 
     # set title
-    fig.update_layout(title_text='Top Field Recommendation Score', title_x=0.5)
+    #fig.update_layout(title_text='Top Field Recommendation Score', title_x=0.5)
 
     # remove white background
     fig.update_layout(plot_bgcolor='rgba(0,0,0,0)')
@@ -225,11 +246,11 @@ def recommender(request):
     # label field id of normalized_field_skills_filtered with field_dict
     normalized_copy['field_name'] = normalized_copy['field_id'].map(field_dict)
 
-    print('normalized_field_skills_filtered: ', normalized_copy)
+    #print('normalized_field_skills_filtered: ', normalized_copy)
 
     # melt normalized_field_skills_filtered
     normalized_copy = normalized_copy.melt(id_vars=['field_id', 'field_name'], var_name='skill', value_name='level')
-    print('normalized_field_skills_filtered: ', normalized_copy)
+    #rint('normalized_field_skills_filtered: ', normalized_copy)
 
     # use fields_score mapping for field_id into field_order
     normalized_copy['field_order'] = normalized_copy['field_id'].map(fields_score)
@@ -245,7 +266,7 @@ def recommender(request):
         x='level', 
         y='skill', 
         color='field_name', 
-        title='Skills Levels',
+        # title='Skills Levels',
         orientation='h',
         labels={'level': 'Relevance Score', 'field_name': 'Field Name'},
         color_continuous_scale=px.colors.sequential.Plasma,
@@ -263,7 +284,7 @@ def recommender(request):
         theta='skill', 
         color='field_name', 
         line_close=True,
-        title='Skills Levels',
+        # title='Skills Levels',
         labels={'level': 'Relevance Score', 'field_name': 'Field Name'},
         #color_continuous_scale=px.colors.sequential.Plasma,
         height=500,
@@ -332,7 +353,7 @@ def recommender(request):
 
 
 def recommendation_field(request, field_id):
-
+    
     field_object = Field.objects.get(field=field_id)
     
     # skills
@@ -381,9 +402,9 @@ def recommendation_field(request, field_id):
     # exclude field_id
     for col in normalized_field_skills.columns[1:]:
         # get field id of the highest value
-        row_field_id = normalized_field_skills[col].idxmax()
+        index_max = normalized_field_skills[col].idxmax()
         # if row_field_id is equal to field_id, get column name
-        if row_field_id == field_id:
+        if normalized_field_skills.loc[index_max, 'field_id'] == field_id:
             column_list.append(col)
         else:
             # if its the second highest value, get the column name
@@ -395,11 +416,13 @@ def recommendation_field(request, field_id):
 
     # filter normalized_field_skills by column_list
     normalized_field_skills_row = normalized_field_skills[['field_id'] + column_list]
+    #print(normalized_field_skills_row['field_id'])
     normalized_field_skills_row_2 = normalized_field_skills[['field_id'] + column_list_2]
     # get only row with field_id = field_id
+    #print('field_id: ', field_id)
     normalized_field_skills_row = normalized_field_skills_row[normalized_field_skills_row['field_id'] == field_id]
     normalized_field_skills_row_2 = normalized_field_skills_row_2[normalized_field_skills_row_2['field_id'] == field_id]
-
+    #print(normalized_field_skills_row['field_id'])
     # convert to series
     normalized_field_skills_row = normalized_field_skills_row.iloc[:, 1:].sum(axis=0).sort_values(ascending=False)
     normalized_field_skills_row_2 = normalized_field_skills_row_2.iloc[:, 1:].sum(axis=0).sort_values(ascending=False)
@@ -524,18 +547,18 @@ def recommendation_course(request, field_id):
         'learning_materials_advanced': learning_materials_advanced,
     })
 
-from apps.jobs.models import JobPosting
+# from apps.jobs.models import JobPosting
 
-def recommendation_jobs(request, field_id, job_id=None):
-    field = Field.objects.get(field=field_id)
+# def recommendation_jobs(request, field_id, job_id=None):
+#     field = Field.objects.get(field=field_id)
     
-    job_postings = JobPosting.objects.filter(field=field_id)
-    selected_job = get_object_or_404(JobPosting, pk=1)   
+#     job_postings = JobPosting.objects.filter(field=field_id)
+#     selected_job = get_object_or_404(JobPosting, pk=1)   
  
-    if job_id:
-        selected_job = get_object_or_404(JobPosting, pk=job_id)
+#     if job_id:
+#         selected_job = get_object_or_404(JobPosting, pk=job_id)
     
 
-    selected_job.job_description = mark_safe(selected_job.job_description)
+#     selected_job.job_description = mark_safe(selected_job.job_description)
 
-    return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})
+#     return render(request, 'job/job_list.html', {'job_postings': job_postings, 'selected_job': selected_job})

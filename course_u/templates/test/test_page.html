@@ -1,66 +1,74 @@
-    {% extends 'base_user.html' %}
+{% extends 'base_user.html' %}
 
-    {% block title %}Test Page{% endblock %}
-    {% load static %}
-    {% block head_extra %}
-    <link rel="stylesheet" href="{% static 'css/test_page.css' %}">
+{% block title %}Test Page{% endblock %}
 
-    {% endblock head_extra %}
+{% load static %}
 
-    {% block content %}
 
-    {% if user.is_authenticated %}
-    <div class="test card container">
-        <p>Question {{ question.question_id }} of {{ question.n_question }}</p>
-        
-        <form method="post" action="{% url 'submit_question' question_id=question.question_id %}">
-            <h2>{{ question.question }}</h2>
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/test_page.css' %}">
+
+{% endblock head_extra %}
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="test card container">
+    <p>Question {{ current_index }} of {{ total_questions }}</p>
+
+    <form method="post" action="{% url 'submit_question' question_id=question.question_id %}">
+        <h2>{{ question.question }}</h2>
         <p>{{question.description}}</p><br>
-            {% csrf_token %}
-            <div class="form-check">
-                <label>
-                    <input type="radio" name="selected_option" value="0" {% if user_response.selected_option == 0 %}checked{% endif %}>
-                    {{ question.options.0 }}
-                </label><br>
-        
-                <label>
-                    <input type="radio" name="selected_option" value="1" {% if user_response.selected_option == 1 %}checked{% endif %}>
-                    {{ question.options.1 }}
-                </label><br>
-        
-                <label>
-                    <input type="radio" name="selected_option" value="2" {% if user_response.selected_option == 2 %}checked{% endif %}>
-                    {{ question.options.2 }}
-                </label><br>
-        
-                <label>
-                    <input type="radio" name="selected_option" value="3" {% if user_response.selected_option == 3 %}checked{% endif %}>
-                    {{ question.options.3 }}
-                </label><br>
-            </div>
-            <button type="submit" class="btn btn-primary">
-                <img src="{% static 'images/arrows.png' %}">
-            </button>
-        </form>
-        
-        <br>
-        <!-- Navigation buttons -->
-        <a href="{% url 'prev_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Previous</a>
-        <a href="{% url 'next_test' question_id=question.question_id question_set_id=question_set_id %}" class="btn btn-secondary">Home</a>
-        <a href="{% url 'test_overview' question_set_id=question_set_id %}" class="btn btn-secondary">Page Overview</a>
-    </div>
+        {% csrf_token %}
+        <div class="form-check">
+            <label>
+                <input type="radio" name="selected_option" value="0" {% if user_response.selected_option == 0 %}checked{%endif %}>
+                {{ question.options.0 }}
+            </label><br>
 
-    {% else %}
-    <!-- 
+            <label>
+                <input type="radio" name="selected_option" value="1" {% if user_response.selected_option == 1 %}checked{%endif %}>
+                {{ question.options.1 }}
+            </label><br>
+
+            <label>
+                <input type="radio" name="selected_option" value="2" {% if user_response.selected_option == 2 %}checked{%endif %}>
+                {{ question.options.2 }}
+            </label><br>
+
+            <label>
+                <input type="radio" name="selected_option" value="3" {% if user_response.selected_option == 3 %}checked{%endif %}>
+                {{ question.options.3 }}
+            </label><br>
+        </div>
+        <!-- <a href="" class="btn btn-secondary">
+                Submit
+            </a> -->
+        <button type="submit" class="btn btn-secondary">Submit</button>
+
+
+        <!-- Navigation buttons -->
+        <a href="{% url 'prev_test' question_id=question.question_id question_set_id=question_set_id %}"
+            class="btn btn-secondary">Previous</a>
+        <a href="{% url 'next_test' question_id=question.question_id question_set_id=question_set_id %}"
+            class="btn btn-secondary">Next</a>
+
+        </div>
+    </form>
+<a href="{% url 'test_overview' question_set_id=question_set_id %}" class="btn btn-secondary1">Page Overview</a>
+
+{% else %}
+<!-- 
     <div class="col-md-6 offset-md-3">
         <br><br><br>
         <h3 class="">You need to login first</h3>
         <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
     </div> -->
 
-    {% endif %}
+{% endif %}
 
 
 
-    {% endblock content %}
-    ```
+{% endblock content %}

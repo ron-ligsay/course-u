@@ -1,0 +1,204 @@
+
+
+
+.content {
+
+}
+
+div.content {
+    /* margin: 20px 30px 40px 30px; */
+    max-width: 900px;
+    margin: 20px auto 40px auto;
+}
+
+div.head {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+div.top {
+    /* apply card design */
+    background-color: #fff;
+    border-radius: 2px;
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 50px;
+    max-width: 900px;
+
+    /* border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+}
+
+.top-head {
+    margin-bottom: 30px;
+    /* center */
+    padding-right: 30px;
+}
+
+.top-results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.top-results a {
+    border-radius: 10px;
+    /* border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); */
+    
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    flex: 1;
+    
+    margin: 10px;
+    padding: 5px;
+
+    min-height: 60px;
+    max-height: 70px; 
+    
+    width: 30%; /* 100% of the parent's width */
+
+}
+
+.top-results a div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.top-results a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.top-1 {
+    margin-top: 0px;
+    background-color: rgb(99, 110, 250); 
+}
+
+a.top-2 {
+    margin-top: 45px;
+    background-color: rgb(239, 85, 59);
+}
+a.top-3{
+    margin-top: 60px;
+    background-color: rgb(0, 204, 150);
+}
+.top-results {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* pie graph section */
+
+
+div.field-score {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+
+div.field-score h3 {
+    padding: 0;
+    margin: 0;
+}
+
+div.result {
+    margin: 60px 10px 40px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .field-result, .field-plot {
+    display: flex;
+}
+ */
+.field-result {
+    width: 40%;
+    /* margin-top: 20px; */
+    /* text-align: justify; */
+}
+
+.field-result h4 {
+    color: grey;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.field-plot {
+    width: 60%;
+}
+
+/* skill graph representation */
+
+.skill-score {
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+.skill-bar {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 0;
+    /* flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;  
+    max-width: 700px;
+    padding: 0 100px; */
+}
+
+/*
+@media screen and (max-width: 600px) {
+    .skill-bar {
+        flex-direction: column;
+    }
+} */
+
+.skill-plot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin: 0 10px;
+    margin-left: 70px;
+}
+
+.stacked-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin: 0 10px;
+    margin-left: 70px;
+}
+
+
+
+
+.skill-result {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-result h4 {
+    color: grey;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}   

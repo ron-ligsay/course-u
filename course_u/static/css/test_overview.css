@@ -4,20 +4,23 @@
 .test-container {
     max-width: 900px;
     justify-content: center;
-    padding-left: 200px;
+    align-items: center;
+    padding: 0px auto;
+    margin: 0px auto;
 }
 
 /* Style the table container */
 .table-container {
     overflow-x: auto;
-   
+    overflow: auto;
 }
 
 /* Style the table */
 .table1 {
-    width: 130%;
     border-collapse: collapse;
     margin-top: 15px;
+    table-layout: auto;
+    width: 100%;  /* Optional: You can set the width to 100% to make the table take up the full width of its container */
 }
 
 /* Style table header */
@@ -25,12 +28,14 @@
     background-color: #f2f2f2;
     padding: 8px;
     text-align: center;
+    word-wrap: break-word;
 }
 
 /* Style table cells */
 .table1 td {
     border: 1px solid #ddd;
     padding: 8px;
+    word-wrap: break-word;
 }
 
 /* Style alternating rows (optional) */

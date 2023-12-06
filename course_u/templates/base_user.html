@@ -43,10 +43,10 @@
                 <!-- header/Search -->
 
                 <!-- user -->
-                <div class="user">
+                <!-- <div class="user">
                     <p>Welcome, <a href="">username</a></p>
                     <a href="">Logout</a>
-                </div>
+                </div> -->
                 <div class="user_profile">
                     <img src="" alt="User DP">
                 </div>
@@ -111,5 +111,12 @@
         }
         list.forEach((item) =>
         item.addEventListener('mouseover', activeLink));
+    </script>
+    <script>
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 5000);
     </script>
 </body>

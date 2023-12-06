@@ -102,3 +102,23 @@ course_u/static/csv/field_skills_10.csv
 course_u/static/csv/specialization5_.csv
 course_u/static/csv/subject_field.csv
 
+course_u/src/ontology/*
+course_u/apps/recommender/field_skills_tfidf1.csv
+.gitignore
+course_u/static/csv/coursera.csv
+course_u/apps/recommender/field_skills_tfidf_2.csv
+course_u/static/csv/z_group_all.csv
+course_u/static/csv/z_group_all3.csv
+course_u/static/csv/z_group_all2.csv
+course_u/static/csv/z_group_specialization.csv
+course_u/apps/recommender/field_skills_tfidf_3.csv
+course_u/apps/recommender/field_skills_tfidf_32.csv
+course_u/apps/recommender/field_skills_tfidf_something.csv
+course_u/static/csv/field_skill_001.csv
+.gitignore
+.gitignore
+course_u/static/csv/specialization5_1.csv
+.gitignore
+course_u/static/csv/field_skills_mini.csv
+course_u/static/csv/field_skills_tfidf_3.csv
+course_u/static/csv/test_5.csv

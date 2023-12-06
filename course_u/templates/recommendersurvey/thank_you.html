@@ -1,0 +1,16 @@
+{% extends 'base_user.html' %}
+
+
+
+{% load static %}
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/thankyou.css' %}">
+
+{% endblock head_extra %}
+{% block content %}
+<div class="thank-you">
+  <h2 class="thank-you__title">Thank you for completing the survey!</h2>
+  <p class="thank-you__text">Your input is valuable in improving the alignment between academic programs and the dynamic demands of the IT and CS industries.</p>
+  <a href="{% url 'recommender' %}" class="thank-you__button">Continue to Recommender</a>
+  <div></div>
+{% endblock %}

@@ -5,42 +5,135 @@
 {% block title %}Recommender{% endblock %}
 
 {% load static %}
-
-
 {% block head_extra %}
-
+<link rel="stylesheet" href="{% static 'css/recommender.css' %}">
 {% endblock head_extra %}
 
 {% block content %}
 
-<h2>Recommender</h2>
+<div class="head">
+    <h2>Recommender Report</h2>
+</div>
 
-<h2>Your Top Field Recommendation</h2>
-<ul>
-    <li><a href="{% url 'recommendation_field' field_id=field_1.field %}">Top 1: {{field_name_1}}</a></li>
-    <li><a href="{% url 'recommendation_field' field_id=field_2.field %}">Top 2: {{field_name_2}}</a></li>
-    <li><a href="{% url 'recommendation_field' field_id=field_3.field %}">Top 3: {{field_name_3}}</a></li>
-</ul>
+<div class="top">
+    <div class="top-head">
+        <h2>Top Results</h2>
+    </div>
+    <div class="top-results">
+        <a class="top-2" href="{% url 'recommendation_field' field_id=field_2.field %}">
+            <div class="top-2">
+                Top 2:
+                {{field_name_2}}
+            </div>
+        </a>
+        <a class="top-1" href="{% url 'recommendation_field' field_id=field_1.field %}">
+            <div class="top-1">
+                Top 1:
+                {{field_name_1}}
+            </div>
+        </a>
+        <a class="top-3" href="{% url 'recommendation_field' field_id=field_3.field %}">
+            <div class="top-3">
+                Top 3:
+                {{field_name_3}}
+            </div>
+        </a>
+    </div>
+</div>
 
 <div class="container">
-    {{ field_plot|safe }}
+    <div class="field-score">
+        <div class="field-result">
+            <h1>Field Recommendation</h1>
+            <div class="result">
+                <h4>Explanation</h4>
+                <p>Top Pie Graph represents the overall similarity Score based from your Grades, Test Resutls and Other Records.
+                    In the Pie Graph the color represents the Field of Study that the score is related to. And each Field of Study displays a percentage of the score.
+                    Your Top Field Recommendation is based from the top 3 highest percentage of the score.
+                </p>
+            </div>
+        </div>
+        <div class="field-plot">
+            {{ field_plot|safe }}
+        </div>
+    </div>
+</div>
+<div class="container skill-score">
+    <h3> Skill Score Representation</h3>
+    <div class="skill-bar">
+        
+    </div>
+    <div class="skill-plot">
+        {{ skill_plot|safe }}
+    </div>
+    <div class="skill-result">
+        <h4>Explanation</h4>
+        <p>The skill graph represents the skills you obtained from the your Subjects, Grades and previous records.
+            The graph is based from the skills you obtained from your previous records and each skill score color represents the Field of Study that the skill is related to.
+            
+        </p>
+    </div>
+    <br><br><br>
+    <h3> Skill Relevance Representation</h3>
+    <div class="stacked-skills">
+        {{ stacked_skills|safe }}
+    </div>
+    <div class="skill-result">
+        <h4>Explanation</h4>
+        <p>In Skill Relevance it shows the skills that are relevant to the Field of Study you are interested in.
+            The skill also shows what relevance score it has to the Field of Study.
+        </p>
+    </div>
 </div>
 <!-- <div class="container">
-    {{ skill_plot|safe }}
-</div> -->
-<div class="container">
-    {{ stacked_skills|safe }}
-</div>
-<div class="container">
     {{ radar_skills|safe }}
-</div>
+</div> -->
 
 <br>
 <div>
     <h3>Your Recommendation History</h3>
-    <div>
+    <div class="path">
         <!-- from 1st year to last year -->
-        
+        <div class="card path-1">
+            <div class="path-content">
+                <p>Freshmen</p>
+            </div>
+            <div class="arrow">
+
+            </div>
+        </div>
+        <div class="card path-2">
+            <div class="path-content">
+                <p>1st Year</p>
+            </div>
+            <div class="arrow">
+                
+            </div>
+        </div>
+        <div class="card path-3">
+            <div class="path-content">
+                <p>2nd Year</p>
+            </div>
+            <div class="arrow">
+                
+            </div>
+        </div>
+        <div class="card path-4">
+            <div class="path-content">
+                <p>3rd Year</p>
+            </div>
+            <div class="arrow">
+                
+            </div>
+        </div>
+        <div class="card path-5">
+            <div class="path-content">
+                <p>4th Year</p>
+            </div>
+            <div class="arrow">
+                
+            </div>
+        </div>
         
     </div>
 </div>

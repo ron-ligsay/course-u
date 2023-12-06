@@ -9,22 +9,25 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 import pandas as pd
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Set up logging
 logging.basicConfig(filename='scraping.log', level=logging.DEBUG, format='%(asctime)s:%(levelname)s:%(message)s')
 
 # Constants
 desired_language = 'en-US'
-BASE_DIR = 'C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course-u\\src\\linkedin_scrapy\\'
-csv_input_link = BASE_DIR + 'jobs\\jobs3.csv'
-csv_output = BASE_DIR + 'selenium\\jobs_post_3.csv'
-max_requests = 100
-target_count = 10
+#BASE_DIR = 'C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course-u\\src\\linkedin_scrapy\\'
+BASE_DIR = 'C:\\Users\\aky\\AppData\\Local\\Programs\\Python\\Python38\\course_test\\course-u\\course_u\\src\\linkedin_scrapy'
+csv_input_link = BASE_DIR + '\\selenium\\jobs_clean_4.csv'
+csv_output = BASE_DIR + '\\selenium\\jobs_post_4.csv'
+max_requests = 150
+target_count = 125 # len of jobs_clean_4.csv 
 max_retries = 2
 save_to_csv = True
-max_element_wait = 3
-min_rest = 60 # 3 minutes
-max_rest = 120 # 5 minutes
+max_element_wait = 1
+min_rest = 60 # 1 minutes
+max_rest = 120 # 3 minutes
 
 
 success_count = 0
@@ -35,6 +38,16 @@ timeout_error_count = 0
 exception_error_count = 0
 finished_count = 0
 total_count = 0
+
+# Keyword ID mapping
+keyword_id_mapping = {
+    "software development": 1,
+    "data and analytics": 2,
+    "design and ui/ux": 3,
+    "product management": 4,
+    "testing and quality assurance": 5,
+    "security": 6
+}
 
 
 # User agents
@@ -49,7 +62,8 @@ user_agents = [
 # Create Chrome options
 options = webdriver.ChromeOptions()
 options.add_argument('--lang={}'.format(desired_language))
-
+driver_path = BASE_DIR + '\\selenium\\chromedriver.exe'
+service = webdriver.ChromeService(executable_path=driver_path)
 scraped_urls = set()
 
 # Function to get a random user agent
@@ -149,14 +163,28 @@ def scrape_jobs(url, row, driver):
                     continue
                 else:
                     show_report("Scraping successful!")
+                # print('id:', success_count + 1)
+                # print('Llink:', url)
+                # print('job_title:', Job_Title)
+                # print('company_name:', row['company'])
+                # print('company_link:', clean_link(row['company_link']))
+                # print('date_link:', row['date'])
+                # print('keyword:', row['keyword'])
+                # print('keyword_id:', keyword_id_mapping[row['keyword']])
+                # print('location:', Location)
+                # print('seniority_level:', Seniority_Level)
+                # print('employment_type:', Employment_Type)
+                # print('job_function:', Job_Function)
+                # print('industries:', Industries)
+                # print('job_description len:', len(Job_Description))
 
                 data = {
                     'id': success_count + 1,
-                    'Llink': url,
+                    'link': url,
                     'job_title': Job_Title,
                     'company_name': row['company'],
                     'company_link': clean_link(row['company_link']),
-                    'date_link': row['date'],
+                    'date_posted': row['date'],
                     'keyword': row['keyword'],
                     'keyword_id': keyword_id_mapping[row['keyword']],
                     'location': Location,
@@ -166,31 +194,33 @@ def scrape_jobs(url, row, driver):
                     'industries': Industries,
                     'job_description': Job_Description
                 }
-
-                df = df.append(data, ignore_index=True)
+                show_report(f"Appending data to dataframe...{data}")
+                #df = df.append(data, ignore_index=True)
+                # concat
+                df = pd.concat([df, pd.DataFrame(data, index=[0])], ignore_index=True)
                 success_count += 1
 
-                show_report("Job Title: %s", Job_Title)
-                show_report("Company Name: %s", row['company'])
-                show_report("Date: %s", row['date'])
-                show_report("Keyword: %s", row['keyword'])
-                show_report("Location: %s", Location)
-                show_report("Employment Type: %s", Employment_Type)
-                show_report("Job Function: %s", Job_Function)
-                show_report("Industries: %s", Industries)
-                show_report("Seniority Level: %s", Seniority_Level)
+                show_report(f"Job Title: { Job_Title}")
+                show_report(f"Company Name: {row['company']}")
+                show_report(f"Date: {row['date']}")
+                show_report(f"Keyword: {row['keyword']}")
+                show_report(f"Location: {Location}")
+                show_report(f"Employment Type: {Employment_Type}")
+                show_report(f"Job Function: {Job_Function}")
+                show_report(f"Industries: {Industries}")
+                show_report(f"Seniority Level: {Seniority_Level}")
 
-                show_report(Job_Description)
+                show_report(f"Job Description: {Job_Description[:15]}...")
                 show_report("-" * 50)
 
             except TimeoutException:
                 retry_count += 1
                 timeout_error_count += 1
-                show_report("TimeoutException scraping %s", url)
+                show_report(f"TimeoutException scraping {url}")
             except Exception as e:
                 retry_count += 1
                 exception_error_count += 1
-                show_report("Error scraping %s: %s", url, str(e))
+                show_report(f"Error scraping {url}: {str(e)}" )
         
         else:
             show_report("URL already scraped. Skipping...")
@@ -209,16 +239,10 @@ def scrape_jobs(url, row, driver):
 
 
 # Initialize the web driver (make sure the driver executable is in your PATH)
-driver = webdriver.Chrome(chrome_options=options)
-
-# Keyword ID mapping
-keyword_id_mapping = {
-    "software development": 1,
-    "data and analytics": 2,
-    "design and ui/ux": 3,
-    "testing and quality assurance": 4,
-    "networking and infrastructure": 5
-}
+#executable_path = BASE_DIR + 'selenium\\chromedriver.exe'
+#driver = webdriver.Chrome(options=options, executable_path=executable_path)
+driver = webdriver.Chrome(service=service, options=options)
+#print("Driver Locaction",driver.service.executable_path)
 
 # Main loop
 with open(csv_input_link, 'r', encoding='utf-8') as csvfile:
@@ -226,9 +250,9 @@ with open(csv_input_link, 'r', encoding='utf-8') as csvfile:
 
     df = pd.DataFrame(columns=['id', 'link', 'job_title', 'company_name', 'company_link', 'date_posted',
                                'keyword', 'keyword_id', 'location', 'employment_type', 'job_function',
-                               'industries', 'seniority_Level', 'job_Description'])
+                               'industries', 'seniority_level', 'job_description'])
 
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     for row in csvreader:
         if finished_count >= target_count:
             show_report("Target count reached. Exiting...")
@@ -243,7 +267,7 @@ with open(csv_input_link, 'r', encoding='utf-8') as csvfile:
             selected_user_agent = get_random_user_agent()
             options.add_argument(f"user-agent={selected_user_agent}")
             show_report("Switching User agent: %s", selected_user_agent)
-            driver = webdriver.Chrome(chrome_options=options)
+            driver = webdriver.Chrome(service=service, options=options)
 
         show_report(f"Scraping URL: {row['link']}")
         scrape_jobs(row['link'], row, driver)

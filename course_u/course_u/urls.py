@@ -23,6 +23,7 @@ import debug_toolbar
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/',include('debug_toolbar.urls')),
+    #path('admin_tools_stats/', include('admin_tools_stats.urls')),
 
     # Other apps
     path('', include('apps.website.urls')),
@@ -32,6 +33,8 @@ urlpatterns = [
     path('', include('apps.personality.urls')),
     path('', include('apps.acad.urls')),
     path('', include('grades.urls')),
+    path('', include('apps.survey.urls')),
+    path('', include('apps.recommender_survey.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

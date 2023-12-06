@@ -1,38 +1,31 @@
 {% extends 'base_user.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}User Profile{% endblock %}
+
 {% load static %}
 {% block head_extra %}
 <link rel="stylesheet" href="{% static 'css/user_profile.css' %}">
 {% endblock head_extra %}
+
+
 {% block content %}
+<div class="profile">
+  {% if user.is_authenticated %}
+    <h1 class="profile__title">User Profile</h1>
+    <p class="profile__welcome">Welcome, {{ user.username }}!</p>
+    <p class="profile__email">Email: {{ user.email }}</p>
 
-{% if user.is_authenticated %}
-
-    <!-- user_profile.html -->
-    <h1>User Profile</h1>
-    <p>Welcome, {{ user.username }}!</p>
-    <p>Email: {{ user.email }}</p>
-
-    <!-- Add buttons for actions -->
-    <a href="{% url 'edit_profile' %}" class="btn">Edit Profile</a>
-    <a href="{% url 'terms_and_conditions' %}" >Terms and Conditions</a>
-    <a href="{% url 'settings' %}">Settings</a>
-    <!-- Add more buttons as needed -->
-
-    
-
-{% else %}
-<!-- 
-<div class="col-md-6 offset-md-3">
-    <br><br><br>
-    <h3 class="">You need to login first</h3>
-    <a href="{% url 'login_user' %}" class="btn btn-secondary">Login Page</a>
-</div> -->
-
-{% endif %}
-
-
-
+    <div class="profile__actions">
+      <a href="{% url 'edit_profile' %}" class="profile__button">Edit Profile</a>
+      <a href="{% url 'survey' %}" class="profile__button">Tracer Survey Form</a>
+      <a href="{% url 'terms_and_conditions' %}" class="profile__button">Terms and Conditions</a>
+      <a href="{% url 'settings' %}" class="profile__button">Settings</a>
+    </div>
+  {% else %}
+    <div class="profile__login-prompt">
+      <h3 class="profile__login-title">You need to login first</h3>
+      <a href="{% url 'login_user' %}" class="profile__button profile__button--login">Login Page</a>
+    </div>
+  {% endif %}
+</div>
 {% endblock content %}
-```

@@ -3,6 +3,12 @@
 
 /* Status */
 
+ul {
+    padding-left: 0 !important; 
+}
+
+
+
 .cardBox
 {
     position: relative;
@@ -14,7 +20,7 @@
    
 }
 
-.cardBox .card
+.cardBox .card1
 {
     position: relative;
     background: var(--white);
@@ -27,7 +33,11 @@
     
 }
 
-.cardBox .card .numbers
+.card-body {
+    padding: 0 !important;
+}
+
+.cardBox .card1 .numbers
 {
     position: relative;
     font-weight: 500;
@@ -35,27 +45,27 @@
     color: var(--blue);
 }
 
-.cardBox .card .cardName
+.cardBox .card1 .cardName
 {
     position: relative;
     font-size: 1.2em;
     color: var(--blue);
 }
 
-.cardBox .card .iconBx
+.cardBox .card1 .iconBx
 {
    font-size: 3.5rem;
    color: var(--black2);
 }
 
-.cardBox .card:hover
+.cardBox .card1:hover
 {
     background: var(--blue);
 }
 
-.cardBox .card:hover .numbers,
-.cardBox .card:hover .cardName,
-.cardBox .card:hover .iconBx
+.cardBox .card1:hover .numbers,
+.cardBox .card1:hover .cardName,
+.cardBox .card1:hover .iconBx
 {
     color: var(--white);
 }
@@ -106,6 +116,18 @@
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
+
+}
+
+.btn1 {
+    /* position: relative; */
+    margin-top: 15px;
+    padding: 5px 10px;
+    background:  #FF6347; 
+    text-decoration: none;
+    color:black;
+    border-radius: 6px;
+    margin-left: 10px;
 
 }
 
@@ -220,4 +242,9 @@
 }
 footer{
     display:none;
+}
+
+
+.report-section {
+    margin: 20px;
 }

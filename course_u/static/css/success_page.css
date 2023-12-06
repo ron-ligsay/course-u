@@ -1,77 +1,89 @@
-
-main{
+main {
   background-image: url('../../static/images/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .container {
-    display: flex;
-    flex-wrap: wrap; /* Allow the content to wrap to the next row */
-  
-  }
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow the content to wrap to the next row */
 
-  .row {
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-  }
+}
 
-  .column1 {
-    flex: 1;
-    margin: 10px;
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
 
-    
-  }
-  .column2 {
-    align-items: center;
-    margin-left: 100px;
-    display: flex;
-    flex: 1;
-    padding: 50px;
-   
-  }
+.column1 {
+  flex: 1;
+  margin: 10px;
 
-.submit-button{
-    display: block;
-    margin: 0 auto;
-    padding: 15px 10px;
-    background-color: whitesmoke; /* Set your desired background color */
-    color:rgb(228, 95, 65); /* Set text color to white or a contrasting color */
-    text-decoration: none;
-    border-radius: 10px; /* Add rounded corners */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect on hover */
-    margin-left: 20px;
-    box-shadow:0 4px 6px rgba(0,0,0,0.4);
-    width: 230px;
-    height:70px;
-    text-align: center;
-    justify-content: center;
-    font-size: 30px;
-  }
 
-  .submit-button:hover {
-    background-color: rgb(228, 95, 65); /* Change the background color on hover */
-    color:white;
+}
 
-  }
-  h3{
-    margin-left: 20px;
-  }
-  p{
-    color:rgb(228, 95, 65);
-    margin-left: 20px;
-   font-size:30px;
-  }
-  b{
-    text-align: center;
-   
-  }
-  .column1 img{
-    width: 450px;
-    height: 420px;
-   padding-right: 20px;
-   margin-left: 130px;
-  }
-  footer{
-    display:none;
-  }
+.column2 {
+  align-items: center;
+  margin-left: 100px;
+  display: flex;
+  flex: 1;
+  padding: 50px;
+
+}
+
+.submit-button {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 10px;
+  background-color: rgb(228, 95, 65);
+  /* Set your desired background color */
+  color: white;
+  /* Set text color to white or a contrasting color */
+  text-decoration: none;
+  border-radius: 10px;
+  /* Add rounded corners */
+  transition: background-color 0.3s ease;
+  /* Add a smooth transition effect on hover */
+  margin-left: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  width: 230px;
+  height: 70px;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.submit-button:hover {
+  background-color: whitesmoke;
+  /* Change the background color on hover */
+  color: rgb(228, 95, 65);
+
+}
+
+h3 {
+  margin-left: 20px;
+}
+
+h1 {
+  color: rgb(228, 95, 65);
+  margin-left: 20px;
+  font-size: 50px;
+}
+
+b {
+  text-align: center;
+
+}
+
+.column1 img {
+  width: 350px;
+  height: 320px;
+  padding-right: 20px;
+  margin-left: 130px;
+}
+
+footer {
+  display: none;
+}
